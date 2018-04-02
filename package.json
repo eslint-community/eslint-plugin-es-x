@@ -1,0 +1,57 @@
+{
+  "name": "eslint-plugin-es",
+  "version": "0.0.0",
+  "description": "ESLint plugin about ECMAScript syntactic features.",
+  "engines": {
+    "node": ">=6.5.0"
+  },
+  "main": "lib/index.js",
+  "peerDependencies": {
+    "eslint": "^4.19.1 || >=5.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "codecov": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-mysticatea": "^13.0.2",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-eslint-plugin": "^1.4.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "mocha": "^5.0.5",
+    "npm-run-all": "^4.1.2",
+    "nyc": "^11.6.0",
+    "opener": "^1.4.3",
+    "prettier": "^1.11.1",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "clean": "rimraf .nyc_output coverage",
+    "codecov": "nyc report -r lcovonly && codecov",
+    "coverage": "nyc report -r lcov && opener ./coverage/lcov-report/index.html",
+    "lint": "eslint lib tests scripts .eslintrc.js --ignore-pattern !.eslintrc.js",
+    "pretest": "npm run -s lint",
+    "test": "nyc mocha tests/**/*.js --reporter dot",
+    "update:url": "npm run -s lint -- --fix",
+    "update:readme": "node scripts/update-readme",
+    "update:index": "node scripts/update-index",
+    "preversion": "npm test",
+    "version": "run-s update:*",
+    "postversion": "git push && git push --tags",
+    "watch": "mocha tests/**/*.js --reporter progress --watch --growl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysticatea/eslint-plugin-es.git"
+  },
+  "keywords": [
+    "eslint",
+    "plugin",
+    "eslintplugin"
+  ],
+  "author": "Toru Nagashima (https://github.com/mysticatea)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mysticatea/eslint-plugin-es/issues"
+  },
+  "homepage": "https://github.com/mysticatea/eslint-plugin-es#readme"
+}
