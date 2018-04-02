@@ -38,7 +38,7 @@
     "update:readme": "node scripts/update-readme",
     "update:index": "node scripts/update-index",
     "preversion": "npm test",
-    "version": "run-s update:*",
+    "version": "run-s update:* && git add .",
     "postversion": "git push && git push --tags",
     "watch": "mocha tests/**/*.js --reporter progress --watch --growl"
   },
