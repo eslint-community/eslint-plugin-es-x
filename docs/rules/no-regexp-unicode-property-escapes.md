@@ -7,5 +7,5 @@ This rule reports ES2018 [RegExp Unicode property escape sequences](https://gith
 ⛔ Examples of **incorrect** code for this rule:
 
 ```js
-const r1 = /\p{Script=Hiragana}+/
+const r1 = /\p{Script=Hiragana}+/u
 ```
