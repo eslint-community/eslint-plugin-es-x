@@ -1,6 +1,6 @@
-# disallow trailing function commas (es/no-trailing-function-commas)
+# disallow trailing commas in parameter/argument lists (es/no-trailing-function-commas)
 
-This rule reports ES2017 [trailing function commas](https://github.com/tc39/proposal-trailing-function-commas#readme) as errors.
+This rule reports ES2017 [trailing commas in parameter/argument lists](https://github.com/tc39/proposal-trailing-function-commas#readme) as errors.
 
 ## Examples
 

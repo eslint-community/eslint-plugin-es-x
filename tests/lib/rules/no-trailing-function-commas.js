@@ -23,35 +23,51 @@ new RuleTester().run("no-trailing-function-commas", rule, {
     invalid: [
         {
             code: "function f(a,) {}",
-            errors: ["ES2017 trailing function commas are forbidden."],
+            errors: [
+                "ES2017 trailing commas in parameter/argument lists are forbidden.",
+            ],
         },
         {
             code: "(function(a,) {})",
-            errors: ["ES2017 trailing function commas are forbidden."],
+            errors: [
+                "ES2017 trailing commas in parameter/argument lists are forbidden.",
+            ],
         },
         {
             code: "(a,) => {}",
-            errors: ["ES2017 trailing function commas are forbidden."],
+            errors: [
+                "ES2017 trailing commas in parameter/argument lists are forbidden.",
+            ],
         },
         {
             code: "({ f(a,) {} })",
-            errors: ["ES2017 trailing function commas are forbidden."],
+            errors: [
+                "ES2017 trailing commas in parameter/argument lists are forbidden.",
+            ],
         },
         {
             code: "class A { f(a,) {} }",
-            errors: ["ES2017 trailing function commas are forbidden."],
+            errors: [
+                "ES2017 trailing commas in parameter/argument lists are forbidden.",
+            ],
         },
         {
             code: "(class { f(a,) {} })",
-            errors: ["ES2017 trailing function commas are forbidden."],
+            errors: [
+                "ES2017 trailing commas in parameter/argument lists are forbidden.",
+            ],
         },
         {
             code: "f(a,)",
-            errors: ["ES2017 trailing function commas are forbidden."],
+            errors: [
+                "ES2017 trailing commas in parameter/argument lists are forbidden.",
+            ],
         },
         {
             code: "new F(a,)",
-            errors: ["ES2017 trailing function commas are forbidden."],
+            errors: [
+                "ES2017 trailing commas in parameter/argument lists are forbidden.",
+            ],
         },
     ],
 })
