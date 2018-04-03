@@ -12,6 +12,7 @@ const categories = {
     ES2017: { rules: [] },
     ES2016: { rules: [] },
     ES2015: { rules: [] },
+    ES5: { rules: [] },
 }
 
 for (const filename of fs.readdirSync(libRoot)) {
