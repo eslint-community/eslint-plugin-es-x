@@ -127,7 +127,7 @@ Please use GitHub's Issues/PRs.
 
 - `npm test` runs tests and measures coverage.
 - `npm run clean` removes the coverage result of `npm test` command.
-- `npm run coverage` shows the coverage result of `npm test` command.
+- `npm run coverage` shows the coverage result of the last `npm test` command.
 - `npm run watch` runs tests on each file change.
 
 [eslint]: https://eslint.org/
