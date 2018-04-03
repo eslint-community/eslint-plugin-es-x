@@ -74,7 +74,7 @@ This plugin provides the following rules.
 | Rule ID | Description |
 |:--------|:------------|
 | [es/no-async-functions](docs/rules/no-async-functions.md) | disallow async function declarations. |
-| [es/no-trailing-function-commas](docs/rules/no-trailing-function-commas.md) | disallow trailing function commas. |
+| [es/no-trailing-function-commas](docs/rules/no-trailing-function-commas.md) | disallow trailing commas in parameter/argument lists. |
 
 #### ES2016
 
@@ -98,6 +98,7 @@ This plugin provides the following rules.
 | [es/no-generators](docs/rules/no-generators.md) | disallow generator function declarations. |
 | [es/no-modules](docs/rules/no-modules.md) | disallow modules. |
 | [es/no-new-target](docs/rules/no-new-target.md) | disallow `new.target` meta property. |
+| [es/no-object-super-properties](docs/rules/no-object-super-properties.md) | disallow `super` property accesses in object literals. |
 | [es/no-octal-numeric-literals](docs/rules/no-octal-numeric-literals.md) | disallow octal numeric literals. |
 | [es/no-property-shorthands](docs/rules/no-property-shorthands.md) | disallow property shorthands. |
 | [es/no-regexp-u-flag](docs/rules/no-regexp-u-flag.md) | disallow RegExp `u` flag. |
@@ -106,6 +107,14 @@ This plugin provides the following rules.
 | [es/no-spread-elements](docs/rules/no-spread-elements.md) | disallow spread elements. |
 | [es/no-template-literals](docs/rules/no-template-literals.md) | disallow template literals. |
 | [es/no-unicode-codepoint-escapes](docs/rules/no-unicode-codepoint-escapes.md) | disallow Unicode code point escape sequences. |
+
+#### ES5
+
+| Rule ID | Description |
+|:--------|:------------|
+| [es/no-accessor-properties](docs/rules/no-accessor-properties.md) | disallow accessor properties. |
+| [es/no-keyword-properties](docs/rules/no-keyword-properties.md) | disallow reserved words as property names. |
+| [es/no-trailing-commas](docs/rules/no-trailing-commas.md) | disallow trailing commas in array/object literals. |
 
 <!--RULE_TABLE_END-->
 
