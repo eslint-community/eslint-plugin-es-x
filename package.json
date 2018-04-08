@@ -35,6 +35,7 @@
     "pretest": "npm run -s lint",
     "test": "nyc mocha tests/**/*.js --reporter dot",
     "update:url": "npm run -s lint -- --fix",
+    "update:ruledocs": "node scripts/update-docs-rules",
     "update:readme": "node scripts/update-readme",
     "update:index": "node scripts/update-index",
     "preversion": "npm test",

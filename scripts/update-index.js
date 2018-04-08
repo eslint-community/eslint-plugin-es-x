@@ -5,11 +5,7 @@
 "use strict"
 
 const fs = require("fs")
-const path = require("path")
-const libRoot = path.resolve("./lib/rules")
-const ruleIds = fs
-    .readdirSync(libRoot)
-    .map(filename => path.basename(filename, ".js"))
+const { rules } = require("./rules")
 
 fs.writeFileSync(
     "lib/index.js",
@@ -22,8 +18,8 @@ fs.writeFileSync(
 module.exports = {
     configs: {},
     rules: {
-        ${ruleIds
-            .map(ruleId => `"${ruleId}": require("./rules/${ruleId}"),`)
+        ${rules
+            .map(({ ruleId }) => `"${ruleId}": require("./rules/${ruleId}"),`)
             .join("\n        ")}
     },
 }

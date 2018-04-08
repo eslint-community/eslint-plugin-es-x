@@ -10,7 +10,7 @@ ESLint plugin about ECMAScript syntactic features.
 
 ## 🏁 Goal
 
-[Espree][espree], the default parser of [ESLint][eslint], has supported `ecmaVersion` option.
+[Espree](https://github.com/eslint/espree#readme), the default parser of [ESLint](https://eslint.org/), has supported `ecmaVersion` option.
 However, it doesn't support to enable each syntactic feature individually.
 
 This plugin lets us disable each syntactic feature individually.
@@ -18,7 +18,7 @@ So we can enable arbitrary syntactic features with the combination of `ecmaVersi
 
 ## 💿 Installation
 
-Use [npm] or [yarn].
+Use [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/).
 
 ```console
 npm install --save-dev eslint eslint-plugin-es
@@ -55,6 +55,8 @@ For example, to enable only Rest/Spread Properties in ES2018, as similar to lega
 ### Rules
 
 This plugin provides the following rules.
+
+- 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fix) can automatically fix some of the problems reported by the rule.
 
 <!--RULE_TABLE_BEGIN-->
 #### ES2018
@@ -120,7 +122,7 @@ This plugin provides the following rules.
 
 ## 🚥 Semantic Versioning Policy
 
-`eslint-plugin-es` follows [semantic versioning](http://semver.org/) and [ESLint's semantic versioning policy](https://github.com/eslint/eslint#semantic-versioning-policy).
+This plugin follows [semantic versioning](http://semver.org/) and [ESLint's semantic versioning policy](https://github.com/eslint/eslint#semantic-versioning-policy).
 
 ## 📰 Changelog
 
@@ -138,8 +140,3 @@ Please use GitHub's Issues/PRs.
 - `npm run clean` removes the coverage result of `npm test` command.
 - `npm run coverage` shows the coverage result of the last `npm test` command.
 - `npm run watch` runs tests on each file change.
-
-[eslint]: https://eslint.org/
-[espree]: https://github.com/eslint/espree#readme
-[npm]: https://www.npmjs.com/
-[yarn]: https://yarnpkg.com/
