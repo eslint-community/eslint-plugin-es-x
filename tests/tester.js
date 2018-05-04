@@ -5,12 +5,14 @@
 "use strict"
 
 const { RuleTester } = require("eslint")
+const { es2017 } = require("globals")
 
 RuleTester.setDefaultConfig({
     parserOptions: {
         ecmaVersion: 2018,
         sourceType: "script",
     },
+    globals: es2017,
 })
 
 module.exports = RuleTester
