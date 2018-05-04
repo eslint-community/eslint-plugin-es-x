@@ -9,3 +9,8 @@ This rule reports ES2018 [RegExp `s` flag](https://github.com/tc39/proposal-rege
 ```js
 const r1 = /./s
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-regexp-s-flag.js)
+- [Test source](../../tests/lib/rules/no-regexp-s-flag.js)

@@ -9,3 +9,8 @@ This rule reports ES2018 [RegExp named capture groups](https://github.com/tc39/p
 ```js
 const r1 = /(?<a>b)c/
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-regexp-named-capture-groups.js)
+- [Test source](../../tests/lib/rules/no-regexp-named-capture-groups.js)

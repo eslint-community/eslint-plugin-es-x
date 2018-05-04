@@ -13,3 +13,8 @@ if (a) {
     function g() {}
 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-block-scoped-functions.js)
+- [Test source](../../tests/lib/rules/no-block-scoped-functions.js)

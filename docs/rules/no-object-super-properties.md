@@ -13,3 +13,8 @@ let a = {
     f2() { super.f() }
 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-object-super-properties.js)
+- [Test source](../../tests/lib/rules/no-object-super-properties.js)

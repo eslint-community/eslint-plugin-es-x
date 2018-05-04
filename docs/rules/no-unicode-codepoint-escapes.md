@@ -19,3 +19,8 @@ const a2 = "a\u{62}b"
 const a\u0031 = `foo`
 const a2 = "a\u0062b"
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-unicode-codepoint-escapes.js)
+- [Test source](../../tests/lib/rules/no-unicode-codepoint-escapes.js)

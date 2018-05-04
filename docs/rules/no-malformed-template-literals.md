@@ -9,3 +9,8 @@ This rule reports ES2018 [template literals with invalid escape sequences](https
 ```js
 tag`\unicode`
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-malformed-template-literals.js)
+- [Test source](../../tests/lib/rules/no-malformed-template-literals.js)

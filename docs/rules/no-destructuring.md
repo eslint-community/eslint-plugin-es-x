@@ -14,3 +14,8 @@ function f({a, b}, [c, d]) {}
 ;[a, b] = array
 ;({c, d} = obj)
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-destructuring.js)
+- [Test source](../../tests/lib/rules/no-destructuring.js)

@@ -20,3 +20,8 @@ This rule reports ES2015 typed arrays as errors.
 ```js
 let numbers = new Int32Array(10)
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-typed-arrays.js)
+- [Test source](../../tests/lib/rules/no-typed-arrays.js)

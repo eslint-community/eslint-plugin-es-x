@@ -11,3 +11,8 @@ for (var a of b) {}
 for (let a of b) {}
 for (a of b) {}
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-for-of-loops.js)
+- [Test source](../../tests/lib/rules/no-for-of-loops.js)

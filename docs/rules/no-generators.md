@@ -16,3 +16,8 @@ class A {
     *f4() {}
 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-generators.js)
+- [Test source](../../tests/lib/rules/no-generators.js)

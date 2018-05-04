@@ -16,3 +16,8 @@ async function wrap() {
     for await (const x of xs) {}
 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-async-iteration.js)
+- [Test source](../../tests/lib/rules/no-async-iteration.js)

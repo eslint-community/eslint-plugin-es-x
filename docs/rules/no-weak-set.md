@@ -9,3 +9,8 @@ This rule reports ES2015 `WeakSet` class as errors.
 ```js
 let set = new WeakSet()
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-weak-set.js)
+- [Test source](../../tests/lib/rules/no-weak-set.js)

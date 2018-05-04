@@ -16,3 +16,8 @@ class A { async f5(a,) {} }
 foo(a,)
 new F(a,)
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-trailing-function-commas.js)
+- [Test source](../../tests/lib/rules/no-trailing-function-commas.js)

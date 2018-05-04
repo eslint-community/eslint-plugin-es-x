@@ -16,3 +16,8 @@ class A {
     set a(value) {}
 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-accessor-properties.js)
+- [Test source](../../tests/lib/rules/no-accessor-properties.js)

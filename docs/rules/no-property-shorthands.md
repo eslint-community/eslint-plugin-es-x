@@ -12,3 +12,8 @@ let obj = {
     b() {}
 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-property-shorthands.js)
+- [Test source](../../tests/lib/rules/no-property-shorthands.js)

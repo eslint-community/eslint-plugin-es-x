@@ -13,3 +13,8 @@ class A {
     }
 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-new-target.js)
+- [Test source](../../tests/lib/rules/no-new-target.js)

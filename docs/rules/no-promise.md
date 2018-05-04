@@ -9,3 +9,8 @@ This rule reports ES2015 `Promise` class as errors.
 ```js
 let p = new Promise()
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-promise.js)
+- [Test source](../../tests/lib/rules/no-promise.js)

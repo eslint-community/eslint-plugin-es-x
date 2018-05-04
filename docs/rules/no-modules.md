@@ -15,3 +15,8 @@ export default function() {}
 export { x4 } from "x4"
 export { x5 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-modules.js)
+- [Test source](../../tests/lib/rules/no-modules.js)

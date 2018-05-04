@@ -10,3 +10,8 @@ This rule reports ES2015 block-scoped variable declarations as errors.
 let a = 1
 const b = 2
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-block-scoped-variables.js)
+- [Test source](../../tests/lib/rules/no-block-scoped-variables.js)

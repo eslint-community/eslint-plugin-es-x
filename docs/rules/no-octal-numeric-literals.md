@@ -9,3 +9,8 @@ This rule reports ES2015 octal numeric literals as errors.
 ```js
 let a = 0o123
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-octal-numeric-literals.js)
+- [Test source](../../tests/lib/rules/no-octal-numeric-literals.js)

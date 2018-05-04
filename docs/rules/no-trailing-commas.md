@@ -10,3 +10,8 @@ This rule reports ES5 trailing commas in array/object literals as errors.
 var a = [1, 2,]
 var b = { x: 1, y: 2, }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-trailing-commas.js)
+- [Test source](../../tests/lib/rules/no-trailing-commas.js)

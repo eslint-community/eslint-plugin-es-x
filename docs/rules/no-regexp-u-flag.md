@@ -9,3 +9,8 @@ This rule reports ES2015 RegExp `u` flag as errors.
 ```js
 const r1 = /[☀️☔]/u
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-regexp-u-flag.js)
+- [Test source](../../tests/lib/rules/no-regexp-u-flag.js)

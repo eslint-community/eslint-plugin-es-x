@@ -12,3 +12,8 @@ let {a, ...rest} = obj
 ;({a, ...rest} = obj)
 function f({a, ...rest}) {}
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-rest-spread-properties.js)
+- [Test source](../../tests/lib/rules/no-rest-spread-properties.js)

@@ -10,3 +10,8 @@ This rule reports ES2015 template literals as errors.
 const a1 = `foo`
 const a2 = tag`foo`
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-template-literals.js)
+- [Test source](../../tests/lib/rules/no-template-literals.js)

@@ -9,3 +9,8 @@ This rule reports ES2018 [RegExp Unicode property escape sequences](https://gith
 ```js
 const r1 = /\p{Script=Hiragana}+/u
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-regexp-unicode-property-escapes.js)
+- [Test source](../../tests/lib/rules/no-regexp-unicode-property-escapes.js)

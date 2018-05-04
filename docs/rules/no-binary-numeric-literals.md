@@ -9,3 +9,8 @@ This rule reports ES2015 binary numeric literals as errors.
 ```js
 let a = 0b1010
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-binary-numeric-literals.js)
+- [Test source](../../tests/lib/rules/no-binary-numeric-literals.js)

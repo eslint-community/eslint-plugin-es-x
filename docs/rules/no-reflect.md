@@ -9,3 +9,8 @@ This rule reports ES2015 `Reflect` class as errors.
 ```js
 let value = Reflect.get(obj, key)
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-reflect.js)
+- [Test source](../../tests/lib/rules/no-reflect.js)

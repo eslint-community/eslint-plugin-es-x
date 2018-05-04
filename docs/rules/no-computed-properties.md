@@ -17,3 +17,8 @@ class A {
     [a]() {}
 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-computed-properties.js)
+- [Test source](../../tests/lib/rules/no-computed-properties.js)

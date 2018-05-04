@@ -10,3 +10,8 @@ This rule reports ES2015 class declarations as errors.
 class A {}
 const B = class {}
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-classes.js)
+- [Test source](../../tests/lib/rules/no-classes.js)

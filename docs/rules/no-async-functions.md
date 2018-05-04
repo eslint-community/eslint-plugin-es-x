@@ -13,3 +13,8 @@ let f3 = async () => {}
 let obj = { async f4() {} }
 class A { async f5() {} }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-async-functions.js)
+- [Test source](../../tests/lib/rules/no-async-functions.js)

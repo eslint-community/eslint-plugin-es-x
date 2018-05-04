@@ -10,3 +10,8 @@ This rule reports ES2015 spread elements as errors.
 const a1 = [1, 2, ...array]
 foo(...a, ...b)
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-spread-elements.js)
+- [Test source](../../tests/lib/rules/no-spread-elements.js)

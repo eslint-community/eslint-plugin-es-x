@@ -9,3 +9,8 @@ This rule reports ES2015 `Symbol` class as errors.
 ```js
 let s = Symbol("s")
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-symbol.js)
+- [Test source](../../tests/lib/rules/no-symbol.js)

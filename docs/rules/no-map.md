@@ -9,3 +9,8 @@ This rule reports ES2015 `Map` class as errors.
 ```js
 let map = new Map()
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-map.js)
+- [Test source](../../tests/lib/rules/no-map.js)

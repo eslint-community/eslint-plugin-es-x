@@ -19,3 +19,8 @@ let b = () => { doSomething() }
 let a = function() { return 100 }
 let b = function() { doSomething() }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-arrow-functions.js)
+- [Test source](../../tests/lib/rules/no-arrow-functions.js)

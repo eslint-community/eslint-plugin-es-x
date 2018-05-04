@@ -13,3 +13,8 @@ let f3 = (...args) => {}
 let obj = { f4(...args) {} }
 class A { f5(...args) {} }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-rest-parameters.js)
+- [Test source](../../tests/lib/rules/no-rest-parameters.js)
