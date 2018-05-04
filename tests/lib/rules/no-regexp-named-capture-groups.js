@@ -8,22 +8,47 @@ const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-regexp-named-capture-groups.js")
 
 new RuleTester().run("no-regexp-named-capture-groups", rule, {
-    valid: ["/foo/", "/\\k<a>/", "/\\(?<a>a\\)b/", "/\\\\\\(?<a>a\\)b/"],
+    valid: [
+        String.raw`/foo/`,
+        String.raw`/\k<a>/`,
+        String.raw`/\(?<a>a\)b/`,
+        String.raw`/\\\(?<a>a\)b/`,
+        String.raw`new RegExp('foo')`,
+        String.raw`new RegExp('\\k<a>')`,
+        String.raw`new RegExp('\\(?<a>a\\)b')`,
+        String.raw`new RegExp('\\\\\\(?<a>a\\)b')`,
+    ],
     invalid: [
         {
-            code: "/(?<a>a)b/",
+            code: String.raw`/(?<a>a)b/`,
             errors: ["ES2018 RegExp named capture groups are forbidden."],
         },
         {
-            code: "/(?<a>a)b\\k<a>/",
+            code: String.raw`/(?<a>a)b\k<a>/`,
             errors: ["ES2018 RegExp named capture groups are forbidden."],
         },
         {
-            code: "/\\\\(?<a>a)b/",
+            code: String.raw`/\\(?<a>a)b/`,
             errors: ["ES2018 RegExp named capture groups are forbidden."],
         },
         {
-            code: "/\\(?<a>a\\)\\\\(?<a>a)b/",
+            code: String.raw`/\(?<a>a\)\\(?<a>a)b/`,
+            errors: ["ES2018 RegExp named capture groups are forbidden."],
+        },
+        {
+            code: String.raw`new RegExp("(?<a>a)b")`,
+            errors: ["ES2018 RegExp named capture groups are forbidden."],
+        },
+        {
+            code: String.raw`new RegExp("(?<a>a)b\\k<a>")`,
+            errors: ["ES2018 RegExp named capture groups are forbidden."],
+        },
+        {
+            code: String.raw`new RegExp("\\\\(?<a>a)b")`,
+            errors: ["ES2018 RegExp named capture groups are forbidden."],
+        },
+        {
+            code: String.raw`new RegExp("\\(?<a>a\\)\\\\(?<a>a)b")`,
             errors: ["ES2018 RegExp named capture groups are forbidden."],
         },
     ],

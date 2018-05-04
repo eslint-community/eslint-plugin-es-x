@@ -8,7 +8,14 @@ const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-regexp-y-flag.js")
 
 new RuleTester().run("no-regexp-y-flag", rule, {
-    valid: ["/foo/gimsu", "a\n/b/y"],
+    valid: [
+        "/foo/gimsu",
+        "a\n/b/y",
+        "new RegExp('foo')",
+        "new RegExp('foo', 'gimsu')",
+        "new RegExp('foo', flags)",
+        "const flags = 'gimsu'; new RegExp('foo', flags)",
+    ],
     invalid: [
         {
             code: "/foo/y",
@@ -16,6 +23,19 @@ new RuleTester().run("no-regexp-y-flag", rule, {
         },
         {
             code: "/foo/gimsuy",
+            errors: ["ES2015 RegExp 'y' flag is forbidden."],
+        },
+        {
+            code: "new RegExp('foo', 'y')",
+            errors: ["ES2015 RegExp 'y' flag is forbidden."],
+        },
+        {
+            code: "new RegExp('foo', 'gimsuy')",
+            errors: ["ES2015 RegExp 'y' flag is forbidden."],
+        },
+        {
+            code:
+                "const pattern = 'foo', flags = 'gimsuy', regex = new RegExp(pattern, flags)",
             errors: ["ES2015 RegExp 'y' flag is forbidden."],
         },
     ],

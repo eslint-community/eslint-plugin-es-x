@@ -9,40 +9,82 @@ const rule = require("../../../lib/rules/no-regexp-unicode-property-escapes.js")
 
 new RuleTester().run("no-regexp-unicode-property-escapes", rule, {
     valid: [
-        "/p{Letter}/",
-        "/P{Letter}/",
-        "/\\p{Letter}/",
-        "/\\P{Letter}/",
-        "/\\\\p{Letter}/",
-        "/\\\\P{Letter}/",
+        String.raw`/p{Letter}/`,
+        String.raw`/P{Letter}/`,
+        String.raw`/\p{Letter}/`,
+        String.raw`/\P{Letter}/`,
+        String.raw`/\\p{Letter}/`,
+        String.raw`/\\P{Letter}/`,
+        String.raw`new RegExp('p{Letter}')`,
+        String.raw`new RegExp('P{Letter}')`,
+        String.raw`new RegExp('\\p{Letter}')`,
+        String.raw`new RegExp('\\P{Letter}')`,
+        String.raw`new RegExp('\\\\p{Letter}')`,
+        String.raw`new RegExp('\\\\P{Letter}')`,
     ],
     invalid: [
         {
-            code: "/\\p{Letter}/u",
+            code: String.raw`/\p{Letter}/u`,
             errors: [
                 "ES2018 RegExp Unicode property escape sequences are forbidden.",
             ],
         },
         {
-            code: "/\\P{Letter}/u",
+            code: String.raw`/\P{Letter}/u`,
             errors: [
                 "ES2018 RegExp Unicode property escape sequences are forbidden.",
             ],
         },
         {
-            code: "/\\\\\\p{Letter}/u",
+            code: String.raw`/\\\p{Letter}/u`,
             errors: [
                 "ES2018 RegExp Unicode property escape sequences are forbidden.",
             ],
         },
         {
-            code: "/\\\\\\P{Letter}/u",
+            code: String.raw`/\\\P{Letter}/u`,
             errors: [
                 "ES2018 RegExp Unicode property escape sequences are forbidden.",
             ],
         },
         {
-            code: "/\\p{Script=Hiragana}/u",
+            code: String.raw`/\p{Script=Hiragana}/u`,
+            errors: [
+                "ES2018 RegExp Unicode property escape sequences are forbidden.",
+            ],
+        },
+        {
+            code: String.raw`new RegExp('\\p{Letter}', 'u')`,
+            errors: [
+                "ES2018 RegExp Unicode property escape sequences are forbidden.",
+            ],
+        },
+        {
+            code: String.raw`new RegExp('\\P{Letter}', 'u')`,
+            errors: [
+                "ES2018 RegExp Unicode property escape sequences are forbidden.",
+            ],
+        },
+        {
+            code: String.raw`new RegExp('\\\\\\p{Letter}', 'u')`,
+            errors: [
+                "ES2018 RegExp Unicode property escape sequences are forbidden.",
+            ],
+        },
+        {
+            code: String.raw`new RegExp('\\\\\\P{Letter}', 'u')`,
+            errors: [
+                "ES2018 RegExp Unicode property escape sequences are forbidden.",
+            ],
+        },
+        {
+            code: String.raw`new RegExp('\\p{Script=Hiragana}', 'u')`,
+            errors: [
+                "ES2018 RegExp Unicode property escape sequences are forbidden.",
+            ],
+        },
+        {
+            code: String.raw`const pattern = '\\p{Script=Hiragana}', flags = 'u', regex = new RegExp(pattern, flags)`,
             errors: [
                 "ES2018 RegExp Unicode property escape sequences are forbidden.",
             ],
