@@ -35,6 +35,7 @@
     "codecov": "nyc report -r lcovonly && codecov",
     "coverage": "nyc report -r lcov && opener ./coverage/lcov-report/index.html",
     "lint": "eslint lib tests scripts .eslintrc.js --ignore-pattern !.eslintrc.js",
+    "new": "node scripts/new-rule",
     "pretest": "npm run -s lint",
     "test": "nyc mocha tests/**/*.js --reporter dot",
     "update:url": "npm run -s lint -- --fix",
