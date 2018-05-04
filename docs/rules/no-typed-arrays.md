@@ -1,4 +1,4 @@
-# disallow typed arrays (es/no-typed-arrays)
+# disallow ES2015 typed arrays (es/no-typed-arrays)
 
 This rule reports ES2015 typed arrays as errors.
 
