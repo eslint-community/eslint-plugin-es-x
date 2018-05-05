@@ -1,4 +1,4 @@
-#  (es/no-math-methods-2015)
+# disallow Math methods that ES2015 added (es/no-math-methods-2015)
 
 This rule reports ES2015 `Math` methods as errors.
 
@@ -27,3 +27,8 @@ This rule reports ES2015 `Math` methods as errors.
 ```js
 let sign = Math.sign(value)
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-math-methods-2015.js)
+- [Test source](../../tests/lib/rules/no-math-methods-2015.js)
