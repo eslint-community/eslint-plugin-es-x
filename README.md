@@ -52,6 +52,18 @@ For example, to enable only Rest/Spread Properties in ES2018, as similar to lega
 }
 ```
 
+### Configs
+
+This plugin provides the following configs.
+
+| Config ID | Description |
+|:----------|:------------|
+| `plugin:es/no-2018` | enable all ES2018 rules.
+| `plugin:es/no-2017` | enable all ES2017 rules.
+| `plugin:es/no-2016` | enable all ES2016 rules.
+| `plugin:es/no-2015` | enable all ES2015 rules.
+| `plugin:es/no-5` | enable all ES5 rules.
+
 ### Rules
 
 This plugin provides the following rules.

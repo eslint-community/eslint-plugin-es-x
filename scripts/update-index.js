@@ -5,7 +5,7 @@
 "use strict"
 
 const fs = require("fs")
-const { rules } = require("./rules")
+const { categories, rules } = require("./rules")
 
 fs.writeFileSync(
     "lib/index.js",
@@ -16,7 +16,19 @@ fs.writeFileSync(
 "use strict"
 
 module.exports = {
-    configs: {},
+    configs: {
+        ${Object.keys(categories)
+            .map(
+                id => `"no-${id.slice(2)}": {
+            rules: {
+                ${categories[id].rules
+                    .map(({ ruleId }) => `"es/${ruleId}": "error",`)
+                    .join("\n                ")}
+            },
+        },`
+            )
+            .join("\n        ")}
+    },
     rules: {
         ${rules
             .map(({ ruleId }) => `"${ruleId}": require("./rules/${ruleId}"),`)
