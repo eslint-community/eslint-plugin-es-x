@@ -1,4 +1,4 @@
-# disallow `Math.cbrt` method (es/no-math-cbrt)
+# disallow the `Math.cbrt` method (es/no-math-cbrt)
 
 This rule reports ES2015 `Math.cbrt` method as errors.
 

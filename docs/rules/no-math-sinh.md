@@ -1,4 +1,4 @@
-# disallow `Math.sinh` method (es/no-math-sinh)
+# disallow the `Math.sinh` method (es/no-math-sinh)
 
 This rule reports ES2015 `Math.sinh` method as errors.
 

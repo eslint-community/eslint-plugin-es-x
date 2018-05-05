@@ -1,4 +1,4 @@
-# disallow `Math.cosh` method (es/no-math-cosh)
+# disallow the `Math.cosh` method (es/no-math-cosh)
 
 This rule reports ES2015 `Math.cosh` method as errors.
 

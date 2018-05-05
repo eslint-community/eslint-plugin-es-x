@@ -1,4 +1,4 @@
-# disallow `Number.isSafeInteger` method (es/no-number-issafeinteger)
+# disallow the `Number.isSafeInteger` method (es/no-number-issafeinteger)
 
 This rule reports ES2015 `Number.isSafeInteger` method as errors.
 

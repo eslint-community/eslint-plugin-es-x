@@ -1,4 +1,4 @@
-# disallow `Math.expm1` method (es/no-math-expm1)
+# disallow the `Math.expm1` method (es/no-math-expm1)
 
 This rule reports ES2015 `Math.expm1` method as errors.
 

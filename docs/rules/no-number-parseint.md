@@ -1,4 +1,4 @@
-# disallow `Number.parseInt` method (es/no-number-parseint)
+# disallow the `Number.parseInt` method (es/no-number-parseint)
 
 This rule reports ES2015 `Number.parseInt` method as errors.
 

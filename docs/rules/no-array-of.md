@@ -1,4 +1,4 @@
-# disallow `Array.of` method (es/no-array-of)
+# disallow the `Array.of` method (es/no-array-of)
 
 This rule reports ES2015 `Array.of` method as errors.
 

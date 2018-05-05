@@ -1,4 +1,4 @@
-# disallow `Math.atanh` method (es/no-math-atanh)
+# disallow the `Math.atanh` method (es/no-math-atanh)
 
 This rule reports ES2015 `Math.atanh` method as errors.
 

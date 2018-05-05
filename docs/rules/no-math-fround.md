@@ -1,4 +1,4 @@
-# disallow `Math.fround` method (es/no-math-fround)
+# disallow the `Math.fround` method (es/no-math-fround)
 
 This rule reports ES2015 `Math.fround` method as errors.
 

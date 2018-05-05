@@ -1,4 +1,4 @@
-# disallow `Number.isNaN` method (es/no-number-isnan)
+# disallow the `Number.isNaN` method (es/no-number-isnan)
 
 This rule reports ES2015 `Number.isNaN` method as errors.
 

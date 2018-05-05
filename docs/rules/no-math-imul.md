@@ -1,4 +1,4 @@
-# disallow `Math.imul` method (es/no-math-imul)
+# disallow the `Math.imul` method (es/no-math-imul)
 
 This rule reports ES2015 `Math.imul` method as errors.
 

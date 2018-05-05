@@ -1,4 +1,4 @@
-# disallow `Math.log10` method (es/no-math-log10)
+# disallow the `Math.log10` method (es/no-math-log10)
 
 This rule reports ES2015 `Math.log10` method as errors.
 

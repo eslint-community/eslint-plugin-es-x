@@ -1,4 +1,4 @@
-# disallow `Object.setPrototypeOf` method (es/no-object-setprototypeof)
+# disallow the `Object.setPrototypeOf` method (es/no-object-setprototypeof)
 
 This rule reports ES2015 `Object.setPrototypeOf` as errors.
 

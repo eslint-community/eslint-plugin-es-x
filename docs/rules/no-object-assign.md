@@ -1,4 +1,4 @@
-# disallow `Object.assign` method (es/no-object-assign)
+# disallow the `Object.assign` method (es/no-object-assign)
 
 This rule reports ES2015 `Object.assign` method as errors.
 

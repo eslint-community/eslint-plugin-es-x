@@ -1,4 +1,4 @@
-# disallow `String.fromCodePoint` method (es/no-string-fromcodepoint)
+# disallow the `String.fromCodePoint` method (es/no-string-fromcodepoint)
 
 This rule reports ES2015 `String.fromCodePoint` as errors.
 

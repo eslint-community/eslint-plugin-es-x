@@ -1,4 +1,4 @@
-# disallow `Math.hypot` method (es/no-math-hypot)
+# disallow the `Math.hypot` method (es/no-math-hypot)
 
 This rule reports ES2015 `Math.hypot` method as errors.
 

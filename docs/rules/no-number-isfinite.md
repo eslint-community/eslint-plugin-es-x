@@ -1,4 +1,4 @@
-# disallow `Number.isFinite` method (es/no-number-isfinite)
+# disallow the `Number.isFinite` method (es/no-number-isfinite)
 
 This rule reports ES2015 `Number.isFinite` method as errors.
 

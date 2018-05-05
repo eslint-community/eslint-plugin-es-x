@@ -1,4 +1,4 @@
-# disallow `Number.MIN_SAFE_INTEGER` property (es/no-number-minsafeinteger)
+# disallow the `Number.MIN_SAFE_INTEGER` property (es/no-number-minsafeinteger)
 
 This rule reports ES2015 `Number.MIN_SAFE_INTEGER` property as errors.
 

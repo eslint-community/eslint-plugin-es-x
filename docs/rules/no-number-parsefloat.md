@@ -1,4 +1,4 @@
-# disallow `Number.parseFloat` method (es/no-number-parsefloat)
+# disallow the `Number.parseFloat` method (es/no-number-parsefloat)
 
 This rule reports ES2015 `Number.parseFloat` method as errors.
 

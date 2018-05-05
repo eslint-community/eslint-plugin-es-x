@@ -1,4 +1,4 @@
-# disallow `Number.isInteger` method (es/no-number-isinteger)
+# disallow the `Number.isInteger` method (es/no-number-isinteger)
 
 This rule reports ES2015 `Number.isInteger` method as errors.
 

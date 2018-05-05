@@ -1,4 +1,4 @@
-# disallow `String.raw` method (es/no-string-raw)
+# disallow the `String.raw` method (es/no-string-raw)
 
 This rule reports ES2015 `String.raw` method as errors.
 

@@ -1,4 +1,4 @@
-# disallow `Object.getOwnPropertySymbols` method (es/no-object-getownpropertysymbols)
+# disallow the `Object.getOwnPropertySymbols` method (es/no-object-getownpropertysymbols)
 
 This rule reports ES2015 `Object.getOwnPropertySymbols` method as errors.
 

@@ -1,4 +1,4 @@
-# disallow `Math.acosh` method (es/no-math-acosh)
+# disallow the `Math.acosh` method (es/no-math-acosh)
 
 This rule reports ES2015 `Math.acosh` method as errors.
 

@@ -1,4 +1,4 @@
-# disallow `Math.log2` method (es/no-math-log2)
+# disallow the `Math.log2` method (es/no-math-log2)
 
 This rule reports ES2015 `Math.log2` method as errors.
 

@@ -1,4 +1,4 @@
-# disallow `Math.log1p` method (es/no-math-log1p)
+# disallow the `Math.log1p` method (es/no-math-log1p)
 
 This rule reports ES2015 `Math.log1p` method as errors.
 

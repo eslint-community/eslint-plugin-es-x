@@ -1,4 +1,4 @@
-# disallow `Number.EPSILON` property (es/no-number-epsilon)
+# disallow the `Number.EPSILON` property (es/no-number-epsilon)
 
 This rule reports ES2015 `Number.EPSILON` property as errors.
 

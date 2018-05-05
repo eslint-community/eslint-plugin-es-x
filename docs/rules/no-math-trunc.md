@@ -1,4 +1,4 @@
-# disallow `Math.trunc` method (es/no-math-trunc)
+# disallow the `Math.trunc` method (es/no-math-trunc)
 
 This rule reports ES2015 `Math.trunc` method as errors.
 

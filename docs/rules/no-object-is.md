@@ -1,4 +1,4 @@
-# disallow `Object.is` method (es/no-object-is)
+# disallow the `Object.is` method (es/no-object-is)
 
 This rule reports ES2015 `Object.is` method as errors.
 

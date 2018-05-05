@@ -1,4 +1,4 @@
-# disallow `Math.clz32` method (es/no-math-clz32)
+# disallow the `Math.clz32` method (es/no-math-clz32)
 
 This rule reports ES2015 `Math.clz32` method as errors.
 

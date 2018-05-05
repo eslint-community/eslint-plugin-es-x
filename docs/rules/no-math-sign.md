@@ -1,4 +1,4 @@
-# disallow `Math.sign` method (es/no-math-sign)
+# disallow the `Math.sign` method (es/no-math-sign)
 
 This rule reports ES2015 `Math.sign` method as errors.
 

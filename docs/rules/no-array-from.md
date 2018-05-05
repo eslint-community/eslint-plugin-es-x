@@ -1,4 +1,4 @@
-# disallow `Array.from` method (es/no-array-from)
+# disallow the `Array.from` method (es/no-array-from)
 
 This rule reports ES2015 `Array.from` method as errors.
 

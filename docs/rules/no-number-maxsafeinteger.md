@@ -1,4 +1,4 @@
-# disallow `Number.MAX_SAFE_INTEGER` property (es/no-number-maxsafeinteger)
+# disallow the `Number.MAX_SAFE_INTEGER` property (es/no-number-maxsafeinteger)
 
 This rule reports ES2015 `Number.MAX_SAFE_INTEGER` property as errors.
 

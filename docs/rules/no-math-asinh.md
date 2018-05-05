@@ -1,4 +1,4 @@
-# disallow `Math.asinh` method (es/no-math-asinh)
+# disallow the `Math.asinh` method (es/no-math-asinh)
 
 This rule reports ES2015 `Math.asinh` method as errors.
 
