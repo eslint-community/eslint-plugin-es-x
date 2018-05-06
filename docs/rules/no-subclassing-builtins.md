@@ -1,4 +1,4 @@
-#  (es/no-subclassing-builtins)
+# disallow the subclassing of the built-in classes (es/no-subclassing-builtins)
 
 This rule reports ES2015 subclassing of built-in classes as errors.
 
@@ -24,3 +24,8 @@ class MyArray extends Array {
     // ...
 }
 ```
+
+## 📚 References
+
+- [Rule source](../../lib/rules/no-subclassing-builtins.js)
+- [Test source](../../tests/lib/rules/no-subclassing-builtins.js)
