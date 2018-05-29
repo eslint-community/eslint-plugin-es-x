@@ -3,13 +3,24 @@ sudo: false
 language: node_js
 node_js:
   - "6.5.0"
-  - "6"
-  - "7"
   - "8"
-  - "9"
+  - "10"
 
 script:
   - npm test
 
 after_success:
   - npm run codecov
+
+before_deploy:
+  - npm run docs:build
+
+deploy:
+  provider: pages
+  github-token: $ATOKEN
+  keep-history: true
+  local-dir: docs/.vuepress/dist
+  on:
+    branch: master
+    node: "10"
+  skip-cleanup: true

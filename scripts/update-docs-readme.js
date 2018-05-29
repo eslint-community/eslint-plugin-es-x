@@ -10,18 +10,25 @@ const { categories } = require("./rules")
 const ruleSectionContent = Object.keys(categories)
     .map(toSection)
     .join("\n")
-const currentReadmeContent = fs.readFileSync("README.md", "utf8")
-const newReadmeContent = currentReadmeContent.replace(
-    /<!--RULE_TABLE_BEGIN-->[\s\S]*<!--RULE_TABLE_END-->/,
-    `<!--RULE_TABLE_BEGIN-->\n${ruleSectionContent}\n<!--RULE_TABLE_END-->`
-)
 
-fs.writeFileSync("README.md", newReadmeContent)
+fs.writeFileSync(
+    "docs/rules/README.md",
+    `# All Rules
+
+This plugin provides the following rules.
+
+- 🔧 mark means that the \`--fix\` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fix) can automatically fix some of the problems reported by the rule.
+
+${ruleSectionContent}
+`
+)
 
 //------------------------------------------------------------------------------
 
 function toSection(categoryId) {
-    return `#### ${categoryId}
+    return `## ${categoryId}
+
+The \`extends: "plugin:es/no-${categoryId.toLowerCase()}"\` config enables the following rules.
 
 ${toTable(categories[categoryId])}
 `
@@ -34,7 +41,7 @@ ${rules.map(toTableRow).join("\n")}`
 }
 
 function toTableRow({ ruleId, description, fixable }) {
-    const title = `[es/${ruleId}](docs/rules/${ruleId}.md)`
+    const title = `[es/${ruleId}](./${ruleId}.md)`
     const icons = fixable ? "🔧" : ""
     return `| ${title} | ${description}. | ${icons} |`
 }
