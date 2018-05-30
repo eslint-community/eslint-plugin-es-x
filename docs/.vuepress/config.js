@@ -4,8 +4,7 @@
  */
 "use strict"
 
-const fs = require("fs")
-const path = require("path")
+const { rules } = require("../../scripts/rules")
 require("../../scripts/update-docs-readme")
 
 module.exports = {
@@ -28,26 +27,22 @@ module.exports = {
             { text: "Rules", link: "/rules/" },
         ],
 
+        sidebarDepth: 0,
         sidebar: [
             {
                 title: "Guide",
                 collapsable: false,
-                children: fs
-                    .readdirSync("docs/guide")
-                    .map(file => `/guide/${file}`),
+                children: [["/", "Introduction"], "/guide/getting-started"],
             },
             {
                 title: "Rules",
                 collapsable: false,
                 children: [
                     "/rules/",
-                    ...fs
-                        .readdirSync("docs/rules")
-                        .filter(file => file !== "README.md")
-                        .map(file => [
-                            `/rules/${file}`,
-                            `es/${path.basename(file, ".md")}`,
-                        ]),
+                    ...rules.map(({ ruleId }) => [
+                        `/rules/${ruleId}`,
+                        `es/${ruleId}`,
+                    ]),
                 ],
             },
         ],

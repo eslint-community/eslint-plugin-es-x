@@ -1,10 +1,4 @@
----
-home: true
-actionText: Get Started →
-actionLink: /guide/getting-started
----
-
-<center>
+# eslint-plugin-es
 
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-es.svg)](https://www.npmjs.com/package/eslint-plugin-es)
 [![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es.svg)](http://www.npmtrends.com/eslint-plugin-es)
@@ -12,9 +6,9 @@ actionLink: /guide/getting-started
 [![Coverage Status](https://codecov.io/gh/mysticatea/eslint-plugin-es/branch/master/graph/badge.svg)](https://codecov.io/gh/mysticatea/eslint-plugin-es)
 [![Dependency Status](https://david-dm.org/mysticatea/eslint-plugin-es.svg)](https://david-dm.org/mysticatea/eslint-plugin-es)
 
-</center>
+ESLint rules which disallow each ECMAScript syntax.
 
-----
+## 🏁 Goal
 
 [Espree](https://github.com/eslint/espree#readme), the default parser of [ESLint](https://eslint.org/), has supported `ecmaVersion` option.
 However, it doesn't support to enable each syntactic feature individually.

@@ -8,11 +8,11 @@ const fs = require("fs")
 const path = require("path")
 const libRoot = path.resolve(__dirname, "../lib/rules")
 const categories = {
-    ES2018: { rules: [] },
-    ES2017: { rules: [] },
-    ES2016: { rules: [] },
-    ES2015: { rules: [] },
-    ES5: { rules: [] },
+    ES2018: { id: "ES2018", rules: [] },
+    ES2017: { id: "ES2017", rules: [] },
+    ES2016: { id: "ES2016", rules: [] },
+    ES2015: { id: "ES2015", rules: [] },
+    ES5: { id: "ES5", rules: [] },
 }
 const rules = []
 
