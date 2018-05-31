@@ -9,7 +9,7 @@ const { es2017 } = require("globals")
 
 RuleTester.setDefaultConfig({
     parserOptions: {
-        ecmaVersion: 2018,
+        ecmaVersion: 2019,
         sourceType: "script",
     },
     globals: es2017,

@@ -4,6 +4,14 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fix) can automatically fix some of the problems reported by the rule.
 
+## ES2019
+
+The `extends: "plugin:es/no-es2019"` config enables the following rules.
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es/no-optional-catch-binding](./no-optional-catch-binding.md) | disallow optional `catch` binding. |  |
+
 ## ES2018
 
 The `extends: "plugin:es/no-es2018"` config enables the following rules.

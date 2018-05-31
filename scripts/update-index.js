@@ -18,6 +18,7 @@ fs.writeFileSync(
 module.exports = {
     configs: {
         ${Object.keys(categories)
+            .filter(id => !categories[id].noConfig)
             .map(
                 id => `"no-${id.slice(2)}": {
             rules: {
