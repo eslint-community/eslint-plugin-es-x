@@ -21,6 +21,9 @@ module.exports = {
         docsBranch: "master",
         editLinks: true,
         lastUpdated: true,
+        serviceWorker: {
+            updatePopup: true,
+        },
 
         nav: [
             { text: "Guide", link: "/guide/getting-started.md" },
