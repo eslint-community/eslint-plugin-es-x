@@ -10,6 +10,7 @@ The `extends: "plugin:es/no-es2019"` config enables the following rules.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
+| [es/no-json-superset](./no-json-superset.md) | disallow `\u2028` and `\u2029` in string literals. | 🔧 |
 | [es/no-optional-catch-binding](./no-optional-catch-binding.md) | disallow optional `catch` binding. |  |
 
 ## ES2018

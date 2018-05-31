@@ -24,7 +24,11 @@ for (const filename of fs.readdirSync(libRoot)) {
     const category = /category:[\s\n]+"(.+)"/.exec(content)[1]
     const description = /description:[\s\n]+"(.+?)\.?"/.exec(content)[1]
     const fixable = /fixable:[\s\n]+"(.+)"/.test(content)
-    const rule = { ruleId, description, fixable }
+    const rule = {
+        ruleId,
+        description: JSON.parse(`"${description}"`),
+        fixable,
+    }
 
     categories[category].rules.push(rule)
     rules.push(rule)
