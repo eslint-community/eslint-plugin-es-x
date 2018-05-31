@@ -12,5 +12,5 @@ let value = Reflect.get(obj, key)
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-reflect.js)
-- [Test source](../../tests/lib/rules/no-reflect.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-reflect.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-reflect.js)

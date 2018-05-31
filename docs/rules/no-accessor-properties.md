@@ -19,5 +19,5 @@ class A {
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-accessor-properties.js)
-- [Test source](../../tests/lib/rules/no-accessor-properties.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-accessor-properties.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-accessor-properties.js)

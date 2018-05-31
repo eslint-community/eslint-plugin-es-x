@@ -12,5 +12,5 @@ const b = Number.isSafeInteger(value)
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-number-issafeinteger.js)
-- [Test source](../../tests/lib/rules/no-number-issafeinteger.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-number-issafeinteger.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-number-issafeinteger.js)

@@ -8,6 +8,7 @@ const fs = require("fs")
 const path = require("path")
 const { rules } = require("./rules")
 const docsRoot = path.resolve(__dirname, "../docs/rules/")
+const { version } = require("../package.json")
 
 for (const { ruleId, description, fixable } of rules) {
     const filePath = path.join(docsRoot, `${ruleId}.md`)
@@ -30,8 +31,8 @@ ${content}
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/${ruleId}.js)
-- [Test source](../../tests/lib/rules/${ruleId}.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v${version}/lib/rules/${ruleId}.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v${version}/tests/lib/rules/${ruleId}.js)
 `
 
     fs.writeFileSync(filePath, newContent)

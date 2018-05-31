@@ -12,5 +12,5 @@ function f(a = 1) {}
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-default-parameters.js)
-- [Test source](../../tests/lib/rules/no-default-parameters.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-default-parameters.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-default-parameters.js)

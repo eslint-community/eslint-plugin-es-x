@@ -16,5 +16,5 @@ if (a) {
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-block-scoped-functions.js)
-- [Test source](../../tests/lib/rules/no-block-scoped-functions.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-block-scoped-functions.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-block-scoped-functions.js)

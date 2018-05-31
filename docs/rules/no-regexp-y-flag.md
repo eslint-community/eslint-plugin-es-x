@@ -12,5 +12,5 @@ const r1 = /foo/y
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-regexp-y-flag.js)
-- [Test source](../../tests/lib/rules/no-regexp-y-flag.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-regexp-y-flag.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-regexp-y-flag.js)

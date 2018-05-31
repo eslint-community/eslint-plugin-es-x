@@ -23,5 +23,5 @@ const a2 = "foo"+bar+"baz"
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-template-literals.js)
-- [Test source](../../tests/lib/rules/no-template-literals.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-template-literals.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-template-literals.js)

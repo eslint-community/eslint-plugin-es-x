@@ -12,5 +12,5 @@ const b = Number.EPSILON
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-number-epsilon.js)
-- [Test source](../../tests/lib/rules/no-number-epsilon.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-number-epsilon.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-number-epsilon.js)

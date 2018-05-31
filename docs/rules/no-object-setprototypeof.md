@@ -12,5 +12,5 @@ Object.setPrototypeOf(obj, proto)
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-object-setprototypeof.js)
-- [Test source](../../tests/lib/rules/no-object-setprototypeof.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-object-setprototypeof.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-object-setprototypeof.js)

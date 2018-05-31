@@ -12,5 +12,5 @@ const n = Math.sinh(value)
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-math-sinh.js)
-- [Test source](../../tests/lib/rules/no-math-sinh.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-math-sinh.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-math-sinh.js)

@@ -12,5 +12,5 @@ const array = Array.from("hello")
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-array-from.js)
-- [Test source](../../tests/lib/rules/no-array-from.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-array-from.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-array-from.js)

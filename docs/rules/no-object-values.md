@@ -12,5 +12,5 @@ const values = Object.values(obj)
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-object-values.js)
-- [Test source](../../tests/lib/rules/no-object-values.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-object-values.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-object-values.js)

@@ -13,5 +13,5 @@ const B = class {}
 
 ## 📚 References
 
-- [Rule source](../../lib/rules/no-classes.js)
-- [Test source](../../tests/lib/rules/no-classes.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/lib/rules/no-classes.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.2.0/tests/lib/rules/no-classes.js)
