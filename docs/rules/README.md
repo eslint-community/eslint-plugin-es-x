@@ -6,8 +6,7 @@ This plugin provides the following rules.
 
 ## ES2019
 
-The `extends: "plugin:es/no-es2019"` config enables the following rules.
-
+There is no config which enables all rules in this category.
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es/no-json-superset](./no-json-superset.md) | disallow `\u2028` and `\u2029` in string literals. | 🔧 |
