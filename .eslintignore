@@ -2,6 +2,5 @@
 /coverage
 /node_modules
 
-!.eslintrc.js
 !.vuepress
 /docs/.vuepress/dist

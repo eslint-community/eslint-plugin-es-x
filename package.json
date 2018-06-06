@@ -36,7 +36,7 @@
     "coverage": "nyc report -r lcov && opener ./coverage/lcov-report/index.html",
     "docs:build": "vuepress build docs",
     "docs:watch": "vuepress dev docs",
-    "lint": "eslint lib tests scripts .eslintrc.js --ignore-pattern !.eslintrc.js",
+    "lint": "eslint lib tests scripts",
     "new": "node scripts/new-rule",
     "pretest": "npm run -s lint",
     "test": "nyc mocha tests/**/*.js --reporter dot",
