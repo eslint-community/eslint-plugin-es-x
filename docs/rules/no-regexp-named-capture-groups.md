@@ -6,9 +6,9 @@ This rule reports ES2018 [RegExp named capture groups](https://github.com/tc39/p
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
-const r1 = /(?<a>b)c/
-```
+<eslint-playground type="bad" code="/*eslint es/no-regexp-named-capture-groups: error */
+const r1 = /(?&lt;a&gt;b)c/
+" />
 
 ## 📚 References
 

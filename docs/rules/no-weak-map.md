@@ -6,9 +6,9 @@ This rule reports ES2015 `WeakMap` class as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-weak-map: error */
 let map = new WeakMap()
-```
+" />
 
 ## 📚 References
 

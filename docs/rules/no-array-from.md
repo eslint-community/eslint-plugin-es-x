@@ -6,9 +6,9 @@ This rule reports ES2015 `Array.from` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
-const array = Array.from("hello")
-```
+<eslint-playground type="bad" code="/*eslint es/no-array-from: error */
+const array = Array.from(&quot;hello&quot;)
+" />
 
 ## 📚 References
 

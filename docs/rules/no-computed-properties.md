@@ -6,17 +6,17 @@ This rule reports ES2015 computed properties as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-computed-properties: error */
 const obj = {
     [a]: 1,
     [b]() {},
-    get [c]() {}
-    set [c](value) {}
+    get [c]() {},
+    set [c](value) {},
 }
 class A {
     [a]() {}
 }
-```
+" />
 
 ## 📚 References
 

@@ -17,9 +17,9 @@ This rule reports ES2015 typed arrays as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-typed-arrays: error */
 let numbers = new Int32Array(10)
-```
+" />
 
 ## 📚 References
 

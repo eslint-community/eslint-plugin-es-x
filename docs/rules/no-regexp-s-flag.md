@@ -6,9 +6,9 @@ This rule reports ES2018 [RegExp `s` flag](https://github.com/tc39/proposal-rege
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-regexp-s-flag: error */
 const r1 = /./s
-```
+" />
 
 ## 📚 References
 

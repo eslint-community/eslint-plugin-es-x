@@ -6,13 +6,13 @@ This rule reports ES2015 `super` property accesses in object literals as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-object-super-properties: error */
 let a = {
     __proto__: obj,
     f1() { super.a },
     f2() { super.f() }
 }
-```
+" />
 
 ## 📚 References
 

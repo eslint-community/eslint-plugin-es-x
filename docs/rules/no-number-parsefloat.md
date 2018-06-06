@@ -6,9 +6,9 @@ This rule reports ES2015 `Number.parseFloat` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-number-parsefloat: error */
 const b = Number.parseFloat(value)
-```
+" />
 
 ## 📚 References
 

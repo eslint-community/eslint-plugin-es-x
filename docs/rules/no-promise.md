@@ -6,9 +6,9 @@ This rule reports ES2015 `Promise` class as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-promise: error */
 let p = new Promise()
-```
+" />
 
 ## 📚 References
 

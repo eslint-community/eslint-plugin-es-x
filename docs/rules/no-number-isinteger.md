@@ -6,9 +6,9 @@ This rule reports ES2015 `Number.isInteger` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-number-isinteger: error */
 const b = Number.isInteger(value)
-```
+" />
 
 ## 📚 References
 

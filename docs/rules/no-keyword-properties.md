@@ -6,11 +6,11 @@ This rule reports ES5 reserved words as property names as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-keyword-properties: error */
 var a = { if: 1, class: 2 }
 a.if = 2
 a.class = 3
-```
+" />
 
 ## 📚 References
 

@@ -6,9 +6,9 @@ This rule reports ES2015 `Symbol` class as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
-let s = Symbol("s")
-```
+<eslint-playground type="bad" code="/*eslint es/no-symbol: error */
+let s = Symbol(&quot;s&quot;)
+" />
 
 ## 📚 References
 

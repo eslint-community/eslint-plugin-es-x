@@ -6,7 +6,7 @@ This rule reports ES2018 [async iteration](https://github.com/tc39/proposal-asyn
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-async-iteration: error */
 async function* f1() {}
 let f2 = async function*() {}
 let obj = { async* f4() {} }
@@ -15,7 +15,7 @@ class A { async* f5() {} }
 async function wrap() {
     for await (const x of xs) {}
 }
-```
+" />
 
 ## 📚 References
 

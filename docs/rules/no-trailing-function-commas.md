@@ -6,16 +6,16 @@ This rule reports ES2017 [trailing commas in parameter/argument lists](https://g
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-trailing-function-commas: error */
 async function f1(a,) {}
 let f2 = async function(a,) {}
-let f3 = async (a,) => {}
+let f3 = async (a,) =&gt; {}
 let obj = { async f4(a,) {} }
 class A { async f5(a,) {} }
 
 foo(a,)
 new F(a,)
-```
+" />
 
 ## 📚 References
 

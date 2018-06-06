@@ -6,15 +6,14 @@ This rule reports ES2015 modules as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
-import x1 from "x1"
-import {x2} from "x2"
-import * as x3 from "x3"
-export default { a: 1 }
+<eslint-playground type="bad" code="/*eslint es/no-modules: error */
+import x1 from &quot;x1&quot;
+import {x2} from &quot;x2&quot;
+import * as x3 from &quot;x3&quot;
 export default function() {}
-export { x4 } from "x4"
+export { x4 } from &quot;x4&quot;
 export { x5 }
-```
+" />
 
 ## 📚 References
 

@@ -6,9 +6,9 @@ This rule reports ES2018 [RegExp Unicode property escape sequences](https://gith
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-regexp-unicode-property-escapes: error */
 const r1 = /\p{Script=Hiragana}+/u
-```
+" />
 
 ## 📚 References
 

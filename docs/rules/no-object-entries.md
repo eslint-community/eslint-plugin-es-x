@@ -6,9 +6,9 @@ This rule reports ES2017 `Object.entries` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-object-entries: error */
 const entries = Object.entries(obj)
-```
+" />
 
 ## 📚 References
 

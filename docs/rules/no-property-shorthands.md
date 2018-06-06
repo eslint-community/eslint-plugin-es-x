@@ -6,12 +6,12 @@ This rule reports ES2015 property shorthands as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-property-shorthands: error */
 let obj = {
     a,
     b() {}
 }
-```
+" />
 
 ## 📚 References
 

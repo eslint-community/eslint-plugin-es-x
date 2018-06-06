@@ -6,9 +6,9 @@ This rule reports ES2015 `Math.expm1` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-math-expm1: error */
 const n = Math.expm1(value)
-```
+" />
 
 ## 📚 References
 

@@ -6,9 +6,9 @@ This rule reports ES2015 `Math.cbrt` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-math-cbrt: error */
 const n = Math.cbrt(value)
-```
+" />
 
 ## 📚 References
 

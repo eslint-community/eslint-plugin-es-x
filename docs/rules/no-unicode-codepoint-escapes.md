@@ -8,17 +8,17 @@ This rule reports ES2015 Unicode code point escape sequences as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-unicode-codepoint-escapes: error */
 const a\u{31} = `foo`
-const a2 = "a\u{62}b"
-```
+const a2 = &quot;a\u{62}b&quot;
+" />
 
 👌 Examples of **correct** code for this rule:
 
-```js
+<eslint-playground type="good" code="/*eslint es/no-unicode-codepoint-escapes: error */
 const a\u0031 = `foo`
-const a2 = "a\u0062b"
-```
+const a2 = &quot;a\u0062b&quot;
+" />
 
 ## 📚 References
 

@@ -6,9 +6,9 @@ This rule reports ES2017 `Object.values` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-object-values: error */
 const values = Object.values(obj)
-```
+" />
 
 ## 📚 References
 

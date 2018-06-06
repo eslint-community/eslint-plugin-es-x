@@ -4,3 +4,4 @@
 
 !.eslintrc.js
 !.vuepress
+/docs/.vuepress/dist

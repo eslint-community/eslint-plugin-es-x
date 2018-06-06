@@ -6,9 +6,9 @@ This rule reports ES2018 [template literals with invalid escape sequences](https
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-malformed-template-literals: error */
 tag`\unicode`
-```
+" />
 
 ## 📚 References
 

@@ -6,9 +6,9 @@ This rule reports ES2015 `Reflect` class as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-reflect: error */
 let value = Reflect.get(obj, key)
-```
+" />
 
 ## 📚 References
 

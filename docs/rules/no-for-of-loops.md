@@ -6,11 +6,11 @@ This rule reports ES2015 `for-of` statements as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-for-of-loops: error */
 for (var a of b) {}
 for (let a of b) {}
 for (a of b) {}
-```
+" />
 
 ## 📚 References
 

@@ -6,9 +6,9 @@ This rule reports ES2015 `WeakSet` class as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-weak-set: error */
 let set = new WeakSet()
-```
+" />
 
 ## 📚 References
 

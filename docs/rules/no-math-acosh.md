@@ -6,9 +6,9 @@ This rule reports ES2015 `Math.acosh` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-math-acosh: error */
 const n = Math.acosh(value)
-```
+" />
 
 ## 📚 References
 

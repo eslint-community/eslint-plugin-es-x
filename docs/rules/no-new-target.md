@@ -6,13 +6,13 @@ This rule reports ES2015 `new.target` meta property as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-new-target: error */
 class A {
     constructor() {
         doSomething(new.target)
     }
 }
-```
+" />
 
 ## 📚 References
 

@@ -6,9 +6,9 @@ This rule reports ES2015 `Number.MAX_SAFE_INTEGER` property as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-number-maxsafeinteger: error */
 const b = Number.MAX_SAFE_INTEGER
-```
+" />
 
 ## 📚 References
 

@@ -13,6 +13,7 @@ module.exports = {
     description: "ESLint plugin about ECMAScript syntax.",
     serviceWorker: true,
     ga: "UA-12936571-6",
+    evergreen: true,
 
     themeConfig: {
         repo: "mysticatea/eslint-plugin-es",

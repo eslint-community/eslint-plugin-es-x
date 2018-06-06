@@ -8,10 +8,10 @@ This rule reports ES2019 `\u2028` and `\u2029` in string literals as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
-const u2028 = "●" // \u2028 in this string
-const u2029 = "●" // \u2029 in this string
-```
+<eslint-playground type="bad" code="/*eslint es/no-json-superset: error */
+const u2028 = &quot; &quot; // \u2028 in this string
+const u2029 = &quot; &quot; // \u2029 in this string
+" />
 
 ## 📚 References
 

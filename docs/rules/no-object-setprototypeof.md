@@ -6,9 +6,9 @@ This rule reports ES2015 `Object.setPrototypeOf` as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-object-setprototypeof: error */
 Object.setPrototypeOf(obj, proto)
-```
+" />
 
 ## 📚 References
 

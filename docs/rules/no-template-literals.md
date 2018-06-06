@@ -8,18 +8,18 @@ This rule reports ES2015 template literals as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-template-literals: error */
 const a1 = `foo`
 const a2 = `foo${bar}baz`
 const a3 = tag`foo`
-```
+" />
 
 👌 Examples of **correct** code for this rule:
 
-```js
-const a1 = "foo"
-const a2 = "foo"+bar+"baz"
-```
+<eslint-playground type="good" code="/*eslint es/no-template-literals: error */
+const a1 = &quot;foo&quot;
+const a2 = &quot;foo&quot;+bar+&quot;baz&quot;
+" />
 
 ## 📚 References
 

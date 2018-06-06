@@ -6,9 +6,9 @@ This rule reports ES2015 `Number.EPSILON` property as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-number-epsilon: error */
 const b = Number.EPSILON
-```
+" />
 
 ## 📚 References
 

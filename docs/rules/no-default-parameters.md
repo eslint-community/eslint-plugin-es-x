@@ -6,9 +6,9 @@ This rule reports ES2015 default parameters as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-default-parameters: error */
 function f(a = 1) {}
-```
+" />
 
 ## 📚 References
 

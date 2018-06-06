@@ -6,10 +6,10 @@ This rule reports ES2016 [exponential operators](https://github.com/rwaldron/exp
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
-let a = a ** 2
-let a **= b
-```
+<eslint-playground type="bad" code="/*eslint es/no-exponential-operators: error */
+let a = b ** 2
+a **= b
+" />
 
 ## 📚 References
 

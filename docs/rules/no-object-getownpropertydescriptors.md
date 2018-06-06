@@ -6,9 +6,9 @@ This rule reports ES2017 `Object.getOwnPropertyDescriptors` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-object-getownpropertydescriptors: error */
 const descriptors = Object.getOwnPropertyDescriptors(obj)
-```
+" />
 
 ## 📚 References
 

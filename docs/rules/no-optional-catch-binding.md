@@ -6,13 +6,13 @@ This rule reports ES2019 optional `catch` binding as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-optional-catch-binding: error */
 try {
     f()
 } catch {
     g()
 }
-```
+" />
 
 ## 📚 References
 

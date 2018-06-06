@@ -6,7 +6,7 @@ This rule reports ES2015 generator function declarations as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-generators: error */
 function* f1() {}
 const f2 = function*() {}
 const obj = {
@@ -15,7 +15,7 @@ const obj = {
 class A {
     *f4() {}
 }
-```
+" />
 
 ## 📚 References
 

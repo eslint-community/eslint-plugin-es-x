@@ -6,10 +6,10 @@ This rule reports ES2015 class declarations as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-classes: error */
 class A {}
 const B = class {}
-```
+" />
 
 ## 📚 References
 

@@ -6,10 +6,10 @@ This rule reports ES2015 spread elements as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-spread-elements: error */
 const a1 = [1, 2, ...array]
 foo(...a, ...b)
-```
+" />
 
 ## 📚 References
 

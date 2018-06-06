@@ -6,9 +6,9 @@ This rule reports ES2015 `Array.of` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-array-of: error */
 const array = Array.of(1, 2, 3)
-```
+" />
 
 ## 📚 References
 

@@ -6,12 +6,12 @@ This rule reports ES2018 [rest/spread properties](https://github.com/tc39/propos
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-rest-spread-properties: error */
 let obj = {...obj0}
 let {a, ...rest} = obj
 ;({a, ...rest} = obj)
 function f({a, ...rest}) {}
-```
+" />
 
 ## 📚 References
 

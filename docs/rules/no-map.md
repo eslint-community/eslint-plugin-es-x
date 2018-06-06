@@ -6,9 +6,9 @@ This rule reports ES2015 `Map` class as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-```js
+<eslint-playground type="bad" code="/*eslint es/no-map: error */
 let map = new Map()
-```
+" />
 
 ## 📚 References
 
