@@ -4,7 +4,7 @@
  */
 "use strict"
 
-const { rules } = require("../../scripts/rules")
+const { categories } = require("../../scripts/rules")
 require("../../scripts/update-docs-readme")
 
 module.exports = {
@@ -26,29 +26,22 @@ module.exports = {
             updatePopup: true,
         },
 
-        nav: [
-            { text: "Guide", link: "/guide/getting-started.md" },
-            { text: "Rules", link: "/rules/" },
-        ],
+        nav: [{ text: "Guide", link: "/" }, { text: "Rules", link: "/rules/" }],
 
         sidebarDepth: 0,
-        sidebar: [
-            {
-                title: "Guide",
-                collapsable: false,
-                children: [["/", "Introduction"], "/guide/getting-started"],
-            },
-            {
-                title: "Rules",
-                collapsable: false,
-                children: [
-                    "/rules/",
-                    ...rules.map(({ ruleId }) => [
+        sidebar: {
+            "/rules/": [
+                "/rules/",
+                ...Object.keys(categories).map(category => ({
+                    title: category,
+                    collapsable: false,
+                    children: categories[category].rules.map(({ ruleId }) => [
                         `/rules/${ruleId}`,
                         `es/${ruleId}`,
                     ]),
-                ],
-            },
-        ],
+                })),
+            ],
+            "/": ["/", "/getting-started", "/rules/"],
+        },
     },
 }
