@@ -18,7 +18,7 @@
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "codecov": "^3.0.2",
-    "eslint": "github:eslint/eslint#upgrade-espree",
+    "eslint": "^5.0.0-rc.0",
     "eslint-plugin-mysticatea": "^5.0.0-beta.15",
     "eslint4b": "^4.19.2",
     "globals": "^11.5.0",
