@@ -2,7 +2,7 @@
     <eslint-editor
         :linter="linter"
         :config="config"
-        :code="code"
+        :code="cookedCode"
         :class="`eslint-playground-${type}`"
         class="eslint-playground"
         dark
@@ -69,6 +69,15 @@ export default {
             },
             linter: null,
         }
+    },
+
+    computed: {
+        cookedCode() {
+            return (this.code || "").replace(
+                /&#x([0-9a-zA-Z]+);/g,
+                (_, codePoint) => String.fromCodePoint(parseInt(codePoint, 16))
+            )
+        },
     },
 
     async mounted() {
