@@ -12,5 +12,5 @@ const r1 = /\p{Script=Hiragana}+/u
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.3.0/lib/rules/no-regexp-unicode-property-escapes.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.3.0/tests/lib/rules/no-regexp-unicode-property-escapes.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.3.1/lib/rules/no-regexp-unicode-property-escapes.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.3.1/tests/lib/rules/no-regexp-unicode-property-escapes.js)
