@@ -23,6 +23,13 @@ new RuleTester().run("no-regexp-lookbehind-assertions", rule, {
         String.raw`new RegExp("(\\?<!a)b")`,
         String.raw`new RegExp("\\(?<=a\\)b")`,
         String.raw`new RegExp("\\(?<!a\\)b")`,
+
+        // Allow those in character classes.
+        String.raw`/[(?<=a)b]/`,
+        String.raw`/[(?<!a)b]/`,
+
+        // Ignore syntax errors.
+        String.raw`new RegExp("(?<=a(", "u")`,
     ],
     invalid: [
         {

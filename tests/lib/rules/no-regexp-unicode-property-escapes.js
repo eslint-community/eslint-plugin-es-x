@@ -21,6 +21,9 @@ new RuleTester().run("no-regexp-unicode-property-escapes", rule, {
         String.raw`new RegExp('\\P{Letter}')`,
         String.raw`new RegExp('\\\\p{Letter}')`,
         String.raw`new RegExp('\\\\P{Letter}')`,
+
+        // Ignore syntax errors.
+        String.raw`new RegExp('\\p{Letter', 'u')`,
     ],
     invalid: [
         {
@@ -85,6 +88,20 @@ new RuleTester().run("no-regexp-unicode-property-escapes", rule, {
         },
         {
             code: String.raw`const pattern = '\\p{Script=Hiragana}', flags = 'u', regex = new RegExp(pattern, flags)`,
+            errors: [
+                "ES2018 RegExp Unicode property escape sequences are forbidden.",
+            ],
+        },
+
+        // It's valid even if in character classes.
+        {
+            code: String.raw`/[\p{Letter}]/u`,
+            errors: [
+                "ES2018 RegExp Unicode property escape sequences are forbidden.",
+            ],
+        },
+        {
+            code: String.raw`/[\P{Letter}]/u`,
             errors: [
                 "ES2018 RegExp Unicode property escape sequences are forbidden.",
             ],

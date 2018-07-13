@@ -17,6 +17,16 @@ new RuleTester().run("no-regexp-named-capture-groups", rule, {
         String.raw`new RegExp('\\k<a>')`,
         String.raw`new RegExp('\\(?<a>a\\)b')`,
         String.raw`new RegExp('\\\\\\(?<a>a\\)b')`,
+
+        // Capture groups but unnamed.
+        `/(foo)\\1/`,
+
+        // Allow those in character classes.
+        String.raw`/[(?<a>a)b]/`,
+        String.raw`/[(?<a>a)b\k<a>]/`,
+
+        // Ignore syntax errors.
+        String.raw`new RegExp("(?<a", "u")`,
     ],
     invalid: [
         {
