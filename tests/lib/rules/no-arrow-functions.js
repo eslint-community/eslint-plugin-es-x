@@ -72,11 +72,11 @@ a;
             `,
             output: `
 var comment1 = function(a){return  /*comment*/ a};
-var comment2 = function(a){return  /*
+var comment2 = function(a){return( /*
 comment
-*/ a};
-var comment3 = function(a){return  // comment
-a};
+*/ a)};
+var comment3 = function(a){return( // comment
+a)};
             `,
             errors: [
                 "ES2015 arrow function expressions are forbidden.",
@@ -161,6 +161,17 @@ const f = function() {
                 "ES2015 arrow function expressions are forbidden.",
                 "ES2015 arrow function expressions are forbidden.",
             ],
+        },
+        {
+            code: `
+const f = () =>
+    777
+            `,
+            output: `
+const f = function(){return(
+    777)}
+            `,
+            errors: ["ES2015 arrow function expressions are forbidden."],
         },
     ],
 })
