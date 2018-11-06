@@ -11,7 +11,7 @@ new RuleTester().run("no-object-super-properties", rule, {
     valid: [
         "class A { foo() { super.a } }",
         "class A { foo() { super.foo() } }",
-        "class A { constructor() { super() } }",
+        "class A extends B { constructor() { super() } }",
     ],
     invalid: [
         {

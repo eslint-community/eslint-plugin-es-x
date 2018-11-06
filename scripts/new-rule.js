@@ -16,7 +16,7 @@ const logger = console
         process.exitCode = 1
         return
     }
-    if (!/^[\w-]+$/.test(ruleId)) {
+    if (!/^[\w-]+$/u.test(ruleId)) {
         logger.error("Invalid RuleID '%s'.", ruleId)
         process.exitCode = 1
         return

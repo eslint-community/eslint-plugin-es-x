@@ -14,8 +14,8 @@ for (const { ruleId, description, fixable } of rules) {
     const filePath = path.join(docsRoot, `${ruleId}.md`)
     const content = fs
         .readFileSync(filePath, "utf8")
-        .replace(/^#.+\n+(?:- .+\n)*/, "")
-        .replace(/## 📚 References[\s\S]+/, "")
+        .replace(/^#.+\n+(?:- .+\n)*/u, "")
+        .replace(/## 📚 References[\s\S]+/u, "")
         .trim()
     const headerLines = [`# ${description} (es/${ruleId})`, ""]
 
