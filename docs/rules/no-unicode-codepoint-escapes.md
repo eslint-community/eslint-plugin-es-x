@@ -1,6 +1,6 @@
 # disallow Unicode code point escape sequences (es/no-unicode-codepoint-escapes)
 
-- 🔧 The `--fix` option on the [command line](http://eslint.org/docs/user-guide/command-line-interface#fix) can automatically fix some of the problems reported by this rule.
+- 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
 This rule reports ES2015 Unicode code point escape sequences as errors.
 

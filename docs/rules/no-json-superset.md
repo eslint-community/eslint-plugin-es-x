@@ -1,6 +1,6 @@
 # disallow `\u2028` and `\u2029` in string literals (es/no-json-superset)
 
-- 🔧 The `--fix` option on the [command line](http://eslint.org/docs/user-guide/command-line-interface#fix) can automatically fix some of the problems reported by this rule.
+- 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
 This rule reports ES2019 `\u2028` and `\u2029` in string literals as errors.
 
