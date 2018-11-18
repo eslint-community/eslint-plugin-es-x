@@ -23,48 +23,56 @@ new RuleTester().run("no-trailing-function-commas", rule, {
     invalid: [
         {
             code: "function f(a,) {}",
+            output: "function f(a) {}",
             errors: [
                 "ES2017 trailing commas in parameter/argument lists are forbidden.",
             ],
         },
         {
             code: "(function(a,) {})",
+            output: "(function(a) {})",
             errors: [
                 "ES2017 trailing commas in parameter/argument lists are forbidden.",
             ],
         },
         {
             code: "(a,) => {}",
+            output: "(a) => {}",
             errors: [
                 "ES2017 trailing commas in parameter/argument lists are forbidden.",
             ],
         },
         {
             code: "({ f(a,) {} })",
+            output: "({ f(a) {} })",
             errors: [
                 "ES2017 trailing commas in parameter/argument lists are forbidden.",
             ],
         },
         {
             code: "class A { f(a,) {} }",
+            output: "class A { f(a) {} }",
             errors: [
                 "ES2017 trailing commas in parameter/argument lists are forbidden.",
             ],
         },
         {
             code: "(class { f(a,) {} })",
+            output: "(class { f(a) {} })",
             errors: [
                 "ES2017 trailing commas in parameter/argument lists are forbidden.",
             ],
         },
         {
             code: "f(a,)",
+            output: "f(a)",
             errors: [
                 "ES2017 trailing commas in parameter/argument lists are forbidden.",
             ],
         },
         {
             code: "new F(a,)",
+            output: "new F(a)",
             errors: [
                 "ES2017 trailing commas in parameter/argument lists are forbidden.",
             ],

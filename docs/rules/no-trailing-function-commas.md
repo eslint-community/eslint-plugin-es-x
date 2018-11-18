@@ -1,5 +1,7 @@
 # disallow trailing commas in parameter/argument lists (es/no-trailing-function-commas)
 
+- 🔧 The `--fix` option on the [command line](http://eslint.org/docs/user-guide/command-line-interface#fix) can automatically fix some of the problems reported by this rule.
+
 This rule reports ES2017 [trailing commas in parameter/argument lists](https://github.com/tc39/proposal-trailing-function-commas#readme) as errors.
 
 ## Examples

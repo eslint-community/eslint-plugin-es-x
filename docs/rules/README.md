@@ -38,7 +38,7 @@ The `extends: "plugin:es/no-es2017"` config enables the following rules.
 | [es/no-object-getownpropertydescriptors](./no-object-getownpropertydescriptors.md) | disallow the `Object.getOwnPropertyDescriptors` method. |  |
 | [es/no-object-values](./no-object-values.md) | disallow the `Object.values` method. |  |
 | [es/no-shared-array-buffer](./no-shared-array-buffer.md) | disallow the `SharedArrayBuffer` class. |  |
-| [es/no-trailing-function-commas](./no-trailing-function-commas.md) | disallow trailing commas in parameter/argument lists. |  |
+| [es/no-trailing-function-commas](./no-trailing-function-commas.md) | disallow trailing commas in parameter/argument lists. | 🔧 |
 
 ## ES2016
 
