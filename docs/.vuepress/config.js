@@ -29,19 +29,17 @@ module.exports = {
         nav: [{ text: "Guide", link: "/" }, { text: "Rules", link: "/rules/" }],
 
         sidebarDepth: 0,
-        sidebar: {
-            "/rules/": [
-                "/rules/",
-                ...Object.keys(categories).map(category => ({
-                    title: category,
-                    collapsable: false,
-                    children: categories[category].rules.map(({ ruleId }) => [
-                        `/rules/${ruleId}`,
-                        `es/${ruleId}`,
-                    ]),
-                })),
-            ],
-            "/": ["/", "/getting-started", "/rules/"],
-        },
+        sidebar: [
+            "/",
+            "/rules/",
+            ...Object.keys(categories).map(category => ({
+                title: category,
+                collapsable: false,
+                children: categories[category].rules.map(({ ruleId }) => [
+                    `/rules/${ruleId}`,
+                    `es/${ruleId}`,
+                ]),
+            })),
+        ],
     },
 }
