@@ -12,5 +12,5 @@ const b = Number.MAX_SAFE_INTEGER
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.3.2/lib/rules/no-number-maxsafeinteger.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.3.2/tests/lib/rules/no-number-maxsafeinteger.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.4.0/lib/rules/no-number-maxsafeinteger.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v1.4.0/tests/lib/rules/no-number-maxsafeinteger.js)
