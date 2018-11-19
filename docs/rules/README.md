@@ -102,7 +102,7 @@ The `extends: "plugin:es/no-es2015"` config enables the following rules.
 | [es/no-object-super-properties](./no-object-super-properties.md) | disallow `super` property accesses in object literals. |  |
 | [es/no-octal-numeric-literals](./no-octal-numeric-literals.md) | disallow octal numeric literals. |  |
 | [es/no-promise](./no-promise.md) | disallow the `Promise` class. |  |
-| [es/no-property-shorthands](./no-property-shorthands.md) | disallow property shorthands. |  |
+| [es/no-property-shorthands](./no-property-shorthands.md) | disallow property shorthands. | 🔧 |
 | [es/no-proxy](./no-proxy.md) | disallow the `Proxy` class. |  |
 | [es/no-reflect](./no-reflect.md) | disallow the `Reflect` class. |  |
 | [es/no-regexp-u-flag](./no-regexp-u-flag.md) | disallow RegExp `u` flag. |  |

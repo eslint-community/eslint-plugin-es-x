@@ -20,18 +20,32 @@ new RuleTester().run("no-property-shorthands", rule, {
     invalid: [
         {
             code: "({ a })",
+            output: "({ a: a })",
             errors: ["ES2015 property shorthands are forbidden."],
         },
         {
             code: "({ a() {} })",
+            output: "({ a: function() {} })",
             errors: ["ES2015 property shorthands are forbidden."],
         },
         {
             code: "({ * a() {} })",
+            output: "({ a: function*() {} })",
             errors: ["ES2015 property shorthands are forbidden."],
         },
         {
             code: "({ [a]() {} })",
+            output: "({ [a]: function() {} })",
+            errors: ["ES2015 property shorthands are forbidden."],
+        },
+        {
+            code: "({ async a() {} })",
+            output: "({ a: async function() {} })",
+            errors: ["ES2015 property shorthands are forbidden."],
+        },
+        {
+            code: "({ async * [a]() {} })",
+            output: "({ [a]: async function*() {} })",
             errors: ["ES2015 property shorthands are forbidden."],
         },
     ],
