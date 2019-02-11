@@ -29,7 +29,7 @@ new RuleTester({
             errors: ["ES2015 modules are forbidden."],
         },
         {
-            code: "export {x}",
+            code: "const x = 0; export {x}",
             errors: ["ES2015 modules are forbidden."],
         },
         {
