@@ -12,27 +12,27 @@ new RuleTester().run("no-arrow-functions", rule, {
     invalid: [
         {
             code: "() => 1",
-            output: "function(){return  1}",
+            output: "(function() { return 1 })",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
             code: "() => {}",
-            output: "function() {}",
+            output: "(function() {})",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
             code: "() => this.data",
-            output: "function(){return  this.data}.bind(this)",
+            output: "(function() { return this.data }.bind(this))",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
             code: "a => a",
-            output: "function(a){return  a}",
+            output: "(function(a) { return a })",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
             code: "(a,  b) => a - b",
-            output: "function(a,  b){return  a - b}",
+            output: "(function(a,  b) { return a - b })",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
@@ -53,12 +53,12 @@ new RuleTester().run("no-arrow-functions", rule, {
             code:
                 "var fnDestructuring = ([a, b] = [1, 2], {x: c} = {x: a + b}) => a + b + c;",
             output:
-                "var fnDestructuring = function([a, b] = [1, 2], {x: c} = {x: a + b}){return  a + b + c};",
+                "var fnDestructuring = function([a, b] = [1, 2], {x: c} = {x: a + b}) { return a + b + c };",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
             code: "let square = n => ({ square: n * n });",
-            output: "let square = function(n){return  ({ square: n * n })};",
+            output: "let square = function(n) { return ({ square: n * n }) };",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
@@ -71,12 +71,12 @@ var comment3 = a => // comment
 a;
             `,
             output: `
-var comment1 = function(a){return  /*comment*/ a};
-var comment2 = function(a){return( /*
+var comment1 = function(a) { return /*comment*/ a };
+var comment2 = function(a) { return (/*
 comment
-*/ a)};
-var comment3 = function(a){return( // comment
-a)};
+*/ a) };
+var comment3 = function(a) { return (// comment
+a) };
             `,
             errors: [
                 "ES2015 arrow function expressions are forbidden.",
@@ -168,8 +168,7 @@ const f = () =>
     777
             `,
             output: `
-const f = function(){return(
-    777)}
+const f = function() { return (777) }
             `,
             errors: ["ES2015 arrow function expressions are forbidden."],
         },

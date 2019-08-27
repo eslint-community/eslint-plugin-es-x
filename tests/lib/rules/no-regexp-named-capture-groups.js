@@ -19,7 +19,7 @@ new RuleTester().run("no-regexp-named-capture-groups", rule, {
         String.raw`new RegExp('\\\\\\(?<a>a\\)b')`,
 
         // Capture groups but unnamed.
-        `/(foo)\\1/`,
+        "/(foo)\\1/",
 
         // Allow those in character classes.
         String.raw`/[(?<a>a)b]/`,

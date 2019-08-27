@@ -19,7 +19,7 @@ const a2 = "foo"+bar+"baz"
     invalid: [
         {
             code: "`foo`",
-            output: `"foo"`,
+            output: '"foo"',
             errors: ["ES2015 template literals are forbidden."],
         },
         {
@@ -30,7 +30,7 @@ const a2 = "foo"+bar+"baz"
         {
             //eslint-disable-next-line no-template-curly-in-string
             code: "`foo${a}bar${b}baz`",
-            output: `"foo"+a+"bar"+b+"baz"`,
+            output: '"foo"+a+"bar"+b+"baz"',
             errors: ["ES2015 template literals are forbidden."],
         },
         {
@@ -53,35 +53,35 @@ const a3 = tag\`foo\`
         {
             //eslint-disable-next-line no-template-curly-in-string
             code: "`${a}${b}`",
-            output: `""+a+b`,
+            output: '""+a+b',
             errors: ["ES2015 template literals are forbidden."],
         },
         {
             code: "``",
-            output: `""`,
+            output: '""',
             errors: ["ES2015 template literals are forbidden."],
         },
         {
             //eslint-disable-next-line no-template-curly-in-string
             code: '`${""}`',
-            output: `""`,
+            output: '""',
             errors: ["ES2015 template literals are forbidden."],
         },
         {
             //eslint-disable-next-line no-template-curly-in-string
             code: "`${''}`",
-            output: `''`,
+            output: "''",
             errors: ["ES2015 template literals are forbidden."],
         },
         {
             code: "`\n\t '\"\\`\\$\\${`",
-            output: `"\\n\\t '\\"\`$\${"`,
+            output: '"\\n\\t \'\\"`$${"',
             errors: ["ES2015 template literals are forbidden."],
         },
         {
             //eslint-disable-next-line no-template-curly-in-string
             code: "`${'abc'}`",
-            output: `'abc'`,
+            output: "'abc'",
             errors: ["ES2015 template literals are forbidden."],
         },
     ],
