@@ -1,0 +1,59 @@
+name: CI
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: 0 0 * * 0
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node: 12.x
+    - name: Install Packages
+      run: npm install
+    - name: Lint
+      run: npm run -s lint
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        eslint: [6.x, 5.x, 4.x]
+        node: [12.x, 10.x, 8.x, 6.x]
+        exclude:
+          # ESLint 6.x requires Node 8 or upper.
+          - eslint: 6.x
+            node: 6.x
+          # Run ESLint 5.x only on Node 6 and the latest Node.
+          - eslint: 5.x
+            node: 8.x
+          - eslint: 5.x
+            node: 10.x
+          # Run ESLint 4.x only on Node 6 and the latest Node.
+          - eslint: 4.x
+            node: 8.x
+          - eslint: 4.x
+            node: 10.x
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node: ${{ matrix.node }}
+    - name: Install Packages
+      run: npm install && npm install --no-save eslint@${{ matrix.eslint }}
+    - name: Test
+      run: npm run -s test:mocha
+    - name: Send Coverage
+      run: npm run -s codecov
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
