@@ -22,6 +22,8 @@ jobs:
         run: |
           cd docs/.vuepress/dist
           git init
+          git config user.email "public@mysticatea.dev"
+          git config user.name "Toru Nagashima"
           git add .
           git commit -m "stash"
           git remote add origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
