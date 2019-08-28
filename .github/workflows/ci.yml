@@ -53,6 +53,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
+      # Failed to install ESLint@4 only on npm@3.x
+      - name: Install npm v6
+        run: npm install --global npm@6.x
+        if: matrix.node == '6.x'
       - name: Install Packages
         run: npm install
       - name: Install ESLint ${{ matrix.eslint }}
