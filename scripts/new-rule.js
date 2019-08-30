@@ -43,10 +43,11 @@ module.exports = {
             url: "",
         },
         fixable: null,
-        schema: [],
         messages: {
             forbidden: "",
         },
+        schema: [],
+        type: "problem",
     },
     create(context) {
         return {}
@@ -65,6 +66,12 @@ module.exports = {
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/${ruleId}.js")
 
+if (!RuleTester.isSupported(2020)) {
+    //eslint-disable-next-line no-console
+    console.log("Skip the tests of ${ruleId}.")
+    return
+}
+
 new RuleTester().run("${ruleId}", rule, {
     valid: [],
     invalid: [],
@@ -81,8 +88,9 @@ This rule reports ??? as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-\`\`\`js
-\`\`\`
+<eslint-playground type="bad" code="/*eslint es/${ruleId}: error */
+
+" />
 `
     )
 
