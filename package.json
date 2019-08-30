@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "eslint-utils": "^1.4.2",
-    "regexpp": "^2.0.1"
+    "regexpp": "^3.0.0"
   },
   "devDependencies": {
     "@mysticatea/eslint-plugin": "^11.0.0",
