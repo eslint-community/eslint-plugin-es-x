@@ -12,3 +12,8 @@ let b = BigInt(100)
 let c = new BigInt64Array(10)
 let d = new BigUint64Array(10)
 " />
+
+## 📚 References
+
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/lib/rules/no-bigint.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/tests/lib/rules/no-bigint.js)

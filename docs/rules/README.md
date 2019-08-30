@@ -4,17 +4,28 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
-## ES2019
+## ES2020
 
 There is no config which enables all rules in this category.
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
+| [es/no-bigint](./no-bigint.md) | disallow `bigint` syntax and built-ins. |  |
+| [es/no-dynamic-import](./no-dynamic-import.md) | disallow `import()` syntax. |  |
+| [es/no-promise-all-settled](./no-promise-all-settled.md) | disallow `Promise.allSettled` function. |  |
+
+## ES2019
+
+The `extends: "plugin:es/no-2019"` config enables the following rules.
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
 | [es/no-json-superset](./no-json-superset.md) | disallow `\u2028` and `\u2029` in string literals. | 🔧 |
 | [es/no-optional-catch-binding](./no-optional-catch-binding.md) | disallow optional `catch` binding. |  |
+| [es/no-regexp-unicode-property-escapes-2019](./no-regexp-unicode-property-escapes-2019.md) | disallow the new values of RegExp Unicode property escape sequences in ES2019. |  |
 
 ## ES2018
 
-The `extends: "plugin:es/no-es2018"` config enables the following rules.
+The `extends: "plugin:es/no-2018"` config enables the following rules.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -28,7 +39,7 @@ The `extends: "plugin:es/no-es2018"` config enables the following rules.
 
 ## ES2017
 
-The `extends: "plugin:es/no-es2017"` config enables the following rules.
+The `extends: "plugin:es/no-2017"` config enables the following rules.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -42,7 +53,7 @@ The `extends: "plugin:es/no-es2017"` config enables the following rules.
 
 ## ES2016
 
-The `extends: "plugin:es/no-es2016"` config enables the following rules.
+The `extends: "plugin:es/no-2016"` config enables the following rules.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -50,7 +61,7 @@ The `extends: "plugin:es/no-es2016"` config enables the following rules.
 
 ## ES2015
 
-The `extends: "plugin:es/no-es2015"` config enables the following rules.
+The `extends: "plugin:es/no-2015"` config enables the following rules.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -122,7 +133,7 @@ The `extends: "plugin:es/no-es2015"` config enables the following rules.
 
 ## ES5
 
-The `extends: "plugin:es/no-es5"` config enables the following rules.
+The `extends: "plugin:es/no-5"` config enables the following rules.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|

@@ -28,3 +28,8 @@ For example, the following patterns are valid in ES2019, but syntax error in ES2
 const r1 = /\p{Extended_Pictographic}/u
 const r2 = /\p{Script=Dogr}/u
 " />
+
+## 📚 References
+
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/lib/rules/no-regexp-unicode-property-escapes-2019.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/tests/lib/rules/no-regexp-unicode-property-escapes-2019.js)

@@ -9,3 +9,8 @@ This rule reports ES2020 [`Promise.allSettled` function](https://github.com/tc39
 <eslint-playground type="bad" code="/*eslint es/no-promise-all-settled: error */
 const p = Promise.allSettled(promises)
 " />
+
+## 📚 References
+
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/lib/rules/no-promise-all-settled.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/tests/lib/rules/no-promise-all-settled.js)
