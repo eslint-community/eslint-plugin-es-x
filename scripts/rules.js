@@ -8,6 +8,7 @@ const fs = require("fs")
 const path = require("path")
 const libRoot = path.resolve(__dirname, "../lib/rules")
 const categories = {
+    ES2020: { id: "ES2020", rules: [], noConfig: true },
     ES2019: { id: "ES2019", rules: [] },
     ES2018: { id: "ES2018", rules: [] },
     ES2017: { id: "ES2017", rules: [] },
