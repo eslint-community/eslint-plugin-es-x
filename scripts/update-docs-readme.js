@@ -28,7 +28,9 @@ ${ruleSectionContent}
 function toSection(categoryId) {
     const comment = categories[categoryId].noConfig
         ? "There is no config which enables all rules in this category."
-        : `The \`extends: "plugin:es/no-${categoryId.toLowerCase()}"\` config enables the following rules.\n`
+        : `The \`extends: "plugin:es/no-${categoryId.slice(
+              2
+          )}"\` config enables the following rules.\n`
 
     return `## ${categoryId}
 
