@@ -12,7 +12,7 @@
 
 <script>
 // https://github.com/vuejs/vuepress/issues/451
-import EslintEditor from "../../../node_modules/vue-eslint-editor"
+import EslintEditor from "../../../node_modules/vue-eslint-editor/dist/index.vue"
 import { rules } from "../../../"
 
 export default {
@@ -60,10 +60,14 @@ export default {
                     // ES2017 globals
                     Atomics: false,
                     SharedArrayBuffer: false,
+                    // ES2020 globals
+                    BigInt: false,
+                    BigInt64Array: false,
+                    BigUint64Array: false,
                 },
                 rules: {},
                 parserOptions: {
-                    ecmaVersion: 2019,
+                    ecmaVersion: 2020,
                     sourceType: "module",
                 },
             },
