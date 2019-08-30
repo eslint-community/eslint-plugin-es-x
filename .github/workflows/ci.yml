@@ -30,17 +30,14 @@ jobs:
     strategy:
       matrix:
         eslint: [6.x, 5.x, 4.x]
-        node: [12.x, 10.x, 8.x, 6.x]
+        node: [12.x, 10.x, 8.x]
         exclude:
-          # ESLint 6.x requires Node 8 or upper.
-          - eslint: 6.x
-            node: 6.x
-          # Run ESLint 5.x only on Node 6 and the latest Node.
+          # Run ESLint 5.x only on the latest Node.
           - eslint: 5.x
             node: 8.x
           - eslint: 5.x
             node: 10.x
-          # Run ESLint 4.x only on Node 6 and the latest Node.
+          # Run ESLint 4.x only on the latest Node.
           - eslint: 4.x
             node: 8.x
           - eslint: 4.x
@@ -53,10 +50,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      # Failed to install ESLint@4 only on npm@3.x
-      - name: Install npm v6
-        run: npm install --global npm@6.x
-        if: matrix.node == '6.x'
       - name: Install Packages
         run: npm install
       - name: Install ESLint ${{ matrix.eslint }}
