@@ -8,11 +8,9 @@ const { categories } = require("../../scripts/rules")
 require("../../scripts/update-docs-readme")
 
 module.exports = {
-    base: "/eslint-plugin-es/",
     title: "eslint-plugin-es",
     description: "ESLint plugin about ECMAScript syntax.",
     serviceWorker: true,
-    ga: "UA-12936571-6",
     evergreen: true,
 
     themeConfig: {
@@ -21,7 +19,6 @@ module.exports = {
         docsDir: "docs",
         docsBranch: "master",
         editLinks: true,
-        lastUpdated: true,
         serviceWorker: {
             updatePopup: true,
         },

@@ -17,7 +17,7 @@ So we can enable arbitrary syntactic features with the combination of `ecmaVersi
 
 ## 💿 Installation
 
-Use [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/).
+Use [npm](https://www.npmjs.com/) or a compatible tool.
 
 ```console
 npm install --save-dev eslint eslint-plugin-es
@@ -57,6 +57,7 @@ This plugin provides the following configs.
 
 | Config ID | Description |
 |:----------|:------------|
+| `plugin:es/no-2019` | enable all rules which disallow ES2019 syntax.
 | `plugin:es/no-2018` | enable all rules which disallow ES2018 syntax.
 | `plugin:es/no-2017` | enable all rules which disallow ES2017 syntax.
 | `plugin:es/no-2016` | enable all rules which disallow ES2016 syntax.
