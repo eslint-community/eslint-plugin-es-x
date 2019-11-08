@@ -18,7 +18,7 @@ So we can enable arbitrary syntactic features with the combination of `ecmaVersi
 
 ## 📖 Usage
 
-See [documentation](https://mysticatea.github.io/eslint-plugin-es/)
+See [documentation](https://eslint-plugin-es.mysticatea.dev/)
 
 ## 🚥 Semantic Versioning Policy
 
