@@ -22,7 +22,7 @@ for (const filename of fs.readdirSync(libRoot)) {
     const ruleId = path.basename(filename, ".js")
     const filePath = path.join(libRoot, filename)
     const content = fs.readFileSync(filePath, "utf8")
-    const category = /category:[\s\n]+"(.+)"/u.exec(content)[1]
+    const category = /category:[\s\n]+(?:undefined|"(.+)")/u.exec(content)[1]
     const description = /description:[\s\n]+"(.+?)\.?"/u.exec(content)[1]
     const fixable = /fixable:[\s\n]+"(.+)"/u.test(content)
     const rule = {
@@ -31,7 +31,9 @@ for (const filename of fs.readdirSync(libRoot)) {
         fixable,
     }
 
-    categories[category].rules.push(rule)
+    if (category) {
+        categories[category].rules.push(rule)
+    }
     rules.push(rule)
 }
 
