@@ -23,5 +23,5 @@ let numbers = new Int32Array(10)
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/lib/rules/no-typed-arrays.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/tests/lib/rules/no-typed-arrays.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.0/lib/rules/no-typed-arrays.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.0/tests/lib/rules/no-typed-arrays.js)

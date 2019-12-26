@@ -12,5 +12,5 @@ const b = Number.isFinite(value)
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/lib/rules/no-number-isfinite.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/tests/lib/rules/no-number-isfinite.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.0/lib/rules/no-number-isfinite.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.0/tests/lib/rules/no-number-isfinite.js)

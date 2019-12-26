@@ -22,5 +22,5 @@ const a2 = &quot;a\u0062b&quot;
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/lib/rules/no-unicode-codepoint-escapes.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v2.0.0/tests/lib/rules/no-unicode-codepoint-escapes.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.0/lib/rules/no-unicode-codepoint-escapes.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.0/tests/lib/rules/no-unicode-codepoint-escapes.js)
