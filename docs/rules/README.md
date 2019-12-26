@@ -139,6 +139,21 @@ The `extends: "plugin:es/no-5"` config enables the following rules.
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es/no-accessor-properties](./no-accessor-properties.md) | disallow accessor properties. |  |
+| [es/no-array-isarray](./no-array-isarray.md) | disallow the `Array.isArray` method. |  |
+| [es/no-date-now](./no-date-now.md) | disallow the `Date.now` method. |  |
+| [es/no-json](./no-json.md) | disallow the `JSON` class. |  |
 | [es/no-keyword-properties](./no-keyword-properties.md) | disallow reserved words as property names. |  |
+| [es/no-object-defineproperties](./no-object-defineproperties.md) | disallow the `Object.defineProperties` method. |  |
+| [es/no-object-defineproperty](./no-object-defineproperty.md) | disallow the `Object.defineProperty` method. |  |
+| [es/no-object-freeze](./no-object-freeze.md) | disallow the `Object.freeze` method. |  |
+| [es/no-object-getownpropertydescriptor](./no-object-getownpropertydescriptor.md) | disallow the `Object.getOwnPropertyDescriptor` method. |  |
+| [es/no-object-getownpropertynames](./no-object-getownpropertynames.md) | disallow the `Object.getOwnPropertyNames` method. |  |
+| [es/no-object-getprototypeof](./no-object-getprototypeof.md) | disallow the `Object.getPrototypeOf` method. |  |
+| [es/no-object-isextensible](./no-object-isextensible.md) | disallow the `Object.isExtensible` method. |  |
+| [es/no-object-isfrozen](./no-object-isfrozen.md) | disallow the `Object.isFrozen` method. |  |
+| [es/no-object-issealed](./no-object-issealed.md) | disallow the `Object.isSealed` method. |  |
+| [es/no-object-keys](./no-object-keys.md) | disallow the `Object.keys` method. |  |
+| [es/no-object-preventextensions](./no-object-preventextensions.md) | disallow the `Object.preventExtensions` method. |  |
+| [es/no-object-seal](./no-object-seal.md) | disallow the `Object.seal` method. |  |
 | [es/no-trailing-commas](./no-trailing-commas.md) | disallow trailing commas in array/object literals. |  |
 
