@@ -21,6 +21,26 @@ new RuleTester().run("no-bigint", rule, {
             errors: ["ES2020 BigInt is forbidden."],
         },
         {
+            code: "({ 100n: null })",
+            errors: ["ES2020 BigInt is forbidden."],
+        },
+        {
+            code: "({ 100n() {} })",
+            errors: ["ES2020 BigInt is forbidden."],
+        },
+        {
+            code: "({ get 100n() {} })",
+            errors: ["ES2020 BigInt is forbidden."],
+        },
+        {
+            code: "class A { 100n() {} }",
+            errors: ["ES2020 BigInt is forbidden."],
+        },
+        {
+            code: "class A { get 100n() {} }",
+            errors: ["ES2020 BigInt is forbidden."],
+        },
+        {
             code: "BigInt",
             errors: ["ES2020 BigInt is forbidden."],
         },
