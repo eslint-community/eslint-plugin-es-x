@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@mysticatea/eslint-plugin": "^11.0.0",
+    "@vuepress/plugin-pwa": "^1.2.0",
     "babel-eslint": "^10.0.1",
     "codecov": "^3.5.0",
     "eslint": "^6.2.2",
@@ -30,8 +31,8 @@
     "opener": "^1.5.1",
     "rimraf": "^3.0.0",
     "semver": "^6.3.0",
-    "vue-eslint-editor": "^0.1.4",
-    "vuepress": "^0.14.4"
+    "vue-eslint-editor": "^0.2.0",
+    "vuepress": "^1.2.0"
   },
   "scripts": {
     "clean": "rimraf .nyc_output coverage",

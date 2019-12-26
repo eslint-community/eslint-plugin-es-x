@@ -11,8 +11,7 @@
 </template>
 
 <script>
-// https://github.com/vuejs/vuepress/issues/451
-import EslintEditor from "../../../node_modules/vue-eslint-editor/dist/index.vue"
+import EslintEditor from "vue-eslint-editor"
 import { rules } from "../../../"
 
 export default {
@@ -64,6 +63,7 @@ export default {
                     BigInt: false,
                     BigInt64Array: false,
                     BigUint64Array: false,
+                    globalThis: true,
                 },
                 rules: {},
                 parserOptions: {
@@ -78,7 +78,7 @@ export default {
     computed: {
         cookedCode() {
             return (this.code || "").replace(
-                /&#x([0-9a-zA-Z]+);/g,
+                /&#x([0-9a-zA-Z]+);/gu,
                 (_, codePoint) => String.fromCodePoint(parseInt(codePoint, 16))
             )
         },

@@ -10,8 +10,14 @@ require("../../scripts/update-docs-readme")
 module.exports = {
     title: "eslint-plugin-es",
     description: "ESLint plugin about ECMAScript syntax.",
-    serviceWorker: true,
     evergreen: true,
+
+    plugins: {
+        "@vuepress/pwa": {
+            serviceWorker: true,
+            updatePopup: true,
+        },
+    },
 
     themeConfig: {
         repo: "mysticatea/eslint-plugin-es",
@@ -19,9 +25,6 @@ module.exports = {
         docsDir: "docs",
         docsBranch: "master",
         editLinks: true,
-        serviceWorker: {
-            updatePopup: true,
-        },
 
         nav: [{ text: "Guide", link: "/" }, { text: "Rules", link: "/rules/" }],
 
