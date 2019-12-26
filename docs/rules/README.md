@@ -11,6 +11,7 @@ There is no config which enables all rules in this category.
 |:--------|:------------|:--:|
 | [es/no-bigint](./no-bigint.md) | disallow `bigint` syntax and built-ins. |  |
 | [es/no-dynamic-import](./no-dynamic-import.md) | disallow `import()` syntax. |  |
+| [es/no-global-this](./no-global-this.md) | disallow the `globalThis` variable. |  |
 | [es/no-promise-all-settled](./no-promise-all-settled.md) | disallow `Promise.allSettled` function. |  |
 
 ## ES2019
