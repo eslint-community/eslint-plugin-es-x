@@ -172,5 +172,10 @@ const f = function() { return (777) }
             `,
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
+        {
+            code: "async () => {}",
+            output: "(async function() {})",
+            errors: ["ES2015 arrow function expressions are forbidden."],
+        },
     ],
 })
