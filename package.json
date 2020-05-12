@@ -24,7 +24,7 @@
     "codecov": "^3.5.0",
     "eslint": "^6.2.2",
     "eslint4b": "^6.2.2",
-    "espree": "^6.1.1",
+    "espree": "^7.0.0",
     "globals": "^12.0.0",
     "mocha": "^6.2.0",
     "npm-run-all": "^4.1.5",
