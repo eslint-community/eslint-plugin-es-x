@@ -11,6 +11,7 @@ There is no config which enables all rules in this category.
 |:--------|:------------|:--:|
 | [es/no-bigint](./no-bigint.md) | disallow `bigint` syntax and built-ins. |  |
 | [es/no-dynamic-import](./no-dynamic-import.md) | disallow `import()` syntax. |  |
+| [es/no-export-ns-from](./no-export-ns-from.md) | disallow `export * as ns`. |  |
 | [es/no-global-this](./no-global-this.md) | disallow the `globalThis` variable. |  |
 | [es/no-import-meta](./no-import-meta.md) | disallow `new.target` meta property. |  |
 | [es/no-nullish-coalescing-operators](./no-nullish-coalescing-operators.md) | disallow nullish coalescing operators. |  |
