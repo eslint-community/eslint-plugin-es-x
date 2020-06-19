@@ -21,6 +21,7 @@ The `extends: "plugin:es/no-2019"` config enables the following rules.
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es/no-json-superset](./no-json-superset.md) | disallow `\u2028` and `\u2029` in string literals. | 🔧 |
+| [es/no-object-fromentries](./no-object-fromentries.md) | disallow the `Object.fromEntries` method. |  |
 | [es/no-optional-catch-binding](./no-optional-catch-binding.md) | disallow optional `catch` binding. |  |
 | [es/no-regexp-unicode-property-escapes-2019](./no-regexp-unicode-property-escapes-2019.md) | disallow the new values of RegExp Unicode property escape sequences in ES2019. |  |
 
