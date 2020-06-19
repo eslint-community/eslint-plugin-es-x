@@ -7,7 +7,7 @@ This rule reports ES5 `Object.defineProperty` method as errors.
 ⛔ Examples of **incorrect** code for this rule:
 
 <eslint-playground type="bad" code="/*eslint es/no-object-defineproperty: error */
-Object.defineProperty(obj, "prop", {})
+Object.defineProperty(obj, &quot;prop&quot;, {})
 " />
 
 ## 📚 References

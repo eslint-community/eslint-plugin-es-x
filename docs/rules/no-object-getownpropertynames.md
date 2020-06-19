@@ -7,7 +7,7 @@ This rule reports ES5 `Object.getOwnPropertyNames` method as errors.
 ⛔ Examples of **incorrect** code for this rule:
 
 <eslint-playground type="bad" code="/*eslint es/no-object-getownpropertynames: error */
-Object.getOwnPropertyNames(obj, "prop", {})
+Object.getOwnPropertyNames(obj, &quot;prop&quot;, {})
 " />
 
 ## 📚 References
