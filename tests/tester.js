@@ -11,6 +11,7 @@ const semver = require("semver")
 const eslintVersion = new Linter().version
 const ecmaVersion =
     /*eslint-disable @mysticatea/prettier */
+    semver.gte(eslintVersion, "7.8.0") ? 2021 :
     semver.gte(eslintVersion, "6.2.0") ? 2020 :
     semver.gte(eslintVersion, "5.0.0") ? 2019 :
     2018

@@ -17,13 +17,13 @@
     "regexpp": "^3.0.0"
   },
   "devDependencies": {
-    "@mysticatea/eslint-plugin": "^11.0.0",
+    "@mysticatea/eslint-plugin": "^13.0.0",
     "@vuepress/plugin-pwa": "^1.2.0",
     "acorn": "^7.1.0",
     "babel-eslint": "^10.0.1",
-    "codecov": "^3.5.0",
-    "eslint": "^6.2.2",
-    "eslint4b": "^6.2.2",
+    "codecov": "3.7.0",
+    "eslint": "^7.10.0",
+    "eslint4b": "^7.10.0",
     "espree": "^7.0.0",
     "globals": "^12.0.0",
     "mocha": "^6.2.0",

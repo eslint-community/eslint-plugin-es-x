@@ -6,11 +6,11 @@ This plugin provides the following rules.
 
 ## ES2021
 
-There is no config which enables the rules in this category.
+There is no config which enables all rules in this category.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
-
+| [es/no-numeric-separators](./no-numeric-separators.md) | disallow numeric separators. |  |
 
 ## ES2020
 
