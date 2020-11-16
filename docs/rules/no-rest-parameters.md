@@ -1,4 +1,7 @@
-# disallow rest parameters (es/no-rest-parameters)
+# es/no-rest-parameters
+> disallow rest parameters
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 rest parameters as errors.
 

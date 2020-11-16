@@ -1,4 +1,7 @@
-# disallow RegExp `y` flag (es/no-regexp-y-flag)
+# es/no-regexp-y-flag
+> disallow RegExp `y` flag
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 RegExp `y` flag as errors.
 

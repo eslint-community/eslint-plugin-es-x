@@ -1,4 +1,7 @@
-# disallow the `Object.getOwnPropertySymbols` method (es/no-object-getownpropertysymbols)
+# es/no-object-getownpropertysymbols
+> disallow the `Object.getOwnPropertySymbols` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Object.getOwnPropertySymbols` method as errors.
 

@@ -1,4 +1,7 @@
-# disallow the `Math.cbrt` method (es/no-math-cbrt)
+# es/no-math-cbrt
+> disallow the `Math.cbrt` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.cbrt` method as errors.
 

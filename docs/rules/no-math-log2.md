@@ -1,4 +1,7 @@
-# disallow the `Math.log2` method (es/no-math-log2)
+# es/no-math-log2
+> disallow the `Math.log2` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.log2` method as errors.
 

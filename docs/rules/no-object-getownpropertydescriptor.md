@@ -1,4 +1,7 @@
-# disallow the `Object.getOwnPropertyDescriptor` method (es/no-object-getownpropertydescriptor)
+# es/no-object-getownpropertydescriptor
+> disallow the `Object.getOwnPropertyDescriptor` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.getOwnPropertyDescriptor` method as errors.
 

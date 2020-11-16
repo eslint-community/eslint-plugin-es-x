@@ -1,4 +1,7 @@
-# disallow the `Math.asinh` method (es/no-math-asinh)
+# es/no-math-asinh
+> disallow the `Math.asinh` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.asinh` method as errors.
 

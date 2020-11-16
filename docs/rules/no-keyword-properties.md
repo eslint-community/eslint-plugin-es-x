@@ -1,4 +1,7 @@
-# disallow reserved words as property names (es/no-keyword-properties)
+# es/no-keyword-properties
+> disallow reserved words as property names
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 reserved words as property names as errors.
 

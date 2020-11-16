@@ -1,4 +1,7 @@
-# disallow the `Object.isSealed` method (es/no-object-issealed)
+# es/no-object-issealed
+> disallow the `Object.isSealed` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.isSealed` method as errors.
 

@@ -1,4 +1,7 @@
-# disallow the `Object.preventExtensions` method (es/no-object-preventextensions)
+# es/no-object-preventextensions
+> disallow the `Object.preventExtensions` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.preventExtensions` method as errors.
 

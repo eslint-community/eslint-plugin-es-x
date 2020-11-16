@@ -1,4 +1,7 @@
-# disallow the `Math.acosh` method (es/no-math-acosh)
+# es/no-math-acosh
+> disallow the `Math.acosh` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.acosh` method as errors.
 

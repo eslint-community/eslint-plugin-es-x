@@ -1,4 +1,7 @@
-# disallow `bigint` syntax and built-ins (es/no-bigint)
+# es/no-bigint
+> disallow `bigint` syntax and built-ins
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2020`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, `plugin:es/restrict-to-es2017`, `plugin:es/restrict-to-es2018`, and `plugin:es/restrict-to-es2019`
 
 This rule reports ES2020 [BigInt](https://github.com/tc39/proposal-bigint) as errors.
 

@@ -1,4 +1,7 @@
-# disallow `new.target` meta property (es/no-new-target)
+# es/no-new-target
+> disallow `new.target` meta property
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `new.target` meta property as errors.
 

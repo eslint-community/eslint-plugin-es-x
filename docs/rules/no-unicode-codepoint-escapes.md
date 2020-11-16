@@ -1,5 +1,7 @@
-# disallow Unicode code point escape sequences (es/no-unicode-codepoint-escapes)
+# es/no-unicode-codepoint-escapes
+> disallow Unicode code point escape sequences
 
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 - 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
 This rule reports ES2015 Unicode code point escape sequences as errors.

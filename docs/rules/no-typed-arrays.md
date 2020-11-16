@@ -1,4 +1,7 @@
-# disallow ES2015 typed arrays (es/no-typed-arrays)
+# es/no-typed-arrays
+> disallow ES2015 typed arrays
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 typed arrays as errors.
 

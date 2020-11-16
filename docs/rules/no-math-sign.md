@@ -1,4 +1,7 @@
-# disallow the `Math.sign` method (es/no-math-sign)
+# es/no-math-sign
+> disallow the `Math.sign` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.sign` method as errors.
 

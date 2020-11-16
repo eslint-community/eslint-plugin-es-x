@@ -1,4 +1,7 @@
-# disallow the `WeakMap` class (es/no-weak-map)
+# es/no-weak-map
+> disallow the `WeakMap` class
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `WeakMap` class as errors.
 

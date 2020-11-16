@@ -11,9 +11,10 @@ ESLint rules which disallow each ECMAScript syntax.
 ## 🏁 Goal
 
 [Espree](https://github.com/eslint/espree#readme), the default parser of [ESLint](https://eslint.org/), has supported `ecmaVersion` option.
-However, it doesn't support to enable each syntactic feature individually.
-This plugin lets us disable each syntactic feature individually.
-So we can enable arbitrary syntactic features with the combination of `ecmaVersion` and this plugin.
+However, the error messages of new syntax are not readable (e.g., "unexpected token" or something like).
+
+When we use this plugin along with the latest `ecmaVersion` option value, it tells us the readable error message for the new syntax, such as "ES2020 BigInt is forbidden."
+Plus, this plugin lets us disable each syntactic feature individually.
 
 ## 💿 Installation
 
@@ -57,12 +58,20 @@ This plugin provides the following configs.
 
 | Config ID | Description |
 |:----------|:------------|
-| `plugin:es/no-2019` | enable all rules which disallow ES2019 syntax.
-| `plugin:es/no-2018` | enable all rules which disallow ES2018 syntax.
-| `plugin:es/no-2017` | enable all rules which disallow ES2017 syntax.
-| `plugin:es/no-2016` | enable all rules which disallow ES2016 syntax.
-| `plugin:es/no-2015` | enable all rules which disallow ES2015 syntax.
-| `plugin:es/no-5` | enable all rules which disallow ES5 syntax.
+| `plugin:es/no-new-in-es2020` | disallow the new stuff in ES2020.
+| `plugin:es/no-new-in-es2019` | disallow the new stuff in ES2019.
+| `plugin:es/no-new-in-es2018` | disallow the new stuff in ES2018.
+| `plugin:es/no-new-in-es2017` | disallow the new stuff in ES2017.
+| `plugin:es/no-new-in-es2016` | disallow the new stuff in ES2016.
+| `plugin:es/no-new-in-es2015` | disallow the new stuff in ES2015.
+| `plugin:es/no-new-in-es5` | disallow the new stuff in ES5.
+| `plugin:es/restrict-to-es2019` | disallow new stuff that ES2019 doesn't include.
+| `plugin:es/restrict-to-es2018` | disallow new stuff that ES2018 doesn't include.
+| `plugin:es/restrict-to-es2017` | disallow new stuff that ES2017 doesn't include.
+| `plugin:es/restrict-to-es2016` | disallow new stuff that ES2016 doesn't include.
+| `plugin:es/restrict-to-es2015` | disallow new stuff that ES2015 doesn't include.
+| `plugin:es/restrict-to-es5` | disallow new stuff that ES5 doesn't include.
+| `plugin:es/restrict-to-es3` | disallow new stuff that ES3 doesn't include.
 
 For example:
 
@@ -70,11 +79,11 @@ For example:
 {
     "plugins": ["es"],
     "parserOptions": {
-        "ecmaVersion": 2018
+        "ecmaVersion": 2021
     },
     "extends": [
         "eslint:recommended",
-        "plugin:es/no-2018"
+        "plugin:es/restrict-to-es2018"
     ],
     "rules": {
         "es/no-rest-spread-properties": "off"

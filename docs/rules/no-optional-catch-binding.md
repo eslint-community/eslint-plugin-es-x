@@ -1,4 +1,7 @@
-# disallow optional `catch` binding (es/no-optional-catch-binding)
+# es/no-optional-catch-binding
+> disallow optional `catch` binding
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2019`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, `plugin:es/restrict-to-es2017`, and `plugin:es/restrict-to-es2018`
 
 This rule reports ES2019 optional `catch` binding as errors.
 

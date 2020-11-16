@@ -1,4 +1,7 @@
-# disallow the `Object.isExtensible` method (es/no-object-isextensible)
+# es/no-object-isextensible
+> disallow the `Object.isExtensible` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.isExtensible` method as errors.
 

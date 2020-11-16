@@ -1,4 +1,7 @@
-# disallow the `JSON` class (es/no-json)
+# es/no-json
+> disallow the `JSON` class
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `JSON` class as errors.
 

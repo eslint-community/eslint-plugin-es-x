@@ -1,4 +1,7 @@
-# disallow the `Array.isArray` method (es/no-array-isarray)
+# es/no-array-isarray
+> disallow the `Array.isArray` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Array.isArray` method as errors.
 

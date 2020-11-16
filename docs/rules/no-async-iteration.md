@@ -1,4 +1,7 @@
-# disallow async iteration (es/no-async-iteration)
+# es/no-async-iteration
+> disallow async iteration
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2018`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, and `plugin:es/restrict-to-es2017`
 
 This rule reports ES2018 [async iteration](https://github.com/tc39/proposal-async-iteration#readme) as errors.
 

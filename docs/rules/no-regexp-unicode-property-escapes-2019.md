@@ -1,4 +1,7 @@
-# disallow the new values of RegExp Unicode property escape sequences in ES2019 (es/no-regexp-unicode-property-escapes-2019)
+# es/no-regexp-unicode-property-escapes-2019
+> disallow the new values of RegExp Unicode property escape sequences in ES2019
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2019`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, `plugin:es/restrict-to-es2017`, and `plugin:es/restrict-to-es2018`
 
 This rule reports the new values of ES2018 [RegExp Unicode property escape sequences](https://github.com/tc39/proposal-regexp-unicode-property-escapes#readme) which were added in ES2019.
 

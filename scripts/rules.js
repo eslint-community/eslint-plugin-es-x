@@ -7,15 +7,41 @@
 const fs = require("fs")
 const path = require("path")
 const libRoot = path.resolve(__dirname, "../lib/rules")
-const categories = {
-    ES2020: { id: "ES2020", rules: [], noConfig: true },
-    ES2019: { id: "ES2019", rules: [] },
-    ES2018: { id: "ES2018", rules: [] },
-    ES2017: { id: "ES2017", rules: [] },
-    ES2016: { id: "ES2016", rules: [] },
-    ES2015: { id: "ES2015", rules: [] },
-    ES5: { id: "ES5", rules: [] },
-}
+
+/**
+ * @typedef {Object} Rule
+ * @property {string} ruleId The rule name.
+ * @property {string} description The description.
+ * @property {boolean} fixable The fixable flag.
+ */
+
+/**
+ * @typedef {Object} Category
+ * @property {string} id The category name.
+ * @property {number} revision The revision number.
+ * @property {string} configName The config name.
+ * @property {string} aboveConfigName The config name for disallowing features all above.
+ * @property {Rule[]} rules The rules in this category.
+ * @property {boolean} [noConfig] The flag to not generate config.
+ */
+
+/** @type {Record<string, Category>} */
+const categories = [12, 11, 10, 9, 8, 7, 6, 5].reduce(
+    (map, revision, _, [latest]) => {
+        const year = revision <= 5 ? 5 : 2009 + revision
+        const id = `ES${year}`
+        map[id] = {
+            id,
+            revision,
+            rules: [],
+            noConfig: revision === latest,
+        }
+        return map
+    },
+    {}
+)
+
+/** @type {Rule[]} */
 const rules = []
 
 for (const filename of fs.readdirSync(libRoot)) {

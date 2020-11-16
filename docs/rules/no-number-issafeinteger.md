@@ -1,4 +1,7 @@
-# disallow the `Number.isSafeInteger` method (es/no-number-issafeinteger)
+# es/no-number-issafeinteger
+> disallow the `Number.isSafeInteger` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Number.isSafeInteger` method as errors.
 

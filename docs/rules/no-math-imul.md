@@ -1,4 +1,7 @@
-# disallow the `Math.imul` method (es/no-math-imul)
+# es/no-math-imul
+> disallow the `Math.imul` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.imul` method as errors.
 

@@ -1,4 +1,7 @@
-# disallow exponential operators (es/no-exponential-operators)
+# es/no-exponential-operators
+> disallow exponential operators
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2016`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, and `plugin:es/restrict-to-es2015`
 
 This rule reports ES2016 [exponential operators](https://github.com/rwaldron/exponentiation-operator#readme) as errors.
 

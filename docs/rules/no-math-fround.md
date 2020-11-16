@@ -1,4 +1,7 @@
-# disallow the `Math.fround` method (es/no-math-fround)
+# es/no-math-fround
+> disallow the `Math.fround` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.fround` method as errors.
 

@@ -1,4 +1,7 @@
-# disallow the `Math.trunc` method (es/no-math-trunc)
+# es/no-math-trunc
+> disallow the `Math.trunc` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.trunc` method as errors.
 

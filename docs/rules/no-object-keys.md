@@ -1,4 +1,7 @@
-# disallow the `Object.keys` method (es/no-object-keys)
+# es/no-object-keys
+> disallow the `Object.keys` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.keys` method as errors.
 

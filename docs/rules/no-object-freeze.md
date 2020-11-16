@@ -1,4 +1,7 @@
-# disallow the `Object.freeze` method (es/no-object-freeze)
+# es/no-object-freeze
+> disallow the `Object.freeze` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.freeze` method as errors.
 

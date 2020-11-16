@@ -1,4 +1,7 @@
-# disallow the `Number.EPSILON` property (es/no-number-epsilon)
+# es/no-number-epsilon
+> disallow the `Number.EPSILON` property
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Number.EPSILON` property as errors.
 

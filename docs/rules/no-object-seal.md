@@ -1,4 +1,7 @@
-# disallow the `Object.seal` method (es/no-object-seal)
+# es/no-object-seal
+> disallow the `Object.seal` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.seal` method as errors.
 

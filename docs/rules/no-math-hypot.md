@@ -1,4 +1,7 @@
-# disallow the `Math.hypot` method (es/no-math-hypot)
+# es/no-math-hypot
+> disallow the `Math.hypot` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.hypot` method as errors.
 

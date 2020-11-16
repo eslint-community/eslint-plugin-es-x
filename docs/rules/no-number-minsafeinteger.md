@@ -1,4 +1,7 @@
-# disallow the `Number.MIN_SAFE_INTEGER` property (es/no-number-minsafeinteger)
+# es/no-number-minsafeinteger
+> disallow the `Number.MIN_SAFE_INTEGER` property
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Number.MIN_SAFE_INTEGER` property as errors.
 

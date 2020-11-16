@@ -1,4 +1,7 @@
-# disallow the `Object.fromEntries` method (es/no-object-fromentries)
+# es/no-object-fromentries
+> disallow the `Object.fromEntries` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2019`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, `plugin:es/restrict-to-es2017`, and `plugin:es/restrict-to-es2018`
 
 This rule reports ES2019 `Object.fromEntries` method as errors.
 
@@ -12,5 +15,5 @@ const obj = Object.fromEntries(map)
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.0/lib/rules/no-object-fromentries.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.0/tests/lib/rules/no-object-fromentries.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.1/lib/rules/no-object-fromentries.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.1/tests/lib/rules/no-object-fromentries.js)

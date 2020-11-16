@@ -1,4 +1,7 @@
-# disallow the `Date.now` method (es/no-date-now)
+# es/no-date-now
+> disallow the `Date.now` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Date.now` method as errors.
 

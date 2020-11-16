@@ -1,4 +1,7 @@
-# disallow the `Object.defineProperty` method (es/no-object-defineproperty)
+# es/no-object-defineproperty
+> disallow the `Object.defineProperty` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.defineProperty` method as errors.
 

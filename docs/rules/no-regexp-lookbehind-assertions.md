@@ -1,4 +1,7 @@
-# disallow RegExp lookbehind assertions (es/no-regexp-lookbehind-assertions)
+# es/no-regexp-lookbehind-assertions
+> disallow RegExp lookbehind assertions
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2018`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, and `plugin:es/restrict-to-es2017`
 
 This rule reports ES2018 [RegExp lookbehind assertions](https://github.com/tc39/proposal-regexp-lookbehind#readme) as errors.
 

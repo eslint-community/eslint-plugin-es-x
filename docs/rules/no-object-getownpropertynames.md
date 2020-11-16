@@ -1,4 +1,7 @@
-# disallow the `Object.getOwnPropertyNames` method (es/no-object-getownpropertynames)
+# es/no-object-getownpropertynames
+> disallow the `Object.getOwnPropertyNames` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.getOwnPropertyNames` method as errors.
 

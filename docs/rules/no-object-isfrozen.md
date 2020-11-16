@@ -1,4 +1,7 @@
-# disallow the `Object.isFrozen` method (es/no-object-isfrozen)
+# es/no-object-isfrozen
+> disallow the `Object.isFrozen` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 `Object.isFrozen` method as errors.
 

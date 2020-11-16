@@ -1,4 +1,7 @@
-# disallow trailing commas in array/object literals (es/no-trailing-commas)
+# es/no-trailing-commas
+> disallow trailing commas in array/object literals
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
 
 This rule reports ES5 trailing commas in array/object literals as errors.
 

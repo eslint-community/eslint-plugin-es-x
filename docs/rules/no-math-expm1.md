@@ -1,4 +1,7 @@
-# disallow the `Math.expm1` method (es/no-math-expm1)
+# es/no-math-expm1
+> disallow the `Math.expm1` method
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2015`, `plugin:es/restrict-to-es3`, and `plugin:es/restrict-to-es5`
 
 This rule reports ES2015 `Math.expm1` method as errors.
 

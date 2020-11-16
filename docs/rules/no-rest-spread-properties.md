@@ -1,4 +1,7 @@
-# disallow rest/spread properties (es/no-rest-spread-properties)
+# es/no-rest-spread-properties
+> disallow rest/spread properties
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2018`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, and `plugin:es/restrict-to-es2017`
 
 This rule reports ES2018 [rest/spread properties](https://github.com/tc39/proposal-object-rest-spread#readme) as errors.
 
