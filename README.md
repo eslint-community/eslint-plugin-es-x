@@ -11,10 +11,10 @@ ESLint plugin which disallows each ECMAScript syntax.
 ## 🏁 Goal
 
 [Espree](https://github.com/eslint/espree#readme), the default parser of [ESLint](https://eslint.org/), has supported `ecmaVersion` option.
-However, it doesn't support to enable each syntactic feature individually.
+However, the error messages of new syntax are not readable (e.g., "unexpected token" or something like).
 
-This plugin lets us disable each syntactic feature individually.
-So we can enable arbitrary syntactic features with the combination of `ecmaVersion` and this plugin.
+When we use this plugin along with the latest `ecmaVersion` option value, it tells us the readable error message for the new syntax, such as "ES2020 BigInt is forbidden."
+Plus, this plugin lets us disable each syntactic feature individually.
 
 ## 📖 Usage
 
@@ -23,6 +23,9 @@ See [documentation](https://eslint-plugin-es.mysticatea.dev/)
 ## 🚥 Semantic Versioning Policy
 
 This plugin follows [semantic versioning](http://semver.org/) and [ESLint's semantic versioning policy](https://github.com/eslint/eslint#semantic-versioning-policy).
+
+- We will release a new minor version to add new rules when TC39 decided to advance proposals to Stage 4. In the minor releases, we don't update configs.
+- We will release a new major version to update configs when new ECMAScript snapshots are available.
 
 ## 📰 Changelog
 
