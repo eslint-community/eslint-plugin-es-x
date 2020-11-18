@@ -12,6 +12,7 @@ There is no config which enables all rules in this category.
 |:--------|:------------|:--:|
 | [es/no-logical-assignment-operators](./no-logical-assignment-operators.md) | disallow logical assignment operators. | 🔧 |
 | [es/no-numeric-separators](./no-numeric-separators.md) | disallow numeric separators. |  |
+| [es/no-promise-any](./no-promise-any.md) | disallow `Promise.any` function. |  |
 | [es/no-weak-ref](./no-weak-ref.md) | disallow the `WeakRef` class. |  |
 
 ## ES2020
