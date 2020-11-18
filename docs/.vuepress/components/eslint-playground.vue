@@ -65,6 +65,7 @@ export default {
                     BigUint64Array: false,
                     globalThis: true,
                     // ES2021 globals
+                    AggregateError: false,
                     WeakRef: false,
                 },
                 rules: {},

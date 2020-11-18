@@ -10,6 +10,7 @@ There is no config which enables all rules in this category.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
+| [es/no-aggregate-error](./no-aggregate-error.md) | disallow the `AggregateError` class. |  |
 | [es/no-logical-assignment-operators](./no-logical-assignment-operators.md) | disallow logical assignment operators. | 🔧 |
 | [es/no-numeric-separators](./no-numeric-separators.md) | disallow numeric separators. |  |
 | [es/no-promise-any](./no-promise-any.md) | disallow `Promise.any` function. |  |
