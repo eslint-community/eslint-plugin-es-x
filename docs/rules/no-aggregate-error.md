@@ -1,3 +1,8 @@
+# es/no-aggregate-error
+> disallow the `AggregateError` class
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-esnext`
+
 # disallow `Promise.any` function (es/no-aggregate-error)
 
 This rule reports ES2021 [`AggregateError` class](https://github.com/tc39/proposal-promise-any) as errors.

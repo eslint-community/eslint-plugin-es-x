@@ -1,3 +1,9 @@
+# es/no-logical-assignment-operators
+> disallow logical assignment operators
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-esnext`
+- 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 # disallow logical assignment operators (es/no-logical-assignment-operators)
 
 - 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.

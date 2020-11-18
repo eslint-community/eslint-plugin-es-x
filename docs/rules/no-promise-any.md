@@ -1,3 +1,8 @@
+# es/no-promise-any
+> disallow `Promise.any` function
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-esnext`
+
 # disallow `Promise.any` function (es/no-promise-any)
 
 This rule reports ES2021 [`Promise.any` function](https://github.com/tc39/proposal-promise-any) as errors.

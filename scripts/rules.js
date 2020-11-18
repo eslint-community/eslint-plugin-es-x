@@ -22,7 +22,7 @@ const libRoot = path.resolve(__dirname, "../lib/rules")
  * @property {string} configName The config name.
  * @property {string} aboveConfigName The config name for disallowing features all above.
  * @property {Rule[]} rules The rules in this category.
- * @property {boolean} [noConfig] The flag to not generate config.
+ * @property {boolean} [experimental] The flag to be belong to experimental configs.
  */
 
 /** @type {Record<string, Category>} */
@@ -34,7 +34,7 @@ const categories = [12, 11, 10, 9, 8, 7, 6, 5].reduce(
             id,
             revision,
             rules: [],
-            noConfig: revision === latest,
+            experimental: revision === latest,
         }
         return map
     },

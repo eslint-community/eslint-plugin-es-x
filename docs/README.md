@@ -58,13 +58,6 @@ This plugin provides the following configs.
 
 | Config ID | Description |
 |:----------|:------------|
-| `plugin:es/no-new-in-es2020` | disallow the new stuff in ES2020.
-| `plugin:es/no-new-in-es2019` | disallow the new stuff in ES2019.
-| `plugin:es/no-new-in-es2018` | disallow the new stuff in ES2018.
-| `plugin:es/no-new-in-es2017` | disallow the new stuff in ES2017.
-| `plugin:es/no-new-in-es2016` | disallow the new stuff in ES2016.
-| `plugin:es/no-new-in-es2015` | disallow the new stuff in ES2015.
-| `plugin:es/no-new-in-es5` | disallow the new stuff in ES5.
 | `plugin:es/restrict-to-es2019` | disallow new stuff that ES2019 doesn't include.
 | `plugin:es/restrict-to-es2018` | disallow new stuff that ES2018 doesn't include.
 | `plugin:es/restrict-to-es2017` | disallow new stuff that ES2017 doesn't include.
@@ -72,6 +65,14 @@ This plugin provides the following configs.
 | `plugin:es/restrict-to-es2015` | disallow new stuff that ES2015 doesn't include.
 | `plugin:es/restrict-to-es5` | disallow new stuff that ES5 doesn't include.
 | `plugin:es/restrict-to-es3` | disallow new stuff that ES3 doesn't include.
+| `plugin:es/no-new-in-es2020` | disallow the new stuff in ES2020.
+| `plugin:es/no-new-in-es2019` | disallow the new stuff in ES2019.
+| `plugin:es/no-new-in-es2018` | disallow the new stuff in ES2018.
+| `plugin:es/no-new-in-es2017` | disallow the new stuff in ES2017.
+| `plugin:es/no-new-in-es2016` | disallow the new stuff in ES2016.
+| `plugin:es/no-new-in-es2015` | disallow the new stuff in ES2015.
+| `plugin:es/no-new-in-es5` | disallow the new stuff in ES5.
+| `plugin:es/no-new-in-esnext` | disallow the new stuff to be planned for the next yearly ECMAScript snapshot.<br>⚠️ This config will be changed in the minor versions of this plugin.
 
 For example:
 

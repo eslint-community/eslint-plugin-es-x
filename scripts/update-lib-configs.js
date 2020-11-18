@@ -32,27 +32,30 @@ module.exports = ${code}
 `
 }
 
-for (const { noConfig, revision, rules } of Object.values(categories)) {
-    if (noConfig) {
-        continue
-    }
-
+for (const { experimental, revision, rules } of Object.values(categories)) {
     const ruleSetting = rules.map(r => `"es/${r.ruleId}":"error"`).join(",")
     const extendSetting = Object.values(categories)
-        .filter(c => c.revision >= revision && !c.noConfig)
+        .filter(c => c.revision >= revision && !c.experimental)
         .map(
             c => `require.resolve("./${configNameToDisallowNewIn(c.revision)}")`
         )
         .join(",")
 
-    fs.writeFileSync(
-        path.join(Root, `${configNameToDisallowNewIn(revision)}.js`),
-        wrapCode(`{ rules: { ${ruleSetting} } }`)
-    )
-    fs.writeFileSync(
-        path.join(Root, `${configNameToRestrictToPreviousOf(revision)}.js`),
-        wrapCode(`{ extends: [${extendSetting}] }`)
-    )
+    if (experimental) {
+        fs.writeFileSync(
+            path.join(Root, "no-new-in-esnext.js"),
+            wrapCode(`{ rules: { ${ruleSetting} } }`)
+        )
+    } else {
+        fs.writeFileSync(
+            path.join(Root, `${configNameToDisallowNewIn(revision)}.js`),
+            wrapCode(`{ rules: { ${ruleSetting} } }`)
+        )
+        fs.writeFileSync(
+            path.join(Root, `${configNameToRestrictToPreviousOf(revision)}.js`),
+            wrapCode(`{ extends: [${extendSetting}] }`)
+        )
+    }
 }
 
 CLIEngine.outputFixes(

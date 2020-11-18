@@ -57,8 +57,8 @@ function toSection(categoryId) {
             .sort(collator.compare.bind(collator))
     )
     const comment = configIds
-        ? `There are multiple configs which enable all rules in this category: ${configIds}`
-        : "There is no config which enables the rules in this category."
+        ? `There are multiple configs that enable all rules in this category: ${configIds}`
+        : "There is a config that enables the rules in this category: `plugin:es/no-new-in-esnext`"
 
     return `## ${categoryId}
 

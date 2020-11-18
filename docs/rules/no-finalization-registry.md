@@ -1,3 +1,8 @@
+# es/no-finalization-registry
+> disallow the `FinalizationRegistry` class
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-esnext`
+
 # disallow the `FinalizationRegistry` class (es/no-finalization-registry)
 
 This rule reports ES2021 [`FinalizationRegistry` class](https://github.com/tc39/proposal-weakrefs) as errors.

@@ -1,3 +1,8 @@
+# es/no-weak-ref
+> disallow the `WeakRef` class
+
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-esnext`
+
 # disallow the `WeakRef` class (es/no-weak-ref)
 
 This rule reports ES2021 [`WeakRef` class](https://github.com/tc39/proposal-weakrefs) as errors.
