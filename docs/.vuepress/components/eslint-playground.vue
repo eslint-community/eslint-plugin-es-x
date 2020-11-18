@@ -66,6 +66,7 @@ export default {
                     globalThis: true,
                     // ES2021 globals
                     AggregateError: false,
+                    FinalizationRegistry: false,
                     WeakRef: false,
                 },
                 rules: {},
