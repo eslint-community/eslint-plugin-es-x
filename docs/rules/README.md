@@ -24,6 +24,7 @@ There are multiple configs which enable all rules in this category: `plugin:es/n
 | [es/no-global-this](./no-global-this.md) | disallow the `globalThis` variable. |  |
 | [es/no-import-meta](./no-import-meta.md) | disallow `import.meta` meta property. |  |
 | [es/no-nullish-coalescing-operators](./no-nullish-coalescing-operators.md) | disallow nullish coalescing operators. |  |
+| [es/no-optional-chaining](./no-optional-chaining.md) | disallow optional chaining. |  |
 | [es/no-promise-all-settled](./no-promise-all-settled.md) | disallow `Promise.allSettled` function. |  |
 
 ## ES2019
