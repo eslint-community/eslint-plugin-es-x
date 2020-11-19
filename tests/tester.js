@@ -28,6 +28,8 @@ RuleTester.setDefaultConfig({
     globals: {
         ...builtin,
         AggregateError: "readonly",
+        FinalizationRegistry: "readonly",
+        WeakRef: "readonly",
     },
 })
 RuleTester.isSupported = targetEcmaVersion => targetEcmaVersion <= ecmaVersion

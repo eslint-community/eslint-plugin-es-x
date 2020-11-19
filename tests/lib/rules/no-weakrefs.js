@@ -5,9 +5,9 @@
 "use strict"
 
 const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-weak-ref.js")
+const rule = require("../../../lib/rules/no-weakrefs.js")
 
-new RuleTester({ globals: { WeakRef: false } }).run("no-weak-ref", rule, {
+new RuleTester().run("no-weakrefs", rule, {
     valid: ["Array", "Object", "let WeakRef = 0; WeakRef"],
     invalid: [
         {
@@ -17,6 +17,14 @@ new RuleTester({ globals: { WeakRef: false } }).run("no-weak-ref", rule, {
         {
             code: "function f() { WeakRef }",
             errors: ["ES2021 'WeakRef' class is forbidden."],
+        },
+        {
+            code: "FinalizationRegistry",
+            errors: ["ES2021 'FinalizationRegistry' class is forbidden."],
+        },
+        {
+            code: "function f() { FinalizationRegistry }",
+            errors: ["ES2021 'FinalizationRegistry' class is forbidden."],
         },
     ],
 })

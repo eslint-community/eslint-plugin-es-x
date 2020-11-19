@@ -10,11 +10,10 @@ There is a config that enables the rules in this category: `plugin:es/no-new-in-
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
-| [es/no-finalization-registry](./no-finalization-registry.md) | disallow the `FinalizationRegistry` class. |  |
 | [es/no-logical-assignment-operators](./no-logical-assignment-operators.md) | disallow logical assignment operators. | 🔧 |
 | [es/no-numeric-separators](./no-numeric-separators.md) | disallow numeric separators. | 🔧 |
 | [es/no-promise-any](./no-promise-any.md) | disallow `Promise.any` function and `AggregateError` class. |  |
-| [es/no-weak-ref](./no-weak-ref.md) | disallow the `WeakRef` class. |  |
+| [es/no-weakrefs](./no-weakrefs.md) | disallow the `WeakRef` and `FinalizationRegistry` class. |  |
 
 ## ES2020
 
