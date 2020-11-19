@@ -78,7 +78,6 @@ For example:
 
 ```json
 {
-    "plugins": ["es"],
     "parserOptions": {
         "ecmaVersion": 2021
     },
