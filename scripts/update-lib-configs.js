@@ -44,12 +44,12 @@ for (const { experimental, revision, rules } of Object.values(categories)) {
     if (experimental) {
         fs.writeFileSync(
             path.join(Root, "no-new-in-esnext.js"),
-            wrapCode(`{ rules: { ${ruleSetting} } }`)
+            wrapCode(`{ plugins: ["es"], rules: { ${ruleSetting} } }`)
         )
     } else {
         fs.writeFileSync(
             path.join(Root, `${configNameToDisallowNewIn(revision)}.js`),
-            wrapCode(`{ rules: { ${ruleSetting} } }`)
+            wrapCode(`{ plugins: ["es"], rules: { ${ruleSetting} } }`)
         )
         fs.writeFileSync(
             path.join(Root, `${configNameToRestrictToPreviousOf(revision)}.js`),
