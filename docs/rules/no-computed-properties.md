@@ -23,5 +23,5 @@ class A {
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/lib/rules/no-computed-properties.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/tests/lib/rules/no-computed-properties.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/lib/rules/no-computed-properties.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/tests/lib/rules/no-computed-properties.js)

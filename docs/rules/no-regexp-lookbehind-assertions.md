@@ -16,5 +16,5 @@ const r2 = /(?<!a)b/
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/lib/rules/no-regexp-lookbehind-assertions.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/tests/lib/rules/no-regexp-lookbehind-assertions.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/lib/rules/no-regexp-lookbehind-assertions.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/tests/lib/rules/no-regexp-lookbehind-assertions.js)

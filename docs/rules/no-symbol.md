@@ -15,5 +15,5 @@ let s = Symbol(&quot;s&quot;)
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/lib/rules/no-symbol.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/tests/lib/rules/no-symbol.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/lib/rules/no-symbol.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/tests/lib/rules/no-symbol.js)

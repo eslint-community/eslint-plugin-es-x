@@ -15,5 +15,5 @@ let a = 0o123
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/lib/rules/no-octal-numeric-literals.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/tests/lib/rules/no-octal-numeric-literals.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/lib/rules/no-octal-numeric-literals.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/tests/lib/rules/no-octal-numeric-literals.js)
