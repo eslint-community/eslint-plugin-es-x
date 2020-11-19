@@ -25,7 +25,10 @@ RuleTester.setDefaultConfig({
         ecmaVersion,
         sourceType: "script",
     },
-    globals: builtin,
+    globals: {
+        ...builtin,
+        AggregateError: "readonly",
+    },
 })
 RuleTester.isSupported = targetEcmaVersion => targetEcmaVersion <= ecmaVersion
 
