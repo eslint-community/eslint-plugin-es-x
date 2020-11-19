@@ -15,5 +15,5 @@ Object.getOwnPropertyNames(obj, &quot;prop&quot;, {})
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.1/lib/rules/no-object-getownpropertynames.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v3.0.1/tests/lib/rules/no-object-getownpropertynames.js)
+- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/lib/rules/no-object-getownpropertynames.js)
+- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.0.0/tests/lib/rules/no-object-getownpropertynames.js)
