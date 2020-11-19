@@ -8,7 +8,6 @@ const fs = require("fs")
 const path = require("path")
 const { categories } = require("./rules")
 const collator = new Intl.Collator("en", { numeric: true })
-const conjunction = new Intl.ListFormat("en", { type: "conjunction" })
 
 // Analyze configs
 const configRoot = path.resolve(__dirname, "../lib/configs/")
@@ -49,8 +48,12 @@ function extractCategoryId(filePath) {
     return match ? match[1].toUpperCase() : undefined
 }
 
+/**
+ * Create markdown text for a category.
+ * @param {string} categoryId The category ID to convert.
+ */
 function toSection(categoryId) {
-    const configIds = conjunction.format(
+    const configIds = formatList(
         configs
             .filter(c => c.categoryIds.includes(categoryId))
             .map(c => `\`${c.id}\``)
@@ -68,14 +71,42 @@ ${toTable(categories[categoryId])}
 `
 }
 
+/**
+ * Create markdown text for a category.
+ * @param {import("./rules").Category} category The category information to convert.
+ */
 function toTable({ rules }) {
     return `| Rule ID | Description |    |
 |:--------|:------------|:--:|
 ${rules.map(toTableRow).join("\n")}`
 }
 
+/**
+ * Create markdown text for a rule.
+ * @param {import("./rules").Rule} rule The rule information to convert.
+ */
 function toTableRow({ ruleId, description, fixable }) {
     const title = `[es/${ruleId}](./${ruleId}.md)`
     const icons = fixable ? "🔧" : ""
     return `| ${title} | ${description}. | ${icons} |`
+}
+
+/**
+ * Format a list.
+ * @param {string[]} xs The list value to format.
+ */
+function formatList(xs) {
+    switch (xs.length) {
+        case 0:
+            return ""
+        case 1:
+            return xs[0]
+        case 2:
+            return `${xs[0]} and ${xs[1]}`
+        default: {
+            const ys = xs.slice(0, xs.length - 1)
+            const last = xs[xs.length - 1]
+            return `${ys.join(", ")}, and ${last}`
+        }
+    }
 }
