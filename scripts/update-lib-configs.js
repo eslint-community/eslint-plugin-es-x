@@ -37,27 +37,28 @@ for (const { experimental, revision, rules } of Object.values(categories)) {
     const extendSetting = Object.values(categories)
         .filter(c => c.revision >= revision && !c.experimental)
         .map(
-            c => `require.resolve("./${configNameToDisallowNewIn(c.revision)}")`
+            c =>
+                `require.resolve("./${configNameToDisallowNewIn(c.revision)}")`,
         )
         .join(",")
 
     if (experimental) {
         fs.writeFileSync(
             path.join(Root, "no-new-in-esnext.js"),
-            wrapCode(`{ plugins: ["es"], rules: { ${ruleSetting} } }`)
+            wrapCode(`{ plugins: ["es"], rules: { ${ruleSetting} } }`),
         )
     } else {
         fs.writeFileSync(
             path.join(Root, `${configNameToDisallowNewIn(revision)}.js`),
-            wrapCode(`{ plugins: ["es"], rules: { ${ruleSetting} } }`)
+            wrapCode(`{ plugins: ["es"], rules: { ${ruleSetting} } }`),
         )
         fs.writeFileSync(
             path.join(Root, `${configNameToRestrictToPreviousOf(revision)}.js`),
-            wrapCode(`{ extends: [${extendSetting}] }`)
+            wrapCode(`{ extends: [${extendSetting}] }`),
         )
     }
 }
 
 CLIEngine.outputFixes(
-    new CLIEngine({ fix: true }).executeOnFiles(["lib/configs"])
+    new CLIEngine({ fix: true }).executeOnFiles(["lib/configs"]),
 )

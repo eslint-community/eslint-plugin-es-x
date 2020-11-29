@@ -37,7 +37,7 @@ This plugin provides the following rules.
 - 🔧 mark means that the \`--fix\` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
 ${ruleSectionContent}
-`
+`,
 )
 
 //------------------------------------------------------------------------------
@@ -57,7 +57,7 @@ function toSection(categoryId) {
         configs
             .filter(c => c.categoryIds.includes(categoryId))
             .map(c => `\`${c.id}\``)
-            .sort(collator.compare.bind(collator))
+            .sort(collator.compare.bind(collator)),
     )
     const comment = configIds
         ? `There are multiple configs that enable all rules in this category: ${configIds}`

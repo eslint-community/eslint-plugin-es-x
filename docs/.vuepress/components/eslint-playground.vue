@@ -83,7 +83,7 @@ export default {
         cookedCode() {
             return (this.code || "").replace(
                 /&#x([0-9a-zA-Z]+);/gu,
-                (_, codePoint) => String.fromCodePoint(parseInt(codePoint, 16))
+                (_, codePoint) => String.fromCodePoint(parseInt(codePoint, 16)),
             )
         },
     },

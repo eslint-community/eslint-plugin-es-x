@@ -25,14 +25,12 @@ RuleTester.setDefaultConfig({
         ecmaVersion,
         sourceType: "script",
     },
-    globals: Object.assign(
-        {
-            AggregateError: "readonly",
-            FinalizationRegistry: "readonly",
-            WeakRef: "readonly",
-        },
-        builtin
-    ),
+    globals: {
+        AggregateError: "readonly",
+        FinalizationRegistry: "readonly",
+        WeakRef: "readonly",
+        ...builtin,
+    },
 })
 RuleTester.isSupported = targetEcmaVersion => targetEcmaVersion <= ecmaVersion
 

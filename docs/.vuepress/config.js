@@ -26,7 +26,10 @@ module.exports = {
         docsBranch: "master",
         editLinks: true,
 
-        nav: [{ text: "Guide", link: "/" }, { text: "Rules", link: "/rules/" }],
+        nav: [
+            { text: "Guide", link: "/" },
+            { text: "Rules", link: "/rules/" },
+        ],
 
         sidebarDepth: 0,
         sidebar: [

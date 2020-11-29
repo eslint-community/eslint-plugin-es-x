@@ -39,13 +39,13 @@ for (const { ruleId, description, fixable } of rules) {
         headerLines.push(
             `- ✅ The following configurations enable this rule: ${new Intl.ListFormat(
                 "en",
-                { type: "conjunction" }
-            ).format(enabledConfigIds)}`
+                { type: "conjunction" },
+            ).format(enabledConfigIds)}`,
         )
     }
     if (fixable) {
         headerLines.push(
-            "- 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule."
+            "- 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.",
         )
     }
 

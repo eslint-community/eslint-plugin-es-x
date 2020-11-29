@@ -1,18 +1,17 @@
 extends:
-  - plugin:@mysticatea/es2015
+  - plugin:@mysticatea/es2020
   - plugin:@mysticatea/+eslint-plugin
 
+ignorePatterns:
+  - /.nyc_output
+  - /coverage
+  - /node_modules
+  - "!.vuepress"
+  - /docs/.vuepress/dist
+
 overrides:
-  - files: lib/rules/*.js
+  - files: lib/rules/**/*.js
     rules:
       "@mysticatea/eslint-plugin/require-meta-docs-url":
         - error
         - pattern: http://mysticatea.github.io/eslint-plugin-es/rules/{{name}}.html
-
-  - files: scripts/*.js
-    rules:
-      require-jsdoc: off
-
-  - files: "*.vue"
-    parserOptions:
-      parser: babel-eslint

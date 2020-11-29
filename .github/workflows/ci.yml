@@ -58,7 +58,7 @@ jobs:
             os: ubuntu-latest
           # On the minimum supported ESLint/Node.js version
           - eslint: 4
-            node: 8.10
+            node: "8.10"
             os: ubuntu-latest
 
     runs-on: ${{ matrix.os }}

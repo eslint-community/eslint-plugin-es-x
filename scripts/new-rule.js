@@ -16,7 +16,7 @@ const logger = console
         process.exitCode = 1
         return
     }
-    if (!/^[\w-]+$/u.test(ruleId)) {
+    if (!/^(?:aggressive\/)?[a-z0-9-]+$/u.test(ruleId)) {
         logger.error("Invalid RuleID '%s'.", ruleId)
         process.exitCode = 1
         return
@@ -53,7 +53,7 @@ module.exports = {
         return {}
     },
 }
-`
+`,
     )
     fs.writeFileSync(
         testFile,
@@ -66,7 +66,7 @@ module.exports = {
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/${ruleId}.js")
 
-if (!RuleTester.isSupported(2020)) {
+if (!RuleTester.isSupported(2021)) {
     //eslint-disable-next-line no-console
     console.log("Skip the tests of ${ruleId}.")
     return
@@ -76,11 +76,12 @@ new RuleTester().run("${ruleId}", rule, {
     valid: [],
     invalid: [],
 })
-`
+`,
     )
     fs.writeFileSync(
         docFile,
-        `#  (es/${ruleId})
+        `# es/${ruleId}
+> 
 
 This rule reports ??? as errors.
 
@@ -91,7 +92,7 @@ This rule reports ??? as errors.
 <eslint-playground type="bad" code="/*eslint es/${ruleId}: error */
 
 " />
-`
+`,
     )
 
     cp.execSync(`code "${ruleFile}"`)

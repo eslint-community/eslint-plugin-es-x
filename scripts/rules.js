@@ -38,29 +38,42 @@ const categories = [12, 11, 10, 9, 8, 7, 6, 5].reduce(
         }
         return map
     },
-    {}
+    {},
 )
 
 /** @type {Rule[]} */
 const rules = []
 
-for (const filename of fs.readdirSync(libRoot)) {
-    const ruleId = path.basename(filename, ".js")
-    const filePath = path.join(libRoot, filename)
-    const content = fs.readFileSync(filePath, "utf8")
-    const category = /category:[\s\n]+(?:undefined|"(.+)")/u.exec(content)[1]
-    const description = /description:[\s\n]+"(.+?)\.?"/u.exec(content)[1]
-    const fixable = /fixable:[\s\n]+"(.+)"/u.test(content)
-    const rule = {
-        ruleId,
-        description: JSON.parse(`"${description}"`),
-        fixable,
-    }
+// 全ルールを探す
+;(function walk(dirPath) {
+    for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
+        if (entry.isDirectory()) {
+            walk(path.join(dirPath, entry.name))
+            continue
+        }
 
-    if (category) {
-        categories[category].rules.push(rule)
+        const filePath = path.join(dirPath, entry.name)
+        const ruleId = path
+            .relative(libRoot, filePath)
+            .replace(/\.js$/u, "")
+            .replace(/\\/gu, "/")
+        const content = fs.readFileSync(filePath, "utf8")
+        const category = /category:[\s\n]+(?:undefined|"(.+)")/u.exec(
+            content,
+        )[1]
+        const description = /description:[\s\n]+"(.+?)\.?"/u.exec(content)[1]
+        const fixable = /fixable:[\s\n]+"(.+)"/u.test(content)
+        const rule = {
+            ruleId,
+            description: JSON.parse(`"${description}"`),
+            fixable,
+        }
+
+        if (category) {
+            categories[category].rules.push(rule)
+        }
+        rules.push(rule)
     }
-    rules.push(rule)
-}
+})(libRoot)
 
 module.exports = { categories, rules }

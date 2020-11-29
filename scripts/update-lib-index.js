@@ -7,10 +7,10 @@
 const fs = require("fs")
 const path = require("path")
 const { CLIEngine } = require("eslint")
+const { rules } = require("./rules")
 const collator = new Intl.Collator("en", { numeric: true })
 
 const configRootPath = path.resolve(__dirname, "../lib/configs")
-const ruleRootPath = path.resolve(__dirname, "../lib/rules")
 const configIds = fs
     .readdirSync(configRootPath)
     .map(f => path.basename(f, ".js"))
@@ -23,10 +23,7 @@ const legacyConfigIds = [
     "no-2015",
     "no-5",
 ].sort(collator.compare.bind(collator))
-const ruleIds = fs
-    .readdirSync(ruleRootPath)
-    .map(f => path.basename(f, ".js"))
-    .sort(collator.compare.bind(collator))
+const ruleIds = rules.map(r => r.ruleId).sort(collator.compare.bind(collator))
 
 fs.writeFileSync(
     "lib/index.js",
@@ -46,7 +43,7 @@ module.exports = {
                 id => `get "${id}"() {
                     printWarningOfDeprecatedConfig("${id}")
                     return this["${id.replace("no-", "no-new-in-es")}"]
-                }`
+                }`,
             )
             .join(",")}
     },
@@ -54,9 +51,9 @@ module.exports = {
         ${ruleIds.map(id => `"${id}":require("./rules/${id}")`).join(",")}
     },
 }
-`
+`,
 )
 
 CLIEngine.outputFixes(
-    new CLIEngine({ fix: true }).executeOnFiles(["lib/index.js"])
+    new CLIEngine({ fix: true }).executeOnFiles(["lib/index.js"]),
 )
