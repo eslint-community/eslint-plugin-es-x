@@ -16,7 +16,7 @@ const logger = console
         process.exitCode = 1
         return
     }
-    if (!/^(?:aggressive\/)?[a-z0-9-]+$/u.test(ruleId)) {
+    if (!/^[a-z0-9-]+$/u.test(ruleId)) {
         logger.error("Invalid RuleID '%s'.", ruleId)
         process.exitCode = 1
         return

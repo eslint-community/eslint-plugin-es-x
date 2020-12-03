@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "lib": ["ES2020"]
+    },
+    "include": ["test.ts"]
+}

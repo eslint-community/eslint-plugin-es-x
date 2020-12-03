@@ -14,8 +14,8 @@ import x1 from &quot;x1&quot;
 import {x2} from &quot;x2&quot;
 import * as x3 from &quot;x3&quot;
 export default function() {}
-export { x4 } from &quot;x4&quot;
-export { x5 }
+export { x1 } from &quot;x4&quot;
+export { x2 }
 " />
 
 ## 📚 References

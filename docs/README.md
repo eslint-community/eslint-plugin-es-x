@@ -90,3 +90,45 @@ For example:
     }
 }
 ```
+
+### The `aggressive` mode
+
+This plugin never reports prototype methods by default. Because it's hard to know the type of objects, it will cause false positives.
+
+If you configured the `aggressive` mode, this plugin reports prototype methods even if the rules couldn't know the type of objects.
+For example:
+
+```json
+{
+    "plugins": ["es"],
+    "rules": {
+        "es/no-string-prototype-codepointat": "error"
+    },
+
+    // `settings.es.aggressive = true` means the aggressive mode.
+    "settings": {
+        "es": { "aggressive": true }
+    }
+}
+```
+
+If using this plugin and TypeScript, this plugin reports prototype methods by default because we can easily know types.
+For example:
+
+```json
+{
+    "plugins": ["es"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "tsconfig.json"
+    },
+    "rules": {
+        "es/no-string-prototype-codepointat": "error"
+    },
+    
+    // If you configured the `aggressive` mode, this plugin reports prototype methods on `any` types as well.
+    // "settings": {
+    //     "es": { "aggressive": true }
+    // }
+}
+```

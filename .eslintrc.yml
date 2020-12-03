@@ -6,6 +6,7 @@ ignorePatterns:
   - /.nyc_output
   - /coverage
   - /node_modules
+  - "*.ts"
   - "!.vuepress"
   - /docs/.vuepress/dist
 

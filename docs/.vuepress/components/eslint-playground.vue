@@ -74,6 +74,9 @@ export default {
                     ecmaVersion: 2021,
                     sourceType: "module",
                 },
+                settings: {
+                    es: { aggressive: true },
+                },
             },
             linter: null,
         }
