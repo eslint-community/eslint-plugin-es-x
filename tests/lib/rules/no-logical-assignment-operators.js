@@ -40,7 +40,7 @@ new RuleTester().run("no-logical-assignment-operators", rule, {
         },
         {
             code: "a.b ||= c",
-            output: "a.b = a.b || (c)",
+            output: null,
             errors: ["ES2021 logical assignment operators are forbidden."],
         },
         {
