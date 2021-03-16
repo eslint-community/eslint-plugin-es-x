@@ -191,6 +191,7 @@ There are multiple configs that enable all rules in this category: `plugin:es/no
 | [es/no-date-now](./no-date-now.md) | disallow the `Date.now` method. |  |
 | [es/no-json](./no-json.md) | disallow the `JSON` class. |  |
 | [es/no-keyword-properties](./no-keyword-properties.md) | disallow reserved words as property names. |  |
+| [es/no-object-create](./no-object-create.md) | disallow the `Object.create` method. |  |
 | [es/no-object-defineproperties](./no-object-defineproperties.md) | disallow the `Object.defineProperties` method. |  |
 | [es/no-object-defineproperty](./no-object-defineproperty.md) | disallow the `Object.defineProperty` method. |  |
 | [es/no-object-freeze](./no-object-freeze.md) | disallow the `Object.freeze` method. |  |
