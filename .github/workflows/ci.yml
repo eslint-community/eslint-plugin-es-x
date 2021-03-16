@@ -73,6 +73,10 @@ jobs:
         run: npm install
       - name: Install ESLint ${{ matrix.eslint }}
         run: npm install --no-save eslint@${{ matrix.eslint }}
+        if: "matrix.node != '8.10'"
+      - name: Install ESLint ${{ matrix.eslint }} and @typescript-eslint/parser 3
+        run: npm install --no-save eslint@${{ matrix.eslint }} @typescript-eslint/parser@3
+        if: "matrix.node == '8.10'"
       - name: Test
         run: npm run -s test:mocha
       - name: Send Coverage
