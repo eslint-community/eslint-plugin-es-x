@@ -14,7 +14,7 @@ const rule = require("../../../lib/rules/no-class-fields.js")
 // }
 
 new RuleTester({
-    parser: require.resolve('espree'),// espree v8.0.0-beta.x
+    parser: require.resolve("espree"), // espree v8.0.0-beta.x
     parserOptions: {
         ecmaVersion: 2022,
     },
