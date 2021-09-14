@@ -14,15 +14,15 @@ if (!RuleTester.isSupported(2022)) {
 }
 
 new RuleTester().run("no-class-static-block", rule, {
-    valid: ["class A { static f() }", "class A { static get f() }"],
+    valid: ["class A { static f() {} }", "class A { static get f() {} }"],
     invalid: [
         {
-            code: "class A { static {} }",
-            errors: ["ES2015 class static block is forbidden."],
+            code: "class A { static {}; }",
+            errors: ["ES2022 class static block is forbidden."],
         },
         {
             code: "(class { static {} })",
-            errors: ["ES2015 class static block is forbidden."],
+            errors: ["ES2022 class static block is forbidden."],
         },
     ],
 })
