@@ -7,18 +7,13 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-class-fields.js")
 
-// if (!RuleTester.isSupported(2022)) {
-//     //eslint-disable-next-line no-console
-//     console.log("Skip the tests of no-class-fields.")
-//     return
-// }
+if (!RuleTester.isSupported(2022)) {
+    //eslint-disable-next-line no-console
+    console.log("Skip the tests of no-class-fields.")
+    return
+}
 
-new RuleTester({
-    parser: require.resolve("espree"), // espree v8.0.0-beta.x
-    parserOptions: {
-        ecmaVersion: 2022,
-    },
-}).run("no-class-fields", rule, {
+new RuleTester().run("no-class-fields", rule, {
     valid: [
         "class A {}",
         "class A { foo() {} }",
