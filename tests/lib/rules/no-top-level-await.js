@@ -7,18 +7,13 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-top-level-await.js")
 
-// if (!RuleTester.isSupported(2022)) {
-//     //eslint-disable-next-line no-console
-//     console.log("Skip the tests of no-top-level-await.")
-//     return
-// }
+if (!RuleTester.isSupported(2022)) {
+    //eslint-disable-next-line no-console
+    console.log("Skip the tests of no-top-level-await.")
+    return
+}
 
-new RuleTester({
-    parser: require.resolve("espree"), // espree v8.0.0-beta.x
-    parserOptions: {
-        ecmaVersion: 2022,
-    },
-}).run("no-top-level-await", rule, {
+new RuleTester().run("no-top-level-await", rule, {
     valid: [
         "async function f() { await expr }",
         "expr;",
