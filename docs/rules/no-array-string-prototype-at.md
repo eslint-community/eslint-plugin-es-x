@@ -14,6 +14,20 @@ foo.at(-1)
 'str'.at(-1)
 " />
 
+## 🔧 Options
+
+This rule has an option.
+
+```yml
+rules:
+  es/no-array-string-prototype-at: [error, { aggressive: false }]
+```
+
+### aggressive: boolean
+
+Configure the aggressive mode for only this rule.
+This is prior to the `settings.es.aggressive` setting.
+
 ## 📚 References
 
 - [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/lib/rules/no-array-string-prototype-at.js)
