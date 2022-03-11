@@ -4,9 +4,25 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
-## ES2021
+## ES2023
 
 There is a config that enables the rules in this category: `plugin:es/no-new-in-esnext`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+
+
+## ES2022
+
+There are multiple configs that enable all rules in this category: `plugin:es/no-new-in-es2022`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, `plugin:es/restrict-to-es2017`, `plugin:es/restrict-to-es2018`, `plugin:es/restrict-to-es2019`, `plugin:es/restrict-to-es2020`, and `plugin:es/restrict-to-es2021`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+
+
+## ES2021
+
+There are multiple configs that enable all rules in this category: `plugin:es/no-new-in-es2021`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, `plugin:es/restrict-to-es2017`, `plugin:es/restrict-to-es2018`, `plugin:es/restrict-to-es2019`, and `plugin:es/restrict-to-es2020`
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|

@@ -1,7 +1,7 @@
 # es/no-promise-any
 > disallow `Promise.any` function and `AggregateError` class
 
-- ✅ The following configurations enable this rule: `plugin:es/no-new-in-esnext`
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2021`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, `plugin:es/restrict-to-es2017`, `plugin:es/restrict-to-es2018`, `plugin:es/restrict-to-es2019`, and `plugin:es/restrict-to-es2020`
 
 This rule reports ES2021 [`Promise.any`](https://github.com/tc39/proposal-promise-any) as errors.
 This proposal includes the following two:
