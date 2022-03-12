@@ -1,7 +1,7 @@
 # es-x/no-escape-unescape
 > disallow `escape` and `unescape`
 
-This rule reports `escape` and `unescape` as errors.
+This rule reports Annex B feature `escape` and `unescape` as errors.
 
 ## Examples
 

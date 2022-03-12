@@ -2,7 +2,7 @@
 
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-escape-unescape.js")
-
+"".substr()
 new RuleTester().run("no-escape-unescape", rule, {
     valid: [
         "encodeURI",
@@ -13,24 +13,24 @@ new RuleTester().run("no-escape-unescape", rule, {
     invalid: [
         {
             code: "escape",
-            errors: ["'escape' is forbidden."],
+            errors: ["Annex B feature 'escape' is forbidden."],
         },
         {
             code: "unescape",
-            errors: ["'unescape' is forbidden."],
+            errors: ["Annex B feature 'unescape' is forbidden."],
         },
         {
             code: "escape('')",
-            errors: ["'escape' is forbidden."],
+            errors: ["Annex B feature 'escape' is forbidden."],
         },
         {
             code: "unescape('')",
-            errors: ["'unescape' is forbidden."],
+            errors: ["Annex B feature 'unescape' is forbidden."],
         },
         {
             code: "window.escape",
             globals: { window: "readonly" },
-            errors: ["'escape' is forbidden."],
+            errors: ["Annex B feature 'escape' is forbidden."],
         },
     ],
 })

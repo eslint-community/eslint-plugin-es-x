@@ -231,4 +231,5 @@ The rules are not included in any preset.
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-escape-unescape](./no-escape-unescape.md) | disallow `escape` and `unescape`. |  |
+| [es-x/no-string-prototype-substr](./no-string-prototype-substr.md) | disallow the `String.prototype.substr` method. |  |
 
