@@ -13,13 +13,6 @@ module.exports = {
     description: "ESLint plugin about ECMAScript syntax.",
     evergreen: true,
 
-    plugins: {
-        "@vuepress/pwa": {
-            serviceWorker: true,
-            updatePopup: true,
-        },
-    },
-
     themeConfig: {
         repo: "ota-meshi/eslint-plugin-es-x",
         docsRepo: "ota-meshi/eslint-plugin-es-x",

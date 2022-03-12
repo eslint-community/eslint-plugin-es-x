@@ -38,7 +38,7 @@ module.exports = {
             return configuredRulesDocumentUrl
         }
         try {
-            const { version, repository } = JSON.parse(
+            const { repository } = JSON.parse(
                 fs.readFileSync(
                     path.join(process.cwd(), "package.json"),
                     "utf8",
@@ -46,7 +46,7 @@ module.exports = {
             )
             const baseUrl = getBaseUrl(repository)
             if (baseUrl) {
-                return `${baseUrl}/blob/v${version}/docs/rules/{{name}}.md`
+                return `${baseUrl}/blob/master/docs/rules/{{name}}.md`
             }
         } catch (_error) {
             // ignore

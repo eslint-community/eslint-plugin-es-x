@@ -8,7 +8,6 @@ const fs = require("fs")
 const path = require("path")
 const { ESLint } = require("eslint")
 const { rules } = require("./rules")
-const { version } = require("../package.json")
 
 main()
 
@@ -59,8 +58,8 @@ ${content}
 
 ## 📚 References
 
-- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v${version}/lib/rules/${ruleId}.js)
-- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v${version}/tests/lib/rules/${ruleId}.js)
+- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/master/lib/rules/${ruleId}.js)
+- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/master/tests/lib/rules/${ruleId}.js)
 `
 
         fs.writeFileSync(filePath, newContent)
