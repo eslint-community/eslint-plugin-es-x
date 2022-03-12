@@ -1,5 +1,6 @@
 <template>
     <eslint-editor
+        ref="editor"
         :linter="linter"
         :config="config"
         :code="cookedCode"
@@ -99,6 +100,31 @@ export default {
         for (const ruleId of Object.keys(rules)) {
             linter.defineRule(`es-x/${ruleId}`, rules[ruleId])
         }
+
+        const editor = this.$refs.editor
+
+        editor.$watch("codeEditor", () => {
+            if (editor.codeEditor) {
+                editor.codeEditor.onDidChangeModelDecorations(() =>
+                    this.onDidChangeModelDecorations(editor.codeEditor),
+                )
+            }
+        })
+        editor.$watch("fixedCodeEditor", () => {
+            if (editor.fixedCodeEditor) {
+                editor.fixedCodeEditor.onDidChangeModelDecorations(() =>
+                    this.onDidChangeModelDecorations(editor.fixedCodeEditor),
+                )
+            }
+        })
+    },
+
+    methods: {
+        onDidChangeModelDecorations(editor) {
+            const { monaco } = this.$refs.editor
+            const model = editor.getModel()
+            monaco.editor.setModelMarkers(model, "javascript", [])
+        },
     },
 }
 </script>
