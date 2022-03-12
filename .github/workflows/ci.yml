@@ -82,7 +82,7 @@ jobs:
         if: "matrix.node == '8.10'"
       - name: Install for ESLint v4
         run: |+
-            npm i -D @typescript-eslint/parser@2 eslint-utils@2 --legacy-peer-deps
+            npm i -D eslint-utils@2 --legacy-peer-deps
         if: "matrix.eslint == 4"
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+ 
@@ -91,10 +91,10 @@ jobs:
             npx rimraf node_modules
       - name: Install Packages
         run: npm install
-      - name: Install for ESLint v4
-        run: |+
-            npm i -D @typescript-eslint/parser@3 --legacy-peer-deps
-        if: "matrix.eslint == 4"
+        if: "matrix.eslint != 4 || matrix.node == '8.10'"
+      - name: Install --legacy-peer-deps
+        run: npm install --legacy-peer-deps
+        if: "matrix.eslint == 4 && matrix.node != '8.10'"
       - name: Test
         run: npm run -s test:mocha
       - name: Send Coverage
