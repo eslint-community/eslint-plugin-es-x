@@ -71,8 +71,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.map(() => {}) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.map(() => {}) }",
         },
     ],
     invalid: [
@@ -101,8 +100,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.map(() => {}) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.map(() => {}) }",
             errors: ["ES5 'Array.prototype.map' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
@@ -158,14 +156,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends readonly any[]>(a: T) { a.map(() => {}) }",
+                code: "function f<T extends readonly any[]>(a: T) { a.map(() => {}) }",
                 errors: ["ES5 'Array.prototype.map' method is forbidden."],
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.map(() => {}) }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.map(() => {}) }",
                 errors: ["ES5 'Array.prototype.map' method is forbidden."],
             },
             {

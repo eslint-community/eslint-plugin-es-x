@@ -167,16 +167,14 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends string>(a: T) { a.replaceAll('a') }",
+                code: "function f<T extends string>(a: T) { a.replaceAll('a') }",
                 errors: [
                     "ES2021 'String.prototype.replaceAll' method is forbidden.",
                 ],
             },
             {
                 filename,
-                code:
-                    "function f<T extends 'a' | 'b'>(a: T) { a.replaceAll('a') }",
+                code: "function f<T extends 'a' | 'b'>(a: T) { a.replaceAll('a') }",
                 errors: [
                     "ES2021 'String.prototype.replaceAll' method is forbidden.",
                 ],

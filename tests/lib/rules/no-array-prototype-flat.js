@@ -87,8 +87,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.flat(1) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.flat(1) }",
         },
     ],
     invalid: [
@@ -122,8 +121,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.flat(1) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.flat(1) }",
             errors: ["ES2019 'Array.prototype.flat' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
@@ -201,14 +199,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends readonly any[]>(a: T) { a.flat(1) }",
+                code: "function f<T extends readonly any[]>(a: T) { a.flat(1) }",
                 errors: ["ES2019 'Array.prototype.flat' method is forbidden."],
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.flat(1) }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.flat(1) }",
                 errors: ["ES2019 'Array.prototype.flat' method is forbidden."],
             },
             {

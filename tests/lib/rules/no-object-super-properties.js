@@ -33,8 +33,7 @@ new RuleTester().run("no-object-super-properties", rule, {
             ],
         },
         {
-            code:
-                "({ foo() { ({ foo() { return () => super.a } }); class A { foo() { super.a } } return () => super.a } })",
+            code: "({ foo() { ({ foo() { return () => super.a } }); class A { foo() { super.a } } return () => super.a } })",
             errors: [
                 "ES2015 'super' property accesses in object literals are forbidden.",
                 "ES2015 'super' property accesses in object literals are forbidden.",

@@ -36,24 +36,18 @@ new RuleTester().run("no-arrow-functions", rule, {
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
-            code:
-                "var fnRestParams = (param1, param2, ...rest) => { statements }",
-            output:
-                "var fnRestParams = function(param1, param2, ...rest) { statements }",
+            code: "var fnRestParams = (param1, param2, ...rest) => { statements }",
+            output: "var fnRestParams = function(param1, param2, ...rest) { statements }",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
-            code:
-                "var fnDefParams = (param1 = defaultValue1, param2, paramN = defaultValueN) => { statements }",
-            output:
-                "var fnDefParams = function(param1 = defaultValue1, param2, paramN = defaultValueN) { statements }",
+            code: "var fnDefParams = (param1 = defaultValue1, param2, paramN = defaultValueN) => { statements }",
+            output: "var fnDefParams = function(param1 = defaultValue1, param2, paramN = defaultValueN) { statements }",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {
-            code:
-                "var fnDestructuring = ([a, b] = [1, 2], {x: c} = {x: a + b}) => a + b + c;",
-            output:
-                "var fnDestructuring = function([a, b] = [1, 2], {x: c} = {x: a + b}) { return a + b + c };",
+            code: "var fnDestructuring = ([a, b] = [1, 2], {x: c} = {x: a + b}) => a + b + c;",
+            output: "var fnDestructuring = function([a, b] = [1, 2], {x: c} = {x: a + b}) { return a + b + c };",
             errors: ["ES2015 arrow function expressions are forbidden."],
         },
         {

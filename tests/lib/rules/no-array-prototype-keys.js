@@ -71,8 +71,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.keys() }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.keys() }",
         },
     ],
     invalid: [
@@ -101,8 +100,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.keys() }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.keys() }",
             errors: ["ES2015 'Array.prototype.keys' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
@@ -163,8 +161,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.keys() }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.keys() }",
                 errors: ["ES2015 'Array.prototype.keys' method is forbidden."],
             },
             {

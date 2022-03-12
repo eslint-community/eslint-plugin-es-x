@@ -71,8 +71,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.findIndex(() => {}) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.findIndex(() => {}) }",
         },
     ],
     invalid: [
@@ -101,8 +100,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.findIndex(() => {}) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.findIndex(() => {}) }",
             errors: ["ES2015 'Array.prototype.findIndex' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
@@ -159,24 +157,21 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends any[]>(a: T) { a.findIndex(() => {}) }",
+                code: "function f<T extends any[]>(a: T) { a.findIndex(() => {}) }",
                 errors: [
                     "ES2015 'Array.prototype.findIndex' method is forbidden.",
                 ],
             },
             {
                 filename,
-                code:
-                    "function f<T extends readonly any[]>(a: T) { a.findIndex(() => {}) }",
+                code: "function f<T extends readonly any[]>(a: T) { a.findIndex(() => {}) }",
                 errors: [
                     "ES2015 'Array.prototype.findIndex' method is forbidden.",
                 ],
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.findIndex(() => {}) }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.findIndex(() => {}) }",
                 errors: [
                     "ES2015 'Array.prototype.findIndex' method is forbidden.",
                 ],

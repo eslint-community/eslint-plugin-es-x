@@ -167,16 +167,14 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends string>(a: T) { a.startsWith('a') }",
+                code: "function f<T extends string>(a: T) { a.startsWith('a') }",
                 errors: [
                     "ES2015 'String.prototype.startsWith' method is forbidden.",
                 ],
             },
             {
                 filename,
-                code:
-                    "function f<T extends 'a' | 'b'>(a: T) { a.startsWith('a') }",
+                code: "function f<T extends 'a' | 'b'>(a: T) { a.startsWith('a') }",
                 errors: [
                     "ES2015 'String.prototype.startsWith' method is forbidden.",
                 ],

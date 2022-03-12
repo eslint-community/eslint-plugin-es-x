@@ -156,8 +156,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends 'a' | 'b'>(a: T) { a.endsWith('a') }",
+                code: "function f<T extends 'a' | 'b'>(a: T) { a.endsWith('a') }",
                 errors: [
                     "ES2015 'String.prototype.endsWith' method is forbidden.",
                 ],

@@ -13,7 +13,7 @@ const collator = new Intl.Collator("en", { numeric: true })
 const configRootPath = path.resolve(__dirname, "../lib/configs")
 const configIds = fs
     .readdirSync(configRootPath)
-    .map(f => path.basename(f, ".js"))
+    .map((f) => path.basename(f, ".js"))
     .sort(collator.compare.bind(collator))
 const legacyConfigIds = [
     "no-2019",
@@ -23,7 +23,7 @@ const legacyConfigIds = [
     "no-2015",
     "no-5",
 ].sort(collator.compare.bind(collator))
-const ruleIds = rules.map(r => r.ruleId).sort(collator.compare.bind(collator))
+const ruleIds = rules.map((r) => r.ruleId).sort(collator.compare.bind(collator))
 
 fs.writeFileSync(
     "lib/index.js",
@@ -37,10 +37,12 @@ const { printWarningOfDeprecatedConfig } = require("./utils")
 
 module.exports = {
     configs: {
-        ${configIds.map(id => `"${id}":require("./configs/${id}")`).join(",")},
+        ${configIds
+            .map((id) => `"${id}":require("./configs/${id}")`)
+            .join(",")},
         ${legacyConfigIds
             .map(
-                id => `get "${id}"() {
+                (id) => `get "${id}"() {
                     printWarningOfDeprecatedConfig("${id}")
                     return this["${id.replace("no-", "no-new-in-es")}"]
                 }`,
@@ -48,7 +50,7 @@ module.exports = {
             .join(",")}
     },
     rules: {
-        ${ruleIds.map(id => `"${id}":require("./rules/${id}")`).join(",")}
+        ${ruleIds.map((id) => `"${id}":require("./rules/${id}")`).join(",")}
     },
 }
 `,
