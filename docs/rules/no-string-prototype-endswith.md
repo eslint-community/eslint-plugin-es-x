@@ -27,7 +27,7 @@ rules:
 ### aggressive: boolean
 
 Configure the aggressive mode for only this rule.
-This is prior to the `settings.es.aggressive` setting.
+This is prior to the `settings['es-x'].aggressive` setting.
 
 ## 📚 References
 

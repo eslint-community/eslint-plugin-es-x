@@ -109,7 +109,7 @@ For example:
         "es-x/no-string-prototype-codepointat": "error"
     },
 
-    // `settings.es.aggressive = true` means the aggressive mode.
+    // `settings['es-x'].aggressive = true` means the aggressive mode.
     "settings": {
         "es-x": { "aggressive": true }
     }
