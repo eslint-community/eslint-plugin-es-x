@@ -8,7 +8,8 @@ const { categories } = require("../../scripts/rules")
 require("../../scripts/update-docs-readme")
 
 module.exports = {
-    title: "eslint-plugin-es",
+    title: "eslint-plugin-es-x",
+    base: "/eslint-plugin-ex-x/",
     description: "ESLint plugin about ECMAScript syntax.",
     evergreen: true,
 
@@ -20,8 +21,8 @@ module.exports = {
     },
 
     themeConfig: {
-        repo: "mysticatea/eslint-plugin-es",
-        docsRepo: "mysticatea/eslint-plugin-es",
+        repo: "ota-meshi/eslint-plugin-es-x",
+        docsRepo: "ota-meshi/eslint-plugin-es-x",
         docsDir: "docs",
         docsBranch: "master",
         editLinks: true,
@@ -35,14 +36,16 @@ module.exports = {
         sidebar: [
             "/",
             "/rules/",
-            ...Object.keys(categories).map((category) => ({
-                title: category,
-                collapsable: false,
-                children: categories[category].rules.map(({ ruleId }) => [
-                    `/rules/${ruleId}`,
-                    `es/${ruleId}`,
-                ]),
-            })),
+            ...Object.keys(categories)
+                .map((category) => ({
+                    title: category,
+                    collapsable: false,
+                    children: categories[category].rules.map(({ ruleId }) => [
+                        `/rules/${ruleId}`,
+                        `es-x/${ruleId}`,
+                    ]),
+                }))
+                .filter((menu) => menu.children.length),
         ],
     },
 }

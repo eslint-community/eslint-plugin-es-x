@@ -1,12 +1,12 @@
 # Guide
 
-[![npm version](https://img.shields.io/npm/v/eslint-plugin-es.svg)](https://www.npmjs.com/package/eslint-plugin-es)
-[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es.svg)](http://www.npmtrends.com/eslint-plugin-es)
-[![Build Status](https://github.com/mysticatea/eslint-plugin-es/workflows/CI/badge.svg)](https://github.com/mysticatea/eslint-plugin-es/actions)
-[![Coverage Status](https://codecov.io/gh/mysticatea/eslint-plugin-es/branch/master/graph/badge.svg)](https://codecov.io/gh/mysticatea/eslint-plugin-es)
-[![Dependency Status](https://david-dm.org/mysticatea/eslint-plugin-es.svg)](https://david-dm.org/mysticatea/eslint-plugin-es)
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-es-x.svg)](https://www.npmjs.com/package/eslint-plugin-es-x)
+[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es-x.svg)](http://www.npmtrends.com/eslint-plugin-es-x)
+[![Build Status](https://github.com/ota-meshi/eslint-plugin-es-x/workflows/CI/badge.svg)](https://github.com/ota-meshi/eslint-plugin-es-x/actions)
 
 ESLint rules which disallow each ECMAScript syntax.
+
+> Forked from [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es). As the original repository seems no longer maintained.
 
 ## 🏁 Goal
 
@@ -21,7 +21,7 @@ Plus, this plugin lets us disable each syntactic feature individually.
 Use [npm](https://www.npmjs.com/) or a compatible tool.
 
 ```console
-npm install --save-dev eslint eslint-plugin-es
+npm install --save-dev eslint eslint-plugin-es-x
 ```
 
 ::: tip Requirements
@@ -37,17 +37,17 @@ For example, to enable only Rest/Spread Properties in ES2018, as similar to lega
 
 ```json
 {
-    "plugins": ["es"],
+    "plugins": ["es-x"],
     "parserOptions": {
         "ecmaVersion": 2018
     },
     "rules": {
-        "es/no-async-iteration": "error",
-        "es/no-malformed-template-literals": "error",
-        "es/no-regexp-lookbehind-assertions": "error",
-        "es/no-regexp-named-capture-groups": "error",
-        "es/no-regexp-s-flag": "error",
-        "es/no-regexp-unicode-property-escapes": "error"
+        "es-x/no-async-iteration": "error",
+        "es-x/no-malformed-template-literals": "error",
+        "es-x/no-regexp-lookbehind-assertions": "error",
+        "es-x/no-regexp-named-capture-groups": "error",
+        "es-x/no-regexp-s-flag": "error",
+        "es-x/no-regexp-unicode-property-escapes": "error"
     }
 }
 ```
@@ -58,21 +58,25 @@ This plugin provides the following configs.
 
 | Config ID | Description |
 |:----------|:------------|
-| `plugin:es/restrict-to-es2019` | disallow new stuff that ES2019 doesn't include.
-| `plugin:es/restrict-to-es2018` | disallow new stuff that ES2018 doesn't include.
-| `plugin:es/restrict-to-es2017` | disallow new stuff that ES2017 doesn't include.
-| `plugin:es/restrict-to-es2016` | disallow new stuff that ES2016 doesn't include.
-| `plugin:es/restrict-to-es2015` | disallow new stuff that ES2015 doesn't include.
-| `plugin:es/restrict-to-es5` | disallow new stuff that ES5 doesn't include.
-| `plugin:es/restrict-to-es3` | disallow new stuff that ES3 doesn't include.
-| `plugin:es/no-new-in-es2020` | disallow the new stuff in ES2020.
-| `plugin:es/no-new-in-es2019` | disallow the new stuff in ES2019.
-| `plugin:es/no-new-in-es2018` | disallow the new stuff in ES2018.
-| `plugin:es/no-new-in-es2017` | disallow the new stuff in ES2017.
-| `plugin:es/no-new-in-es2016` | disallow the new stuff in ES2016.
-| `plugin:es/no-new-in-es2015` | disallow the new stuff in ES2015.
-| `plugin:es/no-new-in-es5` | disallow the new stuff in ES5.
-| `plugin:es/no-new-in-esnext` | disallow the new stuff to be planned for the next yearly ECMAScript snapshot.<br>⚠️ This config will be changed in the minor versions of this plugin.
+| `plugin:es-x/restrict-to-es2021` | disallow new stuff that ES2021 doesn't include.
+| `plugin:es-x/restrict-to-es2020` | disallow new stuff that ES2020 doesn't include.
+| `plugin:es-x/restrict-to-es2019` | disallow new stuff that ES2019 doesn't include.
+| `plugin:es-x/restrict-to-es2018` | disallow new stuff that ES2018 doesn't include.
+| `plugin:es-x/restrict-to-es2017` | disallow new stuff that ES2017 doesn't include.
+| `plugin:es-x/restrict-to-es2016` | disallow new stuff that ES2016 doesn't include.
+| `plugin:es-x/restrict-to-es2015` | disallow new stuff that ES2015 doesn't include.
+| `plugin:es-x/restrict-to-es5` | disallow new stuff that ES5 doesn't include.
+| `plugin:es-x/restrict-to-es3` | disallow new stuff that ES3 doesn't include.
+| `plugin:es-x/no-new-in-es2022` | disallow the new stuff in ES2022.
+| `plugin:es-x/no-new-in-es2021` | disallow the new stuff in ES2021.
+| `plugin:es-x/no-new-in-es2020` | disallow the new stuff in ES2020.
+| `plugin:es-x/no-new-in-es2019` | disallow the new stuff in ES2019.
+| `plugin:es-x/no-new-in-es2018` | disallow the new stuff in ES2018.
+| `plugin:es-x/no-new-in-es2017` | disallow the new stuff in ES2017.
+| `plugin:es-x/no-new-in-es2016` | disallow the new stuff in ES2016.
+| `plugin:es-x/no-new-in-es2015` | disallow the new stuff in ES2015.
+| `plugin:es-x/no-new-in-es5` | disallow the new stuff in ES5.
+| `plugin:es-x/no-new-in-esnext` | disallow the new stuff to be planned for the next yearly ECMAScript snapshot.<br>⚠️ This config will be changed in the minor versions of this plugin.
 
 For example:
 
@@ -83,10 +87,10 @@ For example:
     },
     "extends": [
         "eslint:recommended",
-        "plugin:es/restrict-to-es2018"
+        "plugin:es-x/restrict-to-es2018"
     ],
     "rules": {
-        "es/no-rest-spread-properties": "off"
+        "es-x/no-rest-spread-properties": "off"
     }
 }
 ```
@@ -100,14 +104,14 @@ For example:
 
 ```json
 {
-    "plugins": ["es"],
+    "plugins": ["es-x"],
     "rules": {
-        "es/no-string-prototype-codepointat": "error"
+        "es-x/no-string-prototype-codepointat": "error"
     },
 
     // `settings.es.aggressive = true` means the aggressive mode.
     "settings": {
-        "es": { "aggressive": true }
+        "es-x": { "aggressive": true }
     }
 }
 ```
@@ -117,18 +121,18 @@ For example:
 
 ```json
 {
-    "plugins": ["es"],
+    "plugins": ["es-x"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "project": "tsconfig.json"
     },
     "rules": {
-        "es/no-string-prototype-codepointat": "error"
+        "es-x/no-string-prototype-codepointat": "error"
     },
     
     // If you configured the `aggressive` mode, this plugin reports prototype methods on `any` types as well.
     // "settings": {
-    //     "es": { "aggressive": true }
+    //     "es-x": { "aggressive": true }
     // }
 }
 ```

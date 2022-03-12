@@ -1,7 +1,7 @@
-# es/no-regexp-unicode-property-escapes-2019
+# es-x/no-regexp-unicode-property-escapes-2019
 > disallow the new values of RegExp Unicode property escape sequences in ES2019
 
-- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2019`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, `plugin:es/restrict-to-es2017`, and `plugin:es/restrict-to-es2018`
+- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-es2019`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, and `plugin:es-x/restrict-to-es2018`
 
 This rule reports the new values of ES2018 [RegExp Unicode property escape sequences](https://github.com/tc39/proposal-regexp-unicode-property-escapes#readme) which were added in ES2019.
 
@@ -27,12 +27,12 @@ For example, the following patterns are valid in ES2019, but syntax error in ES2
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es/no-regexp-unicode-property-escapes-2019: error */
+<eslint-playground type="bad" code="/*eslint es-x/no-regexp-unicode-property-escapes-2019: error */
 const r1 = /\p{Extended_Pictographic}/u
 const r2 = /\p{Script=Dogr}/u
 " />
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/lib/rules/no-regexp-unicode-property-escapes-2019.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/tests/lib/rules/no-regexp-unicode-property-escapes-2019.js)
+- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/lib/rules/no-regexp-unicode-property-escapes-2019.js)
+- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/tests/lib/rules/no-regexp-unicode-property-escapes-2019.js)

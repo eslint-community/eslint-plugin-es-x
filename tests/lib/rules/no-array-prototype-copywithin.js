@@ -14,12 +14,15 @@ new RuleTester().run(ruleId, rule, {
         "copyWithin(0, 1, 2)",
         "foo.reverse()",
         "foo.copyWithin(0, 1, 2)",
-        { code: "copyWithin(0, 1, 2)", settings: { es: { aggressive: true } } },
-        { code: "foo.reverse()", settings: { es: { aggressive: true } } },
+        {
+            code: "copyWithin(0, 1, 2)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        { code: "foo.reverse()", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.copyWithin(0, 1, 2)",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -28,7 +31,7 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2015 'Array.prototype.copyWithin' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.copyWithin(0, 1, 2)",
@@ -36,7 +39,7 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2015 'Array.prototype.copyWithin' method is forbidden.",
             ],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -58,12 +61,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "copyWithin(0, 1, 2)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.reverse()",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `Array` is unknown type if tsconfig.json is not configured.
@@ -92,7 +95,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2015 'Array.prototype.copyWithin' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
@@ -100,7 +103,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2015 'Array.prototype.copyWithin' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
@@ -108,7 +111,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2015 'Array.prototype.copyWithin' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
@@ -116,7 +119,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2015 'Array.prototype.copyWithin' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
@@ -124,7 +127,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2015 'Array.prototype.copyWithin' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -141,12 +144,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "copyWithin(0, 1, 2)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.reverse()",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -191,7 +194,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 errors: [
                     "ES2015 'Array.prototype.copyWithin' method is forbidden.",
                 ],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

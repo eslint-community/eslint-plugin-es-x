@@ -1,12 +1,12 @@
-# eslint-plugin-es
+# eslint-plugin-es-x
 
-[![npm version](https://img.shields.io/npm/v/eslint-plugin-es.svg)](https://www.npmjs.com/package/eslint-plugin-es)
-[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es.svg)](http://www.npmtrends.com/eslint-plugin-es)
-[![Build Status](https://github.com/mysticatea/eslint-plugin-es/workflows/CI/badge.svg)](https://github.com/mysticatea/eslint-plugin-es/actions)
-[![Coverage Status](https://codecov.io/gh/mysticatea/eslint-plugin-es/branch/master/graph/badge.svg)](https://codecov.io/gh/mysticatea/eslint-plugin-es)
-[![Dependency Status](https://david-dm.org/mysticatea/eslint-plugin-es.svg)](https://david-dm.org/mysticatea/eslint-plugin-es)
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-es-x.svg)](https://www.npmjs.com/package/eslint-plugin-es-x)
+[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es-x.svg)](http://www.npmtrends.com/eslint-plugin-es-x)
+[![Build Status](https://github.com/ota-meshi/eslint-plugin-es-x/workflows/CI/badge.svg)](https://github.com/ota-meshi/eslint-plugin-es-x/actions)
 
 ESLint plugin which disallows each ECMAScript syntax.
+
+> Forked from [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es). As the original repository seems no longer maintained.
 
 ## 🏁 Goal
 
@@ -18,7 +18,7 @@ Plus, this plugin lets us disable each syntactic feature individually.
 
 ## 📖 Usage
 
-See [documentation](https://eslint-plugin-es.mysticatea.dev/)
+See [documentation](https://ota-meshi.github.io/eslint-plugin-es-x/)
 
 ## 🚥 Semantic Versioning Policy
 
@@ -29,7 +29,7 @@ This plugin follows [semantic versioning](http://semver.org/) and [ESLint's sema
 
 ## 📰 Changelog
 
-See [releases](https://github.com/mysticatea/eslint-plugin-es/releases).
+See [releases](https://github.com/ota-meshi/eslint-plugin-es-x/releases).
 
 ## ❤️ Contributing
 

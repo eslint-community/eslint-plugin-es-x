@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-es",
+  "name": "eslint-plugin-es-x",
   "version": "4.1.0",
   "description": "ESLint plugin about ECMAScript syntactic features.",
   "engines": {
@@ -20,8 +20,8 @@
     "@typescript-eslint/parser": "^5.14.0",
     "@vuepress/plugin-pwa": "^1.2.0",
     "acorn": "^8.7.0",
-    "codecov": "^3.8.1",
     "eslint": "^8.11.0",
+    "eslint-plugin-es-x": "file:.",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-eslint-plugin": "^4.1.0",
     "eslint-plugin-node": "^11.1.0",
@@ -43,7 +43,6 @@
   },
   "scripts": {
     "clean": "rimraf .nyc_output coverage",
-    "codecov": "nyc report -r lcovonly && codecov -t ${CODECOV_TOKEN} --disable=gcov",
     "coverage": "nyc report -r lcov && opener ./coverage/lcov-report/index.html",
     "docs:build": "vuepress build docs",
     "docs:watch": "vuepress dev docs",
@@ -65,7 +64,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mysticatea/eslint-plugin-es.git"
+    "url": "git+https://github.com/ota-meshi/eslint-plugin-es-x.git"
   },
   "keywords": [
     "eslint",
@@ -75,8 +74,8 @@
   "author": "Toru Nagashima (https://github.com/mysticatea)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mysticatea/eslint-plugin-es/issues"
+    "url": "https://github.com/ota-meshi/eslint-plugin-es-x/issues"
   },
-  "homepage": "https://github.com/mysticatea/eslint-plugin-es#readme",
-  "funding": "https://github.com/sponsors/mysticatea"
+  "homepage": "https://github.com/ota-meshi/eslint-plugin-es-x#readme",
+  "funding": "https://github.com/sponsors/ota-meshi"
 }

@@ -20,7 +20,7 @@ module.exports = {
             description: "Disallow a use of ignored variables.",
             category: "Stylistic Issues",
             recommended: false,
-            url: "https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/docs/rules/my-no-use-ignored-vars.md",
+            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/docs/rules/my-no-use-ignored-vars.md",
         },
         fixable: null,
         schema: [{ type: "string" }],

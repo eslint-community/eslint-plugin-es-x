@@ -98,7 +98,7 @@ module.exports = {
             description: "Disallow unnecessary spread operators.",
             category: "Best Practices",
             recommended: false,
-            url: "https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/docs/rules/my-no-useless-rest-spread.md",
+            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/docs/rules/my-no-useless-rest-spread.md",
         },
         fixable: "code",
         schema: [],

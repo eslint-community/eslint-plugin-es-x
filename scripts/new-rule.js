@@ -80,7 +80,7 @@ new RuleTester().run("${ruleId}", rule, {
     )
     fs.writeFileSync(
         docFile,
-        `# es/${ruleId}
+        `# es-x/${ruleId}
 > 
 
 This rule reports ??? as errors.
@@ -89,7 +89,7 @@ This rule reports ??? as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es/${ruleId}: error */
+<eslint-playground type="bad" code="/*eslint es-x/${ruleId}: error */
 
 " />
 `,

@@ -16,18 +16,21 @@ new RuleTester().run(ruleId, rule, {
         "foo.charAt(0)",
         "foo.trimStart(2)",
         "foo.trimEnd(2)",
-        { code: "trimStart(2)", settings: { es: { aggressive: true } } },
-        { code: "trimEnd(2)", settings: { es: { aggressive: true } } },
-        { code: "foo.charAt(0)", settings: { es: { aggressive: true } } },
+        { code: "trimStart(2)", settings: { "es-x": { aggressive: true } } },
+        { code: "trimEnd(2)", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.charAt(0)", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.trimStart(2)",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         "'foo'.trimLeft(2)",
         "'foo'.trimRight(2)",
-        { code: "foo.trimLeft(2)", settings: { es: { aggressive: true } } },
-        { code: "foo.trimRight(2)", settings: { es: { aggressive: true } } },
+        { code: "foo.trimLeft(2)", settings: { "es-x": { aggressive: true } } },
+        {
+            code: "foo.trimRight(2)",
+            settings: { "es-x": { aggressive: true } },
+        },
     ],
     invalid: [
         {
@@ -45,12 +48,12 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2019 'String.prototype.trimStart' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.trimEnd(2)",
             errors: ["ES2019 'String.prototype.trimEnd' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.trimStart(2)",
@@ -58,7 +61,7 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2019 'String.prototype.trimStart' method is forbidden.",
             ],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -80,24 +83,24 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "trimStart(2)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.charAt(0)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         { filename, code: "'foo'.trimLeft(2)" },
         { filename, code: "'foo'.trimRight(2)" },
         {
             filename,
             code: "foo.trimLeft(2)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.trimRight(2)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `String` is unknown type if tsconfig.json is not configured.
@@ -143,7 +146,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2019 'String.prototype.trimStart' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
@@ -151,7 +154,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2019 'String.prototype.trimStart' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -168,24 +171,24 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "trimStart(2)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.charAt(0)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             { filename, code: "'foo'.trimLeft(2)" },
             { filename, code: "'foo'.trimRight(2)" },
             {
                 filename,
                 code: "foo.trimLeft(2)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.trimRight(2)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -237,7 +240,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 errors: [
                     "ES2019 'String.prototype.trimStart' method is forbidden.",
                 ],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

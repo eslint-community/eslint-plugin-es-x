@@ -17,7 +17,7 @@ new RuleTester().run(ruleId, rule, {
         {
             code: "foo.description",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -26,7 +26,7 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2019 'Symbol.prototype.description' property is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.description",
@@ -34,7 +34,7 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2019 'Symbol.prototype.description' property is forbidden.",
             ],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -62,7 +62,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2019 'Symbol.prototype.description' property is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -100,7 +100,7 @@ new RuleTester({
             errors: [
                 "ES2019 'Symbol.prototype.description' property is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
