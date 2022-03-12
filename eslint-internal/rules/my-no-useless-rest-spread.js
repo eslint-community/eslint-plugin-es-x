@@ -130,14 +130,11 @@ module.exports = {
                 const isRestParameter =
                     nodeType === "RestElement" && argumentType !== parentType
                 const type1 = nodeType === "RestElement" ? "rest" : "spread"
-                const type2 =
-                    /*eslint-disable prettier/prettier */
-                    isRestParameter
-                        ? "parameter"
-                        : isArray
-                        ? "element"
-                        : /* otherwise */ "property"
-                /*eslint-enable prettier/prettier */
+                const type2 = isRestParameter
+                    ? "parameter"
+                    : isArray
+                    ? "element"
+                    : /* otherwise */ "property"
 
                 context.report({
                     node,

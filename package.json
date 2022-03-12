@@ -26,6 +26,7 @@
     "eslint-plugin-eslint-plugin": "^4.1.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
     "eslint4b": "^7.10.0",
     "espree": "^9.3.1",
     "globals": "^12.0.0",

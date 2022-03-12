@@ -169,7 +169,6 @@ function isTraversingArray(node) {
                         update.right.right.type === "Identifier" &&
                         update.right.right.name === indexDecl.id.name))))
     )
-    /*eslint-enable prettier/prettier */
 }
 
 /**

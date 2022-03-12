@@ -35,7 +35,7 @@ module.exports = {
         sidebar: [
             "/",
             "/rules/",
-            ...Object.keys(categories).map(category => ({
+            ...Object.keys(categories).map((category) => ({
                 title: category,
                 collapsable: false,
                 children: categories[category].rules.map(({ ruleId }) => [
