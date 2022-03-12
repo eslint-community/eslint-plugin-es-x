@@ -32,6 +32,7 @@ const categories = [14, 13, 12, 11, 10, 9, 8, 7, 6, 5].reduce(
         const id = `ES${year}`
         map[id] = {
             id,
+            title: id,
             revision,
             rules: [],
             experimental: revision === latest,
@@ -40,6 +41,21 @@ const categories = [14, 13, 12, 11, 10, 9, 8, 7, 6, 5].reduce(
     },
     {},
 )
+categories.legacy = {
+    id: "legacy",
+    title: "Legacy",
+    ignorePreset: true,
+    comment: `Rules in this category disallow the syntax contained in [Annex B](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html) or Legacy.  
+        The rules are not included in any preset.`,
+    rules: [],
+}
+categories.uncategorized = {
+    id: "uncategorized",
+    title: "Uncategorized",
+    ignorePreset: true,
+    comment: "Rules in this category are not included in any preset.",
+    rules: [],
+}
 
 /** @type {Rule[]} */
 const rules = []
@@ -69,9 +85,8 @@ const rules = []
             fixable,
         }
 
-        if (category) {
-            categories[category].rules.push(rule)
-        }
+        categories[category || "uncategorized"].rules.push(rule)
+
         rules.push(rule)
     }
 })(libRoot)

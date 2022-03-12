@@ -32,7 +32,12 @@ module.exports = ${code}
 `
 }
 
-for (const { experimental, revision, rules } of Object.values(categories)) {
+for (const { experimental, revision, rules, ignorePreset } of Object.values(
+    categories,
+)) {
+    if (ignorePreset) {
+        continue
+    }
     const ruleSetting = rules.map((r) => `"es-x/${r.ruleId}":"error"`).join(",")
     const extendSetting = Object.values(categories)
         .filter((c) => c.revision >= revision && !c.experimental)

@@ -28,11 +28,7 @@ const logger = console
 
     fs.writeFileSync(
         ruleFile,
-        `/**
- * @author Toru Nagashima <https://github.com/mysticatea>
- * See LICENSE file in root directory for full license.
- */
-"use strict"
+        `"use strict"
 
 module.exports = {
     meta: {
@@ -57,16 +53,12 @@ module.exports = {
     )
     fs.writeFileSync(
         testFile,
-        `/**
- * @author Toru Nagashima <https://github.com/mysticatea>
- * See LICENSE file in root directory for full license.
- */
-"use strict"
+        `"use strict"
 
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/${ruleId}.js")
 
-if (!RuleTester.isSupported(2021)) {
+if (!RuleTester.isSupported(2022)) {
     //eslint-disable-next-line no-console
     console.log("Skip the tests of ${ruleId}.")
     return
