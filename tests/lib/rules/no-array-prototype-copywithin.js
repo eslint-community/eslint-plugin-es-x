@@ -75,8 +75,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.copyWithin(0, 1, 2) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.copyWithin(0, 1, 2) }",
         },
     ],
     invalid: [
@@ -113,8 +112,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.copyWithin(0, 1, 2) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.copyWithin(0, 1, 2) }",
             errors: [
                 "ES2015 'Array.prototype.copyWithin' method is forbidden.",
             ],
@@ -175,16 +173,14 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends any[]>(a: T) { a.copyWithin(0, 1, 2) }",
+                code: "function f<T extends any[]>(a: T) { a.copyWithin(0, 1, 2) }",
                 errors: [
                     "ES2015 'Array.prototype.copyWithin' method is forbidden.",
                 ],
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.copyWithin(0, 1, 2) }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.copyWithin(0, 1, 2) }",
                 errors: [
                     "ES2015 'Array.prototype.copyWithin' method is forbidden.",
                 ],

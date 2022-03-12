@@ -1,6 +1,6 @@
 extends:
-  - plugin:@mysticatea/es2020
-  - plugin:@mysticatea/+eslint-plugin
+  - ./eslint-internal/config/es2020.js
+  - ./eslint-internal/config/+eslint-plugin.js
 
 ignorePatterns:
   - /.nyc_output
@@ -13,6 +13,6 @@ ignorePatterns:
 overrides:
   - files: lib/rules/**/*.js
     rules:
-      "@mysticatea/eslint-plugin/require-meta-docs-url":
+      "eslint-plugin/require-meta-docs-url":
         - error
         - pattern: http://mysticatea.github.io/eslint-plugin-es/rules/{{name}}.html

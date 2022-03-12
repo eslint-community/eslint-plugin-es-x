@@ -141,13 +141,11 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
         },
         {
-            code:
-                "function f<T extends ((a: any) => T)>(a: T) { a.bind(this) }",
+            code: "function f<T extends ((a: any) => T)>(a: T) { a.bind(this) }",
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
         },
         {
-            code:
-                "function f<T extends ((a: any) => T) | 'union'>(a: T) { a.bind(this) }",
+            code: "function f<T extends ((a: any) => T) | 'union'>(a: T) { a.bind(this) }",
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
         },
         {
@@ -232,8 +230,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "class Foo {fn()}; const foo = new Foo(); foo.fn.bind(this)",
+                code: "class Foo {fn()}; const foo = new Foo(); foo.fn.bind(this)",
                 errors: ["ES5 'Function.prototype.bind' method is forbidden."],
             },
             {
@@ -248,14 +245,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends ((a: any) => T)>(a: T) { a.bind(this) }",
+                code: "function f<T extends ((a: any) => T)>(a: T) { a.bind(this) }",
                 errors: ["ES5 'Function.prototype.bind' method is forbidden."],
             },
             {
                 filename,
-                code:
-                    "function f<T extends ((a: any) => T) | 'union'>(a: T) { a.bind(this) }",
+                code: "function f<T extends ((a: any) => T) | 'union'>(a: T) { a.bind(this) }",
                 errors: ["ES5 'Function.prototype.bind' method is forbidden."],
             },
             {

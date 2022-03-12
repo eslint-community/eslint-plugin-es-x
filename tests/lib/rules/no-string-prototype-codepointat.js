@@ -147,8 +147,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends 'a' | 'b'>(a: T) { a.codePointAt(0) }",
+                code: "function f<T extends 'a' | 'b'>(a: T) { a.codePointAt(0) }",
                 errors: [
                     "ES2015 'String.prototype.codePointAt' method is forbidden.",
                 ],

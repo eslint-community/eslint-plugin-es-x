@@ -71,8 +71,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.values() }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.values() }",
         },
     ],
     invalid: [
@@ -101,8 +100,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.values() }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.values() }",
             errors: ["ES2015 'Array.prototype.values' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
@@ -166,16 +164,14 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends readonly any[]>(a: T) { a.values() }",
+                code: "function f<T extends readonly any[]>(a: T) { a.values() }",
                 errors: [
                     "ES2015 'Array.prototype.values' method is forbidden.",
                 ],
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.values() }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.values() }",
                 errors: [
                     "ES2015 'Array.prototype.values' method is forbidden.",
                 ],

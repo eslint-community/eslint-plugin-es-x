@@ -226,8 +226,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends 'a' | 'b'>(a: T) { a.trimStart(2) }",
+                code: "function f<T extends 'a' | 'b'>(a: T) { a.trimStart(2) }",
                 errors: [
                     "ES2019 'String.prototype.trimStart' method is forbidden.",
                 ],

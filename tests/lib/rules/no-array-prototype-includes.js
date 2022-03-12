@@ -87,8 +87,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.includes(0) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.includes(0) }",
         },
     ],
     invalid: [
@@ -117,8 +116,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.includes(0) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.includes(0) }",
             errors: ["ES2016 'Array.prototype.includes' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
@@ -182,16 +180,14 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends readonly any[]>(a: T) { a.includes(0) }",
+                code: "function f<T extends readonly any[]>(a: T) { a.includes(0) }",
                 errors: [
                     "ES2016 'Array.prototype.includes' method is forbidden.",
                 ],
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.includes(0) }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.includes(0) }",
                 errors: [
                     "ES2016 'Array.prototype.includes' method is forbidden.",
                 ],
@@ -208,7 +204,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 "Float64Array",
                 "BigInt64Array",
                 "BigUint64Array",
-            ].map(className => ({
+            ].map((className) => ({
                 filename,
                 code: `let foo = new ${className}(10); foo.includes(0)`,
                 errors: [

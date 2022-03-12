@@ -70,13 +70,11 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         { filename, code: "let foo = Array(); foo.reduceRight(() => {})" },
         {
             filename,
-            code:
-                "function f<T extends any[]>(a: T) { a.reduceRight(() => {}) }",
+            code: "function f<T extends any[]>(a: T) { a.reduceRight(() => {}) }",
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.reduceRight(() => {}) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.reduceRight(() => {}) }",
         },
     ],
     invalid: [
@@ -99,15 +97,13 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends any[]>(a: T) { a.reduceRight(() => {}) }",
+            code: "function f<T extends any[]>(a: T) { a.reduceRight(() => {}) }",
             errors: ["ES5 'Array.prototype.reduceRight' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.reduceRight(() => {}) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.reduceRight(() => {}) }",
             errors: ["ES5 'Array.prototype.reduceRight' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
@@ -164,24 +160,21 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends any[]>(a: T) { a.reduceRight(() => {}) }",
+                code: "function f<T extends any[]>(a: T) { a.reduceRight(() => {}) }",
                 errors: [
                     "ES5 'Array.prototype.reduceRight' method is forbidden.",
                 ],
             },
             {
                 filename,
-                code:
-                    "function f<T extends readonly any[]>(a: T) { a.reduceRight(() => {}) }",
+                code: "function f<T extends readonly any[]>(a: T) { a.reduceRight(() => {}) }",
                 errors: [
                     "ES5 'Array.prototype.reduceRight' method is forbidden.",
                 ],
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.reduceRight(() => {}) }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.reduceRight(() => {}) }",
                 errors: [
                     "ES5 'Array.prototype.reduceRight' method is forbidden.",
                 ],

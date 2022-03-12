@@ -174,8 +174,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends 'a' | 'b'>(a: T) { a.normalize('a') }",
+                code: "function f<T extends 'a' | 'b'>(a: T) { a.normalize('a') }",
                 errors: [
                     "ES2015 'String.prototype.normalize' method is forbidden.",
                 ],

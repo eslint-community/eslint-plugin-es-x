@@ -11,7 +11,7 @@ const collator = new Intl.Collator("en", { numeric: true })
 
 // Analyze configs
 const configRoot = path.resolve(__dirname, "../lib/configs/")
-const configs = fs.readdirSync(configRoot).map(filename => {
+const configs = fs.readdirSync(configRoot).map((filename) => {
     const id = `plugin:es/${path.basename(filename, ".js")}`
     const configFile = path.join(configRoot, filename)
     const categoryIds = [
@@ -23,9 +23,7 @@ const configs = fs.readdirSync(configRoot).map(filename => {
 })
 
 // Convert categories to README sections
-const ruleSectionContent = Object.keys(categories)
-    .map(toSection)
-    .join("\n")
+const ruleSectionContent = Object.keys(categories).map(toSection).join("\n")
 
 // Write README.md
 fs.writeFileSync(
@@ -55,8 +53,8 @@ function extractCategoryId(filePath) {
 function toSection(categoryId) {
     const configIds = formatList(
         configs
-            .filter(c => c.categoryIds.includes(categoryId))
-            .map(c => `\`${c.id}\``)
+            .filter((c) => c.categoryIds.includes(categoryId))
+            .map((c) => `\`${c.id}\``)
             .sort(collator.compare.bind(collator)),
     )
     const comment = configIds

@@ -156,8 +156,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends 'a' | 'b'>(a: T) { a.matchAll('a') }",
+                code: "function f<T extends 'a' | 'b'>(a: T) { a.matchAll('a') }",
                 errors: [
                     "ES2020 'String.prototype.matchAll' method is forbidden.",
                 ],

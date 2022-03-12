@@ -12,7 +12,7 @@ const { version } = require("../package.json")
 
 const docsRoot = path.resolve(__dirname, "../docs/rules/")
 const configRoot = path.resolve(__dirname, "../lib/configs/")
-const configs = fs.readdirSync(configRoot).map(filename => {
+const configs = fs.readdirSync(configRoot).map((filename) => {
     const id = `plugin:es/${path.basename(filename, ".js")}`
     const configFile = path.join(configRoot, filename)
     const engine = new CLIEngine({ configFile, useEslintrc: false })
@@ -30,8 +30,8 @@ for (const { ruleId, description, fixable } of rules) {
         .replace(/## 📚 References[\s\S]+/u, "")
         .trim()
     const enabledConfigIds = configs
-        .filter(c => c.ruleIds.has(`es/${ruleId}`))
-        .map(c => `\`${c.id}\``)
+        .filter((c) => c.ruleIds.has(`es/${ruleId}`))
+        .map((c) => `\`${c.id}\``)
         .sort(collator.compare.bind(collator))
     const headerLines = [`# es/${ruleId}`, `> ${description}`, ""]
 

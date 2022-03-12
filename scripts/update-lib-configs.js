@@ -33,11 +33,11 @@ module.exports = ${code}
 }
 
 for (const { experimental, revision, rules } of Object.values(categories)) {
-    const ruleSetting = rules.map(r => `"es/${r.ruleId}":"error"`).join(",")
+    const ruleSetting = rules.map((r) => `"es/${r.ruleId}":"error"`).join(",")
     const extendSetting = Object.values(categories)
-        .filter(c => c.revision >= revision && !c.experimental)
+        .filter((c) => c.revision >= revision && !c.experimental)
         .map(
-            c =>
+            (c) =>
                 `require.resolve("./${configNameToDisallowNewIn(c.revision)}")`,
         )
         .join(",")

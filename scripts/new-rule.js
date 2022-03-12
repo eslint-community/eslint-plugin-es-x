@@ -10,7 +10,7 @@ const path = require("path")
 const logger = console
 
 // main
-;(ruleId => {
+;((ruleId) => {
     if (ruleId == null) {
         logger.error("Usage: npm run new <RuleID>")
         process.exitCode = 1

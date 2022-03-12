@@ -71,8 +71,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.reduce(() => {}) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.reduce(() => {}) }",
         },
     ],
     invalid: [
@@ -101,8 +100,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.reduce(() => {}) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.reduce(() => {}) }",
             errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
@@ -153,20 +151,17 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends any[]>(a: T) { a.reduce(() => {}) }",
+                code: "function f<T extends any[]>(a: T) { a.reduce(() => {}) }",
                 errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
             },
             {
                 filename,
-                code:
-                    "function f<T extends readonly any[]>(a: T) { a.reduce(() => {}) }",
+                code: "function f<T extends readonly any[]>(a: T) { a.reduce(() => {}) }",
                 errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.reduce(() => {}) }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.reduce(() => {}) }",
                 errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
             },
             {

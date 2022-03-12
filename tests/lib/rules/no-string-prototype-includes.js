@@ -170,8 +170,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends 'a' | 'b'>(a: T) { a.includes('a') }",
+                code: "function f<T extends 'a' | 'b'>(a: T) { a.includes('a') }",
                 errors: [
                     "ES2015 'String.prototype.includes' method is forbidden.",
                 ],

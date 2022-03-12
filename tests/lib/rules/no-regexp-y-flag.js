@@ -34,8 +34,7 @@ new RuleTester().run("no-regexp-y-flag", rule, {
             errors: ["ES2015 RegExp 'y' flag is forbidden."],
         },
         {
-            code:
-                "const pattern = 'foo', flags = 'gimsuy', regex = new RegExp(pattern, flags)",
+            code: "const pattern = 'foo', flags = 'gimsuy', regex = new RegExp(pattern, flags)",
             errors: ["ES2015 RegExp 'y' flag is forbidden."],
         },
     ],
