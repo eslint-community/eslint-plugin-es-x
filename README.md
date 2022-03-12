@@ -6,7 +6,7 @@
 
 ESLint plugin which disallows each ECMAScript syntax.
 
-> Forked from [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es). As the original repository seems no longer maintained.
+> Forked from [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es). As the original repository seems [no longer maintained](https://github.com/mysticatea/eslint-plugin-es/issues/72).
 
 ## 🏁 Goal
 
