@@ -13,24 +13,24 @@ new RuleTester().run(ruleId, rule, {
     valid: [
         "foo.global",
         "foo.flags",
-        { code: "foo.global", settings: { es: { aggressive: true } } },
+        { code: "foo.global", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.flags",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
         {
             code: "foo.flags",
             errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.flags",
             options: [{ aggressive: true }],
             errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -51,7 +51,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "foo.global",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `RegExp` is unknown type if tsconfig.json is not configured.
@@ -68,19 +68,19 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "new RegExp('').flags",
             errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "let foo = new RegExp(''); foo.flags",
             errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.flags",
             errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -96,7 +96,7 @@ new RuleTester({
         {
             filename,
             code: "foo.global",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -119,7 +119,7 @@ new RuleTester({
             filename,
             code: "foo.flags",
             errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })

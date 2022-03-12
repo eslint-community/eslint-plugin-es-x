@@ -6,7 +6,7 @@
 
 const fs = require("fs")
 const path = require("path")
-const { CLIEngine } = require("eslint")
+const { ESLint } = require("eslint")
 const { categories } = require("./rules")
 const Root = path.resolve(__dirname, "../lib/configs")
 
@@ -33,7 +33,7 @@ module.exports = ${code}
 }
 
 for (const { experimental, revision, rules } of Object.values(categories)) {
-    const ruleSetting = rules.map((r) => `"es/${r.ruleId}":"error"`).join(",")
+    const ruleSetting = rules.map((r) => `"es-x/${r.ruleId}":"error"`).join(",")
     const extendSetting = Object.values(categories)
         .filter((c) => c.revision >= revision && !c.experimental)
         .map(
@@ -45,12 +45,12 @@ for (const { experimental, revision, rules } of Object.values(categories)) {
     if (experimental) {
         fs.writeFileSync(
             path.join(Root, "no-new-in-esnext.js"),
-            wrapCode(`{ plugins: ["es"], rules: { ${ruleSetting} } }`),
+            wrapCode(`{ plugins: ["es-x"], rules: { ${ruleSetting} } }`),
         )
     } else {
         fs.writeFileSync(
             path.join(Root, `${configNameToDisallowNewIn(revision)}.js`),
-            wrapCode(`{ plugins: ["es"], rules: { ${ruleSetting} } }`),
+            wrapCode(`{ plugins: ["es-x"], rules: { ${ruleSetting} } }`),
         )
         fs.writeFileSync(
             path.join(Root, `${configNameToRestrictToPreviousOf(revision)}.js`),
@@ -59,6 +59,10 @@ for (const { experimental, revision, rules } of Object.values(categories)) {
     }
 }
 
-CLIEngine.outputFixes(
-    new CLIEngine({ fix: true }).executeOnFiles(["lib/configs"]),
-)
+format()
+
+async function format() {
+    ESLint.outputFixes(
+        await new ESLint({ fix: true }).lintFiles(["lib/configs"]),
+    )
+}

@@ -14,25 +14,25 @@ new RuleTester().run(ruleId, rule, {
         "values()",
         "foo.reverse()",
         "foo.values()",
-        { code: "values()", settings: { es: { aggressive: true } } },
-        { code: "foo.reverse()", settings: { es: { aggressive: true } } },
+        { code: "values()", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.reverse()", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.values()",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
         {
             code: "foo.values()",
             errors: ["ES2015 'Array.prototype.values' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.values()",
             options: [{ aggressive: true }],
             errors: ["ES2015 'Array.prototype.values' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -54,12 +54,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "values()",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.reverse()",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `Array` is unknown type if tsconfig.json is not configured.
@@ -84,31 +84,31 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "let foo = []; foo.values()",
             errors: ["ES2015 'Array.prototype.values' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "let foo = Array(); foo.values()",
             errors: ["ES2015 'Array.prototype.values' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "function f<T extends any[]>(a: T) { a.values() }",
             errors: ["ES2015 'Array.prototype.values' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "function f<T extends string[] | number[]>(a: T) { a.values() }",
             errors: ["ES2015 'Array.prototype.values' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.values()",
             errors: ["ES2015 'Array.prototype.values' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -125,12 +125,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "values()",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.reverse()",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -182,7 +182,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 errors: [
                     "ES2015 'Array.prototype.values' method is forbidden.",
                 ],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

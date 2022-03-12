@@ -16,13 +16,13 @@ new RuleTester().run(ruleId, rule, {
         "foo.charAt(0)",
         "foo.padStart(2)",
         "foo.padEnd(2)",
-        { code: "padStart(2)", settings: { es: { aggressive: true } } },
-        { code: "padEnd(2)", settings: { es: { aggressive: true } } },
-        { code: "foo.charAt(0)", settings: { es: { aggressive: true } } },
+        { code: "padStart(2)", settings: { "es-x": { aggressive: true } } },
+        { code: "padEnd(2)", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.charAt(0)", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.padStart(2)",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -37,18 +37,18 @@ new RuleTester().run(ruleId, rule, {
         {
             code: "foo.padStart(2)",
             errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.padEnd(2)",
             errors: ["ES2017 'String.prototype.padEnd' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.padStart(2)",
             options: [{ aggressive: true }],
             errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -70,12 +70,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "padStart(2)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.charAt(0)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `String` is unknown type if tsconfig.json is not configured.
@@ -111,13 +111,13 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "let foo = String(); foo.padStart(2)",
             errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.padStart(2)",
             errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -134,12 +134,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "padStart(2)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.charAt(0)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -191,7 +191,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 errors: [
                     "ES2017 'String.prototype.padStart' method is forbidden.",
                 ],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

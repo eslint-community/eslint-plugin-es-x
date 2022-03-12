@@ -75,7 +75,7 @@ export default {
                     sourceType: "module",
                 },
                 settings: {
-                    es: { aggressive: true },
+                    "es-x": { aggressive: true },
                 },
             },
             linter: null,
@@ -97,7 +97,7 @@ export default {
         const linter = (this.linter = new Linter())
 
         for (const ruleId of Object.keys(rules)) {
-            linter.defineRule(`es/${ruleId}`, rules[ruleId])
+            linter.defineRule(`es-x/${ruleId}`, rules[ruleId])
         }
     },
 }

@@ -12,7 +12,7 @@ const collator = new Intl.Collator("en", { numeric: true })
 // Analyze configs
 const configRoot = path.resolve(__dirname, "../lib/configs/")
 const configs = fs.readdirSync(configRoot).map((filename) => {
-    const id = `plugin:es/${path.basename(filename, ".js")}`
+    const id = `plugin:es-x/${path.basename(filename, ".js")}`
     const configFile = path.join(configRoot, filename)
     const categoryIds = [
         extractCategoryId(configFile),
@@ -59,7 +59,7 @@ function toSection(categoryId) {
     )
     const comment = configIds
         ? `There are multiple configs that enable all rules in this category: ${configIds}`
-        : "There is a config that enables the rules in this category: `plugin:es/no-new-in-esnext`"
+        : "There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext`"
 
     return `## ${categoryId}
 
@@ -74,9 +74,10 @@ ${toTable(categories[categoryId])}
  * @param {import("./rules").Category} category The category information to convert.
  */
 function toTable({ rules }) {
+    const body = rules.map(toTableRow).join("\n")
     return `| Rule ID | Description |    |
 |:--------|:------------|:--:|
-${rules.map(toTableRow).join("\n")}`
+${body.trim() ? body : "|  | Now there are no rules. |  |"}`
 }
 
 /**
@@ -84,7 +85,7 @@ ${rules.map(toTableRow).join("\n")}`
  * @param {import("./rules").Rule} rule The rule information to convert.
  */
 function toTableRow({ ruleId, description, fixable }) {
-    const title = `[es/${ruleId}](./${ruleId}.md)`
+    const title = `[es-x/${ruleId}](./${ruleId}.md)`
     const icons = fixable ? "🔧" : ""
     return `| ${title} | ${description}. | ${icons} |`
 }

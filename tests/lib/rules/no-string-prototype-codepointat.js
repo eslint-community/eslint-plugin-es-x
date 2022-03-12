@@ -14,12 +14,12 @@ new RuleTester().run(ruleId, rule, {
         "codePointAt(0)",
         "foo.charAt(0)",
         "foo.codePointAt(0)",
-        { code: "codePointAt(0)", settings: { es: { aggressive: true } } },
-        { code: "foo.charAt(0)", settings: { es: { aggressive: true } } },
+        { code: "codePointAt(0)", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.charAt(0)", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.codePointAt(0)",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -28,7 +28,7 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2015 'String.prototype.codePointAt' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.codePointAt(0)",
@@ -36,7 +36,7 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2015 'String.prototype.codePointAt' method is forbidden.",
             ],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -57,11 +57,11 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         "let foo = {}; foo.codePointAt(0)",
         {
             code: "codePointAt(0)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.charAt(0)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `String` is unknown type if tsconfig.json is not configured.
@@ -91,14 +91,14 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2015 'String.prototype.codePointAt' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.codePointAt(0)",
             errors: [
                 "ES2015 'String.prototype.codePointAt' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -115,12 +115,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "codePointAt(0)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.charAt(0)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -158,7 +158,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 errors: [
                     "ES2015 'String.prototype.codePointAt' method is forbidden.",
                 ],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

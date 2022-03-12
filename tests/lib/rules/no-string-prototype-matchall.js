@@ -14,12 +14,12 @@ new RuleTester().run(ruleId, rule, {
         "matchAll('a')",
         "foo.charAt(0)",
         "foo.matchAll('a')",
-        { code: "matchAll('a')", settings: { es: { aggressive: true } } },
-        { code: "foo.charAt(0)", settings: { es: { aggressive: true } } },
+        { code: "matchAll('a')", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.charAt(0)", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.matchAll('a')",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -30,13 +30,13 @@ new RuleTester().run(ruleId, rule, {
         {
             code: "foo.matchAll('a')",
             errors: ["ES2020 'String.prototype.matchAll' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.matchAll('a')",
             options: [{ aggressive: true }],
             errors: ["ES2020 'String.prototype.matchAll' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -58,12 +58,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "matchAll('a')",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.charAt(0)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `String` is unknown type if tsconfig.json is not configured.
@@ -94,13 +94,13 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "let foo = String(); foo.matchAll('a')",
             errors: ["ES2020 'String.prototype.matchAll' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.matchAll('a')",
             errors: ["ES2020 'String.prototype.matchAll' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -117,12 +117,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "matchAll('a')",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.charAt(0)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -167,7 +167,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 errors: [
                     "ES2020 'String.prototype.matchAll' method is forbidden.",
                 ],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

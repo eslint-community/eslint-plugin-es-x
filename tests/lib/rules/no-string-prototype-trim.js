@@ -14,12 +14,12 @@ new RuleTester().run(ruleId, rule, {
         "trim()",
         "foo.charAt(0)",
         "foo.trim()",
-        { code: "trim()", settings: { es: { aggressive: true } } },
-        { code: "foo.charAt(0)", settings: { es: { aggressive: true } } },
+        { code: "trim()", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.charAt(0)", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.trim()",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -30,13 +30,13 @@ new RuleTester().run(ruleId, rule, {
         {
             code: "foo.trim()",
             errors: ["ES5 'String.prototype.trim' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.trim()",
             options: [{ aggressive: true }],
             errors: ["ES5 'String.prototype.trim' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -58,12 +58,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "trim()",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.charAt(0)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `String` is unknown type if tsconfig.json is not configured.
@@ -94,13 +94,13 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "let foo = String(); foo.trim()",
             errors: ["ES5 'String.prototype.trim' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.trim()",
             errors: ["ES5 'String.prototype.trim' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -117,12 +117,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "trim()",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.charAt(0)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -155,7 +155,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 filename,
                 code: "foo.trim()",
                 errors: ["ES5 'String.prototype.trim' method is forbidden."],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

@@ -22,7 +22,7 @@ module.exports = {
             description: "Disallow a call of a literal.",
             category: "Possible Errors",
             recommended: false,
-            url: "https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/docs/rules/my-no-literal-call.md",
+            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/docs/rules/my-no-literal-call.md",
         },
         fixable: null,
         schema: [],

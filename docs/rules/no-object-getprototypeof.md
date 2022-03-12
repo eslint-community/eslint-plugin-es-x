@@ -1,7 +1,7 @@
-# es/no-object-getprototypeof
+# es-x/no-object-getprototypeof
 > disallow the `Object.getPrototypeOf` method
 
-- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es5` and `plugin:es/restrict-to-es3`
+- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-es5` and `plugin:es-x/restrict-to-es3`
 
 This rule reports ES5 `Object.getPrototypeOf` method as errors.
 
@@ -9,11 +9,11 @@ This rule reports ES5 `Object.getPrototypeOf` method as errors.
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es/no-object-getprototypeof: error */
+<eslint-playground type="bad" code="/*eslint es-x/no-object-getprototypeof: error */
 var proto = Object.getPrototypeOf(obj)
 " />
 
 ## 📚 References
 
-- [Rule source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/lib/rules/no-object-getprototypeof.js)
-- [Test source](https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/tests/lib/rules/no-object-getprototypeof.js)
+- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/lib/rules/no-object-getprototypeof.js)
+- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/tests/lib/rules/no-object-getprototypeof.js)

@@ -15,26 +15,26 @@ new RuleTester().run(ruleId, rule, {
         "foo.bind(this)",
         "(function fn(){}).name",
         "(()=>{}).name",
-        { code: "bind(this)", settings: { es: { aggressive: true } } },
+        { code: "bind(this)", settings: { "es-x": { aggressive: true } } },
         {
             code: "(function fn(){}).name",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
-        { code: "(()=>{}).name", settings: { es: { aggressive: true } } },
+        { code: "(()=>{}).name", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.bind(this)",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "(function fn(){}).name",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "(()=>{}).name",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -49,35 +49,35 @@ new RuleTester().run(ruleId, rule, {
         {
             code: "foo.bind(this)",
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "(function fn(){}).bind(this)",
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "(()=>{}).bind(this)",
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.bind(this)",
             options: [{ aggressive: true }],
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
         {
             code: "(function fn(){}).bind(this)",
             options: [{ aggressive: true }],
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
         {
             code: "(()=>{}).bind(this)",
             options: [{ aggressive: true }],
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -99,7 +99,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         "let foo = {}; foo.bind(this)",
         {
             code: "bind(this)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `Function` is unknown type if tsconfig.json is not configured.
@@ -151,22 +151,22 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             code: "Object.assign.bind(this)",
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "let foo = Function(); foo.bind(this)",
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "let foo = String; foo.bind(this)",
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.bind(this)",
             errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -184,7 +184,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "bind(this)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -257,7 +257,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 filename,
                 code: "foo.bind(this)",
                 errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

@@ -14,25 +14,25 @@ new RuleTester().run(ruleId, rule, {
         "every(() => {})",
         "foo.reverse()",
         "foo.every(() => {})",
-        { code: "every(() => {})", settings: { es: { aggressive: true } } },
-        { code: "foo.reverse()", settings: { es: { aggressive: true } } },
+        { code: "every(() => {})", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.reverse()", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.every(() => {})",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
         {
             code: "foo.every(() => {})",
             errors: ["ES5 'Array.prototype.every' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.every(() => {})",
             options: [{ aggressive: true }],
             errors: ["ES5 'Array.prototype.every' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -54,12 +54,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "every(() => {})",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.reverse()",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `Array` is unknown type if tsconfig.json is not configured.
@@ -84,31 +84,31 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "let foo = []; foo.every(() => {})",
             errors: ["ES5 'Array.prototype.every' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "let foo = Array(); foo.every(() => {})",
             errors: ["ES5 'Array.prototype.every' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "function f<T extends any[]>(a: T) { a.every(() => {}) }",
             errors: ["ES5 'Array.prototype.every' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "function f<T extends string[] | number[]>(a: T) { a.every(() => {}) }",
             errors: ["ES5 'Array.prototype.every' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.every(() => {})",
             errors: ["ES5 'Array.prototype.every' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -125,12 +125,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "every(() => {})",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.reverse()",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -168,7 +168,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 filename,
                 code: "foo.every(() => {})",
                 errors: ["ES5 'Array.prototype.every' method is forbidden."],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

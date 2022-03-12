@@ -14,25 +14,28 @@ new RuleTester().run(ruleId, rule, {
         "reduce(() => {})",
         "foo.reverse()",
         "foo.reduce(() => {})",
-        { code: "reduce(() => {})", settings: { es: { aggressive: true } } },
-        { code: "foo.reverse()", settings: { es: { aggressive: true } } },
+        {
+            code: "reduce(() => {})",
+            settings: { "es-x": { aggressive: true } },
+        },
+        { code: "foo.reverse()", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.reduce(() => {})",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
         {
             code: "foo.reduce(() => {})",
             errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.reduce(() => {})",
             options: [{ aggressive: true }],
             errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -54,12 +57,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "reduce(() => {})",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.reverse()",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `Array` is unknown type if tsconfig.json is not configured.
@@ -84,31 +87,31 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "let foo = []; foo.reduce(() => {})",
             errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "let foo = Array(); foo.reduce(() => {})",
             errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "function f<T extends any[]>(a: T) { a.reduce(() => {}) }",
             errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "function f<T extends string[] | number[]>(a: T) { a.reduce(() => {}) }",
             errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.reduce(() => {})",
             errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -125,12 +128,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "reduce(() => {})",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.reverse()",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -168,7 +171,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 filename,
                 code: "foo.reduce(() => {})",
                 errors: ["ES5 'Array.prototype.reduce' method is forbidden."],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

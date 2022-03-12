@@ -14,12 +14,12 @@ new RuleTester().run(ruleId, rule, {
         "endsWith('a')",
         "foo.charAt(0)",
         "foo.endsWith('a')",
-        { code: "endsWith('a')", settings: { es: { aggressive: true } } },
-        { code: "foo.charAt(0)", settings: { es: { aggressive: true } } },
+        { code: "endsWith('a')", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.charAt(0)", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.endsWith('a')",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -30,13 +30,13 @@ new RuleTester().run(ruleId, rule, {
         {
             code: "foo.endsWith('a')",
             errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.endsWith('a')",
             options: [{ aggressive: true }],
             errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -58,12 +58,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "endsWith('a')",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.charAt(0)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `String` is unknown type if tsconfig.json is not configured.
@@ -94,13 +94,13 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "let foo = String(); foo.endsWith('a')",
             errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.endsWith('a')",
             errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -117,12 +117,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "endsWith('a')",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.charAt(0)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -167,7 +167,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 errors: [
                     "ES2015 'String.prototype.endsWith' method is forbidden.",
                 ],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

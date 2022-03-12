@@ -14,25 +14,25 @@ new RuleTester().run(ruleId, rule, {
         "fill(0)",
         "foo.reverse()",
         "foo.fill(0)",
-        { code: "fill(0)", settings: { es: { aggressive: true } } },
-        { code: "foo.reverse()", settings: { es: { aggressive: true } } },
+        { code: "fill(0)", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.reverse()", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.fill(0)",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
         {
             code: "foo.fill(0)",
             errors: ["ES2015 'Array.prototype.fill' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.fill(0)",
             options: [{ aggressive: true }],
             errors: ["ES2015 'Array.prototype.fill' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -54,12 +54,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "fill(0)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.reverse()",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `Array` is unknown type if tsconfig.json is not configured.
@@ -84,31 +84,31 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "let foo = []; foo.fill(0)",
             errors: ["ES2015 'Array.prototype.fill' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "let foo = Array(); foo.fill(0)",
             errors: ["ES2015 'Array.prototype.fill' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "function f<T extends any[]>(a: T) { a.fill(0) }",
             errors: ["ES2015 'Array.prototype.fill' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "function f<T extends string[] | number[]>(a: T) { a.fill(0) }",
             errors: ["ES2015 'Array.prototype.fill' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.fill(0)",
             errors: ["ES2015 'Array.prototype.fill' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -125,12 +125,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "fill(0)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.reverse()",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -168,7 +168,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 filename,
                 code: "foo.fill(0)",
                 errors: ["ES2015 'Array.prototype.fill' method is forbidden."],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },

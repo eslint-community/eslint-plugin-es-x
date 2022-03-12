@@ -14,7 +14,7 @@ module.exports = {
         docs: {
             description: "disallow 'instanceof' for Array",
             category: "Best Practices",
-            url: "https://github.com/mysticatea/eslint-plugin-es/blob/v4.1.0/docs/rules/my-no-instanceof-array.md",
+            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/docs/rules/my-no-instanceof-array.md",
         },
         fixable: "code",
         schema: [],

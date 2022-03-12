@@ -13,24 +13,27 @@ new RuleTester().run(ruleId, rule, {
     valid: [
         "foo.then(() => {})",
         "foo.finally(() => {})",
-        { code: "foo.then(() => {})", settings: { es: { aggressive: true } } },
+        {
+            code: "foo.then(() => {})",
+            settings: { "es-x": { aggressive: true } },
+        },
         {
             code: "foo.finally(() => {})",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
         {
             code: "foo.finally(() => {})",
             errors: ["ES2018 'Promise.prototype.finally' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.finally(() => {})",
             options: [{ aggressive: true }],
             errors: ["ES2018 'Promise.prototype.finally' method is forbidden."],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -51,7 +54,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "foo.then(() => {})",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `Promise` is unknown type if tsconfig.json is not configured.
@@ -66,19 +69,19 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             filename,
             code: "async function f() {} f().finally(() => {})",
             errors: ["ES2018 'Promise.prototype.finally' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "let foo = Promise.resolve(); foo.finally(() => {})",
             errors: ["ES2018 'Promise.prototype.finally' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.finally(() => {})",
             errors: ["ES2018 'Promise.prototype.finally' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -94,7 +97,7 @@ new RuleTester({
         {
             filename,
             code: "foo.then(() => {})",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -127,7 +130,7 @@ new RuleTester({
             filename,
             code: "foo.finally(() => {})",
             errors: ["ES2018 'Promise.prototype.finally' method is forbidden."],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })

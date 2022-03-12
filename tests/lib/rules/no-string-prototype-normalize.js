@@ -14,12 +14,12 @@ new RuleTester().run(ruleId, rule, {
         "normalize('a')",
         "foo.charAt(0)",
         "foo.normalize('a')",
-        { code: "normalize('a')", settings: { es: { aggressive: true } } },
-        { code: "foo.charAt(0)", settings: { es: { aggressive: true } } },
+        { code: "normalize('a')", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.charAt(0)", settings: { "es-x": { aggressive: true } } },
         {
             code: "foo.normalize('a')",
             options: [{ aggressive: false }],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
@@ -34,7 +34,7 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2015 'String.prototype.normalize' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.normalize('a')",
@@ -42,7 +42,7 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2015 'String.prototype.normalize' method is forbidden.",
             ],
-            settings: { es: { aggressive: false } },
+            settings: { "es-x": { aggressive: false } },
         },
     ],
 })
@@ -64,12 +64,12 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         {
             filename,
             code: "normalize('a')",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
             code: "foo.charAt(0)",
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
 
         // `String` is unknown type if tsconfig.json is not configured.
@@ -110,7 +110,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2015 'String.prototype.normalize' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
         {
             filename,
@@ -118,7 +118,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
             errors: [
                 "ES2015 'String.prototype.normalize' method is forbidden.",
             ],
-            settings: { es: { aggressive: true } },
+            settings: { "es-x": { aggressive: true } },
         },
     ],
 })
@@ -135,12 +135,12 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             {
                 filename,
                 code: "normalize('a')",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
             {
                 filename,
                 code: "foo.charAt(0)",
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
         invalid: [
@@ -185,7 +185,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 errors: [
                     "ES2015 'String.prototype.normalize' method is forbidden.",
                 ],
-                settings: { es: { aggressive: true } },
+                settings: { "es-x": { aggressive: true } },
             },
         ],
     },
