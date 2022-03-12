@@ -84,6 +84,10 @@ jobs:
         run: |+
             npm i -D eslint-utils@2 --legacy-peer-deps
         if: "matrix.eslint == 4"
+      - name: Install for ESLint v5
+        run: |+
+            npm i -D @typescript-eslint/parser@4
+        if: "matrix.eslint == 5"
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+ 
             npm r -D eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser
