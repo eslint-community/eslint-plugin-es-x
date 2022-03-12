@@ -46,7 +46,7 @@ categories.legacy = {
     title: "Legacy",
     ignorePreset: true,
     comment: `Rules in this category disallow the syntax contained in [Annex B](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html) or Legacy.  
-        The rules are not included in any preset.`,
+The rules are not included in any preset.`,
     rules: [],
 }
 categories.uncategorized = {

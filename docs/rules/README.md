@@ -223,3 +223,12 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-string-prototype-trim](./no-string-prototype-trim.md) | disallow the `String.prototype.trim` method. |  |
 | [es-x/no-trailing-commas](./no-trailing-commas.md) | disallow trailing commas in array/object literals. |  |
 
+## Legacy
+
+Rules in this category disallow the syntax contained in [Annex B](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html) or Legacy.  
+The rules are not included in any preset.
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-escape-unescape](./no-escape-unescape.md) | disallow `escape` and `unescape`. |  |
+
