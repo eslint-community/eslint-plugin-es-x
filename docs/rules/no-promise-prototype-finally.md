@@ -31,5 +31,5 @@ This is prior to the `settings.es.aggressive` setting.
 
 ## 📚 References
 
-- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/lib/rules/no-promise-prototype-finally.js)
-- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/tests/lib/rules/no-promise-prototype-finally.js)
+- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/lib/rules/no-promise-prototype-finally.js)
+- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/tests/lib/rules/no-promise-prototype-finally.js)

@@ -15,5 +15,5 @@ export * as ns from &quot;mod&quot;
 
 ## 📚 References
 
-- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/lib/rules/no-export-ns-from.js)
-- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/tests/lib/rules/no-export-ns-from.js)
+- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/lib/rules/no-export-ns-from.js)
+- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/tests/lib/rules/no-export-ns-from.js)

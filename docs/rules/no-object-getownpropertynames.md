@@ -15,5 +15,5 @@ Object.getOwnPropertyNames(obj, &quot;prop&quot;, {})
 
 ## 📚 References
 
-- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/lib/rules/no-object-getownpropertynames.js)
-- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/tests/lib/rules/no-object-getownpropertynames.js)
+- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/lib/rules/no-object-getownpropertynames.js)
+- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/tests/lib/rules/no-object-getownpropertynames.js)

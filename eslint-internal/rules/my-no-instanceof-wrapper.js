@@ -14,7 +14,7 @@ module.exports = {
         docs: {
             description: "disallow 'instanceof' for wrapper objects",
             category: "Best Practices",
-            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/docs/rules/my-no-instanceof-wrapper.md",
+            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/docs/rules/my-no-instanceof-wrapper.md",
         },
         fixable: "code",
         schema: [],

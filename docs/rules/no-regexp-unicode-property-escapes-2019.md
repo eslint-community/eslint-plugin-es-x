@@ -34,5 +34,5 @@ const r2 = /\p{Script=Dogr}/u
 
 ## 📚 References
 
-- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/lib/rules/no-regexp-unicode-property-escapes-2019.js)
-- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/tests/lib/rules/no-regexp-unicode-property-escapes-2019.js)
+- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/lib/rules/no-regexp-unicode-property-escapes-2019.js)
+- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/tests/lib/rules/no-regexp-unicode-property-escapes-2019.js)

@@ -198,7 +198,7 @@ module.exports = {
             description: "disallow illegal usage of variables as block-scoped.",
             category: "Possible Errors",
             recommended: false,
-            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/v4.1.0/docs/rules/my-block-scoped-var.md",
+            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/v5.0.0/docs/rules/my-block-scoped-var.md",
         },
         fixable: null,
         schema: [],
