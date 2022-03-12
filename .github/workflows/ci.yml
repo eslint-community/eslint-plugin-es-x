@@ -80,7 +80,7 @@ jobs:
             npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue
       - name: Install for Node v8
         run: |+
-            npm i -D @typescript-eslint/parser@3
+            npm i -D @typescript-eslint/parser@3 mocha@8
         if: "matrix.node == '8.10'"
       - name: Install for ESLint v4
         run: |+
