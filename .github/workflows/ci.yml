@@ -86,7 +86,7 @@ jobs:
         if: "matrix.eslint == 4"
       - name: Install for ESLint v5
         run: |+
-            npm i -D @typescript-eslint/parser@4
+            npm i -D @typescript-eslint/parser@4 --legacy-peer-deps
         if: "matrix.eslint == 5"
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+ 
