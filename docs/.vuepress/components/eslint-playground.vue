@@ -71,7 +71,7 @@ export default {
                 },
                 rules: {},
                 parserOptions: {
-                    ecmaVersion: 2021,
+                    ecmaVersion: 2022,
                     sourceType: "module",
                 },
                 settings: {

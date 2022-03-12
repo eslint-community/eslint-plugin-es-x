@@ -26,7 +26,7 @@ const libRoot = path.resolve(__dirname, "../lib/rules")
  */
 
 /** @type {Record<string, Category>} */
-const categories = [12, 11, 10, 9, 8, 7, 6, 5].reduce(
+const categories = [14, 13, 12, 11, 10, 9, 8, 7, 6, 5].reduce(
     (map, revision, _, [latest]) => {
         const year = revision <= 5 ? 5 : 2009 + revision
         const id = `ES${year}`

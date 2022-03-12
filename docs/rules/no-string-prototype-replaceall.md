@@ -1,7 +1,7 @@
 # es/no-string-prototype-replaceall
 > disallow the `String.prototype.replaceAll` method
 
-- ✅ The following configurations enable this rule: `plugin:es/no-new-in-esnext`
+- ✅ The following configurations enable this rule: `plugin:es/no-new-in-es2021`, `plugin:es/restrict-to-es3`, `plugin:es/restrict-to-es5`, `plugin:es/restrict-to-es2015`, `plugin:es/restrict-to-es2016`, `plugin:es/restrict-to-es2017`, `plugin:es/restrict-to-es2018`, `plugin:es/restrict-to-es2019`, and `plugin:es/restrict-to-es2020`
 
 This rule reports ES2021 [`String.prototype.replaceAll` method](https://github.com/tc39/proposal-string-replaceall) as errors.
 
