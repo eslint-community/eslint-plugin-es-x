@@ -13,7 +13,9 @@ if (!RuleTester.isSupported(2022)) {
     return
 }
 
-new RuleTester().run("no-top-level-await", rule, {
+new RuleTester({
+    parserOptions: { sourceType: "module" },
+}).run("no-top-level-await", rule, {
     valid: [
         "async function f() { await expr }",
         "expr;",
