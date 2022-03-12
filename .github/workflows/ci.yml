@@ -97,7 +97,7 @@ jobs:
       - name: Install Packages
         run: npm install
         if: "matrix.eslint != 4 || matrix.node == '8.10'"
-      - name: Install --legacy-peer-deps
+      - name: Install Packages --legacy-peer-deps
         run: npm install --legacy-peer-deps
         if: "matrix.eslint == 4 && matrix.node != '8.10'"
       - name: Test
