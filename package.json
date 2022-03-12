@@ -17,7 +17,7 @@
     "regexpp": "^3.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^4.8.2",
+    "@typescript-eslint/parser": "^5.14.0",
     "@vuepress/plugin-pwa": "^1.2.0",
     "acorn": "^8.7.0",
     "codecov": "^3.8.1",
