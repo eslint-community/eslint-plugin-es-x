@@ -102,7 +102,3 @@ jobs:
         if: "matrix.eslint == 4 && matrix.node != '8.10'"
       - name: Test
         run: npm run -s test:mocha
-      - name: Send Coverage
-        run: npm run -s codecov
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
