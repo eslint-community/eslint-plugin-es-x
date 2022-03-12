@@ -9,7 +9,7 @@ require("../../scripts/update-docs-readme")
 
 module.exports = {
     title: "eslint-plugin-es-x",
-    base: "/eslint-plugin-ex-x/",
+    base: "/eslint-plugin-es-x/",
     description: "ESLint plugin about ECMAScript syntax.",
     evergreen: true,
 
