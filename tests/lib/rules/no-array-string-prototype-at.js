@@ -79,8 +79,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.at(-1) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.at(-1) }",
         },
     ],
     invalid: [
@@ -114,8 +113,7 @@ new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
         },
         {
             filename,
-            code:
-                "function f<T extends string[] | number[]>(a: T) { a.at(-1) }",
+            code: "function f<T extends string[] | number[]>(a: T) { a.at(-1) }",
             errors: ["ES2022 'Array.prototype.at' method is forbidden."],
             settings: { es: { aggressive: true } },
         },
@@ -181,8 +179,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends string[] | number[]>(a: T) { a.at(-1) }",
+                code: "function f<T extends string[] | number[]>(a: T) { a.at(-1) }",
                 errors: ["ES2022 'Array.prototype.at' method is forbidden."],
             },
             {
@@ -213,8 +210,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends 'a' | 'b' | 'c'>(a: T) { a.at(-1) }",
+                code: "function f<T extends 'a' | 'b' | 'c'>(a: T) { a.at(-1) }",
                 errors: ["ES2022 'String.prototype.at' method is forbidden."],
             },
             {
@@ -254,8 +250,7 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
             },
             {
                 filename,
-                code:
-                    "function f<T extends Uint8ClampedArray>(a: T) { a.at(-1) }",
+                code: "function f<T extends Uint8ClampedArray>(a: T) { a.at(-1) }",
                 errors: [
                     "ES2022 'Uint8ClampedArray.prototype.at' method is forbidden.",
                 ],
