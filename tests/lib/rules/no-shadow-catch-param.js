@@ -3,7 +3,9 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-shadow-catch-param.js")
 
-new RuleTester().run("no-shadow-catch-param", rule, {
+new RuleTester({
+    parser: require.resolve("espree"),
+}).run("no-shadow-catch-param", rule, {
     valid: [
         "var e; try {} catch (e) {  }",
         "try {} catch (e) {}",
@@ -18,7 +20,7 @@ new RuleTester().run("no-shadow-catch-param", rule, {
             code: "var e; try {} catch (e) {  }",
             parserOptions: { sourceType: "script" },
         },
-        ...(RuleTester.isSupported(2019) ? ["try {} catch {}"] : []),
+        "try {} catch {}",
     ],
     invalid: [
         {
