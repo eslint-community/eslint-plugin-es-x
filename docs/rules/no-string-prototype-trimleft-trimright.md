@@ -1,7 +1,9 @@
 # es-x/no-string-prototype-trimleft-trimright
 > disallow the `String.prototype.{trimLeft,trimRight}` methods
 
-This rule reports Annex B feature [`String.prototype.{trimLeft,trimRight}` methods](https://github.com/tc39/proposal-string-left-right-trim) as errors.
+- 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
+This rule reports Annex B feature `String.prototype.{trimLeft,trimRight}` methods as errors.
 
 This rule is silent by default because it's hard to know types. You need to configure [the aggressive mode](../#the-aggressive-mode) or TypeScript in order to enable this rule.
 
@@ -10,8 +12,8 @@ This rule is silent by default because it's hard to know types. You need to conf
 ⛔ Examples of **incorrect** code for this rule:
 
 <eslint-playground type="bad" code="/*eslint es-x/no-string-prototype-trimleft-trimright: [error, { aggressive: true }] */
-foo.trimLeft()
-foo.trimRight()
+' str '.trimLeft()
+' str '.trimRight()
 " />
 
 ## 🔧 Options
