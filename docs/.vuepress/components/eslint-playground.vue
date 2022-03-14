@@ -31,6 +31,10 @@ export default {
                 return value === "bad" || value === "good"
             },
         },
+        sourceType: {
+            type: String,
+            default: undefined,
+        },
     },
 
     data() {
@@ -73,7 +77,7 @@ export default {
                 rules: {},
                 parserOptions: {
                     ecmaVersion: 2022,
-                    sourceType: "module",
+                    sourceType: this.sourceType || "module",
                 },
                 settings: {
                     "es-x": { aggressive: true },
