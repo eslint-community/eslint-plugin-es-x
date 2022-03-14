@@ -1,8 +1,6 @@
 # es-x/no-date-prototype-getyear-setyear
 > disallow the `Date.prototype.{getYear,setYear}` methods
 
-- 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
-
 This rule reports Annex B feature `Date.prototype.{getYear,setYear}` methods as errors.
 
 This rule is silent by default because it's hard to know types. You need to configure [the aggressive mode](../#the-aggressive-mode) or TypeScript in order to enable this rule.
