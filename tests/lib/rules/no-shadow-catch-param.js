@@ -20,7 +20,7 @@ new RuleTester({
             code: "var e; try {} catch (e) {  }",
             parserOptions: { sourceType: "script" },
         },
-        "try {} catch {}",
+        ...(RuleTester.isSupported(2019) ? ["try {} catch {}"] : []),
     ],
     invalid: [
         {
