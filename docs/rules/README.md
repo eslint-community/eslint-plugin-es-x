@@ -233,6 +233,7 @@ The rules are not included in any preset.
 | [es-x/no-date-prototype-getyear-setyear](./no-date-prototype-getyear-setyear.md) | disallow the `Date.prototype.{getYear,setYear}` methods. |  |
 | [es-x/no-date-prototype-togmtstring](./no-date-prototype-togmtstring.md) | disallow the `Date.prototype.toGMTString` method. | 🔧 |
 | [es-x/no-escape-unescape](./no-escape-unescape.md) | disallow `escape` and `unescape`. |  |
+| [es-x/no-function-declarations-in-if-statement-clauses-without-block](./no-function-declarations-in-if-statement-clauses-without-block.md) | disallow function declarations in if statement clauses without using blocks. |  |
 | [es-x/no-labelled-function-declarations](./no-labelled-function-declarations.md) | disallow labelled function declarations. |  |
 | [es-x/no-regexp-prototype-compile](./no-regexp-prototype-compile.md) | disallow the `RegExp.prototype.compile` method. |  |
 | [es-x/no-string-create-html-methods](./no-string-create-html-methods.md) | disallow HTML creation methods of string instances. |  |
