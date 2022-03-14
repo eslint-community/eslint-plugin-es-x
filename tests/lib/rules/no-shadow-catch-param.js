@@ -7,7 +7,6 @@ new RuleTester().run("no-shadow-catch-param", rule, {
     valid: [
         "var e; try {} catch (e) {  }",
         "try {} catch (e) {}",
-        "try {} catch {}",
         "try {} catch (e) { var a }",
         "try {} catch (e) { console.log(e) }",
         "try {} catch (e) { function foo() {var e} }",
@@ -19,6 +18,7 @@ new RuleTester().run("no-shadow-catch-param", rule, {
             code: "var e; try {} catch (e) {  }",
             parserOptions: { sourceType: "script" },
         },
+        ...(RuleTester.isSupported(2019) ? ["try {} catch {}"] : []),
     ],
     invalid: [
         {
