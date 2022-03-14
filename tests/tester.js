@@ -34,5 +34,6 @@ RuleTester.setDefaultConfig({
     },
 })
 RuleTester.isSupported = (targetEcmaVersion) => targetEcmaVersion <= ecmaVersion
+RuleTester.eslintVersion = eslintVersion
 
 module.exports = RuleTester

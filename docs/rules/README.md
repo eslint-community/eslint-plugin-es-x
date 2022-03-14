@@ -4,14 +4,6 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
-## ES2023
-
-There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext`
-
-| Rule ID | Description |    |
-|:--------|:------------|:--:|
-|  | Now there are no rules. |  |
-
 ## ES2022
 
 There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2022`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, `plugin:es-x/restrict-to-es2020`, and `plugin:es-x/restrict-to-es2021`
@@ -230,4 +222,23 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-object-seal](./no-object-seal.md) | disallow the `Object.seal` method. |  |
 | [es-x/no-string-prototype-trim](./no-string-prototype-trim.md) | disallow the `String.prototype.trim` method. |  |
 | [es-x/no-trailing-commas](./no-trailing-commas.md) | disallow trailing commas in array/object literals. |  |
+
+## Legacy
+
+Rules in this category disallow the syntax contained in [Annex B](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html) or Legacy.  
+The rules are not included in any preset.
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-date-prototype-getyear-setyear](./no-date-prototype-getyear-setyear.md) | disallow the `Date.prototype.{getYear,setYear}` methods. |  |
+| [es-x/no-date-prototype-togmtstring](./no-date-prototype-togmtstring.md) | disallow the `Date.prototype.toGMTString` method. | 🔧 |
+| [es-x/no-escape-unescape](./no-escape-unescape.md) | disallow `escape` and `unescape`. |  |
+| [es-x/no-function-declarations-in-if-statement-clauses-without-block](./no-function-declarations-in-if-statement-clauses-without-block.md) | disallow function declarations in if statement clauses without using blocks. | 🔧 |
+| [es-x/no-initializers-in-for-in](./no-initializers-in-for-in.md) | disallow initializers in for-in heads. |  |
+| [es-x/no-labelled-function-declarations](./no-labelled-function-declarations.md) | disallow labelled function declarations. |  |
+| [es-x/no-regexp-prototype-compile](./no-regexp-prototype-compile.md) | disallow the `RegExp.prototype.compile` method. |  |
+| [es-x/no-shadow-catch-param](./no-shadow-catch-param.md) | disallow identifiers from shadowing catch parameter names. |  |
+| [es-x/no-string-create-html-methods](./no-string-create-html-methods.md) | disallow HTML creation methods of string instances. |  |
+| [es-x/no-string-prototype-substr](./no-string-prototype-substr.md) | disallow the `String.prototype.substr` method. |  |
+| [es-x/no-string-prototype-trimleft-trimright](./no-string-prototype-trimleft-trimright.md) | disallow the `String.prototype.{trimLeft,trimRight}` methods. | 🔧 |
 

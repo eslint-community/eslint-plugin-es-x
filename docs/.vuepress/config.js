@@ -29,16 +29,16 @@ module.exports = {
         sidebar: [
             "/",
             "/rules/",
-            ...Object.keys(categories)
+            ...Object.values(categories)
+                .filter((menu) => menu.rules.length)
                 .map((category) => ({
-                    title: category,
+                    title: category.title,
                     collapsable: false,
-                    children: categories[category].rules.map(({ ruleId }) => [
+                    children: category.rules.map(({ ruleId }) => [
                         `/rules/${ruleId}`,
                         `es-x/${ruleId}`,
                     ]),
-                }))
-                .filter((menu) => menu.children.length),
+                })),
         ],
     },
 }

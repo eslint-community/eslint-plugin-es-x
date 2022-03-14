@@ -23,7 +23,10 @@ const configs = fs.readdirSync(configRoot).map((filename) => {
 })
 
 // Convert categories to README sections
-const ruleSectionContent = Object.keys(categories).map(toSection).join("\n")
+const ruleSectionContent = Object.values(categories)
+    .map(toSection)
+    .filter((c) => c)
+    .join("\n")
 
 // Write README.md
 fs.writeFileSync(
@@ -48,24 +51,29 @@ function extractCategoryId(filePath) {
 
 /**
  * Create markdown text for a category.
- * @param {string} categoryId The category ID to convert.
+ * @param {import("./rules").Category} category The category to convert.
  */
-function toSection(categoryId) {
+function toSection(category) {
+    if (!category.rules.length) {
+        return undefined
+    }
     const configIds = formatList(
         configs
-            .filter((c) => c.categoryIds.includes(categoryId))
+            .filter((c) => c.categoryIds.includes(category.id))
             .map((c) => `\`${c.id}\``)
             .sort(collator.compare.bind(collator)),
     )
-    const comment = configIds
-        ? `There are multiple configs that enable all rules in this category: ${configIds}`
-        : "There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext`"
+    const comment =
+        category.comment ||
+        (configIds
+            ? `There are multiple configs that enable all rules in this category: ${configIds}`
+            : "There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext`")
 
-    return `## ${categoryId}
+    return `## ${category.title}
 
 ${comment}
 
-${toTable(categories[categoryId])}
+${toTable(category)}
 `
 }
 
