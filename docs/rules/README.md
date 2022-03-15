@@ -236,6 +236,7 @@ The rules are not included in any preset.
 | [es-x/no-function-declarations-in-if-statement-clauses-without-block](./no-function-declarations-in-if-statement-clauses-without-block.md) | disallow function declarations in if statement clauses without using blocks. | 🔧 |
 | [es-x/no-initializers-in-for-in](./no-initializers-in-for-in.md) | disallow initializers in for-in heads. |  |
 | [es-x/no-labelled-function-declarations](./no-labelled-function-declarations.md) | disallow labelled function declarations. |  |
+| [es-x/no-legacy-object-prototype-accessor-methods](./no-legacy-object-prototype-accessor-methods.md) | disallow legacy `Object.prototype` accessor methods. |  |
 | [es-x/no-regexp-prototype-compile](./no-regexp-prototype-compile.md) | disallow the `RegExp.prototype.compile` method. |  |
 | [es-x/no-shadow-catch-param](./no-shadow-catch-param.md) | disallow identifiers from shadowing catch parameter names. |  |
 | [es-x/no-string-create-html-methods](./no-string-create-html-methods.md) | disallow HTML creation methods of string instances. |  |
