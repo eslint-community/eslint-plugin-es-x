@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2017 `Object.values` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-values: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-values: error */
 const values = Object.values(obj)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

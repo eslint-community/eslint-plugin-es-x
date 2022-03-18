@@ -12,15 +12,20 @@ since: "[eslint-plugin-es] v4.0.0"
 
 This rule reports ES2021 [logical assignment operators](https://github.com/tc39/proposal-logical-assignment) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-logical-assignment-operators: error */
+<eslint-playground fix type="bad">
+
+```js
+/*eslint es-x/no-logical-assignment-operators: error */
 x ||= y
 x &&= y
 x ??= y
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

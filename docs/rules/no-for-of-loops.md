@@ -11,15 +11,20 @@ since: "[eslint-plugin-es] v1.0.0"
 
 This rule reports ES2015 `for-of` statements as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-for-of-loops: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-for-of-loops: error */
 for (var a of b) {}
 for (let a of b) {}
 for (a of b) {}
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

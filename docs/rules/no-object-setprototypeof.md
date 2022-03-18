@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Object.setPrototypeOf` as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-setprototypeof: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-setprototypeof: error */
 Object.setPrototypeOf(obj, proto)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

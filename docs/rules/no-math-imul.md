@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Math.imul` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-math-imul: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-math-imul: error */
 const n = Math.imul(value)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

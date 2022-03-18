@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Math.asinh` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-math-asinh: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-math-asinh: error */
 const n = Math.asinh(value)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

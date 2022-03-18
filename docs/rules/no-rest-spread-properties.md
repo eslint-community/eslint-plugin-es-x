@@ -11,16 +11,21 @@ since: "[eslint-plugin-es] v1.0.0"
 
 This rule reports ES2018 [rest/spread properties](https://github.com/tc39/proposal-object-rest-spread#readme) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-rest-spread-properties: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-rest-spread-properties: error */
 let obj = {...obj0}
 let {a, ...rest} = obj
 ;({a, ...rest} = obj)
 function f({a, ...rest}) {}
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

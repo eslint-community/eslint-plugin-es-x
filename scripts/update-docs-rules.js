@@ -53,11 +53,13 @@ async function main() {
         const originalContent = fs.readFileSync(filePath, "utf8")
         const since = getSince(originalContent)
 
-        const content = originalContent
+        let content = originalContent
             .replace(/^\n*(?:---[\s\S]*?---\n\n?)?#.+\n>.+\n+(?:- .+\n)*/u, "")
             .replace(/## 🚀 Version[\s\S]+/u, "")
             .replace(/## 📚 References[\s\S]+/u, "")
             .trim()
+        content = updateCodeBlocks(content, { ruleId, fixable })
+        content = adjustContents(content)
         const enabledConfigIds = configs
             .filter((c) => c.ruleIds.has(`es-x/${ruleId}`))
             .map((c) => `\`${c.id}\``)
@@ -127,4 +129,93 @@ function yamlValue(val) {
         return `"${val.replace(/\\/gu, "\\\\").replace(/"/gu, '\\"')}"`
     }
     return val
+}
+
+function updateCodeBlocks(content, { fixable }) {
+    let result = ""
+    let offset = 0
+    let tagStartOffset = undefined
+    while (
+        (tagStartOffset = content.indexOf("<eslint-playground", offset)) >= 0
+    ) {
+        result += content.slice(offset, tagStartOffset)
+
+        const attrsData = parseAttrs(
+            tagStartOffset + "<eslint-playground".length,
+        )
+        const newAttrs = attrsData.attrs.filter(({ key }) => key !== "fix")
+        if (fixable) {
+            newAttrs.unshift({ key: "fix" })
+        }
+
+        const code = attrsData.attrs.find(({ key }) => key === "code")
+        const isOld = attrsData.tagEnd === "/>" && code && code.value
+        if (isOld) {
+            // Convert from old <eslint-playground> style to new  <eslint-playground> style
+            newAttrs.splice(newAttrs.indexOf(code), 1)
+            attrsData.tagEnd = `>
+
+\`\`\`js
+${cookeHTMLAttrValue(code.value).trim()}
+\`\`\`
+
+</eslint-playground>`
+        }
+
+        result += `<eslint-playground ${newAttrs
+            .map(({ key, value }) => (value ? `${key}=${value}` : key))
+            .join(" ")}${attrsData.tagEnd === "/>" ? " />" : attrsData.tagEnd}`
+        offset = attrsData.tagEndOffset
+    }
+    result += content.slice(offset)
+    return result
+
+    /** Parse attrs */
+    function parseAttrs(startOffset) {
+        const attrs = []
+
+        const attrRegexp =
+            /\/?>|([^\s=]+)(?:\s*=\s*("[^"]*?"|'[^']*?'|[^\s/>]+))?/gu
+        attrRegexp.lastIndex = startOffset
+        let match = null
+        while ((match = attrRegexp.exec(content))) {
+            if (match[0] === ">" || match[0] === "/>") {
+                return {
+                    tagEndOffset: match.index + match[0].length,
+                    attrs,
+                    tagEnd: match[0],
+                }
+            }
+            attrs.push({ key: match[1], value: match[2] })
+        }
+        return {
+            tagEndOffset: content.length,
+            attrs,
+            tagEnd: "",
+        }
+    }
+}
+
+function adjustContents(content) {
+    // Adjust the necessary blank lines before and after the code block so that GitHub can recognize `.md`.
+    let result = content
+        .replace(/(<eslint-playground[\s\S]*?>)\n+```/gu, "$1\n\n```")
+        .replace(/```\n+<\/eslint-playground>/gu, "```\n\n</eslint-playground>")
+
+    // Convert from old style to new style
+    result = result.replace("## Examples", "## 💡 Examples")
+
+    return result
+}
+
+function cookeHTMLAttrValue(value) {
+    return value
+        .replace(/^['"]([\s\S]*)['"]$/u, "$1")
+        .replace(/&#x([0-9a-zA-Z]+);/gu, (_, codePoint) =>
+            String.fromCodePoint(parseInt(codePoint, 16)),
+        )
+        .replace(/&quot;/gu, '"')
+        .replace(/&gt;/gu, ">")
+        .replace(/&lt;/gu, "<")
+        .trim()
 }

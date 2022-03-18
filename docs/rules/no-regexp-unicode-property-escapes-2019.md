@@ -29,14 +29,19 @@ For example, the following patterns are valid in ES2019, but syntax error in ES2
 - `\p{Script=Sogdian}`
 - `\p{Script=Sogo}`
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-regexp-unicode-property-escapes-2019: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-regexp-unicode-property-escapes-2019: error */
 const r1 = /\p{Extended_Pictographic}/u
 const r2 = /\p{Script=Dogr}/u
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

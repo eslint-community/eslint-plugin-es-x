@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Math.log1p` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-math-log1p: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-math-log1p: error */
 const n = Math.log1p(value)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

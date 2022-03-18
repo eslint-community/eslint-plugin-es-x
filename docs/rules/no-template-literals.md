@@ -12,22 +12,32 @@ since: "[eslint-plugin-es] v1.0.0"
 
 This rule reports ES2015 template literals as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-template-literals: error */
+<eslint-playground fix type="bad">
+
+```js
+/*eslint es-x/no-template-literals: error */
 const a1 = `foo`
 const a2 = `foo${bar}baz`
 const a3 = tag`foo`
-" />
+```
+
+</eslint-playground>
 
 👌 Examples of **correct** code for this rule:
 
-<eslint-playground type="good" code="/*eslint es-x/no-template-literals: error */
-const a1 = &quot;foo&quot;
-const a2 = &quot;foo&quot;+bar+&quot;baz&quot;
-" />
+<eslint-playground fix type="good">
+
+```js
+/*eslint es-x/no-template-literals: error */
+const a1 = "foo"
+const a2 = "foo"+bar+"baz"
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

@@ -11,25 +11,35 @@ since: "[eslint-plugin-es] v4.0.0"
 
 This rule reports ES2020 [Optional Chaining](https://github.com/tc39/proposal-optional-chaining) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-optional-chaining: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-optional-chaining: error */
 var x = a?.b
 var x = a?.[b]
 foo?.()
-" />
+```
+
+</eslint-playground>
 
 👌 Examples of **correct** code for this rule:
 
-<eslint-playground type="good" code="/*eslint es-x/no-optional-chaining: error */
+<eslint-playground type="good">
+
+```js
+/*eslint es-x/no-optional-chaining: error */
 var x = a != null ? a.b : undefined
 var x = a && a.b
 var x = a != null ? a[b] : undefined
 var x = a && a[b]
 foo && foo()
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

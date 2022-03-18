@@ -13,14 +13,19 @@ This rule reports ES2022 [`{Array,String,TypedArray}.prototype.at` methods](http
 
 This rule is silent by default because it's hard to know types. You need to configure [the aggressive mode](../#the-aggressive-mode) or TypeScript in order to enable this rule.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-array-string-prototype-at: [error, { aggressive: true }] */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-array-string-prototype-at: [error, { aggressive: true }] */
 foo.at(-1)
 'str'.at(-1)
-" />
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 

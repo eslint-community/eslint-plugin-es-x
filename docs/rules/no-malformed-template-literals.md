@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.0.0"
 
 This rule reports ES2018 [template literals with invalid escape sequences](https://github.com/tc39/proposal-template-literal-revision#readme) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-malformed-template-literals: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-malformed-template-literals: error */
 tag`\unicode`
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

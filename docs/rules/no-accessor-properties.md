@@ -11,11 +11,14 @@ since: "[eslint-plugin-es] v1.1.0"
 
 This rule reports ES5 accessor properties as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-accessor-properties: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-accessor-properties: error */
 var a = {
     get a() {},
     set a(value) {}
@@ -24,7 +27,9 @@ class A {
     get a() {}
     set a(value) {}
 }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

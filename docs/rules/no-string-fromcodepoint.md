@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `String.fromCodePoint` as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-string-fromcodepoint: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-string-fromcodepoint: error */
 const thumbUp = String.fromCodePoint(0x1F44D)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

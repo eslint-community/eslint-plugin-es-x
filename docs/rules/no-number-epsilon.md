@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Number.EPSILON` property as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-number-epsilon: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-number-epsilon: error */
 const b = Number.EPSILON
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

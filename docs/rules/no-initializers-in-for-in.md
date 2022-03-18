@@ -11,13 +11,18 @@ This rule reports initializers in for-in statement heads as errors.
 
 See [Annex B - Initializers in ForIn Statement Heads](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html#sec-initializers-in-forin-statement-heads).
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" source-type="script" code="/*eslint es-x/no-initializers-in-for-in: error */
+<eslint-playground type="bad" source-type="script">
+
+```js
+/*eslint es-x/no-initializers-in-for-in: error */
 for (var x = 42 in obj) { /**/ }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

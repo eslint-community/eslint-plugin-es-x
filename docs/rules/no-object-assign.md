@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Object.assign` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-assign: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-assign: error */
 const obj = Object.assign({}, x, y)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

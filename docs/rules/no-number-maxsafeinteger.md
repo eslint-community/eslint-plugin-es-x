@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Number.MAX_SAFE_INTEGER` property as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-number-maxsafeinteger: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-number-maxsafeinteger: error */
 const b = Number.MAX_SAFE_INTEGER
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

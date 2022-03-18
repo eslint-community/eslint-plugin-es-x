@@ -15,7 +15,10 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-string-create-html-methods: [error, { aggressive: true }] */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-string-create-html-methods: [error, { aggressive: true }] */
 foo.anchor('nm')
 foo.big()
 foo.blink()
@@ -29,7 +32,9 @@ foo.small()
 foo.strike()
 foo.sub()
 foo.sup()
-" />
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 

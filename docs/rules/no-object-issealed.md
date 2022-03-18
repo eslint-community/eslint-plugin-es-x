@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v3.0.0"
 
 This rule reports ES5 `Object.isSealed` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-issealed: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-issealed: error */
 var sealed = Object.isSealed(obj)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

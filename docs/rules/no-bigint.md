@@ -11,16 +11,21 @@ since: "[eslint-plugin-es] v2.0.0"
 
 This rule reports ES2020 [BigInt](https://github.com/tc39/proposal-bigint) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-bigint: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-bigint: error */
 let a = 100n
 let b = BigInt(100)
 let c = new BigInt64Array(10)
 let d = new BigUint64Array(10)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

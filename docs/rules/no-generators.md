@@ -11,11 +11,14 @@ since: "[eslint-plugin-es] v1.0.0"
 
 This rule reports ES2015 generator function declarations as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-generators: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-generators: error */
 function* f1() {}
 const f2 = function*() {}
 const obj = {
@@ -24,7 +27,9 @@ const obj = {
 class A {
     *f4() {}
 }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

@@ -11,18 +11,23 @@ since: "v5.0.0"
 
 This rule reports ES2022 private in (`#x in obj`) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-private-in: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-private-in: error */
 class A {
     #x;
     fn () {
         var hasX = #x in obj;
     }
 }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

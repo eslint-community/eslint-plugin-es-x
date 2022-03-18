@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Object.is` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-is: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-is: error */
 const negZero = Object.is(value, -0)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

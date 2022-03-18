@@ -12,16 +12,21 @@ since: "[eslint-plugin-es] v1.0.0"
 
 This rule reports ES2015 property shorthands as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-property-shorthands: error */
+<eslint-playground fix type="bad">
+
+```js
+/*eslint es-x/no-property-shorthands: error */
 let obj = {
     a,
     b() {}
 }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

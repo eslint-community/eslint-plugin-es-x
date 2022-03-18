@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Math.cosh` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-math-cosh: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-math-cosh: error */
 const n = Math.cosh(value)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

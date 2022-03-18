@@ -11,17 +11,22 @@ since: "[eslint-plugin-es] v1.1.0"
 
 This rule reports ES2015 `super` property accesses in object literals as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-super-properties: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-super-properties: error */
 let a = {
     __proto__: obj,
     f1() { super.a },
     f2() { super.f() }
 }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

@@ -11,17 +11,22 @@ since: "[eslint-plugin-es] v1.0.0"
 
 This rule reports ES2015 rest parameters as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-rest-parameters: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-rest-parameters: error */
 function f1(...args) {}
 let f2 = function(...args) {}
-let f3 = (...args) =&gt; {}
+let f3 = (...args) => {}
 let obj = { f4(...args) {} }
 class A { f5(...args) {} }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

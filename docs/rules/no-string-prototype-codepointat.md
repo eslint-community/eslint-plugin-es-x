@@ -17,9 +17,14 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-string-prototype-codepointat: [error, { aggressive: true }] */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-string-prototype-codepointat: [error, { aggressive: true }] */
 foo.codePointAt(0)
-" />
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 

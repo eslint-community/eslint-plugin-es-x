@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Array.from` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-array-from: error */
-const array = Array.from(&quot;hello&quot;)
-" />
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-array-from: error */
+const array = Array.from("hello")
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

@@ -15,14 +15,19 @@ This proposal includes the following two:
 - `WeakRef` class
 - `FinalizationRegistry` class
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-weakrefs: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-weakrefs: error */
 let ref = new WeakRef()
-let finalizationGroup = new FinalizationRegistry(() =&gt; {})
-" />
+let finalizationGroup = new FinalizationRegistry(() => {})
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

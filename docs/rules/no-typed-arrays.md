@@ -22,13 +22,18 @@ This rule reports ES2015 typed arrays as errors.
 - `Float64Array`
 - `DataView`
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-typed-arrays: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-typed-arrays: error */
 let numbers = new Int32Array(10)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

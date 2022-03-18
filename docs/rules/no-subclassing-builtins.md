@@ -24,15 +24,20 @@ The built-in classes include the following classes (constructors):
 - `Set`
 - `String`
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-subclassing-builtins: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-subclassing-builtins: error */
 class MyArray extends Array {
     // ...
 }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

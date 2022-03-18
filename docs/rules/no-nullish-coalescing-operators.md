@@ -11,20 +11,30 @@ since: "[eslint-plugin-es] v4.0.0"
 
 This rule reports ES2020 [Nullish Coalescing operators](https://github.com/tc39/proposal-nullish-coalescing) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-nullish-coalescing-operators: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-nullish-coalescing-operators: error */
 var x = a ?? b
-" />
+```
+
+</eslint-playground>
 
 👌 Examples of **correct** code for this rule:
 
-<eslint-playground type="good" code="/*eslint es-x/no-nullish-coalescing-operators: error */
+<eslint-playground type="good">
+
+```js
+/*eslint es-x/no-nullish-coalescing-operators: error */
 var x = a || b
 var x = a != null ? a : b
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

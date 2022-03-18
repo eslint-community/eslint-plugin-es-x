@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v4.0.0"
 
 This rule reports ES2020 [import.meta](https://github.com/tc39/proposal-import-meta) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-import-meta: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-import-meta: error */
 import.meta
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

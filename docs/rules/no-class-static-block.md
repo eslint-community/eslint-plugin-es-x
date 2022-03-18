@@ -11,11 +11,14 @@ since: "v5.0.0"
 
 This rule reports ES2022 class static blocks as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-class-static-block: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-class-static-block: error */
 class A {
     static {
         // ...
@@ -26,7 +29,9 @@ const B = class {
         // ...
     }
 }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

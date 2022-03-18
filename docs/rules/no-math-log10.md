@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2015 `Math.log10` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-math-log10: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-math-log10: error */
 const n = Math.log10(value)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

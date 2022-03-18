@@ -11,15 +11,20 @@ since: "v5.0.0"
 
 This rule reports ES2022 arbitrary module namespace names as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-arbitrary-module-namespace-names: error */
-export * as &quot;ns&quot; from &quot;mod&quot;
-export {foo as &quot;bar&quot;} from &quot;mod&quot;
-import {&quot;foo&quot; as bar} from &quot;mod&quot;
-" />
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-arbitrary-module-namespace-names: error */
+export * as "ns" from "mod"
+export {foo as "bar"} from "mod"
+import {"foo" as bar} from "mod"
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

@@ -11,15 +11,20 @@ since: "[eslint-plugin-es] v2.0.0"
 
 This rule reports ES2020 [`import()` syntax](https://github.com/tc39/proposal-dynamic-import) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-dynamic-import: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-dynamic-import: error */
 async function f() {
-    const a = await import(&quot;source&quot;)
+    const a = await import("source")
 }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

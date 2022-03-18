@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.0.0"
 
 This rule reports ES2015 binary numeric literals as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-binary-numeric-literals: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-binary-numeric-literals: error */
 let a = 0b1010
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

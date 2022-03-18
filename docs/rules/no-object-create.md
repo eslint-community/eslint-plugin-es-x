@@ -11,13 +11,18 @@ since: "v5.0.0"
 
 This rule reports ES5 `Object.create` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-create: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-create: error */
 Object.create({})
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

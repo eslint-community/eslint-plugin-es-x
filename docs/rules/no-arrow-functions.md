@@ -12,21 +12,31 @@ since: "[eslint-plugin-es] v1.0.0"
 
 This rule reports ES2015 arrow functions as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-arrow-functions: error */
-let a = () =&gt; 100
-let b = () =&gt; { doSomething() }
-" />
+<eslint-playground fix type="bad">
+
+```js
+/*eslint es-x/no-arrow-functions: error */
+let a = () => 100
+let b = () => { doSomething() }
+```
+
+</eslint-playground>
 
 👌 Examples of **correct** code for this rule:
 
-<eslint-playground type="good" code="/*eslint es-x/no-arrow-functions: error */
+<eslint-playground fix type="good">
+
+```js
+/*eslint es-x/no-arrow-functions: error */
 let a = function() { return 100 }
 let b = function() { doSomething() }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

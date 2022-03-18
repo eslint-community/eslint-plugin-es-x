@@ -11,13 +11,18 @@ since: "v5.0.0"
 
 This rule reports ES2022 `Object.hasOwn` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-hasown: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-hasown: error */
 const hasFoo = Object.hasOwn(obj, 'foo')
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

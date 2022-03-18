@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v1.2.0"
 
 This rule reports ES2017 `Atomics` class as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-atomics: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-atomics: error */
 Atomics.add(buffer, 0, 2)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

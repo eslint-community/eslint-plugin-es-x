@@ -9,14 +9,19 @@ since: "v5.1.0"
 
 This rule reports Annex B feature `escape` and `unescape` as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-escape-unescape: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-escape-unescape: error */
 escape('%&')
 unescape('%25%26')
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

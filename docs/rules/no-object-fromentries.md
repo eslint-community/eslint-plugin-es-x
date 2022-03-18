@@ -11,13 +11,18 @@ since: "[eslint-plugin-es] v4.0.0"
 
 This rule reports ES2019 `Object.fromEntries` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-fromentries: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-fromentries: error */
 const obj = Object.fromEntries(map)
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

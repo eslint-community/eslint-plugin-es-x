@@ -11,17 +11,22 @@ since: "[eslint-plugin-es] v1.3.0"
 
 This rule reports ES2019 optional `catch` binding as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-optional-catch-binding: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-optional-catch-binding: error */
 try {
     f()
 } catch {
     g()
 }
-" />
+```
+
+</eslint-playground>
 
 ## 🚀 Version
 

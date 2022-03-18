@@ -17,9 +17,14 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-array-prototype-map: [error, { aggressive: true }] */
-foo.map(e =&gt; 2 * e)
-" />
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-array-prototype-map: [error, { aggressive: true }] */
+foo.map(e => 2 * e)
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 
