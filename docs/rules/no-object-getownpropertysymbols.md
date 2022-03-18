@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-getownpropertysymbols"
+description: "disallow the `Object.getOwnPropertySymbols` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-object-getownpropertysymbols
 > disallow the `Object.getOwnPropertySymbols` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Object.getOwnPropertySymbols` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-getownpropertysymbols: error */
 const symbols = Object.getOwnPropertySymbols(obj)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

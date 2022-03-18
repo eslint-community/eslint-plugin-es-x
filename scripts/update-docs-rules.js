@@ -8,8 +8,27 @@ const fs = require("fs")
 const path = require("path")
 const { ESLint } = require("eslint")
 const { rules } = require("./rules")
+const plugin = require("..")
 
 main()
+
+/**
+ * Get since from frontmatter or package.json
+ */
+function getSince(content) {
+    const fileIntro = /^---\n((?:.*\n)+)---\n*/u.exec(content)
+    if (fileIntro) {
+        const since = /since: "?([^"]+)"?/u.exec(fileIntro[0])
+        if (since) {
+            return since[1].trim()
+        }
+    }
+
+    if (process.env.IN_VERSION_SCRIPT) {
+        return `v${require("../package.json").version}`
+    }
+    return null
+}
 
 async function main() {
     const docsRoot = path.resolve(__dirname, "../docs/rules/")
@@ -18,7 +37,11 @@ async function main() {
     for (const filename of fs.readdirSync(configRoot)) {
         const id = `plugin:es-x/${path.basename(filename, ".js")}`
         const overrideConfigFile = path.join(configRoot, filename)
-        const engine = new ESLint({ overrideConfigFile, useEslintrc: false })
+        const engine = new ESLint({
+            overrideConfigFile,
+            useEslintrc: false,
+            plugins: { "es-x": plugin },
+        })
         const config = await engine.calculateConfigForFile("a.js")
         const ruleIds = new Set(Object.keys(config.rules))
         configs.push({ id, ruleIds })
@@ -27,16 +50,32 @@ async function main() {
 
     for (const { ruleId, description, fixable } of rules) {
         const filePath = path.join(docsRoot, `${ruleId}.md`)
-        const content = fs
-            .readFileSync(filePath, "utf8")
-            .replace(/^#.+\n>.+\n+(?:- .+\n)*/u, "")
+        const originalContent = fs.readFileSync(filePath, "utf8")
+        const since = getSince(originalContent)
+
+        const content = originalContent
+            .replace(/^\n*(?:---[\s\S]*?---\n\n?)?#.+\n>.+\n+(?:- .+\n)*/u, "")
+            .replace(/## 🚀 Version[\s\S]+/u, "")
             .replace(/## 📚 References[\s\S]+/u, "")
             .trim()
         const enabledConfigIds = configs
             .filter((c) => c.ruleIds.has(`es-x/${ruleId}`))
             .map((c) => `\`${c.id}\``)
             .sort(collator.compare.bind(collator))
+        const frontmatter = [
+            "---",
+            `title: "es-x/${ruleId}"`,
+            `description: ${yamlValue(description)}`,
+            ...(since ? [`since: ${yamlValue(since)}`] : []),
+            "---",
+        ]
         const headerLines = [`# es-x/${ruleId}`, `> ${description}`, ""]
+
+        if (!since) {
+            headerLines.push(
+                '- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>',
+            )
+        }
 
         if (enabledConfigIds.length > 0) {
             headerLines.push(
@@ -52,9 +91,25 @@ async function main() {
             )
         }
 
-        const newContent = `${headerLines.join("\n").trim()}
+        const newContent = `${frontmatter.join("\n").trim()}
 
-${content}
+${headerLines.join("\n").trim()}
+
+${content}${
+            since
+                ? `
+
+## 🚀 Version
+
+This rule was introduced in ${since}.${
+                      since.includes("[eslint-plugin-es]")
+                          ? `
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es`
+                          : ""
+                  }`
+                : ""
+        }
 
 ## 📚 References
 
@@ -64,4 +119,12 @@ ${content}
 
         fs.writeFileSync(filePath, newContent)
     }
+}
+
+/** Convert yaml value */
+function yamlValue(val) {
+    if (typeof val === "string") {
+        return `"${val.replace(/\\/gu, "\\\\").replace(/"/gu, '\\"')}"`
+    }
+    return val
 }

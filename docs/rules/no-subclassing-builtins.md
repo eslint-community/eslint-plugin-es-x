@@ -1,3 +1,9 @@
+---
+title: "es-x/no-subclassing-builtins"
+description: "disallow the subclassing of the built-in classes"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-subclassing-builtins
 > disallow the subclassing of the built-in classes
 
@@ -27,6 +33,12 @@ class MyArray extends Array {
     // ...
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

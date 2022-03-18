@@ -1,3 +1,9 @@
+---
+title: "es-x/no-computed-properties"
+description: "disallow computed properties"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-computed-properties
 > disallow computed properties
 
@@ -20,6 +26,12 @@ class A {
     [a]() {}
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

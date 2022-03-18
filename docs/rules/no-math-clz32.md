@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-clz32"
+description: "disallow the `Math.clz32` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-clz32
 > disallow the `Math.clz32` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.clz32` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-clz32: error */
 const n = Math.clz32(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

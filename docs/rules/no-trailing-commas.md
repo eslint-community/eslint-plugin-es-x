@@ -1,3 +1,9 @@
+---
+title: "es-x/no-trailing-commas"
+description: "disallow trailing commas in array/object literals"
+since: "[eslint-plugin-es] v1.1.0"
+---
+
 # es-x/no-trailing-commas
 > disallow trailing commas in array/object literals
 
@@ -13,6 +19,12 @@ This rule reports ES5 trailing commas in array/object literals as errors.
 var a = [1, 2,]
 var b = { x: 1, y: 2, }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.1.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

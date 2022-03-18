@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-asinh"
+description: "disallow the `Math.asinh` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-asinh
 > disallow the `Math.asinh` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.asinh` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-asinh: error */
 const n = Math.asinh(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

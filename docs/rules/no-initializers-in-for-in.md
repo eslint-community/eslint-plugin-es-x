@@ -1,3 +1,9 @@
+---
+title: "es-x/no-initializers-in-for-in"
+description: "disallow initializers in for-in heads"
+since: "v5.1.0"
+---
+
 # es-x/no-initializers-in-for-in
 > disallow initializers in for-in heads
 
@@ -12,6 +18,10 @@ See [Annex B - Initializers in ForIn Statement Heads](https://tc39.es/ecma262/mu
 <eslint-playground type="bad" source-type="script" code="/*eslint es-x/no-initializers-in-for-in: error */
 for (var x = 42 in obj) { /**/ }
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

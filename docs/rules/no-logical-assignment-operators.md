@@ -1,3 +1,9 @@
+---
+title: "es-x/no-logical-assignment-operators"
+description: "disallow logical assignment operators"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-logical-assignment-operators
 > disallow logical assignment operators
 
@@ -15,6 +21,12 @@ x ||= y
 x &&= y
 x ??= y
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

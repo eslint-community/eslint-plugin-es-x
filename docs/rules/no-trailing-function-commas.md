@@ -1,3 +1,9 @@
+---
+title: "es-x/no-trailing-function-commas"
+description: "disallow trailing commas in parameter/argument lists"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-trailing-function-commas
 > disallow trailing commas in parameter/argument lists
 
@@ -20,6 +26,12 @@ class A { async f5(a,) {} }
 foo(a,)
 new F(a,)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

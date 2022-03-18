@@ -1,3 +1,9 @@
+---
+title: "es-x/no-date-prototype-getyear-setyear"
+description: "disallow the `Date.prototype.{getYear,setYear}` methods"
+since: "v5.1.0"
+---
+
 # es-x/no-date-prototype-getyear-setyear
 > disallow the `Date.prototype.{getYear,setYear}` methods
 
@@ -27,6 +33,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

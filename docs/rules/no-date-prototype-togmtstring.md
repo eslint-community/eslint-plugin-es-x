@@ -1,3 +1,9 @@
+---
+title: "es-x/no-date-prototype-togmtstring"
+description: "disallow the `Date.prototype.toGMTString` method"
+since: "v5.1.0"
+---
+
 # es-x/no-date-prototype-togmtstring
 > disallow the `Date.prototype.toGMTString` method
 
@@ -28,6 +34,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

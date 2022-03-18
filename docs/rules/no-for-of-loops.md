@@ -1,3 +1,9 @@
+---
+title: "es-x/no-for-of-loops"
+description: "disallow `for-of` statements"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-for-of-loops
 > disallow `for-of` statements
 
@@ -14,6 +20,12 @@ for (var a of b) {}
 for (let a of b) {}
 for (a of b) {}
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

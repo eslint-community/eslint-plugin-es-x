@@ -1,3 +1,9 @@
+---
+title: "es-x/no-accessor-properties"
+description: "disallow accessor properties"
+since: "[eslint-plugin-es] v1.1.0"
+---
+
 # es-x/no-accessor-properties
 > disallow accessor properties
 
@@ -19,6 +25,12 @@ class A {
     set a(value) {}
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.1.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

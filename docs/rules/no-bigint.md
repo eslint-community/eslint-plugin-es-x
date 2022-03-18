@@ -1,3 +1,9 @@
+---
+title: "es-x/no-bigint"
+description: "disallow `bigint` syntax and built-ins"
+since: "[eslint-plugin-es] v2.0.0"
+---
+
 # es-x/no-bigint
 > disallow `bigint` syntax and built-ins
 
@@ -15,6 +21,12 @@ let b = BigInt(100)
 let c = new BigInt64Array(10)
 let d = new BigUint64Array(10)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v2.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

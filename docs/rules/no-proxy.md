@@ -1,3 +1,9 @@
+---
+title: "es-x/no-proxy"
+description: "disallow the `Proxy` class"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-proxy
 > disallow the `Proxy` class
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Proxy` class as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-proxy: error */
 let p = new Proxy(obj, hooks)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

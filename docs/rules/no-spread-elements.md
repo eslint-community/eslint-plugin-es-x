@@ -1,3 +1,9 @@
+---
+title: "es-x/no-spread-elements"
+description: "disallow spread elements"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-spread-elements
 > disallow spread elements
 
@@ -13,6 +19,12 @@ This rule reports ES2015 spread elements as errors.
 const a1 = [1, 2, ...array]
 foo(...a, ...b)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

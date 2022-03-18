@@ -1,3 +1,9 @@
+---
+title: "es-x/no-promise-any"
+description: "disallow `Promise.any` function and `AggregateError` class"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-promise-any
 > disallow `Promise.any` function and `AggregateError` class
 
@@ -20,6 +26,12 @@ const p = Promise.any(promises).catch(error =&gt; {
     }
 })
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

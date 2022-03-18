@@ -1,3 +1,9 @@
+---
+title: "es-x/no-modules"
+description: "disallow modules"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-modules
 > disallow modules
 
@@ -17,6 +23,12 @@ export default function() {}
 export { x1 } from &quot;x4&quot;
 export { x2 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-freeze"
+description: "disallow the `Object.freeze` method"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-object-freeze
 > disallow the `Object.freeze` method
 
@@ -12,6 +18,12 @@ This rule reports ES5 `Object.freeze` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-freeze: error */
 Object.freeze(obj)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

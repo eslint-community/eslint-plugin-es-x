@@ -1,3 +1,9 @@
+---
+title: "es-x/no-unicode-codepoint-escapes"
+description: "disallow Unicode code point escape sequences"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-unicode-codepoint-escapes
 > disallow Unicode code point escape sequences
 
@@ -21,6 +27,12 @@ const a2 = &quot;a\u{62}b&quot;
 const a\u0031 = `foo`
 const a2 = &quot;a\u0062b&quot;
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

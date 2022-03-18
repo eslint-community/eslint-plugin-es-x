@@ -1,3 +1,9 @@
+---
+title: "es-x/no-import-meta"
+description: "disallow `import.meta` meta property"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-import-meta
 > disallow `import.meta` meta property
 
@@ -12,6 +18,12 @@ This rule reports ES2020 [import.meta](https://github.com/tc39/proposal-import-m
 <eslint-playground type="bad" code="/*eslint es-x/no-import-meta: error */
 import.meta
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

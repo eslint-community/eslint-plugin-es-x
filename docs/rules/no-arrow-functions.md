@@ -1,3 +1,9 @@
+---
+title: "es-x/no-arrow-functions"
+description: "disallow arrow function expressions"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-arrow-functions
 > disallow arrow function expressions
 
@@ -21,6 +27,12 @@ let b = () =&gt; { doSomething() }
 let a = function() { return 100 }
 let b = function() { doSomething() }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

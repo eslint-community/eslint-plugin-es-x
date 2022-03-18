@@ -1,3 +1,9 @@
+---
+title: "es-x/no-json"
+description: "disallow the `JSON` class"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-json
 > disallow the `JSON` class
 
@@ -13,6 +19,12 @@ This rule reports ES5 `JSON` class as errors.
 var obj = JSON.parse(text)
 var str = JSON.stringify(data)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

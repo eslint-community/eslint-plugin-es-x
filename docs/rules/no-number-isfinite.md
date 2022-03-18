@@ -1,3 +1,9 @@
+---
+title: "es-x/no-number-isfinite"
+description: "disallow the `Number.isFinite` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-number-isfinite
 > disallow the `Number.isFinite` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Number.isFinite` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-number-isfinite: error */
 const b = Number.isFinite(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-number-epsilon"
+description: "disallow the `Number.EPSILON` property"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-number-epsilon
 > disallow the `Number.EPSILON` property
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Number.EPSILON` property as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-number-epsilon: error */
 const b = Number.EPSILON
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

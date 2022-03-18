@@ -1,3 +1,9 @@
+---
+title: "es-x/no-array-of"
+description: "disallow the `Array.of` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-array-of
 > disallow the `Array.of` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Array.of` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-array-of: error */
 const array = Array.of(1, 2, 3)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-template-literals"
+description: "disallow template literals"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-template-literals
 > disallow template literals
 
@@ -22,6 +28,12 @@ const a3 = tag`foo`
 const a1 = &quot;foo&quot;
 const a2 = &quot;foo&quot;+bar+&quot;baz&quot;
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

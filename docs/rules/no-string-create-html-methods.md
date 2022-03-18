@@ -1,3 +1,9 @@
+---
+title: "es-x/no-string-create-html-methods"
+description: "disallow HTML creation methods of string instances"
+since: "v5.1.0"
+---
+
 # es-x/no-string-create-html-methods
 > disallow HTML creation methods of string instances
 
@@ -38,6 +44,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

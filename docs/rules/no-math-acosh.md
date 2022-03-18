@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-acosh"
+description: "disallow the `Math.acosh` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-acosh
 > disallow the `Math.acosh` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.acosh` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-acosh: error */
 const n = Math.acosh(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

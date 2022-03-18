@@ -1,3 +1,9 @@
+---
+title: "es-x/no-block-scoped-variables"
+description: "disallow block-scoped variable declarations"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-block-scoped-variables
 > disallow block-scoped variable declarations
 
@@ -13,6 +19,12 @@ This rule reports ES2015 block-scoped variable declarations as errors.
 let a = 1
 const b = 2
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-dynamic-import"
+description: "disallow `import()` syntax"
+since: "[eslint-plugin-es] v2.0.0"
+---
+
 # es-x/no-dynamic-import
 > disallow `import()` syntax
 
@@ -14,6 +20,12 @@ async function f() {
     const a = await import(&quot;source&quot;)
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v2.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

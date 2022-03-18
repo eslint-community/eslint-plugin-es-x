@@ -1,3 +1,9 @@
+---
+title: "es-x/no-top-level-await"
+description: "disallow top-level `await`"
+since: "v5.0.0"
+---
+
 # es-x/no-top-level-await
 > disallow top-level `await`
 
@@ -12,6 +18,10 @@ This rule reports ES2022 [Top-level `await`](https://github.com/tc39/proposal-to
 <eslint-playground type="bad" code="/*eslint es-x/no-top-level-await: error */
 await expr;
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

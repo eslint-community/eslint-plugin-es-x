@@ -1,3 +1,9 @@
+---
+title: "es-x/no-class-static-block"
+description: "disallow class static block"
+since: "v5.0.0"
+---
+
 # es-x/no-class-static-block
 > disallow class static block
 
@@ -21,6 +27,10 @@ const B = class {
     }
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

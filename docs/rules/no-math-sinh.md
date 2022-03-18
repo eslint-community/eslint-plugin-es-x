@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-sinh"
+description: "disallow the `Math.sinh` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-sinh
 > disallow the `Math.sinh` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.sinh` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-sinh: error */
 const n = Math.sinh(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

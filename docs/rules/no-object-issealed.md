@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-issealed"
+description: "disallow the `Object.isSealed` method"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-object-issealed
 > disallow the `Object.isSealed` method
 
@@ -12,6 +18,12 @@ This rule reports ES5 `Object.isSealed` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-issealed: error */
 var sealed = Object.isSealed(obj)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-fround"
+description: "disallow the `Math.fround` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-fround
 > disallow the `Math.fround` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.fround` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-fround: error */
 const n = Math.fround(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

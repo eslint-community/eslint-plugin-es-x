@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-preventextensions"
+description: "disallow the `Object.preventExtensions` method"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-object-preventextensions
 > disallow the `Object.preventExtensions` method
 
@@ -12,6 +18,12 @@ This rule reports ES5 `Object.preventExtensions` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-preventextensions: error */
 Object.preventExtensions(obj)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

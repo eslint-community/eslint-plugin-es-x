@@ -1,3 +1,9 @@
+---
+title: "es-x/no-promise-prototype-finally"
+description: "disallow the `Promise.prototype.finally` method"
+since: "[eslint-plugin-es] v5.0.0"
+---
+
 # es-x/no-promise-prototype-finally
 > disallow the `Promise.prototype.finally` method
 
@@ -28,6 +34,12 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v5.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

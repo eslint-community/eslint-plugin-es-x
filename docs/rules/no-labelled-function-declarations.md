@@ -1,3 +1,9 @@
+---
+title: "es-x/no-labelled-function-declarations"
+description: "disallow labelled function declarations"
+since: "v5.1.0"
+---
+
 # es-x/no-labelled-function-declarations
 > disallow labelled function declarations
 
@@ -10,6 +16,10 @@ This rule reports Annex B feature [the labelled function declarations](https://t
 <eslint-playground type="bad" source-type="script" code="/*eslint es-x/no-labelled-function-declarations: error */
 label: function f() {}
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

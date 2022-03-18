@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-trunc"
+description: "disallow the `Math.trunc` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-trunc
 > disallow the `Math.trunc` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.trunc` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-trunc: error */
 const n = Math.trunc(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

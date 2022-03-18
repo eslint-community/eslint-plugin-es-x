@@ -1,3 +1,9 @@
+---
+title: "es-x/no-date-now"
+description: "disallow the `Date.now` method"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-date-now
 > disallow the `Date.now` method
 
@@ -12,6 +18,12 @@ This rule reports ES5 `Date.now` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-date-now: error */
 var now = Date.now()
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

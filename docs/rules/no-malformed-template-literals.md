@@ -1,3 +1,9 @@
+---
+title: "es-x/no-malformed-template-literals"
+description: "disallow template literals with invalid escape sequences"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-malformed-template-literals
 > disallow template literals with invalid escape sequences
 
@@ -12,6 +18,12 @@ This rule reports ES2018 [template literals with invalid escape sequences](https
 <eslint-playground type="bad" code="/*eslint es-x/no-malformed-template-literals: error */
 tag`\unicode`
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

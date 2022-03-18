@@ -1,3 +1,9 @@
+---
+title: "es-x/no-exponential-operators"
+description: "disallow exponential operators"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-exponential-operators
 > disallow exponential operators
 
@@ -13,6 +19,12 @@ This rule reports ES2016 [exponential operators](https://github.com/rwaldron/exp
 let a = b ** 2
 a **= b
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-number-parseint"
+description: "disallow the `Number.parseInt` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-number-parseint
 > disallow the `Number.parseInt` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Number.parseInt` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-number-parseint: error */
 const b = Number.parseInt(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

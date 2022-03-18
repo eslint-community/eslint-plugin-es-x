@@ -1,3 +1,9 @@
+---
+title: "es-x/no-string-prototype-trimleft-trimright"
+description: "disallow the `String.prototype.{trimLeft,trimRight}` methods"
+since: "v5.1.0"
+---
+
 # es-x/no-string-prototype-trimleft-trimright
 > disallow the `String.prototype.{trimLeft,trimRight}` methods
 
@@ -29,6 +35,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

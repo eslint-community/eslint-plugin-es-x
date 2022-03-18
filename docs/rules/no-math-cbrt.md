@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-cbrt"
+description: "disallow the `Math.cbrt` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-cbrt
 > disallow the `Math.cbrt` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.cbrt` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-cbrt: error */
 const n = Math.cbrt(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

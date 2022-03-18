@@ -1,3 +1,9 @@
+---
+title: "es-x/no-string-fromcodepoint"
+description: "disallow the `String.fromCodePoint` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-string-fromcodepoint
 > disallow the `String.fromCodePoint` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `String.fromCodePoint` as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-string-fromcodepoint: error */
 const thumbUp = String.fromCodePoint(0x1F44D)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

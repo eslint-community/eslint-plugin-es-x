@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-getownpropertydescriptors"
+description: "disallow the `Object.getOwnPropertyDescriptors` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-object-getownpropertydescriptors
 > disallow the `Object.getOwnPropertyDescriptors` method
 
@@ -12,6 +18,12 @@ This rule reports ES2017 `Object.getOwnPropertyDescriptors` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-getownpropertydescriptors: error */
 const descriptors = Object.getOwnPropertyDescriptors(obj)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

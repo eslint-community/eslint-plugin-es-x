@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-cosh"
+description: "disallow the `Math.cosh` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-cosh
 > disallow the `Math.cosh` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.cosh` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-cosh: error */
 const n = Math.cosh(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

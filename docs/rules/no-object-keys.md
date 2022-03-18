@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-keys"
+description: "disallow the `Object.keys` method"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-object-keys
 > disallow the `Object.keys` method
 
@@ -12,6 +18,12 @@ This rule reports ES5 `Object.keys` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-keys: error */
 const keys = Object.keys(obj)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

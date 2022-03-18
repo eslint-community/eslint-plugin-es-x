@@ -1,3 +1,9 @@
+---
+title: "es-x/no-array-prototype-keys"
+description: "disallow the `Array.prototype.keys` method"
+since: "[eslint-plugin-es] v5.0.0"
+---
+
 # es-x/no-array-prototype-keys
 > disallow the `Array.prototype.keys` method
 
@@ -28,6 +34,12 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v5.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

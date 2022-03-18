@@ -1,3 +1,9 @@
+---
+title: "es-x/no-array-from"
+description: "disallow the `Array.from` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-array-from
 > disallow the `Array.from` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Array.from` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-array-from: error */
 const array = Array.from(&quot;hello&quot;)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

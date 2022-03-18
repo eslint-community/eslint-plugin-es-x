@@ -1,3 +1,9 @@
+---
+title: "es-x/no-function-prototype-bind"
+description: "disallow the `Function.prototype.bind` method"
+since: "v5.0.0"
+---
+
 # es-x/no-function-prototype-bind
 > disallow the `Function.prototype.bind` method
 
@@ -32,6 +38,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

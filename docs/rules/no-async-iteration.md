@@ -1,3 +1,9 @@
+---
+title: "es-x/no-async-iteration"
+description: "disallow async iteration"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-async-iteration
 > disallow async iteration
 
@@ -19,6 +25,12 @@ async function wrap() {
     for await (const x of xs) {}
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

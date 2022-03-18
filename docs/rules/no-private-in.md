@@ -1,3 +1,9 @@
+---
+title: "es-x/no-private-in"
+description: "disallow `#x in obj`"
+since: "v5.0.0"
+---
+
 # es-x/no-private-in
 > disallow `#x in obj`
 
@@ -17,6 +23,10 @@ class A {
     }
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-binary-numeric-literals"
+description: "disallow binary numeric literals"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-binary-numeric-literals
 > disallow binary numeric literals
 
@@ -12,6 +18,12 @@ This rule reports ES2015 binary numeric literals as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-binary-numeric-literals: error */
 let a = 0b1010
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

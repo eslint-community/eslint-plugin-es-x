@@ -1,3 +1,9 @@
+---
+title: "es-x/no-regexp-lookbehind-assertions"
+description: "disallow RegExp lookbehind assertions"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-regexp-lookbehind-assertions
 > disallow RegExp lookbehind assertions
 
@@ -13,6 +19,12 @@ This rule reports ES2018 [RegExp lookbehind assertions](https://github.com/tc39/
 const r1 = /(?<=a)b/
 const r2 = /(?<!a)b/
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

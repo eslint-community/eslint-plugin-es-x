@@ -1,3 +1,9 @@
+---
+title: "es-x/no-array-string-prototype-at"
+description: "disallow the `{Array,String}.prototype.at()` methods"
+since: "v5.0.0"
+---
+
 # es-x/no-array-string-prototype-at
 > disallow the `{Array,String}.prototype.at()` methods
 
@@ -29,6 +35,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

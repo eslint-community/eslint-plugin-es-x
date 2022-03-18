@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-log10"
+description: "disallow the `Math.log10` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-log10
 > disallow the `Math.log10` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.log10` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-log10: error */
 const n = Math.log10(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

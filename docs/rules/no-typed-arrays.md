@@ -1,3 +1,9 @@
+---
+title: "es-x/no-typed-arrays"
+description: "disallow ES2015 typed arrays"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-typed-arrays
 > disallow ES2015 typed arrays
 
@@ -23,6 +29,12 @@ This rule reports ES2015 typed arrays as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-typed-arrays: error */
 let numbers = new Int32Array(10)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

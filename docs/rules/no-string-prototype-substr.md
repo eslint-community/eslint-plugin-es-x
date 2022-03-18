@@ -1,3 +1,9 @@
+---
+title: "es-x/no-string-prototype-substr"
+description: "disallow the `String.prototype.substr` method"
+since: "v5.1.0"
+---
+
 # es-x/no-string-prototype-substr
 > disallow the `String.prototype.substr` method
 
@@ -26,6 +32,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-legacy-object-prototype-accessor-methods"
+description: "disallow legacy `Object.prototype` accessor methods"
+since: "v5.2.0"
+---
+
 # es-x/no-legacy-object-prototype-accessor-methods
 > disallow legacy `Object.prototype` accessor methods
 
@@ -13,6 +19,10 @@ foo.__defineSetter__(prop, val, func)
 foo.__lookupGetter__(prop)
 foo.__lookupSetter__(prop)
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.2.0.
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-rest-spread-properties"
+description: "disallow rest/spread properties"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-rest-spread-properties
 > disallow rest/spread properties
 
@@ -15,6 +21,12 @@ let {a, ...rest} = obj
 ;({a, ...rest} = obj)
 function f({a, ...rest}) {}
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

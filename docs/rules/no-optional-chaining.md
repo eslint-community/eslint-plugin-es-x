@@ -1,3 +1,9 @@
+---
+title: "es-x/no-optional-chaining"
+description: "disallow optional chaining"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-optional-chaining
 > disallow optional chaining
 
@@ -24,6 +30,12 @@ var x = a != null ? a[b] : undefined
 var x = a && a[b]
 foo && foo()
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

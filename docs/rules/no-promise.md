@@ -1,3 +1,9 @@
+---
+title: "es-x/no-promise"
+description: "disallow the `Promise` class"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-promise
 > disallow the `Promise` class
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Promise` class as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-promise: error */
 let p = new Promise()
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

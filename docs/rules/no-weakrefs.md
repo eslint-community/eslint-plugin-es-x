@@ -1,3 +1,9 @@
+---
+title: "es-x/no-weakrefs"
+description: "disallow the `WeakRef` and `FinalizationRegistry` class"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-weakrefs
 > disallow the `WeakRef` and `FinalizationRegistry` class
 
@@ -17,6 +23,12 @@ This proposal includes the following two:
 let ref = new WeakRef()
 let finalizationGroup = new FinalizationRegistry(() =&gt; {})
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

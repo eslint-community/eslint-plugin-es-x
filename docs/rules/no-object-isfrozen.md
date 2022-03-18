@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-isfrozen"
+description: "disallow the `Object.isFrozen` method"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-object-isfrozen
 > disallow the `Object.isFrozen` method
 
@@ -12,6 +18,12 @@ This rule reports ES5 `Object.isFrozen` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-isfrozen: error */
 var frozen = Object.isFrozen(obj)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

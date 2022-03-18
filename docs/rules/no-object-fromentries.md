@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-fromentries"
+description: "disallow the `Object.fromEntries` method"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-object-fromentries
 > disallow the `Object.fromEntries` method
 
@@ -12,6 +18,12 @@ This rule reports ES2019 `Object.fromEntries` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-fromentries: error */
 const obj = Object.fromEntries(map)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

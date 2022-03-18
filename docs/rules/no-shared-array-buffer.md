@@ -1,3 +1,9 @@
+---
+title: "es-x/no-shared-array-buffer"
+description: "disallow the `SharedArrayBuffer` class"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-shared-array-buffer
 > disallow the `SharedArrayBuffer` class
 
@@ -12,6 +18,12 @@ This rule reports ES2017 `SharedArrayBuffer` class as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-shared-array-buffer: error */
 let buffer = new SharedArrayBuffer(10)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

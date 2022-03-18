@@ -1,3 +1,9 @@
+---
+title: "es-x/no-function-declarations-in-if-statement-clauses-without-block"
+description: "disallow function declarations in if statement clauses without using blocks"
+since: "v5.1.0"
+---
+
 # es-x/no-function-declarations-in-if-statement-clauses-without-block
 > disallow function declarations in if statement clauses without using blocks
 
@@ -15,6 +21,10 @@ if (a)
 else
   function f2() {}
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

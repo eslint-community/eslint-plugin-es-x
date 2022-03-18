@@ -1,3 +1,9 @@
+---
+title: "es-x/no-string-prototype-trimstart-trimend"
+description: "disallow the `String.prototype.{trimStart,trimEnd}` methods"
+since: "[eslint-plugin-es] v5.0.0"
+---
+
 # es-x/no-string-prototype-trimstart-trimend
 > disallow the `String.prototype.{trimStart,trimEnd}` methods
 
@@ -29,6 +35,12 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v5.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

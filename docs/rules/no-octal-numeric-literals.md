@@ -1,3 +1,9 @@
+---
+title: "es-x/no-octal-numeric-literals"
+description: "disallow octal numeric literals"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-octal-numeric-literals
 > disallow octal numeric literals
 
@@ -12,6 +18,12 @@ This rule reports ES2015 octal numeric literals as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-octal-numeric-literals: error */
 let a = 0o123
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

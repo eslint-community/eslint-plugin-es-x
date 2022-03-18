@@ -1,3 +1,9 @@
+---
+title: "es-x/no-keyword-properties"
+description: "disallow reserved words as property names"
+since: "[eslint-plugin-es] v1.1.0"
+---
+
 # es-x/no-keyword-properties
 > disallow reserved words as property names
 
@@ -14,6 +20,12 @@ var a = { if: 1, class: 2 }
 a.if = 2
 a.class = 3
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.1.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

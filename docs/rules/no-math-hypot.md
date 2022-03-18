@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-hypot"
+description: "disallow the `Math.hypot` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-hypot
 > disallow the `Math.hypot` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.hypot` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-hypot: error */
 const n = Math.hypot(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

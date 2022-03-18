@@ -1,3 +1,9 @@
+---
+title: "es-x/no-regexp-d-flag"
+description: "disallow RegExp `d` flag"
+since: "v5.0.0"
+---
+
 # es-x/no-regexp-d-flag
 > disallow RegExp `d` flag
 
@@ -12,6 +18,10 @@ This rule reports ES2022 [RegExp `d` flag](https://github.com/tc39/proposal-rege
 <eslint-playground type="bad" code="/*eslint es-x/no-regexp-d-flag: error */
 const r1 = /./d
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

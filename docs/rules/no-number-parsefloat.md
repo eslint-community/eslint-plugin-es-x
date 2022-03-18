@@ -1,3 +1,9 @@
+---
+title: "es-x/no-number-parsefloat"
+description: "disallow the `Number.parseFloat` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-number-parsefloat
 > disallow the `Number.parseFloat` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Number.parseFloat` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-number-parsefloat: error */
 const b = Number.parseFloat(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

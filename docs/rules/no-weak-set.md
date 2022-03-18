@@ -1,3 +1,9 @@
+---
+title: "es-x/no-weak-set"
+description: "disallow the `WeakSet` class"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-weak-set
 > disallow the `WeakSet` class
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `WeakSet` class as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-weak-set: error */
 let set = new WeakSet()
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

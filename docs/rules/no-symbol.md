@@ -1,3 +1,9 @@
+---
+title: "es-x/no-symbol"
+description: "disallow the `Symbol` class"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-symbol
 > disallow the `Symbol` class
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Symbol` class as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-symbol: error */
 let s = Symbol(&quot;s&quot;)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-shadow-catch-param"
+description: "disallow identifiers from shadowing catch parameter names"
+since: "v5.1.0"
+---
+
 # es-x/no-shadow-catch-param
 > disallow identifiers from shadowing catch parameter names
 
@@ -15,6 +21,10 @@ try {
     var e
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-nullish-coalescing-operators"
+description: "disallow nullish coalescing operators"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-nullish-coalescing-operators
 > disallow nullish coalescing operators
 
@@ -19,6 +25,12 @@ var x = a ?? b
 var x = a || b
 var x = a != null ? a : b
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

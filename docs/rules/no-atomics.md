@@ -1,3 +1,9 @@
+---
+title: "es-x/no-atomics"
+description: "disallow the `Atomics` class"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-atomics
 > disallow the `Atomics` class
 
@@ -12,6 +18,12 @@ This rule reports ES2017 `Atomics` class as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-atomics: error */
 Atomics.add(buffer, 0, 2)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

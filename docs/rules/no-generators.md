@@ -1,3 +1,9 @@
+---
+title: "es-x/no-generators"
+description: "disallow generator function declarations"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-generators
 > disallow generator function declarations
 
@@ -19,6 +25,12 @@ class A {
     *f4() {}
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

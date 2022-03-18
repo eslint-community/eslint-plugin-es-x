@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-expm1"
+description: "disallow the `Math.expm1` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-expm1
 > disallow the `Math.expm1` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.expm1` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-expm1: error */
 const n = Math.expm1(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

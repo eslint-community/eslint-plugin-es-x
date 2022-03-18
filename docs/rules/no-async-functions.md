@@ -1,3 +1,9 @@
+---
+title: "es-x/no-async-functions"
+description: "disallow async function declarations"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-async-functions
 > disallow async function declarations
 
@@ -16,6 +22,12 @@ let f3 = async () =&gt; {}
 let obj = { async f4() {} }
 class A { async f5() {} }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

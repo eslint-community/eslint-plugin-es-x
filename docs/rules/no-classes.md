@@ -1,3 +1,9 @@
+---
+title: "es-x/no-classes"
+description: "disallow class declarations"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-classes
 > disallow class declarations
 
@@ -13,6 +19,12 @@ This rule reports ES2015 class declarations as errors.
 class A {}
 const B = class {}
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

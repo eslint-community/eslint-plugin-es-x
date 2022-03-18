@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-sign"
+description: "disallow the `Math.sign` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-sign
 > disallow the `Math.sign` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.sign` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-sign: error */
 const n = Math.sign(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

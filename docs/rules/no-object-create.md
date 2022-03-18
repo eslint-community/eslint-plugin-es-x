@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-create"
+description: "disallow the `Object.create` method"
+since: "v5.0.0"
+---
+
 # es-x/no-object-create
 > disallow the `Object.create` method
 
@@ -12,6 +18,10 @@ This rule reports ES5 `Object.create` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-create: error */
 Object.create({})
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

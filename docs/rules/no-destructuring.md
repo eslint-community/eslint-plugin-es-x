@@ -1,3 +1,9 @@
+---
+title: "es-x/no-destructuring"
+description: "disallow destructuring"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-destructuring
 > disallow destructuring
 
@@ -17,6 +23,12 @@ function f({a, b}, [c, d]) {}
 ;[a, b] = array
 ;({c, d} = obj)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

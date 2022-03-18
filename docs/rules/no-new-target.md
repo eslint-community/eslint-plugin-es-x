@@ -1,3 +1,9 @@
+---
+title: "es-x/no-new-target"
+description: "disallow `new.target` meta property"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-new-target
 > disallow `new.target` meta property
 
@@ -16,6 +22,12 @@ class A {
     }
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-global-this"
+description: "disallow the `globalThis` variable"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-global-this
 > disallow the `globalThis` variable
 
@@ -12,6 +18,12 @@ This rule reports ES2020 `globalThis` variable as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-global-this: error */
 console.log(globalThis === window)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

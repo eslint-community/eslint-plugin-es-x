@@ -1,3 +1,9 @@
+---
+title: "es-x/no-property-shorthands"
+description: "disallow property shorthands"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-property-shorthands
 > disallow property shorthands
 
@@ -16,6 +22,12 @@ let obj = {
     b() {}
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

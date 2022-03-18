@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-log1p"
+description: "disallow the `Math.log1p` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-log1p
 > disallow the `Math.log1p` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Math.log1p` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-math-log1p: error */
 const n = Math.log1p(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

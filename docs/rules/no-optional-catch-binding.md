@@ -1,3 +1,9 @@
+---
+title: "es-x/no-optional-catch-binding"
+description: "disallow optional `catch` binding"
+since: "[eslint-plugin-es] v1.3.0"
+---
+
 # es-x/no-optional-catch-binding
 > disallow optional `catch` binding
 
@@ -16,6 +22,12 @@ try {
     g()
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.3.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

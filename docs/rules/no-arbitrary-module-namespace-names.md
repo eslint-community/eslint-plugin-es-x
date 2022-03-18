@@ -1,3 +1,9 @@
+---
+title: "es-x/no-arbitrary-module-namespace-names"
+description: "disallow arbitrary module namespace names"
+since: "v5.0.0"
+---
+
 # es-x/no-arbitrary-module-namespace-names
 > disallow arbitrary module namespace names
 
@@ -14,6 +20,10 @@ export * as &quot;ns&quot; from &quot;mod&quot;
 export {foo as &quot;bar&quot;} from &quot;mod&quot;
 import {&quot;foo&quot; as bar} from &quot;mod&quot;
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

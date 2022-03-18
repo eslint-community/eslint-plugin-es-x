@@ -1,3 +1,9 @@
+---
+title: "es-x/no-block-scoped-functions"
+description: "disallow block-scoped function declarations"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-block-scoped-functions
 > disallow block-scoped function declarations
 
@@ -16,6 +22,12 @@ if (a) {
     function g() {}
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

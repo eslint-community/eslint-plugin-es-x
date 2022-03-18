@@ -1,3 +1,9 @@
+---
+title: "es-x/no-number-issafeinteger"
+description: "disallow the `Number.isSafeInteger` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-number-issafeinteger
 > disallow the `Number.isSafeInteger` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Number.isSafeInteger` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-number-issafeinteger: error */
 const b = Number.isSafeInteger(value)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

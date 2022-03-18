@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-isextensible"
+description: "disallow the `Object.isExtensible` method"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-object-isextensible
 > disallow the `Object.isExtensible` method
 
@@ -12,6 +18,12 @@ This rule reports ES5 `Object.isExtensible` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-isextensible: error */
 var extensible = Object.isExtensible(obj)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-class-fields"
+description: "disallow class fields"
+since: "v5.0.0"
+---
+
 # es-x/no-class-fields
 > disallow class fields
 
@@ -32,6 +38,10 @@ class A {
     }
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

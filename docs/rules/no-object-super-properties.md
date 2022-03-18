@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-super-properties"
+description: "disallow `super` property accesses in object literals"
+since: "[eslint-plugin-es] v1.1.0"
+---
+
 # es-x/no-object-super-properties
 > disallow `super` property accesses in object literals
 
@@ -16,6 +22,12 @@ let a = {
     f2() { super.f() }
 }
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.1.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

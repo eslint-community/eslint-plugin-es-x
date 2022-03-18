@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-assign"
+description: "disallow the `Object.assign` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-object-assign
 > disallow the `Object.assign` method
 
@@ -12,6 +18,12 @@ This rule reports ES2015 `Object.assign` method as errors.
 <eslint-playground type="bad" code="/*eslint es-x/no-object-assign: error */
 const obj = Object.assign({}, x, y)
 " />
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 
