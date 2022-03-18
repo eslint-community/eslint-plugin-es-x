@@ -1,3 +1,9 @@
+---
+title: "es-x/no-rest-spread-properties"
+description: "disallow rest/spread properties"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-rest-spread-properties
 > disallow rest/spread properties
 
@@ -5,16 +11,27 @@
 
 This rule reports ES2018 [rest/spread properties](https://github.com/tc39/proposal-object-rest-spread#readme) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-rest-spread-properties: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-rest-spread-properties: error */
 let obj = {...obj0}
 let {a, ...rest} = obj
 ;({a, ...rest} = obj)
 function f({a, ...rest}) {}
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

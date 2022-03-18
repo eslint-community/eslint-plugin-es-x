@@ -4,6 +4,7 @@
  */
 "use strict"
 
+const path = require("path")
 const { categories } = require("../../scripts/rules")
 require("../../scripts/update-docs-readme")
 
@@ -12,6 +13,27 @@ module.exports = {
     base: "/eslint-plugin-es-x/",
     description: "ESLint plugin about ECMAScript syntax.",
     evergreen: true,
+
+    enhanceAppFiles: require.resolve("./enhanceApp.mjs"),
+    configureWebpack(_config, _isServer) {
+        return {
+            externals: {
+                typescript: "typescript",
+            },
+            resolve: {
+                alias: {
+                    esquery: path.resolve(
+                        __dirname,
+                        "../../node_modules/esquery/dist/esquery.min.js",
+                    ),
+                    "@eslint/eslintrc/universal": path.resolve(
+                        __dirname,
+                        "../../node_modules/@eslint/eslintrc/dist/eslintrc-universal.cjs",
+                    ),
+                },
+            },
+        }
+    },
 
     themeConfig: {
         repo: "ota-meshi/eslint-plugin-es-x",

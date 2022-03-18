@@ -1,3 +1,9 @@
+---
+title: "es-x/no-class-fields"
+description: "disallow class fields"
+since: "v5.0.0"
+---
+
 # es-x/no-class-fields
 > disallow class fields
 
@@ -5,11 +11,14 @@
 
 This rule reports class fields as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-class-fields: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-class-fields: error */
 class A {
     a = 0
     #b = 0
@@ -31,7 +40,13 @@ class A {
         A.#g()
     }
 }
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

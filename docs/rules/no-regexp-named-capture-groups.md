@@ -1,3 +1,9 @@
+---
+title: "es-x/no-regexp-named-capture-groups"
+description: "disallow RegExp named capture groups"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-regexp-named-capture-groups
 > disallow RegExp named capture groups
 
@@ -5,13 +11,24 @@
 
 This rule reports ES2018 [RegExp named capture groups](https://github.com/tc39/proposal-regexp-named-groups#readme) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-regexp-named-capture-groups: error */
-const r1 = /(?&lt;a&gt;b)c/
-" />
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-regexp-named-capture-groups: error */
+const r1 = /(?<a>b)c/
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

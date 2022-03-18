@@ -1,3 +1,9 @@
+---
+title: "es-x/no-json-superset"
+description: "disallow `\\u2028` and `\\u2029` in string literals"
+since: "[eslint-plugin-es] v1.3.0"
+---
+
 # es-x/no-json-superset
 > disallow `\u2028` and `\u2029` in string literals
 
@@ -6,14 +12,28 @@
 
 This rule reports ES2019 `\u2028` and `\u2029` in string literals as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-json-superset: error */
+<eslint-playground fix type="bad" code="/*eslint es-x/no-json-superset: error */
 const u2028 = &quot;&#x2028;&quot; // a \u2028 is in this string
 const u2029 = &quot;&#x2029;&quot; // a \u2029 is in this string
-" />
+">
+
+```js
+/*eslint es-x/no-json-superset: error */
+const u2028 = " " // a \u2028 is in this string
+const u2029 = " " // a \u2029 is in this string
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.3.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

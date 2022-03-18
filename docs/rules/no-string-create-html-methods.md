@@ -1,3 +1,9 @@
+---
+title: "es-x/no-string-create-html-methods"
+description: "disallow HTML creation methods of string instances"
+since: "v5.1.0"
+---
+
 # es-x/no-string-create-html-methods
 > disallow HTML creation methods of string instances
 
@@ -9,7 +15,10 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-string-create-html-methods: [error, { aggressive: true }] */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-string-create-html-methods: [error, { aggressive: true }] */
 foo.anchor('nm')
 foo.big()
 foo.blink()
@@ -23,7 +32,9 @@ foo.small()
 foo.strike()
 foo.sub()
 foo.sup()
-" />
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 
@@ -38,6 +49,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

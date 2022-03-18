@@ -1,3 +1,9 @@
+---
+title: "es-x/no-regexp-s-flag"
+description: "disallow RegExp `s` flag"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-regexp-s-flag
 > disallow RegExp `s` flag
 
@@ -5,13 +11,24 @@
 
 This rule reports ES2018 [RegExp `s` flag](https://github.com/tc39/proposal-regexp-dotall-flag#readme) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-regexp-s-flag: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-regexp-s-flag: error */
 const r1 = /./s
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

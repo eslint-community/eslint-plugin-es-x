@@ -1,3 +1,9 @@
+---
+title: "es-x/no-number-minsafeinteger"
+description: "disallow the `Number.MIN_SAFE_INTEGER` property"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-number-minsafeinteger
 > disallow the `Number.MIN_SAFE_INTEGER` property
 
@@ -5,13 +11,24 @@
 
 This rule reports ES2015 `Number.MIN_SAFE_INTEGER` property as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-number-minsafeinteger: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-number-minsafeinteger: error */
 const b = Number.MIN_SAFE_INTEGER
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

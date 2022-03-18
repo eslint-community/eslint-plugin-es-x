@@ -1,3 +1,9 @@
+---
+title: "es-x/no-function-declarations-in-if-statement-clauses-without-block"
+description: "disallow function declarations in if statement clauses without using blocks"
+since: "v5.1.0"
+---
+
 # es-x/no-function-declarations-in-if-statement-clauses-without-block
 > disallow function declarations in if statement clauses without using blocks
 
@@ -5,16 +11,25 @@
 
 This rule reports Annex B feature [the function declarations in if statement clauses without using blocks](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html#sec-functiondeclarations-in-ifstatement-statement-clauses) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" source-type="script" code="/*eslint es-x/no-function-declarations-in-if-statement-clauses-without-block: error */
+<eslint-playground fix type="bad" source-type="script">
+
+```js
+/*eslint es-x/no-function-declarations-in-if-statement-clauses-without-block: error */
 if (a)
   function f1() {}
 else
   function f2() {}
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

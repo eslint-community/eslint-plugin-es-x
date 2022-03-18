@@ -1,3 +1,9 @@
+---
+title: "es-x/no-function-prototype-bind"
+description: "disallow the `Function.prototype.bind` method"
+since: "v5.0.0"
+---
+
 # es-x/no-function-prototype-bind
 > disallow the `Function.prototype.bind` method
 
@@ -11,13 +17,18 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-function-prototype-bind: [error, { aggressive: true }] */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-function-prototype-bind: [error, { aggressive: true }] */
 foo.bind(this);
 
 var foo = (function() {
     return this.bar
 }).bind(this)
-" />
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 
@@ -32,6 +43,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-array-isarray"
+description: "disallow the `Array.isArray` method"
+since: "[eslint-plugin-es] v3.0.0"
+---
+
 # es-x/no-array-isarray
 > disallow the `Array.isArray` method
 
@@ -5,13 +11,24 @@
 
 This rule reports ES5 `Array.isArray` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-array-isarray: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-array-isarray: error */
 var array = Array.isArray(obj)
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v3.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

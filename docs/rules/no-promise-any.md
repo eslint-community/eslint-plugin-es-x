@@ -1,3 +1,9 @@
+---
+title: "es-x/no-promise-any"
+description: "disallow `Promise.any` function and `AggregateError` class"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-promise-any
 > disallow `Promise.any` function and `AggregateError` class
 
@@ -9,17 +15,28 @@ This proposal includes the following two:
 - `Promise.any` function
 - `AggregateError` class
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-promise-any: error */
-const p = Promise.any(promises).catch(error =&gt; {
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-promise-any: error */
+const p = Promise.any(promises).catch(error => {
     if (error instanceof AggregateError) {
         // Do something.
     }
 })
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

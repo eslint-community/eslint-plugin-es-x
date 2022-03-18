@@ -1,3 +1,9 @@
+---
+title: "es-x/no-string-prototype-replaceall"
+description: "disallow the `String.prototype.replaceAll` method"
+since: "[eslint-plugin-es] v5.0.0"
+---
+
 # es-x/no-string-prototype-replaceall
 > disallow the `String.prototype.replaceAll` method
 
@@ -11,9 +17,14 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-string-prototype-replaceall: [error, { aggressive: true }] */
-foo.replaceAll(&quot;a&quot;, &quot;b&quot;)
-" />
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-string-prototype-replaceall: [error, { aggressive: true }] */
+foo.replaceAll("a", "b")
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 
@@ -28,6 +39,12 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v5.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

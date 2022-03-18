@@ -1,3 +1,9 @@
+---
+title: "es-x/no-unicode-codepoint-escapes"
+description: "disallow Unicode code point escape sequences"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-unicode-codepoint-escapes
 > disallow Unicode code point escape sequences
 
@@ -6,21 +12,37 @@
 
 This rule reports ES2015 Unicode code point escape sequences as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-unicode-codepoint-escapes: error */
+<eslint-playground fix type="bad">
+
+```js
+/*eslint es-x/no-unicode-codepoint-escapes: error */
 const a\u{31} = `foo`
-const a2 = &quot;a\u{62}b&quot;
-" />
+const a2 = "a\u{62}b"
+```
+
+</eslint-playground>
 
 👌 Examples of **correct** code for this rule:
 
-<eslint-playground type="good" code="/*eslint es-x/no-unicode-codepoint-escapes: error */
+<eslint-playground fix type="good">
+
+```js
+/*eslint es-x/no-unicode-codepoint-escapes: error */
 const a\u0031 = `foo`
-const a2 = &quot;a\u0062b&quot;
-" />
+const a2 = "a\u0062b"
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

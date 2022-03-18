@@ -1,3 +1,9 @@
+---
+title: "es-x/no-array-prototype-flat"
+description: "disallow the `Array.prototype.{flat,flatMap}` method"
+since: "[eslint-plugin-es] v5.0.0"
+---
+
 # es-x/no-array-prototype-flat
 > disallow the `Array.prototype.{flat,flatMap}` method
 
@@ -11,10 +17,15 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-array-prototype-flat: [error, { aggressive: true }] */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-array-prototype-flat: [error, { aggressive: true }] */
 foo.flat(0)
-foo.flatMap(e =&gt; [e, 2 * e])
-" />
+foo.flatMap(e => [e, 2 * e])
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 
@@ -29,6 +40,12 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v5.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

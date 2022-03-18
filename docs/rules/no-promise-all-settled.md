@@ -1,3 +1,9 @@
+---
+title: "es-x/no-promise-all-settled"
+description: "disallow `Promise.allSettled` function"
+since: "[eslint-plugin-es] v2.0.0"
+---
+
 # es-x/no-promise-all-settled
 > disallow `Promise.allSettled` function
 
@@ -5,13 +11,24 @@
 
 This rule reports ES2020 [`Promise.allSettled` function](https://github.com/tc39/proposal-promise-allSettled) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-promise-all-settled: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-promise-all-settled: error */
 const p = Promise.allSettled(promises)
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v2.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

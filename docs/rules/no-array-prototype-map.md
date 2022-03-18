@@ -1,3 +1,9 @@
+---
+title: "es-x/no-array-prototype-map"
+description: "disallow the `Array.prototype.map` method"
+since: "[eslint-plugin-es] v5.0.0"
+---
+
 # es-x/no-array-prototype-map
 > disallow the `Array.prototype.map` method
 
@@ -11,9 +17,14 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-array-prototype-map: [error, { aggressive: true }] */
-foo.map(e =&gt; 2 * e)
-" />
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-array-prototype-map: [error, { aggressive: true }] */
+foo.map(e => 2 * e)
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 
@@ -28,6 +39,12 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v5.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

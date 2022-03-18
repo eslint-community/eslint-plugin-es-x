@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-setprototypeof"
+description: "disallow the `Object.setPrototypeOf` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-object-setprototypeof
 > disallow the `Object.setPrototypeOf` method
 
@@ -5,13 +11,24 @@
 
 This rule reports ES2015 `Object.setPrototypeOf` as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-setprototypeof: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-setprototypeof: error */
 Object.setPrototypeOf(obj, proto)
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

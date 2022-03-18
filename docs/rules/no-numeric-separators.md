@@ -1,3 +1,9 @@
+---
+title: "es-x/no-numeric-separators"
+description: "disallow numeric separators"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-numeric-separators
 > disallow numeric separators
 
@@ -6,13 +12,24 @@
 
 This rule reports ES2021 [numeric separators](https://github.com/tc39/proposal-numeric-separator) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-numeric-separators: error */
+<eslint-playground fix type="bad">
+
+```js
+/*eslint es-x/no-numeric-separators: error */
 let a = 123_456
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

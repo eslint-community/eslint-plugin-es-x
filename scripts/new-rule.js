@@ -77,13 +77,18 @@ new RuleTester().run("${ruleId}", rule, {
 
 This rule reports ??? as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/${ruleId}: error */
+<eslint-playground type="bad">
 
-" />
+\`\`\`js
+/*eslint es-x/${ruleId}: error */
+
+\`\`\`
+
+</eslint-playground>
 `,
     )
 

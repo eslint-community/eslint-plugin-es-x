@@ -1,3 +1,9 @@
+---
+title: "es-x/no-regexp-unicode-property-escapes-2019"
+description: "disallow the new values of RegExp Unicode property escape sequences in ES2019"
+since: "[eslint-plugin-es] v2.0.0"
+---
+
 # es-x/no-regexp-unicode-property-escapes-2019
 > disallow the new values of RegExp Unicode property escape sequences in ES2019
 
@@ -23,14 +29,25 @@ For example, the following patterns are valid in ES2019, but syntax error in ES2
 - `\p{Script=Sogdian}`
 - `\p{Script=Sogo}`
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-regexp-unicode-property-escapes-2019: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-regexp-unicode-property-escapes-2019: error */
 const r1 = /\p{Extended_Pictographic}/u
 const r2 = /\p{Script=Dogr}/u
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v2.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

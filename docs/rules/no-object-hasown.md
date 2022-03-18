@@ -1,3 +1,9 @@
+---
+title: "es-x/no-object-hasown"
+description: "disallow the `Object.hasOwn` method"
+since: "v5.0.0"
+---
+
 # es-x/no-object-hasown
 > disallow the `Object.hasOwn` method
 
@@ -5,13 +11,22 @@
 
 This rule reports ES2022 `Object.hasOwn` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-object-hasown: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-object-hasown: error */
 const hasFoo = Object.hasOwn(obj, 'foo')
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v5.0.0.
 
 ## 📚 References
 

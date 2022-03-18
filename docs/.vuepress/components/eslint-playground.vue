@@ -7,7 +7,7 @@
         :class="`eslint-playground-${type}`"
         class="eslint-playground"
         dark
-        fix
+        :fix="fix"
     />
 </template>
 
@@ -20,9 +20,13 @@ export default {
     components: { EslintEditor },
 
     props: {
+        // For no-json-superset
         code: {
             type: String,
-            required: true,
+            default: undefined,
+        },
+        fix: {
+            type: Boolean,
         },
         type: {
             type: String,
@@ -89,16 +93,21 @@ export default {
 
     computed: {
         cookedCode() {
-            return (this.code || "").replace(
-                /&#x([0-9a-zA-Z]+);/gu,
-                (_, codePoint) => String.fromCodePoint(parseInt(codePoint, 16)),
-            )
+            if (this.code && this.code.trim()) {
+                return (this.code || "").replace(
+                    /&#x([0-9a-zA-Z]+);/gu,
+                    (_, codePoint) =>
+                        String.fromCodePoint(parseInt(codePoint, 16)),
+                )
+            }
+
+            return `${computeCodeFromSlot(this.$slots.default).trim()}\n`
         },
     },
 
     async mounted() {
         // Load linter.
-        const { default: Linter } = await import("eslint4b/dist/linter")
+        const { Linter } = await import("eslint/lib/linter")
         const linter = (this.linter = new Linter())
 
         for (const ruleId of Object.keys(rules)) {
@@ -130,6 +139,19 @@ export default {
             monaco.editor.setModelMarkers(model, "javascript", [])
         },
     },
+}
+
+/**
+ * @param {VNode[]} nodes
+ * @returns {string}
+ */
+function computeCodeFromSlot(nodes) {
+    if (!Array.isArray(nodes)) {
+        return ""
+    }
+    return nodes
+        .map((node) => node.text || computeCodeFromSlot(node.children))
+        .join("")
 }
 </script>
 

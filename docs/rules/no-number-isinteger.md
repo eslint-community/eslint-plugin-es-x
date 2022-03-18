@@ -1,3 +1,9 @@
+---
+title: "es-x/no-number-isinteger"
+description: "disallow the `Number.isInteger` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-number-isinteger
 > disallow the `Number.isInteger` method
 
@@ -5,13 +11,24 @@
 
 This rule reports ES2015 `Number.isInteger` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-number-isinteger: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-number-isinteger: error */
 const b = Number.isInteger(value)
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

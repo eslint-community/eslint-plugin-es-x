@@ -1,3 +1,9 @@
+---
+title: "es-x/no-logical-assignment-operators"
+description: "disallow logical assignment operators"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-logical-assignment-operators
 > disallow logical assignment operators
 
@@ -6,15 +12,26 @@
 
 This rule reports ES2021 [logical assignment operators](https://github.com/tc39/proposal-logical-assignment) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-logical-assignment-operators: error */
+<eslint-playground fix type="bad">
+
+```js
+/*eslint es-x/no-logical-assignment-operators: error */
 x ||= y
 x &&= y
 x ??= y
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

@@ -1,3 +1,9 @@
+---
+title: "es-x/no-accessor-properties"
+description: "disallow accessor properties"
+since: "[eslint-plugin-es] v1.1.0"
+---
+
 # es-x/no-accessor-properties
 > disallow accessor properties
 
@@ -5,11 +11,14 @@
 
 This rule reports ES5 accessor properties as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-accessor-properties: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-accessor-properties: error */
 var a = {
     get a() {},
     set a(value) {}
@@ -18,7 +27,15 @@ class A {
     get a() {}
     set a(value) {}
 }
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.1.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

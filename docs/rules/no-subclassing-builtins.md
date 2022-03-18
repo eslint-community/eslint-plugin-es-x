@@ -1,3 +1,9 @@
+---
+title: "es-x/no-subclassing-builtins"
+description: "disallow the subclassing of the built-in classes"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-subclassing-builtins
 > disallow the subclassing of the built-in classes
 
@@ -18,15 +24,26 @@ The built-in classes include the following classes (constructors):
 - `Set`
 - `String`
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-subclassing-builtins: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-subclassing-builtins: error */
 class MyArray extends Array {
     // ...
 }
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

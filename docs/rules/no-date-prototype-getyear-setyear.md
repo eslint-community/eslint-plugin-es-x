@@ -1,3 +1,9 @@
+---
+title: "es-x/no-date-prototype-getyear-setyear"
+description: "disallow the `Date.prototype.{getYear,setYear}` methods"
+since: "v5.1.0"
+---
+
 # es-x/no-date-prototype-getyear-setyear
 > disallow the `Date.prototype.{getYear,setYear}` methods
 
@@ -9,10 +15,15 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-date-prototype-getyear-setyear: [error, { aggressive: true }] */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-date-prototype-getyear-setyear: [error, { aggressive: true }] */
 foo.getYear()
 foo.setYear(99)
-" />
+```
+
+</eslint-playground>
 
 ## 🔧 Options
 
@@ -27,6 +38,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.1.0.
 
 ## 📚 References
 

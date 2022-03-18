@@ -1,3 +1,9 @@
+---
+title: "es-x/no-export-ns-from"
+description: "disallow `export * as ns`"
+since: "[eslint-plugin-es] v4.0.0"
+---
+
 # es-x/no-export-ns-from
 > disallow `export * as ns`
 
@@ -5,13 +11,24 @@
 
 This rule reports ES2020 [`export * as ns`](https://github.com/tc39/proposal-export-ns-from) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-export-ns-from: error */
-export * as ns from &quot;mod&quot;
-" />
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-export-ns-from: error */
+export * as ns from "mod"
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v4.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

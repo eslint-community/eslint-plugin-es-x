@@ -1,3 +1,9 @@
+---
+title: "es-x/no-destructuring"
+description: "disallow destructuring"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-destructuring
 > disallow destructuring
 
@@ -5,18 +11,29 @@
 
 This rule reports ES2015 destructuring assignments/bindings as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-destructuring: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-destructuring: error */
 let [a, b] = array
 let {c, d} = obj
 function f({a, b}, [c, d]) {}
 
 ;[a, b] = array
 ;({c, d} = obj)
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

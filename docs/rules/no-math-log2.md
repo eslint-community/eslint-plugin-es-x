@@ -1,3 +1,9 @@
+---
+title: "es-x/no-math-log2"
+description: "disallow the `Math.log2` method"
+since: "[eslint-plugin-es] v1.2.0"
+---
+
 # es-x/no-math-log2
 > disallow the `Math.log2` method
 
@@ -5,13 +11,24 @@
 
 This rule reports ES2015 `Math.log2` method as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-math-log2: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-math-log2: error */
 const n = Math.log2(value)
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.2.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 

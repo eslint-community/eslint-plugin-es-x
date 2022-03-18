@@ -1,3 +1,9 @@
+---
+title: "es-x/no-regexp-unicode-property-escapes"
+description: "disallow RegExp Unicode property escape sequences"
+since: "[eslint-plugin-es] v1.0.0"
+---
+
 # es-x/no-regexp-unicode-property-escapes
 > disallow RegExp Unicode property escape sequences
 
@@ -5,13 +11,24 @@
 
 This rule reports ES2018 [RegExp Unicode property escape sequences](https://github.com/tc39/proposal-regexp-unicode-property-escapes#readme) as errors.
 
-## Examples
+## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
 
-<eslint-playground type="bad" code="/*eslint es-x/no-regexp-unicode-property-escapes: error */
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-regexp-unicode-property-escapes: error */
 const r1 = /\p{Script=Hiragana}+/u
-" />
+```
+
+</eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in [eslint-plugin-es] v1.0.0.
+
+[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
 
 ## 📚 References
 
