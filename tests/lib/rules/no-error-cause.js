@@ -21,9 +21,15 @@ new RuleTester({
         'new Error("message")',
         'new Error("message", notObjectExpression)',
         'new Error("message", { notCause: foo })',
+        'class MyError extends Error { constructor() { super("message") } }',
+        'class MyError extends Error { constructor() { super("message", notObjectExpression) } }',
+        'class MyError extends Error { constructor() { super("message", { notCause: foo }) } }',
         'new AggregateError("message")',
         'new AggregateError("message", notObjectExpression)',
         'new AggregateError("message", { notCause: foo })',
+        'class MyError extends AggregateError { constructor() { super("message") } }',
+        'class MyError extends AggregateError { constructor() { super("message", notObjectExpression) } }',
+        'class MyError extends AggregateError { constructor() { super("message", { notCause: foo }) } }',
     ],
     invalid: [
         {
@@ -39,6 +45,10 @@ new RuleTester({
             errors: ["ES2022 Error Cause is forbidden."],
         },
         {
+            code: 'class MyError extends Error { constructor() { super("message", { cause: foo }); } }',
+            errors: ["ES2022 Error Cause is forbidden."],
+        },
+        {
             code: 'new AggregateError("message", { cause: foo });',
             errors: ["ES2022 Error Cause is forbidden."],
         },
@@ -48,6 +58,10 @@ new RuleTester({
         },
         {
             code: 'const MyError = AggregateError; new MyError("message", { ["cause"]: foo });',
+            errors: ["ES2022 Error Cause is forbidden."],
+        },
+        {
+            code: 'class MyError extends AggregateError { constructor() { super("message", { cause: foo }); } }',
             errors: ["ES2022 Error Cause is forbidden."],
         },
     ],
