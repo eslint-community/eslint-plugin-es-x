@@ -19,12 +19,35 @@ new RuleTester({
 }).run("no-error-cause", rule, {
     valid: [
         'new Error("message")',
-        'new Error("message", notObjectExpression )',
+        'new Error("message", notObjectExpression)',
         'new Error("message", { notCause: foo })',
+        'new AggregateError("message")',
+        'new AggregateError("message", notObjectExpression)',
+        'new AggregateError("message", { notCause: foo })',
     ],
     invalid: [
         {
             code: 'new Error("message", { cause: foo });',
+            errors: ["ES2022 Error Cause is forbidden."],
+        },
+        {
+            code: 'new Error("message", { ["cause"]: foo });',
+            errors: ["ES2022 Error Cause is forbidden."],
+        },
+        {
+            code: 'const MyError = Error; new MyError("message", { ["cause"]: foo });',
+            errors: ["ES2022 Error Cause is forbidden."],
+        },
+        {
+            code: 'new AggregateError("message", { cause: foo });',
+            errors: ["ES2022 Error Cause is forbidden."],
+        },
+        {
+            code: 'new AggregateError("message", { ["cause"]: foo });',
+            errors: ["ES2022 Error Cause is forbidden."],
+        },
+        {
+            code: 'const MyError = AggregateError; new MyError("message", { ["cause"]: foo });',
             errors: ["ES2022 Error Cause is forbidden."],
         },
     ],
