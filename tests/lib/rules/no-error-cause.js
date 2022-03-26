@@ -38,6 +38,7 @@ const valid = errorConstructorNames
             `new ${errorConstructorName}(${errors}"message")`,
             `new ${errorConstructorName}(${errors}"message", notObjectExpression)`,
             `new ${errorConstructorName}(${errors}"message", { notCause: foo })`,
+            `new ${errorConstructorName}(${errors}...foo, { cause: foo });`,
             `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message") } }`,
             `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message", notObjectExpression) } }`,
             `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message", { notCause: foo }) } }`,
