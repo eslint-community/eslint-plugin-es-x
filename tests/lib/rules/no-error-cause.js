@@ -25,37 +25,49 @@ const errorConstructorNames = [
     "URIError",
 ]
 
+function getErrors(errorConstructorName) {
+    return errorConstructorName === "AggregateError"
+        ? '[new Error("message")], '
+        : ""
+}
+
 const valid = errorConstructorNames
-    .map((errorConstructorName) => [
-        `new ${errorConstructorName}("message")`,
-        `new ${errorConstructorName}("message", notObjectExpression)`,
-        `new ${errorConstructorName}("message", { notCause: foo })`,
-        `class MyError extends ${errorConstructorName} { constructor() { super("message") } }`,
-        `class MyError extends ${errorConstructorName} { constructor() { super("message", notObjectExpression) } }`,
-        `class MyError extends ${errorConstructorName} { constructor() { super("message", { notCause: foo }) } }`,
-    ])
+    .map((errorConstructorName) => {
+        const errors = getErrors(errorConstructorName)
+        return [
+            `new ${errorConstructorName}(${errors}"message")`,
+            `new ${errorConstructorName}(${errors}"message", notObjectExpression)`,
+            `new ${errorConstructorName}(${errors}"message", { notCause: foo })`,
+            `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message") } }`,
+            `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message", notObjectExpression) } }`,
+            `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message", { notCause: foo }) } }`,
+        ]
+    })
     // alternative of `Array.prototype.flat`
     .reduce((acc, val) => acc.concat(val), [])
 
 const invalid = errorConstructorNames
-    .map((errorConstructorName) => [
-        {
-            code: `new ${errorConstructorName}("message", { cause: foo });`,
-            errors: ["ES2022 Error Cause is forbidden."],
-        },
-        {
-            code: `new ${errorConstructorName}("message", { ["cause"]: foo });`,
-            errors: ["ES2022 Error Cause is forbidden."],
-        },
-        {
-            code: `const MyError = ${errorConstructorName}; new MyError("message", { ["cause"]: foo });`,
-            errors: ["ES2022 Error Cause is forbidden."],
-        },
-        {
-            code: `class MyError extends ${errorConstructorName} { constructor() { super("message", { cause: foo }); } }`,
-            errors: ["ES2022 Error Cause is forbidden."],
-        },
-    ])
+    .map((errorConstructorName) => {
+        const errors = getErrors(errorConstructorName)
+        return [
+            {
+                code: `new ${errorConstructorName}(${errors}"message", { cause: foo });`,
+                errors: ["ES2022 Error Cause is forbidden."],
+            },
+            {
+                code: `new ${errorConstructorName}(${errors}"message", { ["cause"]: foo });`,
+                errors: ["ES2022 Error Cause is forbidden."],
+            },
+            {
+                code: `const MyError = ${errorConstructorName}; new MyError(${errors}"message", { ["cause"]: foo });`,
+                errors: ["ES2022 Error Cause is forbidden."],
+            },
+            {
+                code: `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message", { cause: foo }); } }`,
+                errors: ["ES2022 Error Cause is forbidden."],
+            },
+        ]
+    })
     // alternative of `Array.prototype.flat`
     .reduce((acc, val) => acc.concat(val), [])
 
