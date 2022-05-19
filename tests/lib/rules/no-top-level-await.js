@@ -28,6 +28,7 @@ new RuleTester({
         "async function f() { for await (var a of b); }",
         "async function f() { for await (let a of b); }",
         "async function f() { for await (const a of b); }",
+        "async function f() { function g() {}; await expr; }",
         "function f() { async function f() { await expr } }",
     ],
     invalid: [
