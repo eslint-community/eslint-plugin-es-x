@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-array-prototype-findlast-findlastindex"
 description: "disallow the `Array.prototype.{findLast,findLastIndex}` methods"
+since: "v5.3.0"
 ---
 
 # es-x/no-array-prototype-findlast-findlastindex
 > disallow the `Array.prototype.{findLast,findLastIndex}` methods
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
 
 This rule reports ES2023 [`Array.prototype.{findLast,findLastIndex}` methods](https://github.com/tc39/proposal-array-find-from-last) as errors.
@@ -40,6 +40,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v5.3.0.
 
 ## 📚 References
 

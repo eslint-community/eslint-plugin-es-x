@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-hashbang"
 description: "disallow Hashbang comments"
+since: "v5.3.0"
 ---
 
 # es-x/no-hashbang
 > disallow Hashbang comments
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
 
 This rule reports ES2023 [Hashbang comment](https://github.com/tc39/proposal-hashbang) as errors.
@@ -23,6 +23,10 @@ This rule reports ES2023 [Hashbang comment](https://github.com/tc39/proposal-has
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v5.3.0.
 
 ## 📚 References
 
