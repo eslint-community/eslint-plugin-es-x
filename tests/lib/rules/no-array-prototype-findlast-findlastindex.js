@@ -204,6 +204,25 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 ],
                 settings: { "es-x": { aggressive: true } },
             },
+            ...[
+                "Int8Array",
+                "Uint8Array",
+                "Uint8ClampedArray",
+                "Int16Array",
+                "Uint16Array",
+                "Int32Array",
+                "Uint32Array",
+                "Float32Array",
+                "Float64Array",
+                "BigInt64Array",
+                "BigUint64Array",
+            ].map((className) => ({
+                filename,
+                code: `let foo = new ${className}(10); foo.findLast(predicate)`,
+                errors: [
+                    `ES2023 '${className}.prototype.findLast' method is forbidden.`,
+                ],
+            })),
         ],
     },
 )
