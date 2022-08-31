@@ -4,6 +4,14 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
+## ES2023
+
+There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-hashbang](./no-hashbang.md) | disallow Hashbang comments. |  |
+
 ## ES2022
 
 There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2022`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, `plugin:es-x/restrict-to-es2020`, and `plugin:es-x/restrict-to-es2021`
