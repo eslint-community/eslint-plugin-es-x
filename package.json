@@ -62,7 +62,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ota-meshi/eslint-plugin-es-x.git"
+    "url": "git+https://github.com/eslint-community/eslint-plugin-es-x.git"
   },
   "keywords": [
     "eslint",
@@ -72,8 +72,8 @@
   "author": "Toru Nagashima (https://github.com/mysticatea)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ota-meshi/eslint-plugin-es-x/issues"
+    "url": "https://github.com/eslint-community/eslint-plugin-es-x/issues"
   },
-  "homepage": "https://github.com/ota-meshi/eslint-plugin-es-x#readme",
+  "homepage": "https://github.com/eslint-community/eslint-plugin-es-x#readme",
   "funding": "https://github.com/sponsors/ota-meshi"
 }

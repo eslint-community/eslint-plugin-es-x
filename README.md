@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-es-x.svg)](https://www.npmjs.com/package/eslint-plugin-es-x)
 [![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es-x.svg)](http://www.npmtrends.com/eslint-plugin-es-x)
-[![Build Status](https://github.com/ota-meshi/eslint-plugin-es-x/workflows/CI/badge.svg)](https://github.com/ota-meshi/eslint-plugin-es-x/actions)
+[![Build Status](https://github.com/eslint-community/eslint-plugin-es-x/workflows/CI/badge.svg)](https://github.com/eslint-community/eslint-plugin-es-x/actions)
 
 ESLint plugin which disallows each ECMAScript syntax.
 
@@ -18,7 +18,7 @@ Plus, this plugin lets us disable each syntactic feature individually.
 
 ## 📖 Usage
 
-See [documentation](https://ota-meshi.github.io/eslint-plugin-es-x/)
+See [documentation](https://eslint-community.github.io/eslint-plugin-es-x/)
 
 ## 🚥 Semantic Versioning Policy
 
@@ -29,7 +29,7 @@ This plugin follows [semantic versioning](http://semver.org/) and [ESLint's sema
 
 ## 📰 Changelog
 
-See [releases](https://github.com/ota-meshi/eslint-plugin-es-x/releases).
+See [releases](https://github.com/eslint-community/eslint-plugin-es-x/releases).
 
 ## ❤️ Contributing
 

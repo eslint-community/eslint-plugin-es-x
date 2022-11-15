@@ -32,5 +32,5 @@ This rule was introduced in v5.0.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/master/lib/rules/no-arbitrary-module-namespace-names.js)
-- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/master/tests/lib/rules/no-arbitrary-module-namespace-names.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-arbitrary-module-namespace-names.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-arbitrary-module-namespace-names.js)
