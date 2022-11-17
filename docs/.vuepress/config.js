@@ -36,8 +36,8 @@ module.exports = {
     },
 
     themeConfig: {
-        repo: "ota-meshi/eslint-plugin-es-x",
-        docsRepo: "ota-meshi/eslint-plugin-es-x",
+        repo: "eslint-community/eslint-plugin-es-x",
+        docsRepo: "eslint-community/eslint-plugin-es-x",
         docsDir: "docs",
         docsBranch: "master",
         editLinks: true,
