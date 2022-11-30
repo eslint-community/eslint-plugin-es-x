@@ -480,7 +480,7 @@ module.exports = {
             description: "requires for-of statements instead of Array#forEach",
             category: "Best Practices",
             recommended: false,
-            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/master/docs/rules/my-prefer-for-of.md",
+            url: "https://github.com/eslint-community/eslint-plugin-es-x/blob/master/docs/rules/my-prefer-for-of.md",
         },
         fixable: "code",
         schema: [],

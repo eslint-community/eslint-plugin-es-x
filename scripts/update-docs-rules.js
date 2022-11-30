@@ -115,8 +115,8 @@ This rule was introduced in ${since}.${
 
 ## 📚 References
 
-- [Rule source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/master/lib/rules/${ruleId}.js)
-- [Test source](https://github.com/ota-meshi/eslint-plugin-es-x/blob/master/tests/lib/rules/${ruleId}.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/${ruleId}.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/${ruleId}.js)
 `
 
         fs.writeFileSync(filePath, newContent)

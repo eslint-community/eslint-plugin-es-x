@@ -15,4 +15,4 @@ overrides:
     rules:
       "eslint-plugin/require-meta-docs-url":
         - error
-        - pattern: http://ota-meshi.github.io/eslint-plugin-es-x/rules/{{name}}.html
+        - pattern: http://eslint-community.github.io/eslint-plugin-es-x/rules/{{name}}.html

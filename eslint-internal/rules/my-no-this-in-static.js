@@ -14,7 +14,7 @@ module.exports = {
         docs: {
             description: "Disallow `this`/`super` in static methods",
             category: "Best Practices",
-            url: "https://github.com/ota-meshi/eslint-plugin-es-x/blob/master/docs/rules/my-no-this-in-static.md",
+            url: "https://github.com/eslint-community/eslint-plugin-es-x/blob/master/docs/rules/my-no-this-in-static.md",
         },
         fixable: null,
         schema: [],
