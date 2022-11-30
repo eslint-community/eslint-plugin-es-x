@@ -74,11 +74,17 @@ const rules = []
             .replace(/\.js$/u, "")
             .replace(/\\/gu, "/")
         const content = fs.readFileSync(filePath, "utf8")
+        const contentWithoutComments = content.replace(
+            /("(?:\\"|[^"])*?"|'(?:\\'|[^'])*?')|\/\/[^\n]*|\/\*[\s\S]*?\*\//gu,
+            "$1",
+        )
         const category = /category:[\s\n]+(?:undefined|"(.+)")/u.exec(
-            content,
+            contentWithoutComments,
         )[1]
-        const description = /description:[\s\n]+"(.+?)\.?"/u.exec(content)[1]
-        const fixable = /fixable:[\s\n]+"(.+)"/u.test(content)
+        const description = /description:[\s\n]+"(.+?)\.?"/u.exec(
+            contentWithoutComments,
+        )[1]
+        const fixable = /fixable:[\s\n]+"(.+)"/u.test(contentWithoutComments)
         const rule = {
             ruleId,
             description: JSON.parse(`"${description}"`),
