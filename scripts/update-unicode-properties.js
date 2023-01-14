@@ -35,8 +35,15 @@ const DATA_SOURCES = [
         scValues: "#table-unicode-script-values",
     },
     {
-        url: "https://tc39.es/ecma262/multipage/text-processing.html",
+        url: "https://tc39.es/ecma262/2022/multipage/text-processing.html",
         version: 2022,
+        binProperties: "#table-binary-unicode-properties",
+        gcValues: "#table-unicode-general-category-values",
+        scValues: "#table-unicode-script-values",
+    },
+    {
+        url: "https://tc39.es/ecma262/multipage/text-processing.html",
+        version: 2023,
         binProperties: "#table-binary-unicode-properties",
         gcValues: "#table-unicode-general-category-values",
         scValues: "#table-unicode-script-values",

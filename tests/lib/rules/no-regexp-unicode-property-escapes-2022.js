@@ -15,7 +15,6 @@ if (!RuleTester.isSupported(2022)) {
 
 new RuleTester().run("no-regexp-unicode-property-escapes-2022", rule, {
     valid: [
-        String.raw`/\p{Script=Cpmn}/u`,
         String.raw`/\p{Letter}/u`,
         String.raw`/\P{Letter}/u`,
         String.raw`/\p{Script=Hiragana}/u`,
