@@ -3,7 +3,7 @@
   "version": "5.4.0",
   "description": "ESLint plugin about ECMAScript syntactic features.",
   "engines": {
-    "node": ">=8.10.0"
+    "node": ">=14"
   },
   "main": "lib/index.js",
   "files": [
