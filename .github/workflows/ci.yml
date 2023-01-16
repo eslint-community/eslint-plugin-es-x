@@ -57,14 +57,8 @@ jobs:
           - eslint: 6
             node: 18
             os: ubuntu-latest
-          - eslint: 5
-            node: 18
-            os: ubuntu-latest
-          - eslint: 4
-            node: 18
-            os: ubuntu-latest
           # On the minimum supported ESLint/Node.js version
-          - eslint: 4
+          - eslint: 6
             node: 14.18.0
             os: ubuntu-latest
 
@@ -79,23 +73,11 @@ jobs:
       - name: Uninstall Packages
         run: |+
             npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue
-      - name: Install for ESLint v4
-        run: |+
-            npm i -D eslint-utils@2 --legacy-peer-deps
-        if: "matrix.eslint == 4"
-      - name: Install for ESLint v5
-        run: |+
-            npm i -D @typescript-eslint/parser@4 --legacy-peer-deps
-        if: "matrix.eslint == 5"
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+
             npm install -D eslint@${{ matrix.eslint }}
             npx rimraf node_modules
       - name: Install Packages
         run: npm install
-        if: "matrix.eslint != 4"
-      - name: Install Packages --legacy-peer-deps
-        run: npm install --legacy-peer-deps
-        if: "matrix.eslint == 4"
       - name: Test
         run: npm run -s test:mocha
