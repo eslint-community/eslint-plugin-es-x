@@ -25,7 +25,7 @@ npm install --save-dev eslint eslint-plugin-es-x
 ```
 
 ::: tip Requirements
-- Node.js `14.x` or newer.
+- Node.js `12.22.0` or newer.
 - ESLint `4.19.1` or newer.
 :::
 
