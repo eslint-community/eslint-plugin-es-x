@@ -47,8 +47,8 @@ const categories = [
     )
     .reduce((map, versions, index, list) => {
         const experimental = index === 0
-        const [vFor262, _vFor402] = versions
-        const [prevVFor262, _prevVFor402] = list[index + 1] || [null, null]
+        const [vFor262, vFor402] = versions
+        const [prevVFor262, prevVFor402] = list[index + 1] || [null, null]
         const ecma262Id = `ES${vFor262}`
         if (prevVFor262) {
             map[ecma262Id] = {
@@ -66,26 +66,26 @@ const categories = [
                     : `restrict-to-es${prevVFor262}`,
             }
         }
-        // TODO: https://github.com/eslint-community/eslint-plugin-es-x/issues/45
-        // if (vFor402 && prevVFor402) {
-        //     const ecma402Id = `ES${vFor402}-Intl-API`
-        //     map[ecma402Id] = {
-        //         id: ecma402Id,
-        //         title: `ES${vFor402} Intl API`,
-        //         edition: vFor402 - 2013,
-        //         rules: [],
-        //         experimental,
-        //         specKind: "ecma402",
-        //         configName: experimental
-        //             ? "no-new-in-esnext-intl-api"
-        //             : `no-new-in-es${vFor402}-intl-api`,
-        //         aboveConfigName: experimental
-        //             ? undefined
-        //             : prevVFor402 === 1
-        //             ? "restrict-to-es-intl-api-1st-edition"
-        //             : `restrict-to-es${prevVFor402}-intl-api`,
-        //     }
-        // }
+
+        if (vFor402 && prevVFor402) {
+            const ecma402Id = `ES${vFor402}-Intl-API`
+            map[ecma402Id] = {
+                id: ecma402Id,
+                title: `ES${vFor402} Intl API`,
+                edition: vFor402 - 2013,
+                rules: [],
+                experimental,
+                specKind: "ecma402",
+                configName: experimental
+                    ? "no-new-in-esnext-intl-api"
+                    : `no-new-in-es${vFor402}-intl-api`,
+                aboveConfigName: experimental
+                    ? undefined
+                    : prevVFor402 === 1
+                    ? "restrict-to-es-intl-api-1st-edition"
+                    : `restrict-to-es${prevVFor402}-intl-api`,
+            }
+        }
         return map
     }, {})
 categories.legacy = {
