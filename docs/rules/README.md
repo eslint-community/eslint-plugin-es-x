@@ -23,6 +23,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-array-string-prototype-at](./no-array-string-prototype-at.md) | disallow the `{Array,String}.prototype.at()` methods. |  |
 | [es-x/no-class-fields](./no-class-fields.md) | disallow class fields. |  |
 | [es-x/no-class-static-block](./no-class-static-block.md) | disallow class static block. |  |
+| [es-x/no-error-cause](./no-error-cause.md) | disallow Error Cause. |  |
 | [es-x/no-object-hasown](./no-object-hasown.md) | disallow the `Object.hasOwn` method. |  |
 | [es-x/no-private-in](./no-private-in.md) | disallow `#x in obj`. |  |
 | [es-x/no-regexp-d-flag](./no-regexp-d-flag.md) | disallow RegExp `d` flag. |  |
@@ -251,12 +252,4 @@ The rules are not included in any preset.
 | [es-x/no-string-create-html-methods](./no-string-create-html-methods.md) | disallow HTML creation methods of string instances. |  |
 | [es-x/no-string-prototype-substr](./no-string-prototype-substr.md) | disallow the `String.prototype.substr` method. |  |
 | [es-x/no-string-prototype-trimleft-trimright](./no-string-prototype-trimleft-trimright.md) | disallow the `String.prototype.{trimLeft,trimRight}` methods. | 🔧 |
-
-## Uncategorized
-
-Rules in this category are not included in any preset.
-
-| Rule ID | Description |    |
-|:--------|:------------|:--:|
-| [es-x/no-error-cause](./no-error-cause.md) | disallow Error Cause. |  |
 
