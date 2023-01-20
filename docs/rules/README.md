@@ -234,8 +234,8 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## Legacy
 
-Rules in this category disallow the syntax contained in [Annex B](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html) or Legacy.  
-The rules are not included in any preset.
+Rules in this category disallow the syntax contained in [Annex B](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html) or Legacy. \
+Rules in this category are not included in any preset.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|

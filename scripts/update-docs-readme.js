@@ -45,8 +45,13 @@ ${ruleSectionContent}
 
 function extractCategoryId(filePath) {
     const basename = path.basename(filePath, ".js")
-    const match = /no-new-in-(es\d+)/u.exec(basename)
-    return match ? match[1].toUpperCase() : undefined
+    const category = Object.values(categories).find(
+        ({ configName }) => configName === basename,
+    )
+    if (category) {
+        return category.id
+    }
+    return undefined
 }
 
 /**
@@ -57,17 +62,24 @@ function toSection(category) {
     if (!category.rules.length) {
         return undefined
     }
-    const configIds = formatList(
-        configs
-            .filter((c) => c.categoryIds.includes(category.id))
-            .map((c) => `\`${c.id}\``)
-            .sort(collator.compare.bind(collator)),
-    )
-    const comment =
-        category.comment ||
-        (configIds
-            ? `There are multiple configs that enable all rules in this category: ${configIds}`
-            : "There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext`")
+    const configIds = configs
+        .filter((c) => c.categoryIds.includes(category.id))
+        .map((c) => `\`${c.id}\``)
+        .sort(collator.compare.bind(collator))
+
+    let comment = ""
+    if (category.comment) {
+        comment = `${category.comment} \\\n`
+    }
+    comment += !configIds.length
+        ? "Rules in this category are not included in any preset."
+        : configIds.length > 1
+        ? `There are multiple configs that enable all rules in this category: ${formatList(
+              configIds,
+          )}`
+        : `There is a config that enables the rules in this category: ${formatList(
+              configIds,
+          )}`
 
     return `## ${category.title}
 
