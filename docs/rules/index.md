@@ -13,6 +13,16 @@ There is a config that enables the rules in this category: `plugin:es-x/no-new-i
 | [es-x/no-array-prototype-findlast-findlastindex](./no-array-prototype-findlast-findlastindex.md) | disallow the `Array.prototype.{findLast,findLastIndex}` methods. |  |
 | [es-x/no-hashbang](./no-hashbang.md) | disallow Hashbang comments. |  |
 
+## ES2023 Intl API
+
+There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext-intl-api`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-numberformat-prototype-formatrange](./no-intl-numberformat-prototype-formatrange.md) | disallow the `NumberFormat.prototype.formatRange` method. |  |
+| [es-x/no-intl-numberformat-prototype-formatrangetoparts](./no-intl-numberformat-prototype-formatrangetoparts.md) | disallow the `NumberFormat.prototype.formatRangeToParts` method. |  |
+| [es-x/no-intl-pluralrules-prototype-selectrange](./no-intl-pluralrules-prototype-selectrange.md) | disallow the `PluralRules.prototype.selectRange` method. |  |
+
 ## ES2022
 
 There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2022`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, `plugin:es-x/restrict-to-es2020`, and `plugin:es-x/restrict-to-es2021`
