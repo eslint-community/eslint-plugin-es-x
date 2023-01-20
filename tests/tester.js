@@ -31,6 +31,7 @@ RuleTester.setDefaultConfig({
         AggregateError: "readonly",
         FinalizationRegistry: "readonly",
         WeakRef: "readonly",
+        Intl: "readonly",
         ...builtin,
     },
 })
