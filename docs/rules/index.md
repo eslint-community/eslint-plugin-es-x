@@ -89,6 +89,15 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-regexp-unicode-property-escapes](./no-regexp-unicode-property-escapes.md) | disallow RegExp Unicode property escape sequences. |  |
 | [es-x/no-rest-spread-properties](./no-rest-spread-properties.md) | disallow rest/spread properties. |  |
 
+## ES2018 Intl API
+
+There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2018-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, and `plugin:es-x/restrict-to-es2017-intl-api`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-numberformat-prototype-formattoparts](./no-intl-numberformat-prototype-formattoparts.md) | disallow the `NumberFormat.prototype.formatToParts` method. |  |
+| [es-x/no-intl-pluralrules](./no-intl-pluralrules.md) | disallow the `Intl.PluralRules` object. |  |
+
 ## ES2017
 
 There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2017`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, and `plugin:es-x/restrict-to-es2016`
