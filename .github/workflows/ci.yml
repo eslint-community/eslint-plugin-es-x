@@ -16,8 +16,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Install Node.js
         uses: actions/setup-node@v3
-        with:
-          node-version: 14
       - name: Install Packages
         run: npm install
       - name: Lint
@@ -28,43 +26,46 @@ jobs:
 
     strategy:
       matrix:
-        eslint: [8]
-        node: [16]
-        os: [ubuntu-latest]
         include:
+          - eslint: 8
+            node: 18
+            os: ubuntu-latest
           # On other platforms
           - eslint: 8
-            node: 16
+            node: 18
             os: windows-latest
           - eslint: 8
-            node: 16
+            node: 18
             os: macos-latest
-          # On old Node.js versions
+          # On other Node.js versions
+          - eslint: 8
+            node: 19
+            os: ubuntu-latest
+          - eslint: 8
+            node: 16
+            os: ubuntu-latest
+          - eslint: 8
+            node: 17
+            os: ubuntu-latest
           - eslint: 8
             node: 14
             os: ubuntu-latest
-          - eslint: 7
-            node: 12
-            os: ubuntu-latest
-          - eslint: 7
-            node: 10
-            os: ubuntu-latest
           # On old ESLint versions
           - eslint: 7
-            node: 16
+            node: 18
             os: ubuntu-latest
           - eslint: 6
-            node: 16
+            node: 18
             os: ubuntu-latest
           - eslint: 5
-            node: 16
+            node: 18
             os: ubuntu-latest
           - eslint: 4
-            node: 16
+            node: 18
             os: ubuntu-latest
           # On the minimum supported ESLint/Node.js version
           - eslint: 4
-            node: "8.10"
+            node: 14.18.0
             os: ubuntu-latest
 
     runs-on: ${{ matrix.os }}
@@ -78,14 +79,6 @@ jobs:
       - name: Uninstall Packages
         run: |+
             npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue
-      - name: Install for Node v8
-        run: |+
-            npm i -D @typescript-eslint/parser@3 mocha@7
-        if: "matrix.node == '8.10'"
-      - name: Install for Node v10
-        run: |+
-            npm i -D mocha@9
-        if: "matrix.node == 10"
       - name: Install for ESLint v4
         run: |+
             npm i -D eslint-utils@2 --legacy-peer-deps
@@ -100,9 +93,9 @@ jobs:
             npx rimraf node_modules
       - name: Install Packages
         run: npm install
-        if: "matrix.eslint != 4 || matrix.node == '8.10'"
+        if: "matrix.eslint != 4"
       - name: Install Packages --legacy-peer-deps
         run: npm install --legacy-peer-deps
-        if: "matrix.eslint == 4 && matrix.node != '8.10'"
+        if: "matrix.eslint == 4"
       - name: Test
         run: npm run -s test:mocha
