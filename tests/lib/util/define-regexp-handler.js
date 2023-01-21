@@ -36,30 +36,18 @@ describe("define-regexp-handler", () => {
 })
 
 function lint(text) {
-    if (ESLint) {
-        const eslint = new ESLint({
-            cwd: TEST_CWD,
-            plugins: { "eslint-plugin-es-x": plugin },
-            useEslintrc: false,
-            overrideConfig: {
-                parserOptions: {
-                    ecmaVersion: 2019,
-                },
-                plugins: ["es-x"],
-            },
-        })
-        return eslint
-            .lintText(text, { filePath: "test.js" })
-            .then((results) => results[0])
-    }
-    const engine = new (require("eslint").CLIEngine)({
+    const eslint = new ESLint({
         cwd: TEST_CWD,
+        plugins: { "eslint-plugin-es-x": plugin },
         useEslintrc: false,
-        plugins: ["es-x"],
-        parserOptions: {
-            ecmaVersion: 2019,
+        overrideConfig: {
+            parserOptions: {
+                ecmaVersion: 2019,
+            },
+            plugins: ["es-x"],
         },
     })
-    engine.addPlugin("eslint-plugin-es-x", plugin)
-    return Promise.resolve(engine.executeOnText(text, "test.js").results[0])
+    return eslint
+        .lintText(text, { filePath: "test.js" })
+        .then((results) => results[0])
 }
