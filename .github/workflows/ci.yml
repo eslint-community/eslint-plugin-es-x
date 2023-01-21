@@ -51,14 +51,11 @@ jobs:
             node: 14
             os: ubuntu-latest
           # On old ESLint versions
-          - eslint: 7
-            node: 18
-            os: ubuntu-latest
-          - eslint: 6
+          - eslint: 8.0.0
             node: 18
             os: ubuntu-latest
           # On the minimum supported ESLint/Node.js version
-          - eslint: 6
+          - eslint: 8.0.0
             node: 14.18.0
             os: ubuntu-latest
 

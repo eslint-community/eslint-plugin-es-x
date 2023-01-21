@@ -10,7 +10,7 @@
     "lib"
   ],
   "peerDependencies": {
-    "eslint": ">=6"
+    "eslint": ">=8"
   },
   "dependencies": {
     "eslint-utils": "^2.0.0 || ^3.0.0",
