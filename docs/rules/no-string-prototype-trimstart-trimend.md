@@ -31,7 +31,7 @@ foo.trimEnd()
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-trimstart-trimend: [error, { aggressive: false }]
 ```

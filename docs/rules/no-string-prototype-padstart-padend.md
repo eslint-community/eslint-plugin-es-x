@@ -30,7 +30,7 @@ foo.padStart("a")
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-padstart-padend: [error, { aggressive: false }]
 ```

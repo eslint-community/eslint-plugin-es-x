@@ -5,5 +5,5 @@
     ],
     "eslint.options": {
         "rulePaths": ["eslint-internal/rules"]
-    },
+    }
 }

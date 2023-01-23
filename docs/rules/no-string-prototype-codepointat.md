@@ -30,7 +30,7 @@ foo.codePointAt(0)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-codepointat: [error, { aggressive: false }]
 ```

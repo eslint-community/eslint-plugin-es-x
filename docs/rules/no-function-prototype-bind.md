@@ -34,7 +34,7 @@ var foo = (function() {
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-function-prototype-bind: [error, { aggressive: false }]
 ```

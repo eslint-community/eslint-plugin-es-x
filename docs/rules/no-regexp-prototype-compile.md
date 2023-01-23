@@ -28,7 +28,7 @@ foo.compile()
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-regexp-prototype-compile: [error, { aggressive: false }]
 ```

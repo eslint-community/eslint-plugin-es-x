@@ -40,7 +40,7 @@ foo.sup()
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-create-html-methods: [error, { aggressive: false }]
 ```

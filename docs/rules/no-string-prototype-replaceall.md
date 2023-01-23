@@ -30,7 +30,7 @@ foo.replaceAll("a", "b")
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-replaceall: [error, { aggressive: false }]
 ```

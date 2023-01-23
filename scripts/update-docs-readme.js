@@ -30,7 +30,7 @@ const ruleSectionContent = Object.values(categories)
 
 // Write README.md
 fs.writeFileSync(
-    "docs/rules/README.md",
+    "docs/rules/index.md",
     `# Available Rules
 
 This plugin provides the following rules.

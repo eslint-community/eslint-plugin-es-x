@@ -31,7 +31,7 @@ foo.flatMap(e => [e, 2 * e])
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-flat: [error, { aggressive: false }]
 ```

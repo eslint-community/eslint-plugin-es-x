@@ -30,7 +30,7 @@ foo.startsWith("a")
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-startswith: [error, { aggressive: false }]
 ```

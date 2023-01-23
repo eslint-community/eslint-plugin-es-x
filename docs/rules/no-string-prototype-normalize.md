@@ -30,7 +30,7 @@ foo.normalize("a")
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-normalize: [error, { aggressive: false }]
 ```

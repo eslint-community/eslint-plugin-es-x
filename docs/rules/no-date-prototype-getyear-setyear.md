@@ -29,7 +29,7 @@ foo.setYear(99)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-date-prototype-getyear-setyear: [error, { aggressive: false }]
 ```

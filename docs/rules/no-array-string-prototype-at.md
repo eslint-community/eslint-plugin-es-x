@@ -31,7 +31,7 @@ foo.at(-1)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-string-prototype-at: [error, { aggressive: false }]
 ```

@@ -30,7 +30,7 @@ foo.toGMTString()
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-date-prototype-togmtstring: [error, { aggressive: false }]
 ```

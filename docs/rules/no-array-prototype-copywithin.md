@@ -30,7 +30,7 @@ foo.copyWithin(0, 1, 2)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-copywithin: [error, { aggressive: false }]
 ```

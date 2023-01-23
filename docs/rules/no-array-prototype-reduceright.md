@@ -30,7 +30,7 @@ foo.reduceRight((a, b) => a + b, 0)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-reduceright: [error, { aggressive: false }]
 ```

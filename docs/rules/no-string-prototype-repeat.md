@@ -30,7 +30,7 @@ foo.repeat(3)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-repeat: [error, { aggressive: false }]
 ```
