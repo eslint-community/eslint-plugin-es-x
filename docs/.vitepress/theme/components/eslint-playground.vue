@@ -153,13 +153,16 @@ function computeCodeFromSlot(n) {
 </script>
 
 <template>
-    <div class="eslint-code-container" :class="`eslint-playground-${type}`">
+    <div
+        class="eslint-playground-container"
+        :class="`eslint-playground-${type}`"
+    >
         <eslint-editor
             v-model:code="cookedCode"
             :linter="linter"
             :config="config"
             :style="{ height }"
-            class="eslint-code-block"
+            class="eslint-playground"
             :filename="filename"
             :language="language"
             dark
@@ -170,7 +173,7 @@ function computeCodeFromSlot(n) {
 </template>
 
 <style>
-.eslint-code-container {
+.eslint-playground-container {
     border-radius: 6px;
     padding: 1.25rem 0;
     margin: 1em 0;
@@ -178,12 +181,8 @@ function computeCodeFromSlot(n) {
     border-style: solid;
 }
 
-.eslint-code-block {
+.eslint-playground {
     width: 100%;
-}
-
-.eslint-editor-actions {
-    bottom: -0.9rem;
 }
 
 .eslint-playground-good {

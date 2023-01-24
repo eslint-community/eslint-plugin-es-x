@@ -214,39 +214,31 @@ defineExpose({
 </script>
 
 <template>
-    <div class="site-kit-monaco-editor-root">
-        <Transition name="site-kit-monaco-editor-fade">
+    <div class="monaco-editor-root">
+        <Transition name="monaco-editor-fade">
             <div
                 v-if="!loading"
                 key="editor"
-                class="site-kit-monaco-editor-swap-container"
+                class="monaco-editor-swap-container"
             >
-                <div ref="rootElement" class="site-kit-monaco-editor-monaco" />
+                <div ref="rootElement" class="monaco-editor-monaco" />
                 <slot name="actions" />
             </div>
-            <div
-                v-else
-                key="placeholder"
-                class="site-kit-monaco-editor-swap-container"
-            >
-                <code class="site-kit-monaco-editor-placeholder-code">{{
+            <div v-else key="placeholder" class="monaco-editor-swap-container">
+                <code class="monaco-editor-placeholder-code">{{
                     props.modelValue
                 }}</code>
-                <Transition name="site-kit-monaco-editor-fade">
+                <Transition name="monaco-editor-fade">
                     <div
                         key="loading"
-                        class="site-kit-monaco-editor-placeholder-loading"
+                        class="monaco-editor-placeholder-loading"
                     >
-                        <div
-                            class="site-kit-monaco-editor-placeholder-loading-icon"
-                        >
+                        <div class="monaco-editor-placeholder-loading-icon">
                             <div />
                             <div />
                             <div />
                         </div>
-                        <div
-                            class="site-kit-monaco-editor-placeholder-loading-message"
-                        >
+                        <div class="monaco-editor-placeholder-loading-message">
                             Now loading...
                         </div>
                     </div>
@@ -257,11 +249,11 @@ defineExpose({
 </template>
 
 <style scoped>
-.site-kit-monaco-editor-root {
+.monaco-editor-root {
     position: relative;
 }
 
-.site-kit-monaco-editor-swap-container {
+.monaco-editor-swap-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -269,12 +261,12 @@ defineExpose({
     height: 100%;
 }
 
-.site-kit-monaco-editor-monaco {
+.monaco-editor-monaco {
     width: 100%;
     height: 100%;
 }
 
-.site-kit-monaco-editor-root .site-kit-monaco-editor-placeholder-code {
+.monaco-editor-root .monaco-editor-placeholder-code {
     display: block;
     box-sizing: border-box;
     height: 100%;
@@ -283,23 +275,23 @@ defineExpose({
     color: #d4d4d4;
 }
 
-.site-kit-monaco-editor-placeholder-loading,
-.site-kit-monaco-editor-placeholder-error {
+.monaco-editor-placeholder-loading,
+.monaco-editor-placeholder-error {
     position: absolute;
     right: 8px;
     bottom: 8px;
     pointer-events: none;
 }
 
-.site-kit-monaco-editor-placeholder-loading {
+.monaco-editor-placeholder-loading {
     line-height: 1.5em;
 }
 
-.site-kit-monaco-editor-placeholder-error {
+.monaco-editor-placeholder-error {
     color: #f44336;
 }
 
-.site-kit-monaco-editor-placeholder-loading-icon {
+.monaco-editor-placeholder-loading-icon {
     display: inline-block;
     position: relative;
     width: 1.5em;
@@ -307,7 +299,7 @@ defineExpose({
     margin-right: 4px;
     vertical-align: middle;
 }
-.site-kit-monaco-editor-placeholder-loading-icon > div {
+.monaco-editor-placeholder-loading-icon > div {
     position: absolute;
     border-radius: 50%;
     border-color: #3eaf7c;
@@ -315,19 +307,19 @@ defineExpose({
     border-style: none solid none solid;
     animation: SiteKitMonacotEditorLoadingIcon 1s linear infinite;
 }
-.site-kit-monaco-editor-placeholder-loading-icon > div:nth-child(1) {
+.monaco-editor-placeholder-loading-icon > div:nth-child(1) {
     height: 100%;
     width: 100%;
     animation-duration: 1.3s;
 }
-.site-kit-monaco-editor-placeholder-loading-icon > div:nth-child(2) {
+.monaco-editor-placeholder-loading-icon > div:nth-child(2) {
     top: 1px;
     left: 2px;
     width: calc(100% - 4px);
     height: calc(100% - 2px);
     animation-duration: 0.7s;
 }
-.site-kit-monaco-editor-placeholder-loading-icon > div:nth-child(3) {
+.monaco-editor-placeholder-loading-icon > div:nth-child(3) {
     top: 2px;
     left: 4px;
     width: calc(100% - 8px);
@@ -335,7 +327,7 @@ defineExpose({
     animation-duration: 1s;
 }
 
-.site-kit-monaco-editor-placeholder-loading-message {
+.monaco-editor-placeholder-loading-message {
     display: inline-block;
     color: gray;
     vertical-align: middle;
@@ -353,12 +345,12 @@ defineExpose({
     }
 }
 
-.site-kit-monaco-editor-fade-enter-active,
-.site-kit-monaco-editor-fade-leave-active {
+.monaco-editor-fade-enter-active,
+.monaco-editor-fade-leave-active {
     transition: opacity 0.3s ease;
 }
-.site-kit-monaco-editor-fade-enter,
-.site-kit-monaco-editor-fade-leave-to {
+.monaco-editor-fade-enter,
+.monaco-editor-fade-leave-to {
     opacity: 0;
 }
 </style>

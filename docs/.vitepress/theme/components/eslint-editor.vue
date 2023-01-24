@@ -393,7 +393,7 @@ function applyAutofix() {
     flex-direction: row;
     position: absolute;
     right: 20px;
-    bottom: 8px;
+    bottom: -0.9rem;
     border: 1px solid gray;
     border-radius: 4px;
     opacity: 0.3;
