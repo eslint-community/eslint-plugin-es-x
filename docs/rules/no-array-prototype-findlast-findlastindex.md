@@ -31,7 +31,7 @@ array.findLastIndex(e => test(e))
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-findlast-findlastindex: [error, { aggressive: false }]
 ```

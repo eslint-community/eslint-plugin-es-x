@@ -31,7 +31,7 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-trimleft-trimright: [error, { aggressive: false }]
 ```

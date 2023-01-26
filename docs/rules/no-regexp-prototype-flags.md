@@ -31,7 +31,7 @@ new RegExp(pattern, flags).flags
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-regexp-prototype-flags: [error, { aggressive: false }]
 ```

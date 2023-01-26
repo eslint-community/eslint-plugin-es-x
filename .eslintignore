@@ -4,3 +4,5 @@
 /docs/.vitepress/cache
 /node_modules
 /test.*
+
+!docs/.vitepress

@@ -30,7 +30,7 @@ foo.indexOf(0)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-indexof: [error, { aggressive: false }]
 ```

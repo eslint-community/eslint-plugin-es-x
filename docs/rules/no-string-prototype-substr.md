@@ -28,7 +28,7 @@ foo.substr()
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-substr: [error, { aggressive: false }]
 ```

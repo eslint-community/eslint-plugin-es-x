@@ -30,7 +30,7 @@ foo.entries()
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-entries: [error, { aggressive: false }]
 ```

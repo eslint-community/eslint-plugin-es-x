@@ -30,7 +30,7 @@ foo.includes("a")
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-includes: [error, { aggressive: false }]
 ```

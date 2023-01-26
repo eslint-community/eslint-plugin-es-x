@@ -30,7 +30,7 @@ foo.includes(0)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-includes: [error, { aggressive: false }]
 ```

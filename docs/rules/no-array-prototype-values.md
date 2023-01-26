@@ -30,7 +30,7 @@ foo.values()
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-values: [error, { aggressive: false }]
 ```

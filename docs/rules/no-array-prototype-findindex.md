@@ -30,7 +30,7 @@ foo.findIndex(e => e !== 0)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-findindex: [error, { aggressive: false }]
 ```

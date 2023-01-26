@@ -30,7 +30,7 @@ doSomethingAsync().finally(dispose)
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-promise-prototype-finally: [error, { aggressive: false }]
 ```

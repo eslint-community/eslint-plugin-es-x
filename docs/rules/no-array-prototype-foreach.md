@@ -30,7 +30,7 @@ foo.forEach(e => console.log(e))
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-array-prototype-foreach: [error, { aggressive: false }]
 ```

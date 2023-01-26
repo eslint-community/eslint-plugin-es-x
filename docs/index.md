@@ -20,7 +20,7 @@ Plus, this plugin lets us disable each syntactic feature individually.
 
 Use [npm](https://www.npmjs.com/) or a compatible tool.
 
-```console
+```bash
 npm install --save-dev eslint eslint-plugin-es-x
 ```
 

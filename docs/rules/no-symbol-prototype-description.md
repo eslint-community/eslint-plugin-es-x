@@ -30,7 +30,7 @@ Symbol("foo").description
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-symbol-prototype-description: [error, { aggressive: false }]
 ```

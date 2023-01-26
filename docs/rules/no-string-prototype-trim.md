@@ -30,7 +30,7 @@ foo.trim()
 
 This rule has an option.
 
-```yml
+```yaml
 rules:
   es-x/no-string-prototype-trim: [error, { aggressive: false }]
 ```
