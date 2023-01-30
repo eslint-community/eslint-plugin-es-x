@@ -76,6 +76,8 @@ const config = computed(() => ({
         AggregateError: false,
         FinalizationRegistry: false,
         WeakRef: false,
+        // Intl
+        Intl: false,
     },
     rules: {},
     parserOptions: {
