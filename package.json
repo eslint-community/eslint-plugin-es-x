@@ -52,6 +52,7 @@
     "pretest": "npm run -s lint",
     "test": "npm run -s test:mocha",
     "test:mocha": "nyc mocha tests/**/*.js --reporter dot --timeout 60000",
+    "test:debug": "mocha tests/**/*.js --reporter dot --timeout 60000",
     "update": "run-s update:*",
     "update:url": "npm run -s lint -- --fix",
     "update:configs": "node scripts/update-lib-configs",

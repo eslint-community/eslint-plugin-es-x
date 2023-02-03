@@ -52,6 +52,16 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-string-prototype-replaceall](./no-string-prototype-replaceall.md) | disallow the `String.prototype.replaceAll` method. |  |
 | [es-x/no-weakrefs](./no-weakrefs.md) | disallow the `WeakRef` and `FinalizationRegistry` class. |  |
 
+## ES2021 Intl API
+
+There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2021-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, `plugin:es-x/restrict-to-es2019-intl-api`, and `plugin:es-x/restrict-to-es2020-intl-api`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-datetimeformat-prototype-formatrange](./no-intl-datetimeformat-prototype-formatrange.md) | disallow the `Intl.DateTimeFormat.prototype.formatRange` method. |  |
+| [es-x/no-intl-displaynames](./no-intl-displaynames.md) | disallow the `Intl.DisplayNames` object. |  |
+| [es-x/no-intl-listformat](./no-intl-listformat.md) | disallow the `Intl.ListFormat` object. |  |
+
 ## ES2020
 
 There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2020`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, and `plugin:es-x/restrict-to-es2019`
