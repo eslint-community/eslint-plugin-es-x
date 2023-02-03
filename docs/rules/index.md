@@ -11,6 +11,10 @@ There is a config that enables the rules in this category: `plugin:es-x/no-new-i
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-array-prototype-findlast-findlastindex](./no-array-prototype-findlast-findlastindex.md) | disallow the `Array.prototype.{findLast,findLastIndex}` methods. |  |
+| [es-x/no-array-prototype-toreversed](./no-array-prototype-toreversed.md) | disallow the `Array.prototype.toReversed` method. |  |
+| [es-x/no-array-prototype-tosorted](./no-array-prototype-tosorted.md) | disallow the `Array.prototype.toSorted` method. |  |
+| [es-x/no-array-prototype-tospliced](./no-array-prototype-tospliced.md) | disallow the `Array.prototype.toSpliced` method. |  |
+| [es-x/no-array-prototype-with](./no-array-prototype-with.md) | disallow the `Array.prototype.with` method. |  |
 | [es-x/no-hashbang](./no-hashbang.md) | disallow Hashbang comments. |  |
 
 ## ES2022
