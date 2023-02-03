@@ -79,6 +79,15 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-regexp-unicode-property-escapes-2020](./no-regexp-unicode-property-escapes-2020.md) | disallow the new values of RegExp Unicode property escape sequences in ES2020. |  |
 | [es-x/no-string-prototype-matchall](./no-string-prototype-matchall.md) | disallow the `String.prototype.matchAll` method. |  |
 
+## ES2020 Intl API
+
+There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2020-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, and `plugin:es-x/restrict-to-es2019-intl-api`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-locale](./no-intl-locale.md) | disallow the `Intl.Locale` object. |  |
+| [es-x/no-intl-relativetimeformat](./no-intl-relativetimeformat.md) | disallow the `Intl.RelativeTimeFormat` object. |  |
+
 ## ES2019
 
 There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2019`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, and `plugin:es-x/restrict-to-es2018`
