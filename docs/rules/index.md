@@ -30,6 +30,15 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-regexp-unicode-property-escapes-2022](./no-regexp-unicode-property-escapes-2022.md) | disallow the new values of RegExp Unicode property escape sequences in ES2022. |  |
 | [es-x/no-top-level-await](./no-top-level-await.md) | disallow top-level `await`. |  |
 
+## ES2022 Intl API
+
+There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2022-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, `plugin:es-x/restrict-to-es2019-intl-api`, `plugin:es-x/restrict-to-es2020-intl-api`, and `plugin:es-x/restrict-to-es2021-intl-api`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-segmenter](./no-intl-segmenter.md) | disallow the `Intl.Segmenter` object. |  |
+| [es-x/no-intl-supportedvaluesof](./no-intl-supportedvaluesof.md) | disallow the `Intl.supportedValuesOf` method. |  |
+
 ## ES2021
 
 There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2021`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, and `plugin:es-x/restrict-to-es2020`
@@ -42,6 +51,16 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-regexp-unicode-property-escapes-2021](./no-regexp-unicode-property-escapes-2021.md) | disallow the new values of RegExp Unicode property escape sequences in ES2021. |  |
 | [es-x/no-string-prototype-replaceall](./no-string-prototype-replaceall.md) | disallow the `String.prototype.replaceAll` method. |  |
 | [es-x/no-weakrefs](./no-weakrefs.md) | disallow the `WeakRef` and `FinalizationRegistry` class. |  |
+
+## ES2021 Intl API
+
+There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2021-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, `plugin:es-x/restrict-to-es2019-intl-api`, and `plugin:es-x/restrict-to-es2020-intl-api`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-datetimeformat-prototype-formatrange](./no-intl-datetimeformat-prototype-formatrange.md) | disallow the `Intl.DateTimeFormat.prototype.formatRange` method. |  |
+| [es-x/no-intl-displaynames](./no-intl-displaynames.md) | disallow the `Intl.DisplayNames` object. |  |
+| [es-x/no-intl-listformat](./no-intl-listformat.md) | disallow the `Intl.ListFormat` object. |  |
 
 ## ES2020
 
@@ -59,6 +78,15 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-promise-all-settled](./no-promise-all-settled.md) | disallow `Promise.allSettled` function. |  |
 | [es-x/no-regexp-unicode-property-escapes-2020](./no-regexp-unicode-property-escapes-2020.md) | disallow the new values of RegExp Unicode property escape sequences in ES2020. |  |
 | [es-x/no-string-prototype-matchall](./no-string-prototype-matchall.md) | disallow the `String.prototype.matchAll` method. |  |
+
+## ES2020 Intl API
+
+There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2020-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, and `plugin:es-x/restrict-to-es2019-intl-api`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-locale](./no-intl-locale.md) | disallow the `Intl.Locale` object. |  |
+| [es-x/no-intl-relativetimeformat](./no-intl-relativetimeformat.md) | disallow the `Intl.RelativeTimeFormat` object. |  |
 
 ## ES2019
 
