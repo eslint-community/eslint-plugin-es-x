@@ -141,6 +141,14 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-string-prototype-padstart-padend](./no-string-prototype-padstart-padend.md) | disallow the `String.prototype.{padStart,padEnd}` methods. |  |
 | [es-x/no-trailing-function-commas](./no-trailing-function-commas.md) | disallow trailing commas in parameter/argument lists. | 🔧 |
 
+## ES2017 Intl API
+
+There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2017-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, and `plugin:es-x/restrict-to-es2016-intl-api`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-datetimeformat-prototype-formattoparts](./no-intl-datetimeformat-prototype-formattoparts.md) | disallow the `DateTimeFormat.prototype.formatToParts` method. |  |
+
 ## ES2016
 
 There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2016`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, and `plugin:es-x/restrict-to-es2015`
