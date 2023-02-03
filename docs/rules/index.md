@@ -158,6 +158,14 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 | [es-x/no-array-prototype-includes](./no-array-prototype-includes.md) | disallow the `Array.prototype.includes` method. |  |
 | [es-x/no-exponential-operators](./no-exponential-operators.md) | disallow exponential operators. |  |
 
+## ES2016 Intl API
+
+There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2016-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, and `plugin:es-x/restrict-to-es2015-intl-api`
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-getcanonicallocales](./no-intl-getcanonicallocales.md) | disallow the `Intl.getCanonicalLocales` method. |  |
+
 ## ES2015
 
 There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2015`, `plugin:es-x/restrict-to-es3`, and `plugin:es-x/restrict-to-es5`
