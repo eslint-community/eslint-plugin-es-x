@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-intl-pluralrules-prototype-selectrange"
 description: "disallow the `PluralRules.prototype.selectRange` method"
+since: "v6.0.0"
 ---
 
 # es-x/no-intl-pluralrules-prototype-selectrange
 > disallow the `PluralRules.prototype.selectRange` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext-intl-api`
 
 This rule reports ES2023 Intl API `PluralRules.prototype.selectRange` as errors.
@@ -44,6 +44,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v6.0.0.
 
 ## 📚 References
 

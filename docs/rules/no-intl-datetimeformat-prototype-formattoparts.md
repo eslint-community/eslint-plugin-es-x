@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-intl-datetimeformat-prototype-formattoparts"
 description: "disallow the `DateTimeFormat.prototype.formatToParts` method"
+since: "v6.0.0"
 ---
 
 # es-x/no-intl-datetimeformat-prototype-formattoparts
 > disallow the `DateTimeFormat.prototype.formatToParts` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-es2017-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, and `plugin:es-x/restrict-to-es2016-intl-api`
 
 This rule reports ES2017 Intl API `DateTimeFormat.prototype.formatToParts` as errors.
@@ -44,6 +44,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v6.0.0.
 
 ## 📚 References
 

@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-intl-numberformat-prototype-formatrangetoparts"
 description: "disallow the `NumberFormat.prototype.formatRangeToParts` method"
+since: "v6.0.0"
 ---
 
 # es-x/no-intl-numberformat-prototype-formatrangetoparts
 > disallow the `NumberFormat.prototype.formatRangeToParts` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext-intl-api`
 
 This rule reports ES2023 Intl API `NumberFormat.prototype.formatRangeToParts` as errors.
@@ -45,6 +45,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v6.0.0.
 
 ## 📚 References
 

@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-regexp-unicode-property-escapes-2021"
 description: "disallow the new values of RegExp Unicode property escape sequences in ES2021"
+since: "v6.0.0"
 ---
 
 # es-x/no-regexp-unicode-property-escapes-2021
 > disallow the new values of RegExp Unicode property escape sequences in ES2021
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-es2021`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, and `plugin:es-x/restrict-to-es2020`
 
 This rule reports the new values of ES2018 [RegExp Unicode property escape sequences](https://github.com/tc39/proposal-regexp-unicode-property-escapes#readme) which were added in ES2021.
@@ -40,6 +40,10 @@ const r2 = /\p{Script=Chorasmian}/u
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v6.0.0.
 
 ## 📚 References
 
