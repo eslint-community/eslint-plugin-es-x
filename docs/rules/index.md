@@ -16,6 +16,7 @@ There is a config that enables the rules in this category: `plugin:es-x/no-new-i
 | [es-x/no-array-prototype-tospliced](./no-array-prototype-tospliced.md) | disallow the `Array.prototype.toSpliced` method. |  |
 | [es-x/no-array-prototype-with](./no-array-prototype-with.md) | disallow the `Array.prototype.with` method. |  |
 | [es-x/no-hashbang](./no-hashbang.md) | disallow Hashbang comments. |  |
+| [es-x/no-regexp-unicode-property-escapes-2023](./no-regexp-unicode-property-escapes-2023.md) | disallow the new values of RegExp Unicode property escape sequences in ES2023. |  |
 
 ## ES2023 Intl API
 
