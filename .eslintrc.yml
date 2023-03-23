@@ -10,6 +10,9 @@ ignorePatterns:
   - "!.vuepress"
   - /docs/.vuepress/dist
 
+globals:
+  fetch: readonly
+
 overrides:
   - files: lib/rules/**/*.js
     rules:
