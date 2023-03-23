@@ -4,18 +4,9 @@ module.exports = { fetchLines }
 
 async function* fetchLines(url) {
     const response = await fetch(url)
-    const reader = response.body.getReader()
     let buffer = ""
     const decoder = new TextDecoder()
-    while (true) {
-        const { done, value: chunk } = await reader.read()
-        if (done) {
-            if (chunk) {
-                buffer += decoder.decode(chunk)
-            }
-            yield buffer
-            break
-        }
+    for await (const chunk of response.body) {
         const lines = (buffer + decoder.decode(chunk)).split("\n")
         if (lines.length === 1) {
             buffer = lines[0]
@@ -26,4 +17,5 @@ async function* fetchLines(url) {
             }
         }
     }
+    yield buffer
 }
