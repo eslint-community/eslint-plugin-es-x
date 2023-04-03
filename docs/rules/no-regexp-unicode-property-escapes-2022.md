@@ -11,7 +11,7 @@ since: "v6.0.0"
 
 This rule reports the new values of ES2018 [RegExp Unicode property escape sequences](https://github.com/tc39/proposal-regexp-unicode-property-escapes#readme) which were added in ES2022.
 
-For example, the following patterns are valid in ES2022, but syntax error in ES2020 environments:
+For example, the following patterns are valid in ES2022, but syntax error in ES2021 environments:
 
 - `\p{Script=Cpmn}`
 - `\p{Script=Cypro_Minoan}`
