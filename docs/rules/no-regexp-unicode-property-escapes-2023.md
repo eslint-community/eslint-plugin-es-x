@@ -27,7 +27,7 @@ For example, the following patterns are valid in ES2023, but syntax error in ES2
 /*eslint es-x/no-regexp-unicode-property-escapes-2023: error */
 const r1 = /\p{Script=Kawi}/u
 const r2 = /\p{Script=Nag_Mundari}/u
-const r2 = /\p{Script=Nagm}/u
+const r3 = /\p{Script=Nagm}/u
 ```
 
 </eslint-playground>
