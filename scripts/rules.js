@@ -30,6 +30,7 @@ const libRoot = path.resolve(__dirname, "../lib/rules")
 
 /** @type {Record<string, Category>} */
 const categories = [
+    2024,
     2023,
     2022,
     2021,
