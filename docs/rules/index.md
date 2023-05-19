@@ -6,7 +6,7 @@ This plugin provides the following rules.
 
 ## ES2023
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2023`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, `plugin:es-x/restrict-to-es2020`, `plugin:es-x/restrict-to-es2021`, and `plugin:es-x/restrict-to-es2022`
+There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext`
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -20,7 +20,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2023 Intl API
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2023-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, `plugin:es-x/restrict-to-es2019-intl-api`, `plugin:es-x/restrict-to-es2020-intl-api`, `plugin:es-x/restrict-to-es2021-intl-api`, and `plugin:es-x/restrict-to-es2022-intl-api`
+There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext-intl-api`
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
