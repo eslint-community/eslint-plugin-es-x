@@ -22,20 +22,6 @@ Atomics.waitAsync(i32a, 0, 0, 1000)
 
 </eslint-playground>
 
-## 🔧 Options
-
-This rule has an option.
-
-```yaml
-rules:
-  es-x/no-atomics-waitasync: [error, { aggressive: false }]
-```
-
-### aggressive: boolean
-
-Configure the aggressive mode for only this rule.
-This is prior to the `settings['es-x'].aggressive` setting.
-
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-atomics-waitasync.js)
