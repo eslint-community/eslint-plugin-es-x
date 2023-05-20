@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-atomics-waitasync"
 description: "disallow the `Atomics.waitAsync` method"
+since: "v7.1.0"
 ---
 
 # es-x/no-atomics-waitasync
 > disallow the `Atomics.waitAsync` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
 
 ## 💡 Examples
@@ -21,6 +21,10 @@ Atomics.waitAsync(i32a, 0, 0, 1000)
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v7.1.0.
 
 ## 📚 References
 

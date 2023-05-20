@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-string-prototype-iswellformed-towellformed"
 description: "disallow the `String.prototype.{isWellFormed,toWellFormed}` methods"
+since: "v7.1.0"
 ---
 
 # es-x/no-string-prototype-iswellformed-towellformed
 > disallow the `String.prototype.{isWellFormed,toWellFormed}` methods
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
 
 ## 💡 Examples
@@ -36,6 +36,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v7.1.0.
 
 ## 📚 References
 
