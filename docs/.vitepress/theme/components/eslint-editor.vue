@@ -95,6 +95,7 @@ const props = defineProps({
 })
 const emit = defineEmits(["change", "update:code"])
 
+// eslint-disable-next-line vue/no-dupe-keys -- ignore
 const linter = ref(null)
 const editorValue = ref(props.code)
 const messages = ref([])
