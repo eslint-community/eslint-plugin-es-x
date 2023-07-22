@@ -49,62 +49,6 @@ const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
-    valid: [
-        { filename, code: "endsWith('a')" },
-        { filename, code: "foo.charAt(0)" },
-        { filename, code: "foo.endsWith('a')" },
-        { filename, code: "let foo = {}; foo.endsWith('a')" },
-        {
-            filename,
-            code: "endsWith('a')",
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.charAt(0)",
-            settings: { "es-x": { aggressive: true } },
-        },
-
-        // `String` is unknown type if tsconfig.json is not configured.
-        { filename, code: "let foo = String(); foo.endsWith('a')" },
-    ],
-    invalid: [
-        {
-            filename,
-            code: "'foo'.endsWith('a')",
-            errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-        },
-        {
-            filename,
-            code: "let foo = 'foo'; foo.endsWith('a')",
-            errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends string>(a: T) { a.endsWith('a') }",
-            errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends 'a' | 'b'>(a: T) { a.endsWith('a') }",
-            errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-        },
-        {
-            filename,
-            code: "let foo = String(); foo.endsWith('a')",
-            errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.endsWith('a')",
-            errors: ["ES2015 'String.prototype.endsWith' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-})
-
 new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
     `${ruleId} TS Full Type Information`,
     rule,

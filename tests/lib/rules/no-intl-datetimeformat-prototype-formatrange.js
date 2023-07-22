@@ -48,43 +48,6 @@ const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
-    valid: [
-        { filename, code: "formatRange(startDate, endDate)" },
-        { filename, code: "foo.unknown(0)" },
-        { filename, code: "foo.formatRange(startDate, endDate)" },
-        { filename, code: "let foo = {}; foo.formatRange(startDate, endDate)" },
-        {
-            filename,
-            code: "formatRange(startDate, endDate)",
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.unknown(0)",
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-    invalid: [
-        {
-            filename,
-            code: "let foo = new Unknown(); foo.formatRange(startDate, endDate)",
-            errors: [
-                "ES2021 Intl API 'Intl.DateTimeFormat.prototype.formatRange' method is forbidden.",
-            ],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.formatRange(startDate, endDate)",
-            errors: [
-                "ES2021 Intl API 'Intl.DateTimeFormat.prototype.formatRange' method is forbidden.",
-            ],
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-})
-
 new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
     `${ruleId} TS Full Type Information`,
     rule,

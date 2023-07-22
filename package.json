@@ -48,6 +48,7 @@
     "docs:build": "vitepress build docs",
     "docs:watch": "vitepress dev docs",
     "lint": "eslint lib tests scripts eslint-internal docs/.vitepress --rulesdir eslint-internal/rules",
+    "lint:fix": "eslint lib tests scripts eslint-internal docs/.vitepress --rulesdir eslint-internal/rules --fix",
     "new": "node scripts/new-rule",
     "pretest": "npm run -s lint",
     "test": "npm run -s test:mocha",

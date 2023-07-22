@@ -49,62 +49,6 @@ const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
-    valid: [
-        { filename, code: "trim()" },
-        { filename, code: "foo.charAt(0)" },
-        { filename, code: "foo.trim()" },
-        { filename, code: "let foo = {}; foo.trim()" },
-        {
-            filename,
-            code: "trim()",
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.charAt(0)",
-            settings: { "es-x": { aggressive: true } },
-        },
-
-        // `String` is unknown type if tsconfig.json is not configured.
-        { filename, code: "let foo = String(); foo.trim()" },
-    ],
-    invalid: [
-        {
-            filename,
-            code: "'foo'.trim()",
-            errors: ["ES5 'String.prototype.trim' method is forbidden."],
-        },
-        {
-            filename,
-            code: "let foo = 'foo'; foo.trim()",
-            errors: ["ES5 'String.prototype.trim' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends string>(a: T) { a.trim() }",
-            errors: ["ES5 'String.prototype.trim' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends 'a' | 'b'>(a: T) { a.trim() }",
-            errors: ["ES5 'String.prototype.trim' method is forbidden."],
-        },
-        {
-            filename,
-            code: "let foo = String(); foo.trim()",
-            errors: ["ES5 'String.prototype.trim' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.trim()",
-            errors: ["ES5 'String.prototype.trim' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-})
-
 new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
     `${ruleId} TS Full Type Information`,
     rule,

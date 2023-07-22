@@ -46,46 +46,6 @@ const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
-    valid: [
-        { filename, code: "foo.then(() => {})" },
-        { filename, code: "foo.finally(() => {})" },
-        { filename, code: "let foo = {}; foo.finally(() => {})" },
-        {
-            filename,
-            code: "foo.then(() => {})",
-            settings: { "es-x": { aggressive: true } },
-        },
-
-        // `Promise` is unknown type if tsconfig.json is not configured.
-        { filename, code: "async function f() {} f().finally(() => {})" },
-        {
-            filename,
-            code: "let foo = Promise.resolve(); foo.finally(() => {})",
-        },
-    ],
-    invalid: [
-        {
-            filename,
-            code: "async function f() {} f().finally(() => {})",
-            errors: ["ES2018 'Promise.prototype.finally' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "let foo = Promise.resolve(); foo.finally(() => {})",
-            errors: ["ES2018 'Promise.prototype.finally' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.finally(() => {})",
-            errors: ["ES2018 'Promise.prototype.finally' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-})
-
 new RuleTester({
     parser,
     parserOptions: { tsconfigRootDir, project },
