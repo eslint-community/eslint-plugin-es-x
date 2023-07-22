@@ -11,6 +11,7 @@ There is a config that enables the rules in this category: `plugin:es-x/no-new-i
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-atomics-waitasync](./no-atomics-waitasync.md) | disallow the `Atomics.waitAsync` method. |  |
+| [es-x/no-regexp-v-flag](./no-regexp-v-flag.md) | disallow RegExp `v` flag. |  |
 | [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | disallow the `String.prototype.{isWellFormed,toWellFormed}` methods. |  |
 
 ## ES2023

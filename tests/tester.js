@@ -11,6 +11,7 @@ const semver = require("semver")
 const eslintVersion = new Linter().version
 const ecmaVersion =
     /*eslint-disable prettier/prettier */
+    semver.gte(eslintVersion, "8.44.0") ? 2024 :
     semver.gte(eslintVersion, "8.23.0") ? 2023 :
     semver.gte(eslintVersion, "8.0.0") ? 2022 :
     semver.gte(eslintVersion, "7.8.0") ? 2021 :
@@ -37,5 +38,6 @@ RuleTester.setDefaultConfig({
 })
 RuleTester.isSupported = (targetEcmaVersion) => targetEcmaVersion <= ecmaVersion
 RuleTester.eslintVersion = eslintVersion
+RuleTester.supportedEcmaVersion = ecmaVersion
 
 module.exports = RuleTester

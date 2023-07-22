@@ -7,7 +7,14 @@
 const cp = require("child_process")
 const fs = require("fs")
 const path = require("path")
+const { categories } = require("./rules")
 const logger = console
+
+const maxESVersion = Math.max(
+    ...Object.keys(categories).map((esVersion) =>
+        /^ES\d+$/u.test(esVersion) ? Number(esVersion.slice(2)) : 0,
+    ),
+)
 
 // main
 ;((ruleId) => {
@@ -33,8 +40,8 @@ const logger = console
 module.exports = {
     meta: {
         docs: {
-            description: "",
-            category: "",
+            description: "disallow ....",
+            category: "ES${maxESVersion}",
             recommended: false,
             url: "",
         },
@@ -58,7 +65,7 @@ module.exports = {
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/${ruleId}.js")
 
-if (!RuleTester.isSupported(2022)) {
+if (!RuleTester.isSupported(${maxESVersion})) {
     //eslint-disable-next-line no-console
     console.log("Skip the tests of ${ruleId}.")
     return
