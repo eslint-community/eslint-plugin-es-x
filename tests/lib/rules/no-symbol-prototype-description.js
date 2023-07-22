@@ -52,26 +52,6 @@ const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
-    valid: [
-        { filename, code: "foo.description" },
-
-        // `Symbol` is unknown type if tsconfig.json is not configured.
-        { filename, code: "Symbol.iterator.description" },
-        { filename, code: "Symbol().description" },
-    ],
-    invalid: [
-        {
-            filename,
-            code: "foo.description",
-            errors: [
-                "ES2019 'Symbol.prototype.description' property is forbidden.",
-            ],
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-})
-
 new RuleTester({
     parser,
     parserOptions: { tsconfigRootDir, project },

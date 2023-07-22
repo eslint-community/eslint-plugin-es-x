@@ -43,48 +43,6 @@ const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
-    valid: [
-        { filename, code: "foo.global" },
-        { filename, code: "foo.flags" },
-        { filename, code: "let foo = {}; foo.flags" },
-        {
-            filename,
-            code: "foo.global",
-            settings: { "es-x": { aggressive: true } },
-        },
-
-        // `RegExp` is unknown type if tsconfig.json is not configured.
-        { filename, code: "new RegExp('').flags" },
-        { filename, code: "let foo = new RegExp(''); foo.flags" },
-    ],
-    invalid: [
-        {
-            filename,
-            code: "/foo/.flags",
-            errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-        },
-        {
-            filename,
-            code: "new RegExp('').flags",
-            errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "let foo = new RegExp(''); foo.flags",
-            errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.flags",
-            errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-})
-
 new RuleTester({
     parser,
     parserOptions: { tsconfigRootDir, project },

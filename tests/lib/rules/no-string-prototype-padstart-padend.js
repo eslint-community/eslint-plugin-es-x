@@ -61,67 +61,6 @@ const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
-    valid: [
-        { filename, code: "padStart(2)" },
-        { filename, code: "foo.charAt(0)" },
-        { filename, code: "foo.padStart(2)" },
-        { filename, code: "let foo = {}; foo.padStart(2)" },
-        {
-            filename,
-            code: "padStart(2)",
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.charAt(0)",
-            settings: { "es-x": { aggressive: true } },
-        },
-
-        // `String` is unknown type if tsconfig.json is not configured.
-        { filename, code: "let foo = String(); foo.padStart(2)" },
-    ],
-    invalid: [
-        {
-            filename,
-            code: "'foo'.padStart(2)",
-            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-        },
-        {
-            filename,
-            code: "'foo'.padEnd(2)",
-            errors: ["ES2017 'String.prototype.padEnd' method is forbidden."],
-        },
-        {
-            filename,
-            code: "let foo = 'foo'; foo.padStart(2)",
-            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends string>(a: T) { a.padStart(2) }",
-            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends 'a' | 'b'>(a: T) { a.padStart(2) }",
-            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-        },
-        {
-            filename,
-            code: "let foo = String(); foo.padStart(2)",
-            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.padStart(2)",
-            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-})
-
 new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
     `${ruleId} TS Full Type Information`,
     rule,

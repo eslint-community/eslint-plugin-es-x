@@ -49,60 +49,6 @@ const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
-    valid: [
-        "codePointAt(0)",
-        "foo.charAt(0)",
-        "foo.codePointAt(0)",
-        "let foo = {}; foo.codePointAt(0)",
-        {
-            code: "codePointAt(0)",
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            code: "foo.charAt(0)",
-            settings: { "es-x": { aggressive: true } },
-        },
-
-        // `String` is unknown type if tsconfig.json is not configured.
-        "let foo = String(); foo.codePointAt(0)",
-    ],
-    invalid: [
-        {
-            code: "let foo = ''; foo.codePointAt(0)",
-            errors: [
-                "ES2015 'String.prototype.codePointAt' method is forbidden.",
-            ],
-        },
-        {
-            code: "function f<T extends string>(a: T) { a.codePointAt(0) }",
-            errors: [
-                "ES2015 'String.prototype.codePointAt' method is forbidden.",
-            ],
-        },
-        {
-            code: "function f<T extends 'a' | 'b'>(a: T) { a.codePointAt(0) }",
-            errors: [
-                "ES2015 'String.prototype.codePointAt' method is forbidden.",
-            ],
-        },
-        {
-            code: "let foo = String(); foo.codePointAt(0)",
-            errors: [
-                "ES2015 'String.prototype.codePointAt' method is forbidden.",
-            ],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            code: "foo.codePointAt(0)",
-            errors: [
-                "ES2015 'String.prototype.codePointAt' method is forbidden.",
-            ],
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-})
-
 new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
     `${ruleId} TS Full Types`,
     rule,

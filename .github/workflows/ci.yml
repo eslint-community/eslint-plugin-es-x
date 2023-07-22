@@ -47,9 +47,11 @@ jobs:
           - eslint: 8
             node: 17
             os: ubuntu-latest
+            tseslint: 5
           - eslint: 8
             node: 14
             os: ubuntu-latest
+            tseslint: 5
           # On old ESLint versions
           - eslint: 8.0.0
             node: 18
@@ -58,6 +60,7 @@ jobs:
           - eslint: 8.0.0
             node: 14.18.0
             os: ubuntu-latest
+            tseslint: 5
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -74,6 +77,11 @@ jobs:
         run: |+
             npm install -D eslint@${{ matrix.eslint }}
             npx rimraf node_modules
+      - name: Install "@typescript-eslint/parser" ${{ matrix.tseslint }}
+        run: |+
+            npm install -D @typescript-eslint/parser@${{ matrix.tseslint }}
+            npx rimraf node_modules
+        if: matrix.tseslint == 5
       - name: Install Packages
         run: npm install
       - name: Test

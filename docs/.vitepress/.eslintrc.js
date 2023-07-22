@@ -2,10 +2,10 @@
 
 module.exports = {
     rules: {
-        "node/no-missing-import": "off",
-        "node/no-extraneous-import": "off",
-        "node/file-extension-in-import": "off",
-        "node/no-extraneous-require": "off",
+        "n/no-missing-import": "off",
+        "n/no-extraneous-import": "off",
+        "n/file-extension-in-import": "off",
+        "n/no-extraneous-require": "off",
     },
     globals: {
         window: "readonly",

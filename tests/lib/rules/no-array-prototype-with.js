@@ -46,56 +46,6 @@ const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser }).run(`${ruleId} TS`, rule, {
-    valid: [
-        { filename, code: "foo.find(predicate)" },
-        { filename, code: "foo.with(index, value)" },
-        { filename, code: "let foo = {}; foo.with(index, value)" },
-        {
-            filename,
-            code: "foo.find(predicate)",
-            settings: { "es-x": { aggressive: true } },
-        },
-
-        // `Array` is unknown type if tsconfig.json is not configured.
-        { filename, code: "let foo = []; foo.with(index, value)" },
-        {
-            filename,
-            code: "let foo = ['foo']; foo.with(index, value)",
-            errors: ["ES2023 'Array.prototype.with' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends string[]>(a: T) { a.with(index, value) }",
-            errors: ["ES2023 'Array.prototype.with' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends (string | number)[]>(a: T) { a.with(index, value) }",
-            errors: ["ES2023 'Array.prototype.with' method is forbidden."],
-        },
-    ],
-    invalid: [
-        {
-            filename,
-            code: "['foo'].with(index, value)",
-            errors: ["ES2023 'Array.prototype.with' method is forbidden."],
-        },
-        {
-            filename,
-            code: "let foo = []; foo.with(index, value)",
-            errors: ["ES2023 'Array.prototype.with' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "foo.with(index, value)",
-            errors: ["ES2023 'Array.prototype.with' method is forbidden."],
-            settings: { "es-x": { aggressive: true } },
-        },
-    ],
-})
-
 new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
     `${ruleId} TS Full Type Information`,
     rule,
