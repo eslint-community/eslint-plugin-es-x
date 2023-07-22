@@ -5,7 +5,7 @@
 "use strict"
 
 module.exports = {
-    plugins: ["node"],
+    plugins: ["n"],
     parserOptions: {
         ecmaFeatures: { globalReturn: false },
         sourceType: "module",
@@ -18,15 +18,15 @@ module.exports = {
         require: "off",
     },
     rules: {
-        "node/no-extraneous-import": "error",
-        "node/file-extension-in-import": [
+        "n/no-extraneous-import": "error",
+        "n/file-extension-in-import": [
             "error",
             "always",
             { ".js": "never", ".ts": "never", ".tsx": "never" },
         ],
-        "node/no-missing-import": "error",
-        "node/no-unpublished-import": "error",
-        "node/no-unsupported-features/es-syntax": [
+        "n/no-missing-import": "error",
+        "n/no-unpublished-import": "error",
+        "n/no-unsupported-features/es-syntax": [
             "error",
             { ignores: ["modules", "dynamicImport"] },
         ],
@@ -35,7 +35,7 @@ module.exports = {
         {
             files: ["*.ts", "*.tsx", "*.vue"],
             rules: {
-                "node/no-unsupported-features/es-syntax": "off",
+                "n/no-unsupported-features/es-syntax": "off",
             },
         },
     ],
