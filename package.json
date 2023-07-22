@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@eslint-community/eslint-utils": "^4.1.2",
-    "@eslint-community/regexpp": "^4.5.0"
+    "@eslint-community/regexpp": "^4.6.0"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.14.0",
