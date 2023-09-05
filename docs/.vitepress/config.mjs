@@ -1,13 +1,17 @@
-"use strict"
+import { defineConfig } from "vitepress"
+import path from "path"
+import { fileURLToPath } from "url"
+import { viteCommonjs, vitePluginRequireResolve } from "./vite-plugin.mjs"
+import eslint4b from "vite-plugin-eslint4b"
+import { createRequire } from "module"
 
-const { defineConfig } = require("vitepress")
-const path = require("path")
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const require = createRequire(import.meta.url)
 
 const { categories } = require("../../scripts/rules.js")
-const { viteCommonjs, vitePluginRequireResolve } = require("./vite-plugin")
-const { default: eslint4b } = require("vite-plugin-eslint4b")
 
-module.exports = defineConfig({
+export default defineConfig({
     title: "eslint-plugin-es-x",
     base: "/eslint-plugin-es-x/",
     description: "ESLint plugin about ECMAScript syntax.",

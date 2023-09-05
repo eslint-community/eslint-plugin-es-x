@@ -1,16 +1,13 @@
-"use strict"
+import path from "path"
+import { fileURLToPath } from "url"
+import esbuild from "esbuild"
 
-const path = require("path")
-
-const esbuild = require("esbuild")
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const libRoot = path.join(__dirname, "../../lib")
-module.exports = {
-    vitePluginRequireResolve,
-    viteCommonjs,
-}
 
-function vitePluginRequireResolve() {
+export function vitePluginRequireResolve() {
     return {
         name: "vite-plugin-require.resolve",
         transform(code, id, _options) {
@@ -25,7 +22,7 @@ function vitePluginRequireResolve() {
     }
 }
 
-function viteCommonjs() {
+export function viteCommonjs() {
     return {
         name: "vite-plugin-cjs-to-esm",
         apply: () => true,
