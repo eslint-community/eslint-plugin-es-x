@@ -38,7 +38,7 @@
     "semver": "^7.0.0",
     "typescript": "^5.0.2",
     "vite-plugin-eslint4b": "^0.2.0",
-    "vitepress": "^1.0.0-alpha.40",
+    "vitepress": "^1.0.0-rc.14",
     "vue-eslint-editor": "^1.1.0",
     "vue-eslint-parser": "^9.0.0"
   },

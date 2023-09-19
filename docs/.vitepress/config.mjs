@@ -30,6 +30,12 @@ export default defineConfig({
 
     lastUpdated: true,
     themeConfig: {
+        search: {
+            provider: "local",
+            options: {
+                detailedView: true,
+            },
+        },
         editLink: {
             pattern:
                 "https://github.com/eslint-community/eslint-plugin-es-x/edit/master/docs/:path",
