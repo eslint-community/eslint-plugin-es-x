@@ -9,6 +9,8 @@ since: "v7.1.0"
 
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
 
+This rule reports ES2024 [`Atomics.waitAsync}` method](https://github.com/tc39/proposal-atomics-wait-async) as errors.
+
 ## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:

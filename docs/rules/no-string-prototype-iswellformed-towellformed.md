@@ -9,6 +9,8 @@ since: "v7.1.0"
 
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
 
+This rule reports ES2024 [`String.prototype.{isWellFormed,toWellFormed}` methods](https://github.com/tc39/proposal-is-usv-string) as errors.
+
 ## 💡 Examples
 
 ⛔ Examples of **incorrect** code for this rule:
