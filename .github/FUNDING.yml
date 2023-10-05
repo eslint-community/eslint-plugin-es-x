@@ -1,6 +1,5 @@
 github:
 - eslint
 - ota-meshi
-- mysticatea
 open_collective: eslint
 tidelift: "npm/eslint"
