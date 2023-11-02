@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-resizable-and-growable-arraybuffers"
 description: "disallow resizable and growable ArrayBuffers"
+since: "v7.3.0"
 ---
 
 # es-x/no-resizable-and-growable-arraybuffers
 > disallow resizable and growable ArrayBuffers
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
 
 This rule reports ES2024 [Resizable and growable ArrayBuffers](https://github.com/tc39/proposal-resizablearraybuffer) as errors.
@@ -49,6 +49,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v7.3.0.
 
 ## 📚 References
 
