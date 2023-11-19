@@ -83,8 +83,8 @@ const categories = [
                 aboveConfigName: experimental
                     ? undefined
                     : prevVFor402 === 1
-                    ? "restrict-to-es-intl-api-1st-edition"
-                    : `restrict-to-es${prevVFor402}-intl-api`,
+                      ? "restrict-to-es-intl-api-1st-edition"
+                      : `restrict-to-es${prevVFor402}-intl-api`,
             }
         }
         return map

@@ -133,8 +133,8 @@ module.exports = {
                 const type2 = isRestParameter
                     ? "parameter"
                     : isArray
-                    ? "element"
-                    : /* otherwise */ "property"
+                      ? "element"
+                      : /* otherwise */ "property"
 
                 context.report({
                     node,

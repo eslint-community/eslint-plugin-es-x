@@ -74,12 +74,12 @@ function toSection(category) {
     comment += !configIds.length
         ? "Rules in this category are not included in any preset."
         : configIds.length > 1
-        ? `There are multiple configs that enable all rules in this category: ${formatList(
-              configIds,
-          )}`
-        : `There is a config that enables the rules in this category: ${formatList(
-              configIds,
-          )}`
+          ? `There are multiple configs that enable all rules in this category: ${formatList(
+                configIds,
+            )}`
+          : `There is a config that enables the rules in this category: ${formatList(
+                configIds,
+            )}`
 
     return `## ${category.title}
 
