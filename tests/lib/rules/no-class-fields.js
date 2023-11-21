@@ -4,8 +4,10 @@
  */
 "use strict"
 
+const path = require("path")
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-class-fields.js")
+const ruleId = "no-class-fields"
 
 if (!RuleTester.isSupported(2022)) {
     //eslint-disable-next-line no-console
@@ -13,7 +15,7 @@ if (!RuleTester.isSupported(2022)) {
     return
 }
 
-new RuleTester().run("no-class-fields", rule, {
+new RuleTester().run(ruleId, rule, {
     valid: [
         "class A {}",
         "class A { foo() {} }",
@@ -221,3 +223,58 @@ new RuleTester().run("no-class-fields", rule, {
         },
     ],
 })
+
+// -----------------------------------------------------------------------------
+// TypeScript
+// -----------------------------------------------------------------------------
+const parser = require.resolve("@typescript-eslint/parser")
+const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const project = "tsconfig.json"
+const filename = path.join(tsconfigRootDir, "test.ts")
+
+new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
+    `${ruleId} TS Full Types`,
+    rule,
+    {
+        valid: [
+            {
+                filename,
+                code: "class A { declare foo: string }",
+            },
+            {
+                filename,
+                code: "class A { declare #foo: string }",
+            },
+            {
+                filename,
+                code: "declare class A { foo: string }",
+            },
+            {
+                filename,
+                code: "declare class A { #foo: string }",
+            },
+        ],
+        invalid: [
+            {
+                filename,
+                code: "class A { readonly foo = '' }",
+                errors: ["ES2022 field 'foo' is forbidden."],
+            },
+            {
+                filename,
+                code: "class A { foo: string }",
+                errors: ["ES2022 field 'foo' is forbidden."],
+            },
+            {
+                filename,
+                code: "class A { foo: string = '' }",
+                errors: ["ES2022 field 'foo' is forbidden."],
+            },
+            {
+                filename,
+                code: "class A { #foo: string }",
+                errors: ["ES2022 private field #foo is forbidden."],
+            },
+        ],
+    },
+)
