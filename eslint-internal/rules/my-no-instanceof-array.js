@@ -5,6 +5,8 @@
  */
 "use strict"
 
+const { getSourceCode } = require("eslint-compat-utils")
+
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
@@ -22,7 +24,7 @@ module.exports = {
     },
 
     create(context) {
-        const sourceCode = context.getSourceCode()
+        const sourceCode = getSourceCode(context)
 
         /**
          * Checks whether the given node is RHS of instanceof.
@@ -39,8 +41,8 @@ module.exports = {
         }
 
         return {
-            "Program:exit"() {
-                const globalScope = context.getScope()
+            "Program:exit"(program) {
+                const globalScope = sourceCode.getScope(program)
                 const variable = globalScope.set.get("Array")
 
                 // Skip if undefined or shadowed

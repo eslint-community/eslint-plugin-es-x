@@ -4,6 +4,8 @@
  */
 "use strict"
 
+const { getSourceCode } = require("eslint-compat-utils")
+
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
@@ -28,6 +30,7 @@ module.exports = {
     },
 
     create(context) {
+        const sourceCode = getSourceCode(context)
         const ignorePattern =
             context.options[0] != null
                 ? new RegExp(context.options[0], "u")
@@ -81,8 +84,8 @@ module.exports = {
         }
 
         return {
-            "Program:exit"() {
-                const queue = [context.getScope()]
+            "Program:exit"(node) {
+                const queue = [sourceCode.getScope(node)]
                 let scope = null
 
                 while ((scope = queue.pop()) != null) {

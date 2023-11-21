@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 const assert = require("assert")
+const { getSourceCode } = require("eslint-compat-utils")
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -91,9 +92,10 @@ function isSimpleReference(node) {
  * @returns {boolean} `true` if the node is called recursively.
  */
 function isCalledRecursively(context, node) {
+    const sourceCode = getSourceCode(context)
     return (
         node.id != null &&
-        context.getDeclaredVariables(node)[0].references.length > 0
+        sourceCode.getDeclaredVariables(node)[0].references.length > 0
     )
 }
 
@@ -221,9 +223,9 @@ function isAssignee(startNode) {
  * used to get array elements.
  */
 function isIndexVarOnlyUsedToGetArrayElements(context, node) {
-    const sourceCode = context.getSourceCode()
+    const sourceCode = getSourceCode(context)
     const arrayText = getArrayTextOfForStatement(sourceCode, node)
-    const indexVar = context.getDeclaredVariables(node.init)[0]
+    const indexVar = sourceCode.getDeclaredVariables(node.init)[0]
 
     return indexVar.references.every((reference) => {
         const id = reference.identifier
@@ -252,7 +254,10 @@ function isLengthVarOnlyUsedToTest(context, node) {
     if (node.init.declarations.length !== 2) {
         return true
     }
-    const lengthVar = context.getDeclaredVariables(node.init.declarations[1])[0]
+    const sourceCode = getSourceCode(context)
+    const lengthVar = sourceCode.getDeclaredVariables(
+        node.init.declarations[1],
+    )[0]
 
     return lengthVar.references.every(
         (reference) =>
@@ -263,12 +268,12 @@ function isLengthVarOnlyUsedToTest(context, node) {
 /**
  * Gets the variable object of the given name.
  *
- * @param {RuleContext} context - The rule context to get variables.
+ * @param {escope.Scope} initScope - The scope to get variables.
  * @param {string} name - The variable name to get.
  * @returns {escope.Variable|null} The found variable.
  */
-function getVariableByName(context, name) {
-    let scope = context.getScope()
+function getVariableByName(initScope, name) {
+    let scope = initScope
 
     while (scope != null) {
         const variable = scope.set.get(name)
@@ -317,7 +322,8 @@ function getContextVariable(context, contextNode) {
     }
     assert(node.type === "Identifier")
 
-    const scope = context.getScope().upper
+    const sourceCode = getSourceCode(context)
+    const scope = sourceCode.getScope(contextNode).upper
     return scope.set.get(node.name) || null
 }
 
@@ -408,7 +414,7 @@ function applyFixes(originalText, fixes) {
  * @returns {Fix|null} The created fix object.
  */
 function fixArrayForEach(context, callbackInfo, fixer) {
-    const sourceCode = context.getSourceCode()
+    const sourceCode = getSourceCode(context)
     const funcNode = callbackInfo.node
     const callNode = funcNode.parent
     const calleeNode = callNode.callee
@@ -457,7 +463,7 @@ function fixArrayForEach(context, callbackInfo, fixer) {
  * @returns {Fix|null} The created fix object.
  */
 function fixForStatement(context, node, fixer) {
-    const sourceCode = context.getSourceCode()
+    const sourceCode = getSourceCode(context)
     const element = getElementVariableDeclaration(sourceCode, node)
 
     // Cannot fix if element name is unknown.
@@ -572,8 +578,9 @@ module.exports = {
                     // verify whether the reference gets the context variable or not.
                     if (thisFuncInfo.canReplaceAllThis) {
                         if (thisFuncInfo.contextVar != null) {
+                            const sourceCode = getSourceCode(context)
                             const variable = getVariableByName(
-                                context,
+                                sourceCode.getScope(node),
                                 thisFuncInfo.contextVar.name,
                             )
 
