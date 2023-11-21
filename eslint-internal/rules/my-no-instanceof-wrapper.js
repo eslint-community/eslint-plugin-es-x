@@ -5,6 +5,8 @@
  */
 "use strict"
 
+const { getSourceCode } = require("eslint-compat-utils")
+
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
@@ -22,7 +24,7 @@ module.exports = {
     },
 
     create(context) {
-        const sourceCode = context.getSourceCode()
+        const sourceCode = getSourceCode(context)
         const targetTypes = [
             "Boolean",
             "Number",
@@ -47,8 +49,8 @@ module.exports = {
         }
 
         return {
-            "Program:exit"() {
-                const globalScope = context.getScope()
+            "Program:exit"(program) {
+                const globalScope = sourceCode.getScope(program)
 
                 for (const ctorName of targetTypes) {
                     const typeName = ctorName.toLowerCase()

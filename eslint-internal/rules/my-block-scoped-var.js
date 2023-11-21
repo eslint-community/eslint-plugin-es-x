@@ -5,6 +5,8 @@
  */
 "use strict"
 
+const { getSourceCode } = require("eslint-compat-utils")
+
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
@@ -205,13 +207,15 @@ module.exports = {
         type: "suggestion",
     },
     create(context) {
+        const sourceCode = getSourceCode(context)
+
         /**
          * Finds and reports references which are outside of valid scopes.
          * @param {ASTNode} node - A node to get variables.
          * @returns {void}
          */
         function checkForVariables(node) {
-            const variables = context.getDeclaredVariables(node)
+            const variables = sourceCode.getDeclaredVariables(node)
             for (const variable of variables) {
                 const defs = variable.defs
                 const lastDef = defs[defs.length - 1]

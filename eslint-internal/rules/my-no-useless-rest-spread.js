@@ -4,6 +4,8 @@
  */
 "use strict"
 
+const { getSourceCode } = require("eslint-compat-utils")
+
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
@@ -106,7 +108,7 @@ module.exports = {
     },
 
     create(context) {
-        const sourceCode = context.getSourceCode()
+        const sourceCode = getSourceCode(context)
 
         /**
          * Verify the given SpreadElement or RestElement.

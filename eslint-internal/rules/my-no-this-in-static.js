@@ -5,6 +5,8 @@
  */
 "use strict"
 
+const { getSourceCode } = require("eslint-compat-utils")
+
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
@@ -22,7 +24,7 @@ module.exports = {
     },
 
     create(context) {
-        const sourceCode = context.getSourceCode()
+        const sourceCode = getSourceCode(context)
         let funcInfo = null
 
         /**
