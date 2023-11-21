@@ -236,7 +236,24 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
     `${ruleId} TS Full Types`,
     rule,
     {
-        valid: [{ filename, code: "class A { declare foo: string }" }],
+        valid: [
+            {
+                filename,
+                code: "class A { declare foo: string }",
+            },
+            {
+                filename,
+                code: "class A { declare #foo: string }",
+            },
+            {
+                filename,
+                code: "declare class A { foo: string }",
+            },
+            {
+                filename,
+                code: "declare class A { #foo: string }",
+            },
+        ],
         invalid: [
             {
                 filename,
@@ -252,6 +269,11 @@ new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
                 filename,
                 code: "class A { foo: string = '' }",
                 errors: ["ES2022 field 'foo' is forbidden."],
+            },
+            {
+                filename,
+                code: "class A { #foo: string }",
+                errors: ["ES2022 private field #foo is forbidden."],
             },
         ],
     },
