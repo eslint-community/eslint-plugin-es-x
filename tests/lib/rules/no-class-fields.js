@@ -4,7 +4,6 @@
  */
 "use strict"
 
-const path = require("path")
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-class-fields.js")
 const ruleId = "no-class-fields"
@@ -38,6 +37,22 @@ new RuleTester().run(ruleId, rule, {
         "class A { static set [foo](v) {} }",
         "class A { static *[foo]() {} }",
         "class A { static async [foo]() {} }",
+        {
+            code: "class A { declare foo: string }",
+            parser: require.resolve("@typescript-eslint/parser"),
+        },
+        {
+            code: "class A { declare #foo: string }",
+            parser: require.resolve("@typescript-eslint/parser"),
+        },
+        {
+            code: "declare class A { foo: string }",
+            parser: require.resolve("@typescript-eslint/parser"),
+        },
+        {
+            code: "declare class A { #foo: string }",
+            parser: require.resolve("@typescript-eslint/parser"),
+        },
     ],
     invalid: [
         {
@@ -221,60 +236,25 @@ new RuleTester().run(ruleId, rule, {
                 },
             ],
         },
+        {
+            code: "class A { readonly foo = '' }",
+            parser: require.resolve("@typescript-eslint/parser"),
+            errors: ["ES2022 field 'foo' is forbidden."],
+        },
+        {
+            code: "class A { foo: string }",
+            parser: require.resolve("@typescript-eslint/parser"),
+            errors: ["ES2022 field 'foo' is forbidden."],
+        },
+        {
+            code: "class A { foo: string = '' }",
+            parser: require.resolve("@typescript-eslint/parser"),
+            errors: ["ES2022 field 'foo' is forbidden."],
+        },
+        {
+            code: "class A { #foo: string }",
+            parser: require.resolve("@typescript-eslint/parser"),
+            errors: ["ES2022 private field #foo is forbidden."],
+        },
     ],
 })
-
-// -----------------------------------------------------------------------------
-// TypeScript
-// -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
-const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
-const project = "tsconfig.json"
-const filename = path.join(tsconfigRootDir, "test.ts")
-
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Types`,
-    rule,
-    {
-        valid: [
-            {
-                filename,
-                code: "class A { declare foo: string }",
-            },
-            {
-                filename,
-                code: "class A { declare #foo: string }",
-            },
-            {
-                filename,
-                code: "declare class A { foo: string }",
-            },
-            {
-                filename,
-                code: "declare class A { #foo: string }",
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: "class A { readonly foo = '' }",
-                errors: ["ES2022 field 'foo' is forbidden."],
-            },
-            {
-                filename,
-                code: "class A { foo: string }",
-                errors: ["ES2022 field 'foo' is forbidden."],
-            },
-            {
-                filename,
-                code: "class A { foo: string = '' }",
-                errors: ["ES2022 field 'foo' is forbidden."],
-            },
-            {
-                filename,
-                code: "class A { #foo: string }",
-                errors: ["ES2022 private field #foo is forbidden."],
-            },
-        ],
-    },
-)
