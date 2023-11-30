@@ -11,7 +11,8 @@ There is a config that enables the rules in this category: `plugin:es-x/no-new-i
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-atomics-waitasync](./no-atomics-waitasync.md) | disallow the `Atomics.waitAsync` method. |  |
-| [es-x/no-object-map-groupby](./no-object-map-groupby.md) | disallow the `{Object,Map}.groupBy()` method (array grouping). |  |
+| [es-x/no-object-map-groupby](./no-object-map-groupby.md) | disallow the `{Object,Map}.groupBy()` function (array grouping). |  |
+| [es-x/no-promise-withresolvers](./no-promise-withresolvers.md) | disallow the `Promise.withResolvers()` method. |  |
 | [es-x/no-regexp-v-flag](./no-regexp-v-flag.md) | disallow RegExp `v` flag. |  |
 | [es-x/no-resizable-and-growable-arraybuffers](./no-resizable-and-growable-arraybuffers.md) | disallow resizable and growable ArrayBuffers. |  |
 | [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | disallow the `String.prototype.{isWellFormed,toWellFormed}` methods. |  |

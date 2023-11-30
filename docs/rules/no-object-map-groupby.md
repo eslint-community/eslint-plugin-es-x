@@ -1,15 +1,15 @@
 ---
 title: "es-x/no-object-map-groupby"
-description: "disallow the `{Object,Map}.groupBy()` method (array grouping)"
+description: "disallow the `{Object,Map}.groupBy()` function (array grouping)"
 ---
 
 # es-x/no-object-map-groupby
-> disallow the `{Object,Map}.groupBy()` method (array grouping)
+> disallow the `{Object,Map}.groupBy()` function (array grouping)
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
 
-This rule reports ES2024 `Object.groupBy()` method and `Map.groupBy()` method (Array grouping) as errors.
+This rule reports ES2024 `Object.groupBy()` and `Map.groupBy()` (Array grouping) as errors.
 
 ## 💡 Examples
 
