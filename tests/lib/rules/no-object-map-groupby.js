@@ -14,11 +14,11 @@ new RuleTester().run("no-object-map-groupby", rule, {
     invalid: [
         {
             code: "Object.groupBy",
-            errors: ["ES2024 'Object.groupBy' method is forbidden."],
+            errors: ["ES2024 'Object.groupBy' is forbidden."],
         },
         {
             code: "Map.groupBy",
-            errors: ["ES2024 'Map.groupBy' method is forbidden."],
+            errors: ["ES2024 'Map.groupBy' is forbidden."],
         },
     ],
 })
