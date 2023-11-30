@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-promise-withresolvers"
 description: "disallow the `Promise.withResolvers()` method"
+since: "v7.5.0"
 ---
 
 # es-x/no-promise-withresolvers
 > disallow the `Promise.withResolvers()` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
 
 This rule reports ES2024 [`Promise.withResolvers` function](https://github.com/tc39/proposal-promise-with-resolvers) as errors.
@@ -23,6 +23,10 @@ const { promise, resolve, reject } = Promise.withResolvers()
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v7.5.0.
 
 ## 📚 References
 
