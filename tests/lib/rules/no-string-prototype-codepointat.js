@@ -44,68 +44,66 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Types`,
-    rule,
-    {
-        valid: [
-            { filename, code: "codePointAt(0)" },
-            { filename, code: "foo.charAt(0)" },
-            { filename, code: "foo.codePointAt(0)" },
-            { filename, code: "let foo = {}; foo.codePointAt(0)" },
-            {
-                filename,
-                code: "codePointAt(0)",
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "foo.charAt(0)",
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: "let foo = ''; foo.codePointAt(0)",
-                errors: [
-                    "ES2015 'String.prototype.codePointAt' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "let foo = String(); foo.codePointAt(0)",
-                errors: [
-                    "ES2015 'String.prototype.codePointAt' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends string>(a: T) { a.codePointAt(0) }",
-                errors: [
-                    "ES2015 'String.prototype.codePointAt' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends 'a' | 'b'>(a: T) { a.codePointAt(0) }",
-                errors: [
-                    "ES2015 'String.prototype.codePointAt' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "foo.codePointAt(0)",
-                errors: [
-                    "ES2015 'String.prototype.codePointAt' method is forbidden.",
-                ],
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-    },
-)
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Types`, rule, {
+    valid: [
+        { filename, code: "codePointAt(0)" },
+        { filename, code: "foo.charAt(0)" },
+        { filename, code: "foo.codePointAt(0)" },
+        { filename, code: "let foo = {}; foo.codePointAt(0)" },
+        {
+            filename,
+            code: "codePointAt(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.charAt(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "let foo = ''; foo.codePointAt(0)",
+            errors: [
+                "ES2015 'String.prototype.codePointAt' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "let foo = String(); foo.codePointAt(0)",
+            errors: [
+                "ES2015 'String.prototype.codePointAt' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f<T extends string>(a: T) { a.codePointAt(0) }",
+            errors: [
+                "ES2015 'String.prototype.codePointAt' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f<T extends 'a' | 'b'>(a: T) { a.codePointAt(0) }",
+            errors: [
+                "ES2015 'String.prototype.codePointAt' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "foo.codePointAt(0)",
+            errors: [
+                "ES2015 'String.prototype.codePointAt' method is forbidden.",
+            ],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

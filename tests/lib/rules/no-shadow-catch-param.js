@@ -11,7 +11,7 @@ if (semver.lt(RuleTester.eslintVersion, "5.0.0")) {
 }
 
 new RuleTester({
-    parser: require.resolve("espree"),
+    languageOptions: { parser: require("espree") },
 }).run("no-shadow-catch-param", rule, {
     valid: [
         "var e; try {} catch (e) {  }",
@@ -21,11 +21,11 @@ new RuleTester({
         "try {} catch (e) { function foo() {var e} }",
         {
             code: "var e; try {} catch (e) {  }",
-            parserOptions: { sourceType: "module" },
+            languageOptions: { sourceType: "module" },
         },
         {
             code: "var e; try {} catch (e) {  }",
-            parserOptions: { sourceType: "script" },
+            languageOptions: { sourceType: "script" },
         },
         ...(RuleTester.isSupported(2019) ? ["try {} catch {}"] : []),
     ],

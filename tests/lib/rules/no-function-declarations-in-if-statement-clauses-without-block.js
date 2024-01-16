@@ -9,7 +9,7 @@ new RuleTester().run("no-function-declarations-in-if-statement-clauses", rule, {
 })
 
 new RuleTester({
-    parserOptions: { sourceType: "script" },
+    languageOptions: { sourceType: "script" },
 }).run("no-function-declarations-in-if-statement-clauses-without-block", rule, {
     valid: [
         "function f() {}",

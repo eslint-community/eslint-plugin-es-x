@@ -43,57 +43,55 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Type Information`,
-    rule,
-    {
-        valid: [
-            { filename, code: "selectRange(2.9, 3.1)" },
-            { filename, code: "foo.unknown(0)" },
-            { filename, code: "foo.selectRange(2.9, 3.1)" },
-            {
-                filename,
-                code: "let foo = {}; foo.selectRange(2.9, 3.1)",
-            },
-            {
-                filename,
-                code: "selectRange(2.9, 3.1)",
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "foo.unknown(0)",
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: "let foo = new Intl.PluralRules(); foo.selectRange(2.9, 3.1)",
-                errors: [
-                    "ES2023 Intl API 'Intl.PluralRules.prototype.selectRange' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f(a: Intl.PluralRules) { a.selectRange(2.9, 3.1) }",
-                errors: [
-                    "ES2023 Intl API 'Intl.PluralRules.prototype.selectRange' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "foo.selectRange(2.9, 3.1)",
-                errors: [
-                    "ES2023 Intl API 'Intl.PluralRules.prototype.selectRange' method is forbidden.",
-                ],
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-    },
-)
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: "selectRange(2.9, 3.1)" },
+        { filename, code: "foo.unknown(0)" },
+        { filename, code: "foo.selectRange(2.9, 3.1)" },
+        {
+            filename,
+            code: "let foo = {}; foo.selectRange(2.9, 3.1)",
+        },
+        {
+            filename,
+            code: "selectRange(2.9, 3.1)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.unknown(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "let foo = new Intl.PluralRules(); foo.selectRange(2.9, 3.1)",
+            errors: [
+                "ES2023 Intl API 'Intl.PluralRules.prototype.selectRange' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f(a: Intl.PluralRules) { a.selectRange(2.9, 3.1) }",
+            errors: [
+                "ES2023 Intl API 'Intl.PluralRules.prototype.selectRange' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "foo.selectRange(2.9, 3.1)",
+            errors: [
+                "ES2023 Intl API 'Intl.PluralRules.prototype.selectRange' method is forbidden.",
+            ],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

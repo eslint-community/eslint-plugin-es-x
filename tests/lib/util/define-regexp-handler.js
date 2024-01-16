@@ -3,8 +3,9 @@
 const RuleTester = require("../../tester")
 const path = require("path")
 const assert = require("assert")
-const { ESLint } = require("eslint")
 const plugin = require("../../..")
+const { getLegacyESLint } = require("eslint-compat-utils/eslint")
+const ESLint = getLegacyESLint()
 
 // -----------------------------------------------------------------------------
 // Tests

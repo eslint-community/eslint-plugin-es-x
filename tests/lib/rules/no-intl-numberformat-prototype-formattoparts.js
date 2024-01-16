@@ -43,57 +43,55 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Type Information`,
-    rule,
-    {
-        valid: [
-            { filename, code: "formatToParts(num)" },
-            { filename, code: "foo.unknown(0)" },
-            { filename, code: "foo.formatToParts(num)" },
-            {
-                filename,
-                code: "let foo = {}; foo.formatToParts(num)",
-            },
-            {
-                filename,
-                code: "formatToParts(num)",
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "foo.unknown(0)",
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: "let foo = new Intl.NumberFormat(); foo.formatToParts(num)",
-                errors: [
-                    "ES2018 Intl API 'Intl.NumberFormat.prototype.formatToParts' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f(a: Intl.NumberFormat) { a.formatToParts(num) }",
-                errors: [
-                    "ES2018 Intl API 'Intl.NumberFormat.prototype.formatToParts' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "foo.formatToParts(num)",
-                errors: [
-                    "ES2018 Intl API 'Intl.NumberFormat.prototype.formatToParts' method is forbidden.",
-                ],
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-    },
-)
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: "formatToParts(num)" },
+        { filename, code: "foo.unknown(0)" },
+        { filename, code: "foo.formatToParts(num)" },
+        {
+            filename,
+            code: "let foo = {}; foo.formatToParts(num)",
+        },
+        {
+            filename,
+            code: "formatToParts(num)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.unknown(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "let foo = new Intl.NumberFormat(); foo.formatToParts(num)",
+            errors: [
+                "ES2018 Intl API 'Intl.NumberFormat.prototype.formatToParts' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f(a: Intl.NumberFormat) { a.formatToParts(num) }",
+            errors: [
+                "ES2018 Intl API 'Intl.NumberFormat.prototype.formatToParts' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "foo.formatToParts(num)",
+            errors: [
+                "ES2018 Intl API 'Intl.NumberFormat.prototype.formatToParts' method is forbidden.",
+            ],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

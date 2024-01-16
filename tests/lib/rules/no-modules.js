@@ -8,7 +8,7 @@ const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-modules.js")
 
 new RuleTester({
-    parserOptions: { sourceType: "module" },
+    languageOptions: { sourceType: "module" },
 }).run("no-modules", rule, {
     valid: ["module.exports = {}", "require('x')"],
     invalid: [

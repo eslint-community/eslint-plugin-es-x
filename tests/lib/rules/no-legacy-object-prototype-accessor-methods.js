@@ -78,18 +78,20 @@ new RuleTester().run("no-legacy-object-prototype-accessor-methods", rule, {
             __defineSetter__(prop, val, func)
             __lookupGetter__(prop)
             __lookupSetter__(prop)`,
-            globals: {
-                __defineGetter__: false,
-                __defineSetter__: false,
-                __lookupGetter__: false,
-                __lookupSetter__: false,
-            },
             errors: [
                 "LEGACY '__defineGetter__' method is forbidden.",
                 "LEGACY '__defineSetter__' method is forbidden.",
                 "LEGACY '__lookupGetter__' method is forbidden.",
                 "LEGACY '__lookupSetter__' method is forbidden.",
             ],
+            languageOptions: {
+                globals: {
+                    __defineGetter__: false,
+                    __defineSetter__: false,
+                    __lookupGetter__: false,
+                    __lookupSetter__: false,
+                },
+            },
         },
         {
             code: "__defineGetter__.call",

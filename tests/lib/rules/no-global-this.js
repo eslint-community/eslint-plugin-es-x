@@ -22,8 +22,8 @@ new RuleTester().run("no-global-this", rule, {
         },
         {
             code: "window.globalThis",
-            globals: { window: "readonly" },
             errors: ["ES2020 'globalThis' variable is forbidden."],
+            languageOptions: { globals: { window: "readonly" } },
         },
     ],
 })

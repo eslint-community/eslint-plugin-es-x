@@ -37,6 +37,10 @@ jobs:
           - eslint: 8
             node: 18
             os: macos-latest
+          # On next Node.js versions
+          - eslint: ^9.0.0-0
+            node: 20
+            os: ubuntu-latest
           # On other Node.js versions
           - eslint: 8
             node: 19
@@ -75,7 +79,7 @@ jobs:
             npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+
-            npm install -D eslint@${{ matrix.eslint }}
+            npm install -D eslint@${{ matrix.eslint }} --legacy-peer-deps
             npx rimraf node_modules
       - name: Install "@typescript-eslint/parser" ${{ matrix.tseslint }}
         run: |+
@@ -83,6 +87,6 @@ jobs:
             npx rimraf node_modules
         if: matrix.tseslint == 5
       - name: Install Packages
-        run: npm install
+        run: npm install -f
       - name: Test
         run: npm run -s test:mocha

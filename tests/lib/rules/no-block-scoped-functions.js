@@ -12,7 +12,7 @@ new RuleTester().run("no-block-scoped-functions", rule, {
         "function f() {}",
         {
             code: "function f() {}",
-            parserOptions: { sourceType: "module" },
+            languageOptions: { sourceType: "module" },
         },
         "function wrap() { function f() {} }",
         "(function() { function f() {} })()",

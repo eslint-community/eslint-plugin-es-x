@@ -44,75 +44,61 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Type Information`,
-    rule,
-    {
-        valid: [
-            { filename, code: "repeat(3)" },
-            { filename, code: "foo.charAt(0)" },
-            { filename, code: "foo.repeat(3)" },
-            { filename, code: "let foo = {}; foo.repeat(3)" },
-            {
-                filename,
-                code: "repeat(3)",
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "foo.charAt(0)",
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: "'foo'.repeat(3)",
-                errors: [
-                    "ES2015 'String.prototype.repeat' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "let foo = 'foo'; foo.repeat(3)",
-                errors: [
-                    "ES2015 'String.prototype.repeat' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "let foo = String(); foo.repeat(3)",
-                errors: [
-                    "ES2015 'String.prototype.repeat' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends string>(a: T) { a.repeat(3) }",
-                errors: [
-                    "ES2015 'String.prototype.repeat' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends 'a' | 'b'>(a: T) { a.repeat(3) }",
-                errors: [
-                    "ES2015 'String.prototype.repeat' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "foo.repeat(3)",
-                errors: [
-                    "ES2015 'String.prototype.repeat' method is forbidden.",
-                ],
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-    },
-)
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: "repeat(3)" },
+        { filename, code: "foo.charAt(0)" },
+        { filename, code: "foo.repeat(3)" },
+        { filename, code: "let foo = {}; foo.repeat(3)" },
+        {
+            filename,
+            code: "repeat(3)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.charAt(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "'foo'.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = 'foo'; foo.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = String(); foo.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends string>(a: T) { a.repeat(3) }",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends 'a' | 'b'>(a: T) { a.repeat(3) }",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "foo.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

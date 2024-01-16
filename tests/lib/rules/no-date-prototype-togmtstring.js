@@ -78,60 +78,58 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Type Information`,
-    rule,
-    {
-        valid: [
-            { filename, code: USE_GLOBAL_ID },
-            { filename, code: "foo.toUTCString()" },
-            { filename, code: WITH_ID_FOO },
-            { filename, code: `let foo = {}; ${WITH_ID_FOO}` },
-            {
-                filename,
-                code: USE_GLOBAL_ID,
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "foo.toUTCString()",
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: `let foo = new Date(); ${WITH_ID_FOO}`,
-                output: `let foo = new Date(); ${FIX_FOR_WITH_ID_FOO}`,
-                errors: FULL_ERRORS,
-            },
-            {
-                filename,
-                code: `function f<T extends Date>(a: T) { ${WITH_ID_A} }`,
-                output: `function f<T extends Date>(a: T) { ${FIX_FOR_WITH_ID_A} }`,
-                errors: FULL_ERRORS,
-            },
-            {
-                filename,
-                code: `function f<T extends Date | 'b'>(a: T) {${WITH_ID_A} }`,
-                output: `function f<T extends Date | 'b'>(a: T) {${FIX_FOR_WITH_ID_A} }`,
-                errors: FULL_ERRORS,
-            },
-            {
-                filename,
-                code: WITH_ID_FOO,
-                output: null,
-                errors: FULL_ERRORS.map((message, i) => ({
-                    message,
-                    suggestions: createSuggestions(WITH_ID_FOO, i),
-                })),
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-    },
-)
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: USE_GLOBAL_ID },
+        { filename, code: "foo.toUTCString()" },
+        { filename, code: WITH_ID_FOO },
+        { filename, code: `let foo = {}; ${WITH_ID_FOO}` },
+        {
+            filename,
+            code: USE_GLOBAL_ID,
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.toUTCString()",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: `let foo = new Date(); ${WITH_ID_FOO}`,
+            output: `let foo = new Date(); ${FIX_FOR_WITH_ID_FOO}`,
+            errors: FULL_ERRORS,
+        },
+        {
+            filename,
+            code: `function f<T extends Date>(a: T) { ${WITH_ID_A} }`,
+            output: `function f<T extends Date>(a: T) { ${FIX_FOR_WITH_ID_A} }`,
+            errors: FULL_ERRORS,
+        },
+        {
+            filename,
+            code: `function f<T extends Date | 'b'>(a: T) {${WITH_ID_A} }`,
+            output: `function f<T extends Date | 'b'>(a: T) {${FIX_FOR_WITH_ID_A} }`,
+            errors: FULL_ERRORS,
+        },
+        {
+            filename,
+            code: WITH_ID_FOO,
+            output: null,
+            errors: FULL_ERRORS.map((message, i) => ({
+                message,
+                suggestions: createSuggestions(WITH_ID_FOO, i),
+            })),
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

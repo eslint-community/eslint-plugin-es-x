@@ -69,94 +69,90 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Type Information`,
-    rule,
-    {
-        valid: [
-            { filename, code: "trimStart(2)" },
-            { filename, code: "foo.charAt(0)" },
-            { filename, code: "foo.trimStart(2)" },
-            { filename, code: "let foo = {}; foo.trimStart(2)" },
-            {
-                filename,
-                code: "trimStart(2)",
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "foo.charAt(0)",
-                settings: { "es-x": { aggressive: true } },
-            },
-            { filename, code: "'foo'.trimLeft(2)" },
-            { filename, code: "'foo'.trimRight(2)" },
-            {
-                filename,
-                code: "foo.trimLeft(2)",
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "foo.trimRight(2)",
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: "'foo'.trimStart(2)",
-                errors: [
-                    "ES2019 'String.prototype.trimStart' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "'foo'.trimEnd(2)",
-                errors: [
-                    "ES2019 'String.prototype.trimEnd' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "let foo = 'foo'; foo.trimStart(2)",
-                errors: [
-                    "ES2019 'String.prototype.trimStart' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "let foo = String(); foo.trimStart(2)",
-                errors: [
-                    "ES2019 'String.prototype.trimStart' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends string>(a: T) { a.trimStart(2) }",
-                errors: [
-                    "ES2019 'String.prototype.trimStart' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends 'a' | 'b'>(a: T) { a.trimStart(2) }",
-                errors: [
-                    "ES2019 'String.prototype.trimStart' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "foo.trimStart(2)",
-                errors: [
-                    "ES2019 'String.prototype.trimStart' method is forbidden.",
-                ],
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-    },
-)
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: "trimStart(2)" },
+        { filename, code: "foo.charAt(0)" },
+        { filename, code: "foo.trimStart(2)" },
+        { filename, code: "let foo = {}; foo.trimStart(2)" },
+        {
+            filename,
+            code: "trimStart(2)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.charAt(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        { filename, code: "'foo'.trimLeft(2)" },
+        { filename, code: "'foo'.trimRight(2)" },
+        {
+            filename,
+            code: "foo.trimLeft(2)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.trimRight(2)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "'foo'.trimStart(2)",
+            errors: [
+                "ES2019 'String.prototype.trimStart' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "'foo'.trimEnd(2)",
+            errors: ["ES2019 'String.prototype.trimEnd' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = 'foo'; foo.trimStart(2)",
+            errors: [
+                "ES2019 'String.prototype.trimStart' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "let foo = String(); foo.trimStart(2)",
+            errors: [
+                "ES2019 'String.prototype.trimStart' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f<T extends string>(a: T) { a.trimStart(2) }",
+            errors: [
+                "ES2019 'String.prototype.trimStart' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f<T extends 'a' | 'b'>(a: T) { a.trimStart(2) }",
+            errors: [
+                "ES2019 'String.prototype.trimStart' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "foo.trimStart(2)",
+            errors: [
+                "ES2019 'String.prototype.trimStart' method is forbidden.",
+            ],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

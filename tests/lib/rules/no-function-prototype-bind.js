@@ -85,99 +85,97 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Types`,
-    rule,
-    {
-        valid: [
-            { filename, code: "bind(this)" },
-            { filename, code: "foo.bind(this)" },
-            { filename, code: "(function fn(){}).name" },
-            { filename, code: "(()=>{}).name" },
-            { filename, code: "let foo = {}; foo.bind(this)" },
-            {
-                filename,
-                code: "bind(this)",
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: "(function fn(){}).bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "(()=>{}).bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "let foo = function () {} ; foo.bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "let foo = () => {} ; foo.bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "function foo () {} ; foo.bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "function f(a: () => number) { a.bind(this) }",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "let foo = { fn () {} } ; foo.fn.bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "Object.assign.bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "class Foo {fn()}; const foo = new Foo(); foo.fn.bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "let foo = Function(); foo.bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "let foo = String; foo.bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "function f<T extends ((a: any) => T)>(a: T) { a.bind(this) }",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "function f<T extends ((a: any) => T) | 'union'>(a: T) { a.bind(this) }",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-            },
-            {
-                filename,
-                code: "foo.bind(this)",
-                errors: ["ES5 'Function.prototype.bind' method is forbidden."],
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-    },
-)
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Types`, rule, {
+    valid: [
+        { filename, code: "bind(this)" },
+        { filename, code: "foo.bind(this)" },
+        { filename, code: "(function fn(){}).name" },
+        { filename, code: "(()=>{}).name" },
+        { filename, code: "let foo = {}; foo.bind(this)" },
+        {
+            filename,
+            code: "bind(this)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "(function fn(){}).bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "(()=>{}).bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = function () {} ; foo.bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = () => {} ; foo.bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function foo () {} ; foo.bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f(a: () => number) { a.bind(this) }",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = { fn () {} } ; foo.fn.bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "Object.assign.bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "class Foo {fn()}; const foo = new Foo(); foo.fn.bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = Function(); foo.bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = String; foo.bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends ((a: any) => T)>(a: T) { a.bind(this) }",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends ((a: any) => T) | 'union'>(a: T) { a.bind(this) }",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+        },
+        {
+            filename,
+            code: "foo.bind(this)",
+            errors: ["ES5 'Function.prototype.bind' method is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

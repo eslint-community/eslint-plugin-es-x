@@ -14,7 +14,7 @@ if (!RuleTester.isSupported(2020)) {
 }
 
 new RuleTester({
-    parserOptions: { sourceType: "module" },
+    languageOptions: { sourceType: "module" },
 }).run("no-import-meta", rule, {
     valid: ["import * as Foo from 'foo'", "import('foo')"],
     invalid: [

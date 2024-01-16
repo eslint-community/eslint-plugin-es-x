@@ -4,7 +4,7 @@ const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-labelled-function-declarations.js")
 
 new RuleTester({
-    parserOptions: { sourceType: "script" },
+    languageOptions: { sourceType: "script" },
 }).run("no-labelled-function-declarations", rule, {
     valid: ["function f() {}", "label: { function f() {} }"],
     invalid: [

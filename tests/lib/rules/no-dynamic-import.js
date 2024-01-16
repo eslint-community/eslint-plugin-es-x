@@ -17,7 +17,7 @@ new RuleTester().run("no-dynamic-import", rule, {
     valid: [
         {
             code: "import a from 'a'",
-            parserOptions: { sourceType: "module" },
+            languageOptions: { sourceType: "module" },
         },
         "obj.\nimport(source)",
     ],

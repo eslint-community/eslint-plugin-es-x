@@ -14,7 +14,7 @@ if (!RuleTester.isSupported(2020)) {
 }
 
 new RuleTester({
-    parserOptions: { sourceType: "module" },
+    languageOptions: { sourceType: "module" },
 }).run("no-export-ns-from", rule, {
     valid: [
         'export * from "mod"',
