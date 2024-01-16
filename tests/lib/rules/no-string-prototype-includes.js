@@ -48,80 +48,66 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Type Information`,
-    rule,
-    {
-        valid: [
-            { filename, code: "includes('a')" },
-            { filename, code: "foo.charAt(0)" },
-            { filename, code: "foo.includes('a')" },
-            { filename, code: "let foo = {}; foo.includes('a')" },
-            {
-                filename,
-                code: "includes('a')",
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "foo.charAt(0)",
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "[foo].includes('a')",
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: "'foo'.includes('a')",
-                errors: [
-                    "ES2015 'String.prototype.includes' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "let foo = 'foo'; foo.includes('a')",
-                errors: [
-                    "ES2015 'String.prototype.includes' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "let foo = String(); foo.includes('a')",
-                errors: [
-                    "ES2015 'String.prototype.includes' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends string>(a: T) { a.includes('a') }",
-                errors: [
-                    "ES2015 'String.prototype.includes' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends 'a' | 'b'>(a: T) { a.includes('a') }",
-                errors: [
-                    "ES2015 'String.prototype.includes' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "foo.includes('a')",
-                errors: [
-                    "ES2015 'String.prototype.includes' method is forbidden.",
-                ],
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-    },
-)
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: "includes('a')" },
+        { filename, code: "foo.charAt(0)" },
+        { filename, code: "foo.includes('a')" },
+        { filename, code: "let foo = {}; foo.includes('a')" },
+        {
+            filename,
+            code: "includes('a')",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.charAt(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "[foo].includes('a')",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "'foo'.includes('a')",
+            errors: ["ES2015 'String.prototype.includes' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = 'foo'; foo.includes('a')",
+            errors: ["ES2015 'String.prototype.includes' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = String(); foo.includes('a')",
+            errors: ["ES2015 'String.prototype.includes' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends string>(a: T) { a.includes('a') }",
+            errors: ["ES2015 'String.prototype.includes' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends 'a' | 'b'>(a: T) { a.includes('a') }",
+            errors: ["ES2015 'String.prototype.includes' method is forbidden."],
+        },
+        {
+            filename,
+            code: "foo.includes('a')",
+            errors: ["ES2015 'String.prototype.includes' method is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

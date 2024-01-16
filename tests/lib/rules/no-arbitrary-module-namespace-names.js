@@ -14,7 +14,7 @@ if (!RuleTester.isSupported(2022)) {
 }
 
 new RuleTester({
-    parserOptions: { sourceType: "module" },
+    languageOptions: { sourceType: "module" },
 }).run("no-arbitrary-module-namespace-names", rule, {
     valid: [
         'export * from "mod"',

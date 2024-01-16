@@ -41,14 +41,13 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
 new RuleTester({
-    parser,
-    parserOptions: { tsconfigRootDir, project },
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
 }).run(`${ruleId} TS Full Type Information`, rule, {
     valid: [
         { filename, code: "foo.then(() => {})" },

@@ -6,8 +6,13 @@ const rule = require("../../../lib/rules/no-resizable-and-growable-arraybuffers.
 const ruleId = "no-resizable-and-growable-arraybuffers"
 
 const testerOptions = {
-    env: { browser: true },
-    globals: { ArrayBuffer: false, SharedArrayBuffer: false },
+    languageOptions: {
+        globals: {
+            ArrayBuffer: false,
+            SharedArrayBuffer: false,
+            window: false,
+        },
+    },
 }
 new RuleTester(testerOptions).run(ruleId, rule, {
     valid: [
@@ -142,15 +147,18 @@ new RuleTester(testerOptions).run(ruleId, rule, {
     ],
 })
 
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
 new RuleTester({
     ...testerOptions,
-    parser,
-    parserOptions: { tsconfigRootDir, project },
+    languageOptions: {
+        ...testerOptions.languageOptions,
+        parser,
+        parserOptions: { tsconfigRootDir, project },
+    },
 }).run(`${ruleId} TS Full Type Information`, rule, {
     valid: [
         { filename, code: "resize(8); grow(8);" },

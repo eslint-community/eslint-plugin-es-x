@@ -33,8 +33,8 @@ new RuleTester().run("no-hashbang", rule, {
             export {};
             console.log(1);
             `,
-            parserOptions: { sourceType: "module" },
             errors: ["ES2023 Hashbang comments are forbidden."],
+            languageOptions: { sourceType: "module" },
         },
     ],
 })

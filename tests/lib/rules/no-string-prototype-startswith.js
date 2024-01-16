@@ -50,75 +50,73 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require.resolve("@typescript-eslint/parser")
+const parser = require("@typescript-eslint/parser")
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
-new RuleTester({ parser, parserOptions: { tsconfigRootDir, project } }).run(
-    `${ruleId} TS Full Type Information`,
-    rule,
-    {
-        valid: [
-            { filename, code: "startsWith('a')" },
-            { filename, code: "foo.charAt(0)" },
-            { filename, code: "foo.startsWith('a')" },
-            { filename, code: "let foo = {}; foo.startsWith('a')" },
-            {
-                filename,
-                code: "startsWith('a')",
-                settings: { "es-x": { aggressive: true } },
-            },
-            {
-                filename,
-                code: "foo.charAt(0)",
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-        invalid: [
-            {
-                filename,
-                code: "'foo'.startsWith('a')",
-                errors: [
-                    "ES2015 'String.prototype.startsWith' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "let foo = 'foo'; foo.startsWith('a')",
-                errors: [
-                    "ES2015 'String.prototype.startsWith' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "let foo = String(); foo.startsWith('a')",
-                errors: [
-                    "ES2015 'String.prototype.startsWith' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends string>(a: T) { a.startsWith('a') }",
-                errors: [
-                    "ES2015 'String.prototype.startsWith' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "function f<T extends 'a' | 'b'>(a: T) { a.startsWith('a') }",
-                errors: [
-                    "ES2015 'String.prototype.startsWith' method is forbidden.",
-                ],
-            },
-            {
-                filename,
-                code: "foo.startsWith('a')",
-                errors: [
-                    "ES2015 'String.prototype.startsWith' method is forbidden.",
-                ],
-                settings: { "es-x": { aggressive: true } },
-            },
-        ],
-    },
-)
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: "startsWith('a')" },
+        { filename, code: "foo.charAt(0)" },
+        { filename, code: "foo.startsWith('a')" },
+        { filename, code: "let foo = {}; foo.startsWith('a')" },
+        {
+            filename,
+            code: "startsWith('a')",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.charAt(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "'foo'.startsWith('a')",
+            errors: [
+                "ES2015 'String.prototype.startsWith' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "let foo = 'foo'; foo.startsWith('a')",
+            errors: [
+                "ES2015 'String.prototype.startsWith' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "let foo = String(); foo.startsWith('a')",
+            errors: [
+                "ES2015 'String.prototype.startsWith' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f<T extends string>(a: T) { a.startsWith('a') }",
+            errors: [
+                "ES2015 'String.prototype.startsWith' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f<T extends 'a' | 'b'>(a: T) { a.startsWith('a') }",
+            errors: [
+                "ES2015 'String.prototype.startsWith' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "foo.startsWith('a')",
+            errors: [
+                "ES2015 'String.prototype.startsWith' method is forbidden.",
+            ],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

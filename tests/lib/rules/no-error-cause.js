@@ -73,5 +73,5 @@ const invalid = errorConstructorNames
     .reduce((acc, val) => acc.concat(val), [])
 
 new RuleTester({
-    parserOptions: { sourceType: "module" },
+    languageOptions: { sourceType: "module" },
 }).run("no-error-cause", rule, { valid, invalid })

@@ -1,11 +1,12 @@
 "use strict"
 
 const RuleTester = require("../../../tester")
-const { Linter } = require("eslint")
 const { deepStrictEqual } = require("assert")
 const {
     buildExpressionTypeProvider,
 } = require("../../../../lib/util/define-prototype-method-handler/object-type-checker")
+const { getLinter } = require("eslint-compat-utils/linter")
+const Linter = getLinter()
 
 // -----------------------------------------------------------------------------
 // Tests
@@ -422,43 +423,48 @@ function getResultOfBuildExpressionTypeProvider(code) {
     const linter = new Linter()
 
     const result = []
-    linter.defineRule("test-rule", {
-        create(context) {
-            const getType = buildExpressionTypeProvider(context)
-            return {
-                "CallExpression[callee.name = target]"(node) {
-                    result.push(...node.arguments.map(getType))
-                },
-            }
-        },
-    })
-
     const linterResult = linter.verify(code, {
-        parserOptions: {
+        plugins: {
+            test: {
+                rules: {
+                    "test-rule": {
+                        create(context) {
+                            const getType = buildExpressionTypeProvider(context)
+                            return {
+                                "CallExpression[callee.name = target]"(node) {
+                                    result.push(...node.arguments.map(getType))
+                                },
+                            }
+                        },
+                    },
+                },
+            },
+        },
+        languageOptions: {
             ecmaVersion: 2022,
             sourceType: "module",
+            globals: {
+                String: "readonly",
+                Number: "readonly",
+                Boolean: "readonly",
+                Symbol: "readonly",
+                Promise: "readonly",
+                BigInt: "readonly",
+                Intl: "readonly",
+                Int8Array: "readonly",
+                Uint8Array: "readonly",
+                Uint8ClampedArray: "readonly",
+                Int16Array: "readonly",
+                Uint16Array: "readonly",
+                Int32Array: "readonly",
+                Uint32Array: "readonly",
+                Float32Array: "readonly",
+                Float64Array: "readonly",
+                BigInt64Array: "readonly",
+                BigUint64Array: "readonly",
+            },
         },
-        globals: {
-            String: "readonly",
-            Number: "readonly",
-            Boolean: "readonly",
-            Symbol: "readonly",
-            Promise: "readonly",
-            BigInt: "readonly",
-            Intl: "readonly",
-            Int8Array: "readonly",
-            Uint8Array: "readonly",
-            Uint8ClampedArray: "readonly",
-            Int16Array: "readonly",
-            Uint16Array: "readonly",
-            Int32Array: "readonly",
-            Uint32Array: "readonly",
-            Float32Array: "readonly",
-            Float64Array: "readonly",
-            BigInt64Array: "readonly",
-            BigUint64Array: "readonly",
-        },
-        rules: { "test-rule": "warn" },
+        rules: { "test/test-rule": "warn" },
     })
     deepStrictEqual(linterResult, [])
     return result

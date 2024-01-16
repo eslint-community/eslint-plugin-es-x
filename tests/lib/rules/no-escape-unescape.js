@@ -29,8 +29,8 @@ new RuleTester().run("no-escape-unescape", rule, {
         },
         {
             code: "window.escape",
-            globals: { window: "readonly" },
             errors: ["Annex B feature 'escape' is forbidden."],
+            languageOptions: { globals: { window: "readonly" } },
         },
     ],
 })

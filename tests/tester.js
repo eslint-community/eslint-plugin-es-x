@@ -4,9 +4,11 @@
  */
 "use strict"
 
-const { Linter, RuleTester } = require("eslint")
+const { Linter } = require("eslint")
+const { getRuleTester } = require("eslint-compat-utils/rule-tester")
 const { builtin } = require("globals")
 const semver = require("semver")
+const RuleTester = getRuleTester()
 
 const eslintVersion = new Linter().version
 const ecmaVersion =
@@ -24,16 +26,16 @@ const ecmaVersion =
 console.log("ECMAScript Version: %d", ecmaVersion)
 
 RuleTester.setDefaultConfig({
-    parserOptions: {
+    languageOptions: {
         ecmaVersion,
         sourceType: "script",
-    },
-    globals: {
-        AggregateError: "readonly",
-        FinalizationRegistry: "readonly",
-        WeakRef: "readonly",
-        Intl: "readonly",
-        ...builtin,
+        globals: {
+            AggregateError: "readonly",
+            FinalizationRegistry: "readonly",
+            WeakRef: "readonly",
+            Intl: "readonly",
+            ...builtin,
+        },
     },
 })
 RuleTester.isSupported = (targetEcmaVersion) => targetEcmaVersion <= ecmaVersion
