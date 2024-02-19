@@ -18,7 +18,7 @@
     "eslint-compat-utils": "^0.4.1"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^6.1.0",
+    "@typescript-eslint/parser": "^7.0.2",
     "acorn": "^8.7.0",
     "env-cmd": "^10.1.0",
     "eslint": "^8.11.0",
