@@ -76,7 +76,7 @@ If you use legacy config, configure your `.eslintrc.*` file:
 
 ### Presets
 
-See the [Presets](./presets/index.md) documentation.
+See the [Available Configs](./configs/index.md) documentation.
 
 For example:
 
