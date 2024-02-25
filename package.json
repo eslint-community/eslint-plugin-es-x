@@ -28,7 +28,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.0.0",
     "espree": "^9.3.1",
-    "globals": "^13.0.0",
+    "globals": "^14.0.0",
     "jsdom": "^23.0.1",
     "mocha": "^10.0.0",
     "monaco-editor": "^0.46.0",
