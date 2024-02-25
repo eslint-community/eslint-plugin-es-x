@@ -26,7 +26,7 @@ describe("flat config", () => {
         describe(`flat/${name}`, () => {
             it("should lint without errors", () =>
                 lint([config]).then((result) => {
-                    assert.strictEqual(result.messages.length, 0)
+                    assert.deepStrictEqual(result.messages, [])
                 }))
         })
         allConfigs.push(config)
@@ -34,7 +34,7 @@ describe("flat config", () => {
     describe("all flat configs", () => {
         it("should lint without errors", () =>
             lint(allConfigs).then((result) => {
-                assert.strictEqual(result.messages, [])
+                assert.deepStrictEqual(result.messages, [])
             }))
     })
 })
