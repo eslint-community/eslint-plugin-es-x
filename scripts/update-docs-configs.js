@@ -85,7 +85,7 @@ function appendConfig(configName) {
     contents.push("eslint.config.js:")
     contents.push("")
     contents.push("```js")
-    contents.push(`import * as pluginESx from "eslint-plugin-es-x"
+    contents.push(`import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/${configName}']
 ]`)

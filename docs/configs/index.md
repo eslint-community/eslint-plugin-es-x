@@ -12,7 +12,7 @@ disallow the new stuff to be planned for the next yearly ECMAScript snapshot.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-esnext']
 ]
@@ -37,7 +37,7 @@ disallow new stuff that ES2023 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2023']
 ]
@@ -62,7 +62,7 @@ disallow new stuff that ES2023 Intl API (ECMA-402) doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2023-intl-api']
 ]
@@ -87,7 +87,7 @@ disallow new stuff that ES2022 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2022']
 ]
@@ -112,7 +112,7 @@ disallow new stuff that ES2022 Intl API (ECMA-402) doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2022-intl-api']
 ]
@@ -137,7 +137,7 @@ disallow new stuff that ES2021 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2021']
 ]
@@ -162,7 +162,7 @@ disallow new stuff that ES2021 Intl API (ECMA-402) doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2021-intl-api']
 ]
@@ -187,7 +187,7 @@ disallow new stuff that ES2020 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2020']
 ]
@@ -212,7 +212,7 @@ disallow new stuff that ES2020 Intl API (ECMA-402) doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2020-intl-api']
 ]
@@ -237,7 +237,7 @@ disallow new stuff that ES2019 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2019']
 ]
@@ -262,7 +262,7 @@ disallow new stuff that ES2018 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2018']
 ]
@@ -287,7 +287,7 @@ disallow new stuff that ES2018 Intl API (ECMA-402) doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2018-intl-api']
 ]
@@ -312,7 +312,7 @@ disallow new stuff that ES2017 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2017']
 ]
@@ -337,7 +337,7 @@ disallow new stuff that ES2017 Intl API (ECMA-402) doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2017-intl-api']
 ]
@@ -362,7 +362,7 @@ disallow new stuff that ES2016 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2016']
 ]
@@ -387,7 +387,7 @@ disallow new stuff that ES2016 Intl API (ECMA-402) doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2016-intl-api']
 ]
@@ -412,7 +412,7 @@ disallow new stuff that ES2015 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es2015']
 ]
@@ -437,7 +437,7 @@ disallow new stuff that ES5 doesn't include.
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/no-new-in-es5']
 ]
@@ -462,7 +462,7 @@ disallow new stuff that ES2023 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2022']
 ]
@@ -487,7 +487,7 @@ disallow new stuff that ES2023 Intl API (ECMA-402) doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2022-intl-api']
 ]
@@ -512,7 +512,7 @@ disallow new stuff that ES2022 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2021']
 ]
@@ -537,7 +537,7 @@ disallow new stuff that ES2022 Intl API (ECMA-402) doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2021-intl-api']
 ]
@@ -562,7 +562,7 @@ disallow new stuff that ES2021 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2020']
 ]
@@ -587,7 +587,7 @@ disallow new stuff that ES2021 Intl API (ECMA-402) doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2020-intl-api']
 ]
@@ -612,7 +612,7 @@ disallow new stuff that ES2020 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2019']
 ]
@@ -637,7 +637,7 @@ disallow new stuff that ES2020 Intl API (ECMA-402) doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2019-intl-api']
 ]
@@ -662,7 +662,7 @@ disallow new stuff that ES2019 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2018']
 ]
@@ -687,7 +687,7 @@ disallow new stuff that ES2019 Intl API (ECMA-402) doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2018-intl-api']
 ]
@@ -712,7 +712,7 @@ disallow new stuff that ES2018 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2017']
 ]
@@ -737,7 +737,7 @@ disallow new stuff that ES2018 Intl API (ECMA-402) doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2017-intl-api']
 ]
@@ -762,7 +762,7 @@ disallow new stuff that ES2017 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2016']
 ]
@@ -787,7 +787,7 @@ disallow new stuff that ES2017 Intl API (ECMA-402) doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2016-intl-api']
 ]
@@ -812,7 +812,7 @@ disallow new stuff that ES2016 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2015']
 ]
@@ -837,7 +837,7 @@ disallow new stuff that ES2016 Intl API (ECMA-402) doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2015-intl-api']
 ]
@@ -862,7 +862,7 @@ disallow new stuff that ES2015 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es5']
 ]
@@ -887,7 +887,7 @@ disallow new stuff that ES2015 Intl API (ECMA-402) doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es-intl-api-1st-edition']
 ]
@@ -912,7 +912,7 @@ disallow new stuff that ES5 doesn't include
 eslint.config.js:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es3']
 ]
