@@ -7,7 +7,7 @@ since: "[eslint-plugin-es] v2.0.0"
 # es-x/no-regexp-unicode-property-escapes-2019
 > disallow the new values of RegExp Unicode property escape sequences in ES2019
 
-- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-es2019`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, and `plugin:es-x/restrict-to-es2018`
+- ✅ The following configurations enable this rule: [no-new-in-es2019], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], and [restrict-to-es2018]
 
 This rule reports the new values of ES2018 [RegExp Unicode property escape sequences](https://github.com/tc39/proposal-regexp-unicode-property-escapes#readme) which were added in ES2019.
 
@@ -53,3 +53,11 @@ This rule was introduced in [eslint-plugin-es] v2.0.0.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-regexp-unicode-property-escapes-2019.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-regexp-unicode-property-escapes-2019.js)
+
+[no-new-in-es2019]: ../configs/index.md#no-new-in-es2019
+[restrict-to-es3]: ../configs/index.md#restrict-to-es3
+[restrict-to-es5]: ../configs/index.md#restrict-to-es5
+[restrict-to-es2015]: ../configs/index.md#restrict-to-es2015
+[restrict-to-es2016]: ../configs/index.md#restrict-to-es2016
+[restrict-to-es2017]: ../configs/index.md#restrict-to-es2017
+[restrict-to-es2018]: ../configs/index.md#restrict-to-es2018

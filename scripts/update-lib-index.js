@@ -11,8 +11,15 @@ const { rules } = require("./rules")
 const collator = new Intl.Collator("en", { numeric: true })
 
 const configRootPath = path.resolve(__dirname, "../lib/configs")
+const flatConfigRootPath = path.resolve(__dirname, "../lib/configs/flat")
 const configIds = fs
     .readdirSync(configRootPath)
+    .filter((f) => f.endsWith(".js"))
+    .map((f) => path.basename(f, ".js"))
+    .sort(collator.compare.bind(collator))
+const flatConfigIds = fs
+    .readdirSync(flatConfigRootPath)
+    .filter((f) => f.endsWith(".js"))
     .map((f) => path.basename(f, ".js"))
     .sort(collator.compare.bind(collator))
 const legacyConfigIds = [
@@ -34,9 +41,23 @@ fs.writeFileSync(
 "use strict"
 
 const { printWarningOfDeprecatedConfig } = require("./utils")
+const { version, name } = require("../package.json")
 
-module.exports = {
+const plugin = {
+    meta: { version, name },
     configs: {
+        flat: {
+            ${flatConfigIds
+                .map(
+                    (id) => `get "${id}"() {
+                    return {
+                        plugins: {"es-x": plugin},
+                        ...require("./configs/${id}")
+                    }
+                }`,
+                )
+                .join(",")},
+        },
         ${configIds
             .map((id) => `"${id}":require("./configs/${id}")`)
             .join(",")},
@@ -53,6 +74,8 @@ module.exports = {
         ${ruleIds.map((id) => `"${id}":require("./rules/${id}")`).join(",")}
     },
 }
+
+module.exports = plugin
 `,
 )
 

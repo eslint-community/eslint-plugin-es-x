@@ -7,7 +7,7 @@ since: "[eslint-plugin-es] v5.0.0"
 # es-x/no-string-prototype-trim
 > disallow the `String.prototype.trim` method
 
-- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-es5` and `plugin:es-x/restrict-to-es3`
+- ✅ The following configurations enable this rule: [no-new-in-es5] and [restrict-to-es3]
 
 This rule reports ES5 `String.prototype.trim` method as errors.
 
@@ -50,3 +50,6 @@ This rule was introduced in [eslint-plugin-es] v5.0.0.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-trim.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-trim.js)
+
+[no-new-in-es5]: ../configs/index.md#no-new-in-es5
+[restrict-to-es3]: ../configs/index.md#restrict-to-es3

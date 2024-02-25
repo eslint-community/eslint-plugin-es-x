@@ -7,7 +7,7 @@ since: "v7.1.0"
 # es-x/no-string-prototype-iswellformed-towellformed
 > disallow the `String.prototype.{isWellFormed,toWellFormed}` methods
 
-- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
+- ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2024 [`String.prototype.{isWellFormed,toWellFormed}` methods](https://github.com/tc39/proposal-is-usv-string) as errors.
 
@@ -47,3 +47,5 @@ This rule was introduced in v7.1.0.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-iswellformed-towellformed.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-iswellformed-towellformed.js)
+
+[no-new-in-esnext]: ../configs/index.md#no-new-in-esnext

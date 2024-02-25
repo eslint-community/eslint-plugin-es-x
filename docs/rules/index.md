@@ -6,7 +6,7 @@ This plugin provides the following rules.
 
 ## ES2024
 
-There is a config that enables the rules in this category: `plugin:es-x/no-new-in-esnext`
+There is a config that enables the rules in this category: [`no-new-in-esnext`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -19,7 +19,7 @@ There is a config that enables the rules in this category: `plugin:es-x/no-new-i
 
 ## ES2023
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2023`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, `plugin:es-x/restrict-to-es2020`, `plugin:es-x/restrict-to-es2021`, and `plugin:es-x/restrict-to-es2022`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2023`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], [`restrict-to-es2017`], [`restrict-to-es2018`], [`restrict-to-es2019`], [`restrict-to-es2020`], [`restrict-to-es2021`], and [`restrict-to-es2022`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -33,7 +33,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2023 Intl API
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2023-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, `plugin:es-x/restrict-to-es2019-intl-api`, `plugin:es-x/restrict-to-es2020-intl-api`, `plugin:es-x/restrict-to-es2021-intl-api`, and `plugin:es-x/restrict-to-es2022-intl-api`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2023-intl-api`], [`restrict-to-es-intl-api-1st-edition`], [`restrict-to-es2015-intl-api`], [`restrict-to-es2016-intl-api`], [`restrict-to-es2017-intl-api`], [`restrict-to-es2018-intl-api`], [`restrict-to-es2019-intl-api`], [`restrict-to-es2020-intl-api`], [`restrict-to-es2021-intl-api`], and [`restrict-to-es2022-intl-api`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -43,7 +43,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2022
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2022`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, `plugin:es-x/restrict-to-es2020`, and `plugin:es-x/restrict-to-es2021`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2022`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], [`restrict-to-es2017`], [`restrict-to-es2018`], [`restrict-to-es2019`], [`restrict-to-es2020`], and [`restrict-to-es2021`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -60,7 +60,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2022 Intl API
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2022-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, `plugin:es-x/restrict-to-es2019-intl-api`, `plugin:es-x/restrict-to-es2020-intl-api`, and `plugin:es-x/restrict-to-es2021-intl-api`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2022-intl-api`], [`restrict-to-es-intl-api-1st-edition`], [`restrict-to-es2015-intl-api`], [`restrict-to-es2016-intl-api`], [`restrict-to-es2017-intl-api`], [`restrict-to-es2018-intl-api`], [`restrict-to-es2019-intl-api`], [`restrict-to-es2020-intl-api`], and [`restrict-to-es2021-intl-api`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -69,7 +69,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2021
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2021`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, and `plugin:es-x/restrict-to-es2020`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2021`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], [`restrict-to-es2017`], [`restrict-to-es2018`], [`restrict-to-es2019`], and [`restrict-to-es2020`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -82,7 +82,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2021 Intl API
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2021-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, `plugin:es-x/restrict-to-es2019-intl-api`, and `plugin:es-x/restrict-to-es2020-intl-api`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2021-intl-api`], [`restrict-to-es-intl-api-1st-edition`], [`restrict-to-es2015-intl-api`], [`restrict-to-es2016-intl-api`], [`restrict-to-es2017-intl-api`], [`restrict-to-es2018-intl-api`], [`restrict-to-es2019-intl-api`], and [`restrict-to-es2020-intl-api`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -92,7 +92,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2020
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2020`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, and `plugin:es-x/restrict-to-es2019`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2020`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], [`restrict-to-es2017`], [`restrict-to-es2018`], and [`restrict-to-es2019`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -109,7 +109,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2020 Intl API
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2020-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, `plugin:es-x/restrict-to-es2017-intl-api`, `plugin:es-x/restrict-to-es2018-intl-api`, and `plugin:es-x/restrict-to-es2019-intl-api`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2020-intl-api`], [`restrict-to-es-intl-api-1st-edition`], [`restrict-to-es2015-intl-api`], [`restrict-to-es2016-intl-api`], [`restrict-to-es2017-intl-api`], [`restrict-to-es2018-intl-api`], and [`restrict-to-es2019-intl-api`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -118,7 +118,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2019
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2019`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, and `plugin:es-x/restrict-to-es2018`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2019`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], [`restrict-to-es2017`], and [`restrict-to-es2018`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -132,7 +132,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2018
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2018`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, and `plugin:es-x/restrict-to-es2017`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2018`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], and [`restrict-to-es2017`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -147,7 +147,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2018 Intl API
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2018-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, `plugin:es-x/restrict-to-es2016-intl-api`, and `plugin:es-x/restrict-to-es2017-intl-api`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2018-intl-api`], [`restrict-to-es-intl-api-1st-edition`], [`restrict-to-es2015-intl-api`], [`restrict-to-es2016-intl-api`], and [`restrict-to-es2017-intl-api`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -156,7 +156,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2017
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2017`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, and `plugin:es-x/restrict-to-es2016`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2017`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], and [`restrict-to-es2016`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -171,7 +171,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2017 Intl API
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2017-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, `plugin:es-x/restrict-to-es2015-intl-api`, and `plugin:es-x/restrict-to-es2016-intl-api`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2017-intl-api`], [`restrict-to-es-intl-api-1st-edition`], [`restrict-to-es2015-intl-api`], and [`restrict-to-es2016-intl-api`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -179,7 +179,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2016
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2016`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, and `plugin:es-x/restrict-to-es2015`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2016`], [`restrict-to-es3`], [`restrict-to-es5`], and [`restrict-to-es2015`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -188,7 +188,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2016 Intl API
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2016-intl-api`, `plugin:es-x/restrict-to-es-intl-api-1st-edition`, and `plugin:es-x/restrict-to-es2015-intl-api`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2016-intl-api`], [`restrict-to-es-intl-api-1st-edition`], and [`restrict-to-es2015-intl-api`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -196,7 +196,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES2015
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es2015`, `plugin:es-x/restrict-to-es3`, and `plugin:es-x/restrict-to-es5`
+There are multiple configs that enable all rules in this category: [`no-new-in-es2015`], [`restrict-to-es3`], and [`restrict-to-es5`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -282,7 +282,7 @@ There are multiple configs that enable all rules in this category: `plugin:es-x/
 
 ## ES5
 
-There are multiple configs that enable all rules in this category: `plugin:es-x/no-new-in-es5` and `plugin:es-x/restrict-to-es3`
+There are multiple configs that enable all rules in this category: [`no-new-in-es5`] and [`restrict-to-es3`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -337,3 +337,40 @@ Rules in this category are not included in any preset.
 | [es-x/no-string-prototype-substr](./no-string-prototype-substr.md) | disallow the `String.prototype.substr` method. |  |
 | [es-x/no-string-prototype-trimleft-trimright](./no-string-prototype-trimleft-trimright.md) | disallow the `String.prototype.{trimLeft,trimRight}` methods. | 🔧 |
 
+[`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
+[`no-new-in-es2023`]: ../configs/index.md#no-new-in-es2023
+[`restrict-to-es2022`]: ../configs/index.md#restrict-to-es2022
+[`no-new-in-es2023-intl-api`]: ../configs/index.md#no-new-in-es2023-intl-api
+[`restrict-to-es2022-intl-api`]: ../configs/index.md#restrict-to-es2022-intl-api
+[`no-new-in-es2022`]: ../configs/index.md#no-new-in-es2022
+[`restrict-to-es2021`]: ../configs/index.md#restrict-to-es2021
+[`no-new-in-es2022-intl-api`]: ../configs/index.md#no-new-in-es2022-intl-api
+[`restrict-to-es2021-intl-api`]: ../configs/index.md#restrict-to-es2021-intl-api
+[`no-new-in-es2021`]: ../configs/index.md#no-new-in-es2021
+[`restrict-to-es2020`]: ../configs/index.md#restrict-to-es2020
+[`no-new-in-es2021-intl-api`]: ../configs/index.md#no-new-in-es2021-intl-api
+[`restrict-to-es2020-intl-api`]: ../configs/index.md#restrict-to-es2020-intl-api
+[`no-new-in-es2020`]: ../configs/index.md#no-new-in-es2020
+[`restrict-to-es2019`]: ../configs/index.md#restrict-to-es2019
+[`no-new-in-es2020-intl-api`]: ../configs/index.md#no-new-in-es2020-intl-api
+[`restrict-to-es2019-intl-api`]: ../configs/index.md#restrict-to-es2019-intl-api
+[`no-new-in-es2019`]: ../configs/index.md#no-new-in-es2019
+[`restrict-to-es2018`]: ../configs/index.md#restrict-to-es2018
+[`restrict-to-es2018-intl-api`]: ../configs/index.md#restrict-to-es2018-intl-api
+[`no-new-in-es2018`]: ../configs/index.md#no-new-in-es2018
+[`restrict-to-es2017`]: ../configs/index.md#restrict-to-es2017
+[`no-new-in-es2018-intl-api`]: ../configs/index.md#no-new-in-es2018-intl-api
+[`restrict-to-es2017-intl-api`]: ../configs/index.md#restrict-to-es2017-intl-api
+[`no-new-in-es2017`]: ../configs/index.md#no-new-in-es2017
+[`restrict-to-es2016`]: ../configs/index.md#restrict-to-es2016
+[`no-new-in-es2017-intl-api`]: ../configs/index.md#no-new-in-es2017-intl-api
+[`restrict-to-es2016-intl-api`]: ../configs/index.md#restrict-to-es2016-intl-api
+[`no-new-in-es2016`]: ../configs/index.md#no-new-in-es2016
+[`restrict-to-es2015`]: ../configs/index.md#restrict-to-es2015
+[`no-new-in-es2016-intl-api`]: ../configs/index.md#no-new-in-es2016-intl-api
+[`restrict-to-es2015-intl-api`]: ../configs/index.md#restrict-to-es2015-intl-api
+[`no-new-in-es2015`]: ../configs/index.md#no-new-in-es2015
+[`restrict-to-es5`]: ../configs/index.md#restrict-to-es5
+[`restrict-to-es-intl-api-1st-edition`]: ../configs/index.md#restrict-to-es-intl-api-1st-edition
+[`no-new-in-es5`]: ../configs/index.md#no-new-in-es5
+[`restrict-to-es3`]: ../configs/index.md#restrict-to-es3

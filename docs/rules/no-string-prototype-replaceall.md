@@ -7,7 +7,7 @@ since: "[eslint-plugin-es] v5.0.0"
 # es-x/no-string-prototype-replaceall
 > disallow the `String.prototype.replaceAll` method
 
-- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-es2021`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, `plugin:es-x/restrict-to-es2015`, `plugin:es-x/restrict-to-es2016`, `plugin:es-x/restrict-to-es2017`, `plugin:es-x/restrict-to-es2018`, `plugin:es-x/restrict-to-es2019`, and `plugin:es-x/restrict-to-es2020`
+- ✅ The following configurations enable this rule: [no-new-in-es2021], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], and [restrict-to-es2020]
 
 This rule reports ES2021 [`String.prototype.replaceAll` method](https://github.com/tc39/proposal-string-replaceall) as errors.
 
@@ -50,3 +50,13 @@ This rule was introduced in [eslint-plugin-es] v5.0.0.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-replaceall.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-replaceall.js)
+
+[no-new-in-es2021]: ../configs/index.md#no-new-in-es2021
+[restrict-to-es3]: ../configs/index.md#restrict-to-es3
+[restrict-to-es5]: ../configs/index.md#restrict-to-es5
+[restrict-to-es2015]: ../configs/index.md#restrict-to-es2015
+[restrict-to-es2016]: ../configs/index.md#restrict-to-es2016
+[restrict-to-es2017]: ../configs/index.md#restrict-to-es2017
+[restrict-to-es2018]: ../configs/index.md#restrict-to-es2018
+[restrict-to-es2019]: ../configs/index.md#restrict-to-es2019
+[restrict-to-es2020]: ../configs/index.md#restrict-to-es2020

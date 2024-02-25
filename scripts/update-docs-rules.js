@@ -6,9 +6,7 @@
 
 const fs = require("fs")
 const path = require("path")
-const { ESLint } = require("eslint")
 const { rules } = require("./rules")
-const plugin = require("..")
 
 main()
 
@@ -32,19 +30,16 @@ function getSince(content) {
 
 async function main() {
     const docsRoot = path.resolve(__dirname, "../docs/rules/")
-    const configRoot = path.resolve(__dirname, "../lib/configs/")
+    const configRoot = path.resolve(__dirname, "../lib/configs/flat")
     const configs = []
     for (const filename of fs.readdirSync(configRoot)) {
-        const id = `plugin:es-x/${path.basename(filename, ".js")}`
-        const overrideConfigFile = path.join(configRoot, filename)
-        const engine = new ESLint({
-            overrideConfigFile,
-            useEslintrc: false,
-            plugins: { "es-x": plugin },
-        })
-        const config = await engine.calculateConfigForFile("a.js")
+        const configName = path.basename(filename, ".js")
+        const config = (await import(path.join(configRoot, filename))).default
         const ruleIds = new Set(Object.keys(config.rules))
-        configs.push({ id, ruleIds })
+        configs.push({
+            id: configName,
+            ruleIds,
+        })
     }
     const collator = new Intl.Collator("en", { numeric: true })
 
@@ -62,7 +57,7 @@ async function main() {
         content = adjustContents(content)
         const enabledConfigIds = configs
             .filter((c) => c.ruleIds.has(`es-x/${ruleId}`))
-            .map((c) => `\`${c.id}\``)
+            .map((c) => c.id)
             .sort(collator.compare.bind(collator))
         const frontmatter = [
             "---",
@@ -79,12 +74,18 @@ async function main() {
             )
         }
 
+        const links = []
         if (enabledConfigIds.length > 0) {
             headerLines.push(
                 `- ✅ The following configurations enable this rule: ${new Intl.ListFormat(
                     "en",
                     { type: "conjunction" },
-                ).format(enabledConfigIds)}`,
+                ).format(enabledConfigIds.map((id) => `[${id}]`))}`,
+            )
+            links.push(
+                ...enabledConfigIds.map(
+                    (id) => `[${id}]: ../configs/index.md#${id}`,
+                ),
             )
         }
         if (fixable) {
@@ -117,7 +118,7 @@ This rule was introduced in ${since}.${
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/${ruleId}.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/${ruleId}.js)
-`
+${links.length ? `\n${links.join("\n")}\n` : ""}`
 
         fs.writeFileSync(filePath, newContent)
     }
