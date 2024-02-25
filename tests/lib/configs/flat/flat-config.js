@@ -19,24 +19,32 @@ const TEST_CWD = path.join(
 )
 
 describe("flat config", () => {
+    const allConfigs = []
     for (const [name, config] of Object.entries(plugin.configs).filter(([n]) =>
         n.startsWith("flat/"),
     )) {
         describe(`flat/${name}`, () => {
             it("should lint without errors", () =>
-                lint(config).then((result) => {
+                lint([config]).then((result) => {
                     assert.strictEqual(result.messages.length, 0)
                 }))
         })
+        allConfigs.push(config)
     }
+    describe("all flat configs", () => {
+        it("should lint without errors", () =>
+            lint(allConfigs).then((result) => {
+                assert.strictEqual(result.messages, [])
+            }))
+    })
 })
 
-async function lint(config) {
+async function lint(configs) {
     const ESLint = await eslintModule.loadESLint({ useFlatConfig: true })
     const eslint = new ESLint({
         cwd: TEST_CWD,
         overrideConfigFile: true,
-        overrideConfig: [config],
+        overrideConfig: configs,
     })
     return eslint
         .lintText(String.raw`var a = 42;`, { filePath: "test.js" })
