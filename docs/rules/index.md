@@ -10,6 +10,7 @@ There is a config that enables the rules in this category: `plugin:es-x/no-new-i
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
+| [es-x/no-arraybuffer-prototype-transfer](./no-arraybuffer-prototype-transfer.md) | disallow the `ArrayBuffer.prototype.transfer` method. |  |
 | [es-x/no-atomics-waitasync](./no-atomics-waitasync.md) | disallow the `Atomics.waitAsync` method. |  |
 | [es-x/no-object-map-groupby](./no-object-map-groupby.md) | disallow the `{Object,Map}.groupBy()` function (array grouping). |  |
 | [es-x/no-promise-withresolvers](./no-promise-withresolvers.md) | disallow the `Promise.withResolvers()` method. |  |
