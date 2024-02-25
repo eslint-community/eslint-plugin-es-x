@@ -46,18 +46,16 @@ const { version, name } = require("../package.json")
 const plugin = {
     meta: { version, name },
     configs: {
-        flat: {
-            ${flatConfigIds
-                .map(
-                    (id) => `get "${id}"() {
+        ${flatConfigIds
+            .map(
+                (id) => `get "flat/${id}"() {
                     return {
                         plugins: {"es-x": plugin},
-                        ...require("./configs/${id}")
+                        ...require("./configs/flat/${id}")
                     }
                 }`,
-                )
-                .join(",")},
-        },
+            )
+            .join(",")},
         ${configIds
             .map((id) => `"${id}":require("./configs/${id}")`)
             .join(",")},

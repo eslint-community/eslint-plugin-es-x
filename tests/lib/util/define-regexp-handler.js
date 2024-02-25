@@ -4,8 +4,8 @@ const RuleTester = require("../../tester")
 const path = require("path")
 const assert = require("assert")
 const plugin = require("../../..")
-const { getLegacyESLint } = require("eslint-compat-utils/eslint")
-const ESLint = getLegacyESLint()
+const { getESLint } = require("eslint-compat-utils/eslint")
+const ESLint = getESLint()
 
 // -----------------------------------------------------------------------------
 // Tests
@@ -39,13 +39,12 @@ describe("define-regexp-handler", () => {
 function lint(text) {
     const eslint = new ESLint({
         cwd: TEST_CWD,
-        plugins: { "eslint-plugin-es-x": plugin },
-        useEslintrc: false,
+        overrideConfigFile: true,
         overrideConfig: {
-            parserOptions: {
+            languageOptions: {
                 ecmaVersion: 2019,
             },
-            plugins: ["es-x"],
+            plugins: { "es-x": plugin },
         },
     })
     return eslint
