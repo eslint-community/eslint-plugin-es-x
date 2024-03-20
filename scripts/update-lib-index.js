@@ -43,7 +43,7 @@ fs.writeFileSync(
 const { printWarningOfDeprecatedConfig } = require("./utils")
 const { version, name } = require("../package.json")
 
-const plugin = {
+module.exports = {
     meta: { version, name },
     configs: {
         ${flatConfigIds
@@ -65,8 +65,6 @@ const plugin = {
         ${ruleIds.map((id) => `"${id}":require("./rules/${id}")`).join(",")}
     },
 }
-
-module.exports = plugin
 `,
 )
 
