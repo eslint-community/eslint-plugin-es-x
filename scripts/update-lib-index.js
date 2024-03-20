@@ -47,14 +47,7 @@ const plugin = {
     meta: { version, name },
     configs: {
         ${flatConfigIds
-            .map(
-                (id) => `get "flat/${id}"() {
-                    return {
-                        plugins: {"es-x": plugin},
-                        ...require("./configs/flat/${id}")
-                    }
-                }`,
-            )
+            .map((id) => `"flat/${id}": require("./configs/flat/${id}")`)
             .join(",")},
         ${configIds
             .map((id) => `"${id}":require("./configs/${id}")`)

@@ -36,7 +36,7 @@ for (const {
     fs.writeFileSync(
         path.join(Root, `${configName}.js`),
         wrapCode(`{ 
-    // plugins: { "es-x": plugin }, // Plugin instance is applied with "index.js".
+    plugins: { get "es-x"() { return require("../../index.js") } },
     rules: { ${ruleSetting} }
 }`),
     )
@@ -54,7 +54,7 @@ for (const {
         fs.writeFileSync(
             path.join(Root, `${aboveConfigName}.js`),
             wrapCode(`{
-    // plugins: { "es-x": plugin }, // Plugin instance is applied with "index.js".
+    plugins: { get "es-x"() { return require("../../index.js") } },
     rules: {${extendSetting}}
 }`),
         )
