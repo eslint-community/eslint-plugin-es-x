@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-arraybuffer-prototype-transfer"
 description: "disallow the `ArrayBuffer.prototype.transfer` method"
+since: "v7.6.0"
 ---
 
 # es-x/no-arraybuffer-prototype-transfer
 > disallow the `ArrayBuffer.prototype.transfer` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2024 [``ArrayBuffer.prototype.transfer`` methods](https://github.com/tc39/proposal-arraybuffer-transfer) as errors.
@@ -49,6 +49,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v7.6.0.
 
 ## 📚 References
 
