@@ -7,7 +7,7 @@ since: "[eslint-plugin-es] v1.0.0"
 # es-x/no-template-literals
 > disallow template literals
 
-- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-es2015`, `plugin:es-x/restrict-to-es3`, and `plugin:es-x/restrict-to-es5`
+- ✅ The following configurations enable this rule: [no-new-in-es2015], [restrict-to-es3], and [restrict-to-es5]
 - 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
 This rule reports ES2015 template literals as errors.
@@ -49,3 +49,7 @@ This rule was introduced in [eslint-plugin-es] v1.0.0.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-template-literals.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-template-literals.js)
+
+[no-new-in-es2015]: ../configs/index.md#no-new-in-es2015
+[restrict-to-es3]: ../configs/index.md#restrict-to-es3
+[restrict-to-es5]: ../configs/index.md#restrict-to-es5

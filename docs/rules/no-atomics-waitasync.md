@@ -7,9 +7,9 @@ since: "v7.1.0"
 # es-x/no-atomics-waitasync
 > disallow the `Atomics.waitAsync` method
 
-- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
+- ✅ The following configurations enable this rule: [no-new-in-esnext]
 
-This rule reports ES2024 [`Atomics.waitAsync}` method](https://github.com/tc39/proposal-atomics-wait-async) as errors.
+This rule reports ES2024 [`Atomics.waitAsync` method](https://github.com/tc39/proposal-atomics-wait-async) as errors.
 
 ## 💡 Examples
 
@@ -32,3 +32,5 @@ This rule was introduced in v7.1.0.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-atomics-waitasync.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-atomics-waitasync.js)
+
+[no-new-in-esnext]: ../configs/index.md#no-new-in-esnext

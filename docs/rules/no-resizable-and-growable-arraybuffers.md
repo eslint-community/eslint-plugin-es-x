@@ -7,7 +7,7 @@ since: "v7.3.0"
 # es-x/no-resizable-and-growable-arraybuffers
 > disallow resizable and growable ArrayBuffers
 
-- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
+- ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2024 [Resizable and growable ArrayBuffers](https://github.com/tc39/proposal-resizablearraybuffer) as errors.
 
@@ -58,3 +58,5 @@ This rule was introduced in v7.3.0.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-resizable-and-growable-arraybuffers.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-resizable-and-growable-arraybuffers.js)
+
+[no-new-in-esnext]: ../configs/index.md#no-new-in-esnext

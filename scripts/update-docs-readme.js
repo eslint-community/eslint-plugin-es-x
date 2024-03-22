@@ -5,22 +5,43 @@
 "use strict"
 
 const fs = require("fs")
-const path = require("path")
 const { categories } = require("./rules")
 const collator = new Intl.Collator("en", { numeric: true })
 
+const links = []
+const configs = []
 // Analyze configs
-const configRoot = path.resolve(__dirname, "../lib/configs/")
-const configs = fs.readdirSync(configRoot).map((filename) => {
-    const id = `plugin:es-x/${path.basename(filename, ".js")}`
-    const configFile = path.join(configRoot, filename)
-    const categoryIds = [
-        extractCategoryId(configFile),
-        ...(require(configFile).extends || []).map(extractCategoryId),
-    ].filter(Boolean)
-
-    return { id, categoryIds }
-})
+for (const {
+    rules,
+    edition,
+    configName,
+    aboveConfigName,
+    specKind,
+    id,
+} of Object.values(categories)) {
+    if (configName) {
+        configs.push({ id: configName, categoryIds: [id] })
+        if (rules.length) {
+            links.push(`[\`${configName}\`]: ../configs/index.md#${configName}`)
+        }
+    }
+    if (aboveConfigName) {
+        const includesCategories = Object.values(categories).filter(
+            (c) =>
+                c.edition >= edition &&
+                c.specKind === specKind &&
+                !c.experimental &&
+                c.configName,
+        )
+        configs.push({
+            id: aboveConfigName,
+            categoryIds: includesCategories.map((c) => c.id),
+        })
+        links.push(
+            `[\`${aboveConfigName}\`]: ../configs/index.md#${aboveConfigName}`,
+        )
+    }
+}
 
 // Convert categories to README sections
 const ruleSectionContent = Object.values(categories)
@@ -38,21 +59,11 @@ This plugin provides the following rules.
 - 🔧 mark means that the \`--fix\` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
 ${ruleSectionContent}
+${links.join("\n")}
 `,
 )
 
 //------------------------------------------------------------------------------
-
-function extractCategoryId(filePath) {
-    const basename = path.basename(filePath, ".js")
-    const category = Object.values(categories).find(
-        ({ configName }) => configName === basename,
-    )
-    if (category) {
-        return category.id
-    }
-    return undefined
-}
 
 /**
  * Create markdown text for a category.
@@ -64,7 +75,7 @@ function toSection(category) {
     }
     const configIds = configs
         .filter((c) => c.categoryIds.includes(category.id))
-        .map((c) => `\`${c.id}\``)
+        .map((c) => `[\`${c.id}\`]`)
         .sort(collator.compare.bind(collator))
 
     let comment = ""

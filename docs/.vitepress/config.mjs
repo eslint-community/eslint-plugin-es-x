@@ -56,6 +56,7 @@ export default defineConfig({
             {
                 items: [
                     { text: "Guide", link: "/" },
+                    { text: "Available Configs", link: "/configs/" },
                     { text: "Available Rules", link: "/rules/" },
                 ],
             },

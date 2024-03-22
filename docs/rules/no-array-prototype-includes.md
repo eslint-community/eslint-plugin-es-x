@@ -7,7 +7,7 @@ since: "[eslint-plugin-es] v5.0.0"
 # es-x/no-array-prototype-includes
 > disallow the `Array.prototype.includes` method
 
-- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-es2016`, `plugin:es-x/restrict-to-es3`, `plugin:es-x/restrict-to-es5`, and `plugin:es-x/restrict-to-es2015`
+- ✅ The following configurations enable this rule: [no-new-in-es2016], [restrict-to-es3], [restrict-to-es5], and [restrict-to-es2015]
 
 This rule reports ES2016 [`Array.prototype.includes` method](https://github.com/tc39/proposal-Array.prototype.includes) as errors.
 
@@ -50,3 +50,8 @@ This rule was introduced in [eslint-plugin-es] v5.0.0.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-array-prototype-includes.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-array-prototype-includes.js)
+
+[no-new-in-es2016]: ../configs/index.md#no-new-in-es2016
+[restrict-to-es3]: ../configs/index.md#restrict-to-es3
+[restrict-to-es5]: ../configs/index.md#restrict-to-es5
+[restrict-to-es2015]: ../configs/index.md#restrict-to-es2015
