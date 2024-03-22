@@ -7,7 +7,7 @@ description: "disallow the `ArrayBuffer.prototype.transfer` method"
 > disallow the `ArrayBuffer.prototype.transfer` method
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
-- ✅ The following configurations enable this rule: `plugin:es-x/no-new-in-esnext`
+- ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2024 [``ArrayBuffer.prototype.transfer`` methods](https://github.com/tc39/proposal-arraybuffer-transfer) as errors.
 
@@ -54,3 +54,5 @@ This is prior to the `settings['es-x'].aggressive` setting.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-arraybuffer-prototype-transfer.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-arraybuffer-prototype-transfer.js)
+
+[no-new-in-esnext]: ../configs/index.md#no-new-in-esnext
