@@ -132,7 +132,7 @@ new RuleTester(testerOptions).run(ruleId, rule, {
                     column: 53,
                 },
                 {
-                    message: "ES2024 Resizable ArrayBuffer is forbidden.",
+                    message: "ES2024 Growable SharedArrayBuffer is forbidden.",
                     line: 3,
                     column: 25,
                 },
