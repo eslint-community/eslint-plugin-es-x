@@ -67,7 +67,7 @@ function transformRequire(code) {
                 id += Math.random().toString(32).substring(2)
             }
             modules.set(id, moduleString)
-            return id
+            return `${id}()`
         },
     )
 
@@ -77,7 +77,7 @@ function transformRequire(code) {
                 id,
                 moduleString,
             ]) => `import * as __temp_${id} from ${moduleString};
-const ${id} = __temp_${id}.default || __temp_${id};
+const ${id} = () => __temp_${id}.default || __temp_${id};
 `,
         )
         .join("")};\n${replaced}`
