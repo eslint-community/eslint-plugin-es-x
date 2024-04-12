@@ -17,6 +17,8 @@ export async function setupMonacoEditor({
         language,
         automaticLayout: true,
         fontSize: 14,
+        fontFamily:
+            'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
         // tabSize: 2,
         minimap: {
             enabled: false,
