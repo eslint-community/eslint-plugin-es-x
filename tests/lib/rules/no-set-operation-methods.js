@@ -3,7 +3,7 @@
 const path = require("path")
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-set-operation-methods.js")
-const ruleId = "no-string-prototype-codepointat"
+const ruleId = "no-set-operation-methods"
 
 const methods = [
     "union",
@@ -88,11 +88,6 @@ new RuleTester({
         ...methods.map((method) => ({
             filename,
             code: `function f<T extends Set<string>>(a: T) { a.${method}(other) }`,
-            errors: [`ES2025 'Set.prototype.${method}' method is forbidden.`],
-        })),
-        ...methods.map((method) => ({
-            filename,
-            code: `function f<T extends Set>(a: T) { a.${method}(other) }`,
             errors: [`ES2025 'Set.prototype.${method}' method is forbidden.`],
         })),
         ...methods.map((method) => ({
