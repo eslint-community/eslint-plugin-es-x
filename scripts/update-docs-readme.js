@@ -8,7 +8,7 @@ const fs = require("fs")
 const { categories } = require("./rules")
 const collator = new Intl.Collator("en", { numeric: true })
 
-const links = []
+const links = new Set()
 const configs = []
 // Analyze configs
 for (const {
@@ -22,7 +22,7 @@ for (const {
     if (configName) {
         configs.push({ id: configName, categoryIds: [id] })
         if (rules.length) {
-            links.push(`[\`${configName}\`]: ../configs/index.md#${configName}`)
+            links.add(`[\`${configName}\`]: ../configs/index.md#${configName}`)
         }
     }
     if (aboveConfigName) {
@@ -37,7 +37,7 @@ for (const {
             id: aboveConfigName,
             categoryIds: includesCategories.map((c) => c.id),
         })
-        links.push(
+        links.add(
             `[\`${aboveConfigName}\`]: ../configs/index.md#${aboveConfigName}`,
         )
     }
@@ -59,7 +59,7 @@ This plugin provides the following rules.
 - 🔧 mark means that the \`--fix\` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
 ${ruleSectionContent}
-${links.join("\n")}
+${[...links].join("\n")}
 `,
 )
 

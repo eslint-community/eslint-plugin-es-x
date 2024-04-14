@@ -22,7 +22,9 @@ for (const {
     configName,
     specKind,
     experimental,
-} of Object.values(categories)) {
+} of Object.values(categories).filter((cat, i, list) =>
+    list.slice(0, i).every((c) => c.configName !== cat.configName),
+)) {
     if (!configName || !rules.length) {
         continue
     }
@@ -30,23 +32,19 @@ for (const {
     contents.push("")
 
     if (experimental) {
-        if (specKind === "ecma262") {
-            contents.push(
-                "disallow the new stuff to be planned for the next yearly ECMAScript snapshot.",
-            )
-        } else {
-            contents.push(
-                "disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.",
-            )
-        }
+        contents.push(
+            specKind === "ecma262"
+                ? "disallow the new stuff to be planned for the next yearly ECMAScript snapshot."
+                : "disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.",
+        )
         contents.push(
             "⚠️ This config will be changed in the minor versions of this plugin.",
         )
-    } else if (specKind === "ecma262") {
-        contents.push(`disallow new stuff that ${title} doesn't include.`)
     } else {
         contents.push(
-            `disallow new stuff that ${title} (ECMA-402) doesn't include.`,
+            specKind === "ecma262"
+                ? `disallow new stuff that ${title} doesn't include.`
+                : `disallow new stuff that ${title} (ECMA-402) doesn't include.`,
         )
     }
     contents.push("")
@@ -59,13 +57,11 @@ for (const { title, aboveConfigName, specKind } of Object.values(categories)) {
 
     contents.push(`## ${aboveConfigName}`)
     contents.push("")
-    if (specKind === "ecma262") {
-        contents.push(`disallow new stuff that ${title} doesn't include`)
-    } else {
-        contents.push(
-            `disallow new stuff that ${title} (ECMA-402) doesn't include`,
-        )
-    }
+    contents.push(
+        specKind === "ecma262"
+            ? `disallow new stuff that ${title} doesn't include`
+            : `disallow new stuff that ${title} (ECMA-402) doesn't include`,
+    )
     contents.push("")
     appendConfig(aboveConfigName)
 }

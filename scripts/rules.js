@@ -28,18 +28,18 @@ const libRoot = path.resolve(__dirname, "../lib/rules")
  * @property {"ecma262" | "ecma402"} specKind The specification kind.
  */
 
+// After the ECMAScript specification becomes GA,
+// we will need to change this constant and bump the major version.
+const LATEST_ES_YEAR = 2023
+
 /** @type {Record<string, Category>} */
 const categories = [
-    2024,
-    2023,
-    2022,
-    2021,
-    2020,
-    2019,
-    2018,
-    2017,
-    2016,
-    2015,
+    ...(function* () {
+        const max = new Date().getFullYear() + 1
+        for (let year = max; year >= 2015; year--) {
+            yield year
+        }
+    })(),
     [5, 1],
     [3, null],
 ]
@@ -47,8 +47,8 @@ const categories = [
         Array.isArray(esVersion) ? esVersion : [esVersion, esVersion],
     )
     .reduce((map, versions, index, list) => {
-        const experimental = index === 0
         const [vFor262, vFor402] = versions
+        const experimental = vFor262 > LATEST_ES_YEAR
         const [prevVFor262, prevVFor402] = list[index + 1] || [null, null]
         const ecma262Id = `ES${vFor262}`
         if (prevVFor262) {
