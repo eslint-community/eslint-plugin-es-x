@@ -86,13 +86,11 @@ new RuleTester({
             errors: [`ES2025 'Set.prototype.${method}' method is forbidden.`],
         })),
         ...methods.map((method) => ({
-            only: true,
             filename,
             code: `function f<T extends Set<string>>(a: T) { a.${method}(other) }`,
             errors: [`ES2025 'Set.prototype.${method}' method is forbidden.`],
         })),
         ...methods.map((method) => ({
-            only: true,
             filename,
             code: `function f<T extends Set>(a: T) { a.${method}(other) }`,
             errors: [`ES2025 'Set.prototype.${method}' method is forbidden.`],
