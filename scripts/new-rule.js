@@ -112,4 +112,4 @@ This rule reports ??? as errors.
 ${yellow}npx mocha "tests/**/${ruleId}.js" --reporter dot --timeout 60000${reset}
 
 `)
-})(process.argv[2])
+})(String(process.argv[2]).toLowerCase())

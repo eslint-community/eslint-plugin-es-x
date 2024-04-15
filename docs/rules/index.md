@@ -13,6 +13,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-set-operation-methods](./no-set-operation-methods.md) | disallow methods like union and intersection of Set. |  |
 | [es-x/no-set-prototype-difference](./no-set-prototype-difference.md) | disallow the `Set.prototype.difference` method. |  |
 | [es-x/no-set-prototype-intersection](./no-set-prototype-intersection.md) | disallow the `Set.prototype.intersection` method. |  |
+| [es-x/no-set-prototype-isdisjointfrom](./no-set-prototype-isdisjointfrom.md) | disallow the `Set.prototype.isDisjointFrom` method. |  |
 | [es-x/no-set-prototype-issubsetof](./no-set-prototype-issubsetof.md) | disallow the `Set.prototype.isSubsetOf` method. |  |
 | [es-x/no-set-prototype-issupersetof](./no-set-prototype-issupersetof.md) | disallow the `Set.prototype.isSupersetOf` method. |  |
 | [es-x/no-set-prototype-symmetricdifference](./no-set-prototype-symmetricdifference.md) | disallow the `Set.prototype.symmetricDifference` method. |  |
