@@ -31,7 +31,8 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | [es-x/no-promise-withresolvers](./no-promise-withresolvers.md) | disallow the `Promise.withResolvers()` method. |  |
 | [es-x/no-regexp-v-flag](./no-regexp-v-flag.md) | disallow RegExp `v` flag. |  |
 | [es-x/no-resizable-and-growable-arraybuffers](./no-resizable-and-growable-arraybuffers.md) | disallow resizable and growable ArrayBuffers. |  |
-| [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | disallow the `String.prototype.{isWellFormed,toWellFormed}` methods. |  |
+| [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md) | disallow the `String.prototype.isWellFormed` methods. |  |
+| [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) | disallow the `String.prototype.toWellFormed` methods. |  |
 
 ## ES2023
 
@@ -352,6 +353,14 @@ Rules in this category are not included in any preset.
 | [es-x/no-string-create-html-methods](./no-string-create-html-methods.md) | disallow HTML creation methods of string instances. |  |
 | [es-x/no-string-prototype-substr](./no-string-prototype-substr.md) | disallow the `String.prototype.substr` method. |  |
 | [es-x/no-string-prototype-trimleft-trimright](./no-string-prototype-trimleft-trimright.md) | disallow the `String.prototype.{trimLeft,trimRight}` methods. | 🔧 |
+
+## Deprecated
+
+😇 We don't fix bugs which are in deprecated rules since we don't have enough resources.
+
+| Rule ID | Replaced By |
+|:--------|:------------:|
+| [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 
 [`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
 [`no-new-in-es2024`]: ../configs/index.md#no-new-in-es2024
