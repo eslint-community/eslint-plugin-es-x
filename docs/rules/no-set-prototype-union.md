@@ -7,7 +7,7 @@ description: "disallow the `Set.prototype.union` method"
 > disallow the `Set.prototype.union` method
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
-- ✅ The following configurations enable this rule: [no-new-in-esnext]
+- ✅ The following configurations enable this rule: [no-new-in-esnext] and [no-set-methods]
 
 This rule reports ES2025 [`Set.prototype.union`](https://github.com/tc39/proposal-set-methods) methods as errors.
 
@@ -34,3 +34,4 @@ a.union(b)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-set-prototype-union.js)
 
 [no-new-in-esnext]: ../configs/index.md#no-new-in-esnext
+[no-set-methods]: ../configs/index.md#no-set-methods
