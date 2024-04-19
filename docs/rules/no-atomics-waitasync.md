@@ -18,7 +18,7 @@ This rule reports ES2024 [`Atomics.waitAsync` method](https://github.com/tc39/pr
 <eslint-playground type="bad">
 
 ```js
-/*eslint es-x/no-atomics-waitasync: [error, { aggressive: true }] */
+/*eslint es-x/no-atomics-waitasync: [error] */
 Atomics.waitAsync(i32a, 0, 0, 1000)
 ```
 
