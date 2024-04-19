@@ -1085,5 +1085,86 @@ export default [
 }
 ```
 
+## no-change-array-by-copy
+
+disallow proposal ES2023 [Change Array by Copy](https://github.com/tc39/proposal-change-array-by-copy)
+
+This configs includes rules for [es-x/no-array-prototype-toreversed](../rules/no-array-prototype-toreversed.md), [es-x/no-array-prototype-tosorted](../rules/no-array-prototype-tosorted.md), [es-x/no-array-prototype-tospliced](../rules/no-array-prototype-tospliced.md), and [es-x/no-array-prototype-with](../rules/no-array-prototype-with.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-change-array-by-copy']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-change-array-by-copy"],
+}
+```
+
+## no-intl-numberformat-v3
+
+disallow proposal ES2023 Intl API [Intl.NumberFormat V3](https://github.com/tc39/proposal-intl-numberformat-v3)
+
+This configs includes rules for [es-x/no-intl-numberformat-prototype-formatrange](../rules/no-intl-numberformat-prototype-formatrange.md), [es-x/no-intl-numberformat-prototype-formatrangetoparts](../rules/no-intl-numberformat-prototype-formatrangetoparts.md), and [es-x/no-intl-pluralrules-prototype-selectrange](../rules/no-intl-pluralrules-prototype-selectrange.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-intl-numberformat-v3']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-intl-numberformat-v3"],
+}
+```
+
+## no-relative-indexing-method
+
+disallow proposal ES2022 [An .at() method on all the built-in indexables](https://github.com/tc39/proposal-relative-indexing-method)
+
+This configs includes rules for [es-x/no-array-prototype-at](../rules/no-array-prototype-at.md) and [es-x/no-string-prototype-at](../rules/no-string-prototype-at.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-relative-indexing-method']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-relative-indexing-method"],
+}
+```
+
 [Config (Flat Config)]: https://eslint.org/docs/latest/use/configure/configuration-files-new
 [Legacy Config]: https://eslint.org/docs/latest/use/configure/configuration-files

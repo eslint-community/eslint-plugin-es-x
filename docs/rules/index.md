@@ -66,7 +66,7 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-arbitrary-module-namespace-names](./no-arbitrary-module-namespace-names.md) | disallow arbitrary module namespace names. |  |
-| [es-x/no-array-string-prototype-at](./no-array-string-prototype-at.md) | disallow the `{Array,String}.prototype.at()` methods. |  |
+| [es-x/no-array-prototype-at](./no-array-prototype-at.md) | disallow the `Array.prototype.at()` methods. |  |
 | [es-x/no-class-fields](./no-class-fields.md) | disallow class fields. |  |
 | [es-x/no-class-static-block](./no-class-static-block.md) | disallow class static block. |  |
 | [es-x/no-error-cause](./no-error-cause.md) | disallow Error Cause. |  |
@@ -74,6 +74,7 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | [es-x/no-private-in](./no-private-in.md) | disallow `#x in obj`. |  |
 | [es-x/no-regexp-d-flag](./no-regexp-d-flag.md) | disallow RegExp `d` flag. |  |
 | [es-x/no-regexp-unicode-property-escapes-2022](./no-regexp-unicode-property-escapes-2022.md) | disallow the new values of RegExp Unicode property escape sequences in ES2022. |  |
+| [es-x/no-string-prototype-at](./no-string-prototype-at.md) | disallow the `String.prototype.at()` methods. |  |
 | [es-x/no-top-level-await](./no-top-level-await.md) | disallow top-level `await`. |  |
 
 ## ES2022 Intl API
@@ -361,6 +362,7 @@ Rules in this category are not included in any preset.
 
 | Rule ID | Replaced By |
 |:--------|:------------:|
+| [es-x/no-array-string-prototype-at](./no-array-string-prototype-at.md) | [es-x/no-array-prototype-at](./no-array-prototype-at.md), [es-x/no-string-prototype-at](./no-string-prototype-at.md) |
 | [es-x/no-object-map-groupby](./no-object-map-groupby.md) | [es-x/no-object-groupby](./no-object-groupby.md), [es-x/no-map-groupby](./no-map-groupby.md) |
 | [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 

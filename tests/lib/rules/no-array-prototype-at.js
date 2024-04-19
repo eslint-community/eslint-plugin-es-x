@@ -6,8 +6,8 @@
 
 const path = require("path")
 const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-array-string-prototype-at.js")
-const ruleId = "no-array-string-prototype-at"
+const rule = require("../../../lib/rules/no-array-prototype-at.js")
+const ruleId = "no-array-prototype-at"
 
 new RuleTester().run(ruleId, rule, {
     valid: [
@@ -25,28 +25,18 @@ new RuleTester().run(ruleId, rule, {
     invalid: [
         {
             code: "foo.at(-1)",
-            errors: [
-                "ES2022 'Array.prototype.at' method is forbidden.",
-                "ES2022 'String.prototype.at' method is forbidden.",
-            ],
+            errors: ["ES2022 'Array.prototype.at' method is forbidden."],
             settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.at(-1)",
             options: [{ aggressive: true }],
-            errors: [
-                "ES2022 'Array.prototype.at' method is forbidden.",
-                "ES2022 'String.prototype.at' method is forbidden.",
-            ],
+            errors: ["ES2022 'Array.prototype.at' method is forbidden."],
             settings: { "es-x": { aggressive: false } },
         },
         {
             code: "[1,2,3].at(-1)",
             errors: ["ES2022 'Array.prototype.at' method is forbidden."],
-        },
-        {
-            code: "'123'.at(-1)",
-            errors: ["ES2022 'String.prototype.at' method is forbidden."],
         },
     ],
 })
@@ -86,11 +76,6 @@ new RuleTester({
         },
         {
             filename,
-            code: "'123'.at(-1)",
-            errors: ["ES2022 'String.prototype.at' method is forbidden."],
-        },
-        {
-            filename,
             code: "let foo = []; foo.at(-1)",
             errors: ["ES2022 'Array.prototype.at' method is forbidden."],
         },
@@ -117,36 +102,8 @@ new RuleTester({
         {
             filename,
             code: "foo.at(-1)",
-            errors: [
-                "ES2022 'Array.prototype.at' method is forbidden.",
-                "ES2022 'String.prototype.at' method is forbidden.",
-            ],
+            errors: ["ES2022 'Array.prototype.at' method is forbidden."],
             settings: { "es-x": { aggressive: true } },
-        },
-        {
-            filename,
-            code: "let foo = 'str'; foo.at(-1)",
-            errors: ["ES2022 'String.prototype.at' method is forbidden."],
-        },
-        {
-            filename,
-            code: "let foo = String(42); foo.at(-1)",
-            errors: ["ES2022 'String.prototype.at' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends string>(a: T) { a.at(-1) }",
-            errors: ["ES2022 'String.prototype.at' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends 'a' | 'b'>(a: T) { a.at(-1) }",
-            errors: ["ES2022 'String.prototype.at' method is forbidden."],
-        },
-        {
-            filename,
-            code: "function f<T extends 'a' | 'b' | 'c'>(a: T) { a.at(-1) }",
-            errors: ["ES2022 'String.prototype.at' method is forbidden."],
         },
         {
             filename,

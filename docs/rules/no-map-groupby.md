@@ -19,10 +19,6 @@ This rule reports ES2024 [`Map.groupBy()`](https://github.com/tc39/proposal-arra
 
 ```js
 /*eslint es-x/no-map-groupby: error */
-Object.groupBy(array, (num, index) => {
-  return num % 2 === 0 ? 'even': 'odd';
-});
-
 Map.groupBy(array, (num, index) => {
   return num % 2 === 0 ? even: odd;
 });

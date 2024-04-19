@@ -22,10 +22,6 @@ This rule reports ES2024 [`Object.groupBy()`](https://github.com/tc39/proposal-a
 Object.groupBy(array, (num, index) => {
   return num % 2 === 0 ? 'even': 'odd';
 });
-
-Map.groupBy(array, (num, index) => {
-  return num % 2 === 0 ? even: odd;
-});
 ```
 
 </eslint-playground>
