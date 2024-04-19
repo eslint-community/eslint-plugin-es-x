@@ -28,6 +28,14 @@ function getSince(content) {
     return null
 }
 
+/**
+ * Create markdown text for rule link.
+ * @param {string} ruleId The rule id to convert.
+ */
+function toRuleLink(ruleId) {
+    return `[es-x/${ruleId}](./${ruleId}.md)`
+}
+
 async function main() {
     const docsRoot = path.resolve(__dirname, "../docs/rules/")
     const configRoot = path.resolve(__dirname, "../lib/configs/flat")
@@ -43,7 +51,13 @@ async function main() {
     }
     const collator = new Intl.Collator("en", { numeric: true })
 
-    for (const { ruleId, description, fixable } of rules) {
+    for (const {
+        ruleId,
+        description,
+        fixable,
+        deprecated,
+        replacedBy,
+    } of rules) {
         const filePath = path.join(docsRoot, `${ruleId}.md`)
         const originalContent = fs.readFileSync(filePath, "utf8")
         const since = getSince(originalContent)
@@ -71,6 +85,12 @@ async function main() {
         if (!since) {
             headerLines.push(
                 '- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>',
+            )
+        }
+
+        if (deprecated) {
+            headerLines.push(
+                `- 🚫 This rule was deprecated and replaced by ${replacedBy.map(toRuleLink).join(",")} rule${replacedBy.length > 1 ? "s" : ""}.`,
             )
         }
 

@@ -16,13 +16,27 @@ const contents = [
     "",
 ]
 
+/** @type {Record<string, import("./rules").Category>} */
+const configs = {}
+for (const { configName, rules, ...config } of Object.values(categories)) {
+    if (configs[configName]) {
+        configs[configName].rules.push(...rules)
+    } else {
+        configs[configName] = {
+            ...config,
+            configName,
+            rules: [...rules],
+        }
+    }
+}
+
 for (const {
     title,
     rules,
     configName,
     specKind,
     experimental,
-} of Object.values(categories).filter((cat, i, list) =>
+} of Object.values(configs).filter((cat, i, list) =>
     list.slice(0, i).every((c) => c.configName !== cat.configName),
 )) {
     if (!configName || !rules.length) {
@@ -34,8 +48,10 @@ for (const {
     if (experimental) {
         contents.push(
             specKind === "ecma262"
-                ? "disallow the new stuff to be planned for the next yearly ECMAScript snapshot."
-                : "disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.",
+                ? "disallow the new stuff to be planned for the next yearly ECMAScript snapshot.\\"
+                : specKind === "ecma402"
+                  ? "disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.\\"
+                  : "",
         )
         contents.push(
             "⚠️ This config will be changed in the minor versions of this plugin.",
@@ -43,14 +59,16 @@ for (const {
     } else {
         contents.push(
             specKind === "ecma262"
-                ? `disallow new stuff that ${title} doesn't include.`
-                : `disallow new stuff that ${title} (ECMA-402) doesn't include.`,
+                ? `disallow new stuff in ${title}.`
+                : specKind === "ecma402"
+                  ? `disallow new stuff in ${title} (ECMA-402).`
+                  : `disallow proposal ${title}`,
         )
     }
     contents.push("")
     appendConfig(configName)
 }
-for (const { title, aboveConfigName, specKind } of Object.values(categories)) {
+for (const { title, aboveConfigName, specKind } of Object.values(configs)) {
     if (!aboveConfigName) {
         continue
     }

@@ -6,6 +6,7 @@
 
 const fs = require("fs")
 const path = require("path")
+const proposals = require("./proposals")
 const libRoot = path.resolve(__dirname, "../lib/rules")
 
 /**
@@ -25,7 +26,7 @@ const libRoot = path.resolve(__dirname, "../lib/rules")
  * @property {Rule[]} rules The rules in this category.
  * @property {boolean} [experimental] The flag to be belong to experimental configs.
  * @property {string} [comment] The category comment.
- * @property {"ecma262" | "ecma402"} specKind The specification kind.
+ * @property {"ecma262" | "ecma402" | "proposal"} specKind The specification kind.
  */
 
 // After the ECMAScript specification becomes GA,
@@ -101,6 +102,13 @@ categories.uncategorized = {
     title: "Uncategorized",
     rules: [],
 }
+categories.deprecated = {
+    id: "deprecated",
+    title: "Deprecated",
+    comment:
+        "😇 We don't fix bugs which are in deprecated rules since we don't have enough resources.",
+    rules: [],
+}
 
 /** @type {Rule[]} */
 const rules = []
@@ -123,10 +131,24 @@ const rules = []
             /("(?:\\"|[^"])*?"|'(?:\\'|[^'])*?')|\/\/[^\n]*|\/\*[\s\S]*?\*\//gu,
             "$1",
         )
-        const category = /category:[\s\n]+(?:undefined|"(.+)")/u.exec(
+        const category = /category:[\s]*(?:undefined|"(.+)")/u.exec(
             contentWithoutComments,
         )[1]
-        const description = /description:[\s\n]+"(.+?)\.?"/u.exec(
+        const proposalJson = /proposal:[\s]*(".+?"|\[.+?\])/u.exec(
+            contentWithoutComments,
+        )?.[1]
+        const proposalIds = proposalJson
+            ? [JSON.parse(proposalJson)].flat()
+            : []
+        const deprecated = /deprecated:[\s]+true/u.test(contentWithoutComments)
+        const replacedBy = deprecated
+            ? JSON.parse(
+                  /replacedBy:[\s]*(\[[\s\S]*?\])/u
+                      .exec(contentWithoutComments)[1]
+                      .replace(/,\s*\]/u, "]"),
+              )
+            : []
+        const description = /description:[\s]*"(.+?)\.?"/u.exec(
             contentWithoutComments,
         )[1]
         const fixable = /fixable:[\s\n]+"(.+)"/u.test(contentWithoutComments)
@@ -134,11 +156,30 @@ const rules = []
             ruleId,
             description: JSON.parse(`"${description}"`),
             fixable,
+            deprecated,
+            replacedBy,
+            proposals: proposalIds,
         }
 
-        categories[category || "uncategorized"].rules.push(rule)
+        const categoryId = deprecated
+            ? "deprecated"
+            : category || "uncategorized"
+
+        categories[categoryId].rules.push(rule)
 
         rules.push(rule)
+
+        for (const proposal of proposalIds) {
+            const id = `no-${proposal}`
+
+            ;(categories[id] = categories[id] || {
+                id,
+                title: `[${proposals[proposal].title}](${proposals[proposal].link})`,
+                rules: [],
+                specKind: "proposal",
+                configName: id,
+            }).rules.push(rule)
+        }
     }
 })(libRoot)
 
