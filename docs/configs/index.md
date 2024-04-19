@@ -1031,6 +1031,33 @@ export default [
 }
 ```
 
+## no-array-grouping
+
+disallow proposal ES2024 [Array Grouping](https://github.com/tc39/proposal-array-grouping)
+
+This configs includes rules for [es-x/no-map-groupby](../rules/no-map-groupby.md) and [es-x/no-object-groupby](../rules/no-object-groupby.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-array-grouping']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-array-grouping"],
+}
+```
+
 ## no-is-usv-string
 
 disallow proposal ES2024 [Well-Formed Unicode Strings](https://github.com/tc39/proposal-is-usv-string)

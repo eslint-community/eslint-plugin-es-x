@@ -27,7 +27,8 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 |:--------|:------------|:--:|
 | [es-x/no-arraybuffer-prototype-transfer](./no-arraybuffer-prototype-transfer.md) | disallow the `ArrayBuffer.prototype.transfer` method. |  |
 | [es-x/no-atomics-waitasync](./no-atomics-waitasync.md) | disallow the `Atomics.waitAsync` method. |  |
-| [es-x/no-object-map-groupby](./no-object-map-groupby.md) | disallow the `{Object,Map}.groupBy()` function (array grouping). |  |
+| [es-x/no-map-groupby](./no-map-groupby.md) | disallow the `Map.groupBy()` method. |  |
+| [es-x/no-object-groupby](./no-object-groupby.md) | disallow the `Object.groupBy()` method. |  |
 | [es-x/no-promise-withresolvers](./no-promise-withresolvers.md) | disallow the `Promise.withResolvers()` method. |  |
 | [es-x/no-regexp-v-flag](./no-regexp-v-flag.md) | disallow RegExp `v` flag. |  |
 | [es-x/no-resizable-and-growable-arraybuffers](./no-resizable-and-growable-arraybuffers.md) | disallow resizable and growable ArrayBuffers. |  |
@@ -360,6 +361,7 @@ Rules in this category are not included in any preset.
 
 | Rule ID | Replaced By |
 |:--------|:------------:|
+| [es-x/no-object-map-groupby](./no-object-map-groupby.md) | [es-x/no-object-groupby](./no-object-groupby.md), [es-x/no-map-groupby](./no-map-groupby.md) |
 | [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 
 [`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
