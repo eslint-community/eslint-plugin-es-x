@@ -21,13 +21,27 @@ module.exports = ${code}
 `
 }
 
+/** @type {Record<string, import("./rules").Category>} */
+const configs = {}
+for (const { configName, rules, ...config } of Object.values(categories)) {
+    if (configs[configName]) {
+        configs[configName].rules.push(...rules)
+    } else {
+        configs[configName] = {
+            ...config,
+            configName,
+            rules: [...rules],
+        }
+    }
+}
+
 for (const {
     edition,
     rules,
     configName,
     aboveConfigName,
     specKind,
-} of Object.values(categories)) {
+} of Object.values(configs)) {
     if (!configName) {
         continue
     }

@@ -18,7 +18,9 @@ for (const {
     aboveConfigName,
     specKind,
     id,
-} of Object.values(categories)) {
+} of Object.values(categories).filter(
+    (category) => category.specKind !== "proposal",
+)) {
     if (configName) {
         configs.push({ id: configName, categoryIds: [id] })
         if (rules.length) {
@@ -45,6 +47,7 @@ for (const {
 
 // Convert categories to README sections
 const ruleSectionContent = Object.values(categories)
+    .filter((category) => category.specKind !== "proposal")
     .map(toSection)
     .filter((c) => c)
     .join("\n")
@@ -78,23 +81,28 @@ function toSection(category) {
         .map((c) => `[\`${c.id}\`]`)
         .sort(collator.compare.bind(collator))
 
-    let comment = ""
+    /** @type {string[]} */
+    const comment = []
     if (category.comment) {
-        comment = `${category.comment} \\\n`
+        comment.push(category.comment)
     }
-    comment += !configIds.length
-        ? "Rules in this category are not included in any preset."
-        : configIds.length > 1
-          ? `There are multiple configs that enable all rules in this category: ${formatList(
-                configIds,
-            )}`
-          : `There is a config that enables the rules in this category: ${formatList(
-                configIds,
-            )}`
+    comment.push(
+        category.id === "deprecated"
+            ? ""
+            : !configIds.length
+              ? "Rules in this category are not included in any preset."
+              : configIds.length > 1
+                ? `There are multiple configs that enable all rules in this category: ${formatList(
+                      configIds,
+                  )}`
+                : `There is a config that enables the rules in this category: ${formatList(
+                      configIds,
+                  )}`,
+    )
 
     return `## ${category.title}
 
-${comment}
+${comment.filter(Boolean).join("\\\n")}
 
 ${toTable(category)}
 `
@@ -104,11 +112,22 @@ ${toTable(category)}
  * Create markdown text for a category.
  * @param {import("./rules").Category} category The category information to convert.
  */
-function toTable({ rules }) {
-    const body = rules.map(toTableRow).join("\n")
-    return `| Rule ID | Description |    |
+function toTable({ rules, id }) {
+    if (id !== "deprecated") {
+        const body = rules.map(toTableRow).join("\n")
+        return `| Rule ID | Description |    |
 |:--------|:------------|:--:|
 ${body.trim() ? body : "|  | Now there are no rules. |  |"}`
+    }
+    const body = rules
+        .map(
+            ({ ruleId, replacedBy }) =>
+                `| ${toRuleLink(ruleId)} | ${replacedBy.map(toRuleLink).join(", ")} |`,
+        )
+        .join("\n")
+    return `| Rule ID | Replaced By |
+|:--------|:------------:|
+${body.trim() ? body : "|  | Now there are no rules. |"}`
 }
 
 /**
@@ -116,9 +135,16 @@ ${body.trim() ? body : "|  | Now there are no rules. |  |"}`
  * @param {import("./rules").Rule} rule The rule information to convert.
  */
 function toTableRow({ ruleId, description, fixable }) {
-    const title = `[es-x/${ruleId}](./${ruleId}.md)`
     const icons = fixable ? "🔧" : ""
-    return `| ${title} | ${description}. | ${icons} |`
+    return `| ${toRuleLink(ruleId)} | ${description}. | ${icons} |`
+}
+
+/**
+ * Create markdown text for rule link.
+ * @param {string} ruleId The rule id to convert.
+ */
+function toRuleLink(ruleId) {
+    return `[es-x/${ruleId}](./${ruleId}.md)`
 }
 
 /**

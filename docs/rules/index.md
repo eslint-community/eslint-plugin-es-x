@@ -320,7 +320,7 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 
 ## Legacy
 
-Rules in this category disallow the syntax contained in [Annex B](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html) or Legacy. \
+Rules in this category disallow the syntax contained in [Annex B](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html) or Legacy.\
 Rules in this category are not included in any preset.
 
 | Rule ID | Description |    |
