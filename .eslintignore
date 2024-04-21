@@ -1,8 +1,0 @@
-/.nyc_output
-/coverage
-/docs/.vitepress/dist
-/docs/.vitepress/cache
-/node_modules
-/test.*
-
-!docs/.vitepress

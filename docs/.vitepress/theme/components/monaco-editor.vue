@@ -1,5 +1,5 @@
 <script setup>
-import { loadMonacoEditor, setupMonacoEditor } from "./monaco/index"
+import { loadMonacoEditor, setupMonacoEditor } from "./monaco/index.mjs"
 import { onBeforeUnmount, onMounted, ref, watch } from "vue"
 
 const props = defineProps({

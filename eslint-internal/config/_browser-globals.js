@@ -25,7 +25,7 @@ module.exports = {
     AudioParam: "readonly",
     AudioProcessingEvent: "readonly",
     AudioScheduledSourceNode: "readonly",
-    "AudioWorkletGlobalScope ": "readonly",
+    AudioWorkletGlobalScope: "readonly",
     AudioWorkletNode: "readonly",
     AudioWorkletProcessor: "readonly",
     BarProp: "readonly",

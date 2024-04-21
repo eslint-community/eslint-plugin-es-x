@@ -4,25 +4,28 @@
  */
 "use strict"
 
-module.exports = {
-    parserOptions: {
-        ecmaVersion: 2017,
-    },
-    globals: {
-        Atomics: "readonly",
-        SharedArrayBuffer: "readonly",
-    },
-    rules: {
-        "prettier/prettier": [
-            "error",
-            {
-                tabWidth: 4,
-                semi: false,
-                trailingComma: "all",
+module.exports = [
+    {
+        name: "eslint-internal/config/_override-2017.js",
+        languageOptions: {
+            ecmaVersion: 2017,
+            globals: {
+                Atomics: "readonly",
+                SharedArrayBuffer: "readonly",
             },
-            {
-                usePrettierrc: false,
-            },
-        ],
+        },
+        rules: {
+            "prettier/prettier": [
+                "error",
+                {
+                    tabWidth: 4,
+                    semi: false,
+                    trailingComma: "all",
+                },
+                {
+                    usePrettierrc: false,
+                },
+            ],
+        },
     },
-}
+]

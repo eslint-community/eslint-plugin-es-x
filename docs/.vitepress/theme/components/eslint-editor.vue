@@ -301,10 +301,43 @@ function lint() {
     }
 }
 
+function getRuleDocUrl(ruleId) {
+    if (!ruleId.includes("/")) {
+        return `https://eslint.org/docs/rules/${ruleId}`
+    }
+    for (const config of [props.config].flat()) {
+        if (
+            config &&
+            config.plugins &&
+            typeof config.plugins === "object" &&
+            !Array.isArray(config.plugins)
+        ) {
+            for (const [pluginId, plugin] of Object.entries(config.plugins)) {
+                const pluginName = pluginId
+                    .replace(/^eslint-plugin-/u, "")
+                    .replace(/\/eslint-plugin$/u, "")
+                    .replace(/\/eslint-plugin-/u, "/")
+                if (!ruleId.startsWith(`${pluginName}/`)) {
+                    continue
+                }
+                const pluginRuleName = ruleId.slice(pluginName.length + 1)
+                const rule = plugin.rules?.[pluginRuleName]
+                if (
+                    rule &&
+                    typeof rule !== "function" &&
+                    rule?.meta?.docs?.url
+                ) {
+                    return rule.meta.docs.url
+                }
+            }
+        }
+    }
+    return null
+}
+
 /** Linter message to monaco editor marker */
 function messageToMarker(message) {
-    const rule = message.ruleId && linter.value?.getRules().get(message.ruleId)
-    const docUrl = rule && rule.meta && rule.meta.docs && rule.meta.docs.url
+    const docUrl = message.ruleId && getRuleDocUrl(message.ruleId)
     const startLineNumber = ensurePositiveInt(message.line, 1)
     const startColumn = ensurePositiveInt(message.column, 1)
     const endLineNumber = ensurePositiveInt(message.endLine, startLineNumber)

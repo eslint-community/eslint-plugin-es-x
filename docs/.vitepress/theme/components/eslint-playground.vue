@@ -43,50 +43,57 @@ const format = reactive({
 })
 
 const config = computed(() => ({
-    globals: {
-        // ES2015 globals
-        ArrayBuffer: false,
-        DataView: false,
-        Float32Array: false,
-        Float64Array: false,
-        Int16Array: false,
-        Int32Array: false,
-        Int8Array: false,
-        Map: false,
-        Promise: false,
-        Proxy: false,
-        Reflect: false,
-        Set: false,
-        Symbol: false,
-        Uint16Array: false,
-        Uint32Array: false,
-        Uint8Array: false,
-        Uint8ClampedArray: false,
-        WeakMap: false,
-        WeakSet: false,
-        // ES2017 globals
-        Atomics: false,
-        SharedArrayBuffer: false,
-        // ES2020 globals
-        BigInt: false,
-        BigInt64Array: false,
-        BigUint64Array: false,
-        globalThis: true,
-        // ES2021 globals
-        AggregateError: false,
-        FinalizationRegistry: false,
-        WeakRef: false,
-        // Intl
-        Intl: false,
-    },
-    rules: {},
-    parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: props.sourceType,
-        ecmaFeatures: {
-            jsx: true,
+    plugins: {
+        "es-x": {
+            rules,
         },
     },
+    languageOptions: {
+        sourceType: props.sourceType,
+        ecmaVersion: "latest",
+        parserOptions: {
+            ecmaFeatures: {
+                jsx: true,
+            },
+        },
+        globals: {
+            // ES2015 globals
+            ArrayBuffer: false,
+            DataView: false,
+            Float32Array: false,
+            Float64Array: false,
+            Int16Array: false,
+            Int32Array: false,
+            Int8Array: false,
+            Map: false,
+            Promise: false,
+            Proxy: false,
+            Reflect: false,
+            Set: false,
+            Symbol: false,
+            Uint16Array: false,
+            Uint32Array: false,
+            Uint8Array: false,
+            Uint8ClampedArray: false,
+            WeakMap: false,
+            WeakSet: false,
+            // ES2017 globals
+            Atomics: false,
+            SharedArrayBuffer: false,
+            // ES2020 globals
+            BigInt: false,
+            BigInt64Array: false,
+            BigUint64Array: false,
+            globalThis: true,
+            // ES2021 globals
+            AggregateError: false,
+            FinalizationRegistry: false,
+            WeakRef: false,
+            // Intl
+            Intl: false,
+        },
+    },
+    rules: {},
     settings: {
         "es-x": { aggressive: true },
     },
@@ -109,10 +116,6 @@ onMounted(async () => {
     const [{ Linter }] = await Promise.all([import("eslint")])
 
     linter.value = markRaw(new Linter())
-
-    for (const ruleId of Object.keys(rules)) {
-        linter.value.defineRule(`es-x/${ruleId}`, rules[ruleId])
-    }
 })
 
 /**
