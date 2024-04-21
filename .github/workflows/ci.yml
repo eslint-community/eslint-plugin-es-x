@@ -17,7 +17,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
       - name: Install Packages
-        run: npm install
+        run: npm install -f
       - name: Lint
         run: npm run -s lint
 
@@ -82,11 +82,11 @@ jobs:
             npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+
-            npm install -D eslint@${{ matrix.eslint }} --legacy-peer-deps
+            npm install -D eslint@${{ matrix.eslint }} -f
             npx rimraf node_modules
       - name: Install "@typescript-eslint/parser" ${{ matrix.tseslint }}
         run: |+
-            npm install -D @typescript-eslint/parser@${{ matrix.tseslint }}
+            npm install -D @typescript-eslint/parser@${{ matrix.tseslint }} -f
             npx rimraf node_modules
         if: matrix.tseslint == 5
       - name: Install Packages
