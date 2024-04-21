@@ -7,7 +7,7 @@ since: "v5.0.0"
 # es-x/no-class-fields
 > disallow class fields
 
-- ✅ The following configurations enable this rule: [no-new-in-es2022], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], [restrict-to-es2020], and [restrict-to-es2021]
+- 🚫 This rule was deprecated and replaced by [es-x/no-class-instance-fields](./no-class-instance-fields.md),[es-x/no-class-private-fields](./no-class-private-fields.md),[es-x/no-class-private-methods](./no-class-private-methods.md),[es-x/no-class-static-fields](./no-class-static-fields.md) rules.
 
 This rule reports class fields as errors.
 
@@ -52,14 +52,3 @@ This rule was introduced in v5.0.0.
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-class-fields.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-class-fields.js)
-
-[no-new-in-es2022]: ../configs/index.md#no-new-in-es2022
-[restrict-to-es3]: ../configs/index.md#restrict-to-es3
-[restrict-to-es5]: ../configs/index.md#restrict-to-es5
-[restrict-to-es2015]: ../configs/index.md#restrict-to-es2015
-[restrict-to-es2016]: ../configs/index.md#restrict-to-es2016
-[restrict-to-es2017]: ../configs/index.md#restrict-to-es2017
-[restrict-to-es2018]: ../configs/index.md#restrict-to-es2018
-[restrict-to-es2019]: ../configs/index.md#restrict-to-es2019
-[restrict-to-es2020]: ../configs/index.md#restrict-to-es2020
-[restrict-to-es2021]: ../configs/index.md#restrict-to-es2021

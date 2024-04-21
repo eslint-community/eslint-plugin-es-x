@@ -1139,6 +1139,33 @@ export default [
 }
 ```
 
+## no-class-fields
+
+disallow proposal ES2022 [Class Fields](https://github.com/tc39/proposal-class-fields)
+
+This configs includes rules for [es-x/no-class-instance-fields](../rules/no-class-instance-fields.md), [es-x/no-class-private-fields](../rules/no-class-private-fields.md), [es-x/no-class-private-methods](../rules/no-class-private-methods.md), and [es-x/no-class-static-fields](../rules/no-class-static-fields.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-class-fields']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-class-fields"],
+}
+```
+
 ## no-relative-indexing-method
 
 disallow proposal ES2022 [An .at() method on all the built-in indexables](https://github.com/tc39/proposal-relative-indexing-method)

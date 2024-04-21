@@ -9,6 +9,10 @@ module.exports = {
         title: "Change Array by Copy",
         link: "https://github.com/tc39/proposal-change-array-by-copy",
     },
+    "class-fields": {
+        title: "Class Fields",
+        link: "https://github.com/tc39/proposal-class-fields",
+    },
     "intl-numberformat-v3": {
         title: "Intl.NumberFormat V3",
         link: "https://github.com/tc39/proposal-intl-numberformat-v3",
