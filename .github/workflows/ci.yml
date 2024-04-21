@@ -37,10 +37,6 @@ jobs:
           - eslint: 9
             node: 20
             os: macos-latest
-          # On next Node.js versions
-          - eslint: ^9.0.0-0
-            node: 20
-            os: ubuntu-latest
           # On other Node.js versions
           - eslint: 8
             node: 19
@@ -79,7 +75,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Uninstall Packages
         run: |+
-            npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue
+            npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue -f
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+
             npm install -D eslint@${{ matrix.eslint }} -f
