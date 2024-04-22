@@ -453,31 +453,6 @@ export default [
 }
 ```
 
-## no-set-methods
-
-disallow proposal [Set Methods for JavaScript](https://github.com/tc39/proposal-set-methods)
-
-### [Config (Flat Config)]
-
-eslint.config.js:
-
-```js
-import pluginESx from "eslint-plugin-es-x"
-export default [
-    pluginESx.configs['flat/no-set-methods']
-]
-```
-
-### [Legacy Config]
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-set-methods"],
-}
-```
-
 ## restrict-to-es2022
 
 disallow new stuff that ES2023 doesn't include
@@ -950,6 +925,34 @@ export default [
 ```json
 {
     "extends": ["plugin:es-x/restrict-to-es3"],
+}
+```
+
+## no-set-methods
+
+disallow proposal ES2025 [Set Methods for JavaScript](https://github.com/tc39/proposal-set-methods)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This configs includes rules for [es-x/no-set-prototype-difference](../rules/no-set-prototype-difference.md), [es-x/no-set-prototype-intersection](../rules/no-set-prototype-intersection.md), [es-x/no-set-prototype-isdisjointfrom](../rules/no-set-prototype-isdisjointfrom.md), [es-x/no-set-prototype-issubsetof](../rules/no-set-prototype-issubsetof.md), [es-x/no-set-prototype-issupersetof](../rules/no-set-prototype-issupersetof.md), [es-x/no-set-prototype-symmetricdifference](../rules/no-set-prototype-symmetricdifference.md), and [es-x/no-set-prototype-union](../rules/no-set-prototype-union.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-set-methods']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-set-methods"],
 }
 ```
 
