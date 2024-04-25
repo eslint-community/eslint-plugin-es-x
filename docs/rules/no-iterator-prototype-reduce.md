@@ -21,7 +21,7 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 ```js
 /*eslint es-x/no-iterator-prototype-reduce: [error, { aggressive: true }] */
-Iterator.from([]).reduce(a => a.b)
+Iterator.from([]).reduce((a, b) => a + b, 0)
 ```
 
 </eslint-playground>

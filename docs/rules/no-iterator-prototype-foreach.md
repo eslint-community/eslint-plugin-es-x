@@ -1,15 +1,15 @@
 ---
-title: "es-x/no-iterator-prototype-filter"
-description: "disallow the `Iterator.prototype.filter` method"
+title: "es-x/no-iterator-prototype-foreach"
+description: "disallow the `Iterator.prototype.forEach` method"
 ---
 
-# es-x/no-iterator-prototype-filter
-> disallow the `Iterator.prototype.filter` method
+# es-x/no-iterator-prototype-foreach
+> disallow the `Iterator.prototype.forEach` method
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-iterator-helpers] and [no-new-in-esnext]
 
-This rule reports ES2025 [`Iterator.prototype.filter` method](https://github.com/tc39/proposal-iterator-helpers) as errors.
+This rule reports ES2025 [`Iterator.prototype.forEach` method](https://github.com/tc39/proposal-iterator-helpers) as errors.
 
 This rule is silent by default because it's hard to know types. You need to configure [the aggressive mode](../#the-aggressive-mode) or TypeScript in order to enable this rule.
 
@@ -20,8 +20,8 @@ This rule is silent by default because it's hard to know types. You need to conf
 <eslint-playground type="bad">
 
 ```js
-/*eslint es-x/no-iterator-prototype-filter: [error, { aggressive: true }] */
-Iterator.from([]).filter(a => !!a)
+/*eslint es-x/no-iterator-prototype-foreach: [error, { aggressive: true }] */
+Iterator.from([]).forEach(a => a.b)
 ```
 
 </eslint-playground>
@@ -32,7 +32,7 @@ This rule has an option.
 
 ```yml
 rules:
-  es-x/no-iterator-prototype-filter: [error, { aggressive: false }]
+  es-x/no-iterator-prototype-foreach: [error, { aggressive: false }]
 ```
 
 ### aggressive: boolean
@@ -42,8 +42,8 @@ This is prior to the `settings['es-x'].aggressive` setting.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-iterator-prototype-filter.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-iterator-prototype-filter.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-iterator-prototype-foreach.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-iterator-prototype-foreach.js)
 
 [no-iterator-helpers]: ../configs/index.md#no-iterator-helpers
 [no-new-in-esnext]: ../configs/index.md#no-new-in-esnext
