@@ -453,6 +453,31 @@ export default [
 }
 ```
 
+## no-iterator-helpers
+
+disallow proposal [Iterator Helpers](https://github.com/tc39/proposal-iterator-helpers)
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-iterator-helpers']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-iterator-helpers"],
+}
+```
+
 ## restrict-to-es2022
 
 disallow new stuff that ES2023 doesn't include

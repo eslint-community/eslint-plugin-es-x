@@ -34,6 +34,7 @@ RuleTester.setDefaultConfig({
             FinalizationRegistry: "readonly",
             WeakRef: "readonly",
             Intl: "readonly",
+            Iterator: "readonly",
             ...builtin,
         },
     },
