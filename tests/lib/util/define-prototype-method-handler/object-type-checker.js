@@ -408,6 +408,36 @@ describe("define-prototype-method-handler/object-type-checker", () => {
                 `,
                 result: ["Number", "Number"],
             },
+            {
+                code: "target(String.raw``)",
+                result: ["String"],
+            },
+            {
+                code: "target(Symbol.asyncIterator)",
+                result: ["Symbol"],
+            },
+            {
+                code: "target(Array.from([]))",
+                result: ["Array"],
+            },
+            {
+                code: "target(Array.of(1,2,3))",
+                result: ["Array"],
+            },
+            {
+                code: "target(Map.groupBy(1,2,3))",
+                result: ["Map"],
+            },
+            {
+                code: "target(Iterator.from([]))",
+                result: ["Iterator"],
+            },
+            {
+                code: `
+                function * a() {}
+                target(a())`,
+                result: ["Iterator"],
+            },
         ]) {
             it(code, () => {
                 deepStrictEqual(
@@ -462,6 +492,7 @@ function getResultOfBuildExpressionTypeProvider(code) {
                 Float64Array: "readonly",
                 BigInt64Array: "readonly",
                 BigUint64Array: "readonly",
+                Iterator: "readonly",
             },
         },
         rules: { "test/test-rule": "warn" },

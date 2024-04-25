@@ -18,5 +18,9 @@ new RuleTester().run("no-iterator", rule, {
             code: "Iterator.stringify",
             errors: ["ES2025 'Iterator' class is forbidden."],
         },
+        {
+            code: "Iterator.from([])",
+            errors: ["ES2025 'Iterator' class is forbidden."],
+        },
     ],
 })

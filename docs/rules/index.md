@@ -10,6 +10,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
+| [es-x/no-iterator-prototype-map](./no-iterator-prototype-map.md) | disallow the `Iterator.prototype.map` method. |  |
 | [es-x/no-iterator](./no-iterator.md) | disallow the `Iterator` class. |  |
 
 ## ES2024

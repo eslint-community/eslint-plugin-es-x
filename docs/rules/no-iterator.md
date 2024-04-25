@@ -18,9 +18,8 @@ This rule reports ES2025 [`Iterator` class](https://github.com/tc39/proposal-ite
 <eslint-playground type="bad">
 
 ```js
-/*eslint es-x/no-json: error */
-var obj = Iterator.parse(text)
-var str = Iterator.stringify(data)
+/*eslint es-x/no-iterator: error */
+const itr = Iterator.from([])
 ```
 
 </eslint-playground>
