@@ -1,0 +1,103 @@
+"use strict"
+
+const path = require("path")
+const RuleTester = require("../../tester")
+const rule = require("../../../lib/rules/no-iterator-prototype-flatmap.js")
+const ruleId = "no-iterator-prototype-flatmap"
+
+new RuleTester().run(ruleId, rule, {
+    valid: [
+        "flatMap(Boolean)",
+        "foo.unknown(0)",
+        "foo.flatMap(Boolean)",
+        {
+            code: "flatMap(Boolean)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        { code: "foo.unknown(0)", settings: { "es-x": { aggressive: true } } },
+        {
+            code: "foo.flatMap(Boolean)",
+            options: [{ aggressive: false }],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            code: "Iterator.from([]).flatMap(Boolean)",
+            errors: [
+                "ES2025 'Iterator.prototype.flatMap' method is forbidden.",
+            ],
+        },
+        {
+            code: "foo.flatMap(Boolean)",
+            errors: [
+                "ES2025 'Iterator.prototype.flatMap' method is forbidden.",
+            ],
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            code: "foo.flatMap(Boolean)",
+            options: [{ aggressive: true }],
+            errors: [
+                "ES2025 'Iterator.prototype.flatMap' method is forbidden.",
+            ],
+            settings: { "es-x": { aggressive: false } },
+        },
+    ],
+})
+
+// -----------------------------------------------------------------------------
+// TypeScript
+// -----------------------------------------------------------------------------
+const parser = require("@typescript-eslint/parser")
+const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const project = "tsconfig.json"
+const filename = path.join(tsconfigRootDir, "test.ts")
+
+new RuleTester({
+    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: "flatMap(Boolean)" },
+        { filename, code: "foo.unknown(0)" },
+        { filename, code: "foo.flatMap(Boolean)" },
+        {
+            filename,
+            code: "let foo = {}; foo.flatMap(Boolean)",
+        },
+        {
+            filename,
+            code: "flatMap(Boolean)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.unknown(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "let foo = Iterator.from([]); foo.flatMap(Boolean)",
+            errors: [
+                "ES2025 'Iterator.prototype.flatMap' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f(a: Iterator) { a.flatMap(Boolean) }",
+            errors: [
+                "ES2025 'Iterator.prototype.flatMap' method is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "foo.flatMap(Boolean)",
+            errors: [
+                "ES2025 'Iterator.prototype.flatMap' method is forbidden.",
+            ],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

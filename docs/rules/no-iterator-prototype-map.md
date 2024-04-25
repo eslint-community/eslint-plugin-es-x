@@ -9,7 +9,7 @@ description: "disallow the `Iterator.prototype.map` method"
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-iterator-helpers] and [no-new-in-esnext]
 
-This rule reports ES2025 `Iterator.prototype.map` as errors.
+This rule reports ES2025 [`Iterator.prototype.map` method](https://github.com/tc39/proposal-iterator-helpers) as errors.
 
 This rule is silent by default because it's hard to know types. You need to configure [the aggressive mode](../#the-aggressive-mode) or TypeScript in order to enable this rule.
 
