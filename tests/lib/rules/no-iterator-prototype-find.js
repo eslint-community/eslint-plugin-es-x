@@ -2,39 +2,39 @@
 
 const path = require("path")
 const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-iterator-prototype-filter.js")
-const ruleId = "no-iterator-prototype-filter"
+const rule = require("../../../lib/rules/no-iterator-prototype-find.js")
+const ruleId = "no-iterator-prototype-find"
 
 new RuleTester().run(ruleId, rule, {
     valid: [
-        "filter(Boolean)",
+        "find(Boolean)",
         "foo.unknown(0)",
-        "foo.filter(Boolean)",
+        "foo.find(Boolean)",
         {
-            code: "filter(Boolean)",
+            code: "find(Boolean)",
             settings: { "es-x": { aggressive: true } },
         },
         { code: "foo.unknown(0)", settings: { "es-x": { aggressive: true } } },
         {
-            code: "foo.filter(Boolean)",
+            code: "foo.find(Boolean)",
             options: [{ aggressive: false }],
             settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
         {
-            code: "Iterator.from([]).filter(Boolean)",
-            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
+            code: "Iterator.from([]).find(Boolean)",
+            errors: ["ES2025 'Iterator.prototype.find' method is forbidden."],
         },
         {
-            code: "foo.filter(Boolean)",
-            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
+            code: "foo.find(Boolean)",
+            errors: ["ES2025 'Iterator.prototype.find' method is forbidden."],
             settings: { "es-x": { aggressive: true } },
         },
         {
-            code: "foo.filter(Boolean)",
+            code: "foo.find(Boolean)",
             options: [{ aggressive: true }],
-            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
+            errors: ["ES2025 'Iterator.prototype.find' method is forbidden."],
             settings: { "es-x": { aggressive: false } },
         },
     ],
@@ -52,16 +52,16 @@ new RuleTester({
     languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
 }).run(`${ruleId} TS Full Type Information`, rule, {
     valid: [
-        { filename, code: "filter(Boolean)" },
+        { filename, code: "find(Boolean)" },
         { filename, code: "foo.unknown(0)" },
-        { filename, code: "foo.filter(Boolean)" },
+        { filename, code: "foo.find(Boolean)" },
         {
             filename,
-            code: "let foo = {}; foo.filter(Boolean)",
+            code: "let foo = {}; foo.find(Boolean)",
         },
         {
             filename,
-            code: "filter(Boolean)",
+            code: "find(Boolean)",
             settings: { "es-x": { aggressive: true } },
         },
         {
@@ -73,18 +73,18 @@ new RuleTester({
     invalid: [
         {
             filename,
-            code: "let foo = Iterator.from([]); foo.filter(Boolean)",
-            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
+            code: "let foo = Iterator.from([]); foo.find(Boolean)",
+            errors: ["ES2025 'Iterator.prototype.find' method is forbidden."],
         },
         {
             filename,
-            code: "function f(a: Iterator) { a.filter(Boolean) }",
-            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
+            code: "function f(a: Iterator) { a.find(Boolean) }",
+            errors: ["ES2025 'Iterator.prototype.find' method is forbidden."],
         },
         {
             filename,
-            code: "foo.filter(Boolean)",
-            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
+            code: "foo.find(Boolean)",
+            errors: ["ES2025 'Iterator.prototype.find' method is forbidden."],
             settings: { "es-x": { aggressive: true } },
         },
     ],
