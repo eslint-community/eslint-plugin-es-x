@@ -42,7 +42,7 @@ export default [
         plugins: { "es-x": pluginESx },
         languageOptions: {
             ecmaVersion: 2018
-        },,
+        },
         rules: {
             "es-x/no-async-iteration": "error",
             "es-x/no-malformed-template-literals": "error",
