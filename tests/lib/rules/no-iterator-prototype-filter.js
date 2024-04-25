@@ -2,39 +2,39 @@
 
 const path = require("path")
 const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-iterator-prototype-map.js")
-const ruleId = "no-iterator-prototype-map"
+const rule = require("../../../lib/rules/no-iterator-prototype-filter.js")
+const ruleId = "no-iterator-prototype-filter"
 
 new RuleTester().run(ruleId, rule, {
     valid: [
-        "map(Boolean)",
+        "filter(String)",
         "foo.unknown(0)",
-        "foo.map(Boolean)",
+        "foo.filter(String)",
         {
-            code: "map(Boolean)",
+            code: "filter(String)",
             settings: { "es-x": { aggressive: true } },
         },
         { code: "foo.unknown(0)", settings: { "es-x": { aggressive: true } } },
         {
-            code: "foo.map(Boolean)",
+            code: "foo.filter(String)",
             options: [{ aggressive: false }],
             settings: { "es-x": { aggressive: true } },
         },
     ],
     invalid: [
         {
-            code: "Iterator.from([]).map(Boolean)",
-            errors: ["ES2025 'Iterator.prototype.map' method is forbidden."],
+            code: "Iterator.from([]).filter(String)",
+            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
         },
         {
-            code: "foo.map(Boolean)",
-            errors: ["ES2025 'Iterator.prototype.map' method is forbidden."],
+            code: "foo.filter(String)",
+            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
             settings: { "es-x": { aggressive: true } },
         },
         {
-            code: "foo.map(Boolean)",
+            code: "foo.filter(String)",
             options: [{ aggressive: true }],
-            errors: ["ES2025 'Iterator.prototype.map' method is forbidden."],
+            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
             settings: { "es-x": { aggressive: false } },
         },
     ],
@@ -52,16 +52,16 @@ new RuleTester({
     languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
 }).run(`${ruleId} TS Full Type Information`, rule, {
     valid: [
-        { filename, code: "map(Boolean)" },
+        { filename, code: "filter(String)" },
         { filename, code: "foo.unknown(0)" },
-        { filename, code: "foo.map(Boolean)" },
+        { filename, code: "foo.filter(String)" },
         {
             filename,
-            code: "let foo = {}; foo.map(Boolean)",
+            code: "let foo = {}; foo.filter(String)",
         },
         {
             filename,
-            code: "map(Boolean)",
+            code: "filter(String)",
             settings: { "es-x": { aggressive: true } },
         },
         {
@@ -73,18 +73,18 @@ new RuleTester({
     invalid: [
         {
             filename,
-            code: "let foo = Iterator.from([]); foo.map(Boolean)",
-            errors: ["ES2025 'Iterator.prototype.map' method is forbidden."],
+            code: "let foo = Iterator.from([]); foo.filter(String)",
+            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
         },
         {
             filename,
-            code: "function f(a: Iterator) { a.map(Boolean) }",
-            errors: ["ES2025 'Iterator.prototype.map' method is forbidden."],
+            code: "function f(a: Iterator) { a.filter(String) }",
+            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
         },
         {
             filename,
-            code: "foo.map(Boolean)",
-            errors: ["ES2025 'Iterator.prototype.map' method is forbidden."],
+            code: "foo.filter(String)",
+            errors: ["ES2025 'Iterator.prototype.filter' method is forbidden."],
             settings: { "es-x": { aggressive: true } },
         },
     ],
