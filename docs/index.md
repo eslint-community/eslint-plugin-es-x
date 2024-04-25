@@ -36,7 +36,7 @@ Configure your `eslint.config.js` file.
 For example, to enable only Rest/Spread Properties in ES2018:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     {
         plugins: { "es-x": pluginESx },
@@ -81,7 +81,7 @@ See the [Available Configs](./configs/index.md) documentation.
 For example:
 
 ```js
-import * as pluginESx from "eslint-plugin-es-x"
+import pluginESx from "eslint-plugin-es-x"
 export default [
     pluginESx.configs['flat/restrict-to-es2018'],
 ]
