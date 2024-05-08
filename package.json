@@ -84,5 +84,8 @@
     "url": "https://github.com/eslint-community/eslint-plugin-es-x/issues"
   },
   "homepage": "https://github.com/eslint-community/eslint-plugin-es-x#readme",
-  "funding": "https://github.com/sponsors/ota-meshi"
+  "funding": [
+    "https://github.com/sponsors/ota-meshi",
+    "https://opencollective.com/eslint"
+  ]
 }
