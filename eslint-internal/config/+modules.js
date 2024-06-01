@@ -20,11 +20,7 @@ module.exports = [
         },
         rules: {
             "n/no-extraneous-import": "error",
-            "n/file-extension-in-import": [
-                "error",
-                "always",
-                { ".js": "never", ".ts": "never", ".tsx": "never" },
-            ],
+            "n/file-extension-in-import": ["error", "always"],
             "n/no-missing-import": "error",
             "n/no-unpublished-import": "error",
             "n/no-unsupported-features/es-syntax": [
