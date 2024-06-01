@@ -30,44 +30,14 @@ for (const { configName, rules, ...config } of Object.values(categories)) {
     }
 }
 
-for (const {
-    title,
-    rules,
-    configName,
-    specKind,
-    experimental,
-} of Object.values(configs).filter((cat, i, list) =>
-    list.slice(0, i).every((c) => c.configName !== cat.configName),
-)) {
-    if (!configName || !rules.length) {
-        continue
-    }
-    contents.push(`## ${configName}`)
-    contents.push("")
+Object.values(configs)
+    .filter(
+        (cat, i, list) =>
+            cat.specKind !== "proposal" &&
+            list.slice(0, i).every((c) => c.configName !== cat.configName),
+    )
+    .forEach(processCategoryConfig)
 
-    if (experimental) {
-        contents.push(
-            specKind === "ecma262"
-                ? "disallow the new stuff to be planned for the next yearly ECMAScript snapshot.\\"
-                : specKind === "ecma402"
-                  ? "disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.\\"
-                  : "",
-        )
-        contents.push(
-            "⚠️ This config will be changed in the minor versions of this plugin.",
-        )
-    } else {
-        contents.push(
-            specKind === "ecma262"
-                ? `disallow new stuff in ${title}.`
-                : specKind === "ecma402"
-                  ? `disallow new stuff in ${title} (ECMA-402).`
-                  : `disallow proposal ${title}`,
-        )
-    }
-    contents.push("")
-    appendConfig(configName)
-}
 for (const { title, aboveConfigName, specKind } of Object.values(configs)) {
     if (!aboveConfigName) {
         continue
@@ -84,6 +54,19 @@ for (const { title, aboveConfigName, specKind } of Object.values(configs)) {
     appendConfig(aboveConfigName)
 }
 
+Object.values(configs)
+    .filter((cat) => cat.specKind === "proposal")
+    .sort(
+        (a, b) =>
+            b.year - a.year ||
+            (a.configName > b.configName
+                ? 1
+                : a.configName < b.configName
+                  ? -1
+                  : 0),
+    )
+    .forEach(processCategoryConfig)
+
 contents.push(
     "[Config (Flat Config)]: https://eslint.org/docs/latest/use/configure/configuration-files-new",
 )
@@ -92,6 +75,60 @@ contents.push(
 )
 
 fs.writeFileSync(MD_PATH, `${contents.join("\n").trim()}\n`)
+
+/**
+ * Process for normal category config
+ * @param {import("./rules").Category} params
+ */
+function processCategoryConfig({
+    title,
+    rules,
+    configName,
+    specKind,
+    experimental,
+}) {
+    if (!configName || !rules.length) {
+        return
+    }
+    contents.push(`## ${configName}`)
+    contents.push("")
+
+    if (experimental) {
+        contents.push(
+            specKind === "ecma262"
+                ? "disallow the new stuff to be planned for the next yearly ECMAScript snapshot.\\"
+                : specKind === "ecma402"
+                  ? "disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.\\"
+                  : `disallow proposal ${title}\\`,
+        )
+        contents.push(
+            "⚠️ This config will be changed in the minor versions of this plugin.",
+        )
+    } else {
+        contents.push(
+            specKind === "ecma262"
+                ? `disallow new stuff in ${title}.`
+                : specKind === "ecma402"
+                  ? `disallow new stuff in ${title} (ECMA-402).`
+                  : `disallow proposal ${title}`,
+        )
+    }
+
+    if (specKind === "proposal") {
+        contents.push("")
+        contents.push(
+            `This configs includes rules for ${formatList(
+                rules.map((rule) => {
+                    const ruleId = rule.ruleId
+                    return `[es-x/${ruleId}](../rules/${ruleId}.md)`
+                }),
+            )}.`,
+        )
+    }
+
+    contents.push("")
+    appendConfig(configName)
+}
 
 function appendConfig(configName) {
     contents.push("### [Config (Flat Config)]")
@@ -115,4 +152,24 @@ export default [
 }`)
     contents.push("```")
     contents.push("")
+}
+
+/**
+ * Format a list.
+ * @param {string[]} xs The list value to format.
+ */
+function formatList(xs) {
+    switch (xs.length) {
+        case 0:
+            return ""
+        case 1:
+            return xs[0]
+        case 2:
+            return `${xs[0]} and ${xs[1]}`
+        default: {
+            const ys = xs.slice(0, xs.length - 1)
+            const last = xs[xs.length - 1]
+            return `${ys.join(", ")}, and ${last}`
+        }
+    }
 }

@@ -21,6 +21,7 @@ const libRoot = path.resolve(__dirname, "../lib/rules")
  * @property {string} id The category name.
  * @property {string} title The category title.
  * @property {number} [edition] The edition number.
+ * @property {number} [year] The year.
  * @property {string} [configName] The config name.
  * @property {string} [aboveConfigName] The config name for disallowing features all above.
  * @property {Rule[]} rules The rules in this category.
@@ -57,6 +58,7 @@ const categories = [
                 id: ecma262Id,
                 title: `ES${vFor262}`,
                 edition: vFor262 > 5 ? vFor262 - 2009 : vFor262,
+                year: vFor262 > 5 ? vFor262 : vFor262 + 2009,
                 rules: [],
                 experimental,
                 specKind: "ecma262",
@@ -74,7 +76,8 @@ const categories = [
             map[ecma402Id] = {
                 id: ecma402Id,
                 title: `ES${vFor402} Intl API`,
-                edition: vFor402 - 2013,
+                edition: vFor402 > 1 ? vFor402 - 2013 : vFor402,
+                year: vFor402 > 1 ? vFor402 : vFor402 + 2013,
                 rules: [],
                 experimental,
                 specKind: "ecma402",
@@ -172,10 +175,21 @@ const rules = []
         for (const proposal of proposalIds) {
             const id = `no-${proposal}`
 
+            if (!proposals[proposal]) {
+                throw new Error(
+                    `Missing define proposal: ${proposal}\nWe need to add it to scripts/proposals.js.`,
+                )
+            }
+
+            const baseCategory = categories[category]
+
             ;(categories[id] = categories[id] || {
                 id,
-                title: `[${proposals[proposal].title}](${proposals[proposal].link})`,
+                title: `${baseCategory.title} [${proposals[proposal].title}](${proposals[proposal].link})`,
+                edition: baseCategory.edition,
+                year: baseCategory.year,
                 rules: [],
+                experimental: baseCategory.experimental,
                 specKind: "proposal",
                 configName: id,
             }).rules.push(rule)
