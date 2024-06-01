@@ -9,27 +9,6 @@ module.exports = [
         name: "eslint-internal/config/_override-2015.js",
         languageOptions: {
             ecmaVersion: 2015,
-            globals: {
-                ArrayBuffer: "readonly",
-                DataView: "readonly",
-                Float32Array: "readonly",
-                Float64Array: "readonly",
-                Int16Array: "readonly",
-                Int32Array: "readonly",
-                Int8Array: "readonly",
-                Map: "readonly",
-                Promise: "readonly",
-                Proxy: "readonly",
-                Reflect: "readonly",
-                Set: "readonly",
-                Symbol: "readonly",
-                Uint16Array: "readonly",
-                Uint32Array: "readonly",
-                Uint8Array: "readonly",
-                Uint8ClampedArray: "readonly",
-                WeakMap: "readonly",
-                WeakSet: "readonly",
-            },
         },
         rules: {
             // Enabled rules as errors

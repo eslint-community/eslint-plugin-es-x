@@ -9,10 +9,6 @@ module.exports = [
         name: "eslint-internal/config/_override-2017.js",
         languageOptions: {
             ecmaVersion: 2017,
-            globals: {
-                Atomics: "readonly",
-                SharedArrayBuffer: "readonly",
-            },
         },
         rules: {
             "prettier/prettier": [

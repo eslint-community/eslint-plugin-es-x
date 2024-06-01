@@ -28,11 +28,6 @@ module.exports = [
         languageOptions: {
             ecmaVersion: 2020,
             globals: {
-                // ECMAScript (experimental)
-                globalThis: "readonly",
-                // ECMA-404
-                Intl: "readonly",
-
                 // Web Standard
                 TextDecoder: "readonly",
                 TextEncoder: "readonly",

@@ -56,42 +56,6 @@ const config = computed(() => ({
                 jsx: true,
             },
         },
-        globals: {
-            // ES2015 globals
-            ArrayBuffer: false,
-            DataView: false,
-            Float32Array: false,
-            Float64Array: false,
-            Int16Array: false,
-            Int32Array: false,
-            Int8Array: false,
-            Map: false,
-            Promise: false,
-            Proxy: false,
-            Reflect: false,
-            Set: false,
-            Symbol: false,
-            Uint16Array: false,
-            Uint32Array: false,
-            Uint8Array: false,
-            Uint8ClampedArray: false,
-            WeakMap: false,
-            WeakSet: false,
-            // ES2017 globals
-            Atomics: false,
-            SharedArrayBuffer: false,
-            // ES2020 globals
-            BigInt: false,
-            BigInt64Array: false,
-            BigUint64Array: false,
-            globalThis: true,
-            // ES2021 globals
-            AggregateError: false,
-            FinalizationRegistry: false,
-            WeakRef: false,
-            // Intl
-            Intl: false,
-        },
     },
     rules: {},
     settings: {

@@ -26,16 +26,6 @@ module.exports = [
             prettier: require("eslint-plugin-prettier"),
             "eslint-comments": require("eslint-plugin-eslint-comments"),
         },
-        languageOptions: {
-            globals: {
-                Intl: "readonly",
-                clearInterval: "readonly",
-                clearTimeout: "readonly",
-                console: "readonly",
-                setInterval: "readonly",
-                setTimeout: "readonly",
-            },
-        },
         rules: {
             // Enabled rules
             "accessor-pairs": ["error", { enforceForClassMembers: true }],
