@@ -27,23 +27,22 @@ jobs:
     strategy:
       matrix:
         include:
-          - eslint: 8
-            node: 18
-            os: ubuntu-latest
-          # On other platforms
-          - eslint: 8
-            node: 18
-            os: windows-latest
-          - eslint: 8
-            node: 18
-            os: macos-latest
-          # On next Node.js versions
-          - eslint: ^9.0.0-0
+          - eslint: 9
             node: 20
             os: ubuntu-latest
+          # On other platforms
+          - eslint: 9
+            node: 20
+            os: windows-latest
+          - eslint: 9
+            node: 20
+            os: macos-latest
           # On other Node.js versions
           - eslint: 8
             node: 19
+            os: ubuntu-latest
+          - eslint: 9
+            node: 18
             os: ubuntu-latest
           - eslint: 8
             node: 16
@@ -79,7 +78,7 @@ jobs:
             npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+
-            npm install -D eslint@${{ matrix.eslint }} --legacy-peer-deps
+            npm install -D eslint@${{ matrix.eslint }}
             npx rimraf node_modules
       - name: Install "@typescript-eslint/parser" ${{ matrix.tseslint }}
         run: |+
@@ -87,6 +86,6 @@ jobs:
             npx rimraf node_modules
         if: matrix.tseslint == 5
       - name: Install Packages
-        run: npm install -f
+        run: npm install
       - name: Test
         run: npm run -s test:mocha

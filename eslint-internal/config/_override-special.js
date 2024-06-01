@@ -4,37 +4,16 @@
  */
 "use strict"
 
-module.exports = {
-    overrides: [
-        {
-            files: [
-                "**/scripts/**/*",
-                ".babelrc.js",
-                ".eslintrc.js",
-                "webpack.config.js",
-                "**/.vuepress/config.js",
-                "*.webpack.config.js",
-            ],
-            extends: [require.resolve("./+node.js")],
-            rules: {
-                "no-console": "off",
-                "no-process-env": "off",
-            },
+const files = ["**/scripts/**/*", "eslint.config.js"]
+
+module.exports = [
+    ...require("./+node.js").map((config) => ({ ...config, files })),
+    {
+        name: "eslint-internal/config/_override-special.js",
+        files,
+        rules: {
+            "no-console": "off",
+            "no-process-env": "off",
         },
-        {
-            files: [
-                "**/scripts/rollup-plugin/**/*",
-                "rollup.config.js",
-                "*.rollup.config.js",
-            ],
-            extends: [
-                require.resolve("./+node.js"),
-                require.resolve("./+modules.js"),
-            ],
-            rules: {
-                "no-console": "off",
-                "no-process-env": "off",
-            },
-        },
-    ],
-}
+    },
+]

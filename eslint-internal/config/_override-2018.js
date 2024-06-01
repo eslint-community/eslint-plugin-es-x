@@ -4,11 +4,14 @@
  */
 "use strict"
 
-module.exports = {
-    parserOptions: {
-        ecmaVersion: 2018,
+module.exports = [
+    {
+        name: "eslint-internal/config/_override-2018.js",
+        languageOptions: {
+            ecmaVersion: 2018,
+        },
+        rules: {
+            "prefer-object-spread": "error",
+        },
     },
-    rules: {
-        "prefer-object-spread": "error",
-    },
-}
+]

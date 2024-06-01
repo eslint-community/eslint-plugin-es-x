@@ -4,10 +4,14 @@
  */
 "use strict"
 
-module.exports = {
-    overrides: [
-        {
-            files: ["**/test/**", "**/tests/**"],
+const files = ["**/test/**", "**/tests/**"]
+
+module.exports = [
+    ...require("./+node.js").map((config) => ({ ...config, files })),
+    {
+        name: "eslint-internal/config/_override-mocha.js",
+        files,
+        languageOptions: {
             globals: {
                 after: "readonly",
                 afterEach: "readonly",
@@ -19,9 +23,9 @@ module.exports = {
                 xdescribe: "readonly",
                 xit: "readonly",
             },
-            rules: {
-                "max-nested-callbacks": "off",
-            },
         },
-    ],
-}
+        rules: {
+            "max-nested-callbacks": "off",
+        },
+    },
+]

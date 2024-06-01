@@ -3,7 +3,4 @@
         "javascript",
         "vue"
     ],
-    "eslint.options": {
-        "rulePaths": ["eslint-internal/rules"]
-    },
 }

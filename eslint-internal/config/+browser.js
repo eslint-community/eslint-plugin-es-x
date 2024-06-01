@@ -6,6 +6,11 @@
 
 const globals = require("./_browser-globals")
 
-module.exports = {
-    globals,
-}
+module.exports = [
+    {
+        name: "eslint-internal/config/+browser.js",
+        languageOptions: {
+            globals,
+        },
+    },
+]
