@@ -15,7 +15,7 @@ jobs:
               with:
                   registry-url: "https://registry.npmjs.org"
             - name: Install Packages
-              run: npm i -f
+              run: npm i
             - name: test
               run: npm run test:mocha
             - name: check can npm-publish
