@@ -61,7 +61,7 @@ export default defineConfig({
                 ],
             },
             ...Object.values(categories)
-                .filter((menu) => menu.rules.length)
+                .filter((menu) => menu.rules.length && menu.specKind !== "proposal")
                 .map((category) => ({
                     text: category.title,
                     items: category.rules.map(({ ruleId }) => ({
