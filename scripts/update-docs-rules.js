@@ -90,7 +90,9 @@ async function main() {
 
         if (deprecated) {
             headerLines.push(
-                `- 🚫 This rule was deprecated and replaced by ${replacedBy.map(toRuleLink).join(",")} rule${replacedBy.length > 1 ? "s" : ""}.`,
+                `- 🚫 This rule was deprecated and replaced by ${replacedBy
+                    .map(toRuleLink)
+                    .join(",")} rule${replacedBy.length > 1 ? "s" : ""}.`,
             )
         }
 
