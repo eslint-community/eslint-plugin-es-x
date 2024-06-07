@@ -54,11 +54,7 @@ module.exports = [
         },
         rules: {
             "n/exports-style": ["error", "module.exports"],
-            "n/file-extension-in-import": [
-                "error",
-                "always",
-                { ".js": "never", ".ts": "never", ".tsx": "never" },
-            ],
+            "n/file-extension-in-import": ["error", "always"],
             "n/no-callback-literal": "off",
             "n/no-deprecated-api": "error",
             "n/no-exports-assign": "error",
