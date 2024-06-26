@@ -28,6 +28,31 @@ export default [
 }
 ```
 
+## no-new-in-es2024
+
+disallow new stuff in ES2024.
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-new-in-es2024']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-new-in-es2024"],
+}
+```
+
 ## no-new-in-es2023
 
 disallow new stuff in ES2023.
@@ -450,6 +475,56 @@ export default [
 ```json
 {
     "extends": ["plugin:es-x/no-new-in-es5"],
+}
+```
+
+## restrict-to-es2023
+
+disallow new stuff that ES2024 doesn't include
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/restrict-to-es2023']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/restrict-to-es2023"],
+}
+```
+
+## restrict-to-es2023-intl-api
+
+disallow new stuff that ES2024 Intl API (ECMA-402) doesn't include
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/restrict-to-es2023-intl-api']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/restrict-to-es2023-intl-api"],
 }
 ```
 
