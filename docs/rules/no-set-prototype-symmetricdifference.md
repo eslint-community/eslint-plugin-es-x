@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-set-prototype-symmetricdifference"
 description: "disallow the `Set.prototype.symmetricDifference` method"
+since: "v7.7.0"
 ---
 
 # es-x/no-set-prototype-symmetricdifference
 > disallow the `Set.prototype.symmetricDifference` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext] and [no-set-methods]
 
 This rule reports ES2025 [`Set.prototype.symmetricDifference`](https://github.com/tc39/proposal-set-methods) methods as errors.
@@ -27,6 +27,10 @@ a.symmetricDifference(b)
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v7.7.0.
 
 ## 📚 References
 

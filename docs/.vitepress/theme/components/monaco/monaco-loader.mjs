@@ -18,10 +18,32 @@ async function setupMonaco() {
     }
 }
 
-function appendMonacoEditorScript() {
-    return new Promise((resolve) => {
+async function appendMonacoEditorScript() {
+    let error = new Error()
+    const urlList = [
+        `https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/${MONACO_EDITOR_VERSION}/min/vs/loader.min.js`,
+        `https://cdn.jsdelivr.net/npm/monaco-editor@${MONACO_EDITOR_VERSION}/dev/vs/loader.min.js`,
+        `https://unpkg.com/monaco-editor/${MONACO_EDITOR_VERSION}/min/vs/loader.min.js`,
+        "https://cdn.jsdelivr.net/npm/monaco-editor/dev/vs/loader.min.js",
+        "https://unpkg.com/monaco-editor@latest/min/vs/loader.js",
+    ]
+    for (const url of urlList) {
+        try {
+            return await appendScript(url)
+        } catch (e) {
+            // eslint-disable-next-line no-console -- OK
+            console.warn(`Failed to retrieve resource from ${url}`)
+            error = e
+        }
+    }
+    throw error
+}
+
+/** Appends a script tag. */
+function appendScript(src) {
+    return new Promise((resolve, reject) => {
         const script = document.createElement("script")
-        script.src = `https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/${MONACO_EDITOR_VERSION}/min/vs/loader.min.js`
+        script.src = src
         script.onload = () => {
             script.onload = null
 
@@ -35,6 +57,10 @@ function appendMonacoEditorScript() {
                 }
                 setTimeout(watch, 200)
             }
+        }
+        script.onerror = (e) => {
+            reject(e)
+            document.head.removeChild(script)
         }
         document.head.append(script)
     })
