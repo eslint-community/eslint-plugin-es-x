@@ -32,7 +32,7 @@ const libRoot = path.resolve(__dirname, "../lib/rules")
 
 // After the ECMAScript specification becomes GA,
 // we will need to change this constant and bump the major version.
-const LATEST_ES_YEAR = 2023
+const LATEST_ES_YEAR = 2024
 
 /** @type {Record<string, Category>} */
 const categories = [
