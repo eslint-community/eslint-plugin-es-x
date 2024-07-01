@@ -21,7 +21,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 
 ## ES2024
 
-There is a config that enables the rules in this category: [`no-new-in-esnext`]
+There are multiple configs that enable all rules in this category: [`no-new-in-es2024`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], [`restrict-to-es2017`], [`restrict-to-es2018`], [`restrict-to-es2019`], [`restrict-to-es2020`], [`restrict-to-es2021`], [`restrict-to-es2022`], and [`restrict-to-es2023`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -354,6 +354,9 @@ Rules in this category are not included in any preset.
 | [es-x/no-string-prototype-trimleft-trimright](./no-string-prototype-trimleft-trimright.md) | disallow the `String.prototype.{trimLeft,trimRight}` methods. | 🔧 |
 
 [`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
+[`no-new-in-es2024`]: ../configs/index.md#no-new-in-es2024
+[`restrict-to-es2023`]: ../configs/index.md#restrict-to-es2023
+[`restrict-to-es2023-intl-api`]: ../configs/index.md#restrict-to-es2023-intl-api
 [`no-new-in-es2023`]: ../configs/index.md#no-new-in-es2023
 [`restrict-to-es2022`]: ../configs/index.md#restrict-to-es2022
 [`no-new-in-es2023-intl-api`]: ../configs/index.md#no-new-in-es2023-intl-api
