@@ -98,6 +98,12 @@ const config = [
             "vue/comma-dangle": "off",
         },
     },
+    {
+        files: ["scripts/**/*.js"],
+        rules: {
+            "n/no-unsupported-features/node-builtins": "off",
+        },
+    },
 ]
 
 module.exports = config
