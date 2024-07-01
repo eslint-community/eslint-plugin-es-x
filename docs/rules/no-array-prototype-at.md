@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-array-prototype-at"
 description: "disallow the `Array.prototype.at()` methods"
+since: "v8.0.0"
 ---
 
 # es-x/no-array-prototype-at
 > disallow the `Array.prototype.at()` methods
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-es2022], [no-relative-indexing-method], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], [restrict-to-es2020], and [restrict-to-es2021]
 
 This rule reports ES2022 [`{Array,TypedArray}.prototype.at` methods](https://github.com/tc39/proposal-relative-indexing-method) as errors.
@@ -39,6 +39,10 @@ rules:
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+## 🚀 Version
+
+This rule was introduced in v8.0.0.
 
 ## 📚 References
 

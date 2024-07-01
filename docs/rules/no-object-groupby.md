@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-object-groupby"
 description: "disallow the `Object.groupBy()` method"
+since: "v8.0.0"
 ---
 
 # es-x/no-object-groupby
 > disallow the `Object.groupBy()` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-array-grouping], [no-new-in-es2024], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], [restrict-to-es2020], [restrict-to-es2021], [restrict-to-es2022], and [restrict-to-es2023]
 
 This rule reports ES2024 [`Object.groupBy()`](https://github.com/tc39/proposal-array-grouping) method as errors.
@@ -25,6 +25,10 @@ Object.groupBy(array, (num, index) => {
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.0.0.
 
 ## 📚 References
 

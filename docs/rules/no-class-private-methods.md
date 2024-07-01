@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-class-private-methods"
 description: "disallow private class methods"
+since: "v8.0.0"
 ---
 
 # es-x/no-class-private-methods
 > disallow private class methods
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-class-fields], [no-new-in-es2022], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], [restrict-to-es2020], and [restrict-to-es2021]
 
 This rule reports class fields as errors.
@@ -31,6 +31,10 @@ class A {
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.0.0.
 
 ## 📚 References
 
