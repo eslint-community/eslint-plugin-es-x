@@ -13,6 +13,7 @@ const RuleTester = getRuleTester()
 const eslintVersion = new Linter().version
 const ecmaVersion =
     /*eslint-disable prettier/prettier */
+    semver.gte(eslintVersion, "9.6.0") ? 2025 :
     semver.gte(eslintVersion, "8.44.0") ? 2024 :
     semver.gte(eslintVersion, "8.23.0") ? 2023 :
     semver.gte(eslintVersion, "8.0.0") ? 2022 :
