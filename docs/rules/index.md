@@ -27,11 +27,13 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 |:--------|:------------|:--:|
 | [es-x/no-arraybuffer-prototype-transfer](./no-arraybuffer-prototype-transfer.md) | disallow the `ArrayBuffer.prototype.transfer` method. |  |
 | [es-x/no-atomics-waitasync](./no-atomics-waitasync.md) | disallow the `Atomics.waitAsync` method. |  |
-| [es-x/no-object-map-groupby](./no-object-map-groupby.md) | disallow the `{Object,Map}.groupBy()` function (array grouping). |  |
+| [es-x/no-map-groupby](./no-map-groupby.md) | disallow the `Map.groupBy()` method. |  |
+| [es-x/no-object-groupby](./no-object-groupby.md) | disallow the `Object.groupBy()` method. |  |
 | [es-x/no-promise-withresolvers](./no-promise-withresolvers.md) | disallow the `Promise.withResolvers()` method. |  |
 | [es-x/no-regexp-v-flag](./no-regexp-v-flag.md) | disallow RegExp `v` flag. |  |
 | [es-x/no-resizable-and-growable-arraybuffers](./no-resizable-and-growable-arraybuffers.md) | disallow resizable and growable ArrayBuffers. |  |
-| [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | disallow the `String.prototype.{isWellFormed,toWellFormed}` methods. |  |
+| [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md) | disallow the `String.prototype.isWellFormed` methods. |  |
+| [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) | disallow the `String.prototype.toWellFormed` methods. |  |
 
 ## ES2023
 
@@ -64,14 +66,18 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-arbitrary-module-namespace-names](./no-arbitrary-module-namespace-names.md) | disallow arbitrary module namespace names. |  |
-| [es-x/no-array-string-prototype-at](./no-array-string-prototype-at.md) | disallow the `{Array,String}.prototype.at()` methods. |  |
-| [es-x/no-class-fields](./no-class-fields.md) | disallow class fields. |  |
+| [es-x/no-array-prototype-at](./no-array-prototype-at.md) | disallow the `Array.prototype.at()` methods. |  |
+| [es-x/no-class-instance-fields](./no-class-instance-fields.md) | disallow instance class fields. |  |
+| [es-x/no-class-private-fields](./no-class-private-fields.md) | disallow private class fields. |  |
+| [es-x/no-class-private-methods](./no-class-private-methods.md) | disallow private class methods. |  |
 | [es-x/no-class-static-block](./no-class-static-block.md) | disallow class static block. |  |
+| [es-x/no-class-static-fields](./no-class-static-fields.md) | disallow static class fields. |  |
 | [es-x/no-error-cause](./no-error-cause.md) | disallow Error Cause. |  |
 | [es-x/no-object-hasown](./no-object-hasown.md) | disallow the `Object.hasOwn` method. |  |
 | [es-x/no-private-in](./no-private-in.md) | disallow `#x in obj`. |  |
 | [es-x/no-regexp-d-flag](./no-regexp-d-flag.md) | disallow RegExp `d` flag. |  |
 | [es-x/no-regexp-unicode-property-escapes-2022](./no-regexp-unicode-property-escapes-2022.md) | disallow the new values of RegExp Unicode property escape sequences in ES2022. |  |
+| [es-x/no-string-prototype-at](./no-string-prototype-at.md) | disallow the `String.prototype.at()` methods. |  |
 | [es-x/no-top-level-await](./no-top-level-await.md) | disallow top-level `await`. |  |
 
 ## ES2022 Intl API
@@ -352,6 +358,17 @@ Rules in this category are not included in any preset.
 | [es-x/no-string-create-html-methods](./no-string-create-html-methods.md) | disallow HTML creation methods of string instances. |  |
 | [es-x/no-string-prototype-substr](./no-string-prototype-substr.md) | disallow the `String.prototype.substr` method. |  |
 | [es-x/no-string-prototype-trimleft-trimright](./no-string-prototype-trimleft-trimright.md) | disallow the `String.prototype.{trimLeft,trimRight}` methods. | 🔧 |
+
+## Deprecated
+
+😇 We don't fix bugs which are in deprecated rules since we don't have enough resources.
+
+| Rule ID | Replaced By |
+|:--------|:------------:|
+| [es-x/no-array-string-prototype-at](./no-array-string-prototype-at.md) | [es-x/no-array-prototype-at](./no-array-prototype-at.md), [es-x/no-string-prototype-at](./no-string-prototype-at.md) |
+| [es-x/no-class-fields](./no-class-fields.md) | [es-x/no-class-instance-fields](./no-class-instance-fields.md), [es-x/no-class-private-fields](./no-class-private-fields.md), [es-x/no-class-private-methods](./no-class-private-methods.md), [es-x/no-class-static-fields](./no-class-static-fields.md) |
+| [es-x/no-object-map-groupby](./no-object-map-groupby.md) | [es-x/no-object-groupby](./no-object-groupby.md), [es-x/no-map-groupby](./no-map-groupby.md) |
+| [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 
 [`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
 [`no-new-in-es2024`]: ../configs/index.md#no-new-in-es2024

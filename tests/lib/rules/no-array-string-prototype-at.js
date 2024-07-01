@@ -25,13 +25,19 @@ new RuleTester().run(ruleId, rule, {
     invalid: [
         {
             code: "foo.at(-1)",
-            errors: ["ES2022 'Array.prototype.at' method is forbidden."],
+            errors: [
+                "ES2022 'Array.prototype.at' method is forbidden.",
+                "ES2022 'String.prototype.at' method is forbidden.",
+            ],
             settings: { "es-x": { aggressive: true } },
         },
         {
             code: "foo.at(-1)",
             options: [{ aggressive: true }],
-            errors: ["ES2022 'Array.prototype.at' method is forbidden."],
+            errors: [
+                "ES2022 'Array.prototype.at' method is forbidden.",
+                "ES2022 'String.prototype.at' method is forbidden.",
+            ],
             settings: { "es-x": { aggressive: false } },
         },
         {
@@ -111,7 +117,10 @@ new RuleTester({
         {
             filename,
             code: "foo.at(-1)",
-            errors: ["ES2022 'Array.prototype.at' method is forbidden."],
+            errors: [
+                "ES2022 'Array.prototype.at' method is forbidden.",
+                "ES2022 'String.prototype.at' method is forbidden.",
+            ],
             settings: { "es-x": { aggressive: true } },
         },
         {

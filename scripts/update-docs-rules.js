@@ -59,6 +59,9 @@ async function main() {
         replacedBy,
     } of rules) {
         const filePath = path.join(docsRoot, `${ruleId}.md`)
+        if (!fs.existsSync(filePath)) {
+            fs.writeFileSync(filePath, "")
+        }
         const originalContent = fs.readFileSync(filePath, "utf8")
         const since = getSince(originalContent)
 

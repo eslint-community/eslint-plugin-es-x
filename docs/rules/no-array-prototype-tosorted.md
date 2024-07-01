@@ -7,7 +7,7 @@ since: "v6.0.0"
 # es-x/no-array-prototype-tosorted
 > disallow the `Array.prototype.toSorted` method
 
-- ✅ The following configurations enable this rule: [no-new-in-es2023], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], [restrict-to-es2020], [restrict-to-es2021], and [restrict-to-es2022]
+- ✅ The following configurations enable this rule: [no-change-array-by-copy], [no-new-in-es2023], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], [restrict-to-es2020], [restrict-to-es2021], and [restrict-to-es2022]
 
 This rule reports ES2023 [`Array.prototype.toSorted` methods](https://github.com/tc39/proposal-change-array-by-copy) as errors.
 
@@ -49,6 +49,7 @@ This rule was introduced in v6.0.0.
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-array-prototype-tosorted.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-array-prototype-tosorted.js)
 
+[no-change-array-by-copy]: ../configs/index.md#no-change-array-by-copy
 [no-new-in-es2023]: ../configs/index.md#no-new-in-es2023
 [restrict-to-es3]: ../configs/index.md#restrict-to-es3
 [restrict-to-es5]: ../configs/index.md#restrict-to-es5
