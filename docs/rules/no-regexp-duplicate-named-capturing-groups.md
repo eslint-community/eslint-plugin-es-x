@@ -1,12 +1,13 @@
 ---
 title: "es-x/no-regexp-duplicate-named-capturing-groups"
 description: "disallow RegExp duplicate named capturing groups"
+since: "v7.8.0"
 ---
 
 # es-x/no-regexp-duplicate-named-capturing-groups
 > disallow RegExp duplicate named capturing groups
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
+- ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2025 [RegExp duplicate named capture groups](https://github.com/tc39/proposal-duplicate-named-capturing-groups) as errors.
 
@@ -24,7 +25,13 @@ const r2 = /(?<x>a)|(?<x>b)/
 
 </eslint-playground>
 
+## 🚀 Version
+
+This rule was introduced in v7.8.0.
+
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-regexp-duplicate-named-capturing-groups.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-regexp-duplicate-named-capturing-groups.js)
+
+[no-new-in-esnext]: ../configs/index.md#no-new-in-esnext

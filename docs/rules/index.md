@@ -10,6 +10,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
+| [es-x/no-regexp-duplicate-named-capturing-groups](./no-regexp-duplicate-named-capturing-groups.md) | disallow RegExp duplicate named capturing groups. |  |
 | [es-x/no-set-prototype-difference](./no-set-prototype-difference.md) | disallow the `Set.prototype.difference` method. |  |
 | [es-x/no-set-prototype-intersection](./no-set-prototype-intersection.md) | disallow the `Set.prototype.intersection` method. |  |
 | [es-x/no-set-prototype-isdisjointfrom](./no-set-prototype-isdisjointfrom.md) | disallow the `Set.prototype.isDisjointFrom` method. |  |
