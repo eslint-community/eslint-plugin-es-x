@@ -9,7 +9,7 @@ module.exports = [
         name: "eslint-internal/config/_base.js#1",
         files: ["**/*.js", "*.js", "**/*.cjs", "*.cjs"],
         languageOptions: {
-            sourceType: "script",
+            sourceType: "commonjs",
         },
     },
     {
