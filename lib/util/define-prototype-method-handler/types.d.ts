@@ -43,7 +43,6 @@ type TypeInfo = {
 export type WellKnownGlobals = Record<
   string,
   | TypeInfo
-  | { type: "undefined"; return?: undefined; properties?: undefined }
   | undefined
 >;
 
