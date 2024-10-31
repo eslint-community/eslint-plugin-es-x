@@ -20,7 +20,7 @@ The second parameter to `import()` is an options bag, which was added in the ES2
 
 ```js
 /*eslint es-x/no-dynamic-import-options: error */
-const module = await import(source, options)
+const m = await import(source, options)
 ```
 
 </eslint-playground>

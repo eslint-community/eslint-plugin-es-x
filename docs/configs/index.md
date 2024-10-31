@@ -1008,7 +1008,7 @@ export default [
 disallow proposal ES2025 [Import Attributes](https://github.com/tc39/proposal-import-attributes)\
 ⚠️ This config will be changed in the minor versions of this plugin.
 
-This configs includes rules for [es-x/no-dynamic-import-options](../rules/no-dynamic-import-options.md) and [es-x/no-import-attributes](../rules/no-import-attributes.md).
+This configs includes rules for [es-x/no-dynamic-import-options](../rules/no-dynamic-import-options.md), [es-x/no-import-attributes](../rules/no-import-attributes.md), and [es-x/no-trailing-dynamic-import-commas](../rules/no-trailing-dynamic-import-commas.md).
 
 ### [Config (Flat Config)]
 
