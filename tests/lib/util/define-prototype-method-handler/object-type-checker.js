@@ -414,6 +414,23 @@ describe("define-prototype-method-handler/object-type-checker", () => {
                 `,
                 result: ["Number"],
             },
+            {
+                code: `
+                target(
+                    String.fromCharCode(42),
+                    String.fromCodePoint(42),
+                    String.raw\`\`,
+                );
+                `,
+                result: ["String", "String", "String"],
+            },
+            {
+                code: `
+                const { promise, resolve, reject } = Promise.withResolvers()
+                target(promise, resolve, reject);
+                `,
+                result: ["Promise", "Function", "Function"],
+            },
         ]) {
             ;(only ? it.only : it)(code, () => {
                 deepStrictEqual(
