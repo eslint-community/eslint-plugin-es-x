@@ -47,7 +47,14 @@ const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
 new RuleTester({
-    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+    languageOptions: {
+        parser,
+        parserOptions: {
+            tsconfigRootDir,
+            project,
+            disallowAutomaticSingleRunInference: true,
+        },
+    },
 }).run(`${ruleId} TS Full Types`, rule, {
     valid: [
         { filename, code: `${method}(other)` },

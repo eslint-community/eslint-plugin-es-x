@@ -157,7 +157,11 @@ new RuleTester({
     languageOptions: {
         ...testerOptions.languageOptions,
         parser,
-        parserOptions: { tsconfigRootDir, project },
+        parserOptions: {
+            tsconfigRootDir,
+            project,
+            disallowAutomaticSingleRunInference: true,
+        },
     },
 }).run(`${ruleId} TS Full Type Information`, rule, {
     valid: [
