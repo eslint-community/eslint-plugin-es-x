@@ -104,7 +104,14 @@ const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
 new RuleTester({
-    languageOptions: { parser, parserOptions: { tsconfigRootDir, project } },
+    languageOptions: {
+        parser,
+        parserOptions: {
+            tsconfigRootDir,
+            project,
+            disallowAutomaticSingleRunInference: false,
+        },
+    },
 }).run(`${ruleId} TS Full Type Information`, rule, {
     valid: [
         { filename, code: USE_GLOBAL_ID },

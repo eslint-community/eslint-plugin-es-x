@@ -46,7 +46,11 @@ const filename = path.join(tsconfigRootDir, "test.ts")
 new RuleTester({
     languageOptions: {
         parser,
-        parserOptions: { tsconfigRootDir, project },
+        parserOptions: {
+            tsconfigRootDir,
+            project,
+            disallowAutomaticSingleRunInference: false,
+        },
     },
 }).run(`${ruleId} TS Full Type Information`, rule, {
     valid: [
