@@ -21,6 +21,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-iterator-prototype-map](./no-iterator-prototype-map.md) | disallow the `Iterator.prototype.map` method. |  |
 | [es-x/no-iterator-prototype-reduce](./no-iterator-prototype-reduce.md) | disallow the `Iterator.prototype.reduce` method. |  |
 | [es-x/no-iterator-prototype-some](./no-iterator-prototype-some.md) | disallow the `Iterator.prototype.some` method. |  |
+| [es-x/no-iterator-prototype-take](./no-iterator-prototype-take.md) | disallow the `Iterator.prototype.take` method. |  |
 | [es-x/no-iterator](./no-iterator.md) | disallow the `Iterator` class. |  |
 | [es-x/no-json-modules](./no-json-modules.md) | disallow JSON Modules. |  |
 | [es-x/no-regexp-duplicate-named-capturing-groups](./no-regexp-duplicate-named-capturing-groups.md) | disallow RegExp duplicate named capturing groups. |  |
