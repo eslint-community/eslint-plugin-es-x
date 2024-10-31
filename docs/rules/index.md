@@ -12,6 +12,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 |:--------|:------------|:--:|
 | [es-x/no-dynamic-import-options](./no-dynamic-import-options.md) | disallow second parameter to `import()`. |  |
 | [es-x/no-import-attributes](./no-import-attributes.md) | disallow Import Attributes. |  |
+| [es-x/no-iterator](./no-iterator.md) | disallow the `Iterator` class. |  |
 | [es-x/no-json-modules](./no-json-modules.md) | disallow JSON Modules. |  |
 | [es-x/no-regexp-duplicate-named-capturing-groups](./no-regexp-duplicate-named-capturing-groups.md) | disallow RegExp duplicate named capturing groups. |  |
 | [es-x/no-regexp-modifiers](./no-regexp-modifiers.md) | disallow RegExp Modifiers. |  |

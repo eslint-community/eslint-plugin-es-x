@@ -1031,6 +1031,34 @@ export default [
 }
 ```
 
+## no-iterator-helpers
+
+disallow proposal ES2025 [Iterator Helpers](https://github.com/tc39/proposal-iterator-helpers)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This configs includes rules for [es-x/no-iterator](../rules/no-iterator.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-iterator-helpers']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-iterator-helpers"],
+}
+```
+
 ## no-set-methods
 
 disallow proposal ES2025 [Set Methods for JavaScript](https://github.com/tc39/proposal-set-methods)\
