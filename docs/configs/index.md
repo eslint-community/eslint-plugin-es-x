@@ -1003,6 +1003,34 @@ export default [
 }
 ```
 
+## no-import-attributes
+
+disallow proposal ES2025 [Import Attributes](https://github.com/tc39/proposal-import-attributes)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This configs includes rules for [es-x/no-import-attributes](../rules/no-import-attributes.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-import-attributes']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-import-attributes"],
+}
+```
+
 ## no-set-methods
 
 disallow proposal ES2025 [Set Methods for JavaScript](https://github.com/tc39/proposal-set-methods)\

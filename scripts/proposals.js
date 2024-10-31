@@ -29,4 +29,8 @@ module.exports = {
         title: "Set Methods for JavaScript",
         link: "https://github.com/tc39/proposal-set-methods",
     },
+    "import-attributes": {
+        title: "Import Attributes",
+        link: "https://github.com/tc39/proposal-import-attributes",
+    },
 }
