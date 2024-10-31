@@ -17,6 +17,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-iterator-prototype-filter](./no-iterator-prototype-filter.md) | disallow the `Iterator.prototype.filter` method. |  |
 | [es-x/no-iterator-prototype-find](./no-iterator-prototype-find.md) | disallow the `Iterator.prototype.find` method. |  |
 | [es-x/no-iterator-prototype-flatmap](./no-iterator-prototype-flatmap.md) | disallow the `Iterator.prototype.flatMap` method. |  |
+| [es-x/no-iterator-prototype-foreach](./no-iterator-prototype-foreach.md) | disallow the `Iterator.prototype.forEach` method. |  |
 | [es-x/no-iterator](./no-iterator.md) | disallow the `Iterator` class. |  |
 | [es-x/no-json-modules](./no-json-modules.md) | disallow JSON Modules. |  |
 | [es-x/no-regexp-duplicate-named-capturing-groups](./no-regexp-duplicate-named-capturing-groups.md) | disallow RegExp duplicate named capturing groups. |  |
