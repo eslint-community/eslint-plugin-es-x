@@ -9,7 +9,7 @@ since: "v8.0.0"
 
 - ✅ The following configurations enable this rule: [no-class-fields], [no-new-in-es2022], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], [restrict-to-es2020], and [restrict-to-es2021]
 
-This rule reports class fields as errors.
+This rule reports instance class fields as errors.
 
 ## 💡 Examples
 
