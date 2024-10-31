@@ -1036,7 +1036,7 @@ export default [
 disallow proposal ES2025 [Iterator Helpers](https://github.com/tc39/proposal-iterator-helpers)\
 ⚠️ This config will be changed in the minor versions of this plugin.
 
-This configs includes rules for [es-x/no-iterator](../rules/no-iterator.md).
+This configs includes rules for [es-x/no-iterator-prototype-drop](../rules/no-iterator-prototype-drop.md) and [es-x/no-iterator](../rules/no-iterator.md).
 
 ### [Config (Flat Config)]
 

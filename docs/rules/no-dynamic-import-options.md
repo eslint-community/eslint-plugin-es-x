@@ -1,10 +1,10 @@
 ---
 title: "es-x/no-dynamic-import-options"
-description: "disallow second parameter to `import()`"
+description: "disallow the second parameter to `import()`"
 ---
 
 # es-x/no-dynamic-import-options
-> disallow second parameter to `import()`
+> disallow the second parameter to `import()`
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-import-attributes] and [no-new-in-esnext]
