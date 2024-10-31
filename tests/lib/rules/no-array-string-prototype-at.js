@@ -65,7 +65,7 @@ new RuleTester({
         parserOptions: {
             tsconfigRootDir,
             project,
-            disallowAutomaticSingleRunInference: false,
+            disallowAutomaticSingleRunInference: true,
         },
     },
 }).run(`${ruleId} TS Full Type Information`, rule, {
