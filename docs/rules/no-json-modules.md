@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-json-modules"
 description: "disallow JSON Modules"
+since: "v8.1.0"
 ---
 
 # es-x/no-json-modules
 > disallow JSON Modules
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2025 [JSON Modules](https://github.com/tc39/proposal-json-modules) as errors.
@@ -24,6 +24,10 @@ import("foo.json", { with: { type: "json" } });
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.1.0.
 
 ## 📚 References
 

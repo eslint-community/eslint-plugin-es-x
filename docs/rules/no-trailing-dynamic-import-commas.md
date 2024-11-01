@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-trailing-dynamic-import-commas"
 description: "disallow trailing commas in `import()`"
+since: "v8.1.0"
 ---
 
 # es-x/no-trailing-dynamic-import-commas
 > disallow trailing commas in `import()`
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-import-attributes] and [no-new-in-esnext]
 - 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
@@ -33,6 +33,10 @@ const m4 = await import(
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.1.0.
 
 ## 📚 References
 

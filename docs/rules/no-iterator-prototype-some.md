@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-iterator-prototype-some"
 description: "disallow the `Iterator.prototype.some` method"
+since: "v8.1.0"
 ---
 
 # es-x/no-iterator-prototype-some
 > disallow the `Iterator.prototype.some` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-iterator-helpers] and [no-new-in-esnext]
 
 This rule reports ES2025 [`Iterator.prototype.some`](https://github.com/tc39/proposal-iterator-helpers) as errors.\
@@ -28,6 +28,10 @@ function* naturals() {
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.1.0.
 
 ## 📚 References
 

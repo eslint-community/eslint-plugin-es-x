@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-dynamic-import-options"
 description: "disallow the second parameter to `import()`"
+since: "v8.1.0"
 ---
 
 # es-x/no-dynamic-import-options
 > disallow the second parameter to `import()`
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-import-attributes] and [no-new-in-esnext]
 
 This rule reports the second parameter to `import()` as errors.\
@@ -24,6 +24,10 @@ const m = await import(source, options)
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.1.0.
 
 ## 📚 References
 

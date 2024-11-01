@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-iterator"
 description: "disallow the `Iterator` class"
+since: "v8.1.0"
 ---
 
 # es-x/no-iterator
 > disallow the `Iterator` class
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-iterator-helpers] and [no-new-in-esnext]
 
 This rule reports ES2025 `Iterator` class as errors.\
@@ -24,6 +24,10 @@ const wrapper = Iterator.from(iter);
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.1.0.
 
 ## 📚 References
 

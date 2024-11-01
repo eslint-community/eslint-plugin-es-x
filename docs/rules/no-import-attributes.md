@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-import-attributes"
 description: "disallow Import Attributes"
+since: "v8.1.0"
 ---
 
 # es-x/no-import-attributes
 > disallow Import Attributes
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-import-attributes] and [no-new-in-esnext]
 
 This rule reports ES2025 [Import Attributes](https://github.com/tc39/proposal-import-attributes) as errors.
@@ -24,6 +24,10 @@ const a = await import("foo.json", { with: { type: "json" } });
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.1.0.
 
 ## 📚 References
 
