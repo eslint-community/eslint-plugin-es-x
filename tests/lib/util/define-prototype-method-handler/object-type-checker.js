@@ -431,6 +431,13 @@ describe("define-prototype-method-handler/object-type-checker", () => {
                 `,
                 result: ["Promise", "Function", "Function"],
             },
+            {
+                code: `
+                const r = /foo/.exec('foo')[0]
+                target(r);
+                `,
+                result: ["String"],
+            },
         ]) {
             ;(only ? it.only : it)(code, () => {
                 deepStrictEqual(
