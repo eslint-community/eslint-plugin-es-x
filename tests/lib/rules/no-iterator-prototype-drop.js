@@ -211,5 +211,10 @@ new RuleTester({
             errors: ["ES2025 'Iterator.prototype.drop' method is forbidden."],
             settings: { "es-x": { aggressive: true } },
         },
+        {
+            filename,
+            code: '"s".matchAll(/a/g).drop(1)',
+            errors: ["ES2025 'Iterator.prototype.drop' method is forbidden."],
+        },
     ],
 })
