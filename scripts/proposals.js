@@ -13,6 +13,10 @@ module.exports = {
         title: "Class Fields",
         link: "https://github.com/tc39/proposal-class-fields",
     },
+    "import-attributes": {
+        title: "Import Attributes",
+        link: "https://github.com/tc39/proposal-import-attributes",
+    },
     "intl-numberformat-v3": {
         title: "Intl.NumberFormat V3",
         link: "https://github.com/tc39/proposal-intl-numberformat-v3",
@@ -21,6 +25,10 @@ module.exports = {
         title: "Well-Formed Unicode Strings",
         link: "https://github.com/tc39/proposal-is-usv-string",
     },
+    "iterator-helpers": {
+        title: "Iterator Helpers",
+        link: "https://github.com/tc39/proposal-iterator-helpers",
+    },
     "relative-indexing-method": {
         title: "An .at() method on all the built-in indexables",
         link: "https://github.com/tc39/proposal-relative-indexing-method",
@@ -28,9 +36,5 @@ module.exports = {
     "set-methods": {
         title: "Set Methods for JavaScript",
         link: "https://github.com/tc39/proposal-set-methods",
-    },
-    "import-attributes": {
-        title: "Import Attributes",
-        link: "https://github.com/tc39/proposal-import-attributes",
     },
 }

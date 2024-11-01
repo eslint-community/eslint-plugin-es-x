@@ -10,8 +10,20 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
-| [es-x/no-dynamic-import-options](./no-dynamic-import-options.md) | disallow second parameter to `import()`. |  |
+| [es-x/no-dynamic-import-options](./no-dynamic-import-options.md) | disallow the second parameter to `import()`. |  |
 | [es-x/no-import-attributes](./no-import-attributes.md) | disallow Import Attributes. |  |
+| [es-x/no-iterator-prototype-drop](./no-iterator-prototype-drop.md) | disallow the `Iterator.prototype.drop` method. |  |
+| [es-x/no-iterator-prototype-every](./no-iterator-prototype-every.md) | disallow the `Iterator.prototype.every` method. |  |
+| [es-x/no-iterator-prototype-filter](./no-iterator-prototype-filter.md) | disallow the `Iterator.prototype.filter` method. |  |
+| [es-x/no-iterator-prototype-find](./no-iterator-prototype-find.md) | disallow the `Iterator.prototype.find` method. |  |
+| [es-x/no-iterator-prototype-flatmap](./no-iterator-prototype-flatmap.md) | disallow the `Iterator.prototype.flatMap` method. |  |
+| [es-x/no-iterator-prototype-foreach](./no-iterator-prototype-foreach.md) | disallow the `Iterator.prototype.forEach` method. |  |
+| [es-x/no-iterator-prototype-map](./no-iterator-prototype-map.md) | disallow the `Iterator.prototype.map` method. |  |
+| [es-x/no-iterator-prototype-reduce](./no-iterator-prototype-reduce.md) | disallow the `Iterator.prototype.reduce` method. |  |
+| [es-x/no-iterator-prototype-some](./no-iterator-prototype-some.md) | disallow the `Iterator.prototype.some` method. |  |
+| [es-x/no-iterator-prototype-take](./no-iterator-prototype-take.md) | disallow the `Iterator.prototype.take` method. |  |
+| [es-x/no-iterator-prototype-toarray](./no-iterator-prototype-toarray.md) | disallow the `Iterator.prototype.toArray` method. |  |
+| [es-x/no-iterator](./no-iterator.md) | disallow the `Iterator` class. |  |
 | [es-x/no-json-modules](./no-json-modules.md) | disallow JSON Modules. |  |
 | [es-x/no-promise-try](./no-promise-try.md) | disallow `Promise.try` function. |  |
 | [es-x/no-regexp-duplicate-named-capturing-groups](./no-regexp-duplicate-named-capturing-groups.md) | disallow RegExp duplicate named capturing groups. |  |

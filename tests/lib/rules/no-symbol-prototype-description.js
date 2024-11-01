@@ -12,7 +12,6 @@ const ruleId = "no-symbol-prototype-description"
 new RuleTester().run(ruleId, rule, {
     valid: [
         "foo.description",
-        "Symbol.iterator.description",
         {
             code: "foo.description",
             options: [{ aggressive: false }],
@@ -40,6 +39,12 @@ new RuleTester().run(ruleId, rule, {
                 "ES2019 'Symbol.prototype.description' property is forbidden.",
             ],
             settings: { "es-x": { aggressive: false } },
+        },
+        {
+            code: "Symbol.iterator.description",
+            errors: [
+                "ES2019 'Symbol.prototype.description' property is forbidden.",
+            ],
         },
     ],
 })

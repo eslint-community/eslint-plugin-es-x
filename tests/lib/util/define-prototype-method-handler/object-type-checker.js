@@ -22,7 +22,7 @@ if (!RuleTester.isSupported(2022)) {
 
 describe("define-prototype-method-handler/object-type-checker", () => {
     describe("buildExpressionTypeProvider", () => {
-        for (const { code, result } of [
+        for (const { code, result, only } of [
             {
                 code: "target('foo');",
                 result: ["String"],
@@ -408,8 +408,38 @@ describe("define-prototype-method-handler/object-type-checker", () => {
                 `,
                 result: ["Number", "Number"],
             },
+            {
+                code: `
+                target("".length);
+                `,
+                result: ["Number"],
+            },
+            {
+                code: `
+                target(
+                    String.fromCharCode(42),
+                    String.fromCodePoint(42),
+                    String.raw\`\`,
+                );
+                `,
+                result: ["String", "String", "String"],
+            },
+            {
+                code: `
+                const { promise, resolve, reject } = Promise.withResolvers()
+                target(promise, resolve, reject);
+                `,
+                result: ["Promise", "Function", "Function"],
+            },
+            {
+                code: `
+                const r = /foo/.exec('foo')[0]
+                target(r);
+                `,
+                result: ["String"],
+            },
         ]) {
-            it(code, () => {
+            ;(only ? it.only : it)(code, () => {
                 deepStrictEqual(
                     getResultOfBuildExpressionTypeProvider(code),
                     result,
