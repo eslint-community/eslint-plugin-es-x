@@ -377,6 +377,22 @@ Rules in this category are not included in any preset.
 | [es-x/no-string-prototype-substr](./no-string-prototype-substr.md) | disallow the `String.prototype.substr` method. |  |
 | [es-x/no-string-prototype-trimleft-trimright](./no-string-prototype-trimleft-trimright.md) | disallow the `String.prototype.{trimLeft,trimRight}` methods. | 🔧 |
 
+## Non-standards
+
+Rules in this category disallow features that are not defined in ECMAScript.\
+Rules in this category are not included in any preset.
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-nonstandard-boolean-properties](./no-nonstandard-boolean-properties.md) | disallow non-standard Boolean object properties. |  |
+| [es-x/no-nonstandard-boolean-prototype-properties](./no-nonstandard-boolean-prototype-properties.md) | disallow non-standard Boolean instance properties. |  |
+| [es-x/no-nonstandard-function-properties](./no-nonstandard-function-properties.md) | disallow non-standard Function object properties. |  |
+| [es-x/no-nonstandard-number-properties](./no-nonstandard-number-properties.md) | disallow non-standard Number object properties. |  |
+| [es-x/no-nonstandard-number-prototype-properties](./no-nonstandard-number-prototype-properties.md) | disallow non-standard Number instance properties. |  |
+| [es-x/no-nonstandard-object-properties](./no-nonstandard-object-properties.md) | disallow non-standard Object object properties. |  |
+| [es-x/no-nonstandard-string-properties](./no-nonstandard-string-properties.md) | disallow non-standard String object properties. |  |
+| [es-x/no-nonstandard-string-prototype-properties](./no-nonstandard-string-prototype-properties.md) | disallow non-standard String instance properties. |  |
+
 ## Deprecated
 
 😇 We don't fix bugs which are in deprecated rules since we don't have enough resources.

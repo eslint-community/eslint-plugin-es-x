@@ -4,7 +4,7 @@ const RuleTester = require("../../../tester")
 const { deepStrictEqual } = require("assert")
 const {
     buildExpressionTypeProvider,
-} = require("../../../../lib/util/define-prototype-method-handler/object-type-checker")
+} = require("../../../../lib/util/type-checker/object-type-checker")
 const { getLinter } = require("eslint-compat-utils/linter")
 const Linter = getLinter()
 
