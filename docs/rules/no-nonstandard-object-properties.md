@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-object-properties"
-description: "disallow non-standard Object object properties"
+description: "disallow non-standard `Object` class properties"
 ---
 
 # es-x/no-nonstandard-object-properties
-> disallow non-standard Object object properties
+> disallow non-standard `Object` class properties
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard Object object properties as errors.
+This rule reports non-standard `Object` class properties as errors.
 
 ## 💡 Examples
 
