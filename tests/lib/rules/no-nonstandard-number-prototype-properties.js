@@ -14,8 +14,6 @@ new RuleTester().run(ruleId, rule, {
         "foo.toString",
         "foo.foo",
         ...[...numberPrototypeProperties].map((p) => `(123).${p}`),
-        "(123)[0]",
-        "(123)['0']",
         { code: "(123).unknown()", options: [{ allow: ["unknown"] }] },
     ],
     invalid: [
@@ -35,6 +33,18 @@ new RuleTester().run(ruleId, rule, {
             code: "(123).bar",
             errors: [
                 "Non-standard 'Number.prototype.bar' property is forbidden.",
+            ],
+        },
+        {
+            code: "(123)[0]",
+            errors: [
+                "Non-standard 'Number.prototype.0' property is forbidden.",
+            ],
+        },
+        {
+            code: "(123)['0']",
+            errors: [
+                "Non-standard 'Number.prototype.0' property is forbidden.",
             ],
         },
         {
@@ -73,8 +83,6 @@ new RuleTester({
             filename,
             code: `(123).${p}`,
         })),
-        { filename, code: "(123)[0]" },
-        { filename, code: "(123)['0']" },
     ],
     invalid: [
         {
@@ -89,6 +97,20 @@ new RuleTester({
             code: "(123).bar",
             errors: [
                 "Non-standard 'Number.prototype.bar' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "(123)[0]",
+            errors: [
+                "Non-standard 'Number.prototype.0' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "(123)['0']",
+            errors: [
+                "Non-standard 'Number.prototype.0' property is forbidden.",
             ],
         },
         {

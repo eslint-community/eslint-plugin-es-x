@@ -14,8 +14,6 @@ new RuleTester().run(ruleId, rule, {
         "foo.toString",
         "foo.foo",
         ...[...booleanPrototypeProperties].map((p) => `true.${p}`),
-        "true[0]",
-        "true['0']",
         { code: "true.unknown()", options: [{ allow: ["unknown"] }] },
     ],
     invalid: [
@@ -35,6 +33,18 @@ new RuleTester().run(ruleId, rule, {
             code: "true.bar",
             errors: [
                 "Non-standard 'Boolean.prototype.bar' property is forbidden.",
+            ],
+        },
+        {
+            code: "true[0]",
+            errors: [
+                "Non-standard 'Boolean.prototype.0' property is forbidden.",
+            ],
+        },
+        {
+            code: "true['0']",
+            errors: [
+                "Non-standard 'Boolean.prototype.0' property is forbidden.",
             ],
         },
         {
@@ -73,8 +83,6 @@ new RuleTester({
             filename,
             code: `true.${p}`,
         })),
-        { filename, code: "true[0]" },
-        { filename, code: "true['0']" },
     ],
     invalid: [
         {
@@ -89,6 +97,20 @@ new RuleTester({
             code: "true.bar",
             errors: [
                 "Non-standard 'Boolean.prototype.bar' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "true[0]",
+            errors: [
+                "Non-standard 'Boolean.prototype.0' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "true['0']",
+            errors: [
+                "Non-standard 'Boolean.prototype.0' property is forbidden.",
             ],
         },
         {
