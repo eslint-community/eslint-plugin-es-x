@@ -392,6 +392,8 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-object-properties](./no-nonstandard-object-properties.md) | disallow non-standard Object object properties. |  |
 | [es-x/no-nonstandard-string-properties](./no-nonstandard-string-properties.md) | disallow non-standard String object properties. |  |
 | [es-x/no-nonstandard-string-prototype-properties](./no-nonstandard-string-prototype-properties.md) | disallow non-standard String instance properties. |  |
+| [es-x/no-nonstandard-symbol-properties](./no-nonstandard-symbol-properties.md) | disallow non-standard Symbol object properties. |  |
+| [es-x/no-nonstandard-symbol-prototype-properties](./no-nonstandard-symbol-prototype-properties.md) | disallow non-standard Symbol instance properties. |  |
 
 ## Deprecated
 
