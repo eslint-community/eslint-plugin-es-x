@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-json-properties"
-description: "disallow non-standard `JSON` class properties"
+description: "disallow non-standard properties on `JSON` class"
 ---
 
 # es-x/no-nonstandard-json-properties
-> disallow non-standard `JSON` class properties
+> disallow non-standard properties on `JSON` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `JSON` class properties as errors.
+This rule reports non-standard properties on `JSON` class as errors.
 
 ## 💡 Examples
 

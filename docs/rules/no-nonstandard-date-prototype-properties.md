@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-date-prototype-properties"
-description: "disallow non-standard Date instance properties"
+description: "disallow non-standard properties on Date instance"
 ---
 
 # es-x/no-nonstandard-date-prototype-properties
-> disallow non-standard Date instance properties
+> disallow non-standard properties on Date instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard Date instance properties as errors.
+This rule reports non-standard properties on Date instance as errors.
 
 ## 💡 Examples
 

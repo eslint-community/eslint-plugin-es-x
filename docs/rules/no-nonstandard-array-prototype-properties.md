@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-array-prototype-properties"
-description: "disallow non-standard Array instance properties"
+description: "disallow non-standard properties on Array instance"
 ---
 
 # es-x/no-nonstandard-array-prototype-properties
-> disallow non-standard Array instance properties
+> disallow non-standard properties on Array instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard Array instance properties as errors.
+This rule reports non-standard properties on Array instance as errors.
 
 ## 💡 Examples
 

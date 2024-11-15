@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-symbol-properties"
-description: "disallow non-standard `Symbol` class properties"
+description: "disallow non-standard properties on `Symbol` class"
 ---
 
 # es-x/no-nonstandard-symbol-properties
-> disallow non-standard `Symbol` class properties
+> disallow non-standard properties on `Symbol` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `Symbol` class properties as errors.
+This rule reports non-standard properties on `Symbol` class as errors.
 
 ## 💡 Examples
 

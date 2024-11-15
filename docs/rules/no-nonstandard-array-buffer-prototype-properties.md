@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-array-buffer-prototype-properties"
-description: "disallow non-standard ArrayBuffer instance properties"
+description: "disallow non-standard properties on ArrayBuffer instance"
 ---
 
 # es-x/no-nonstandard-array-buffer-prototype-properties
-> disallow non-standard ArrayBuffer instance properties
+> disallow non-standard properties on ArrayBuffer instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard ArrayBuffer instance properties as errors.
+This rule reports non-standard properties on ArrayBuffer instance as errors.
 
 ## 💡 Examples
 

@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-reflect-properties"
-description: "disallow non-standard `Reflect` class properties"
+description: "disallow non-standard properties on `Reflect` class"
 ---
 
 # es-x/no-nonstandard-reflect-properties
-> disallow non-standard `Reflect` class properties
+> disallow non-standard properties on `Reflect` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `Reflect` class properties as errors.
+This rule reports non-standard properties on `Reflect` class as errors.
 
 ## 💡 Examples
 

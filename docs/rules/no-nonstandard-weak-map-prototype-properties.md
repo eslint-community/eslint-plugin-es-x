@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-weak-map-prototype-properties"
-description: "disallow non-standard WeakMap instance properties"
+description: "disallow non-standard properties on WeakMap instance"
 ---
 
 # es-x/no-nonstandard-weak-map-prototype-properties
-> disallow non-standard WeakMap instance properties
+> disallow non-standard properties on WeakMap instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard WeakMap instance properties as errors.
+This rule reports non-standard properties on WeakMap instance as errors.
 
 ## 💡 Examples
 

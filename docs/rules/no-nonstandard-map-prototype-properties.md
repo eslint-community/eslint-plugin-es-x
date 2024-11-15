@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-map-prototype-properties"
-description: "disallow non-standard Map instance properties"
+description: "disallow non-standard properties on Map instance"
 ---
 
 # es-x/no-nonstandard-map-prototype-properties
-> disallow non-standard Map instance properties
+> disallow non-standard properties on Map instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard Map instance properties as errors.
+This rule reports non-standard properties on Map instance as errors.
 
 ## 💡 Examples
 

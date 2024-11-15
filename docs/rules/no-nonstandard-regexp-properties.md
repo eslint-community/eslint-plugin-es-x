@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-regexp-properties"
-description: "disallow non-standard `RegExp` class properties"
+description: "disallow non-standard properties on `RegExp` class"
 ---
 
 # es-x/no-nonstandard-regexp-properties
-> disallow non-standard `RegExp` class properties
+> disallow non-standard properties on `RegExp` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `RegExp` class properties as errors.
+This rule reports non-standard properties on `RegExp` class as errors.
 
 ## 💡 Examples
 

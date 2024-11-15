@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-boolean-prototype-properties"
-description: "disallow non-standard Boolean instance properties"
+description: "disallow non-standard properties on Boolean instance"
 ---
 
 # es-x/no-nonstandard-boolean-prototype-properties
-> disallow non-standard Boolean instance properties
+> disallow non-standard properties on Boolean instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard Boolean instance properties as errors.
+This rule reports non-standard properties on Boolean instance as errors.
 
 ## 💡 Examples
 

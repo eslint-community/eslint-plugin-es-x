@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-array-properties"
-description: "disallow non-standard `Array` class properties"
+description: "disallow non-standard properties on `Array` class"
 ---
 
 # es-x/no-nonstandard-array-properties
-> disallow non-standard `Array` class properties
+> disallow non-standard properties on `Array` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `Array` class properties as errors.
+This rule reports non-standard properties on `Array` class as errors.
 
 ## 💡 Examples
 

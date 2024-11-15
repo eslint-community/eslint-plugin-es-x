@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-shared-array-buffer-prototype-properties"
-description: "disallow non-standard SharedArrayBuffer instance properties"
+description: "disallow non-standard properties on SharedArrayBuffer instance"
 ---
 
 # es-x/no-nonstandard-shared-array-buffer-prototype-properties
-> disallow non-standard SharedArrayBuffer instance properties
+> disallow non-standard properties on SharedArrayBuffer instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard SharedArrayBuffer instance properties as errors.
+This rule reports non-standard properties on SharedArrayBuffer instance as errors.
 
 ## 💡 Examples
 

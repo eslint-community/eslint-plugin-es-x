@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-boolean-properties"
-description: "disallow non-standard `Boolean` class properties"
+description: "disallow non-standard properties on `Boolean` class"
 ---
 
 # es-x/no-nonstandard-boolean-properties
-> disallow non-standard `Boolean` class properties
+> disallow non-standard properties on `Boolean` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `Boolean` class properties as errors.
+This rule reports non-standard properties on `Boolean` class as errors.
 
 ## 💡 Examples
 

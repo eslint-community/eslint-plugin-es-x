@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-weak-ref-prototype-properties"
-description: "disallow non-standard WeakRef instance properties"
+description: "disallow non-standard properties on WeakRef instance"
 ---
 
 # es-x/no-nonstandard-weak-ref-prototype-properties
-> disallow non-standard WeakRef instance properties
+> disallow non-standard properties on WeakRef instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard WeakRef instance properties as errors.
+This rule reports non-standard properties on WeakRef instance as errors.
 
 ## 💡 Examples
 

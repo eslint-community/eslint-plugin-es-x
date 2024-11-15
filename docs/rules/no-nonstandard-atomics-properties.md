@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-atomics-properties"
-description: "disallow non-standard `Atomics` class properties"
+description: "disallow non-standard properties on `Atomics` class"
 ---
 
 # es-x/no-nonstandard-atomics-properties
-> disallow non-standard `Atomics` class properties
+> disallow non-standard properties on `Atomics` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `Atomics` class properties as errors.
+This rule reports non-standard properties on `Atomics` class as errors.
 
 ## 💡 Examples
 

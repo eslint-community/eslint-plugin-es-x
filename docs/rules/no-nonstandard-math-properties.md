@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-math-properties"
-description: "disallow non-standard `Math` class properties"
+description: "disallow non-standard properties on `Math` class"
 ---
 
 # es-x/no-nonstandard-math-properties
-> disallow non-standard `Math` class properties
+> disallow non-standard properties on `Math` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `Math` class properties as errors.
+This rule reports non-standard properties on `Math` class as errors.
 
 ## 💡 Examples
 

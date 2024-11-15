@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-iterator-prototype-properties"
-description: "disallow non-standard Iterator instance properties"
+description: "disallow non-standard properties on Iterator instance"
 ---
 
 # es-x/no-nonstandard-iterator-prototype-properties
-> disallow non-standard Iterator instance properties
+> disallow non-standard properties on Iterator instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard Iterator instance properties as errors.
+This rule reports non-standard properties on Iterator instance as errors.
 
 ## 💡 Examples
 

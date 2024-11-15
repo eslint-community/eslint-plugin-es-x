@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-string-properties"
-description: "disallow non-standard `String` class properties"
+description: "disallow non-standard properties on `String` class"
 ---
 
 # es-x/no-nonstandard-string-properties
-> disallow non-standard `String` class properties
+> disallow non-standard properties on `String` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `String` class properties as errors.
+This rule reports non-standard properties on `String` class as errors.
 
 ## 💡 Examples
 

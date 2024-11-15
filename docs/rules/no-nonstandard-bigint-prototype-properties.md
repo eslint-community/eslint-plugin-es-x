@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-bigint-prototype-properties"
-description: "disallow non-standard BigInt instance properties"
+description: "disallow non-standard properties on BigInt instance"
 ---
 
 # es-x/no-nonstandard-bigint-prototype-properties
-> disallow non-standard BigInt instance properties
+> disallow non-standard properties on BigInt instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard BigInt instance properties as errors.
+This rule reports non-standard properties on BigInt instance as errors.
 
 ## 💡 Examples
 

@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-set-prototype-properties"
-description: "disallow non-standard Set instance properties"
+description: "disallow non-standard properties on Set instance"
 ---
 
 # es-x/no-nonstandard-set-prototype-properties
-> disallow non-standard Set instance properties
+> disallow non-standard properties on Set instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard Set instance properties as errors.
+This rule reports non-standard properties on Set instance as errors.
 
 ## 💡 Examples
 

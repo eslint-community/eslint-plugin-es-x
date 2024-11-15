@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-weak-set-prototype-properties"
-description: "disallow non-standard WeakSet instance properties"
+description: "disallow non-standard properties on WeakSet instance"
 ---
 
 # es-x/no-nonstandard-weak-set-prototype-properties
-> disallow non-standard WeakSet instance properties
+> disallow non-standard properties on WeakSet instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard WeakSet instance properties as errors.
+This rule reports non-standard properties on WeakSet instance as errors.
 
 ## 💡 Examples
 

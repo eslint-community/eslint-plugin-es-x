@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-map-properties"
-description: "disallow non-standard `Map` class properties"
+description: "disallow non-standard properties on `Map` class"
 ---
 
 # es-x/no-nonstandard-map-properties
-> disallow non-standard `Map` class properties
+> disallow non-standard properties on `Map` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `Map` class properties as errors.
+This rule reports non-standard properties on `Map` class as errors.
 
 ## 💡 Examples
 

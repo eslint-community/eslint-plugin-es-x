@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-number-properties"
-description: "disallow non-standard `Number` class properties"
+description: "disallow non-standard properties on `Number` class"
 ---
 
 # es-x/no-nonstandard-number-properties
-> disallow non-standard `Number` class properties
+> disallow non-standard properties on `Number` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `Number` class properties as errors.
+This rule reports non-standard properties on `Number` class as errors.
 
 ## 💡 Examples
 

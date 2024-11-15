@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-promise-properties"
-description: "disallow non-standard `Promise` class properties"
+description: "disallow non-standard properties on `Promise` class"
 ---
 
 # es-x/no-nonstandard-promise-properties
-> disallow non-standard `Promise` class properties
+> disallow non-standard properties on `Promise` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard `Promise` class properties as errors.
+This rule reports non-standard properties on `Promise` class as errors.
 
 ## 💡 Examples
 
