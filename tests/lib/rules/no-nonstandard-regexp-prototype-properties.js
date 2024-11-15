@@ -2,55 +2,55 @@
 
 const path = require("path")
 const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-number-prototype-properties.js")
+const rule = require("../../../lib/rules/no-nonstandard-regexp-prototype-properties.js")
 const {
-    numberPrototypeProperties,
+    regexpPrototypeProperties,
 } = require("../../../lib/util/well-known-properties")
-const ruleId = "no-nonstandard-number-prototype-properties"
+const ruleId = "no-nonstandard-regexp-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {
     valid: [
         "foo",
         "foo.toString",
         "foo.foo",
-        ...[...numberPrototypeProperties].map((p) => `(123).${p}`),
-        { code: "(123).unknown()", options: [{ allow: ["unknown"] }] },
+        ...[...regexpPrototypeProperties].map((p) => `/foo/u.${p}`),
+        { code: "/foo/u.unknown()", options: [{ allow: ["unknown"] }] },
     ],
     invalid: [
         {
-            code: "(123).unknown()",
+            code: "/foo/u.unknown()",
             errors: [
-                "Non-standard 'Number.prototype.unknown' property is forbidden.",
+                "Non-standard 'RegExp.prototype.unknown' property is forbidden.",
             ],
         },
         {
-            code: "(123).foo",
+            code: "/foo/u.foo",
             errors: [
-                "Non-standard 'Number.prototype.foo' property is forbidden.",
+                "Non-standard 'RegExp.prototype.foo' property is forbidden.",
             ],
         },
         {
-            code: "(123).bar",
+            code: "/foo/u.bar",
             errors: [
-                "Non-standard 'Number.prototype.bar' property is forbidden.",
+                "Non-standard 'RegExp.prototype.bar' property is forbidden.",
             ],
         },
         {
-            code: "(123)[0]",
+            code: "/foo/u[0]",
             errors: [
-                "Non-standard 'Number.prototype.0' property is forbidden.",
+                "Non-standard 'RegExp.prototype.0' property is forbidden.",
             ],
         },
         {
-            code: "(123)['0']",
+            code: "/foo/u['0']",
             errors: [
-                "Non-standard 'Number.prototype.0' property is forbidden.",
+                "Non-standard 'RegExp.prototype.0' property is forbidden.",
             ],
         },
         {
-            code: "(123)['01']",
+            code: "/foo/u['01']",
             errors: [
-                "Non-standard 'Number.prototype.01' property is forbidden.",
+                "Non-standard 'RegExp.prototype.01' property is forbidden.",
             ],
         },
     ],
@@ -79,66 +79,66 @@ new RuleTester({
         { filename, code: "foo.toString" },
         { filename, code: "foo.foo" },
         { filename, code: "let foo = {}; foo.foo" },
-        ...[...numberPrototypeProperties].map((p) => ({
+        ...[...regexpPrototypeProperties].map((p) => ({
             filename,
-            code: `(123).${p}`,
+            code: `/foo/u.${p}`,
         })),
     ],
     invalid: [
         {
             filename,
-            code: "(123).foo",
+            code: "/foo/u.foo",
             errors: [
-                "Non-standard 'Number.prototype.foo' property is forbidden.",
+                "Non-standard 'RegExp.prototype.foo' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "(123).bar",
+            code: "/foo/u.bar",
             errors: [
-                "Non-standard 'Number.prototype.bar' property is forbidden.",
+                "Non-standard 'RegExp.prototype.bar' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "(123)[0]",
+            code: "/foo/u[0]",
             errors: [
-                "Non-standard 'Number.prototype.0' property is forbidden.",
+                "Non-standard 'RegExp.prototype.0' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "(123)['0']",
+            code: "/foo/u['0']",
             errors: [
-                "Non-standard 'Number.prototype.0' property is forbidden.",
+                "Non-standard 'RegExp.prototype.0' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "(123)['01']",
+            code: "/foo/u['01']",
             errors: [
-                "Non-standard 'Number.prototype.01' property is forbidden.",
+                "Non-standard 'RegExp.prototype.01' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "let foo = (123); foo.foo",
+            code: "let foo = /foo/u; foo.foo",
             errors: [
-                "Non-standard 'Number.prototype.foo' property is forbidden.",
+                "Non-standard 'RegExp.prototype.foo' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "let foo = Number(''); foo.bar",
+            code: "let foo = new RegExp(''); foo.bar",
             errors: [
-                "Non-standard 'Number.prototype.bar' property is forbidden.",
+                "Non-standard 'RegExp.prototype.bar' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "function f<T extends number>(a: T) { a.baz }",
+            code: "function f<T extends RegExp>(a: T) { a.baz }",
             errors: [
-                "Non-standard 'Number.prototype.baz' property is forbidden.",
+                "Non-standard 'RegExp.prototype.baz' property is forbidden.",
             ],
         },
     ],

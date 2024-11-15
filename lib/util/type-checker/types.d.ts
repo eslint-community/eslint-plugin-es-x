@@ -33,6 +33,11 @@ export type TypeName =
   | "Boolean"
   | "BigInt"
   | "Iterator"
+  | "Map"
+  | "Set"
+  | "WeakMap"
+  | "WeakSet"
+  | "WeakRef"
   | "null"
   | "undefined";
 
@@ -104,6 +109,16 @@ export type ArrayPrototypeProperty = Exclude<
   keyof Array<any>,
   ExcludePrototypeProperty
 >;
+export type MapProperty = Exclude<keyof typeof Map, ExcludeProperty>;
+export type MapPrototypeProperty = Exclude<
+  keyof Map<any, any>,
+  ExcludePrototypeProperty
+>;
+export type SetProperty = Exclude<keyof typeof Set, ExcludeProperty>;
+export type SetPrototypeProperty = Exclude<
+  keyof Set<any>,
+  ExcludePrototypeProperty
+>;
 export type RegExpProperty = Exclude<keyof typeof RegExp, ExcludeProperty>;
 export type RegExpPrototypeProperty = Exclude<
   keyof RegExp,
@@ -147,6 +162,21 @@ export type SharedArrayBufferPrototypeProperty =
   | "grow"
   | "growable"
   | "maxByteLength";
+export type WeakMapProperty = Exclude<keyof typeof WeakMap, ExcludeProperty>;
+export type WeakMapPrototypeProperty = Exclude<
+  keyof WeakMap<any, any>,
+  ExcludePrototypeProperty
+>;
+export type WeakSetProperty = Exclude<keyof typeof WeakSet, ExcludeProperty>;
+export type WeakSetPrototypeProperty = Exclude<
+  keyof WeakSet<any>,
+  ExcludePrototypeProperty
+>;
+export type WeakRefProperty = Exclude<keyof typeof WeakRef, ExcludeProperty>;
+export type WeakRefPrototypeProperty = Exclude<
+  keyof WeakRef<any>,
+  ExcludePrototypeProperty
+>;
 export type IntlProperty = Exclude<keyof typeof Intl, ExcludeProperty>;
 export type IteratorProperty = Exclude<keyof typeof Iterator, ExcludeProperty>;
 export type IteratorPrototypeProperty = Exclude<

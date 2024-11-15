@@ -1,14 +1,14 @@
 ---
 title: "es-x/no-nonstandard-typed-array-properties"
-description: "disallow non-standard typed array classes properties"
+description: "disallow non-standard typed array class properties"
 ---
 
 # es-x/no-nonstandard-typed-array-properties
-> disallow non-standard typed array classes properties
+> disallow non-standard typed array class properties
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
-This rule reports non-standard typed array classes (`%TypedArray%`) properties as errors.
+This rule reports non-standard typed array class (`%TypedArray%`) properties as errors.
 
 ## 💡 Examples
 

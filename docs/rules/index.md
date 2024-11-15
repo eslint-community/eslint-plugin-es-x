@@ -385,29 +385,43 @@ Rules in this category are not included in any preset.
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-nonstandard-array-buffer-properties](./no-nonstandard-array-buffer-properties.md) | disallow non-standard `ArrayBuffer` class properties. |  |
+| [es-x/no-nonstandard-array-buffer-prototype-properties](./no-nonstandard-array-buffer-prototype-properties.md) | disallow non-standard ArrayBuffer instance properties. |  |
 | [es-x/no-nonstandard-array-properties](./no-nonstandard-array-properties.md) | disallow non-standard `Array` class properties. |  |
+| [es-x/no-nonstandard-array-prototype-properties](./no-nonstandard-array-prototype-properties.md) | disallow non-standard Array instance properties. |  |
 | [es-x/no-nonstandard-atomics-properties](./no-nonstandard-atomics-properties.md) | disallow non-standard `Atomics` class properties. |  |
 | [es-x/no-nonstandard-bigint-properties](./no-nonstandard-bigint-properties.md) | disallow non-standard `BigInt` class properties. |  |
+| [es-x/no-nonstandard-bigint-prototype-properties](./no-nonstandard-bigint-prototype-properties.md) | disallow non-standard BigInt instance properties. |  |
 | [es-x/no-nonstandard-boolean-properties](./no-nonstandard-boolean-properties.md) | disallow non-standard `Boolean` class properties. |  |
 | [es-x/no-nonstandard-boolean-prototype-properties](./no-nonstandard-boolean-prototype-properties.md) | disallow non-standard Boolean instance properties. |  |
 | [es-x/no-nonstandard-date-properties](./no-nonstandard-date-properties.md) | disallow non-standard `Date` class properties. |  |
+| [es-x/no-nonstandard-date-prototype-properties](./no-nonstandard-date-prototype-properties.md) | disallow non-standard Date instance properties. |  |
 | [es-x/no-nonstandard-function-properties](./no-nonstandard-function-properties.md) | disallow non-standard `Function` class properties. |  |
 | [es-x/no-nonstandard-iterator-properties](./no-nonstandard-iterator-properties.md) | disallow non-standard `Iterator` class properties. |  |
+| [es-x/no-nonstandard-iterator-prototype-properties](./no-nonstandard-iterator-prototype-properties.md) | disallow non-standard Iterator instance properties. |  |
 | [es-x/no-nonstandard-json-properties](./no-nonstandard-json-properties.md) | disallow non-standard `JSON` class properties. |  |
 | [es-x/no-nonstandard-map-properties](./no-nonstandard-map-properties.md) | disallow non-standard `Map` class properties. |  |
+| [es-x/no-nonstandard-map-prototype-properties](./no-nonstandard-map-prototype-properties.md) | disallow non-standard Map instance properties. |  |
 | [es-x/no-nonstandard-math-properties](./no-nonstandard-math-properties.md) | disallow non-standard `Math` class properties. |  |
 | [es-x/no-nonstandard-number-properties](./no-nonstandard-number-properties.md) | disallow non-standard `Number` class properties. |  |
 | [es-x/no-nonstandard-number-prototype-properties](./no-nonstandard-number-prototype-properties.md) | disallow non-standard Number instance properties. |  |
 | [es-x/no-nonstandard-object-properties](./no-nonstandard-object-properties.md) | disallow non-standard `Object` class properties. |  |
 | [es-x/no-nonstandard-promise-properties](./no-nonstandard-promise-properties.md) | disallow non-standard `Promise` class properties. |  |
+| [es-x/no-nonstandard-promise-prototype-properties](./no-nonstandard-promise-prototype-properties.md) | disallow non-standard Promise instance properties. |  |
 | [es-x/no-nonstandard-proxy-properties](./no-nonstandard-proxy-properties.md) | disallow non-standard `Proxy` class properties. |  |
 | [es-x/no-nonstandard-reflect-properties](./no-nonstandard-reflect-properties.md) | disallow non-standard `Reflect` class properties. |  |
 | [es-x/no-nonstandard-regexp-properties](./no-nonstandard-regexp-properties.md) | disallow non-standard `RegExp` class properties. |  |
+| [es-x/no-nonstandard-regexp-prototype-properties](./no-nonstandard-regexp-prototype-properties.md) | disallow non-standard RegExp instance properties. |  |
+| [es-x/no-nonstandard-set-prototype-properties](./no-nonstandard-set-prototype-properties.md) | disallow non-standard Set instance properties. |  |
+| [es-x/no-nonstandard-shared-array-buffer-prototype-properties](./no-nonstandard-shared-array-buffer-prototype-properties.md) | disallow non-standard SharedArrayBuffer instance properties. |  |
 | [es-x/no-nonstandard-string-properties](./no-nonstandard-string-properties.md) | disallow non-standard `String` class properties. |  |
 | [es-x/no-nonstandard-string-prototype-properties](./no-nonstandard-string-prototype-properties.md) | disallow non-standard String instance properties. |  |
 | [es-x/no-nonstandard-symbol-properties](./no-nonstandard-symbol-properties.md) | disallow non-standard `Symbol` class properties. |  |
 | [es-x/no-nonstandard-symbol-prototype-properties](./no-nonstandard-symbol-prototype-properties.md) | disallow non-standard Symbol instance properties. |  |
-| [es-x/no-nonstandard-typed-array-properties](./no-nonstandard-typed-array-properties.md) | disallow non-standard typed array classes properties. |  |
+| [es-x/no-nonstandard-typed-array-properties](./no-nonstandard-typed-array-properties.md) | disallow non-standard typed array class properties. |  |
+| [es-x/no-nonstandard-typed-array-prototype-properties](./no-nonstandard-typed-array-prototype-properties.md) | disallow non-standard typed array instance properties. |  |
+| [es-x/no-nonstandard-weak-map-prototype-properties](./no-nonstandard-weak-map-prototype-properties.md) | disallow non-standard WeakMap instance properties. |  |
+| [es-x/no-nonstandard-weak-ref-prototype-properties](./no-nonstandard-weak-ref-prototype-properties.md) | disallow non-standard WeakRef instance properties. |  |
+| [es-x/no-nonstandard-weak-set-prototype-properties](./no-nonstandard-weak-set-prototype-properties.md) | disallow non-standard WeakSet instance properties. |  |
 
 ## Deprecated
 
