@@ -9,7 +9,7 @@ import pluginESx from "../../../../lib/index.js"
 
 if (eslintModule.loadESLint) {
     const dirname = path.dirname(new URL(import.meta.url).pathname)
-    const TEST_CWD = path.resolve(
+    const TEST_CWD = path.normalize(
         path.join(dirname, "../../fixtures/integrations/eslint-plugin"),
     )
 
