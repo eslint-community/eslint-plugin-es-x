@@ -396,6 +396,16 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-date-properties](./no-nonstandard-date-properties.md) | disallow non-standard properties on `Date` class. |  |
 | [es-x/no-nonstandard-date-prototype-properties](./no-nonstandard-date-prototype-properties.md) | disallow non-standard properties on Date instance. |  |
 | [es-x/no-nonstandard-function-properties](./no-nonstandard-function-properties.md) | disallow non-standard properties on `Function` class. |  |
+| [es-x/no-nonstandard-intl-collator-properties](./no-nonstandard-intl-collator-properties.md) | disallow non-standard properties on `Intl.Collator` class. |  |
+| [es-x/no-nonstandard-intl-datetimeformat-properties](./no-nonstandard-intl-datetimeformat-properties.md) | disallow non-standard properties on `Intl.DateTimeFormat` class. |  |
+| [es-x/no-nonstandard-intl-displaynames-properties](./no-nonstandard-intl-displaynames-properties.md) | disallow non-standard properties on `Intl.DisplayNames` class. |  |
+| [es-x/no-nonstandard-intl-listformat-properties](./no-nonstandard-intl-listformat-properties.md) | disallow non-standard properties on `Intl.ListFormat` class. |  |
+| [es-x/no-nonstandard-intl-locale-properties](./no-nonstandard-intl-locale-properties.md) | disallow non-standard properties on `Intl.Locale` class. |  |
+| [es-x/no-nonstandard-intl-numberformat-properties](./no-nonstandard-intl-numberformat-properties.md) | disallow non-standard properties on `Intl.NumberFormat` class. |  |
+| [es-x/no-nonstandard-intl-pluralrules-properties](./no-nonstandard-intl-pluralrules-properties.md) | disallow non-standard properties on `Intl.PluralRules` class. |  |
+| [es-x/no-nonstandard-intl-properties](./no-nonstandard-intl-properties.md) | disallow non-standard properties on `Intl` class. |  |
+| [es-x/no-nonstandard-intl-relativetimeformat-properties](./no-nonstandard-intl-relativetimeformat-properties.md) | disallow non-standard properties on `Intl.RelativeTimeFormat` class. |  |
+| [es-x/no-nonstandard-intl-segmenter-properties](./no-nonstandard-intl-segmenter-properties.md) | disallow non-standard properties on `Intl.Segmenter` class. |  |
 | [es-x/no-nonstandard-iterator-properties](./no-nonstandard-iterator-properties.md) | disallow non-standard properties on `Iterator` class. |  |
 | [es-x/no-nonstandard-iterator-prototype-properties](./no-nonstandard-iterator-prototype-properties.md) | disallow non-standard properties on Iterator instance. |  |
 | [es-x/no-nonstandard-json-properties](./no-nonstandard-json-properties.md) | disallow non-standard properties on `JSON` class. |  |
