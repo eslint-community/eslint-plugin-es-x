@@ -77,17 +77,15 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Uninstall Packages
         run: |+
-            npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue
+            npm r -D vitepress vite-plugin-eslint4b
+      - name: Install Packages
+        run: npm install
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+
             npm install -D eslint@${{ matrix.eslint }}
-            npx rimraf node_modules
       - name: Install "@typescript-eslint/parser" ${{ matrix.tseslint }}
         run: |+
             npm install -D @typescript-eslint/parser@${{ matrix.tseslint }}
-            npx rimraf node_modules
         if: matrix.tseslint == 5 || matrix.tseslint == 7
-      - name: Install Packages
-        run: npm install
       - name: Test
         run: npm run -s test:mocha
