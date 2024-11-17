@@ -1,12 +1,11 @@
 ---
 title: "es-x/no-nonstandard-intl-numberformat-prototype-properties"
 description: "disallow non-standard properties on Intl.NumberFormat instance"
+since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-numberformat-prototype-properties
 > disallow non-standard properties on Intl.NumberFormat instance
-
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
 This rule reports non-standard properties on Intl.NumberFormat instance as errors.
 
@@ -44,6 +43,10 @@ This rule has an option.
 ### allow: string[]
 
 An array of non-standard property names to allow.
+
+## 🚀 Version
+
+This rule was introduced in v8.2.0.
 
 ## 📚 References
 

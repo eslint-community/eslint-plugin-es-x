@@ -1,12 +1,11 @@
 ---
 title: "es-x/no-nonstandard-proxy-properties"
 description: "disallow non-standard properties on `Proxy` class"
+since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-proxy-properties
 > disallow non-standard properties on `Proxy` class
-
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
 This rule reports non-standard properties on `Proxy` class as errors.
 
@@ -43,6 +42,10 @@ This rule has an option.
 ### allow: string[]
 
 An array of non-standard property names to allow.
+
+## 🚀 Version
+
+This rule was introduced in v8.2.0.
 
 ## 📚 References
 
