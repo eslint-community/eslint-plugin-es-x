@@ -393,6 +393,7 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-bigint-prototype-properties](./no-nonstandard-bigint-prototype-properties.md) | disallow non-standard properties on BigInt instance. |  |
 | [es-x/no-nonstandard-boolean-properties](./no-nonstandard-boolean-properties.md) | disallow non-standard properties on `Boolean` class. |  |
 | [es-x/no-nonstandard-boolean-prototype-properties](./no-nonstandard-boolean-prototype-properties.md) | disallow non-standard properties on Boolean instance. |  |
+| [es-x/no-nonstandard-dataview-prototype-properties](./no-nonstandard-dataview-prototype-properties.md) | disallow non-standard properties on DataView instance. |  |
 | [es-x/no-nonstandard-date-properties](./no-nonstandard-date-properties.md) | disallow non-standard properties on `Date` class. |  |
 | [es-x/no-nonstandard-date-prototype-properties](./no-nonstandard-date-prototype-properties.md) | disallow non-standard properties on Date instance. |  |
 | [es-x/no-nonstandard-finalizationregistry-prototype-properties](./no-nonstandard-finalizationregistry-prototype-properties.md) | disallow non-standard properties on FinalizationRegistry instance. |  |

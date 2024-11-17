@@ -26,6 +26,7 @@ export type TypeName =
   | "Float64Array"
   | "BigInt64Array"
   | "BigUint64Array"
+  | "DataView"
   | "ArrayBuffer"
   | "SharedArrayBuffer"
   | "Object"
@@ -140,6 +141,14 @@ export type PromiseProperty =
   | "try";
 export type PromisePrototypeProperty = Exclude<
   keyof Promise<any>,
+  ExcludePrototypeProperty
+>;
+export type DataViewProperty = Exclude<
+  keyof typeof DataView,
+  ExcludeProperty
+>;
+export type DataViewPrototypeProperty = Exclude<
+  keyof DataView,
   ExcludePrototypeProperty
 >;
 export type ArrayBufferProperty = Exclude<
