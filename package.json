@@ -37,7 +37,7 @@
     "rimraf": "^6.0.0",
     "semver": "^7.0.0",
     "typescript": "^5.6.3",
-    "vite-plugin-eslint4b": "^0.4.0",
+    "vite-plugin-eslint4b": "^0.5.0",
     "vitepress": "^1.0.0-rc.14",
     "vue-eslint-editor": "^1.1.0",
     "vue-eslint-parser": "^9.0.0"
