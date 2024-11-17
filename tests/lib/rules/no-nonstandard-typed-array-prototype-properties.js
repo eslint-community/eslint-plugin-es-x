@@ -31,6 +31,8 @@ new RuleTester().run(ruleId, rule, {
             ...[...typedArrayPrototypeProperties].map(
                 (p) => `new ${className}().${p}`,
             ),
+            `new ${className}()[0]`,
+            `new ${className}()['0']`,
             {
                 code: `new ${className}().unknown()`,
                 options: [{ allow: ["unknown"] }],
@@ -55,18 +57,6 @@ new RuleTester().run(ruleId, rule, {
                 code: `new ${className}().bar`,
                 errors: [
                     `Non-standard '${className}.prototype.bar' property is forbidden.`,
-                ],
-            },
-            {
-                code: `new ${className}()[0]`,
-                errors: [
-                    `Non-standard '${className}.prototype.0' property is forbidden.`,
-                ],
-            },
-            {
-                code: `new ${className}()['0']`,
-                errors: [
-                    `Non-standard '${className}.prototype.0' property is forbidden.`,
                 ],
             },
             {
@@ -102,12 +92,14 @@ new RuleTester({
         { filename, code: "foo.toString" },
         { filename, code: "foo.foo" },
         { filename, code: "let foo = {}; foo.foo" },
-        ...typedArrayList.flatMap((className) =>
-            [...typedArrayPrototypeProperties].map((p) => ({
+        ...typedArrayList.flatMap((className) => [
+            ...[...typedArrayPrototypeProperties].map((p) => ({
                 filename,
                 code: `new ${className}().${p}`,
             })),
-        ),
+            { filename, code: `new ${className}()[0]` },
+            { filename, code: `new ${className}()['0']` },
+        ]),
     ],
     invalid: [
         ...typedArrayList.flatMap((className) => [
@@ -123,20 +115,6 @@ new RuleTester({
                 code: `new ${className}().bar`,
                 errors: [
                     `Non-standard '${className}.prototype.bar' property is forbidden.`,
-                ],
-            },
-            {
-                filename,
-                code: `new ${className}()[0]`,
-                errors: [
-                    `Non-standard '${className}.prototype.0' property is forbidden.`,
-                ],
-            },
-            {
-                filename,
-                code: `new ${className}()['0']`,
-                errors: [
-                    `Non-standard '${className}.prototype.0' property is forbidden.`,
                 ],
             },
             {

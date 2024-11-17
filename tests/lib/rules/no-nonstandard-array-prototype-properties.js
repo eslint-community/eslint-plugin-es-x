@@ -14,6 +14,8 @@ new RuleTester().run(ruleId, rule, {
         "foo.toString",
         "foo.foo",
         ...[...arrayPrototypeProperties].map((p) => `['A'].${p}`),
+        "['A'][0]",
+        "['A']['0']",
         { code: "['A'].unknown()", options: [{ allow: ["unknown"] }] },
     ],
     invalid: [
@@ -34,14 +36,6 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "Non-standard 'Array.prototype.bar' property is forbidden.",
             ],
-        },
-        {
-            code: "['A'][0]",
-            errors: ["Non-standard 'Array.prototype.0' property is forbidden."],
-        },
-        {
-            code: "['A']['0']",
-            errors: ["Non-standard 'Array.prototype.0' property is forbidden."],
         },
         {
             code: "['A']['01']",
@@ -79,6 +73,8 @@ new RuleTester({
             filename,
             code: `['A'].${p}`,
         })),
+        { filename, code: "['A'][0]" },
+        { filename, code: "['A']['0']" },
         {
             filename,
             code: "let foo = /re/.exec('re'); foo.index",
@@ -98,16 +94,6 @@ new RuleTester({
             errors: [
                 "Non-standard 'Array.prototype.bar' property is forbidden.",
             ],
-        },
-        {
-            filename,
-            code: "['A'][0]",
-            errors: ["Non-standard 'Array.prototype.0' property is forbidden."],
-        },
-        {
-            filename,
-            code: "['A']['0']",
-            errors: ["Non-standard 'Array.prototype.0' property is forbidden."],
         },
         {
             filename,
