@@ -47,6 +47,7 @@ type TypeInfo = {
   type: TypeName;
   return?: TypeInfo;
   properties?: Record<string, TypeInfo | undefined>;
+  prototypeType?: TypeName;
 };
 
 export type WellKnownGlobals = Record<string, TypeInfo | undefined>;

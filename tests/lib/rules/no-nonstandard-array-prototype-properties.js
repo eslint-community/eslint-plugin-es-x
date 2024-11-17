@@ -54,6 +54,30 @@ new RuleTester().run(ruleId, rule, {
                 "Non-standard 'Array.prototype.unknown' property is forbidden.",
             ],
         },
+        {
+            code: "const { foo } = [];",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            code: ";({ foo } = []);",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            code: "Array.prototype.foo;",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            code: "const { foo } = Array.prototype;",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
+            ],
+        },
     ],
 })
 
@@ -132,6 +156,34 @@ new RuleTester({
             code: "function f<T extends any[]>(a: T) { a.baz }",
             errors: [
                 "Non-standard 'Array.prototype.baz' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "const { foo } = [];",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: ";({ foo } = []);",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "Array.prototype.foo;",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "const { foo } = Array.prototype;",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
             ],
         },
     ],
