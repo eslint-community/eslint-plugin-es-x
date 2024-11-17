@@ -75,9 +75,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - name: Uninstall Packages
-        run: |+
-            npm r -D vuepress eslint-plugin-eslint-plugin eslint-plugin-prettier vue-eslint-parser eslint-plugin-vue
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+
             npm install -D eslint@${{ matrix.eslint }}
