@@ -377,6 +377,73 @@ Rules in this category are not included in any preset.
 | [es-x/no-string-prototype-substr](./no-string-prototype-substr.md) | disallow the `String.prototype.substr` method. |  |
 | [es-x/no-string-prototype-trimleft-trimright](./no-string-prototype-trimleft-trimright.md) | disallow the `String.prototype.{trimLeft,trimRight}` methods. | 🔧 |
 
+## Non-standards
+
+Rules in this category disallow features that are not defined in ECMAScript.\
+Rules in this category are not included in any preset.
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-nonstandard-array-properties](./no-nonstandard-array-properties.md) | disallow non-standard properties on `Array` class. |  |
+| [es-x/no-nonstandard-array-prototype-properties](./no-nonstandard-array-prototype-properties.md) | disallow non-standard properties on Array instance. |  |
+| [es-x/no-nonstandard-arraybuffer-properties](./no-nonstandard-arraybuffer-properties.md) | disallow non-standard properties on `ArrayBuffer` class. |  |
+| [es-x/no-nonstandard-arraybuffer-prototype-properties](./no-nonstandard-arraybuffer-prototype-properties.md) | disallow non-standard properties on ArrayBuffer instance. |  |
+| [es-x/no-nonstandard-atomics-properties](./no-nonstandard-atomics-properties.md) | disallow non-standard properties on `Atomics` class. |  |
+| [es-x/no-nonstandard-bigint-properties](./no-nonstandard-bigint-properties.md) | disallow non-standard properties on `BigInt` class. |  |
+| [es-x/no-nonstandard-bigint-prototype-properties](./no-nonstandard-bigint-prototype-properties.md) | disallow non-standard properties on BigInt instance. |  |
+| [es-x/no-nonstandard-boolean-properties](./no-nonstandard-boolean-properties.md) | disallow non-standard properties on `Boolean` class. |  |
+| [es-x/no-nonstandard-boolean-prototype-properties](./no-nonstandard-boolean-prototype-properties.md) | disallow non-standard properties on Boolean instance. |  |
+| [es-x/no-nonstandard-dataview-prototype-properties](./no-nonstandard-dataview-prototype-properties.md) | disallow non-standard properties on DataView instance. |  |
+| [es-x/no-nonstandard-date-properties](./no-nonstandard-date-properties.md) | disallow non-standard properties on `Date` class. |  |
+| [es-x/no-nonstandard-date-prototype-properties](./no-nonstandard-date-prototype-properties.md) | disallow non-standard properties on Date instance. |  |
+| [es-x/no-nonstandard-finalizationregistry-prototype-properties](./no-nonstandard-finalizationregistry-prototype-properties.md) | disallow non-standard properties on FinalizationRegistry instance. |  |
+| [es-x/no-nonstandard-function-properties](./no-nonstandard-function-properties.md) | disallow non-standard properties on `Function` class. |  |
+| [es-x/no-nonstandard-intl-collator-properties](./no-nonstandard-intl-collator-properties.md) | disallow non-standard properties on `Intl.Collator` class. |  |
+| [es-x/no-nonstandard-intl-collator-prototype-properties](./no-nonstandard-intl-collator-prototype-properties.md) | disallow non-standard properties on Intl.Collator instance. |  |
+| [es-x/no-nonstandard-intl-datetimeformat-properties](./no-nonstandard-intl-datetimeformat-properties.md) | disallow non-standard properties on `Intl.DateTimeFormat` class. |  |
+| [es-x/no-nonstandard-intl-datetimeformat-prototype-properties](./no-nonstandard-intl-datetimeformat-prototype-properties.md) | disallow non-standard properties on Intl.DateTimeFormat instance. |  |
+| [es-x/no-nonstandard-intl-displaynames-properties](./no-nonstandard-intl-displaynames-properties.md) | disallow non-standard properties on `Intl.DisplayNames` class. |  |
+| [es-x/no-nonstandard-intl-displaynames-prototype-properties](./no-nonstandard-intl-displaynames-prototype-properties.md) | disallow non-standard properties on Intl.DisplayNames instance. |  |
+| [es-x/no-nonstandard-intl-listformat-properties](./no-nonstandard-intl-listformat-properties.md) | disallow non-standard properties on `Intl.ListFormat` class. |  |
+| [es-x/no-nonstandard-intl-listformat-prototype-properties](./no-nonstandard-intl-listformat-prototype-properties.md) | disallow non-standard properties on Intl.ListFormat instance. |  |
+| [es-x/no-nonstandard-intl-locale-properties](./no-nonstandard-intl-locale-properties.md) | disallow non-standard properties on `Intl.Locale` class. |  |
+| [es-x/no-nonstandard-intl-locale-prototype-properties](./no-nonstandard-intl-locale-prototype-properties.md) | disallow non-standard properties on Intl.Locale instance. |  |
+| [es-x/no-nonstandard-intl-numberformat-properties](./no-nonstandard-intl-numberformat-properties.md) | disallow non-standard properties on `Intl.NumberFormat` class. |  |
+| [es-x/no-nonstandard-intl-numberformat-prototype-properties](./no-nonstandard-intl-numberformat-prototype-properties.md) | disallow non-standard properties on Intl.NumberFormat instance. |  |
+| [es-x/no-nonstandard-intl-pluralrules-properties](./no-nonstandard-intl-pluralrules-properties.md) | disallow non-standard properties on `Intl.PluralRules` class. |  |
+| [es-x/no-nonstandard-intl-pluralrules-prototype-properties](./no-nonstandard-intl-pluralrules-prototype-properties.md) | disallow non-standard properties on Intl.PluralRules instance. |  |
+| [es-x/no-nonstandard-intl-properties](./no-nonstandard-intl-properties.md) | disallow non-standard properties on `Intl` class. |  |
+| [es-x/no-nonstandard-intl-relativetimeformat-properties](./no-nonstandard-intl-relativetimeformat-properties.md) | disallow non-standard properties on `Intl.RelativeTimeFormat` class. |  |
+| [es-x/no-nonstandard-intl-relativetimeformat-prototype-properties](./no-nonstandard-intl-relativetimeformat-prototype-properties.md) | disallow non-standard properties on Intl.RelativeTimeFormat instance. |  |
+| [es-x/no-nonstandard-intl-segmenter-properties](./no-nonstandard-intl-segmenter-properties.md) | disallow non-standard properties on `Intl.Segmenter` class. |  |
+| [es-x/no-nonstandard-intl-segmenter-prototype-properties](./no-nonstandard-intl-segmenter-prototype-properties.md) | disallow non-standard properties on Intl.Segmenter instance. |  |
+| [es-x/no-nonstandard-iterator-properties](./no-nonstandard-iterator-properties.md) | disallow non-standard properties on `Iterator` class. |  |
+| [es-x/no-nonstandard-iterator-prototype-properties](./no-nonstandard-iterator-prototype-properties.md) | disallow non-standard properties on Iterator instance. |  |
+| [es-x/no-nonstandard-json-properties](./no-nonstandard-json-properties.md) | disallow non-standard properties on `JSON` class. |  |
+| [es-x/no-nonstandard-map-properties](./no-nonstandard-map-properties.md) | disallow non-standard properties on `Map` class. |  |
+| [es-x/no-nonstandard-map-prototype-properties](./no-nonstandard-map-prototype-properties.md) | disallow non-standard properties on Map instance. |  |
+| [es-x/no-nonstandard-math-properties](./no-nonstandard-math-properties.md) | disallow non-standard properties on `Math` class. |  |
+| [es-x/no-nonstandard-number-properties](./no-nonstandard-number-properties.md) | disallow non-standard properties on `Number` class. |  |
+| [es-x/no-nonstandard-number-prototype-properties](./no-nonstandard-number-prototype-properties.md) | disallow non-standard properties on Number instance. |  |
+| [es-x/no-nonstandard-object-properties](./no-nonstandard-object-properties.md) | disallow non-standard properties on `Object` class. |  |
+| [es-x/no-nonstandard-promise-properties](./no-nonstandard-promise-properties.md) | disallow non-standard properties on `Promise` class. |  |
+| [es-x/no-nonstandard-promise-prototype-properties](./no-nonstandard-promise-prototype-properties.md) | disallow non-standard properties on Promise instance. |  |
+| [es-x/no-nonstandard-proxy-properties](./no-nonstandard-proxy-properties.md) | disallow non-standard properties on `Proxy` class. |  |
+| [es-x/no-nonstandard-reflect-properties](./no-nonstandard-reflect-properties.md) | disallow non-standard properties on `Reflect` class. |  |
+| [es-x/no-nonstandard-regexp-properties](./no-nonstandard-regexp-properties.md) | disallow non-standard properties on `RegExp` class. |  |
+| [es-x/no-nonstandard-regexp-prototype-properties](./no-nonstandard-regexp-prototype-properties.md) | disallow non-standard properties on RegExp instance. |  |
+| [es-x/no-nonstandard-set-prototype-properties](./no-nonstandard-set-prototype-properties.md) | disallow non-standard properties on Set instance. |  |
+| [es-x/no-nonstandard-sharedarraybuffer-prototype-properties](./no-nonstandard-sharedarraybuffer-prototype-properties.md) | disallow non-standard properties on SharedArrayBuffer instance. |  |
+| [es-x/no-nonstandard-string-properties](./no-nonstandard-string-properties.md) | disallow non-standard properties on `String` class. |  |
+| [es-x/no-nonstandard-string-prototype-properties](./no-nonstandard-string-prototype-properties.md) | disallow non-standard properties on String instance. |  |
+| [es-x/no-nonstandard-symbol-properties](./no-nonstandard-symbol-properties.md) | disallow non-standard properties on `Symbol` class. |  |
+| [es-x/no-nonstandard-symbol-prototype-properties](./no-nonstandard-symbol-prototype-properties.md) | disallow non-standard properties on Symbol instance. |  |
+| [es-x/no-nonstandard-typed-array-properties](./no-nonstandard-typed-array-properties.md) | disallow non-standard properties on typed array class. |  |
+| [es-x/no-nonstandard-typed-array-prototype-properties](./no-nonstandard-typed-array-prototype-properties.md) | disallow non-standard properties on typed array instance. |  |
+| [es-x/no-nonstandard-weakmap-prototype-properties](./no-nonstandard-weakmap-prototype-properties.md) | disallow non-standard properties on WeakMap instance. |  |
+| [es-x/no-nonstandard-weakref-prototype-properties](./no-nonstandard-weakref-prototype-properties.md) | disallow non-standard properties on WeakRef instance. |  |
+| [es-x/no-nonstandard-weakset-prototype-properties](./no-nonstandard-weakset-prototype-properties.md) | disallow non-standard properties on WeakSet instance. |  |
+
 ## Deprecated
 
 😇 We don't fix bugs which are in deprecated rules since we don't have enough resources.

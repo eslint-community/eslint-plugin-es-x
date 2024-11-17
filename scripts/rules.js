@@ -100,6 +100,13 @@ categories.legacy = {
         "Rules in this category disallow the syntax contained in [Annex B](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html) or Legacy.",
     rules: [],
 }
+categories.nonstandard = {
+    id: "nonstandard",
+    title: "Non-standards",
+    comment:
+        "Rules in this category disallow features that are not defined in ECMAScript.",
+    rules: [],
+}
 categories.uncategorized = {
     id: "uncategorized",
     title: "Uncategorized",
