@@ -1,12 +1,12 @@
 "use strict"
 
 const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-array-buffer-properties.js")
+const rule = require("../../../lib/rules/no-nonstandard-arraybuffer-properties.js")
 const {
     arrayBufferProperties,
 } = require("../../../lib/util/well-known-properties")
 
-new RuleTester().run("no-nonstandard-array-buffer-properties", rule, {
+new RuleTester().run("no-nonstandard-arraybuffer-properties", rule, {
     valid: [
         ...[...arrayBufferProperties].map((p) => `ArrayBuffer.${p}`),
         { code: "ArrayBuffer.unknown()", options: [{ allow: ["unknown"] }] },

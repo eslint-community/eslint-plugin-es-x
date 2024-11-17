@@ -1,9 +1,9 @@
 ---
-title: "es-x/no-nonstandard-shared-array-buffer-prototype-properties"
+title: "es-x/no-nonstandard-sharedarraybuffer-prototype-properties"
 description: "disallow non-standard properties on SharedArrayBuffer instance"
 ---
 
-# es-x/no-nonstandard-shared-array-buffer-prototype-properties
+# es-x/no-nonstandard-sharedarraybuffer-prototype-properties
 > disallow non-standard properties on SharedArrayBuffer instance
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
@@ -17,7 +17,7 @@ This rule reports non-standard properties on SharedArrayBuffer instance as error
 <eslint-playground type="bad">
 
 ```js
-/*eslint es-x/no-nonstandard-shared-array-buffer-prototype-properties: error */
+/*eslint es-x/no-nonstandard-sharedarraybuffer-prototype-properties: error */
 const foo = new SharedArrayBuffer();
 foo.unknown();
 ```
@@ -31,7 +31,7 @@ This rule has an option.
 ```jsonc
 {
   "rules": {
-    "es-x/no-nonstandard-shared-array-buffer-prototype-properties": [
+    "es-x/no-nonstandard-sharedarraybuffer-prototype-properties": [
       "error",
       {
         "allow": []
@@ -47,5 +47,5 @@ An array of non-standard property names to allow.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-nonstandard-shared-array-buffer-prototype-properties.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-nonstandard-shared-array-buffer-prototype-properties.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-nonstandard-sharedarraybuffer-prototype-properties.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-nonstandard-sharedarraybuffer-prototype-properties.js)

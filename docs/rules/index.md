@@ -384,10 +384,10 @@ Rules in this category are not included in any preset.
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
-| [es-x/no-nonstandard-array-buffer-properties](./no-nonstandard-array-buffer-properties.md) | disallow non-standard properties on `ArrayBuffer` class. |  |
-| [es-x/no-nonstandard-array-buffer-prototype-properties](./no-nonstandard-array-buffer-prototype-properties.md) | disallow non-standard properties on ArrayBuffer instance. |  |
 | [es-x/no-nonstandard-array-properties](./no-nonstandard-array-properties.md) | disallow non-standard properties on `Array` class. |  |
 | [es-x/no-nonstandard-array-prototype-properties](./no-nonstandard-array-prototype-properties.md) | disallow non-standard properties on Array instance. |  |
+| [es-x/no-nonstandard-arraybuffer-properties](./no-nonstandard-arraybuffer-properties.md) | disallow non-standard properties on `ArrayBuffer` class. |  |
+| [es-x/no-nonstandard-arraybuffer-prototype-properties](./no-nonstandard-arraybuffer-prototype-properties.md) | disallow non-standard properties on ArrayBuffer instance. |  |
 | [es-x/no-nonstandard-atomics-properties](./no-nonstandard-atomics-properties.md) | disallow non-standard properties on `Atomics` class. |  |
 | [es-x/no-nonstandard-bigint-properties](./no-nonstandard-bigint-properties.md) | disallow non-standard properties on `BigInt` class. |  |
 | [es-x/no-nonstandard-bigint-prototype-properties](./no-nonstandard-bigint-prototype-properties.md) | disallow non-standard properties on BigInt instance. |  |
@@ -431,16 +431,16 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-regexp-properties](./no-nonstandard-regexp-properties.md) | disallow non-standard properties on `RegExp` class. |  |
 | [es-x/no-nonstandard-regexp-prototype-properties](./no-nonstandard-regexp-prototype-properties.md) | disallow non-standard properties on RegExp instance. |  |
 | [es-x/no-nonstandard-set-prototype-properties](./no-nonstandard-set-prototype-properties.md) | disallow non-standard properties on Set instance. |  |
-| [es-x/no-nonstandard-shared-array-buffer-prototype-properties](./no-nonstandard-shared-array-buffer-prototype-properties.md) | disallow non-standard properties on SharedArrayBuffer instance. |  |
+| [es-x/no-nonstandard-sharedarraybuffer-prototype-properties](./no-nonstandard-sharedarraybuffer-prototype-properties.md) | disallow non-standard properties on SharedArrayBuffer instance. |  |
 | [es-x/no-nonstandard-string-properties](./no-nonstandard-string-properties.md) | disallow non-standard properties on `String` class. |  |
 | [es-x/no-nonstandard-string-prototype-properties](./no-nonstandard-string-prototype-properties.md) | disallow non-standard properties on String instance. |  |
 | [es-x/no-nonstandard-symbol-properties](./no-nonstandard-symbol-properties.md) | disallow non-standard properties on `Symbol` class. |  |
 | [es-x/no-nonstandard-symbol-prototype-properties](./no-nonstandard-symbol-prototype-properties.md) | disallow non-standard properties on Symbol instance. |  |
 | [es-x/no-nonstandard-typed-array-properties](./no-nonstandard-typed-array-properties.md) | disallow non-standard properties on typed array class. |  |
 | [es-x/no-nonstandard-typed-array-prototype-properties](./no-nonstandard-typed-array-prototype-properties.md) | disallow non-standard properties on typed array instance. |  |
-| [es-x/no-nonstandard-weak-map-prototype-properties](./no-nonstandard-weak-map-prototype-properties.md) | disallow non-standard properties on WeakMap instance. |  |
-| [es-x/no-nonstandard-weak-ref-prototype-properties](./no-nonstandard-weak-ref-prototype-properties.md) | disallow non-standard properties on WeakRef instance. |  |
-| [es-x/no-nonstandard-weak-set-prototype-properties](./no-nonstandard-weak-set-prototype-properties.md) | disallow non-standard properties on WeakSet instance. |  |
+| [es-x/no-nonstandard-weakmap-prototype-properties](./no-nonstandard-weakmap-prototype-properties.md) | disallow non-standard properties on WeakMap instance. |  |
+| [es-x/no-nonstandard-weakref-prototype-properties](./no-nonstandard-weakref-prototype-properties.md) | disallow non-standard properties on WeakRef instance. |  |
+| [es-x/no-nonstandard-weakset-prototype-properties](./no-nonstandard-weakset-prototype-properties.md) | disallow non-standard properties on WeakSet instance. |  |
 
 ## Deprecated
 

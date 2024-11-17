@@ -2,11 +2,11 @@
 
 const path = require("path")
 const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-array-buffer-prototype-properties.js")
+const rule = require("../../../lib/rules/no-nonstandard-arraybuffer-prototype-properties.js")
 const {
     arrayBufferPrototypeProperties,
 } = require("../../../lib/util/well-known-properties")
-const ruleId = "no-nonstandard-array-buffer-prototype-properties"
+const ruleId = "no-nonstandard-arraybuffer-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {
     valid: [

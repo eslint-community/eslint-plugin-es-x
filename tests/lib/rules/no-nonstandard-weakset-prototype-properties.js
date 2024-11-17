@@ -2,55 +2,55 @@
 
 const path = require("path")
 const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-weak-map-prototype-properties.js")
+const rule = require("../../../lib/rules/no-nonstandard-weakset-prototype-properties.js")
 const {
-    weakMapPrototypeProperties,
+    weakSetPrototypeProperties,
 } = require("../../../lib/util/well-known-properties")
-const ruleId = "no-nonstandard-weak-map-prototype-properties"
+const ruleId = "no-nonstandard-weakset-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {
     valid: [
         "foo",
         "foo.toString",
         "foo.foo",
-        ...[...weakMapPrototypeProperties].map((p) => `new WeakMap().${p}`),
-        { code: "new WeakMap().unknown()", options: [{ allow: ["unknown"] }] },
+        ...[...weakSetPrototypeProperties].map((p) => `new WeakSet().${p}`),
+        { code: "new WeakSet().unknown()", options: [{ allow: ["unknown"] }] },
     ],
     invalid: [
         {
-            code: "new WeakMap().unknown()",
+            code: "new WeakSet().unknown()",
             errors: [
-                "Non-standard 'WeakMap.prototype.unknown' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.unknown' property is forbidden.",
             ],
         },
         {
-            code: "new WeakMap().foo",
+            code: "new WeakSet().foo",
             errors: [
-                "Non-standard 'WeakMap.prototype.foo' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.foo' property is forbidden.",
             ],
         },
         {
-            code: "new WeakMap().bar",
+            code: "new WeakSet().bar",
             errors: [
-                "Non-standard 'WeakMap.prototype.bar' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.bar' property is forbidden.",
             ],
         },
         {
-            code: "new WeakMap()[0]",
+            code: "new WeakSet()[0]",
             errors: [
-                "Non-standard 'WeakMap.prototype.0' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.0' property is forbidden.",
             ],
         },
         {
-            code: "new WeakMap()['0']",
+            code: "new WeakSet()['0']",
             errors: [
-                "Non-standard 'WeakMap.prototype.0' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.0' property is forbidden.",
             ],
         },
         {
-            code: "new WeakMap()['01']",
+            code: "new WeakSet()['01']",
             errors: [
-                "Non-standard 'WeakMap.prototype.01' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.01' property is forbidden.",
             ],
         },
     ],
@@ -79,59 +79,59 @@ new RuleTester({
         { filename, code: "foo.toString" },
         { filename, code: "foo.foo" },
         { filename, code: "let foo = {}; foo.foo" },
-        ...[...weakMapPrototypeProperties].map((p) => ({
+        ...[...weakSetPrototypeProperties].map((p) => ({
             filename,
-            code: `new WeakMap().${p}`,
+            code: `new WeakSet().${p}`,
         })),
     ],
     invalid: [
         {
             filename,
-            code: "new WeakMap().foo",
+            code: "new WeakSet().foo",
             errors: [
-                "Non-standard 'WeakMap.prototype.foo' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.foo' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "new WeakMap().bar",
+            code: "new WeakSet().bar",
             errors: [
-                "Non-standard 'WeakMap.prototype.bar' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.bar' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "new WeakMap()[0]",
+            code: "new WeakSet()[0]",
             errors: [
-                "Non-standard 'WeakMap.prototype.0' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.0' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "new WeakMap()['0']",
+            code: "new WeakSet()['0']",
             errors: [
-                "Non-standard 'WeakMap.prototype.0' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.0' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "new WeakMap()['01']",
+            code: "new WeakSet()['01']",
             errors: [
-                "Non-standard 'WeakMap.prototype.01' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.01' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "let foo = new WeakMap(); foo.foo",
+            code: "let foo = new WeakSet(); foo.foo",
             errors: [
-                "Non-standard 'WeakMap.prototype.foo' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.foo' property is forbidden.",
             ],
         },
         {
             filename,
-            code: "function f<T extends WeakMap<any, any>>(a: T) { a.baz }",
+            code: "function f<T extends WeakSet<any>>(a: T) { a.baz }",
             errors: [
-                "Non-standard 'WeakMap.prototype.baz' property is forbidden.",
+                "Non-standard 'WeakSet.prototype.baz' property is forbidden.",
             ],
         },
     ],

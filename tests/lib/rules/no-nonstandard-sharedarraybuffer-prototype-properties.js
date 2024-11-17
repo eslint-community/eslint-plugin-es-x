@@ -2,11 +2,11 @@
 
 const path = require("path")
 const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-shared-array-buffer-prototype-properties.js")
+const rule = require("../../../lib/rules/no-nonstandard-sharedarraybuffer-prototype-properties.js")
 const {
     sharedArrayBufferPrototypeProperties,
 } = require("../../../lib/util/well-known-properties")
-const ruleId = "no-nonstandard-shared-array-buffer-prototype-properties"
+const ruleId = "no-nonstandard-sharedarraybuffer-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {
     valid: [
