@@ -9,7 +9,7 @@ since: "v8.1.0"
 
 - ✅ The following configurations enable this rule: [no-iterator-helpers] and [no-new-in-esnext]
 
-This rule reports ES2025 [`Iterator.prototype.toArray`](https://github.com/tc39/proposal-iterator-helpers) as errors.\
+This rule reports ES2025 [`Iterator.prototype.toArray`](https://github.com/tc39/proposal-iterator-helpers) as errors.
 
 ## 💡 Examples
 
