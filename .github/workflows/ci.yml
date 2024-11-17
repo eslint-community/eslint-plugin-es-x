@@ -75,16 +75,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
+      - name: Install Packages
+        run: npm install
       - name: Install ESLint ${{ matrix.eslint }}
         run: |+
             npm install -D eslint@${{ matrix.eslint }}
-            npx rimraf node_modules
       - name: Install "@typescript-eslint/parser" ${{ matrix.tseslint }}
         run: |+
             npm install -D @typescript-eslint/parser@${{ matrix.tseslint }}
-            npx rimraf node_modules
         if: matrix.tseslint == 5 || matrix.tseslint == 7
-      - name: Install Packages
-        run: npm install
       - name: Test
         run: npm run -s test:mocha
