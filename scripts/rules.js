@@ -8,12 +8,16 @@ const fs = require("fs")
 const path = require("path")
 const proposals = require("./proposals")
 const libRoot = path.resolve(__dirname, "../lib/rules")
+const { createRequire } = require("module")
 
 /**
  * @typedef {Object} Rule
  * @property {string} ruleId The rule name.
  * @property {string} description The description.
  * @property {boolean} fixable The fixable flag.
+ * @property {boolean} deprecated The deprecated flag.
+ * @property {string[]} replacedBy The replacedBy rules.
+ * @property {object[]} [schema] The schema.
  */
 
 /**
@@ -125,6 +129,7 @@ const rules = []
 
 // 全ルールを探す
 ;(function walk(dirPath) {
+    const requireRule = createRequire(__filename)
     for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
         if (entry.isDirectory()) {
             walk(path.join(dirPath, entry.name))
@@ -136,39 +141,25 @@ const rules = []
             .relative(libRoot, filePath)
             .replace(/\.js$/u, "")
             .replace(/\\/gu, "/")
-        const content = fs.readFileSync(filePath, "utf8")
-        const contentWithoutComments = content.replace(
-            /("(?:\\"|[^"])*?"|'(?:\\'|[^'])*?')|\/\/[^\n]*|\/\*[\s\S]*?\*\//gu,
-            "$1",
-        )
-        const category = /category:[\s]*(?:undefined|"(.+)")/u.exec(
-            contentWithoutComments,
-        )[1]
-        const proposalJson = /proposal:[\s]*(".+?"|\[.+?\])/u.exec(
-            contentWithoutComments,
-        )?.[1]
-        const proposalIds = proposalJson
-            ? [JSON.parse(proposalJson)].flat()
+        const ruleModule = requireRule(filePath)
+        const category = ruleModule.meta.docs.category
+        const proposalIds = ruleModule.meta.docs.proposal
+            ? [ruleModule.meta.docs.proposal].flat()
             : []
-        const deprecated = /deprecated:[\s]+true/u.test(contentWithoutComments)
-        const replacedBy = deprecated
-            ? JSON.parse(
-                  /replacedBy:[\s]*(\[[\s\S]*?\])/u
-                      .exec(contentWithoutComments)[1]
-                      .replace(/,\s*\]/u, "]"),
-              )
-            : []
-        const description = /description:[\s]*"(.+?)\.?"/u.exec(
-            contentWithoutComments,
-        )[1]
-        const fixable = /fixable:[\s\n]+"(.+)"/u.test(contentWithoutComments)
+
+        const deprecated = ruleModule.meta.deprecated || false
+        const replacedBy = deprecated ? ruleModule.meta.replacedBy || [] : []
+        const description = ruleModule.meta.docs.description.replace(/\.$/u, "")
+        const fixable = ruleModule.meta.fixable
+        const schema = ruleModule.meta.schema
         const rule = {
             ruleId,
-            description: JSON.parse(`"${description}"`),
+            description,
             fixable,
             deprecated,
             replacedBy,
             proposals: proposalIds,
+            schema,
         }
 
         const categoryId = deprecated

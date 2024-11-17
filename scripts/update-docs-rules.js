@@ -36,6 +36,7 @@ function toRuleLink(ruleId) {
     return `[es-x/${ruleId}](./${ruleId}.md)`
 }
 
+// eslint-disable-next-line complexity
 async function main() {
     const docsRoot = path.resolve(__dirname, "../docs/rules/")
     const configRoot = path.resolve(__dirname, "../lib/configs/flat")
@@ -57,6 +58,7 @@ async function main() {
         fixable,
         deprecated,
         replacedBy,
+        schema,
     } of rules) {
         const filePath = path.join(docsRoot, `${ruleId}.md`)
         if (!fs.existsSync(filePath)) {
@@ -119,13 +121,40 @@ async function main() {
             )
         }
 
+        let optionsSection = ""
+        if (schema?.[0] && !content.includes("## 🔧 Options")) {
+            const optionSchema = schema[0]
+            const hasAggressive =
+                optionSchema.type === "object" &&
+                optionSchema.properties?.aggressive
+            optionsSection = `
+
+## 🔧 Options
+
+This rule has an option.
+
+\`\`\`yaml
+rules:
+  es-x/${ruleId}: [error, { ${hasAggressive ? "aggressive: false" : ""} }]
+\`\`\`${
+                hasAggressive
+                    ? `
+
+### aggressive: boolean
+
+Configure the aggressive mode for only this rule.
+This is prior to the \`settings['es-x'].aggressive\` setting.`
+                    : ""
+            }`
+        }
+
         const newContent = `${frontmatter.join("\n").trim()}
 
 ${headerLines.join("\n").trim()}
 
 ${content}${
             since
-                ? `
+                ? `${optionsSection}
 
 ## 🚀 Version
 
