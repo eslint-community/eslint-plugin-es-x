@@ -43,6 +43,17 @@ new RuleTester().run(ruleId, rule, {
                 "Non-standard 'Array.prototype.01' property is forbidden.",
             ],
         },
+        {
+            code: `
+                let array2 = [1, 2, 3];
+                array2.unknown(3, 4);
+                array2 = [1, 2, 3, 4];
+                array2.unknown(3, 5);`,
+            errors: [
+                "Non-standard 'Array.prototype.unknown' property is forbidden.",
+                "Non-standard 'Array.prototype.unknown' property is forbidden.",
+            ],
+        },
     ],
 })
 
