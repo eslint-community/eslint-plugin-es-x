@@ -38,6 +38,7 @@ export type TypeName =
   | "WeakMap"
   | "WeakSet"
   | "WeakRef"
+  | "FinalizationRegistry"
   | "null"
   | "undefined";
 
@@ -175,6 +176,11 @@ export type WeakSetPrototypeProperty = Exclude<
 export type WeakRefProperty = Exclude<keyof typeof WeakRef, ExcludeProperty>;
 export type WeakRefPrototypeProperty = Exclude<
   keyof WeakRef<any>,
+  ExcludePrototypeProperty
+>;
+export type FinalizationRegistryProperty = Exclude<keyof typeof FinalizationRegistry, ExcludeProperty>;
+export type FinalizationRegistryPrototypeProperty = Exclude<
+  keyof FinalizationRegistry<any>,
   ExcludePrototypeProperty
 >;
 export type IntlProperty = Exclude<keyof typeof Intl, ExcludeProperty>;
