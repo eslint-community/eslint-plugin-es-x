@@ -438,6 +438,47 @@ describe("define-prototype-method-handler/object-type-checker", () => {
                 `,
                 result: ["String"],
             },
+            {
+                code: `
+                let array = []
+                array = []
+                target(array);
+                `,
+                result: ["Array"],
+            },
+            {
+                code: `
+                let array = []
+                array = ''
+                target(array);
+                `,
+                result: [null],
+            },
+            {
+                code: `
+                let {EPSILON:a} = Number;
+                a = 42;
+                ({MAX_SAFE_INTEGER:a} = Number);
+                target(a);
+                `,
+                result: ["Number"],
+            },
+            {
+                code: `
+                let a = Number.isFinite;
+                a =  Number.isNaN;
+                target(a(foo));
+                `,
+                result: ["Boolean"],
+            },
+            {
+                code: `
+                let a = Number.isFinite;
+                a =  Number;
+                target(a(foo));
+                `,
+                result: [null],
+            },
         ]) {
             ;(only ? it.only : it)(code, () => {
                 deepStrictEqual(
