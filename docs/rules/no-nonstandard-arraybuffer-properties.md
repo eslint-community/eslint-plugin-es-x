@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-arraybuffer-properties"
-description: "disallow non-standard properties on `ArrayBuffer` class"
+description: "disallow non-standard static properties on `ArrayBuffer` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-arraybuffer-properties
-> disallow non-standard properties on `ArrayBuffer` class
+> disallow non-standard static properties on `ArrayBuffer` class
 
-This rule reports non-standard properties on `ArrayBuffer` class as errors.
+This rule reports non-standard static properties on `ArrayBuffer` class as errors.
 
 ## 💡 Examples
 

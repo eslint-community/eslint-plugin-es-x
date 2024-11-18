@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-json-properties"
-description: "disallow non-standard properties on `JSON` class"
+description: "disallow non-standard static properties on `JSON`"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-json-properties
-> disallow non-standard properties on `JSON` class
+> disallow non-standard static properties on `JSON`
 
-This rule reports non-standard properties on `JSON` class as errors.
+This rule reports non-standard static properties on `JSON` as errors.
 
 ## 💡 Examples
 

@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-displaynames-properties"
-description: "disallow non-standard properties on `Intl.DisplayNames` class"
+description: "disallow non-standard static properties on `Intl.DisplayNames` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-displaynames-properties
-> disallow non-standard properties on `Intl.DisplayNames` class
+> disallow non-standard static properties on `Intl.DisplayNames` class
 
-This rule reports non-standard properties on `Intl.DisplayNames` class as errors.
+This rule reports non-standard static properties on `Intl.DisplayNames` class as errors.
 
 ## 💡 Examples
 

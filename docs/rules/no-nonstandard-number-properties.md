@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-number-properties"
-description: "disallow non-standard properties on `Number` class"
+description: "disallow non-standard static properties on `Number` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-number-properties
-> disallow non-standard properties on `Number` class
+> disallow non-standard static properties on `Number` class
 
-This rule reports non-standard properties on `Number` class as errors.
+This rule reports non-standard static properties on `Number` class as errors.
 
 ## 💡 Examples
 

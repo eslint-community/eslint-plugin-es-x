@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-datetimeformat-properties"
-description: "disallow non-standard properties on `Intl.DateTimeFormat` class"
+description: "disallow non-standard static properties on `Intl.DateTimeFormat` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-datetimeformat-properties
-> disallow non-standard properties on `Intl.DateTimeFormat` class
+> disallow non-standard static properties on `Intl.DateTimeFormat` class
 
-This rule reports non-standard properties on `Intl.DateTimeFormat` class as errors.
+This rule reports non-standard static properties on `Intl.DateTimeFormat` class as errors.
 
 ## 💡 Examples
 

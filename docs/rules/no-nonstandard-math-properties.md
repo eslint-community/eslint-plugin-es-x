@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-math-properties"
-description: "disallow non-standard properties on `Math` class"
+description: "disallow non-standard static properties on `Math`"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-math-properties
-> disallow non-standard properties on `Math` class
+> disallow non-standard static properties on `Math`
 
-This rule reports non-standard properties on `Math` class as errors.
+This rule reports non-standard static properties on `Math` as errors.
 
 ## 💡 Examples
 

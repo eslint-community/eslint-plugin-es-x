@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-pluralrules-properties"
-description: "disallow non-standard properties on `Intl.PluralRules` class"
+description: "disallow non-standard static properties on `Intl.PluralRules` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-pluralrules-properties
-> disallow non-standard properties on `Intl.PluralRules` class
+> disallow non-standard static properties on `Intl.PluralRules` class
 
-This rule reports non-standard properties on `Intl.PluralRules` class as errors.
+This rule reports non-standard static properties on `Intl.PluralRules` class as errors.
 
 ## 💡 Examples
 

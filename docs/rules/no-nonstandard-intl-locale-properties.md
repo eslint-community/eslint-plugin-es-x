@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-locale-properties"
-description: "disallow non-standard properties on `Intl.Locale` class"
+description: "disallow non-standard static properties on `Intl.Locale` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-locale-properties
-> disallow non-standard properties on `Intl.Locale` class
+> disallow non-standard static properties on `Intl.Locale` class
 
-This rule reports non-standard properties on `Intl.Locale` class as errors.
+This rule reports non-standard static properties on `Intl.Locale` class as errors.
 
 ## 💡 Examples
 

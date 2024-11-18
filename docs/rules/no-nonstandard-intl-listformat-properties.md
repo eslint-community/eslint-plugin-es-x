@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-listformat-properties"
-description: "disallow non-standard properties on `Intl.ListFormat` class"
+description: "disallow non-standard static properties on `Intl.ListFormat` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-listformat-properties
-> disallow non-standard properties on `Intl.ListFormat` class
+> disallow non-standard static properties on `Intl.ListFormat` class
 
-This rule reports non-standard properties on `Intl.ListFormat` class as errors.
+This rule reports non-standard static properties on `Intl.ListFormat` class as errors.
 
 ## 💡 Examples
 

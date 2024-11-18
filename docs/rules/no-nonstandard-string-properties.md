@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-string-properties"
-description: "disallow non-standard properties on `String` class"
+description: "disallow non-standard static properties on `String` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-string-properties
-> disallow non-standard properties on `String` class
+> disallow non-standard static properties on `String` class
 
-This rule reports non-standard properties on `String` class as errors.
+This rule reports non-standard static properties on `String` class as errors.
 
 ## 💡 Examples
 

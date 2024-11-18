@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-boolean-properties"
-description: "disallow non-standard properties on `Boolean` class"
+description: "disallow non-standard static properties on `Boolean` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-boolean-properties
-> disallow non-standard properties on `Boolean` class
+> disallow non-standard static properties on `Boolean` class
 
-This rule reports non-standard properties on `Boolean` class as errors.
+This rule reports non-standard static properties on `Boolean` class as errors.
 
 ## 💡 Examples
 

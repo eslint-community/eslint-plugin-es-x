@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-atomics-properties"
-description: "disallow non-standard properties on `Atomics` class"
+description: "disallow non-standard static properties on `Atomics`"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-atomics-properties
-> disallow non-standard properties on `Atomics` class
+> disallow non-standard static properties on `Atomics`
 
-This rule reports non-standard properties on `Atomics` class as errors.
+This rule reports non-standard static properties on `Atomics` as errors.
 
 ## 💡 Examples
 

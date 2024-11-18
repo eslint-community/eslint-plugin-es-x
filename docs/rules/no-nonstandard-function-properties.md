@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-function-properties"
-description: "disallow non-standard properties on `Function` class"
+description: "disallow non-standard static properties on `Function` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-function-properties
-> disallow non-standard properties on `Function` class
+> disallow non-standard static properties on `Function` class
 
-This rule reports non-standard properties on `Function` class as errors.
+This rule reports non-standard static properties on `Function` class as errors.
 
 ## 💡 Examples
 

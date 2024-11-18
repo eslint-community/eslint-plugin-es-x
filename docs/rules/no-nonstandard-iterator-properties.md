@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-iterator-properties"
-description: "disallow non-standard properties on `Iterator` class"
+description: "disallow non-standard static properties on `Iterator` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-iterator-properties
-> disallow non-standard properties on `Iterator` class
+> disallow non-standard static properties on `Iterator` class
 
-This rule reports non-standard properties on `Iterator` class as errors.
+This rule reports non-standard static properties on `Iterator` class as errors.
 
 ## 💡 Examples
 

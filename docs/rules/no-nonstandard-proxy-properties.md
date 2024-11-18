@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-proxy-properties"
-description: "disallow non-standard properties on `Proxy` class"
+description: "disallow non-standard static properties on `Proxy` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-proxy-properties
-> disallow non-standard properties on `Proxy` class
+> disallow non-standard static properties on `Proxy` class
 
-This rule reports non-standard properties on `Proxy` class as errors.
+This rule reports non-standard static properties on `Proxy` class as errors.
 
 ## 💡 Examples
 

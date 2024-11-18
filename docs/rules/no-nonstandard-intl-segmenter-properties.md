@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-segmenter-properties"
-description: "disallow non-standard properties on `Intl.Segmenter` class"
+description: "disallow non-standard static properties on `Intl.Segmenter` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-segmenter-properties
-> disallow non-standard properties on `Intl.Segmenter` class
+> disallow non-standard static properties on `Intl.Segmenter` class
 
-This rule reports non-standard properties on `Intl.Segmenter` class as errors.
+This rule reports non-standard static properties on `Intl.Segmenter` class as errors.
 
 ## 💡 Examples
 

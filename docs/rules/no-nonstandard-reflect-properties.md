@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-reflect-properties"
-description: "disallow non-standard properties on `Reflect` class"
+description: "disallow non-standard static properties on `Reflect`"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-reflect-properties
-> disallow non-standard properties on `Reflect` class
+> disallow non-standard static properties on `Reflect`
 
-This rule reports non-standard properties on `Reflect` class as errors.
+This rule reports non-standard static properties on `Reflect` as errors.
 
 ## 💡 Examples
 

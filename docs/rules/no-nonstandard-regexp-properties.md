@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-regexp-properties"
-description: "disallow non-standard properties on `RegExp` class"
+description: "disallow non-standard static properties on `RegExp` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-regexp-properties
-> disallow non-standard properties on `RegExp` class
+> disallow non-standard static properties on `RegExp` class
 
-This rule reports non-standard properties on `RegExp` class as errors.
+This rule reports non-standard static properties on `RegExp` class as errors.
 
 ## 💡 Examples
 

@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-object-properties"
-description: "disallow non-standard properties on `Object` class"
+description: "disallow non-standard static properties on `Object` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-object-properties
-> disallow non-standard properties on `Object` class
+> disallow non-standard static properties on `Object` class
 
-This rule reports non-standard properties on `Object` class as errors.
+This rule reports non-standard static properties on `Object` class as errors.
 
 ## 💡 Examples
 

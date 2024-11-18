@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-collator-properties"
-description: "disallow non-standard properties on `Intl.Collator` class"
+description: "disallow non-standard static properties on `Intl.Collator` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-collator-properties
-> disallow non-standard properties on `Intl.Collator` class
+> disallow non-standard static properties on `Intl.Collator` class
 
-This rule reports non-standard properties on `Intl.Collator` class as errors.
+This rule reports non-standard static properties on `Intl.Collator` class as errors.
 
 ## 💡 Examples
 

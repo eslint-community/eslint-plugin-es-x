@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-numberformat-properties"
-description: "disallow non-standard properties on `Intl.NumberFormat` class"
+description: "disallow non-standard static properties on `Intl.NumberFormat` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-numberformat-properties
-> disallow non-standard properties on `Intl.NumberFormat` class
+> disallow non-standard static properties on `Intl.NumberFormat` class
 
-This rule reports non-standard properties on `Intl.NumberFormat` class as errors.
+This rule reports non-standard static properties on `Intl.NumberFormat` class as errors.
 
 ## 💡 Examples
 

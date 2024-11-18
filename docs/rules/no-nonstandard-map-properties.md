@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-map-properties"
-description: "disallow non-standard properties on `Map` class"
+description: "disallow non-standard static properties on `Map` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-map-properties
-> disallow non-standard properties on `Map` class
+> disallow non-standard static properties on `Map` class
 
-This rule reports non-standard properties on `Map` class as errors.
+This rule reports non-standard static properties on `Map` class as errors.
 
 ## 💡 Examples
 

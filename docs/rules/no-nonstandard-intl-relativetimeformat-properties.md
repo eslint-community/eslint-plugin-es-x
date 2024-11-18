@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-relativetimeformat-properties"
-description: "disallow non-standard properties on `Intl.RelativeTimeFormat` class"
+description: "disallow non-standard static properties on `Intl.RelativeTimeFormat` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-relativetimeformat-properties
-> disallow non-standard properties on `Intl.RelativeTimeFormat` class
+> disallow non-standard static properties on `Intl.RelativeTimeFormat` class
 
-This rule reports non-standard properties on `Intl.RelativeTimeFormat` class as errors.
+This rule reports non-standard static properties on `Intl.RelativeTimeFormat` class as errors.
 
 ## 💡 Examples
 

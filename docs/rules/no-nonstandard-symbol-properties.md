@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-symbol-properties"
-description: "disallow non-standard properties on `Symbol` class"
+description: "disallow non-standard static properties on `Symbol` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-symbol-properties
-> disallow non-standard properties on `Symbol` class
+> disallow non-standard static properties on `Symbol` class
 
-This rule reports non-standard properties on `Symbol` class as errors.
+This rule reports non-standard static properties on `Symbol` class as errors.
 
 ## 💡 Examples
 

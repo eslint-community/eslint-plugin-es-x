@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-date-properties"
-description: "disallow non-standard properties on `Date` class"
+description: "disallow non-standard static properties on `Date` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-date-properties
-> disallow non-standard properties on `Date` class
+> disallow non-standard static properties on `Date` class
 
-This rule reports non-standard properties on `Date` class as errors.
+This rule reports non-standard static properties on `Date` class as errors.
 
 ## 💡 Examples
 

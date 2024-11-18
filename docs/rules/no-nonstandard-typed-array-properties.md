@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-typed-array-properties"
-description: "disallow non-standard properties on typed array class"
+description: "disallow non-standard static properties on typed array class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-typed-array-properties
-> disallow non-standard properties on typed array class
+> disallow non-standard static properties on typed array class
 
-This rule reports non-standard properties on typed array class (`%TypedArray%`) as errors.
+This rule reports non-standard static properties on typed array class (`%TypedArray%`) as errors.
 
 ## 💡 Examples
 

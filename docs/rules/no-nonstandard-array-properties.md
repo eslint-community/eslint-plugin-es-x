@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-array-properties"
-description: "disallow non-standard properties on `Array` class"
+description: "disallow non-standard static properties on `Array` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-array-properties
-> disallow non-standard properties on `Array` class
+> disallow non-standard static properties on `Array` class
 
-This rule reports non-standard properties on `Array` class as errors.
+This rule reports non-standard static properties on `Array` class as errors.
 
 ## 💡 Examples
 

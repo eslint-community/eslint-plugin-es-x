@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-promise-properties"
-description: "disallow non-standard properties on `Promise` class"
+description: "disallow non-standard static properties on `Promise` class"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-promise-properties
-> disallow non-standard properties on `Promise` class
+> disallow non-standard static properties on `Promise` class
 
-This rule reports non-standard properties on `Promise` class as errors.
+This rule reports non-standard static properties on `Promise` class as errors.
 
 ## 💡 Examples
 

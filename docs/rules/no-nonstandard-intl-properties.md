@@ -1,13 +1,13 @@
 ---
 title: "es-x/no-nonstandard-intl-properties"
-description: "disallow non-standard properties on `Intl` class"
+description: "disallow non-standard static properties on `Intl`"
 since: "v8.2.0"
 ---
 
 # es-x/no-nonstandard-intl-properties
-> disallow non-standard properties on `Intl` class
+> disallow non-standard static properties on `Intl`
 
-This rule reports non-standard properties on `Intl` class as errors.
+This rule reports non-standard static properties on `Intl` as errors.
 
 ## 💡 Examples
 
