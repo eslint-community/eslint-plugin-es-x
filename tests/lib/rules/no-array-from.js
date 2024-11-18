@@ -14,5 +14,13 @@ new RuleTester().run("no-array-from", rule, {
             code: "Array.from",
             errors: ["ES2015 'Array.from' method is forbidden."],
         },
+        {
+            code: "const {from} = Array",
+            errors: ["ES2015 'Array.from' method is forbidden."],
+        },
+        {
+            code: "const {a:{from} = Array} = {}",
+            errors: ["ES2015 'Array.from' method is forbidden."],
+        },
     ],
 })
