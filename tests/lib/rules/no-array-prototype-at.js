@@ -54,6 +54,10 @@ new RuleTester().run(ruleId, rule, {
             code: "const { at } = Array.prototype;",
             errors: ["ES2022 'Array.prototype.at' method is forbidden."],
         },
+        {
+            code: "const { a: {at}=[] } = {};",
+            errors: ["ES2022 'Array.prototype.at' method is forbidden."],
+        },
     ],
 })
 
@@ -268,6 +272,11 @@ new RuleTester({
         {
             filename,
             code: "const { at } = Array.prototype;",
+            errors: ["ES2022 'Array.prototype.at' method is forbidden."],
+        },
+        {
+            filename,
+            code: "const { a: {at}=[] } = {};",
             errors: ["ES2022 'Array.prototype.at' method is forbidden."],
         },
     ],

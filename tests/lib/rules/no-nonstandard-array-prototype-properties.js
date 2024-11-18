@@ -78,6 +78,12 @@ new RuleTester().run(ruleId, rule, {
                 "Non-standard 'Array.prototype.foo' property is forbidden.",
             ],
         },
+        {
+            code: "const { a: {foo}=[] } = {};",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
+            ],
+        },
     ],
 })
 
@@ -182,6 +188,13 @@ new RuleTester({
         {
             filename,
             code: "const { foo } = Array.prototype;",
+            errors: [
+                "Non-standard 'Array.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "const { a: {foo}=[] } = {};",
             errors: [
                 "Non-standard 'Array.prototype.foo' property is forbidden.",
             ],

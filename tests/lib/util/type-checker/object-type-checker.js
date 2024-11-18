@@ -479,6 +479,14 @@ describe("define-prototype-method-handler/object-type-checker", () => {
                 `,
                 result: [null],
             },
+            {
+                code: `
+                let {a=Number.isFinite} = {a:Number.isInteger};
+                a =  Number.isNaN;
+                target(a(foo));
+                `,
+                result: ["Boolean"],
+            },
         ]) {
             ;(only ? it.only : it)(code, () => {
                 deepStrictEqual(
