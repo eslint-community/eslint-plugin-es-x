@@ -30,5 +30,9 @@ new RuleTester().run("no-nonstandard-array-properties", rule, {
             code: ";({ foo } = Array);",
             errors: ["Non-standard 'Array.foo' property is forbidden."],
         },
+        {
+            code: "const { a: {foo}=Array } = {};",
+            errors: ["Non-standard 'Array.foo' property is forbidden."],
+        },
     ],
 })
