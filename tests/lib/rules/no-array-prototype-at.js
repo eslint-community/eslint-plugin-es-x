@@ -21,6 +21,8 @@ new RuleTester().run(ruleId, rule, {
             options: [{ aggressive: false }],
             settings: { "es-x": { aggressive: true } },
         },
+        // Test for https://github.com/eslint-community/eslint-plugin-es-x/issues/223
+        "for (const { x } of foo) {}",
     ],
     invalid: [
         {
