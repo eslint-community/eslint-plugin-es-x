@@ -1,12 +1,11 @@
 ---
 title: "es-x/no-nonstandard-sharedarraybuffer-properties"
 description: "disallow non-standard static properties on `SharedArrayBuffer` class"
+since: "v8.4.0"
 ---
 
 # es-x/no-nonstandard-sharedarraybuffer-properties
 > disallow non-standard static properties on `SharedArrayBuffer` class
-
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
 This rule reports non-standard static properties on `SharedArrayBuffer` class as errors.
 
@@ -43,6 +42,10 @@ This rule has an option.
 ### allow: string[]
 
 An array of non-standard property names to allow.
+
+## 🚀 Version
+
+This rule was introduced in v8.4.0.
 
 ## 📚 References
 
