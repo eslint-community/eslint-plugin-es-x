@@ -13,6 +13,9 @@ new RuleTester().run(ruleId, rule, {
         "foo",
         "foo.toString",
         "foo.foo",
+        "[].keys().next()",
+        "[].keys().return()",
+        "[].keys().throw()",
         ...[...iteratorPrototypeProperties].map(
             (p) => `Iterator.from({}).${p}`,
         ),
