@@ -393,9 +393,11 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-bigint-prototype-properties](./no-nonstandard-bigint-prototype-properties.md) | disallow non-standard properties on BigInt instance. |  |
 | [es-x/no-nonstandard-boolean-properties](./no-nonstandard-boolean-properties.md) | disallow non-standard static properties on `Boolean` class. |  |
 | [es-x/no-nonstandard-boolean-prototype-properties](./no-nonstandard-boolean-prototype-properties.md) | disallow non-standard properties on Boolean instance. |  |
+| [es-x/no-nonstandard-dataview-properties](./no-nonstandard-dataview-properties.md) | disallow non-standard static properties on `DataView` class. |  |
 | [es-x/no-nonstandard-dataview-prototype-properties](./no-nonstandard-dataview-prototype-properties.md) | disallow non-standard properties on DataView instance. |  |
 | [es-x/no-nonstandard-date-properties](./no-nonstandard-date-properties.md) | disallow non-standard static properties on `Date` class. |  |
 | [es-x/no-nonstandard-date-prototype-properties](./no-nonstandard-date-prototype-properties.md) | disallow non-standard properties on Date instance. |  |
+| [es-x/no-nonstandard-finalizationregistry-properties](./no-nonstandard-finalizationregistry-properties.md) | disallow non-standard static properties on `FinalizationRegistry` class. |  |
 | [es-x/no-nonstandard-finalizationregistry-prototype-properties](./no-nonstandard-finalizationregistry-prototype-properties.md) | disallow non-standard properties on FinalizationRegistry instance. |  |
 | [es-x/no-nonstandard-function-properties](./no-nonstandard-function-properties.md) | disallow non-standard static properties on `Function` class. |  |
 | [es-x/no-nonstandard-intl-collator-properties](./no-nonstandard-intl-collator-properties.md) | disallow non-standard static properties on `Intl.Collator` class. |  |
@@ -432,7 +434,9 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-reflect-properties](./no-nonstandard-reflect-properties.md) | disallow non-standard static properties on `Reflect`. |  |
 | [es-x/no-nonstandard-regexp-properties](./no-nonstandard-regexp-properties.md) | disallow non-standard static properties on `RegExp` class. |  |
 | [es-x/no-nonstandard-regexp-prototype-properties](./no-nonstandard-regexp-prototype-properties.md) | disallow non-standard properties on RegExp instance. |  |
+| [es-x/no-nonstandard-set-properties](./no-nonstandard-set-properties.md) | disallow non-standard static properties on `Set` class. |  |
 | [es-x/no-nonstandard-set-prototype-properties](./no-nonstandard-set-prototype-properties.md) | disallow non-standard properties on Set instance. |  |
+| [es-x/no-nonstandard-sharedarraybuffer-properties](./no-nonstandard-sharedarraybuffer-properties.md) | disallow non-standard static properties on `SharedArrayBuffer` class. |  |
 | [es-x/no-nonstandard-sharedarraybuffer-prototype-properties](./no-nonstandard-sharedarraybuffer-prototype-properties.md) | disallow non-standard properties on SharedArrayBuffer instance. |  |
 | [es-x/no-nonstandard-string-properties](./no-nonstandard-string-properties.md) | disallow non-standard static properties on `String` class. |  |
 | [es-x/no-nonstandard-string-prototype-properties](./no-nonstandard-string-prototype-properties.md) | disallow non-standard properties on String instance. |  |
@@ -440,8 +444,11 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-symbol-prototype-properties](./no-nonstandard-symbol-prototype-properties.md) | disallow non-standard properties on Symbol instance. |  |
 | [es-x/no-nonstandard-typed-array-properties](./no-nonstandard-typed-array-properties.md) | disallow non-standard static properties on typed array class. |  |
 | [es-x/no-nonstandard-typed-array-prototype-properties](./no-nonstandard-typed-array-prototype-properties.md) | disallow non-standard properties on typed array instance. |  |
+| [es-x/no-nonstandard-weakmap-properties](./no-nonstandard-weakmap-properties.md) | disallow non-standard static properties on `WeakMap` class. |  |
 | [es-x/no-nonstandard-weakmap-prototype-properties](./no-nonstandard-weakmap-prototype-properties.md) | disallow non-standard properties on WeakMap instance. |  |
+| [es-x/no-nonstandard-weakref-properties](./no-nonstandard-weakref-properties.md) | disallow non-standard static properties on `WeakRef` class. |  |
 | [es-x/no-nonstandard-weakref-prototype-properties](./no-nonstandard-weakref-prototype-properties.md) | disallow non-standard properties on WeakRef instance. |  |
+| [es-x/no-nonstandard-weakset-properties](./no-nonstandard-weakset-properties.md) | disallow non-standard static properties on `WeakSet` class. |  |
 | [es-x/no-nonstandard-weakset-prototype-properties](./no-nonstandard-weakset-prototype-properties.md) | disallow non-standard properties on WeakSet instance. |  |
 
 ## Deprecated
