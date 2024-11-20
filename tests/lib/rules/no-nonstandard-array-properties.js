@@ -7,6 +7,8 @@ const { arrayProperties } = require("../../../lib/util/well-known-properties")
 new RuleTester().run("no-nonstandard-array-properties", rule, {
     valid: [
         ...[...arrayProperties].map((p) => `Array.${p}`),
+        "Array[Symbol.species]",
+        "const {[Symbol.species]:foo} = Array",
         { code: "Array.unknown()", options: [{ allow: ["unknown"] }] },
     ],
     invalid: [

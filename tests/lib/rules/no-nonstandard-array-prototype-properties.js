@@ -16,6 +16,9 @@ new RuleTester().run(ruleId, rule, {
         ...[...arrayPrototypeProperties].map((p) => `['A'].${p}`),
         "['A'][0]",
         "['A']['0']",
+        "['A'][Symbol.iterator]",
+        "['A'][Symbol.unscopables]",
+        "const {[Symbol.iterator]:iterator} = []",
         { code: "['A'].unknown()", options: [{ allow: ["unknown"] }] },
         // Test for https://github.com/eslint-community/eslint-plugin-es-x/issues/223
         "for (const { x } of foo) {}",
