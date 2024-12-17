@@ -4,6 +4,14 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
+## ES2026 Intl API
+
+There is a config that enables the rules in this category: [`no-new-in-esnext-intl-api`]
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-durationformat](./no-intl-durationformat.md) | disallow the `Intl.DurationFormat` object. |  |
+
 ## ES2025
 
 There is a config that enables the rules in this category: [`no-new-in-esnext`]
@@ -406,6 +414,8 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-intl-datetimeformat-prototype-properties](./no-nonstandard-intl-datetimeformat-prototype-properties.md) | disallow non-standard properties on Intl.DateTimeFormat instance. |  |
 | [es-x/no-nonstandard-intl-displaynames-properties](./no-nonstandard-intl-displaynames-properties.md) | disallow non-standard static properties on `Intl.DisplayNames` class. |  |
 | [es-x/no-nonstandard-intl-displaynames-prototype-properties](./no-nonstandard-intl-displaynames-prototype-properties.md) | disallow non-standard properties on Intl.DisplayNames instance. |  |
+| [es-x/no-nonstandard-intl-durationformat-properties](./no-nonstandard-intl-durationformat-properties.md) | disallow non-standard static properties on `Intl.DurationFormat` class. |  |
+| [es-x/no-nonstandard-intl-durationformat-prototype-properties](./no-nonstandard-intl-durationformat-prototype-properties.md) | disallow non-standard properties on Intl.DurationFormat instance. |  |
 | [es-x/no-nonstandard-intl-listformat-properties](./no-nonstandard-intl-listformat-properties.md) | disallow non-standard static properties on `Intl.ListFormat` class. |  |
 | [es-x/no-nonstandard-intl-listformat-prototype-properties](./no-nonstandard-intl-listformat-prototype-properties.md) | disallow non-standard properties on Intl.ListFormat instance. |  |
 | [es-x/no-nonstandard-intl-locale-properties](./no-nonstandard-intl-locale-properties.md) | disallow non-standard static properties on `Intl.Locale` class. |  |
@@ -462,6 +472,7 @@ Rules in this category are not included in any preset.
 | [es-x/no-object-map-groupby](./no-object-map-groupby.md) | [es-x/no-object-groupby](./no-object-groupby.md), [es-x/no-map-groupby](./no-map-groupby.md) |
 | [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 
+[`no-new-in-esnext-intl-api`]: ../configs/index.md#no-new-in-esnext-intl-api
 [`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
 [`no-new-in-es2024`]: ../configs/index.md#no-new-in-es2024
 [`restrict-to-es2023`]: ../configs/index.md#restrict-to-es2023

@@ -7,14 +7,10 @@
 const cp = require("child_process")
 const fs = require("fs")
 const path = require("path")
-const { categories } = require("./rules")
+const { LATEST_ES_YEAR } = require("./rules")
 const logger = console
 
-const maxESVersion = Math.max(
-    ...Object.keys(categories).map((esVersion) =>
-        /^ES\d+$/u.test(esVersion) ? Number(esVersion.slice(2)) : 0,
-    ),
-)
+const maxESVersion = LATEST_ES_YEAR + 1
 
 // main
 ;((ruleId) => {

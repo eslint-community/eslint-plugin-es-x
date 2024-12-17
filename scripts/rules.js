@@ -41,7 +41,7 @@ const LATEST_ES_YEAR = 2024
 /** @type {Record<string, Category>} */
 const categories = [
     ...(function* () {
-        const max = new Date().getFullYear() + 1
+        const max = new Date().getFullYear() + 2
         for (let year = max; year >= 2015; year--) {
             yield year
         }
@@ -195,4 +195,4 @@ const rules = []
     }
 })(libRoot)
 
-module.exports = { categories, rules }
+module.exports = { categories, rules, LATEST_ES_YEAR }
