@@ -3,5 +3,5 @@
         "strict": true,
         "lib": ["ESNext"]
     },
-    "include": ["test.ts"]
+    "include": ["test.ts", "types.d.ts"]
 }
