@@ -28,7 +28,7 @@
     "eslint-plugin-vue": "^9.25.0",
     "espree": "^10.3.0",
     "globals": "^15.0.0",
-    "jsdom": "^25.0.0",
+    "jsdom": "^26.0.0",
     "mocha": "^11.0.0",
     "monaco-editor": "^0.52.0",
     "npm-run-all2": "^7.0.0",
