@@ -14,7 +14,7 @@ new RuleTester().run("no-intl-durationformat", rule, {
         {
             code: "Intl.DurationFormat",
             errors: [
-                "ES2026 Intl API 'Intl.DurationFormat' object is forbidden.",
+                "ES2025 Intl API 'Intl.DurationFormat' object is forbidden.",
             ],
         },
     ],

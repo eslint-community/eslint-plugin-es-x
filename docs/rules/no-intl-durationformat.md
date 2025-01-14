@@ -9,7 +9,7 @@ description: "disallow the `Intl.DurationFormat` object"
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext-intl-api]
 
-This rule reports ES2026 Intl API `Intl.DurationFormat` object as errors.
+This rule reports ES2025 Intl API `Intl.DurationFormat` object as errors.
 
 ## 💡 Examples
 

@@ -4,14 +4,6 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
-## ES2026 Intl API
-
-There is a config that enables the rules in this category: [`no-new-in-esnext-intl-api`]
-
-| Rule ID | Description |    |
-|:--------|:------------|:--:|
-| [es-x/no-intl-durationformat](./no-intl-durationformat.md) | disallow the `Intl.DurationFormat` object. |  |
-
 ## ES2025
 
 There is a config that enables the rules in this category: [`no-new-in-esnext`]
@@ -44,6 +36,14 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-set-prototype-symmetricdifference](./no-set-prototype-symmetricdifference.md) | disallow the `Set.prototype.symmetricDifference` method. |  |
 | [es-x/no-set-prototype-union](./no-set-prototype-union.md) | disallow the `Set.prototype.union` method. |  |
 | [es-x/no-trailing-dynamic-import-commas](./no-trailing-dynamic-import-commas.md) | disallow trailing commas in `import()`. | 🔧 |
+
+## ES2025 Intl API
+
+There is a config that enables the rules in this category: [`no-new-in-esnext-intl-api`]
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-durationformat](./no-intl-durationformat.md) | disallow the `Intl.DurationFormat` object. |  |
 
 ## ES2024
 
@@ -472,8 +472,8 @@ Rules in this category are not included in any preset.
 | [es-x/no-object-map-groupby](./no-object-map-groupby.md) | [es-x/no-object-groupby](./no-object-groupby.md), [es-x/no-map-groupby](./no-map-groupby.md) |
 | [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 
-[`no-new-in-esnext-intl-api`]: ../configs/index.md#no-new-in-esnext-intl-api
 [`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
+[`no-new-in-esnext-intl-api`]: ../configs/index.md#no-new-in-esnext-intl-api
 [`no-new-in-es2024`]: ../configs/index.md#no-new-in-es2024
 [`restrict-to-es2023`]: ../configs/index.md#restrict-to-es2023
 [`restrict-to-es2023-intl-api`]: ../configs/index.md#restrict-to-es2023-intl-api
