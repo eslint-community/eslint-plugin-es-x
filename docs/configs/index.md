@@ -28,6 +28,32 @@ export default [
 }
 ```
 
+## no-new-in-esnext-intl-api
+
+disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-new-in-esnext-intl-api']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-new-in-esnext-intl-api"],
+}
+```
+
 ## no-new-in-es2024
 
 disallow new stuff in ES2024.

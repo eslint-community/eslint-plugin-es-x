@@ -11,6 +11,7 @@ export type TypeName =
   | "Intl.Segmenter"
   | "Intl.DisplayNames"
   | "Intl.Locale"
+  | "Intl.DurationFormat"
   | "Promise"
   | "RegExp"
   | "String"
@@ -193,7 +194,7 @@ export type FinalizationRegistryPrototypeProperty = Exclude<
   keyof FinalizationRegistry<any>,
   ExcludePrototypeProperty
 >;
-export type IntlProperty = Exclude<keyof typeof Intl, ExcludeProperty>;
+export type IntlProperty = Exclude<keyof typeof Intl, ExcludeProperty> | 'DurationFormat';
 export type IteratorProperty = Exclude<keyof typeof Iterator, ExcludeProperty>;
 export type IteratorPrototypeProperty = Exclude<
   keyof IteratorObject<any>,
