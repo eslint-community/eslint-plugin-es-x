@@ -38,6 +38,14 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-set-prototype-union](./no-set-prototype-union.md) | disallow the `Set.prototype.union` method. |  |
 | [es-x/no-trailing-dynamic-import-commas](./no-trailing-dynamic-import-commas.md) | disallow trailing commas in `import()`. | 🔧 |
 
+## ES2025 Intl API
+
+There is a config that enables the rules in this category: [`no-new-in-esnext-intl-api`]
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-durationformat](./no-intl-durationformat.md) | disallow the `Intl.DurationFormat` object. |  |
+
 ## ES2024
 
 There are multiple configs that enable all rules in this category: [`no-new-in-es2024`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], [`restrict-to-es2017`], [`restrict-to-es2018`], [`restrict-to-es2019`], [`restrict-to-es2020`], [`restrict-to-es2021`], [`restrict-to-es2022`], and [`restrict-to-es2023`]
@@ -407,6 +415,8 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-intl-datetimeformat-prototype-properties](./no-nonstandard-intl-datetimeformat-prototype-properties.md) | disallow non-standard properties on Intl.DateTimeFormat instance. |  |
 | [es-x/no-nonstandard-intl-displaynames-properties](./no-nonstandard-intl-displaynames-properties.md) | disallow non-standard static properties on `Intl.DisplayNames` class. |  |
 | [es-x/no-nonstandard-intl-displaynames-prototype-properties](./no-nonstandard-intl-displaynames-prototype-properties.md) | disallow non-standard properties on Intl.DisplayNames instance. |  |
+| [es-x/no-nonstandard-intl-durationformat-properties](./no-nonstandard-intl-durationformat-properties.md) | disallow non-standard static properties on `Intl.DurationFormat` class. |  |
+| [es-x/no-nonstandard-intl-durationformat-prototype-properties](./no-nonstandard-intl-durationformat-prototype-properties.md) | disallow non-standard properties on Intl.DurationFormat instance. |  |
 | [es-x/no-nonstandard-intl-listformat-properties](./no-nonstandard-intl-listformat-properties.md) | disallow non-standard static properties on `Intl.ListFormat` class. |  |
 | [es-x/no-nonstandard-intl-listformat-prototype-properties](./no-nonstandard-intl-listformat-prototype-properties.md) | disallow non-standard properties on Intl.ListFormat instance. |  |
 | [es-x/no-nonstandard-intl-locale-properties](./no-nonstandard-intl-locale-properties.md) | disallow non-standard static properties on `Intl.Locale` class. |  |
@@ -464,6 +474,7 @@ Rules in this category are not included in any preset.
 | [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 
 [`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
+[`no-new-in-esnext-intl-api`]: ../configs/index.md#no-new-in-esnext-intl-api
 [`no-new-in-es2024`]: ../configs/index.md#no-new-in-es2024
 [`restrict-to-es2023`]: ../configs/index.md#restrict-to-es2023
 [`restrict-to-es2023-intl-api`]: ../configs/index.md#restrict-to-es2023-intl-api
