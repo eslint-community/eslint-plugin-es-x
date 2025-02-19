@@ -10,6 +10,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
+| [es-x/no-dataview-prototype-getfloat16-setfloat16](./no-dataview-prototype-getfloat16-setfloat16.md) | disallow the `DataView.prototype.{getFloat16,setFloat16}` methods. |  |
 | [es-x/no-dynamic-import-options](./no-dynamic-import-options.md) | disallow the second parameter to `import()`. |  |
 | [es-x/no-import-attributes](./no-import-attributes.md) | disallow Import Attributes. |  |
 | [es-x/no-iterator-prototype-drop](./no-iterator-prototype-drop.md) | disallow the `Iterator.prototype.drop` method. |  |
