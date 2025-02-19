@@ -1,12 +1,11 @@
 ---
 title: "es-x/no-nonstandard-intl-durationformat-properties"
 description: "disallow non-standard static properties on `Intl.DurationFormat` class"
+since: "v8.5.0"
 ---
 
 # es-x/no-nonstandard-intl-durationformat-properties
 > disallow non-standard static properties on `Intl.DurationFormat` class
-
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
 This rule reports non-standard static properties on `Intl.DurationFormat` class as errors.
 
@@ -43,6 +42,10 @@ This rule has an option.
 ### allow: string[]
 
 An array of non-standard property names to allow.
+
+## 🚀 Version
+
+This rule was introduced in v8.5.0.
 
 ## 📚 References
 

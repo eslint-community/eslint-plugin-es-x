@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-math-f16round"
 description: "disallow the `Math.f16round` method"
+since: "v8.5.0"
 ---
 
 # es-x/no-math-f16round
 > disallow the `Math.f16round` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-float16array] and [no-new-in-esnext]
 
 This rule reports ES2025 [`Math.f16round` method](https://github.com/tc39/proposal-float16array) as errors.
@@ -23,6 +23,10 @@ const n = Math.f16round(value)
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.5.0.
 
 ## 📚 References
 

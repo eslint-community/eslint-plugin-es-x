@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-float16array"
 description: "disallow the `Float16Array` class"
+since: "v8.5.0"
 ---
 
 # es-x/no-float16array
 > disallow the `Float16Array` class
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-float16array] and [no-new-in-esnext]
 
 This rule reports ES2025 [`Float16Array` class](https://github.com/tc39/proposal-float16array) as errors.
@@ -23,6 +23,10 @@ const float16 = new Float16Array(2);
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.5.0.
 
 ## 📚 References
 

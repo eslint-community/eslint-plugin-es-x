@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-intl-durationformat"
 description: "disallow the `Intl.DurationFormat` object"
+since: "v8.5.0"
 ---
 
 # es-x/no-intl-durationformat
 > disallow the `Intl.DurationFormat` object
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext-intl-api]
 
 This rule reports ES2025 Intl API `Intl.DurationFormat` object as errors.
@@ -29,6 +29,10 @@ df.format({
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.5.0.
 
 ## 📚 References
 

@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-regexp-escape"
 description: "disallow `RegExp.escape` function"
+since: "v8.5.0"
 ---
 
 # es-x/no-regexp-escape
 > disallow `RegExp.escape` function
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2025 [`RegExp.escape`](https://github.com/tc39/proposal-regex-escaping) as errors.
@@ -23,6 +23,10 @@ RegExp.escape(s)
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.5.0.
 
 ## 📚 References
 
