@@ -10,7 +10,9 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
+| [es-x/no-dataview-prototype-getfloat16-setfloat16](./no-dataview-prototype-getfloat16-setfloat16.md) | disallow the `DataView.prototype.{getFloat16,setFloat16}` methods. |  |
 | [es-x/no-dynamic-import-options](./no-dynamic-import-options.md) | disallow the second parameter to `import()`. |  |
+| [es-x/no-float16array](./no-float16array.md) | disallow the `Float16Array` class. |  |
 | [es-x/no-import-attributes](./no-import-attributes.md) | disallow Import Attributes. |  |
 | [es-x/no-iterator-prototype-drop](./no-iterator-prototype-drop.md) | disallow the `Iterator.prototype.drop` method. |  |
 | [es-x/no-iterator-prototype-every](./no-iterator-prototype-every.md) | disallow the `Iterator.prototype.every` method. |  |
@@ -25,6 +27,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-iterator-prototype-toarray](./no-iterator-prototype-toarray.md) | disallow the `Iterator.prototype.toArray` method. |  |
 | [es-x/no-iterator](./no-iterator.md) | disallow the `Iterator` class. |  |
 | [es-x/no-json-modules](./no-json-modules.md) | disallow JSON Modules. |  |
+| [es-x/no-math-f16round](./no-math-f16round.md) | disallow the `Math.f16round` method. |  |
 | [es-x/no-promise-try](./no-promise-try.md) | disallow `Promise.try` function. |  |
 | [es-x/no-regexp-duplicate-named-capturing-groups](./no-regexp-duplicate-named-capturing-groups.md) | disallow RegExp duplicate named capturing groups. |  |
 | [es-x/no-regexp-escape](./no-regexp-escape.md) | disallow `RegExp.escape` function. |  |

@@ -378,6 +378,7 @@ describe("define-prototype-method-handler/object-type-checker", () => {
                 "Uint16Array",
                 "Int32Array",
                 "Uint32Array",
+                "Float16Array",
                 "Float32Array",
                 "Float64Array",
                 "BigInt64Array",
@@ -487,6 +488,14 @@ describe("define-prototype-method-handler/object-type-checker", () => {
                 `,
                 result: ["Boolean"],
             },
+            {
+                code: `
+                target(Math.max(1,2));
+                target(Math.fround(5));
+                target(Math.f16round(5));
+                `,
+                result: ["Number", "Number", "Number"],
+            },
         ]) {
             ;(only ? it.only : it)(code, () => {
                 deepStrictEqual(
@@ -522,6 +531,9 @@ function getResultOfBuildExpressionTypeProvider(code) {
         languageOptions: {
             ecmaVersion: 2022,
             sourceType: "module",
+            globals: {
+                Float16Array: "readonly",
+            },
         },
         rules: { "test/test-rule": "warn" },
     })

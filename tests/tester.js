@@ -35,6 +35,7 @@ RuleTester.setDefaultConfig({
             FinalizationRegistry: "readonly",
             WeakRef: "readonly",
             Intl: "readonly",
+            Float16Array: "readonly",
             ...builtin,
         },
     },

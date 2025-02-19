@@ -13,6 +13,10 @@ module.exports = {
         title: "Class Fields",
         link: "https://github.com/tc39/proposal-class-fields",
     },
+    float16array: {
+        title: "Float16Array",
+        link: "https://github.com/tc39/proposal-float16array",
+    },
     "import-attributes": {
         title: "Import Attributes",
         link: "https://github.com/tc39/proposal-import-attributes",
