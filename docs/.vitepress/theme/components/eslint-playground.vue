@@ -2,6 +2,7 @@
 import EslintEditor from "./eslint-editor.vue"
 import { markRaw, ref, reactive, computed, onMounted, useSlots } from "vue"
 import * as plugin from "../../../.."
+import { builtin } from "globals"
 const { rules } = plugin.default || plugin
 
 const props = defineProps({
@@ -55,6 +56,10 @@ const config = computed(() => ({
             ecmaFeatures: {
                 jsx: true,
             },
+        },
+        globals: {
+            Float16Array: "readonly",
+            ...builtin,
         },
     },
     rules: {},

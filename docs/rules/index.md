@@ -12,6 +12,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 |:--------|:------------|:--:|
 | [es-x/no-dataview-prototype-getfloat16-setfloat16](./no-dataview-prototype-getfloat16-setfloat16.md) | disallow the `DataView.prototype.{getFloat16,setFloat16}` methods. |  |
 | [es-x/no-dynamic-import-options](./no-dynamic-import-options.md) | disallow the second parameter to `import()`. |  |
+| [es-x/no-float16array](./no-float16array.md) | disallow the `Float16Array` class. |  |
 | [es-x/no-import-attributes](./no-import-attributes.md) | disallow Import Attributes. |  |
 | [es-x/no-iterator-prototype-drop](./no-iterator-prototype-drop.md) | disallow the `Iterator.prototype.drop` method. |  |
 | [es-x/no-iterator-prototype-every](./no-iterator-prototype-every.md) | disallow the `Iterator.prototype.every` method. |  |
