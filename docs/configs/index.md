@@ -1034,7 +1034,7 @@ export default [
 disallow proposal ES2025 [Float16Array](https://github.com/tc39/proposal-float16array)\
 ⚠️ This config will be changed in the minor versions of this plugin.
 
-This configs includes rules for [es-x/no-dataview-prototype-getfloat16-setfloat16](../rules/no-dataview-prototype-getfloat16-setfloat16.md) and [es-x/no-float16array](../rules/no-float16array.md).
+This configs includes rules for [es-x/no-dataview-prototype-getfloat16-setfloat16](../rules/no-dataview-prototype-getfloat16-setfloat16.md), [es-x/no-float16array](../rules/no-float16array.md), and [es-x/no-math-f16round](../rules/no-math-f16round.md).
 
 ### [Config (Flat Config)]
 

@@ -488,6 +488,14 @@ describe("define-prototype-method-handler/object-type-checker", () => {
                 `,
                 result: ["Boolean"],
             },
+            {
+                code: `
+                target(Math.max(1,2));
+                target(Math.fround(5));
+                target(Math.f16round(5));
+                `,
+                result: ["Number", "Number", "Number"],
+            },
         ]) {
             ;(only ? it.only : it)(code, () => {
                 deepStrictEqual(

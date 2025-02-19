@@ -27,6 +27,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-iterator-prototype-toarray](./no-iterator-prototype-toarray.md) | disallow the `Iterator.prototype.toArray` method. |  |
 | [es-x/no-iterator](./no-iterator.md) | disallow the `Iterator` class. |  |
 | [es-x/no-json-modules](./no-json-modules.md) | disallow JSON Modules. |  |
+| [es-x/no-math-f16round](./no-math-f16round.md) | disallow the `Math.f16round` method. |  |
 | [es-x/no-promise-try](./no-promise-try.md) | disallow `Promise.try` function. |  |
 | [es-x/no-regexp-duplicate-named-capturing-groups](./no-regexp-duplicate-named-capturing-groups.md) | disallow RegExp duplicate named capturing groups. |  |
 | [es-x/no-regexp-escape](./no-regexp-escape.md) | disallow `RegExp.escape` function. |  |

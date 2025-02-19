@@ -59,7 +59,10 @@ export type WellKnownPrototypes = Record<
   Record<string, TypeInfo | undefined> | undefined
 >;
 
-type ExcludeProperty = "prototype" | typeof Symbol.species;
+type ExcludeProperty =
+  | "prototype"
+  | typeof Symbol.species
+  | typeof Symbol.toStringTag;
 type ExcludePrototypeProperty =
   | "toString"
   | "toLocaleString"
@@ -146,10 +149,7 @@ export type PromisePrototypeProperty = Exclude<
   keyof Promise<any>,
   ExcludePrototypeProperty
 >;
-export type DataViewProperty = Exclude<
-  keyof typeof DataView,
-  ExcludeProperty
->;
+export type DataViewProperty = Exclude<keyof typeof DataView, ExcludeProperty>;
 export type DataViewPrototypeProperty = Exclude<
   keyof DataView,
   ExcludePrototypeProperty
@@ -190,12 +190,17 @@ export type WeakRefPrototypeProperty = Exclude<
   keyof WeakRef<any>,
   ExcludePrototypeProperty
 >;
-export type FinalizationRegistryProperty = Exclude<keyof typeof FinalizationRegistry, ExcludeProperty>;
+export type FinalizationRegistryProperty = Exclude<
+  keyof typeof FinalizationRegistry,
+  ExcludeProperty
+>;
 export type FinalizationRegistryPrototypeProperty = Exclude<
   keyof FinalizationRegistry<any>,
   ExcludePrototypeProperty
 >;
-export type IntlProperty = Exclude<keyof typeof Intl, ExcludeProperty> | 'DurationFormat';
+export type IntlProperty =
+  | Exclude<keyof typeof Intl, ExcludeProperty>
+  | "DurationFormat";
 export type IteratorProperty = Exclude<keyof typeof Iterator, ExcludeProperty>;
 export type IteratorPrototypeProperty = Exclude<
   keyof IteratorObject<any>,
@@ -209,3 +214,4 @@ export type TypedArrayPrototypeProperty = Exclude<
   keyof Int8Array,
   ExcludePrototypeProperty | "BYTES_PER_ELEMENT"
 >;
+export type MathProperty = Exclude<keyof typeof Math, ExcludeProperty>;
