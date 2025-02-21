@@ -24,6 +24,28 @@ Object.getOwnPropertyNames(obj, "prop", {})
 
 </eslint-playground>
 
+## 🔧 Options
+
+This rule has an option.
+
+```jsonc
+{
+  "rules": {
+    "es-x/no-object-getownpropertynames": [
+      "error",
+      {
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
+```
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
 ## 🚀 Version
 
 This rule was introduced in [eslint-plugin-es] v3.0.0.

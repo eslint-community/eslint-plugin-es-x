@@ -71,6 +71,7 @@ async function main() {
             .replace(/^\n*(?:---[\s\S]*?---\n\n?)?#.+\n>.+\n+(?:- .+\n)*/u, "")
             .replace(/## 🚀 Version[\s\S]+/u, "")
             .replace(/## 📚 References[\s\S]+/u, "")
+            .replace(/## 🔧 Options[\s\S]+?(\n## |$)/u, "$1")
             .trim()
         content = updateCodeBlocks(content, { ruleId, fixable })
         content = adjustContents(content)
@@ -122,28 +123,73 @@ async function main() {
         }
 
         let optionsSection = ""
-        if (schema?.[0] && !content.includes("## 🔧 Options")) {
-            const optionSchema = schema[0]
-            const hasAggressive =
-                optionSchema.type === "object" &&
-                optionSchema.properties?.aggressive
+        const optionSchema = schema?.[0]
+        if (
+            optionSchema?.type === "object" &&
+            !content.includes("## 🔧 Options")
+        ) {
+            const hasAggressive = optionSchema.properties?.aggressive
+            const hasAllowTestedProperty =
+                optionSchema.properties?.allowTestedProperty
+            const hasAllow = optionSchema.properties?.allow
+            const defaultProperties = [
+                ...(hasAllow ? ['"allow": []'] : []),
+                ...(hasAggressive ? ['"aggressive": false'] : []),
+                ...(hasAllowTestedProperty
+                    ? ['"allowTestedProperty": false']
+                    : []),
+            ]
+            const propertyDescriptions = [
+                ...(hasAllow
+                    ? [
+                          `
+### allow: string[]
+
+An array of non-standard property names to allow.
+`,
+                      ]
+                    : []),
+                ...(hasAggressive
+                    ? [
+                          `
+### aggressive: boolean
+
+Configure the aggressive mode for only this rule.
+This is prior to the \`settings['es-x'].aggressive\` setting.
+`,
+                      ]
+                    : []),
+                ...(hasAllowTestedProperty
+                    ? [
+                          `
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
+`,
+                      ]
+                    : []),
+            ].map((desc) => desc.trim())
             optionsSection = `
 
 ## 🔧 Options
 
 This rule has an option.
 
-\`\`\`yaml
-rules:
-  es-x/${ruleId}: [error, { ${hasAggressive ? "aggressive: false" : ""} }]
+\`\`\`jsonc
+{
+  "rules": {
+    "es-x/${ruleId}": [
+      "error",
+      {
+        ${defaultProperties.join(",\n        ")}
+      }
+    ]
+  }
+}
 \`\`\`${
-                hasAggressive
-                    ? `
-
-### aggressive: boolean
-
-Configure the aggressive mode for only this rule.
-This is prior to the \`settings['es-x'].aggressive\` setting.`
+                propertyDescriptions.length
+                    ? `\n\n${propertyDescriptions.join("\n\n")}`
                     : ""
             }`
         }

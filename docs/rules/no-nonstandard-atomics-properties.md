@@ -32,7 +32,8 @@ This rule has an option.
     "es-x/no-nonstandard-atomics-properties": [
       "error",
       {
-        "allow": []
+        "allow": [],
+        "allowTestedProperty": false
       }
     ]
   }
@@ -42,6 +43,11 @@ This rule has an option.
 ### allow: string[]
 
 An array of non-standard property names to allow.
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
 
 ## 🚀 Version
 

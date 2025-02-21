@@ -20,6 +20,14 @@ new RuleTester().run(ruleId, rule, {
             code: "new Intl.DateTimeFormat().unknown()",
             options: [{ allow: ["unknown"] }],
         },
+        {
+            code: `
+            const a = new Intl.DateTimeFormat()
+            if (a.unknown) {
+                console.log(a.unknown())
+            }`,
+            options: [{ allowTestedProperty: true }],
+        },
     ],
     invalid: [
         {
@@ -57,6 +65,14 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "Non-standard 'Intl.DateTimeFormat.prototype.01' property is forbidden.",
             ],
+        },
+        {
+            code: `
+            const a = new Intl.DateTimeFormat()
+            if (a.unknown) {
+                console.log(a.unknown())
+            }`,
+            errors: 2,
         },
     ],
 })
