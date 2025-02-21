@@ -19,6 +19,22 @@ new RuleTester().run(ruleId, rule, {
             options: [{ aggressive: false }],
             settings: { "es-x": { aggressive: true } },
         },
+        {
+            code: `
+            const re = /a/
+            if (typeof re.flags === "string") {
+                console.log(re.flags)
+            }`,
+            options: [{ allowTestedProperty: true }],
+        },
+        {
+            code: `
+            const re = /a/
+            if (typeof re.flags !== "undefined") {
+                console.log(re.flags)
+            }`,
+            options: [{ allowTestedProperty: true }],
+        },
     ],
     invalid: [
         {
@@ -31,6 +47,23 @@ new RuleTester().run(ruleId, rule, {
             options: [{ aggressive: true }],
             errors: ["ES2015 'RegExp.prototype.flags' property is forbidden."],
             settings: { "es-x": { aggressive: false } },
+        },
+        {
+            code: `
+            const re = /a/
+            if (typeof re.flags === "string") {
+                console.log(re.flags)
+            }`,
+            errors: 2,
+        },
+        {
+            code: `
+            const re = /a/
+            if (re.flags) {
+                console.log(re.flags)
+            }`,
+            options: [{ allowTestedProperty: true }],
+            errors: 2,
         },
     ],
 })
