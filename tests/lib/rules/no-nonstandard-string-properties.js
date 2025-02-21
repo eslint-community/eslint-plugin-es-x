@@ -15,6 +15,13 @@ new RuleTester().run("no-nonstandard-string-properties", rule, {
             }`,
             options: [{ allowTestedProperty: true }],
         },
+        {
+            code: `
+            if (String.unknown instanceof X) {
+                console.log(String.unknown.x)
+            }`,
+            options: [{ allowTestedProperty: true }],
+        },
     ],
     invalid: [
         {
@@ -46,6 +53,13 @@ new RuleTester().run("no-nonstandard-string-properties", rule, {
             code: `
             if (String.unknown) {
                 console.log(String.unknown\`\`)
+            }`,
+            errors: 2,
+        },
+        {
+            code: `
+            if (String.unknown instanceof X) {
+                console.log(String.unknown.x)
             }`,
             errors: 2,
         },
