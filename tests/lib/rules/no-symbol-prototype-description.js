@@ -63,6 +63,24 @@ new RuleTester().run(ruleId, rule, {
             options: [{ allowTestedProperty: true }],
             errors: 2,
         },
+        {
+            code: `
+            const s = Symbol()
+            if (s.description === undefined) {
+                console.log(s.description)
+            }`,
+            options: [{ allowTestedProperty: true }],
+            errors: 2,
+        },
+        {
+            code: `
+            const s = Symbol()
+            if (typeof s.description === 'undefined') {
+                console.log(s.description)
+            }`,
+            options: [{ allowTestedProperty: true }],
+            errors: 2,
+        },
     ],
 })
 
