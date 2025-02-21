@@ -35,15 +35,29 @@ console.log(nf.selectRange(2.9, 3.1));
 
 This rule has an option.
 
-```yml
-rules:
-  es-x/no-intl-pluralrules-prototype-selectrange: [error, { aggressive: false }]
+```jsonc
+{
+  "rules": {
+    "es-x/no-intl-pluralrules-prototype-selectrange": [
+      "error",
+      {
+        "aggressive": false,
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
 ```
 
 ### aggressive: boolean
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
 
 ## 🚀 Version
 

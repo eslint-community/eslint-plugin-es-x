@@ -8,6 +8,13 @@ new RuleTester().run("no-nonstandard-intl-properties", rule, {
     valid: [
         ...[...intlProperties].map((p) => `Intl.${p}`),
         { code: "Intl.unknown()", options: [{ allow: ["unknown"] }] },
+        {
+            code: `
+            if (Intl.Unknown) {
+                console.log(new Intl.Unknown())
+            }`,
+            options: [{ allowTestedProperty: true }],
+        },
     ],
     invalid: [
         {
@@ -21,6 +28,13 @@ new RuleTester().run("no-nonstandard-intl-properties", rule, {
         {
             code: "Intl.bar",
             errors: ["Non-standard 'Intl.bar' property is forbidden."],
+        },
+        {
+            code: `
+            if (Intl.Unknown) {
+                console.log(new Intl.Unknown())
+            }`,
+            errors: 2,
         },
     ],
 })
