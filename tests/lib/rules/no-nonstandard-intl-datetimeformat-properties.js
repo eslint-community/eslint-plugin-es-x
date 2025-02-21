@@ -15,6 +15,13 @@ new RuleTester().run("no-nonstandard-intl-datetimeformat-properties", rule, {
             code: "Intl.DateTimeFormat.unknown()",
             options: [{ allow: ["unknown"] }],
         },
+        {
+            code: `
+            if (Intl.DateTimeFormat.unknown) {
+                console.log(Intl.DateTimeFormat.unknown())
+            }`,
+            options: [{ allowTestedProperty: true }],
+        },
     ],
     invalid: [
         {
@@ -34,6 +41,13 @@ new RuleTester().run("no-nonstandard-intl-datetimeformat-properties", rule, {
             errors: [
                 "Non-standard 'Intl.DateTimeFormat.bar' property is forbidden.",
             ],
+        },
+        {
+            code: `
+            if (Intl.DateTimeFormat.unknown) {
+                console.log(Intl.DateTimeFormat.unknown())
+            }`,
+            errors: 2,
         },
     ],
 })

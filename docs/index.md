@@ -138,3 +138,43 @@ For example:
     // }
 }
 ```
+
+### The `allowTestedProperty` mode
+
+This plugin has rules to report forbidden property accesses.
+These rules report all forbidden property accesses by default, but if you want to allow existence-tested properties in your scripts, you can use the `allowTestedProperty` mode.
+
+<eslint-playground type="good">
+
+```ts
+/*eslint es-x/no-string-prototype-trimstart-trimend: [error, { aggressive: true, allowTestedProperty: true }], es-x/no-string-prototype-trimleft-trimright: [error, { aggressive: true, allowTestedProperty: true }],  */
+function trimEnd(str) {
+    if (String.prototype.trimEnd) {
+        return str.trimEnd();
+    }
+    if (String.prototype.trimRight) {
+        return str.trimRight();
+    }
+    return str.replace(/\s+$/, "");
+}
+```
+
+</eslint-playground>
+
+If you configured the `allowTestedProperty` mode, this plugin will allow the use of tested properties.
+For example:
+
+```json
+{
+    "plugins": ["es-x"],
+    "rules": {
+        "es-x/no-string-prototype-trimstart-trimend": "error",
+        "es-x/no-string-prototype-trimleft-trimright": "error"
+    },
+
+    // `settings['es-x'].allowTestedProperty = true` means the allowTestedProperty mode.
+    "settings": {
+        "es-x": { "allowTestedProperty": true }
+    }
+}
+```

@@ -30,15 +30,29 @@ array.toSpliced(1, 1)
 
 This rule has an option.
 
-```yaml
-rules:
-  es-x/no-array-prototype-tospliced: [error, { aggressive: false }]
+```jsonc
+{
+  "rules": {
+    "es-x/no-array-prototype-tospliced": [
+      "error",
+      {
+        "aggressive": false,
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
 ```
 
 ### aggressive: boolean
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
 
 ## 🚀 Version
 
