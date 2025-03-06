@@ -80,7 +80,7 @@ module.exports = [
             "vue/return-in-computed-property": "error",
             "vue/space-infix-ops": "error",
             "vue/space-unary-ops": "error",
-            "vue/v-on-function-call": "error",
+            "vue/v-on-handler-style": "error",
             "vue/v-slot-style": "error",
             "vue/valid-template-root": "error",
             "vue/valid-v-bind": "error",
