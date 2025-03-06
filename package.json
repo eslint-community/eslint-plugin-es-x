@@ -39,7 +39,7 @@
     "typescript": "^5.7.2",
     "vite-plugin-eslint4b": "^0.5.0",
     "vitepress": "^1.0.0",
-    "vue-eslint-parser": "^9.0.0"
+    "vue-eslint-parser": "^10.0.0"
   },
   "scripts": {
     "clean": "rimraf .nyc_output coverage",
