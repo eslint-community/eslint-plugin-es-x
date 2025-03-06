@@ -28,15 +28,29 @@ foo.substr()
 
 This rule has an option.
 
-```yaml
-rules:
-  es-x/no-string-prototype-substr: [error, { aggressive: false }]
+```jsonc
+{
+  "rules": {
+    "es-x/no-string-prototype-substr": [
+      "error",
+      {
+        "aggressive": false,
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
 ```
 
 ### aggressive: boolean
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
 
 ## 🚀 Version
 

@@ -71,6 +71,10 @@ const config = [
                         "http://eslint-community.github.io/eslint-plugin-es-x/rules/{{name}}.html",
                 },
             ],
+
+            "my/es-x-rule/require-allow-tested-property-schema": "error",
+            "my/es-x-rule/require-aggressive-schema": "error",
+            "my/es-x-rule/require-allow-schema": "error",
         },
     },
     {

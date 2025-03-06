@@ -17,6 +17,14 @@ new RuleTester().run(ruleId, rule, {
             options: [{ aggressive: false }],
             settings: { "es-x": { aggressive: true } },
         },
+        {
+            code: `
+            const s = Symbol()
+            if (typeof s.description === "string") {
+                console.log(s.description)
+            }`,
+            options: [{ allowTestedProperty: true }],
+        },
     ],
     invalid: [
         {
@@ -45,6 +53,33 @@ new RuleTester().run(ruleId, rule, {
             errors: [
                 "ES2019 'Symbol.prototype.description' property is forbidden.",
             ],
+        },
+        {
+            code: `
+            const s = Symbol()
+            if (s.description) {
+                console.log(s.description)
+            }`,
+            options: [{ allowTestedProperty: true }],
+            errors: 2,
+        },
+        {
+            code: `
+            const s = Symbol()
+            if (s.description === undefined) {
+                console.log(s.description)
+            }`,
+            options: [{ allowTestedProperty: true }],
+            errors: 2,
+        },
+        {
+            code: `
+            const s = Symbol()
+            if (typeof s.description === 'undefined') {
+                console.log(s.description)
+            }`,
+            options: [{ allowTestedProperty: true }],
+            errors: 2,
         },
     ],
 })

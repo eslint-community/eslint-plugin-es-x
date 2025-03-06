@@ -26,6 +26,28 @@ Map.groupBy(array, (num, index) => {
 
 </eslint-playground>
 
+## 🔧 Options
+
+This rule has an option.
+
+```jsonc
+{
+  "rules": {
+    "es-x/no-map-groupby": [
+      "error",
+      {
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
+```
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
 ## 🚀 Version
 
 This rule was introduced in v8.0.0.

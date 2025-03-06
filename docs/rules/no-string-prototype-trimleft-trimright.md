@@ -31,15 +31,29 @@ This rule is silent by default because it's hard to know types. You need to conf
 
 This rule has an option.
 
-```yaml
-rules:
-  es-x/no-string-prototype-trimleft-trimright: [error, { aggressive: false }]
+```jsonc
+{
+  "rules": {
+    "es-x/no-string-prototype-trimleft-trimright": [
+      "error",
+      {
+        "aggressive": false,
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
 ```
 
 ### aggressive: boolean
 
 Configure the aggressive mode for only this rule.
 This is prior to the `settings['es-x'].aggressive` setting.
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
 
 ## 🚀 Version
 
