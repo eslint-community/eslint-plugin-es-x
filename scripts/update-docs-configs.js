@@ -68,10 +68,10 @@ Object.values(configs)
     .forEach(processCategoryConfig)
 
 contents.push(
-    "[Config (Flat Config)]: https://eslint.org/docs/latest/use/configure/configuration-files-new",
+    "[Config (Flat Config)]: https://eslint.org/docs/latest/use/configure/configuration-files",
 )
 contents.push(
-    "[Legacy Config]: https://eslint.org/docs/latest/use/configure/configuration-files",
+    "[Legacy Config]: https://eslint.org/docs/latest/use/configure/configuration-files-deprecated",
 )
 
 fs.writeFileSync(MD_PATH, `${contents.join("\n").trim()}\n`)
