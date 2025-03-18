@@ -24,6 +24,28 @@ Object.setPrototypeOf(obj, proto)
 
 </eslint-playground>
 
+## 🔧 Options
+
+This rule has an option.
+
+```jsonc
+{
+  "rules": {
+    "es-x/no-object-setprototypeof": [
+      "error",
+      {
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
+```
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
 ## 🚀 Version
 
 This rule was introduced in [eslint-plugin-es] v1.2.0.

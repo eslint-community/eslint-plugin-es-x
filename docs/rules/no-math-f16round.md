@@ -24,6 +24,28 @@ const n = Math.f16round(value)
 
 </eslint-playground>
 
+## 🔧 Options
+
+This rule has an option.
+
+```jsonc
+{
+  "rules": {
+    "es-x/no-math-f16round": [
+      "error",
+      {
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
+```
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
 ## 🚀 Version
 
 This rule was introduced in v8.5.0.
