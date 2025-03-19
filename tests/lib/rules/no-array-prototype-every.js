@@ -21,6 +21,8 @@ new RuleTester().run(ruleId, rule, {
             options: [{ aggressive: false }],
             settings: { "es-x": { aggressive: true } },
         },
+        `var array = [];
+         var constructor = array.constructor = {};`,
     ],
     invalid: [
         {

@@ -23,6 +23,8 @@ new RuleTester().run(ruleId, rule, {
         },
         // Test for https://github.com/eslint-community/eslint-plugin-es-x/issues/223
         "for (const { x } of foo) {}",
+        `var array = [];
+         var constructor = array.constructor = {};`,
     ],
     invalid: [
         {
