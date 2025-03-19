@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-es-x",
-  "version": "8.6.0",
+  "version": "8.6.1",
   "description": "ESLint plugin about ECMAScript syntactic features.",
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
