@@ -1,6 +1,10 @@
 "use strict"
 
 module.exports = {
+    "arraybuffer-base64": {
+        title: "Uint8Array to/from Base64 and Hex",
+        link: "https://github.com/tc39/proposal-arraybuffer-base64",
+    },
     "array-grouping": {
         title: "Array Grouping",
         link: "https://github.com/tc39/proposal-array-grouping",
