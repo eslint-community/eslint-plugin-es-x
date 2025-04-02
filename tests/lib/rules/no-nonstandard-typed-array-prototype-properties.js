@@ -5,6 +5,7 @@ const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-nonstandard-typed-array-prototype-properties.js")
 const {
     typedArrayPrototypeProperties,
+    uint8ArrayPrototypeProperties,
 } = require("../../../lib/util/well-known-properties")
 const ruleId = "no-nonstandard-typed-array-prototype-properties"
 
@@ -39,6 +40,9 @@ new RuleTester().run(ruleId, rule, {
                 options: [{ allow: ["unknown"] }],
             },
         ]),
+        ...[...uint8ArrayPrototypeProperties]
+            .filter((nm) => !typedArrayPrototypeProperties.has(nm))
+            .map((p) => `new Uint8Array().${p}`),
     ],
     invalid: [
         ...typedArrayList.flatMap((className) => [
