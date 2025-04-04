@@ -4,6 +4,14 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
+## ES2026
+
+There is a config that enables the rules in this category: [`no-new-in-esnext`]
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-error-iserror](./no-error-iserror.md) | disallow the `Error.isError` method. |  |
+
 ## ES2025
 
 There is a config that enables the rules in this category: [`no-new-in-esnext`]
