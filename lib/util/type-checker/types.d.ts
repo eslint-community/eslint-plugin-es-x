@@ -215,3 +215,6 @@ export type TypedArrayPrototypeProperty = Exclude<
   ExcludePrototypeProperty | "BYTES_PER_ELEMENT"
 >;
 export type MathProperty = Exclude<keyof typeof Math, ExcludeProperty>;
+export type AtomicsProperty =
+  | Exclude<keyof typeof Atomics, ExcludeProperty>
+  | "pause";
