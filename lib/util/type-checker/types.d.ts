@@ -42,6 +42,7 @@ export type TypeName =
   | "WeakSet"
   | "WeakRef"
   | "FinalizationRegistry"
+  | "Error"
   | "null"
   | "undefined";
 
@@ -127,7 +128,9 @@ export type SetPrototypeProperty = Exclude<
   keyof Set<any>,
   ExcludePrototypeProperty
 >;
-export type RegExpProperty = Exclude<keyof typeof RegExp, ExcludeProperty>;
+export type RegExpProperty =
+  | Exclude<keyof typeof RegExp, ExcludeProperty>
+  | "escape";
 export type RegExpPrototypeProperty = Exclude<
   keyof RegExp,
   ExcludePrototypeProperty
@@ -215,3 +218,6 @@ export type TypedArrayPrototypeProperty = Exclude<
   ExcludePrototypeProperty | "BYTES_PER_ELEMENT"
 >;
 export type MathProperty = Exclude<keyof typeof Math, ExcludeProperty>;
+export type ErrorProperty =
+  | Exclude<keyof typeof Error, ExcludeProperty | "prepareStackTrace">
+  | "isError";
