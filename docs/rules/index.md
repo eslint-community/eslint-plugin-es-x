@@ -11,6 +11,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-asyncdisposablestack](./no-asyncdisposablestack.md) | disallow the `AsyncDisposableStack` class. |  |
+| [es-x/no-atomics-pause](./no-atomics-pause.md) | disallow the `Atomics.pause` method. |  |
 | [es-x/no-date-prototype-totemporalinstant](./no-date-prototype-totemporalinstant.md) | disallow the `Date.prototype.toTemporalInstant` method. |  |
 | [es-x/no-disposablestack](./no-disposablestack.md) | disallow the `DisposableStack` class. |  |
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
