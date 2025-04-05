@@ -36,7 +36,6 @@ function toRuleLink(ruleId) {
     return `[es-x/${ruleId}](./${ruleId}.md)`
 }
 
-// eslint-disable-next-line complexity
 async function main() {
     const docsRoot = path.resolve(__dirname, "../docs/rules/")
     const configRoot = path.resolve(__dirname, "../lib/configs/flat")
@@ -71,7 +70,6 @@ async function main() {
             .replace(/^\n*(?:---[\s\S]*?---\n\n?)?#.+\n>.+\n+(?:- .+\n)*/u, "")
             .replace(/## 🚀 Version[\s\S]+/u, "")
             .replace(/## 📚 References[\s\S]+/u, "")
-            .replace(/## 🔧 Options[\s\S]+?(\n## |$)/u, "$1")
             .trim()
         content = updateCodeBlocks(content, { ruleId, fixable })
         content = adjustContents(content)
@@ -122,76 +120,9 @@ async function main() {
             )
         }
 
-        let optionsSection = ""
         const optionSchema = schema?.[0]
-        if (
-            optionSchema?.type === "object" &&
-            !content.includes("## 🔧 Options")
-        ) {
-            const hasAggressive = optionSchema.properties?.aggressive
-            const hasAllowTestedProperty =
-                optionSchema.properties?.allowTestedProperty
-            const hasAllow = optionSchema.properties?.allow
-            const defaultProperties = [
-                ...(hasAllow ? ['"allow": []'] : []),
-                ...(hasAggressive ? ['"aggressive": false'] : []),
-                ...(hasAllowTestedProperty
-                    ? ['"allowTestedProperty": false']
-                    : []),
-            ]
-            const propertyDescriptions = [
-                ...(hasAllow
-                    ? [
-                          `
-### allow: string[]
-
-An array of non-standard property names to allow.
-`,
-                      ]
-                    : []),
-                ...(hasAggressive
-                    ? [
-                          `
-### aggressive: boolean
-
-Configure the aggressive mode for only this rule.
-This is prior to the \`settings['es-x'].aggressive\` setting.
-`,
-                      ]
-                    : []),
-                ...(hasAllowTestedProperty
-                    ? [
-                          `
-### allowTestedProperty: boolean
-
-Configure the allowTestedProperty mode for only this rule.
-This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
-`,
-                      ]
-                    : []),
-            ].map((desc) => desc.trim())
-            optionsSection = `
-
-## 🔧 Options
-
-This rule has an option.
-
-\`\`\`jsonc
-{
-  "rules": {
-    "es-x/${ruleId}": [
-      "error",
-      {
-        ${defaultProperties.join(",\n        ")}
-      }
-    ]
-  }
-}
-\`\`\`${
-                propertyDescriptions.length
-                    ? `\n\n${propertyDescriptions.join("\n\n")}`
-                    : ""
-            }`
+        if (optionSchema?.type === "object") {
+            content = processOptions(content, ruleId, optionSchema)
         }
 
         const newContent = `${frontmatter.join("\n").trim()}
@@ -200,7 +131,7 @@ ${headerLines.join("\n").trim()}
 
 ${content}${
             since
-                ? `${optionsSection}
+                ? `
 
 ## 🚀 Version
 
@@ -294,6 +225,131 @@ ${cookeHTMLAttrValue(code.value).trim()}
             attrs,
             tagEnd: "",
         }
+    }
+}
+
+function processOptions(content, ruleId, optionSchema) {
+    let resultContent = content
+    const hasAggressive = optionSchema.properties?.aggressive
+    const hasAllowTestedProperty = optionSchema.properties?.allowTestedProperty
+    const hasAllow = optionSchema.properties?.allow
+
+    if (!resultContent.includes("## 🔧 Options")) {
+        resultContent += `
+
+## 🔧 Options
+
+This rule has an option.
+
+\`\`\`jsonc
+{
+  "rules": {
+    "es-x/${ruleId}": [
+      "error",
+      {
+      }
+    ]
+  }
+}
+\`\`\`
+`
+    }
+
+    if (!hasAggressive && !hasAllowTestedProperty && !hasAllow) {
+        return resultContent
+    }
+
+    writeOptionExample({
+        ...(hasAllow ? { allow: [] } : {}),
+        ...(hasAggressive ? { aggressive: false } : {}),
+        ...(hasAllowTestedProperty ? { allowTestedProperty: false } : {}),
+    })
+
+    if (hasAllow) {
+        writeOptionSection(
+            "allow: string[]",
+            "An array of non-standard property names to allow.",
+        )
+    }
+
+    if (hasAggressive) {
+        writeOptionSection(
+            "aggressive: boolean",
+            `Configure the aggressive mode for only this rule.
+This is prior to the \`settings['es-x'].aggressive\` setting.`,
+        )
+    }
+
+    if (hasAllowTestedProperty) {
+        writeOptionSection(
+            "allowTestedProperty: boolean",
+            `Configure the allowTestedProperty mode for only this rule.
+This is prior to the \`settings['es-x'].allowTestedProperty\` setting.`,
+        )
+    }
+    return resultContent
+
+    function writeOptionExample(example) {
+        writeOptionContent((optionsContent) =>
+            optionsContent.replace(
+                /(```json(?:c|5)?\n)([\s\S]+?)(\n```(?:\n|$))/u,
+                (_, before, json, after) => {
+                    let options = {
+                        rules: {
+                            [`es-x/${ruleId}`]: ["error", {}],
+                        },
+                    }
+                    try {
+                        options = JSON.parse(json)
+                    } catch {
+                        // ignore
+                    }
+                    margeOptionExample(options, example)
+                    return `${before}${JSON.stringify(options, null, 2)}${after}`
+                },
+            ),
+        )
+
+        function margeOptionExample(options) {
+            if (!options.rules) {
+                options.rules = {}
+            }
+            let ruleValue = options.rules[`es-x/${ruleId}`]
+            if (!ruleValue || !Array.isArray(ruleValue)) {
+                ruleValue = options.rules[`es-x/${ruleId}`] = ["error", {}]
+            }
+            let ruleOptions = ruleValue[1]
+            if (!ruleOptions) {
+                ruleOptions = ruleValue[1] = {}
+            }
+            for (const [key, value] of Object.entries(example)) {
+                ruleOptions[key] = value
+            }
+        }
+    }
+
+    function writeOptionSection(sectionName, sectionContent) {
+        writeOptionContent((optionsContent) => {
+            if (!optionsContent.includes(`\n### ${sectionName}`)) {
+                return `${
+                    optionsContent
+                }\n\n### ${sectionName}\n\n${sectionContent}\n`
+            }
+            return optionsContent.replace(
+                new RegExp(`\\n+### ${sectionName}[\\s\\S]+?\\n##`, "u"),
+                `\n\n### ${sectionName}\n\n${sectionContent}\n\n##`,
+            )
+        })
+    }
+
+    function writeOptionContent(replacer) {
+        resultContent = resultContent.replace(
+            /(\n## 🔧 Options[ \t]*\n)([\s\S]+?)(\n##\s|$)/u,
+            (_, before, optionsContent, after) =>
+                `${before}\n${replacer(optionsContent)
+                    .replaceAll(/\n{3,}/gu, "\n\n")
+                    .trim()}${after ? `\n${after}` : after}`,
+        )
     }
 }
 
