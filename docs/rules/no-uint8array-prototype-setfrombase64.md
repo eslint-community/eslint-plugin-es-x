@@ -27,6 +27,8 @@ const { read, written } = target.setFromBase64('Zm9vYmFy')
 
 </eslint-playground>
 
+## 🔧 Options
+
 This rule has an option.
 
 ```jsonc

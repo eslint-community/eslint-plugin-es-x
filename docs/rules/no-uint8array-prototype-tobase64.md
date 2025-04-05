@@ -27,6 +27,8 @@ console.log(arr.toBase64());
 
 </eslint-playground>
 
+## 🔧 Options
+
 This rule has an option.
 
 ```jsonc

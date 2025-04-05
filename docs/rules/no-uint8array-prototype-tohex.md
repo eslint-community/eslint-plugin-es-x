@@ -27,6 +27,8 @@ console.log(arr.toHex());
 
 </eslint-playground>
 
+## 🔧 Options
+
 This rule has an option.
 
 ```jsonc

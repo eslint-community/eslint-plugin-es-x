@@ -27,6 +27,8 @@ const { read, written } = target.setFromHex('Zm9vYmFy')
 
 </eslint-playground>
 
+## 🔧 Options
+
 This rule has an option.
 
 ```jsonc

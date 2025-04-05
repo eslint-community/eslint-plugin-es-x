@@ -24,6 +24,28 @@ Uint8Array.fromBase64(string)
 
 </eslint-playground>
 
+## 🔧 Options
+
+This rule has an option.
+
+```jsonc
+{
+  "rules": {
+    "es-x/no-uint8array-frombase64": [
+      "error",
+      {
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
+```
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-uint8array-frombase64.js)
