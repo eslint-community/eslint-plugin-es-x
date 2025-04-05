@@ -4,6 +4,14 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
+## ES2026
+
+There is a config that enables the rules in this category: [`no-new-in-esnext`]
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-error-iserror](./no-error-iserror.md) | disallow the `Error.isError` method. |  |
+
 ## ES2025
 
 There is a config that enables the rules in this category: [`no-new-in-esnext`]
@@ -409,6 +417,7 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-dataview-prototype-properties](./no-nonstandard-dataview-prototype-properties.md) | disallow non-standard properties on DataView instance. |  |
 | [es-x/no-nonstandard-date-properties](./no-nonstandard-date-properties.md) | disallow non-standard static properties on `Date` class. |  |
 | [es-x/no-nonstandard-date-prototype-properties](./no-nonstandard-date-prototype-properties.md) | disallow non-standard properties on Date instance. |  |
+| [es-x/no-nonstandard-error-properties](./no-nonstandard-error-properties.md) | disallow non-standard static properties on `Error` class. |  |
 | [es-x/no-nonstandard-finalizationregistry-properties](./no-nonstandard-finalizationregistry-properties.md) | disallow non-standard static properties on `FinalizationRegistry` class. |  |
 | [es-x/no-nonstandard-finalizationregistry-prototype-properties](./no-nonstandard-finalizationregistry-prototype-properties.md) | disallow non-standard properties on FinalizationRegistry instance. |  |
 | [es-x/no-nonstandard-function-properties](./no-nonstandard-function-properties.md) | disallow non-standard static properties on `Function` class. |  |
