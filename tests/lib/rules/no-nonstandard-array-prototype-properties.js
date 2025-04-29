@@ -127,6 +127,10 @@ new RuleTester({
             filename,
             code: "let foo = /re/.exec('re'); foo.index",
         },
+        {
+            filename,
+            code: "import * as m from './test-module.js'; m.fn();",
+        },
     ],
     invalid: [
         {
