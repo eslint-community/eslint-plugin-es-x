@@ -31,7 +31,7 @@
     "jsdom": "^26.0.0",
     "mocha": "^11.0.0",
     "monaco-editor": "^0.52.0",
-    "npm-run-all2": "^7.0.0",
+    "npm-run-all2": "^8.0.0",
     "nyc": "^17.0.0",
     "opener": "^1.5.1",
     "rimraf": "^6.0.0",
