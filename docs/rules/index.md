@@ -4,6 +4,19 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
+## ES2026
+
+There is a config that enables the rules in this category: [`no-new-in-esnext`]
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-uint8array-frombase64](./no-uint8array-frombase64.md) | disallow the `Uint8Array.fromBase64` method. |  |
+| [es-x/no-uint8array-fromhex](./no-uint8array-fromhex.md) | disallow the `Uint8Array.fromHex` method. |  |
+| [es-x/no-uint8array-prototype-setfrombase64](./no-uint8array-prototype-setfrombase64.md) | disallow the `Uint8Array.prototype.setFromBase64` method. |  |
+| [es-x/no-uint8array-prototype-setfromhex](./no-uint8array-prototype-setfromhex.md) | disallow the `Uint8Array.prototype.setFromHex` method. |  |
+| [es-x/no-uint8array-prototype-tobase64](./no-uint8array-prototype-tobase64.md) | disallow the `Uint8Array.prototype.toBase64` method. |  |
+| [es-x/no-uint8array-prototype-tohex](./no-uint8array-prototype-tohex.md) | disallow the `Uint8Array.prototype.toHex` method. |  |
+
 ## ES2025
 
 There is a config that enables the rules in this category: [`no-new-in-esnext`]
