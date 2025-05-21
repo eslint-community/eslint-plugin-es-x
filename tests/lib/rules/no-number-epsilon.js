@@ -8,10 +8,23 @@ const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-number-epsilon.js")
 
 new RuleTester().run("no-number-epsilon", rule, {
-    valid: ["Number", "Number.xyz", "let Number = 0; Number.EPSILON"],
+    valid: [
+        "Number",
+        "Number.xyz",
+        "let Number = 0; Number.EPSILON",
+        {
+            code: "Number.EPSILON?.toString()",
+            options: [{ allowTestedProperty: true }],
+        },
+    ],
     invalid: [
         {
             code: "Number.EPSILON",
+            errors: ["ES2015 'Number.EPSILON' property is forbidden."],
+        },
+        {
+            code: "Number.EPSILON.toString?.()",
+            options: [{ allowTestedProperty: true }],
             errors: ["ES2015 'Number.EPSILON' property is forbidden."],
         },
     ],

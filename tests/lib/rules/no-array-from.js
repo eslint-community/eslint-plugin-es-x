@@ -24,6 +24,18 @@ new RuleTester().run("no-array-from", rule, {
             code: "if (Array.from) { const {from} = Array }",
             options: [{ allowTestedProperty: true }],
         },
+        {
+            code: "typeof Array.from !== 'undefined' && Array.from",
+            options: [{ allowTestedProperty: true }],
+        },
+        {
+            code: "Array.from && Array.from(it)",
+            options: [{ allowTestedProperty: true }],
+        },
+        {
+            code: "Array.from?.(it)",
+            options: [{ allowTestedProperty: true }],
+        },
     ],
     invalid: [
         {
@@ -44,6 +56,11 @@ new RuleTester().run("no-array-from", rule, {
         },
         {
             code: "if (Array.from) {  }",
+            options: [{ allowTestedProperty: true }],
+            errors: ["ES2015 'Array.from' method is forbidden."],
+        },
+        {
+            code: "Array?.from(it)",
             options: [{ allowTestedProperty: true }],
             errors: ["ES2015 'Array.from' method is forbidden."],
         },
