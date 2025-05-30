@@ -47,14 +47,14 @@ async function main(ruleId) {
                     value: "global-object",
                     label: "The rule forbids the use of global objects.",
                 },
-                {
-                    value: "static-properties",
-                    label: "The rule forbids the use of static properties.",
-                },
-                {
-                    value: "prototype-properties",
-                    label: "The rule forbids the use of prototype properties.",
-                },
+                // {
+                //     value: "static-properties",
+                //     label: "The rule forbids the use of static properties.",
+                // },
+                // {
+                //     value: "prototype-properties",
+                //     label: "The rule forbids the use of prototype properties.",
+                // },
                 {
                     value: "nonstandard-static-properties",
                     label: "The rule forbids the use of non-standard static properties.",
@@ -136,7 +136,11 @@ async function main(ruleId) {
             ? buildGlobalObjectRuleResources(resourceOptions)
             : kind === "nonstandard-static-properties"
               ? buildNonStandardStaticPropertiesRuleResources(resourceOptions)
-              : buildDefaultResources(resourceOptions)
+              : kind === "nonstandard-prototype-properties"
+                ? buildNonStandardPrototypePropertiesRuleResources(
+                      resourceOptions,
+                  )
+                : buildDefaultResources(resourceOptions)
 
     fs.writeFileSync(ruleFile, resources.rule)
     fs.writeFileSync(testFile, resources.test)
@@ -360,6 +364,218 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
     }
 }
 
+function buildNonStandardPrototypePropertiesRuleResources({ ruleId, object }) {
+    const camelObject = camelCase(object)
+    return {
+        rule: `"use strict"
+
+const {
+    defineNonstandardPrototypePropertiesHandler,
+} = require("../util/define-nonstandard-prototype-properties-handler")
+const { ${camelObject}PrototypeProperties } = require("../util/well-known-properties")
+
+module.exports = {
+    meta: {
+        docs: {
+            description: "disallow non-standard properties on ${object} instance",
+            category: "nonstandard",
+            recommended: false,
+            url: "",
+        },
+        fixable: null,
+        messages: {
+            forbidden: "Non-standard '{{name}}' property is forbidden.",
+        },
+        schema: [
+            {
+                type: "object",
+                properties: {
+                    allow: {
+                        type: "array",
+                        items: { type: "string" },
+                        uniqueItems: true,
+                    },
+                    allowTestedProperty: { type: "boolean" },
+                },
+                additionalProperties: false,
+            },
+        ],
+        type: "problem",
+    },
+    create(context) {
+        /** @type {Set<string>} */
+        const allows = new Set([
+            ...(context.options[0]?.allow || []),
+            ...${camelObject}PrototypeProperties,
+        ])
+        return defineNonstandardPrototypePropertiesHandler(context, {
+            '${object}': allows,
+        })
+    },
+}
+`,
+        test: `"use strict"
+
+const path = require("path")
+const RuleTester = require("../../tester")
+const rule = require("../../../lib/rules/${ruleId}.js")
+const {
+    ${camelObject}PrototypeProperties,
+} = require("../../../lib/util/well-known-properties")
+const ruleId = "${ruleId}"
+
+new RuleTester().run(ruleId, rule, {
+    valid: [
+        "foo",
+        "foo.toString",
+        "foo.foo",
+        ...[...${camelObject}PrototypeProperties].map((p) => \`(new ${object}()).\${p}\`),
+        { code: "(new ${object}()).unknown()", options: [{ allow: ["unknown"] }] },
+    ],
+    invalid: [
+        {
+            code: "(new ${object}()).unknown()",
+            errors: [
+                "Non-standard '${object}.prototype.unknown' property is forbidden.",
+            ],
+        },
+        {
+            code: "(new ${object}()).foo",
+            errors: [
+                "Non-standard '${object}.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            code: "(new ${object}())[0]",
+            errors: [
+                "Non-standard '${object}.prototype.0' property is forbidden.",
+            ],
+        },
+        {
+            code: "(new ${object}())['01']",
+            errors: [
+                "Non-standard '${object}.prototype.01' property is forbidden.",
+            ],
+        },
+    ],
+})
+
+// -----------------------------------------------------------------------------
+// TypeScript
+// -----------------------------------------------------------------------------
+const parser = require("@typescript-eslint/parser")
+const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const project = "tsconfig.json"
+const filename = path.join(tsconfigRootDir, "test.ts")
+
+new RuleTester({
+    languageOptions: {
+        parser,
+        parserOptions: {
+            tsconfigRootDir,
+            project,
+            disallowAutomaticSingleRunInference: true,
+        },
+    },
+}).run(\`${ruleId} TS Full Type Information\`, rule, {
+    valid: [
+        { filename, code: "foo" },
+        { filename, code: "foo.toString" },
+        { filename, code: "foo.foo" },
+        { filename, code: "let foo = {}; foo.foo" },
+        ...[...${camelObject}PrototypeProperties].map((p) => ({
+            filename,
+            code: \`(new ${object}()).\${p}\`,
+        })),
+    ],
+    invalid: [
+        {
+            filename,
+            code: "(new ${object}()).foo",
+            errors: [
+                "Non-standard '${object}.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "(new ${object}())[0]",
+            errors: [
+                "Non-standard '${object}.prototype.0' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "(new ${object}())['01']",
+            errors: [
+                "Non-standard '${object}.prototype.01' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "let foo = (new ${object}()); foo.foo",
+            errors: [
+                "Non-standard '${object}.prototype.foo' property is forbidden.",
+            ],
+        },
+        {
+            filename,
+            code: "function f<T extends ${object}>(a: T) { a.baz }",
+            errors: [
+                "Non-standard '${object}.prototype.baz' property is forbidden.",
+            ],
+        },
+    ],
+})
+`,
+        doc: `# es-x/${ruleId}
+> 
+
+This rule reports non-standard properties on ${object} instance as errors.
+
+## 💡 Examples
+
+⛔ Examples of **incorrect** code for this rule:
+
+<eslint-playground type="bad">
+
+\`\`\`js
+/*eslint es-x/${ruleId}: error */
+const foo = new ${object}();
+foo.unknown();
+\`\`\`
+
+</eslint-playground>
+
+## 🔧 Options
+
+This rule has an option.
+
+\`\`\`jsonc
+{
+  "rules": {
+    "es-x/${ruleId}": [
+      "error",
+      {
+        "allow": [],
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
+\`\`\`
+
+### allow: string[]
+
+An array of non-standard property names to allow.
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
+`,
+    }
+}
+
 function buildDefaultResources({ ruleId }) {
     return {
         rule: `"use strict"
@@ -422,5 +638,8 @@ This rule reports ??? as errors.
 }
 
 function camelCase(str) {
-    return str.replace(/[_.-](\w|$)/gu, (_, x) => x.toUpperCase())
+    const base = /[_.-]/u.test(str)
+        ? str.replace(/[_.-](\w|$)/gu, (_, x) => x.toUpperCase())
+        : str
+    return `${base[0].toLowerCase()}${base.slice(1)}`
 }

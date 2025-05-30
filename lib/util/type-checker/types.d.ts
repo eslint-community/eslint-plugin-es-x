@@ -36,6 +36,7 @@ export type TypeName =
   | "Boolean"
   | "BigInt"
   | "Iterator"
+  | "DisposableStack"
   | "Map"
   | "Set"
   | "WeakMap"
@@ -207,6 +208,11 @@ export type IntlProperty =
 export type IteratorProperty = Exclude<keyof typeof Iterator, ExcludeProperty>;
 export type IteratorPrototypeProperty = Exclude<
   keyof IteratorObject<any>,
+  ExcludePrototypeProperty
+>;
+export type DisposableStackProperty = Exclude<keyof typeof DisposableStack, ExcludeProperty>;
+export type DisposableStackPrototypeProperty = Exclude<
+  keyof DisposableStack,
   ExcludePrototypeProperty
 >;
 export type TypedArrayProperty = Exclude<
