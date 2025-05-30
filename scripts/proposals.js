@@ -13,6 +13,10 @@ module.exports = {
         title: "Class Fields",
         link: "https://github.com/tc39/proposal-class-fields",
     },
+    "explicit-resource-management": {
+        title: "Explicit Resource Management",
+        link: "https://github.com/tc39/proposal-explicit-resource-management",
+    },
     float16array: {
         title: "Float16Array",
         link: "https://github.com/tc39/proposal-float16array",
