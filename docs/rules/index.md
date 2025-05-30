@@ -15,6 +15,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-disposablestack](./no-disposablestack.md) | disallow the `DisposableStack` class. |  |
 | [es-x/no-error-iserror](./no-error-iserror.md) | disallow the `Error.isError` method. |  |
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
+| [es-x/no-using-declarations](./no-using-declarations.md) | disallow `using` and `await using` declarations. |  |
 
 ## ES2025
 
