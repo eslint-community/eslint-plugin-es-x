@@ -1029,6 +1029,34 @@ export default [
 }
 ```
 
+## no-explicit-resource-management
+
+disallow proposal ES2026 [Explicit Resource Management](https://github.com/tc39/proposal-explicit-resource-management)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This configs includes rules for [es-x/no-asyncdisposablestack](../rules/no-asyncdisposablestack.md), [es-x/no-disposablestack](../rules/no-disposablestack.md), [es-x/no-suppressederror](../rules/no-suppressederror.md), and [es-x/no-using-declarations](../rules/no-using-declarations.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-explicit-resource-management']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-explicit-resource-management"],
+}
+```
+
 ## no-float16array
 
 disallow proposal ES2025 [Float16Array](https://github.com/tc39/proposal-float16array)\

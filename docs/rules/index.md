@@ -11,7 +11,11 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-array-fromasync](./no-array-fromasync.md) | disallow the `Array.fromAsync` method. |  |
+| [es-x/no-asyncdisposablestack](./no-asyncdisposablestack.md) | disallow the `AsyncDisposableStack` class. |  |
+| [es-x/no-disposablestack](./no-disposablestack.md) | disallow the `DisposableStack` class. |  |
 | [es-x/no-error-iserror](./no-error-iserror.md) | disallow the `Error.isError` method. |  |
+| [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
+| [es-x/no-using-declarations](./no-using-declarations.md) | disallow `using` and `await using` declarations. |  |
 
 ## ES2025
 
@@ -409,6 +413,8 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-array-prototype-properties](./no-nonstandard-array-prototype-properties.md) | disallow non-standard properties on Array instance. |  |
 | [es-x/no-nonstandard-arraybuffer-properties](./no-nonstandard-arraybuffer-properties.md) | disallow non-standard static properties on `ArrayBuffer` class. |  |
 | [es-x/no-nonstandard-arraybuffer-prototype-properties](./no-nonstandard-arraybuffer-prototype-properties.md) | disallow non-standard properties on ArrayBuffer instance. |  |
+| [es-x/no-nonstandard-asyncdisposablestack-properties](./no-nonstandard-asyncdisposablestack-properties.md) | disallow non-standard static properties on `AsyncDisposableStack` class. |  |
+| [es-x/no-nonstandard-asyncdisposablestack-prototype-properties](./no-nonstandard-asyncdisposablestack-prototype-properties.md) | disallow non-standard properties on AsyncDisposableStack instance. |  |
 | [es-x/no-nonstandard-atomics-properties](./no-nonstandard-atomics-properties.md) | disallow non-standard static properties on `Atomics`. |  |
 | [es-x/no-nonstandard-bigint-properties](./no-nonstandard-bigint-properties.md) | disallow non-standard static properties on `BigInt` class. |  |
 | [es-x/no-nonstandard-bigint-prototype-properties](./no-nonstandard-bigint-prototype-properties.md) | disallow non-standard properties on BigInt instance. |  |
@@ -418,6 +424,8 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-dataview-prototype-properties](./no-nonstandard-dataview-prototype-properties.md) | disallow non-standard properties on DataView instance. |  |
 | [es-x/no-nonstandard-date-properties](./no-nonstandard-date-properties.md) | disallow non-standard static properties on `Date` class. |  |
 | [es-x/no-nonstandard-date-prototype-properties](./no-nonstandard-date-prototype-properties.md) | disallow non-standard properties on Date instance. |  |
+| [es-x/no-nonstandard-disposablestack-properties](./no-nonstandard-disposablestack-properties.md) | disallow non-standard static properties on `DisposableStack` class. |  |
+| [es-x/no-nonstandard-disposablestack-prototype-properties](./no-nonstandard-disposablestack-prototype-properties.md) | disallow non-standard properties on DisposableStack instance. |  |
 | [es-x/no-nonstandard-error-properties](./no-nonstandard-error-properties.md) | disallow non-standard static properties on `Error` class. |  |
 | [es-x/no-nonstandard-finalizationregistry-properties](./no-nonstandard-finalizationregistry-properties.md) | disallow non-standard static properties on `FinalizationRegistry` class. |  |
 | [es-x/no-nonstandard-finalizationregistry-prototype-properties](./no-nonstandard-finalizationregistry-prototype-properties.md) | disallow non-standard properties on FinalizationRegistry instance. |  |

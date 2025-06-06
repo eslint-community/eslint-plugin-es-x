@@ -36,6 +36,8 @@ export type TypeName =
   | "Boolean"
   | "BigInt"
   | "Iterator"
+  | "DisposableStack"
+  | "AsyncDisposableStack"
   | "Map"
   | "Set"
   | "WeakMap"
@@ -79,6 +81,7 @@ type ExcludePrototypeProperty =
   | typeof Symbol.matchAll
   | typeof Symbol.species
   | typeof Symbol.dispose
+  | typeof Symbol.asyncDispose
   | typeof Symbol.metadata;
 
 export type ObjectProperty = keyof typeof Object;
@@ -207,6 +210,16 @@ export type IntlProperty =
 export type IteratorProperty = Exclude<keyof typeof Iterator, ExcludeProperty>;
 export type IteratorPrototypeProperty = Exclude<
   keyof IteratorObject<any>,
+  ExcludePrototypeProperty
+>;
+export type DisposableStackProperty = Exclude<keyof typeof DisposableStack, ExcludeProperty>;
+export type DisposableStackPrototypeProperty = Exclude<
+  keyof DisposableStack,
+  ExcludePrototypeProperty
+>;
+export type AsyncDisposableStackProperty = Exclude<keyof typeof AsyncDisposableStack, ExcludeProperty>;
+export type AsyncDisposableStackPrototypeProperty = Exclude<
+  keyof AsyncDisposableStack,
   ExcludePrototypeProperty
 >;
 export type TypedArrayProperty = Exclude<
