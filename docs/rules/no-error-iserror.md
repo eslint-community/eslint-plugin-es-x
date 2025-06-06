@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-error-iserror"
 description: "disallow the `Error.isError` method"
+since: "v8.7.0"
 ---
 
 # es-x/no-error-iserror
 > disallow the `Error.isError` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2026 [`Error.isError` method](https://github.com/tc39/proposal-is-error) as errors.
@@ -45,6 +45,10 @@ This rule has an option.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v8.7.0.
 
 ## 📚 References
 

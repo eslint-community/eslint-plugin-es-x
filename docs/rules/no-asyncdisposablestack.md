@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-asyncdisposablestack"
 description: "disallow the `AsyncDisposableStack` class"
+since: "v8.7.0"
 ---
 
 # es-x/no-asyncdisposablestack
 > disallow the `AsyncDisposableStack` class
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-explicit-resource-management] and [no-new-in-esnext]
 
 This rule reports ES2026 [`AsyncDisposableStack` class](https://github.com/tc39/proposal-explicit-resource-management) as errors.
@@ -23,6 +23,10 @@ let asyncdisposablestack = new AsyncDisposableStack()
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.7.0.
 
 ## 📚 References
 

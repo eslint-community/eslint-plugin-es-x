@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-array-fromasync"
 description: "disallow the `Array.fromAsync` method"
+since: "v8.7.0"
 ---
 
 # es-x/no-array-fromasync
 > disallow the `Array.fromAsync` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2026 [`Array.fromAsync` method](https://github.com/tc39/proposal-array-from-async) as errors.
@@ -45,6 +45,10 @@ This rule has an option.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v8.7.0.
 
 ## 📚 References
 

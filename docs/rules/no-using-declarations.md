@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-using-declarations"
 description: "disallow `using` and `await using` declarations"
+since: "v8.7.0"
 ---
 
 # es-x/no-using-declarations
 > disallow `using` and `await using` declarations
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-explicit-resource-management] and [no-new-in-esnext]
 
 This rule reports ES2026 [`using` and `await using` declarations](https://github.com/tc39/proposal-explicit-resource-management) as errors.
@@ -33,6 +33,10 @@ async function * g() {
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v8.7.0.
 
 ## 📚 References
 
