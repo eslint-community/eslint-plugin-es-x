@@ -15,6 +15,12 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-disposablestack](./no-disposablestack.md) | disallow the `DisposableStack` class. |  |
 | [es-x/no-error-iserror](./no-error-iserror.md) | disallow the `Error.isError` method. |  |
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
+| [es-x/no-uint8array-frombase64](./no-uint8array-frombase64.md) | disallow the `Uint8Array.fromBase64` method. |  |
+| [es-x/no-uint8array-fromhex](./no-uint8array-fromhex.md) | disallow the `Uint8Array.fromHex` method. |  |
+| [es-x/no-uint8array-prototype-setfrombase64](./no-uint8array-prototype-setfrombase64.md) | disallow the `Uint8Array.prototype.setFromBase64` method. |  |
+| [es-x/no-uint8array-prototype-setfromhex](./no-uint8array-prototype-setfromhex.md) | disallow the `Uint8Array.prototype.setFromHex` method. |  |
+| [es-x/no-uint8array-prototype-tobase64](./no-uint8array-prototype-tobase64.md) | disallow the `Uint8Array.prototype.toBase64` method. |  |
+| [es-x/no-uint8array-prototype-tohex](./no-uint8array-prototype-tohex.md) | disallow the `Uint8Array.prototype.toHex` method. |  |
 | [es-x/no-using-declarations](./no-using-declarations.md) | disallow `using` and `await using` declarations. |  |
 
 ## ES2025

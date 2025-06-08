@@ -36,6 +36,7 @@ async function main(ruleId) {
     const ruleFile = path.resolve(__dirname, `../lib/rules/${ruleId}.js`)
     const testFile = path.resolve(__dirname, `../tests/lib/rules/${ruleId}.js`)
     const docFile = path.resolve(__dirname, `../docs/rules/${ruleId}.md`)
+    const changesetFile = path.resolve(__dirname, `../.changeset/${ruleId}.md`)
 
     prompts.intro("Create the new rule!")
 
@@ -145,6 +146,15 @@ async function main(ruleId) {
     fs.writeFileSync(ruleFile, resources.rule)
     fs.writeFileSync(testFile, resources.test)
     fs.writeFileSync(docFile, resources.doc)
+    fs.writeFileSync(
+        changesetFile,
+        `---
+"eslint-plugin-es-x": minor
+---
+
+Add \`es-x/${ruleId}\` rule
+`,
+    )
 
     cp.execSync(`code "${ruleFile}"`)
     cp.execSync(`code "${testFile}"`)
