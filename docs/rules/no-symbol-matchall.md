@@ -19,9 +19,7 @@ This rule reports ES2015 [`Symbol.matchAll` property](https://github.com/tc39/pr
 
 ```js
 /*eslint es-x/no-symbol-matchall: error */
-const re = /[0-9]+/g;
-const str = "1234-5678";
-const result = re[Symbol.matchAll](str);
+x[Symbol.matchAll]
 ```
 
 </eslint-playground>

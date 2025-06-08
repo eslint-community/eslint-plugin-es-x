@@ -258,19 +258,26 @@ let ${object.toLowerCase()} = new ${object}()
 
 function buildStaticPropertiesRuleResources({ ruleId, object, properties }) {
     const promptObject = globalThis[object]
-    const promptProperties = promptObject
-        ? Object.getOwnPropertyNames(promptObject)
-        : []
+    const exampleProperty = promptObject
+        ? Object.getOwnPropertyNames(promptObject)[0]
+        : "example"
+    const propertyType = promptObject
+        ? typeof promptObject[properties[0]]
+        : "function"
+    const kind =
+        propertyType === "function"
+            ? ["method", "methods"]
+            : ["property", "properties"]
     const propertiesString =
         properties.length > 1 ? `{${properties.join(",")}}` : properties[0]
-    let propertiesName = `\`${object}.${properties[properties.length - 1]}\` method`
+    let propertiesName = `\`${object}.${properties[properties.length - 1]}\` ${kind[0]}`
     if (properties.length > 1) {
         propertiesName = `${properties
             .slice(0, -1)
             .map((p) => `\`${object}.${p}\``)
             .join(
                 ", ",
-            )}, and \`${object}.${properties[properties.length - 1]}\` methods`
+            )}, and \`${object}.${properties[properties.length - 1]}\` ${kind[1]}`
     }
 
     return {
@@ -283,14 +290,14 @@ const {
 module.exports = {
     meta: {
         docs: {
-            description: "disallow the \`${object}.${propertiesString}\` method",
+            description: "disallow the \`${object}.${propertiesString}\` ${kind[0]}",
             category: "ES${maxESVersion}",
             recommended: false,
             url: "",
         },
         fixable: null,
         messages: {
-            forbidden: "ES${maxESVersion} '{{name}}' method is forbidden.",
+            forbidden: "ES${maxESVersion} '{{name}}' ${kind[0]} is forbidden.",
         },
         schema: [
             {
@@ -305,7 +312,7 @@ module.exports = {
     },
     create(context) {
         return defineStaticPropertiesHandler(context, {
-            "${object}": { ${properties.map((p) => `"${p}": "function"`).join(",\n")} },
+            "${object}": { ${properties.map((p) => `"${p}": "${propertyType}"`).join(",\n")} },
         })
     },
 }
@@ -318,7 +325,7 @@ const rule = require("../../../lib/rules/${ruleId}.js")
 new RuleTester().run("${ruleId}", rule, {
     valid: [
         "${object}",
-        "${object}.${promptProperties[0]}",
+        "${object}.${exampleProperty}",
         ${properties.map((p) => `"let ${object} = 0; ${object}.${p}"`).join(",\n")}
     ],
     invalid: [
@@ -326,7 +333,7 @@ new RuleTester().run("${ruleId}", rule, {
             .map(
                 (p) => `{
             code: "${object}.${p}",
-            errors: ["ES${maxESVersion} '${object}.${p}' method is forbidden."],
+            errors: ["ES${maxESVersion} '${object}.${p}' ${kind[0]} is forbidden."],
         }`,
             )
             .join(",\n")}
