@@ -7,7 +7,7 @@ since: "v8.5.0"
 # es-x/no-dataview-prototype-getfloat16-setfloat16
 > disallow the `DataView.prototype.{getFloat16,setFloat16}` methods
 
-- ✅ The following configurations enable this rule: [no-float16array] and [no-new-in-esnext]
+- ✅ The following configurations enable this rule: [no-float16array], [no-new-in-es2025], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], [restrict-to-es2020], [restrict-to-es2021], [restrict-to-es2022], [restrict-to-es2023], and [restrict-to-es2024]
 
 This rule reports ES2025 [`DataView.prototype.{getFloat16,setFloat16}` methods](https://github.com/tc39/proposal-float16array) as errors.
 
@@ -69,4 +69,16 @@ This rule was introduced in v8.5.0.
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-dataview-prototype-getfloat16-setfloat16.js)
 
 [no-float16array]: ../configs/index.md#no-float16array
-[no-new-in-esnext]: ../configs/index.md#no-new-in-esnext
+[no-new-in-es2025]: ../configs/index.md#no-new-in-es2025
+[restrict-to-es3]: ../configs/index.md#restrict-to-es3
+[restrict-to-es5]: ../configs/index.md#restrict-to-es5
+[restrict-to-es2015]: ../configs/index.md#restrict-to-es2015
+[restrict-to-es2016]: ../configs/index.md#restrict-to-es2016
+[restrict-to-es2017]: ../configs/index.md#restrict-to-es2017
+[restrict-to-es2018]: ../configs/index.md#restrict-to-es2018
+[restrict-to-es2019]: ../configs/index.md#restrict-to-es2019
+[restrict-to-es2020]: ../configs/index.md#restrict-to-es2020
+[restrict-to-es2021]: ../configs/index.md#restrict-to-es2021
+[restrict-to-es2022]: ../configs/index.md#restrict-to-es2022
+[restrict-to-es2023]: ../configs/index.md#restrict-to-es2023
+[restrict-to-es2024]: ../configs/index.md#restrict-to-es2024
