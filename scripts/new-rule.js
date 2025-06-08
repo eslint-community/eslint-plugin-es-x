@@ -36,6 +36,7 @@ async function main(ruleId) {
     const ruleFile = path.resolve(__dirname, `../lib/rules/${ruleId}.js`)
     const testFile = path.resolve(__dirname, `../tests/lib/rules/${ruleId}.js`)
     const docFile = path.resolve(__dirname, `../docs/rules/${ruleId}.md`)
+    const changesetFile = path.resolve(__dirname, `../.changeset/${ruleId}.md`)
 
     prompts.intro("Create the new rule!")
 
@@ -47,10 +48,10 @@ async function main(ruleId) {
                     value: "global-object",
                     label: "The rule forbids the use of global objects.",
                 },
-                // {
-                //     value: "static-properties",
-                //     label: "The rule forbids the use of static properties.",
-                // },
+                {
+                    value: "static-properties",
+                    label: "The rule forbids the use of static properties.",
+                },
                 // {
                 //     value: "prototype-properties",
                 //     label: "The rule forbids the use of prototype properties.",
@@ -131,20 +132,32 @@ async function main(ruleId) {
             .filter((s) => s)
     }
 
+    const BUILDERS = {
+        "global-object": buildGlobalObjectRuleResources,
+        "static-properties": buildStaticPropertiesRuleResources,
+        "nonstandard-static-properties":
+            buildNonStandardStaticPropertiesRuleResources,
+        "nonstandard-prototype-properties":
+            buildNonStandardPrototypePropertiesRuleResources,
+        default: buildDefaultResources,
+    }
+
     const resources =
-        kind === "global-object"
-            ? buildGlobalObjectRuleResources(resourceOptions)
-            : kind === "nonstandard-static-properties"
-              ? buildNonStandardStaticPropertiesRuleResources(resourceOptions)
-              : kind === "nonstandard-prototype-properties"
-                ? buildNonStandardPrototypePropertiesRuleResources(
-                      resourceOptions,
-                  )
-                : buildDefaultResources(resourceOptions)
+        BUILDERS[kind]?.(resourceOptions) ??
+        buildDefaultResources(resourceOptions)
 
     fs.writeFileSync(ruleFile, resources.rule)
     fs.writeFileSync(testFile, resources.test)
     fs.writeFileSync(docFile, resources.doc)
+    fs.writeFileSync(
+        changesetFile,
+        `---
+"eslint-plugin-es-x": minor
+---
+
+Add \`es-x/${ruleId}\` rule
+`,
+    )
 
     cp.execSync(`code "${ruleFile}"`)
     cp.execSync(`code "${testFile}"`)
@@ -239,6 +252,126 @@ let ${object.toLowerCase()} = new ${object}()
 \`\`\`
 
 </eslint-playground>
+`,
+    }
+}
+
+function buildStaticPropertiesRuleResources({ ruleId, object, properties }) {
+    const promptObject = globalThis[object]
+    const promptProperties = promptObject
+        ? Object.getOwnPropertyNames(promptObject)
+        : []
+    const propertiesString =
+        properties.length > 1 ? `{${properties.join(",")}}` : properties[0]
+    let propertiesName = `\`${object}.${properties[properties.length - 1]}\` method`
+    if (properties.length > 1) {
+        propertiesName = `${properties
+            .slice(0, -1)
+            .map((p) => `\`${object}.${p}\``)
+            .join(
+                ", ",
+            )}, and \`${object}.${properties[properties.length - 1]}\` methods`
+    }
+
+    return {
+        rule: `"use strict"
+
+const {
+    defineStaticPropertiesHandler,
+} = require("../util/define-static-properties-handler")
+
+module.exports = {
+    meta: {
+        docs: {
+            description: "disallow the \`${object}.${propertiesString}\` method",
+            category: "ES${maxESVersion}",
+            recommended: false,
+            url: "",
+        },
+        fixable: null,
+        messages: {
+            forbidden: "ES${maxESVersion} '{{name}}' method is forbidden.",
+        },
+        schema: [
+            {
+                type: "object",
+                properties: {
+                    allowTestedProperty: { type: "boolean" },
+                },
+                additionalProperties: false,
+            },
+        ],
+        type: "problem",
+    },
+    create(context) {
+        return defineStaticPropertiesHandler(context, {
+            "${object}": { ${properties.map((p) => `"${p}": "function"`).join(",\n")} },
+        })
+    },
+}
+`,
+        test: `"use strict"
+
+const RuleTester = require("../../tester")
+const rule = require("../../../lib/rules/${ruleId}.js")
+
+new RuleTester().run("${ruleId}", rule, {
+    valid: [
+        "${object}",
+        "${object}.${promptProperties[0]}",
+        ${properties.map((p) => `"let ${object} = 0; ${object}.${p}"`).join(",\n")}
+    ],
+    invalid: [
+        ${properties
+            .map(
+                (p) => `{
+            code: "${object}.${p}",
+            errors: ["ES${maxESVersion} '${object}.${p}' method is forbidden."],
+        }`,
+            )
+            .join(",\n")}
+    ],
+})
+`,
+        doc: `# es-x/${ruleId}
+> 
+
+This rule reports ES${maxESVersion} [${propertiesName}]($$LINK$$) as errors.
+
+## 💡 Examples
+
+⛔ Examples of **incorrect** code for this rule:
+
+<eslint-playground type="bad">
+
+\`\`\`js
+/*eslint es-x/${ruleId}: error */
+${properties.map((p) => `${object}.${p}();`).join("\n")}
+\`\`\`
+
+</eslint-playground>
+
+## 🔧 Options
+
+This rule has an option.
+
+\`\`\`jsonc
+{
+  "rules": {
+    "es-x/${ruleId}": [
+      "error",
+      {
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
+\`\`\`
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
 `,
     }
 }
