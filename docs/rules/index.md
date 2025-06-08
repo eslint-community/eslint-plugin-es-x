@@ -173,6 +173,7 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | [es-x/no-promise-all-settled](./no-promise-all-settled.md) | disallow `Promise.allSettled` function. |  |
 | [es-x/no-regexp-unicode-property-escapes-2020](./no-regexp-unicode-property-escapes-2020.md) | disallow the new values of RegExp Unicode property escape sequences in ES2020. |  |
 | [es-x/no-string-prototype-matchall](./no-string-prototype-matchall.md) | disallow the `String.prototype.matchAll` method. |  |
+| [es-x/no-symbol-matchall](./no-symbol-matchall.md) | disallow the `Symbol.matchAll` property. |  |
 
 ## ES2020 Intl API
 
@@ -340,7 +341,6 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | [es-x/no-string-prototype-startswith](./no-string-prototype-startswith.md) | disallow the `String.prototype.startsWith` method. |  |
 | [es-x/no-string-raw](./no-string-raw.md) | disallow the `String.raw` method. |  |
 | [es-x/no-subclassing-builtins](./no-subclassing-builtins.md) | disallow the subclassing of the built-in classes. |  |
-| [es-x/no-symbol-matchall](./no-symbol-matchall.md) | disallow the `Symbol.matchAll` property. |  |
 | [es-x/no-symbol](./no-symbol.md) | disallow the `Symbol` class. |  |
 | [es-x/no-template-literals](./no-template-literals.md) | disallow template literals. | 🔧 |
 | [es-x/no-typed-arrays](./no-typed-arrays.md) | disallow ES2015 typed arrays. |  |
