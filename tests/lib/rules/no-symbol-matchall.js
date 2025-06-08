@@ -8,7 +8,7 @@ new RuleTester().run("no-symbol-matchall", rule, {
     invalid: [
         {
             code: "Symbol.matchAll",
-            errors: ["ES2015 'Symbol.matchAll' property is forbidden."],
+            errors: ["ES2020 'Symbol.matchAll' property is forbidden."],
         },
     ],
 })
