@@ -28,10 +28,9 @@ export default [
 }
 ```
 
-## no-new-in-esnext-intl-api
+## no-new-in-es2025
 
-disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow new stuff in ES2025.
 
 ### [Config (Flat Config)]
 
@@ -40,7 +39,7 @@ eslint.config.js:
 ```js
 import pluginESx from "eslint-plugin-es-x"
 export default [
-    pluginESx.configs['flat/no-new-in-esnext-intl-api']
+    pluginESx.configs['flat/no-new-in-es2025']
 ]
 ```
 
@@ -50,7 +49,32 @@ export default [
 
 ```json
 {
-    "extends": ["plugin:es-x/no-new-in-esnext-intl-api"],
+    "extends": ["plugin:es-x/no-new-in-es2025"],
+}
+```
+
+## no-new-in-es2025-intl-api
+
+disallow new stuff in ES2025 Intl API (ECMA-402).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-new-in-es2025-intl-api']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-new-in-es2025-intl-api"],
 }
 ```
 
@@ -501,6 +525,56 @@ export default [
 ```json
 {
     "extends": ["plugin:es-x/no-new-in-es5"],
+}
+```
+
+## restrict-to-es2024
+
+disallow new stuff that ES2025 doesn't include
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/restrict-to-es2024']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/restrict-to-es2024"],
+}
+```
+
+## restrict-to-es2024-intl-api
+
+disallow new stuff that ES2025 Intl API (ECMA-402) doesn't include
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/restrict-to-es2024-intl-api']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/restrict-to-es2024-intl-api"],
 }
 ```
 
@@ -1059,8 +1133,7 @@ export default [
 
 ## no-float16array
 
-disallow proposal ES2025 [Float16Array](https://github.com/tc39/proposal-float16array)\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow proposal ES2025 [Float16Array](https://github.com/tc39/proposal-float16array)
 
 This configs includes rules for [es-x/no-dataview-prototype-getfloat16-setfloat16](../rules/no-dataview-prototype-getfloat16-setfloat16.md), [es-x/no-float16array](../rules/no-float16array.md), and [es-x/no-math-f16round](../rules/no-math-f16round.md).
 
@@ -1087,8 +1160,7 @@ export default [
 
 ## no-import-attributes
 
-disallow proposal ES2025 [Import Attributes](https://github.com/tc39/proposal-import-attributes)\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow proposal ES2025 [Import Attributes](https://github.com/tc39/proposal-import-attributes)
 
 This configs includes rules for [es-x/no-dynamic-import-options](../rules/no-dynamic-import-options.md), [es-x/no-import-attributes](../rules/no-import-attributes.md), and [es-x/no-trailing-dynamic-import-commas](../rules/no-trailing-dynamic-import-commas.md).
 
@@ -1115,8 +1187,7 @@ export default [
 
 ## no-iterator-helpers
 
-disallow proposal ES2025 [Iterator Helpers](https://github.com/tc39/proposal-iterator-helpers)\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow proposal ES2025 [Iterator Helpers](https://github.com/tc39/proposal-iterator-helpers)
 
 This configs includes rules for [es-x/no-iterator-prototype-drop](../rules/no-iterator-prototype-drop.md), [es-x/no-iterator-prototype-every](../rules/no-iterator-prototype-every.md), [es-x/no-iterator-prototype-filter](../rules/no-iterator-prototype-filter.md), [es-x/no-iterator-prototype-find](../rules/no-iterator-prototype-find.md), [es-x/no-iterator-prototype-flatmap](../rules/no-iterator-prototype-flatmap.md), [es-x/no-iterator-prototype-foreach](../rules/no-iterator-prototype-foreach.md), [es-x/no-iterator-prototype-map](../rules/no-iterator-prototype-map.md), [es-x/no-iterator-prototype-reduce](../rules/no-iterator-prototype-reduce.md), [es-x/no-iterator-prototype-some](../rules/no-iterator-prototype-some.md), [es-x/no-iterator-prototype-take](../rules/no-iterator-prototype-take.md), [es-x/no-iterator-prototype-toarray](../rules/no-iterator-prototype-toarray.md), and [es-x/no-iterator](../rules/no-iterator.md).
 
@@ -1143,8 +1214,7 @@ export default [
 
 ## no-set-methods
 
-disallow proposal ES2025 [Set Methods for JavaScript](https://github.com/tc39/proposal-set-methods)\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow proposal ES2025 [Set Methods for JavaScript](https://github.com/tc39/proposal-set-methods)
 
 This configs includes rules for [es-x/no-set-prototype-difference](../rules/no-set-prototype-difference.md), [es-x/no-set-prototype-intersection](../rules/no-set-prototype-intersection.md), [es-x/no-set-prototype-isdisjointfrom](../rules/no-set-prototype-isdisjointfrom.md), [es-x/no-set-prototype-issubsetof](../rules/no-set-prototype-issubsetof.md), [es-x/no-set-prototype-issupersetof](../rules/no-set-prototype-issupersetof.md), [es-x/no-set-prototype-symmetricdifference](../rules/no-set-prototype-symmetricdifference.md), and [es-x/no-set-prototype-union](../rules/no-set-prototype-union.md).
 

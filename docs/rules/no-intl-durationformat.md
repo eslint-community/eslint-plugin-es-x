@@ -7,7 +7,7 @@ since: "v8.5.0"
 # es-x/no-intl-durationformat
 > disallow the `Intl.DurationFormat` object
 
-- ✅ The following configurations enable this rule: [no-new-in-esnext-intl-api]
+- ✅ The following configurations enable this rule: [no-new-in-es2025-intl-api], [restrict-to-es-intl-api-1st-edition], [restrict-to-es2015-intl-api], [restrict-to-es2016-intl-api], [restrict-to-es2017-intl-api], [restrict-to-es2018-intl-api], [restrict-to-es2019-intl-api], [restrict-to-es2020-intl-api], [restrict-to-es2021-intl-api], [restrict-to-es2022-intl-api], [restrict-to-es2023-intl-api], and [restrict-to-es2024-intl-api]
 
 This rule reports ES2025 Intl API `Intl.DurationFormat` object as errors.
 
@@ -61,4 +61,15 @@ This rule was introduced in v8.5.0.
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-intl-durationformat.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-intl-durationformat.js)
 
-[no-new-in-esnext-intl-api]: ../configs/index.md#no-new-in-esnext-intl-api
+[no-new-in-es2025-intl-api]: ../configs/index.md#no-new-in-es2025-intl-api
+[restrict-to-es-intl-api-1st-edition]: ../configs/index.md#restrict-to-es-intl-api-1st-edition
+[restrict-to-es2015-intl-api]: ../configs/index.md#restrict-to-es2015-intl-api
+[restrict-to-es2016-intl-api]: ../configs/index.md#restrict-to-es2016-intl-api
+[restrict-to-es2017-intl-api]: ../configs/index.md#restrict-to-es2017-intl-api
+[restrict-to-es2018-intl-api]: ../configs/index.md#restrict-to-es2018-intl-api
+[restrict-to-es2019-intl-api]: ../configs/index.md#restrict-to-es2019-intl-api
+[restrict-to-es2020-intl-api]: ../configs/index.md#restrict-to-es2020-intl-api
+[restrict-to-es2021-intl-api]: ../configs/index.md#restrict-to-es2021-intl-api
+[restrict-to-es2022-intl-api]: ../configs/index.md#restrict-to-es2022-intl-api
+[restrict-to-es2023-intl-api]: ../configs/index.md#restrict-to-es2023-intl-api
+[restrict-to-es2024-intl-api]: ../configs/index.md#restrict-to-es2024-intl-api
