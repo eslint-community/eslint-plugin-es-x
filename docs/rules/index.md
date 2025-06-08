@@ -338,6 +338,7 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | [es-x/no-string-prototype-startswith](./no-string-prototype-startswith.md) | disallow the `String.prototype.startsWith` method. |  |
 | [es-x/no-string-raw](./no-string-raw.md) | disallow the `String.raw` method. |  |
 | [es-x/no-subclassing-builtins](./no-subclassing-builtins.md) | disallow the subclassing of the built-in classes. |  |
+| [es-x/no-symbol-matchall](./no-symbol-matchall.md) | disallow the `Symbol.matchAll` property. |  |
 | [es-x/no-symbol](./no-symbol.md) | disallow the `Symbol` class. |  |
 | [es-x/no-template-literals](./no-template-literals.md) | disallow template literals. | 🔧 |
 | [es-x/no-typed-arrays](./no-typed-arrays.md) | disallow ES2015 typed arrays. |  |
