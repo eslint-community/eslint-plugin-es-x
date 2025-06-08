@@ -18,7 +18,9 @@
     "eslint-compat-utils": "^0.6.3"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.2",
     "@clack/prompts": "^0.11.0",
+    "@svitejs/changesets-changelog-github-compact": "^1.2.0",
     "@typescript-eslint/parser": "^8.0.0",
     "env-cmd": "^10.1.0",
     "eslint": "^9.1.0",
@@ -64,9 +66,12 @@
     "update:config-docs": "node scripts/update-docs-configs",
     "resource-update:unicode-properties": "node scripts/update-unicode-properties",
     "preversion": "npm test",
-    "version": "env-cmd -e version run-s update:* && git add .",
+    "version": "npm run generate:version && git add .",
     "postversion": "git push && git push --tags",
-    "watch": "mocha tests/**/*.{js,mjs} --reporter progress --watch --growl"
+    "watch": "mocha tests/**/*.{js,mjs} --reporter progress --watch --growl",
+    "generate:version": "env-cmd -e version run-s update:*",
+    "changeset:version": "changeset version && npm run generate:version && git add --all",
+    "changeset:publish": "changeset publish"
   },
   "repository": {
     "type": "git",
