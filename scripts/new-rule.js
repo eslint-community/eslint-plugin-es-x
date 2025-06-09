@@ -261,9 +261,10 @@ function buildStaticPropertiesRuleResources({ ruleId, object, properties }) {
     const exampleProperty = promptObject
         ? Object.getOwnPropertyNames(promptObject)[0]
         : "example"
-    const propertyType = promptObject
-        ? typeof promptObject[properties[0]]
-        : "function"
+    const propertyType =
+        promptObject && promptObject[properties[0]]
+            ? typeof promptObject[properties[0]]
+            : "function"
     const kind =
         propertyType === "function"
             ? ["method", "methods"]
