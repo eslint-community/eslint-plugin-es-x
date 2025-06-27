@@ -3,12 +3,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-hashbang.js")
 
-if (!RuleTester.isSupported(2023)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-hashbang.")
-    return
-}
-
 new RuleTester().run("no-hashbang", rule, {
     valid: [
         "/* comment */",

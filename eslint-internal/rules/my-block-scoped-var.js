@@ -5,8 +5,6 @@
  */
 "use strict"
 
-const { getSourceCode } = require("eslint-compat-utils")
-
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
@@ -207,7 +205,7 @@ module.exports = {
         type: "suggestion",
     },
     create(context) {
-        const sourceCode = getSourceCode(context)
+        const sourceCode = context.sourceCode
 
         /**
          * Finds and reports references which are outside of valid scopes.

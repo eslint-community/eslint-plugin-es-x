@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-arbitrary-module-namespace-names.js")
 
-if (!RuleTester.isSupported(2022)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-arbitrary-module-namespace-names.")
-    return
-}
-
 new RuleTester({
     languageOptions: { sourceType: "module" },
 }).run("no-arbitrary-module-namespace-names", rule, {

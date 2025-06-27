@@ -3,12 +3,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-regexp-duplicate-named-capturing-groups.js")
 
-if (!RuleTester.isSupported(2025)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-regexp-duplicate-named-capturing-groups.")
-    return
-}
-
 new RuleTester().run("no-regexp-duplicate-named-capturing-groups", rule, {
     valid: [
         String.raw`/(?<x>a)/`,
