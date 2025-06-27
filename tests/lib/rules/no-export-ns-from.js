@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-export-ns-from.js")
 
-if (!RuleTester.isSupported(2020)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-export-ns-from.")
-    return
-}
-
 new RuleTester({
     languageOptions: { sourceType: "module" },
 }).run("no-export-ns-from", rule, {

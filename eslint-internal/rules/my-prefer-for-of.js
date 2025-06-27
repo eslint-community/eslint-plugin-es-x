@@ -10,7 +10,6 @@
 //------------------------------------------------------------------------------
 
 const assert = require("assert")
-const { getSourceCode } = require("eslint-compat-utils")
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -92,7 +91,7 @@ function isSimpleReference(node) {
  * @returns {boolean} `true` if the node is called recursively.
  */
 function isCalledRecursively(context, node) {
-    const sourceCode = getSourceCode(context)
+    const sourceCode = context.sourceCode
     return (
         node.id != null &&
         sourceCode.getDeclaredVariables(node)[0].references.length > 0
@@ -223,7 +222,7 @@ function isAssignee(startNode) {
  * used to get array elements.
  */
 function isIndexVarOnlyUsedToGetArrayElements(context, node) {
-    const sourceCode = getSourceCode(context)
+    const sourceCode = context.sourceCode
     const arrayText = getArrayTextOfForStatement(sourceCode, node)
     const indexVar = sourceCode.getDeclaredVariables(node.init)[0]
 
@@ -254,7 +253,7 @@ function isLengthVarOnlyUsedToTest(context, node) {
     if (node.init.declarations.length !== 2) {
         return true
     }
-    const sourceCode = getSourceCode(context)
+    const sourceCode = context.sourceCode
     const lengthVar = sourceCode.getDeclaredVariables(
         node.init.declarations[1],
     )[0]
@@ -322,7 +321,7 @@ function getContextVariable(context, contextNode) {
     }
     assert(node.type === "Identifier")
 
-    const sourceCode = getSourceCode(context)
+    const sourceCode = context.sourceCode
     const scope = sourceCode.getScope(contextNode).upper
     return scope.set.get(node.name) || null
 }
@@ -414,7 +413,7 @@ function applyFixes(originalText, fixes) {
  * @returns {Fix|null} The created fix object.
  */
 function fixArrayForEach(context, callbackInfo, fixer) {
-    const sourceCode = getSourceCode(context)
+    const sourceCode = context.sourceCode
     const funcNode = callbackInfo.node
     const callNode = funcNode.parent
     const calleeNode = callNode.callee
@@ -463,7 +462,7 @@ function fixArrayForEach(context, callbackInfo, fixer) {
  * @returns {Fix|null} The created fix object.
  */
 function fixForStatement(context, node, fixer) {
-    const sourceCode = getSourceCode(context)
+    const sourceCode = context.sourceCode
     const element = getElementVariableDeclaration(sourceCode, node)
 
     // Cannot fix if element name is unknown.
@@ -578,7 +577,7 @@ module.exports = {
                     // verify whether the reference gets the context variable or not.
                     if (thisFuncInfo.canReplaceAllThis) {
                         if (thisFuncInfo.contextVar != null) {
-                            const sourceCode = getSourceCode(context)
+                            const sourceCode = context.sourceCode
                             const variable = getVariableByName(
                                 sourceCode.getScope(node),
                                 thisFuncInfo.contextVar.name,

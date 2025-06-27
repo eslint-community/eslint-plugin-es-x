@@ -8,12 +8,6 @@ const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-class-instance-fields.js")
 const ruleId = "no-class-instance-fields"
 
-if (!RuleTester.isSupported(2022)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-class-instance-fields.")
-    return
-}
-
 new RuleTester().run(ruleId, rule, {
     valid: [
         "class A {}",

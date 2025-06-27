@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-bigint.js")
 
-if (!RuleTester.isSupported(2020)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-bigint.")
-    return
-}
-
 new RuleTester().run("no-bigint", rule, {
     valid: ["100"],
     invalid: [

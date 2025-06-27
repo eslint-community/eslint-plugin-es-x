@@ -8,12 +8,6 @@ const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-class-private-fields.js")
 const ruleId = "no-class-private-fields"
 
-if (!RuleTester.isSupported(2022)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-class-private-fields.")
-    return
-}
-
 new RuleTester().run(ruleId, rule, {
     valid: [
         "class A {}",

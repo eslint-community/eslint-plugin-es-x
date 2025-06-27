@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-top-level-await.js")
 
-if (!RuleTester.isSupported(2022)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-top-level-await.")
-    return
-}
-
 new RuleTester({
     languageOptions: { sourceType: "module" },
 }).run("no-top-level-await", rule, {
