@@ -1108,7 +1108,7 @@ export default [
 disallow proposal ES2026 [Explicit Resource Management](https://github.com/tc39/proposal-explicit-resource-management)\
 ⚠️ This config will be changed in the minor versions of this plugin.
 
-This configs includes rules for [es-x/no-asyncdisposablestack](../rules/no-asyncdisposablestack.md), [es-x/no-disposablestack](../rules/no-disposablestack.md), [es-x/no-suppressederror](../rules/no-suppressederror.md), and [es-x/no-using-declarations](../rules/no-using-declarations.md).
+This configs includes rules for [es-x/no-asyncdisposablestack](../rules/no-asyncdisposablestack.md), [es-x/no-disposablestack](../rules/no-disposablestack.md), [es-x/no-suppressederror](../rules/no-suppressederror.md), [es-x/no-symbol-asyncdispose](../rules/no-symbol-asyncdispose.md), [es-x/no-symbol-dispose](../rules/no-symbol-dispose.md), and [es-x/no-using-declarations](../rules/no-using-declarations.md).
 
 ### [Config (Flat Config)]
 

@@ -8,7 +8,7 @@ new RuleTester().run("no-symbol-asyncdispose", rule, {
     invalid: [
         {
             code: "Symbol.asyncDispose",
-            errors: ["ES2025 'Symbol.asyncDispose' property is forbidden."],
+            errors: ["ES2026 'Symbol.asyncDispose' property is forbidden."],
         },
     ],
 })
