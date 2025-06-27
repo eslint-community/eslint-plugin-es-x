@@ -23,7 +23,7 @@ This rule reports ES2024 [`String.prototype.{isWellFormed,toWellFormed}` methods
 "str".toWellFormed()
 ```
 
-</eslint-playground>a
+</eslint-playground>
 
 ## 🔧 Options
 
