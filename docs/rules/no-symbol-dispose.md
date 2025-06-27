@@ -7,7 +7,7 @@ description: "disallow the `Symbol.dispose` property"
 > disallow the `Symbol.dispose` property
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
-- ✅ The following configurations enable this rule: [no-new-in-esnext]
+- ✅ The following configurations enable this rule: [no-explicit-resource-management] and [no-new-in-esnext]
 
 This rule reports ES2026 [`Symbol.dispose` property](https://github.com/tc39/proposal-explicit-resource-management) as errors.
 
@@ -51,4 +51,5 @@ This is prior to the `settings['es-x'].allowTestedProperty` setting.
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-symbol-dispose.js)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-symbol-dispose.js)
 
+[no-explicit-resource-management]: ../configs/index.md#no-explicit-resource-management
 [no-new-in-esnext]: ../configs/index.md#no-new-in-esnext
