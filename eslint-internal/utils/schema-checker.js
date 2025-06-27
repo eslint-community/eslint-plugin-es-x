@@ -4,7 +4,6 @@ const {
     getPropertyName,
     getStaticValue,
 } = require("@eslint-community/eslint-utils")
-const { getSourceCode } = require("eslint-compat-utils")
 
 /**
  * @typedef {import("estree").Node} Node
@@ -18,7 +17,7 @@ const { getSourceCode } = require("eslint-compat-utils")
  * @param {(propertiesNode: ObjectExpression) => void} check
  */
 function defineSchemaChecker(context, check) {
-    const sourceCode = getSourceCode(context)
+    const sourceCode = context.sourceCode
     return {
         // eslint-disable-next-line complexity
         MemberExpression(node) {

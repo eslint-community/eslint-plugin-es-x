@@ -1,7 +1,6 @@
 "use strict"
 
 const { ReferenceTracker, READ } = require("@eslint-community/eslint-utils")
-const { getSourceCode, getFilename } = require("eslint-compat-utils")
 const path = require("path")
 const {
     defineSchemaChecker,
@@ -28,7 +27,7 @@ module.exports = {
     },
     /** @param {RuleContext} context */
     create(context) {
-        const sourceCode = getSourceCode(context)
+        const sourceCode = context.sourceCode
 
         const tracker = new ReferenceTracker(
             sourceCode.getScope(sourceCode.ast),
@@ -53,7 +52,7 @@ module.exports = {
             }).map(([filePath, properties]) => {
                 const absolutePath = path.join(__dirname, "../../..", filePath)
                 const relativePath = path.relative(
-                    path.dirname(getFilename(context)),
+                    path.dirname(context.filename),
                     absolutePath,
                 )
                 return [relativePath, properties]

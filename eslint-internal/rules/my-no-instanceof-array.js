@@ -5,8 +5,6 @@
  */
 "use strict"
 
-const { getSourceCode } = require("eslint-compat-utils")
-
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
@@ -24,7 +22,7 @@ module.exports = {
     },
 
     create(context) {
-        const sourceCode = getSourceCode(context)
+        const sourceCode = context.sourceCode
 
         /**
          * Checks whether the given node is RHS of instanceof.
