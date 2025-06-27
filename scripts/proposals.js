@@ -45,4 +45,8 @@ module.exports = {
         title: "Set Methods for JavaScript",
         link: "https://github.com/tc39/proposal-set-methods",
     },
+    "string-matchall": {
+        title: "String.prototype.matchAll",
+        link: "https://github.com/tc39/proposal-string-matchall",
+    },
 }

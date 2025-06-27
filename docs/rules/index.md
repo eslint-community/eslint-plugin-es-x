@@ -52,6 +52,8 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | [es-x/no-set-prototype-issupersetof](./no-set-prototype-issupersetof.md) | disallow the `Set.prototype.isSupersetOf` method. |  |
 | [es-x/no-set-prototype-symmetricdifference](./no-set-prototype-symmetricdifference.md) | disallow the `Set.prototype.symmetricDifference` method. |  |
 | [es-x/no-set-prototype-union](./no-set-prototype-union.md) | disallow the `Set.prototype.union` method. |  |
+| [es-x/no-symbol-asyncdispose](./no-symbol-asyncdispose.md) | disallow the `Symbol.asyncDispose` property. |  |
+| [es-x/no-symbol-dispose](./no-symbol-dispose.md) | disallow the `Symbol.dispose` property. |  |
 | [es-x/no-trailing-dynamic-import-commas](./no-trailing-dynamic-import-commas.md) | disallow trailing commas in `import()`. | 🔧 |
 
 ## ES2025 Intl API
@@ -171,6 +173,7 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | [es-x/no-promise-all-settled](./no-promise-all-settled.md) | disallow `Promise.allSettled` function. |  |
 | [es-x/no-regexp-unicode-property-escapes-2020](./no-regexp-unicode-property-escapes-2020.md) | disallow the new values of RegExp Unicode property escape sequences in ES2020. |  |
 | [es-x/no-string-prototype-matchall](./no-string-prototype-matchall.md) | disallow the `String.prototype.matchAll` method. |  |
+| [es-x/no-symbol-matchall](./no-symbol-matchall.md) | disallow the `Symbol.matchAll` property. |  |
 
 ## ES2020 Intl API
 

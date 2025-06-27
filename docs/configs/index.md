@@ -1401,5 +1401,32 @@ export default [
 }
 ```
 
+## no-string-matchall
+
+disallow proposal ES2020 [String.prototype.matchAll](https://github.com/tc39/proposal-string-matchall)
+
+This configs includes rules for [es-x/no-string-prototype-matchall](../rules/no-string-prototype-matchall.md) and [es-x/no-symbol-matchall](../rules/no-symbol-matchall.md).
+
+### [Config (Flat Config)]
+
+eslint.config.js:
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-string-matchall']
+]
+```
+
+### [Legacy Config]
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-string-matchall"],
+}
+```
+
 [Config (Flat Config)]: https://eslint.org/docs/latest/use/configure/configuration-files
 [Legacy Config]: https://eslint.org/docs/latest/use/configure/configuration-files-deprecated

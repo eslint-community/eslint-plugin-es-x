@@ -1,17 +1,15 @@
 ---
-title: "es-x/no-string-prototype-matchall"
-description: "disallow the `String.prototype.matchAll` method"
-since: "[eslint-plugin-es] v5.0.0"
+title: "es-x/no-symbol-matchall"
+description: "disallow the `Symbol.matchAll` property"
 ---
 
-# es-x/no-string-prototype-matchall
-> disallow the `String.prototype.matchAll` method
+# es-x/no-symbol-matchall
+> disallow the `Symbol.matchAll` property
 
+- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-es2020], [no-string-matchall], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], and [restrict-to-es2019]
 
-This rule reports ES2020 [`String.prototype.matchAll` method](https://github.com/tc39/proposal-string-matchall) as errors.
-
-This rule is silent by default because it's hard to know types. You need to configure [the aggressive mode](../#the-aggressive-mode) or TypeScript in order to enable this rule.
+This rule reports ES2020 [`Symbol.matchAll` property](https://github.com/tc39/proposal-string-matchall) as errors.
 
 ## 💡 Examples
 
@@ -20,8 +18,8 @@ This rule is silent by default because it's hard to know types. You need to conf
 <eslint-playground type="bad">
 
 ```js
-/*eslint es-x/no-string-prototype-matchall: [error, { aggressive: true }] */
-foo.matchAll("a")
+/*eslint es-x/no-symbol-matchall: error */
+x[Symbol.matchAll]
 ```
 
 </eslint-playground>
@@ -33,10 +31,9 @@ This rule has an option.
 ```jsonc
 {
   "rules": {
-    "es-x/no-string-prototype-matchall": [
+    "es-x/no-symbol-matchall": [
       "error",
       {
-        "aggressive": false,
         "allowTestedProperty": false
       }
     ]
@@ -44,26 +41,15 @@ This rule has an option.
 }
 ```
 
-### aggressive: boolean
-
-Configure the aggressive mode for only this rule.
-This is prior to the `settings['es-x'].aggressive` setting.
-
 ### allowTestedProperty: boolean
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
 
-## 🚀 Version
-
-This rule was introduced in [eslint-plugin-es] v5.0.0.
-
-[eslint-plugin-es]: https://github.com/mysticatea/eslint-plugin-es
-
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-matchall.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-matchall.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-symbol-matchall.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-symbol-matchall.js)
 
 [no-new-in-es2020]: ../configs/index.md#no-new-in-es2020
 [no-string-matchall]: ../configs/index.md#no-string-matchall
