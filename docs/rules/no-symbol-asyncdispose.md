@@ -9,7 +9,7 @@ description: "disallow the `Symbol.asyncDispose` property"
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-es2025], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], [restrict-to-es2019], [restrict-to-es2020], [restrict-to-es2021], [restrict-to-es2022], [restrict-to-es2023], and [restrict-to-es2024]
 
-This rule reports ES2025 [`Symbol.asyncDispose` property]($$LINK$$) as errors.
+This rule reports ES2025 [`Symbol.asyncDispose` property](https://github.com/tc39/proposal-explicit-resource-management) as errors.
 
 ## 💡 Examples
 
