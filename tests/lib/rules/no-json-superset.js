@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-json-superset.js")
 
-if (!RuleTester.isSupported(2019)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-json-superset.")
-    return
-}
-
 new RuleTester().run("no-json-superset", rule, {
     valid: [
         "let a = null",

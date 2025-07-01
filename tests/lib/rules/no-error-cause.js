@@ -8,12 +8,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-error-cause.js")
 
-if (!RuleTester.isSupported(2022)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-error-cause.")
-    return
-}
-
 const errorConstructorNames = [
     "Error",
     "AggregateError",

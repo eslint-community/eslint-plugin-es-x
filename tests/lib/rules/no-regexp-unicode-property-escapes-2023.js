@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-regexp-unicode-property-escapes-2023.js")
 
-if (!RuleTester.isSupported(2023)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-regexp-unicode-property-escapes-2023.")
-    return
-}
-
 new RuleTester().run("no-regexp-unicode-property-escapes-2023", rule, {
     valid: [
         String.raw`/\p{Letter}/u`,

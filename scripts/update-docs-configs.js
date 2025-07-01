@@ -67,13 +67,6 @@ Object.values(configs)
     )
     .forEach(processCategoryConfig)
 
-contents.push(
-    "[Config (Flat Config)]: https://eslint.org/docs/latest/use/configure/configuration-files",
-)
-contents.push(
-    "[Legacy Config]: https://eslint.org/docs/latest/use/configure/configuration-files-deprecated",
-)
-
 fs.writeFileSync(MD_PATH, `${contents.join("\n").trim()}\n`)
 
 /**
@@ -131,10 +124,6 @@ function processCategoryConfig({
 }
 
 function appendConfig(configName) {
-    contents.push("### [Config (Flat Config)]")
-    contents.push("")
-    contents.push("eslint.config.js:")
-    contents.push("")
     contents.push("```js")
     contents.push(`import pluginESx from "eslint-plugin-es-x"
 export default [
@@ -142,7 +131,7 @@ export default [
 ]`)
     contents.push("```")
     contents.push("")
-    contents.push("### [Legacy Config]")
+    contents.push("<details><summary> Legacy Config </summary>")
     contents.push("")
     contents.push(".eslintrc.*:")
     contents.push("")
@@ -151,6 +140,8 @@ export default [
     "extends": ["plugin:es-x/${configName}"],
 }`)
     contents.push("```")
+    contents.push("")
+    contents.push("</details>")
     contents.push("")
 }
 
