@@ -28,44 +28,30 @@ jobs:
       matrix:
         include:
           - eslint: 9
-            node: 20
+            node: 22
             os: ubuntu-latest
           # On other platforms
           - eslint: 9
-            node: 20
+            node: 22
             os: windows-latest
           - eslint: 9
-            node: 20
+            node: 22
             os: macos-latest
           # On other Node.js versions
-          - eslint: 8
-            node: 19
-            os: ubuntu-latest
-            tseslint: 7
           - eslint: 9
-            node: 18
+            node: 20
             os: ubuntu-latest
-          - eslint: 8
-            node: 16
+          - eslint: 9
+            node: 24
             os: ubuntu-latest
-            tseslint: 7
-          - eslint: 8
-            node: 17
-            os: ubuntu-latest
-            tseslint: 5
-          - eslint: 8
-            node: 14
-            os: ubuntu-latest
-            tseslint: 5
           # On old ESLint versions
-          - eslint: 8.0.0
-            node: 18
+          - eslint: 8
+            node: 22
             os: ubuntu-latest
           # On the minimum supported ESLint/Node.js version
           - eslint: 8.0.0
-            node: 14.18.0
+            node: 20.19.0
             os: ubuntu-latest
-            tseslint: 5
 
     runs-on: ${{ matrix.os }}
     steps:
