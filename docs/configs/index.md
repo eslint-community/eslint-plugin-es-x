@@ -1315,6 +1315,3 @@ export default [
 ```
 
 </details>
-
-[Config (Flat Config)]: https://eslint.org/docs/latest/use/configure/configuration-files
-[Legacy Config]: https://eslint.org/docs/latest/use/configure/configuration-files-deprecated

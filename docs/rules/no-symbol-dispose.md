@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-symbol-dispose"
 description: "disallow the `Symbol.dispose` property"
+since: "v9.0.0"
 ---
 
 # es-x/no-symbol-dispose
 > disallow the `Symbol.dispose` property
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-explicit-resource-management] and [no-new-in-esnext]
 
 This rule reports ES2026 [`Symbol.dispose` property](https://github.com/tc39/proposal-explicit-resource-management) as errors.
@@ -45,6 +45,10 @@ This rule has an option.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.0.0.
 
 ## 📚 References
 
