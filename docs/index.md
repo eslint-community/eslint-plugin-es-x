@@ -104,9 +104,9 @@ This plugin never reports prototype methods by default. Because it's hard to kno
 If you configured the `aggressive` mode, this plugin reports prototype methods even if the rules couldn't know the type of objects.
 For example:
 
-```json
+```js
 {
-    "plugins": ["es-x"],
+    "plugins": { "es-x": pluginESx },
     "rules": {
         "es-x/no-string-prototype-codepointat": "error"
     },
@@ -121,9 +121,9 @@ For example:
 If using this plugin and TypeScript, this plugin reports prototype methods by default because we can easily know types.
 For example:
 
-```json
+```js
 {
-    "plugins": ["es-x"],
+    "plugins": { "es-x": pluginESx },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "project": "tsconfig.json"
@@ -164,9 +164,9 @@ function trimEnd(str) {
 If you configured the `allowTestedProperty` mode, this plugin will allow the use of tested properties.
 For example:
 
-```json
+```js
 {
-    "plugins": ["es-x"],
+    "plugins": { "es-x": pluginESx },
     "rules": {
         "es-x/no-string-prototype-trimstart-trimend": "error",
         "es-x/no-string-prototype-trimleft-trimright": "error"
