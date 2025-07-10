@@ -1,21 +1,13 @@
 "use strict"
 
-const RuleTester = require("../../tester")
 const path = require("path")
 const assert = require("assert")
 const plugin = require("../../..")
-const { getESLint } = require("eslint-compat-utils/eslint")
-const ESLint = getESLint()
+const { ESLint } = require("eslint")
 
 // -----------------------------------------------------------------------------
 // Tests
 // -----------------------------------------------------------------------------
-
-if (!RuleTester.isSupported(2019)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of define-regexp-handler.")
-    return
-}
 
 const TEST_CWD = path.join(__dirname, "../fixtures/integrations/eslint-plugin")
 

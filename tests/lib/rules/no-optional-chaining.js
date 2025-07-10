@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-optional-chaining.js")
 
-if (!RuleTester.isSupported(2020)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-optional-chaining.")
-    return
-}
-
 new RuleTester().run("no-optional-chaining", rule, {
     valid: ["var x = a.b", "var x = a[b]", "foo()"],
     invalid: [

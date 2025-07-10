@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-dynamic-import.js")
 
-if (!RuleTester.isSupported(2020)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-dynamic-import.")
-    return
-}
-
 new RuleTester().run("no-dynamic-import", rule, {
     valid: [
         {

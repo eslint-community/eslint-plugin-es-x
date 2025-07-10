@@ -13,11 +13,6 @@ if (semver.lt(RuleTester.eslintVersion, "8.0.0")) {
     console.log("Skip the tests of no-regexp-unicode-property-escapes-2021.")
     return
 }
-if (!RuleTester.isSupported(2021)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-regexp-unicode-property-escapes-2021.")
-    return
-}
 
 new RuleTester().run("no-regexp-unicode-property-escapes-2021", rule, {
     valid: [

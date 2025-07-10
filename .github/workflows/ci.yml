@@ -44,12 +44,8 @@ jobs:
           - eslint: 9
             node: 24
             os: ubuntu-latest
-          # On old ESLint versions
-          - eslint: 8
-            node: 22
-            os: ubuntu-latest
           # On the minimum supported ESLint/Node.js version
-          - eslint: 8.0.0
+          - eslint: 9.29.0
             node: 20.19.0
             os: ubuntu-latest
 

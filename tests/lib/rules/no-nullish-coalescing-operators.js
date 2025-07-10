@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-nullish-coalescing-operators.js")
 
-if (!RuleTester.isSupported(2020)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-nullish-coalescing-operators.")
-    return
-}
-
 new RuleTester().run("no-nullish-coalescing-operators", rule, {
     valid: ["a ? b : c", "a && b", "a || b"],
     invalid: [

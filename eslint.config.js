@@ -26,22 +26,22 @@ const config = [
                 {
                     object: "context",
                     property: "getSourceCode",
-                    message: "Use eslint-compat-utils",
+                    message: "Use context.sourceCode",
                 },
                 {
                     object: "context",
                     property: "getFilename",
-                    message: "Use eslint-compat-utils",
+                    message: "Use context.filename",
                 },
                 {
                     object: "context",
                     property: "getPhysicalFilename",
-                    message: "Use eslint-compat-utils",
+                    message: "Use context.physicalFilename",
                 },
                 {
                     object: "context",
                     property: "getCwd",
-                    message: "Use eslint-compat-utils",
+                    message: "Use context.cwd",
                 },
                 {
                     object: "context",

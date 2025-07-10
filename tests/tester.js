@@ -5,22 +5,15 @@
 "use strict"
 
 const { Linter } = require("eslint")
-const { getRuleTester } = require("eslint-compat-utils/rule-tester")
+const { RuleTester } = require("eslint")
 const { builtin } = require("globals")
 const semver = require("semver")
-const RuleTester = getRuleTester()
 
 const eslintVersion = new Linter().version
 const ecmaVersion =
     /*eslint-disable prettier/prettier */
-    semver.gte(eslintVersion, "9.6.0") ? 2025 :
-    semver.gte(eslintVersion, "8.44.0") ? 2024 :
-    semver.gte(eslintVersion, "8.23.0") ? 2023 :
-    semver.gte(eslintVersion, "8.0.0") ? 2022 :
-    semver.gte(eslintVersion, "7.8.0") ? 2021 :
-    semver.gte(eslintVersion, "6.2.0") ? 2020 :
-    semver.gte(eslintVersion, "5.0.0") ? 2019 :
-    2018
+    semver.gte(eslintVersion, "9.29.0") ? 2026 :
+    2025
     /*eslint-enable prettier/prettier */
 
 //eslint-disable-next-line no-console

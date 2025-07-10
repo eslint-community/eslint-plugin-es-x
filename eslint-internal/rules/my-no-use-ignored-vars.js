@@ -4,8 +4,6 @@
  */
 "use strict"
 
-const { getSourceCode } = require("eslint-compat-utils")
-
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
@@ -30,7 +28,7 @@ module.exports = {
     },
 
     create(context) {
-        const sourceCode = getSourceCode(context)
+        const sourceCode = context.sourceCode
         const ignorePattern =
             context.options[0] != null
                 ? new RegExp(context.options[0], "u")

@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-numeric-separators.js")
 
-if (!RuleTester.isSupported(2021)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-numeric-separators.")
-    return
-}
-
 new RuleTester().run("no-numeric-separators", rule, {
     valid: [
         "123456",

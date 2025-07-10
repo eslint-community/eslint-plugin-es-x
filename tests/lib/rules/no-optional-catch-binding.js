@@ -7,12 +7,6 @@
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-optional-catch-binding.js")
 
-if (!RuleTester.isSupported(2019)) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-optional-catch-binding.")
-    return
-}
-
 new RuleTester().run("no-optional-catch-binding", rule, {
     valid: ["try {} catch (err) {}"],
     invalid: [
