@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-symbol-matchall"
 description: "disallow the `Symbol.matchAll` property"
+since: "v9.0.0"
 ---
 
 # es-x/no-symbol-matchall
 > disallow the `Symbol.matchAll` property
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-es2020], [no-string-matchall], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], [restrict-to-es2016], [restrict-to-es2017], [restrict-to-es2018], and [restrict-to-es2019]
 
 This rule reports ES2020 [`Symbol.matchAll` property](https://github.com/tc39/proposal-string-matchall) as errors.
@@ -45,6 +45,10 @@ This rule has an option.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.0.0.
 
 ## 📚 References
 
