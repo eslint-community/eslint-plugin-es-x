@@ -679,6 +679,8 @@ function* getAllProperties(object) {
             continue
         }
         if (
+            // https://github.com/tc39/proposal-atomics-microwait
+            (key === "pause" && object === Atomics) ||
             // https://github.com/tc39/proposal-error-capturestacktrace
             (key === "captureStackTrace" && object === Error) ||
             // https://github.com/tc39/proposal-json-parse-with-source
