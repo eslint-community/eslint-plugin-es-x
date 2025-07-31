@@ -711,7 +711,24 @@ function* getAllProperties(object) {
             // https://github.com/tc39/proposal-error-capturestacktrace
             (key === "captureStackTrace" && object === Error) ||
             // https://github.com/tc39/proposal-json-parse-with-source
-            ((key === "rawJSON" || key === "isRawJSON") && object === JSON)
+            ((key === "rawJSON" || key === "isRawJSON") && object === JSON) ||
+            // https://github.com/tc39/proposal-intl-locale-info
+            ((key === "firstDayOfWeek" ||
+                key === "getCalendars" ||
+                key === "getCollations" ||
+                key === "getHourCycles" ||
+                key === "getNumberingSystems" ||
+                key === "getTimeZones" ||
+                key === "getTextInfo" ||
+                key === "getWeekInfo" ||
+                key === "calendars" ||
+                key === "collations" ||
+                key === "hourCycles" ||
+                key === "numberingSystems" ||
+                key === "textInfo" ||
+                key === "timeZones" ||
+                key === "weekInfo") &&
+                object === Intl.Locale.prototype)
         ) {
             // Skip ESNext property
             continue

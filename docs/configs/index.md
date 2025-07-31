@@ -1117,6 +1117,32 @@ export default [
 
 </details>
 
+## no-json-parse-with-source
+
+disallow proposal ES2026 [JSON.parse source text access](https://github.com/tc39/proposal-json-parse-with-source)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This configs includes rules for [es-x/no-json-israwjson](../rules/no-json-israwjson.md), [es-x/no-json-parse-reviver-context-parameter](../rules/no-json-parse-reviver-context-parameter.md), and [es-x/no-json-rawjson](../rules/no-json-rawjson.md).
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-json-parse-with-source']
+]
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-json-parse-with-source"],
+}
+```
+
+</details>
+
 ## no-float16array
 
 disallow proposal ES2025 [Float16Array](https://github.com/tc39/proposal-float16array)
