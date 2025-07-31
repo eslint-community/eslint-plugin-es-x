@@ -685,8 +685,6 @@ function* getAllProperties(object) {
             (key === "pause" && object === Atomics) ||
             // https://github.com/tc39/proposal-error-capturestacktrace
             (key === "captureStackTrace" && object === Error) ||
-            // https://github.com/tc39/proposal-json-parse-with-source
-            ((key === "rawJSON" || key === "isRawJSON") && object === JSON) ||
             // https://github.com/tc39/proposal-intl-locale-info
             ((key === "firstDayOfWeek" ||
                 key === "getCalendars" ||
