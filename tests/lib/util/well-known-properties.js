@@ -205,6 +205,22 @@ describe("well-known-properties", () => {
             )
         }
     })
+    it("should have Uint8Array static properties", () => {
+        for (const element of getAllProperties(Uint8Array)) {
+            assert.ok(
+                wellKnownProperties.uint8ArrayProperties.has(element),
+                `TypedArray.${String(element)} should be a well-known property`,
+            )
+        }
+    })
+    it("should have Uint8Array instance properties", () => {
+        for (const element of getAllProperties(new Uint8Array())) {
+            assert.ok(
+                wellKnownProperties.uint8ArrayPrototypeProperties.has(element),
+                `TypedArray.prototype.${String(element)} should be a well-known property`,
+            )
+        }
+    })
     it("should have Map static properties", () => {
         for (const element of getAllProperties(Map)) {
             assert.ok(
