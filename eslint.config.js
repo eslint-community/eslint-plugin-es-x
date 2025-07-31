@@ -16,6 +16,15 @@ const config = [
         plugins: {
             my: require("./eslint-internal/my-plugin.js"),
         },
+        languageOptions: {
+            globals: {
+                WeakRef: "readonly",
+                FinalizationRegistry: "readonly",
+                Iterator: "readonly",
+                DisposableStack: "readonly",
+                AsyncDisposableStack: "readonly",
+            },
+        },
     },
     ...require("./eslint-internal/config/es2020.js"),
     ...require("./eslint-internal/config/+eslint-plugin.js"),
