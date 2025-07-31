@@ -209,7 +209,7 @@ describe("well-known-properties", () => {
         for (const element of getAllProperties(Uint8Array)) {
             assert.ok(
                 wellKnownProperties.uint8ArrayProperties.has(element),
-                `TypedArray.${String(element)} should be a well-known property`,
+                `Uint8Array.${String(element)} should be a well-known property`,
             )
         }
     })
@@ -217,7 +217,7 @@ describe("well-known-properties", () => {
         for (const element of getAllProperties(new Uint8Array())) {
             assert.ok(
                 wellKnownProperties.uint8ArrayPrototypeProperties.has(element),
-                `TypedArray.prototype.${String(element)} should be a well-known property`,
+                `Uint8Array.prototype.${String(element)} should be a well-known property`,
             )
         }
     })
