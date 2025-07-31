@@ -391,42 +391,50 @@ describe("well-known-properties", () => {
             )
         }
     })
-    it("should have DisposableStack static properties", () => {
-        for (const element of getAllProperties(DisposableStack)) {
-            assert.ok(
-                wellKnownProperties.disposableStackProperties.has(element),
-                `DisposableStack.${String(element)} should be a well-known property`,
-            )
-        }
-    })
-    it("should have DisposableStack instance properties", () => {
-        for (const element of getAllProperties(new DisposableStack())) {
-            assert.ok(
-                wellKnownProperties.disposableStackPrototypeProperties.has(
-                    element,
-                ),
-                `DisposableStack.prototype.${String(element)} should be a well-known property`,
-            )
-        }
-    })
-    it("should have AsyncDisposableStack static properties", () => {
-        for (const element of getAllProperties(AsyncDisposableStack)) {
-            assert.ok(
-                wellKnownProperties.asyncDisposableStackProperties.has(element),
-                `AsyncDisposableStack.${String(element)} should be a well-known property`,
-            )
-        }
-    })
-    it("should have AsyncDisposableStack instance properties", () => {
-        for (const element of getAllProperties(new AsyncDisposableStack())) {
-            assert.ok(
-                wellKnownProperties.asyncDisposableStackPrototypeProperties.has(
-                    element,
-                ),
-                `AsyncDisposableStack.prototype.${String(element)} should be a well-known property`,
-            )
-        }
-    })
+    if (globalThis.DisposableStack) {
+        it("should have DisposableStack static properties", () => {
+            for (const element of getAllProperties(DisposableStack)) {
+                assert.ok(
+                    wellKnownProperties.disposableStackProperties.has(element),
+                    `DisposableStack.${String(element)} should be a well-known property`,
+                )
+            }
+        })
+        it("should have DisposableStack instance properties", () => {
+            for (const element of getAllProperties(new DisposableStack())) {
+                assert.ok(
+                    wellKnownProperties.disposableStackPrototypeProperties.has(
+                        element,
+                    ),
+                    `DisposableStack.prototype.${String(element)} should be a well-known property`,
+                )
+            }
+        })
+    }
+    if (globalThis.AsyncDisposableStack) {
+        it("should have AsyncDisposableStack static properties", () => {
+            for (const element of getAllProperties(AsyncDisposableStack)) {
+                assert.ok(
+                    wellKnownProperties.asyncDisposableStackProperties.has(
+                        element,
+                    ),
+                    `AsyncDisposableStack.${String(element)} should be a well-known property`,
+                )
+            }
+        })
+        it("should have AsyncDisposableStack instance properties", () => {
+            for (const element of getAllProperties(
+                new AsyncDisposableStack(),
+            )) {
+                assert.ok(
+                    wellKnownProperties.asyncDisposableStackPrototypeProperties.has(
+                        element,
+                    ),
+                    `AsyncDisposableStack.prototype.${String(element)} should be a well-known property`,
+                )
+            }
+        })
+    }
     it("should have Promise static properties", () => {
         for (const element of getAllProperties(Promise)) {
             assert.ok(
@@ -525,24 +533,28 @@ describe("well-known-properties", () => {
             )
         }
     })
-    it("should have Intl.DurationFormat static properties", () => {
-        for (const element of getAllProperties(Intl.DurationFormat)) {
-            assert.ok(
-                wellKnownProperties.intlDurationFormatProperties.has(element),
-                `Intl.DurationFormat.${String(element)} should be a well-known property`,
-            )
-        }
-    })
-    it("should have Intl.DurationFormat instance properties", () => {
-        for (const element of getAllProperties(new Intl.DurationFormat())) {
-            assert.ok(
-                wellKnownProperties.intlDurationFormatPrototypeProperties.has(
-                    element,
-                ),
-                `Intl.DurationFormat.prototype.${String(element)} should be a well-known property`,
-            )
-        }
-    })
+    if (Intl.DurationFormat) {
+        it("should have Intl.DurationFormat static properties", () => {
+            for (const element of getAllProperties(Intl.DurationFormat)) {
+                assert.ok(
+                    wellKnownProperties.intlDurationFormatProperties.has(
+                        element,
+                    ),
+                    `Intl.DurationFormat.${String(element)} should be a well-known property`,
+                )
+            }
+        })
+        it("should have Intl.DurationFormat instance properties", () => {
+            for (const element of getAllProperties(new Intl.DurationFormat())) {
+                assert.ok(
+                    wellKnownProperties.intlDurationFormatPrototypeProperties.has(
+                        element,
+                    ),
+                    `Intl.DurationFormat.prototype.${String(element)} should be a well-known property`,
+                )
+            }
+        })
+    }
     it("should have Intl.ListFormat static properties", () => {
         for (const element of getAllProperties(Intl.ListFormat)) {
             assert.ok(
