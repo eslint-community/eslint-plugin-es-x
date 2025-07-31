@@ -382,19 +382,17 @@ describe("well-known-properties", () => {
                 )
             }
         })
-        it("should have Iterator instance properties", () => {
-            for (const element of getAllProperties(
-                Object.getPrototypeOf([].values()),
-            )) {
-                assert.ok(
-                    wellKnownProperties.iteratorPrototypeProperties.has(
-                        element,
-                    ),
-                    `Iterator.prototype.${String(element)} should be a well-known property`,
-                )
-            }
-        })
     }
+    it("should have Iterator instance properties", () => {
+        for (const element of getAllProperties(
+            Object.getPrototypeOf([].values()),
+        )) {
+            assert.ok(
+                wellKnownProperties.iteratorPrototypeProperties.has(element),
+                `Iterator.prototype.${String(element)} should be a well-known property`,
+            )
+        }
+    })
     if (globalThis.DisposableStack) {
         it("should have DisposableStack static properties", () => {
             for (const element of getAllProperties(DisposableStack)) {
