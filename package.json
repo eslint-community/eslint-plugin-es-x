@@ -69,7 +69,7 @@
     "version": "npm run generate:version && git add .",
     "postversion": "git push && git push --tags",
     "watch": "mocha tests/**/*.{js,mjs} --reporter progress --watch --growl",
-    "generate:version": "env-cmd -e version run-s update:*",
+    "generate:version": "env-cmd -e version -- run-s update:*",
     "changeset:version": "changeset version && npm run generate:version && git add --all",
     "changeset:publish": "changeset publish"
   },
