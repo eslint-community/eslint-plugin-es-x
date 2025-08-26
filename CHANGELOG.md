@@ -1,5 +1,25 @@
 # eslint-plugin-es-x
 
+## 9.1.0
+
+### Minor Changes
+
+- Add `no-arraybuffer-base64` config ([#249](https://github.com/eslint-community/eslint-plugin-es-x/pull/249))
+
+- Add `es-x/no-uint8array-frombase64` rule ([#249](https://github.com/eslint-community/eslint-plugin-es-x/pull/249))
+
+- Add `es-x/no-uint8array-fromhex` rule ([#249](https://github.com/eslint-community/eslint-plugin-es-x/pull/249))
+
+- Add `es-x/no-uint8array-prototype-setfrombase64` rule ([#249](https://github.com/eslint-community/eslint-plugin-es-x/pull/249))
+
+- Add `es-x/no-uint8array-prototype-setfromhex` rule ([#249](https://github.com/eslint-community/eslint-plugin-es-x/pull/249))
+
+- Add `es-x/no-uint8array-prototype-tobase64` rule ([#249](https://github.com/eslint-community/eslint-plugin-es-x/pull/249))
+
+- Add `es-x/no-uint8array-prototype-tohex` rule ([#249](https://github.com/eslint-community/eslint-plugin-es-x/pull/249))
+
+- Add `es-x/no-math-sumprecise` rule ([#266](https://github.com/eslint-community/eslint-plugin-es-x/pull/266))
+
 ## 9.0.0
 
 ### Major Changes
