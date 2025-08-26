@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-uint8array-prototype-setfrombase64"
 description: "disallow the `Uint8Array.prototype.setFromBase64` method"
+since: "v9.1.0"
 ---
 
 # es-x/no-uint8array-prototype-setfrombase64
 > disallow the `Uint8Array.prototype.setFromBase64` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-arraybuffer-base64] and [no-new-in-esnext]
 
 This rule reports ES2026 [`Uint8Array.prototype.setFromBase64` method](https://github.com/tc39/proposal-arraybuffer-base64) as errors.
@@ -54,6 +54,10 @@ This is prior to the `settings['es-x'].aggressive` setting.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.1.0.
 
 ## 📚 References
 
