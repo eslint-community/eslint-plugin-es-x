@@ -1015,6 +1015,32 @@ export default [
 
 </details>
 
+## no-arraybuffer-base64
+
+disallow proposal ES2026 [Uint8Array to/from Base64 and Hex](https://github.com/tc39/proposal-arraybuffer-base64)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This configs includes rules for [es-x/no-uint8array-frombase64](../rules/no-uint8array-frombase64.md), [es-x/no-uint8array-fromhex](../rules/no-uint8array-fromhex.md), [es-x/no-uint8array-prototype-setfrombase64](../rules/no-uint8array-prototype-setfrombase64.md), [es-x/no-uint8array-prototype-setfromhex](../rules/no-uint8array-prototype-setfromhex.md), [es-x/no-uint8array-prototype-tobase64](../rules/no-uint8array-prototype-tobase64.md), and [es-x/no-uint8array-prototype-tohex](../rules/no-uint8array-prototype-tohex.md).
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-arraybuffer-base64']
+]
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-arraybuffer-base64"],
+}
+```
+
+</details>
+
 ## no-explicit-resource-management
 
 disallow proposal ES2026 [Explicit Resource Management](https://github.com/tc39/proposal-explicit-resource-management)\
