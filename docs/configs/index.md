@@ -26,6 +26,30 @@ export default [
 
 </details>
 
+## no-new-in-esnext-intl-api
+
+disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-new-in-esnext-intl-api']
+]
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-new-in-esnext-intl-api"],
+}
+```
+
+</details>
+
 ## no-new-in-es2025
 
 disallow new stuff in ES2025.
@@ -1062,6 +1086,32 @@ export default [
 ```json
 {
     "extends": ["plugin:es-x/no-explicit-resource-management"],
+}
+```
+
+</details>
+
+## no-intl-locale-info
+
+disallow proposal ES2026 Intl API [Intl Locale Info API](https://github.com/tc39/proposal-intl-locale-info)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This configs includes rules for [es-x/no-intl-locale-prototype-firstdayofweek](../rules/no-intl-locale-prototype-firstdayofweek.md), [es-x/no-intl-locale-prototype-getcalendars](../rules/no-intl-locale-prototype-getcalendars.md), [es-x/no-intl-locale-prototype-getcollations](../rules/no-intl-locale-prototype-getcollations.md), [es-x/no-intl-locale-prototype-gethourcycles](../rules/no-intl-locale-prototype-gethourcycles.md), [es-x/no-intl-locale-prototype-getnumberingsystems](../rules/no-intl-locale-prototype-getnumberingsystems.md), [es-x/no-intl-locale-prototype-gettextinfo](../rules/no-intl-locale-prototype-gettextinfo.md), [es-x/no-intl-locale-prototype-gettimezones](../rules/no-intl-locale-prototype-gettimezones.md), and [es-x/no-intl-locale-prototype-getweekinfo](../rules/no-intl-locale-prototype-getweekinfo.md).
+
+```js
+import pluginESx from "eslint-plugin-es-x"
+export default [
+    pluginESx.configs['flat/no-intl-locale-info']
+]
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-intl-locale-info"],
 }
 ```
 
