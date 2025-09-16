@@ -21,6 +21,7 @@ main(
 )
 
 // main
+// eslint-disable-next-line complexity
 async function main(ruleId) {
     if (ruleId == null) {
         logger.error("Usage: npm run new <RuleID>")
@@ -52,10 +53,10 @@ async function main(ruleId) {
                     value: "static-properties",
                     label: "The rule forbids the use of static properties.",
                 },
-                // {
-                //     value: "prototype-properties",
-                //     label: "The rule forbids the use of prototype properties.",
-                // },
+                {
+                    value: "prototype-properties",
+                    label: "The rule forbids the use of prototype properties.",
+                },
                 {
                     value: "nonstandard-static-properties",
                     label: "The rule forbids the use of non-standard static properties.",
@@ -77,6 +78,7 @@ async function main(ruleId) {
         kind,
         object: "",
         properties: /** @type {string[]} */ [],
+        link: "",
     }
 
     if (
@@ -86,22 +88,31 @@ async function main(ruleId) {
         kind === "nonstandard-static-properties" ||
         kind === "nonstandard-prototype-properties"
     ) {
+        const checkTarget =
+            kind === "global-object" ||
+            kind === "static-properties" ||
+            kind === "nonstandard-static-properties"
+                ? "global object"
+                : "instance"
         resourceOptions.object = await unwrapPrompt(
             prompts.text({
-                message: "What is the global object that the rule checks?",
+                message: `What is the ${checkTarget} that the rule checks?`,
                 placeholder: "e.g. Set, Map, Math",
                 validate(value) {
                     if (value.trim().length === 0) {
-                        return "The global object name must not be empty."
+                        return `The ${checkTarget} name must not be empty.`
                     }
                     return undefined
                 },
             }),
         )
+        resourceOptions.object =
+            resourceOptions.object[0].toUpperCase() +
+            resourceOptions.object.slice(1)
     }
 
     if (kind === "static-properties" || kind === "prototype-properties") {
-        const promptObject = globalThis[resourceOptions.object]
+        const promptObject = getGlobalObject(resourceOptions.object)
         const promptProperties = promptObject
             ? kind === "static-properties"
                 ? Object.getOwnPropertyNames(promptObject)
@@ -135,11 +146,31 @@ async function main(ruleId) {
     const BUILDERS = {
         "global-object": buildGlobalObjectRuleResources,
         "static-properties": buildStaticPropertiesRuleResources,
+        "prototype-properties": buildPrototypePropertiesRuleResources,
         "nonstandard-static-properties":
             buildNonStandardStaticPropertiesRuleResources,
         "nonstandard-prototype-properties":
             buildNonStandardPrototypePropertiesRuleResources,
         default: buildDefaultResources,
+    }
+
+    if (
+        kind === "global-object" ||
+        kind === "static-properties" ||
+        kind === "prototype-properties"
+    ) {
+        resourceOptions.link = await unwrapPrompt(
+            prompts.text({
+                message: "The link that describes the API",
+                placeholder: "e.g. https://github.com/tc39/proposal-x",
+                validate(value) {
+                    if (value.trim().length === 0) {
+                        return "The link must not be empty."
+                    }
+                    return undefined
+                },
+            }),
+        )
     }
 
     const resources =
@@ -190,7 +221,8 @@ async function unwrapPrompt(maybeCancelPromise) {
     return result
 }
 
-function buildGlobalObjectRuleResources({ ruleId, object }) {
+function buildGlobalObjectRuleResources({ ruleId, object, link }) {
+    const intl = object.startsWith("Intl.")
     return {
         rule: `"use strict"
 
@@ -200,13 +232,13 @@ module.exports = {
     meta: {
         docs: {
             description: "disallow the \`${object}\` class.",
-            category: "ES${maxESVersion}",
+            category: "ES${maxESVersion}${intl ? "-Intl-API" : ""}",
             recommended: false,
             url: "",
         },
         fixable: null,
         messages: {
-            forbidden: "ES${maxESVersion} '{{name}}' class is forbidden.",
+            forbidden: "ES${maxESVersion}${intl ? " Intl API" : ""} '{{name}}' class is forbidden.",
         },
         schema: [],
         type: "problem",
@@ -226,11 +258,11 @@ new RuleTester().run("${ruleId}", rule, {
     invalid: [
         {
             code: "${object}",
-            errors: ["ES${maxESVersion} '${object}' class is forbidden."],
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}' class is forbidden."],
         },
         {
             code: "function f() { ${object} }",
-            errors: ["ES${maxESVersion} '${object}' class is forbidden."],
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}' class is forbidden."],
         },
     ],
 })
@@ -238,7 +270,7 @@ new RuleTester().run("${ruleId}", rule, {
         doc: `# es-x/${ruleId}
 > 
 
-This rule reports ES${maxESVersion} [\`${object}\` class]($$LINK$$) as errors.
+This rule reports ES${maxESVersion}${intl ? " Intl API" : ""} [\`${object}\` class](${link}) as errors.
 
 ## 💡 Examples
 
@@ -256,8 +288,14 @@ let ${object.toLowerCase()} = new ${object}()
     }
 }
 
-function buildStaticPropertiesRuleResources({ ruleId, object, properties }) {
-    const promptObject = globalThis[object]
+function buildStaticPropertiesRuleResources({
+    ruleId,
+    object,
+    properties,
+    link,
+}) {
+    const intl = object.startsWith("Intl.")
+    const promptObject = getGlobalObject(object)
     const exampleProperty = promptObject
         ? Object.getOwnPropertyNames(promptObject)[0]
         : "example"
@@ -292,13 +330,13 @@ module.exports = {
     meta: {
         docs: {
             description: "disallow the \`${object}.${propertiesString}\` ${kind[0]}",
-            category: "ES${maxESVersion}",
+            category: "ES${maxESVersion}${intl ? "-Intl-API" : ""}",
             recommended: false,
             url: "",
         },
         fixable: null,
         messages: {
-            forbidden: "ES${maxESVersion} '{{name}}' ${kind[0]} is forbidden.",
+            forbidden: "ES${maxESVersion}${intl ? " Intl API" : ""} '{{name}}' ${kind[0]} is forbidden.",
         },
         schema: [
             {
@@ -334,7 +372,7 @@ new RuleTester().run("${ruleId}", rule, {
             .map(
                 (p) => `{
             code: "${object}.${p}",
-            errors: ["ES${maxESVersion} '${object}.${p}' ${kind[0]} is forbidden."],
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}.${p}' ${kind[0]} is forbidden."],
         }`,
             )
             .join(",\n")}
@@ -344,7 +382,7 @@ new RuleTester().run("${ruleId}", rule, {
         doc: `# es-x/${ruleId}
 > 
 
-This rule reports ES${maxESVersion} [${propertiesName}]($$LINK$$) as errors.
+This rule reports ES${maxESVersion}${intl ? " Intl API" : ""} [${propertiesName}](${link}) as errors.
 
 ## 💡 Examples
 
@@ -375,6 +413,276 @@ This rule has an option.
   }
 }
 \`\`\`
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
+`,
+    }
+}
+
+function buildPrototypePropertiesRuleResources({
+    ruleId,
+    object,
+    properties,
+    link,
+}) {
+    const intl = object.startsWith("Intl.")
+    const promptInstancePrototype = getGlobalObject(object)?.prototype
+    let propertyType = "undefined"
+    try {
+        propertyType = promptInstancePrototype
+            ? typeof promptInstancePrototype[properties[0]]
+            : "function"
+    } catch {
+        // ignore
+    }
+    const exampleProperty = promptInstancePrototype
+        ? Object.getOwnPropertyNames(promptInstancePrototype).find((nm) => {
+              if (nm === "constructor") {
+                  return false
+              }
+              if (propertyType === "function") {
+                  try {
+                      return typeof promptInstancePrototype[nm] === "function"
+                  } catch {
+                      return false
+                  }
+              }
+              return true
+          })
+        : "example"
+    const kind =
+        propertyType === "function"
+            ? ["method", "methods"]
+            : ["property", "properties"]
+    const propertiesString =
+        properties.length > 1 ? `{${properties.join(",")}}` : properties[0]
+    let propertiesName = `\`${object}.prototype.${properties[properties.length - 1]}\` ${kind[0]}`
+    if (properties.length > 1) {
+        propertiesName = `${properties
+            .slice(0, -1)
+            .map((p) => `\`${object}.prototype.${p}\``)
+            .join(
+                ", ",
+            )}, and \`${object}.prototype.${properties[properties.length - 1]}\` ${kind[1]}`
+    }
+
+    return {
+        rule: `"use strict"
+
+const {
+    definePrototypePropertiesHandler,
+} = require("../util/define-prototype-properties-handler")
+
+module.exports = {
+    meta: {
+        docs: {
+            description: "disallow the \`${object}.prototype.${propertiesString}\` ${kind[0]}",
+            category: "ES${maxESVersion}${intl ? "-Intl-API" : ""}",
+            recommended: false,
+            url: "",
+        },
+        fixable: null,
+        messages: {
+            forbidden: "ES${maxESVersion}${intl ? " Intl API" : ""} '{{name}}' ${kind[0]} is forbidden.",
+        },
+        schema: [
+            {
+                type: "object",
+                properties: {
+                    aggressive: { type: "boolean" },
+                    allowTestedProperty: { type: "boolean" },
+                },
+                additionalProperties: false,
+            },
+        ],
+        type: "problem",
+    },
+    create(context) {
+        return definePrototypePropertiesHandler(context, {
+            "${object}": { ${properties.map((p) => `"${p}": "${propertyType}"`).join(",\n")} },
+        })
+    },
+}
+`,
+        test: `"use strict"
+
+const path = require("path")
+const RuleTester = require("../../tester")
+const rule = require("../../../lib/rules/${ruleId}.js")
+const ruleId = "${ruleId}"
+
+new RuleTester().run(ruleId, rule, {
+    valid: [
+        ${properties.map((p) => `"${p}${propertyType === "function" ? "()" : ""}"`).join(",\n")},
+        ${properties.map((p) => `"foo.${p}${propertyType === "function" ? "()" : ""}"`).join(",\n")},
+        ${properties.map((p) => `{ code: "${p}${propertyType === "function" ? "()" : ""}", settings: { "es-x": { aggressive: true } } }`).join(",\n")},
+        { code: "foo.${exampleProperty}${propertyType === "function" ? "()" : ""}", settings: { "es-x": { aggressive: true } } },
+        ${properties
+            .map(
+                (p) => `{
+            code: "foo.${p}${propertyType === "function" ? "()" : ""}",
+            options: [{ aggressive: false }],
+            settings: { "es-x": { aggressive: true } }
+        }`,
+            )
+            .join(",\n")},
+    ],
+    invalid: [
+        ${properties
+            .map(
+                (p) => `{
+            code: "foo.${p}${propertyType === "function" ? "()" : ""}",
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}.prototype.${p}' ${kind[0]} is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        }`,
+            )
+            .join(",\n")},
+        ${properties
+            .map(
+                (p) => `{
+            code: "foo.${p}${propertyType === "function" ? "()" : ""}",
+            options: [{ aggressive: true }],
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}.prototype.${p}' ${kind[0]} is forbidden."],
+            settings: { "es-x": { aggressive: false } },
+        }`,
+            )
+            .join(",\n")},
+        ${properties
+            .map(
+                (p) => `{
+            code: "const foo = new ${object}(); foo.${p}${propertyType === "function" ? "()" : ""}",
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}.prototype.${p}' ${kind[0]} is forbidden."],
+        }`,
+            )
+            .join(",\n")},
+    ],
+})
+
+
+
+// -----------------------------------------------------------------------------
+// TypeScript
+// -----------------------------------------------------------------------------
+const parser = require("@typescript-eslint/parser")
+const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const project = "tsconfig.json"
+const filename = path.join(tsconfigRootDir, "test.ts")
+
+new RuleTester({
+    languageOptions: {
+        parser,
+        parserOptions: {
+            tsconfigRootDir,
+            project,
+            disallowAutomaticSingleRunInference: true,
+        },
+    },
+}).run(\`\${ruleId} TS Full Type Information\`, rule, {
+    valid: [
+        ${properties.map((p) => `{ filename, code: "${p}${propertyType === "function" ? "()" : ""}"}`).join(",\n")},
+        { filename, code: "foo.${exampleProperty}${propertyType === "function" ? "()" : ""}"},
+        ${properties.map((p) => `{ filename, code: "foo.${p}${propertyType === "function" ? "()" : ""}"}`).join(",\n")},
+        ${properties.map((p) => `{ filename, code: "let foo = {}; foo.${p}${propertyType === "function" ? "()" : ""}"}`).join(",\n")},
+        ${properties
+            .map(
+                (p) => `{
+            filename,
+            code: "${p}${propertyType === "function" ? "()" : ""}",
+            settings: { "es-x": { aggressive: true } },
+        }`,
+            )
+            .join(",\n")},
+        {
+            filename,
+            code: "foo.${exampleProperty}${propertyType === "function" ? "()" : ""}",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        ${properties
+            .map(
+                (p) => `{
+            filename,
+            code: "(new ${object}()).${p}${propertyType === "function" ? "()" : ""}",
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}.prototype.${p}' ${kind[0]} is forbidden."],
+        }`,
+            )
+            .join(",\n")},
+        ${properties
+            .map(
+                (p) => `{
+            filename,
+            code: "let foo = new ${object}(); foo.${p}${propertyType === "function" ? "()" : ""}",
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}.prototype.${p}' ${kind[0]} is forbidden."],
+        }`,
+            )
+            .join(",\n")},
+        ${properties
+            .map(
+                (p) => `{
+            filename,
+            code: "function f<T extends ${object}>(a: T) { a.${p}${propertyType === "function" ? "()" : ""} }",
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}.prototype.${p}' ${kind[0]} is forbidden."],
+        }`,
+            )
+            .join(",\n")},
+        ${properties
+            .map(
+                (p) => `{
+            filename,
+            code: "foo.${p}${propertyType === "function" ? "()" : ""}",
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}.prototype.${p}' ${kind[0]} is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        }`,
+            )
+            .join(",\n")},
+    ],
+})
+`,
+        doc: `# es-x/${ruleId}
+> 
+
+This rule reports ES${maxESVersion}${intl ? " Intl API" : ""} [${propertiesName}](${link}) as errors.
+
+## 💡 Examples
+
+⛔ Examples of **incorrect** code for this rule:
+
+<eslint-playground type="bad">
+
+\`\`\`js
+/*eslint es-x/${ruleId}: error */
+const foo = new ${object}();
+${properties.map((p) => `foo.${p}${propertyType === "function" ? "()" : ""};`).join("\n")}
+\`\`\`
+
+</eslint-playground>
+
+## 🔧 Options
+
+This rule has an option.
+
+\`\`\`jsonc
+{
+  "rules": {
+    "es-x/${ruleId}": [
+      "error",
+      {
+        "aggressive": false,
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
+\`\`\`
+
+### aggressive: boolean
+
+Configure the aggressive mode for only this rule.
+This is prior to the \`settings['es-x'].aggressive\` setting.
 
 ### allowTestedProperty: boolean
 
@@ -725,7 +1033,7 @@ module.exports = {
     meta: {
         docs: {
             description: "disallow ....",
-            category: "ES${maxESVersion}",
+            category: "ES${maxESVersion}${ruleId.startsWith("no-intl-") ? "-Intl-API" : ""}",
             recommended: false,
             url: "",
         },
@@ -783,4 +1091,15 @@ function camelCase(str) {
         ? str.replace(/[_.-](\w|$)/gu, (_, x) => x.toUpperCase())
         : str
     return `${base[0].toLowerCase()}${base.slice(1)}`
+}
+
+function getGlobalObject(object) {
+    let target = globalThis
+    for (const part of object.split(".")) {
+        if (target[part] == null) {
+            return null
+        }
+        target = target[part]
+    }
+    return target
 }

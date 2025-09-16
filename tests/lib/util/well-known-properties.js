@@ -691,7 +691,16 @@ function* getAllProperties(object) {
                 object === Function.prototype) ||
             (key === "stack" && object instanceof Error) ||
             ((key === "prepareStackTrace" || key === "stackTraceLimit") &&
-                object === Error)
+                object === Error) ||
+            // https://github.com/tc39/proposal-intl-locale-info/pull/67
+            ((key === "calendars" ||
+                key === "collations" ||
+                key === "hourCycles" ||
+                key === "numberingSystems" ||
+                key === "textInfo" ||
+                key === "timeZones" ||
+                key === "weekInfo") &&
+                object === Intl.Locale.prototype)
         ) {
             // Skip Non-standard property
             continue
@@ -702,24 +711,7 @@ function* getAllProperties(object) {
             // https://github.com/tc39/proposal-error-capturestacktrace
             (key === "captureStackTrace" && object === Error) ||
             // https://github.com/tc39/proposal-json-parse-with-source
-            ((key === "rawJSON" || key === "isRawJSON") && object === JSON) ||
-            // https://github.com/tc39/proposal-intl-locale-info
-            ((key === "firstDayOfWeek" ||
-                key === "getCalendars" ||
-                key === "getCollations" ||
-                key === "getHourCycles" ||
-                key === "getNumberingSystems" ||
-                key === "getTimeZones" ||
-                key === "getTextInfo" ||
-                key === "getWeekInfo" ||
-                key === "calendars" ||
-                key === "collations" ||
-                key === "hourCycles" ||
-                key === "numberingSystems" ||
-                key === "textInfo" ||
-                key === "timeZones" ||
-                key === "weekInfo") &&
-                object === Intl.Locale.prototype)
+            ((key === "rawJSON" || key === "isRawJSON") && object === JSON)
         ) {
             // Skip ESNext property
             continue
