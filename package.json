@@ -33,7 +33,7 @@
     "globals": "^16.2.0",
     "jsdom": "^27.0.0",
     "mocha": "^11.0.0",
-    "monaco-editor": "^0.53.0",
+    "monaco-editor": "^0.54.0",
     "npm-run-all2": "^8.0.0",
     "nyc": "^17.0.0",
     "opener": "^1.5.1",
