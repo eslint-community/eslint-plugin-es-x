@@ -29,6 +29,10 @@ module.exports = {
         title: "Import Attributes",
         link: "https://github.com/tc39/proposal-import-attributes",
     },
+    "intl-locale-info": {
+        title: "Intl Locale Info API",
+        link: "https://github.com/tc39/proposal-intl-locale-info",
+    },
     "intl-numberformat-v3": {
         title: "Intl.NumberFormat V3",
         link: "https://github.com/tc39/proposal-intl-numberformat-v3",
