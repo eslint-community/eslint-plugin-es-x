@@ -1,4 +1,9 @@
 /* globals MONACO_EDITOR_VERSION */
+
+function importFromCDN(path) {
+    return import(/* @vite-ignore */ path)
+}
+
 async function setupMonaco() {
     if (typeof window !== "undefined") {
         const monacoScript =
@@ -7,7 +12,9 @@ async function setupMonaco() {
                     script.src &&
                     script.src.includes("monaco") &&
                     script.src.includes("vs/loader"),
-            ) || (await appendMonacoEditorScript())
+            ) ||
+            // If the script tag that loads the Monaco editor is not found, insert the script tag.
+            (await appendMonacoEditorScript())
 
         // @ts-expect-error -- global Monaco's require
         window.require.config({
@@ -18,6 +25,53 @@ async function setupMonaco() {
     }
 }
 
+/** Load the Monaco editor. */
+async function loadMonacoFromEsmCdn() {
+    let error = new Error()
+    const urlList = [
+        {
+            script: `https://cdn.jsdelivr.net/npm/monaco-editor@${MONACO_EDITOR_VERSION}/+esm`,
+            style: `https://cdn.jsdelivr.net/npm/monaco-editor@${MONACO_EDITOR_VERSION}/min/vs/editor/editor.main.css`,
+        },
+        {
+            script: "https://cdn.jsdelivr.net/npm/monaco-editor/+esm",
+            style: "https://cdn.jsdelivr.net/npm/monaco-editor/min/vs/editor/editor.main.css",
+        },
+    ]
+    for (const url of urlList) {
+        try {
+            const result = await importFromCDN(url.script)
+
+            if (typeof document !== "undefined") {
+                const link = document.createElement("link")
+                link.rel = "stylesheet"
+                link.href = url.style
+                document.head.append(link)
+            }
+            return result
+        } catch (e) {
+            // eslint-disable-next-line no-console -- OK
+            console.warn(`Failed to retrieve resource from ${url}`)
+            error = e
+        }
+    }
+    throw error
+}
+
+async function loadModuleFromMonaco(moduleName) {
+    await setupMonaco()
+
+    return new Promise((resolve) => {
+        if (typeof window !== "undefined") {
+            // @ts-expect-error -- global Monaco's require
+            window.require([moduleName], (r) => {
+                resolve(r)
+            })
+        }
+    })
+}
+
+/** Appends a script tag that loads the Monaco editor. */
 async function appendMonacoEditorScript() {
     let error = new Error()
     const urlList = [
@@ -41,8 +95,9 @@ async function appendMonacoEditorScript() {
 
 /** Appends a script tag. */
 function appendScript(src) {
+    const script = document.createElement("script")
+
     return new Promise((resolve, reject) => {
-        const script = document.createElement("script")
         script.src = src
         script.onload = () => {
             script.onload = null
@@ -66,30 +121,27 @@ function appendScript(src) {
     })
 }
 
-let setupedMonaco = null
-let editorLoaded = null
+let monacoPromise = null
 
-export function loadMonacoEngine() {
-    return setupedMonaco || (setupedMonaco = setupMonaco())
-}
+/** Load the Monaco editor object. */
 export function loadMonacoEditor() {
-    if (editorLoaded) {
-        return editorLoaded
-    }
-    return (editorLoaded = (async () => {
-        const monaco = await loadModuleFromMonaco("vs/editor/editor.main")
-        return monaco
-    })())
-}
+    return (
+        monacoPromise ||
+        (monacoPromise = (async () => {
+            let rawMonaco = undefined
+            let monaco = undefined
+            try {
+                rawMonaco = await loadMonacoFromEsmCdn()
+            } catch {
+                rawMonaco = await loadModuleFromMonaco("vs/editor/editor.main")
+            }
+            if ("m" in rawMonaco) {
+                monaco = rawMonaco.m || rawMonaco
+            } else {
+                monaco = rawMonaco
+            }
 
-export async function loadModuleFromMonaco(moduleName) {
-    await loadMonacoEngine()
-    return new Promise((resolve) => {
-        if (typeof window !== "undefined") {
-            // @ts-expect-error -- global Monaco's require
-            window.require([moduleName], (r) => {
-                resolve(r)
-            })
-        }
-    })
+            return monaco
+        })())
+    )
 }
