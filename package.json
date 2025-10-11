@@ -25,7 +25,7 @@
     "env-cmd": "^11.0.0",
     "eslint": "^9.29.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-eslint-plugin": "^6.0.0",
+    "eslint-plugin-eslint-plugin": "^7.0.0",
     "eslint-plugin-n": "^17.8.1",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^10.0.0",
