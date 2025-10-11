@@ -1,5 +1,11 @@
 # eslint-plugin-es-x
 
+## 9.1.1
+
+### Patch Changes
+
+- fix: generate provenance statements on release ([#293](https://github.com/eslint-community/eslint-plugin-es-x/pull/293))
+
 ## 9.1.0
 
 ### Minor Changes
