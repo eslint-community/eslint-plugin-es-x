@@ -13,6 +13,7 @@ jobs:
     if: github.repository == 'eslint-community/eslint-plugin-es-x'
     permissions:
       contents: write # to create release (changesets/action)
+      id-token: write # to enable use of OIDC for npm provenance
       pull-requests: write # to create pull request (changesets/action)
     name: Release
     runs-on: ubuntu-latest
@@ -21,6 +22,8 @@ jobs:
         uses: actions/checkout@v5
       - name: Setup Node.js
         uses: actions/setup-node@v5
+      - name: Update npm
+        run: npm install -g npm@latest
       - name: Install Dependencies
         run: npm install -f
 
@@ -32,4 +35,5 @@ jobs:
           publish: npm run changeset:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
