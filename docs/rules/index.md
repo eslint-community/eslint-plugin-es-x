@@ -26,6 +26,21 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-uint8array-prototype-tohex](./no-uint8array-prototype-tohex.md) | disallow the `Uint8Array.prototype.toHex` method. |  |
 | [es-x/no-using-declarations](./no-using-declarations.md) | disallow `using` and `await using` declarations. |  |
 
+## ES2026 Intl API
+
+There is a config that enables the rules in this category: [`no-new-in-esnext-intl-api`]
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-intl-locale-prototype-firstdayofweek](./no-intl-locale-prototype-firstdayofweek.md) | disallow the `Intl.Locale.prototype.firstDayOfWeek` property. |  |
+| [es-x/no-intl-locale-prototype-getcalendars](./no-intl-locale-prototype-getcalendars.md) | disallow the `Intl.Locale.prototype.getCalendars` method. |  |
+| [es-x/no-intl-locale-prototype-getcollations](./no-intl-locale-prototype-getcollations.md) | disallow the `Intl.Locale.prototype.getCollations` method. |  |
+| [es-x/no-intl-locale-prototype-gethourcycles](./no-intl-locale-prototype-gethourcycles.md) | disallow the `Intl.Locale.prototype.getHourCycles` method. |  |
+| [es-x/no-intl-locale-prototype-getnumberingsystems](./no-intl-locale-prototype-getnumberingsystems.md) | disallow the `Intl.Locale.prototype.getNumberingSystems` method. |  |
+| [es-x/no-intl-locale-prototype-gettextinfo](./no-intl-locale-prototype-gettextinfo.md) | disallow the `Intl.Locale.prototype.getTextInfo` method. |  |
+| [es-x/no-intl-locale-prototype-gettimezones](./no-intl-locale-prototype-gettimezones.md) | disallow the `Intl.Locale.prototype.getTimeZones` method. |  |
+| [es-x/no-intl-locale-prototype-getweekinfo](./no-intl-locale-prototype-getweekinfo.md) | disallow the `Intl.Locale.prototype.getWeekInfo` method. |  |
+
 ## ES2025
 
 There are multiple configs that enable all rules in this category: [`no-new-in-es2025`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], [`restrict-to-es2017`], [`restrict-to-es2018`], [`restrict-to-es2019`], [`restrict-to-es2020`], [`restrict-to-es2021`], [`restrict-to-es2022`], [`restrict-to-es2023`], and [`restrict-to-es2024`]
@@ -505,6 +520,7 @@ Rules in this category are not included in any preset.
 | [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 
 [`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
+[`no-new-in-esnext-intl-api`]: ../configs/index.md#no-new-in-esnext-intl-api
 [`no-new-in-es2025`]: ../configs/index.md#no-new-in-es2025
 [`restrict-to-es2024`]: ../configs/index.md#restrict-to-es2024
 [`no-new-in-es2025-intl-api`]: ../configs/index.md#no-new-in-es2025-intl-api
