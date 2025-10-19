@@ -1,5 +1,11 @@
 # eslint-plugin-es-x
 
+## 9.1.2
+
+### Patch Changes
+
+- ci: trusted publishing ([#297](https://github.com/eslint-community/eslint-plugin-es-x/pull/297))
+
 ## 9.1.1
 
 ### Patch Changes
