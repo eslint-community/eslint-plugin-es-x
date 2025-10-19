@@ -10,7 +10,9 @@ module.exports = [
     ...require("./+node.js"),
     {
         name: "eslint-internal/config/+eslint-plugin.js#1",
-        plugins: { "eslint-plugin": require("eslint-plugin-eslint-plugin") },
+        plugins: {
+            "eslint-plugin": require("eslint-plugin-eslint-plugin").default,
+        },
     },
     {
         name: "eslint-internal/config/+eslint-plugin.js#2",
