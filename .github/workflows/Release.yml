@@ -24,6 +24,11 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '24'
+
+        # npm 11.5.1 or later is required so update to latest to be sure
+      - name: Update npm
+        run: npm install -g npm@latest
+
       - name: Install Dependencies
         run: npm install -f
 
@@ -36,4 +41,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
