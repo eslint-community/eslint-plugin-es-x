@@ -67,7 +67,7 @@ async function main() {
         const since = getSince(originalContent)
 
         let content = originalContent
-            .replace(/^\n*(?:---[\s\S]*?---\n\n?)?#.+\n>.+\n+(?:- .+\n)*/u, "")
+            .replace(/^\n*(?:---[\s\S]*?---\n\n?)?#.+\n>.*\n+(?:- .+\n)*/u, "")
             .replace(/## 🚀 Version[\s\S]+/u, "")
             .replace(/## 📚 References[\s\S]+/u, "")
             .trim()
