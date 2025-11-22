@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-iterator-concat"
 description: "disallow the `Iterator.concat` method"
+since: "v9.2.0"
 ---
 
 # es-x/no-iterator-concat
 > disallow the `Iterator.concat` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2026 [`Iterator.concat` method](https://github.com/tc39/proposal-iterator-sequencing) as errors.
@@ -45,6 +45,10 @@ This rule has an option.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.2.0.
 
 ## 📚 References
 
