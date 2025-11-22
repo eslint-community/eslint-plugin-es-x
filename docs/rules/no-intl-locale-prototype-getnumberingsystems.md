@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-intl-locale-prototype-getnumberingsystems"
 description: "disallow the `Intl.Locale.prototype.getNumberingSystems` method"
+since: "v9.2.0"
 ---
 
 # es-x/no-intl-locale-prototype-getnumberingsystems
 > disallow the `Intl.Locale.prototype.getNumberingSystems` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-intl-locale-info] and [no-new-in-esnext-intl-api]
 
 This rule reports ES2026 Intl API [`Intl.Locale.prototype.getNumberingSystems` method](https://github.com/tc39/proposal-intl-locale-info) as errors.
@@ -52,6 +52,10 @@ This is prior to the `settings['es-x'].aggressive` setting.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.2.0.
 
 ## 📚 References
 

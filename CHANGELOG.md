@@ -1,5 +1,27 @@
 # eslint-plugin-es-x
 
+## 9.2.0
+
+### Minor Changes
+
+- Add `es-x/no-intl-locale-prototype-firstdayofweek` rule ([#278](https://github.com/eslint-community/eslint-plugin-es-x/pull/278))
+
+- Add `es-x/no-intl-locale-prototype-getcalendars` rule ([#278](https://github.com/eslint-community/eslint-plugin-es-x/pull/278))
+
+- Add `es-x/no-intl-locale-prototype-getcollations` rule ([#278](https://github.com/eslint-community/eslint-plugin-es-x/pull/278))
+
+- Add `es-x/no-intl-locale-prototype-gethourcycles` rule ([#278](https://github.com/eslint-community/eslint-plugin-es-x/pull/278))
+
+- Add `es-x/no-intl-locale-prototype-getnumberingsystems` rule ([#278](https://github.com/eslint-community/eslint-plugin-es-x/pull/278))
+
+- Add `es-x/no-intl-locale-prototype-gettextinfo` rule ([#278](https://github.com/eslint-community/eslint-plugin-es-x/pull/278))
+
+- Add `es-x/no-intl-locale-prototype-gettimezones` rule ([#278](https://github.com/eslint-community/eslint-plugin-es-x/pull/278))
+
+- Add `es-x/no-intl-locale-prototype-getweekinfo` rule ([#278](https://github.com/eslint-community/eslint-plugin-es-x/pull/278))
+
+- Add `es-x/no-iterator-concat` rule ([#300](https://github.com/eslint-community/eslint-plugin-es-x/pull/300))
+
 ## 9.1.2
 
 ### Patch Changes
