@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-json-rawjson"
 description: "disallow the `JSON.rawJSON` method"
+since: "v9.3.0"
 ---
 
 # es-x/no-json-rawjson
 > disallow the `JSON.rawJSON` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-json-parse-with-source] and [no-new-in-esnext]
 
 This rule reports ES2026 [`JSON.rawJSON` method](https://github.com/tc39/proposal-json-parse-with-source) as errors.
@@ -45,6 +45,10 @@ This rule has an option.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.3.0.
 
 ## 📚 References
 

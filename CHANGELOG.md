@@ -1,5 +1,17 @@
 # eslint-plugin-es-x
 
+## 9.3.0
+
+### Minor Changes
+
+- Add `es-x/no-json-israwjson` rule ([#277](https://github.com/eslint-community/eslint-plugin-es-x/pull/277))
+
+- Add `es-x/no-json-parse-reviver-context-parameter` rule ([#277](https://github.com/eslint-community/eslint-plugin-es-x/pull/277))
+
+- Add `no-json-parse-with-source` config ([#277](https://github.com/eslint-community/eslint-plugin-es-x/pull/277))
+
+- Add `es-x/no-json-rawjson` rule ([#277](https://github.com/eslint-community/eslint-plugin-es-x/pull/277))
+
 ## 9.2.0
 
 ### Minor Changes
