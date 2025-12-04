@@ -9,7 +9,7 @@ description: "disallow the `context` parameter in `JSON.parse` reviver function"
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-json-parse-with-source] and [no-new-in-esnext]
 
-This rule reports ES2026 [`JSON.parse` resolver `context` parameter](https://github.com/tc39/proposal-json-parse-with-source) as errors.
+This rule reports ES2026 [`JSON.parse` reviver `context` parameter](https://github.com/tc39/proposal-json-parse-with-source) as errors.
 
 ## 💡 Examples
 
