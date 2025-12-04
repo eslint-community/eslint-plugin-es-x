@@ -15,6 +15,9 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-disposablestack](./no-disposablestack.md) | disallow the `DisposableStack` class. |  |
 | [es-x/no-error-iserror](./no-error-iserror.md) | disallow the `Error.isError` method. |  |
 | [es-x/no-iterator-concat](./no-iterator-concat.md) | disallow the `Iterator.concat` method. |  |
+| [es-x/no-json-israwjson](./no-json-israwjson.md) | disallow the `JSON.isRawJSON` method. |  |
+| [es-x/no-json-parse-reviver-context-parameter](./no-json-parse-reviver-context-parameter.md) | disallow the `context` parameter in `JSON.parse` reviver function. |  |
+| [es-x/no-json-rawjson](./no-json-rawjson.md) | disallow the `JSON.rawJSON` method. |  |
 | [es-x/no-math-sumprecise](./no-math-sumprecise.md) | disallow the `Math.sumPrecise` method. |  |
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
 | [es-x/no-symbol-asyncdispose](./no-symbol-asyncdispose.md) | disallow the `Symbol.asyncDispose` property. |  |

@@ -45,6 +45,10 @@ module.exports = {
         title: "Iterator Helpers",
         link: "https://github.com/tc39/proposal-iterator-helpers",
     },
+    "json-parse-with-source": {
+        title: "JSON.parse source text access",
+        link: "https://github.com/tc39/proposal-json-parse-with-source",
+    },
     "relative-indexing-method": {
         title: "An .at() method on all the built-in indexables",
         link: "https://github.com/tc39/proposal-relative-indexing-method",
