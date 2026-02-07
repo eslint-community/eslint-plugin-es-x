@@ -7,7 +7,7 @@ since: "v9.2.0"
 # es-x/no-intl-locale-prototype-gettimezones
 > disallow the `Intl.Locale.prototype.getTimeZones` method
 
-- ✅ The following configurations enable this rule: [no-intl-locale-info], [no-new-in-es2026-intl-api], [restrict-to-es-intl-api-1st-edition], [restrict-to-es2015-intl-api], [restrict-to-es2016-intl-api], [restrict-to-es2017-intl-api], [restrict-to-es2018-intl-api], [restrict-to-es2019-intl-api], [restrict-to-es2020-intl-api], [restrict-to-es2021-intl-api], [restrict-to-es2022-intl-api], [restrict-to-es2023-intl-api], [restrict-to-es2024-intl-api], and [restrict-to-es2025-intl-api]
+- ✅ The following configurations enable this rule: [no-intl-locale-info] and [no-new-in-esnext-intl-api]
 
 This rule reports ES2026 Intl API [`Intl.Locale.prototype.getTimeZones` method](https://github.com/tc39/proposal-intl-locale-info) as errors.
 
@@ -63,16 +63,4 @@ This rule was introduced in v9.2.0.
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-intl-locale-prototype-gettimezones.js)
 
 [no-intl-locale-info]: ../configs/index.md#no-intl-locale-info
-[no-new-in-es2026-intl-api]: ../configs/index.md#no-new-in-es2026-intl-api
-[restrict-to-es-intl-api-1st-edition]: ../configs/index.md#restrict-to-es-intl-api-1st-edition
-[restrict-to-es2015-intl-api]: ../configs/index.md#restrict-to-es2015-intl-api
-[restrict-to-es2016-intl-api]: ../configs/index.md#restrict-to-es2016-intl-api
-[restrict-to-es2017-intl-api]: ../configs/index.md#restrict-to-es2017-intl-api
-[restrict-to-es2018-intl-api]: ../configs/index.md#restrict-to-es2018-intl-api
-[restrict-to-es2019-intl-api]: ../configs/index.md#restrict-to-es2019-intl-api
-[restrict-to-es2020-intl-api]: ../configs/index.md#restrict-to-es2020-intl-api
-[restrict-to-es2021-intl-api]: ../configs/index.md#restrict-to-es2021-intl-api
-[restrict-to-es2022-intl-api]: ../configs/index.md#restrict-to-es2022-intl-api
-[restrict-to-es2023-intl-api]: ../configs/index.md#restrict-to-es2023-intl-api
-[restrict-to-es2024-intl-api]: ../configs/index.md#restrict-to-es2024-intl-api
-[restrict-to-es2025-intl-api]: ../configs/index.md#restrict-to-es2025-intl-api
+[no-new-in-esnext-intl-api]: ../configs/index.md#no-new-in-esnext-intl-api
