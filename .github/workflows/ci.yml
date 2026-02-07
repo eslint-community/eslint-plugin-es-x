@@ -48,6 +48,10 @@ jobs:
           - eslint: 9.29.0
             node: 20.19.0
             os: ubuntu-latest
+          # On ESLint 10
+          - eslint: 10
+            node: 22
+            os: ubuntu-latest
 
     runs-on: ${{ matrix.os }}
     steps:
