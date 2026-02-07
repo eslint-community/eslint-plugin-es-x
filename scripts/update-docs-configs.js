@@ -110,7 +110,7 @@ function processCategoryConfig({
     if (specKind === "proposal") {
         contents.push("")
         contents.push(
-            `This configs includes rules for ${formatList(
+            `This config includes the rules ${formatList(
                 rules.map((rule) => {
                     const ruleId = rule.ruleId
                     return `[es-x/${ruleId}](../rules/${ruleId}.md)`

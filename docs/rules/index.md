@@ -18,6 +18,8 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-json-israwjson](./no-json-israwjson.md) | disallow the `JSON.isRawJSON` method. |  |
 | [es-x/no-json-parse-reviver-context-parameter](./no-json-parse-reviver-context-parameter.md) | disallow the `context` parameter in `JSON.parse` reviver function. |  |
 | [es-x/no-json-rawjson](./no-json-rawjson.md) | disallow the `JSON.rawJSON` method. |  |
+| [es-x/no-map-prototype-getorinsert](./no-map-prototype-getorinsert.md) | disallow the `Map.prototype.getOrInsert` method. |  |
+| [es-x/no-map-prototype-getorinsertcomputed](./no-map-prototype-getorinsertcomputed.md) | disallow the `Map.prototype.getOrInsertComputed` method. |  |
 | [es-x/no-math-sumprecise](./no-math-sumprecise.md) | disallow the `Math.sumPrecise` method. |  |
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
 | [es-x/no-symbol-asyncdispose](./no-symbol-asyncdispose.md) | disallow the `Symbol.asyncDispose` property. |  |
@@ -29,6 +31,8 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-uint8array-prototype-tobase64](./no-uint8array-prototype-tobase64.md) | disallow the `Uint8Array.prototype.toBase64` method. |  |
 | [es-x/no-uint8array-prototype-tohex](./no-uint8array-prototype-tohex.md) | disallow the `Uint8Array.prototype.toHex` method. |  |
 | [es-x/no-using-declarations](./no-using-declarations.md) | disallow `using` and `await using` declarations. |  |
+| [es-x/no-weakmap-prototype-getorinsert](./no-weakmap-prototype-getorinsert.md) | disallow the `WeakMap.prototype.getOrInsert` method. |  |
+| [es-x/no-weakmap-prototype-getorinsertcomputed](./no-weakmap-prototype-getorinsertcomputed.md) | disallow the `WeakMap.prototype.getOrInsertComputed` method. |  |
 
 ## ES2026 Intl API
 
