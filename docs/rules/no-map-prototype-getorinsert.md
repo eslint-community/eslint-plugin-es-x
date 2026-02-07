@@ -9,6 +9,22 @@ description: "disallow the `Map.prototype.getOrInsert` method"
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext] and [no-upsert]
 
+This rule reports ES2026 [`Map.prototype.getOrInsert` method](https://github.com/tc39/proposal-upsert) as errors.
+
+## 💡 Examples
+
+⛔ Examples of **incorrect** code for this rule:
+
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-map-prototype-getorinsert: error */
+const foo = new Map();
+foo.getOrInsert(key, value);
+```
+
+</eslint-playground>
+
 ## 🔧 Options
 
 This rule has an option.
