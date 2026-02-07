@@ -1,5 +1,19 @@
 # eslint-plugin-es-x
 
+## 9.4.0
+
+### Minor Changes
+
+- Add `es-x/no-map-prototype-getorinsert` rule ([#311](https://github.com/eslint-community/eslint-plugin-es-x/pull/311))
+
+- Add `es-x/no-map-prototype-getorinsertcomputed` rule ([#311](https://github.com/eslint-community/eslint-plugin-es-x/pull/311))
+
+- Add `es-x/no-weakmap-prototype-getorinsert` rule ([#311](https://github.com/eslint-community/eslint-plugin-es-x/pull/311))
+
+- Add `es-x/no-weakmap-prototype-getorinsertcomputed` rule ([#311](https://github.com/eslint-community/eslint-plugin-es-x/pull/311))
+
+- Add `no-upsert` config ([#311](https://github.com/eslint-community/eslint-plugin-es-x/pull/311))
+
 ## 9.3.0
 
 ### Minor Changes

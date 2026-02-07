@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-weakmap-prototype-getorinsert"
 description: "disallow the `WeakMap.prototype.getOrInsert` method"
+since: "v9.4.0"
 ---
 
 # es-x/no-weakmap-prototype-getorinsert
 > disallow the `WeakMap.prototype.getOrInsert` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext] and [no-upsert]
 
 This rule reports ES2026 [`WeakMap.prototype.getOrInsert` method](https://github.com/tc39/proposal-upsert) as errors.
@@ -52,6 +52,10 @@ This is prior to the `settings['es-x'].aggressive` setting.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.4.0.
 
 ## 📚 References
 
