@@ -6,7 +6,7 @@ This plugin provides the following rules.
 
 ## ES2026
 
-There is a config that enables the rules in this category: [`no-new-in-esnext`]
+There are multiple configs that enable all rules in this category: [`no-new-in-es2026`], [`restrict-to-es3`], [`restrict-to-es5`], [`restrict-to-es2015`], [`restrict-to-es2016`], [`restrict-to-es2017`], [`restrict-to-es2018`], [`restrict-to-es2019`], [`restrict-to-es2020`], [`restrict-to-es2021`], [`restrict-to-es2022`], [`restrict-to-es2023`], [`restrict-to-es2024`], and [`restrict-to-es2025`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -18,6 +18,8 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-json-israwjson](./no-json-israwjson.md) | disallow the `JSON.isRawJSON` method. |  |
 | [es-x/no-json-parse-reviver-context-parameter](./no-json-parse-reviver-context-parameter.md) | disallow the `context` parameter in `JSON.parse` reviver function. |  |
 | [es-x/no-json-rawjson](./no-json-rawjson.md) | disallow the `JSON.rawJSON` method. |  |
+| [es-x/no-map-prototype-getorinsert](./no-map-prototype-getorinsert.md) | disallow the `Map.prototype.getOrInsert` method. |  |
+| [es-x/no-map-prototype-getorinsertcomputed](./no-map-prototype-getorinsertcomputed.md) | disallow the `Map.prototype.getOrInsertComputed` method. |  |
 | [es-x/no-math-sumprecise](./no-math-sumprecise.md) | disallow the `Math.sumPrecise` method. |  |
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
 | [es-x/no-symbol-asyncdispose](./no-symbol-asyncdispose.md) | disallow the `Symbol.asyncDispose` property. |  |
@@ -29,10 +31,12 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-uint8array-prototype-tobase64](./no-uint8array-prototype-tobase64.md) | disallow the `Uint8Array.prototype.toBase64` method. |  |
 | [es-x/no-uint8array-prototype-tohex](./no-uint8array-prototype-tohex.md) | disallow the `Uint8Array.prototype.toHex` method. |  |
 | [es-x/no-using-declarations](./no-using-declarations.md) | disallow `using` and `await using` declarations. |  |
+| [es-x/no-weakmap-prototype-getorinsert](./no-weakmap-prototype-getorinsert.md) | disallow the `WeakMap.prototype.getOrInsert` method. |  |
+| [es-x/no-weakmap-prototype-getorinsertcomputed](./no-weakmap-prototype-getorinsertcomputed.md) | disallow the `WeakMap.prototype.getOrInsertComputed` method. |  |
 
 ## ES2026 Intl API
 
-There is a config that enables the rules in this category: [`no-new-in-esnext-intl-api`]
+There are multiple configs that enable all rules in this category: [`no-new-in-es2026-intl-api`], [`restrict-to-es-intl-api-1st-edition`], [`restrict-to-es2015-intl-api`], [`restrict-to-es2016-intl-api`], [`restrict-to-es2017-intl-api`], [`restrict-to-es2018-intl-api`], [`restrict-to-es2019-intl-api`], [`restrict-to-es2020-intl-api`], [`restrict-to-es2021-intl-api`], [`restrict-to-es2022-intl-api`], [`restrict-to-es2023-intl-api`], [`restrict-to-es2024-intl-api`], and [`restrict-to-es2025-intl-api`]
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
@@ -523,8 +527,10 @@ Rules in this category are not included in any preset.
 | [es-x/no-object-map-groupby](./no-object-map-groupby.md) | [es-x/no-object-groupby](./no-object-groupby.md), [es-x/no-map-groupby](./no-map-groupby.md) |
 | [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 
-[`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
-[`no-new-in-esnext-intl-api`]: ../configs/index.md#no-new-in-esnext-intl-api
+[`no-new-in-es2026`]: ../configs/index.md#no-new-in-es2026
+[`restrict-to-es2025`]: ../configs/index.md#restrict-to-es2025
+[`no-new-in-es2026-intl-api`]: ../configs/index.md#no-new-in-es2026-intl-api
+[`restrict-to-es2025-intl-api`]: ../configs/index.md#restrict-to-es2025-intl-api
 [`no-new-in-es2025`]: ../configs/index.md#no-new-in-es2025
 [`restrict-to-es2024`]: ../configs/index.md#restrict-to-es2024
 [`no-new-in-es2025-intl-api`]: ../configs/index.md#no-new-in-es2025-intl-api
