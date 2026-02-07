@@ -1,12 +1,12 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "config:base",
+        "config:recommended",
         ":preserveSemverRanges"
     ],
     "packageRules": [
         {
-            "updateTypes": [
+            "matchUpdateTypes": [
                 "minor",
                 "patch",
                 "pin",
@@ -15,7 +15,7 @@
             "automerge": true
         },
         {
-            "depTypeList": [
+            "matchDepTypes": [
                 "devDependencies"
             ],
             "automerge": true
