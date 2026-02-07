@@ -24,7 +24,7 @@ module.exports = [
         plugins: {
             // "@mysticatea",
             prettier: require("eslint-plugin-prettier"),
-            "eslint-comments": require("eslint-plugin-eslint-comments"),
+            "@eslint-community/eslint-comments": require("@eslint-community/eslint-plugin-eslint-comments"),
         },
         rules: {
             // Enabled rules
@@ -378,14 +378,14 @@ module.exports = [
             //
 
             // eslint-comments
-            "eslint-comments/disable-enable-pair": "error",
-            "eslint-comments/no-aggregating-enable": "error",
-            "eslint-comments/no-duplicate-disable": "error",
-            "eslint-comments/no-restricted-disable": "off",
-            "eslint-comments/no-unlimited-disable": "error",
-            "eslint-comments/no-unused-disable": "error",
-            "eslint-comments/no-unused-enable": "error",
-            "eslint-comments/no-use": [
+            "@eslint-community/eslint-comments/disable-enable-pair": "error",
+            "@eslint-community/eslint-comments/no-aggregating-enable": "error",
+            "@eslint-community/eslint-comments/no-duplicate-disable": "error",
+            "@eslint-community/eslint-comments/no-restricted-disable": "off",
+            "@eslint-community/eslint-comments/no-unlimited-disable": "error",
+            "@eslint-community/eslint-comments/no-unused-disable": "error",
+            "@eslint-community/eslint-comments/no-unused-enable": "error",
+            "@eslint-community/eslint-comments/no-use": [
                 "error",
                 {
                     allow: [

@@ -230,6 +230,7 @@ function makeClassDeclarationCode(versions) {
 
     return `
         class DataSet {
+            // eslint-disable-next-line max-params -- Auto generated
             constructor(${parameters}) {
                 ${init}
             }
