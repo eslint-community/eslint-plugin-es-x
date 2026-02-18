@@ -140,8 +140,6 @@ import pluginESx from "eslint-plugin-es-x"
 export default defineConfig([
     pluginESx.configs['flat/no-new-in-es2023']
 ])
-    pluginESx.configs['flat/no-new-in-es2023']
-]
 ```
 
 <details><summary> Legacy Config </summary>
