@@ -1,7 +1,7 @@
 # Guide
 
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-es-x.svg)](https://www.npmjs.com/package/eslint-plugin-es-x)
-[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es-x.svg)](http://www.npmtrends.com/eslint-plugin-es-x)
+[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es-x.svg)](https://www.npmtrends.com/eslint-plugin-es-x)
 [![Build Status](https://github.com/eslint-community/eslint-plugin-es-x/actions/workflows/ci.yml/badge.svg)](https://github.com/eslint-community/eslint-plugin-es-x/actions)
 
 ESLint rules which disallow each ECMAScript syntax.

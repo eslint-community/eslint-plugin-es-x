@@ -77,7 +77,7 @@ const config = [
                 "error",
                 {
                     pattern:
-                        "http://eslint-community.github.io/eslint-plugin-es-x/rules/{{name}}.html",
+                        "https://eslint-community.github.io/eslint-plugin-es-x/rules/{{name}}.html",
                 },
             ],
 

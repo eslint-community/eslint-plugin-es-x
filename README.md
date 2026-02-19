@@ -1,7 +1,7 @@
 # eslint-plugin-es-x
 
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-es-x.svg)](https://www.npmjs.com/package/eslint-plugin-es-x)
-[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es-x.svg)](http://www.npmtrends.com/eslint-plugin-es-x)
+[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-es-x.svg)](https://www.npmtrends.com/eslint-plugin-es-x)
 [![Build Status](https://github.com/eslint-community/eslint-plugin-es-x/actions/workflows/ci.yml/badge.svg)](https://github.com/eslint-community/eslint-plugin-es-x/actions)
 
 ESLint plugin which disallows each ECMAScript syntax.
@@ -22,7 +22,7 @@ See [documentation](https://eslint-community.github.io/eslint-plugin-es-x/)
 
 ## 🚥 Semantic Versioning Policy
 
-This plugin follows [semantic versioning](http://semver.org/) and [ESLint's semantic versioning policy](https://github.com/eslint/eslint#semantic-versioning-policy).
+This plugin follows [semantic versioning](https://semver.org/) and [ESLint's semantic versioning policy](https://github.com/eslint/eslint#semantic-versioning-policy).
 
 - We will release a new minor version to add new rules when TC39 decided to advance proposals to Stage 4. In the minor releases, we don't update configs.
 - We will release a new major version to update configs when new ECMAScript snapshots are available.
