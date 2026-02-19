@@ -1,5 +1,11 @@
 # eslint-plugin-es-x
 
+## 9.4.1
+
+### Patch Changes
+
+- Update URLs in rule definitions to use HTTPS ([#320](https://github.com/eslint-community/eslint-plugin-es-x/pull/320))
+
 ## 9.4.0
 
 ### Minor Changes
