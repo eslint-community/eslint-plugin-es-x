@@ -36,8 +36,10 @@ Configure your `eslint.config.js` file.
 For example, to enable only Rest/Spread Properties in ES2018:
 
 ```js
+import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
-export default [
+
+export default defineConfig([
     {
         plugins: { "es-x": pluginESx },
         languageOptions: {
@@ -52,7 +54,7 @@ export default [
             "es-x/no-regexp-unicode-property-escapes": "error"
         }
     }
-]
+])
 ```
 
 If you use legacy config, configure your `.eslintrc.*` file:
@@ -81,10 +83,12 @@ See the [Available Configs](./configs/index.md) documentation.
 For example:
 
 ```js
+import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
-export default [
+
+export default defineConfig([
     pluginESx.configs['flat/restrict-to-es2018'],
-]
+])
 ```
 
 If you use legacy config:
