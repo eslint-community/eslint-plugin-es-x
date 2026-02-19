@@ -125,10 +125,12 @@ function processCategoryConfig({
 
 function appendConfig(configName) {
     contents.push("```js")
-    contents.push(`import pluginESx from "eslint-plugin-es-x"
-export default [
+    contents.push(`import { defineConfig } from "eslint/config"
+import pluginESx from "eslint-plugin-es-x"
+
+export default defineConfig([
     pluginESx.configs['flat/${configName}']
-]`)
+])`)
     contents.push("```")
     contents.push("")
     contents.push("<details><summary> Legacy Config </summary>")
