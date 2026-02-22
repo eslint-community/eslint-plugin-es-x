@@ -87,7 +87,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2018'],
+    pluginESx.configs["flat/restrict-to-es2018"],
 ])
 ```
 

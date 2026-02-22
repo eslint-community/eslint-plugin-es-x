@@ -12,7 +12,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-esnext']
+    pluginESx.configs["flat/no-new-in-esnext"]
 ])
 ```
 
@@ -38,7 +38,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-esnext-intl-api']
+    pluginESx.configs["flat/no-new-in-esnext-intl-api"]
 ])
 ```
 
@@ -63,7 +63,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2025']
+    pluginESx.configs["flat/no-new-in-es2025"]
 ])
 ```
 
@@ -88,7 +88,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2025-intl-api']
+    pluginESx.configs["flat/no-new-in-es2025-intl-api"]
 ])
 ```
 
@@ -113,7 +113,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2024']
+    pluginESx.configs["flat/no-new-in-es2024"]
 ])
 ```
 
@@ -138,7 +138,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2023']
+    pluginESx.configs["flat/no-new-in-es2023"]
 ])
 ```
 
@@ -163,7 +163,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2023-intl-api']
+    pluginESx.configs["flat/no-new-in-es2023-intl-api"]
 ])
 ```
 
@@ -188,7 +188,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2022']
+    pluginESx.configs["flat/no-new-in-es2022"]
 ])
 ```
 
@@ -213,7 +213,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2022-intl-api']
+    pluginESx.configs["flat/no-new-in-es2022-intl-api"]
 ])
 ```
 
@@ -238,7 +238,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2021']
+    pluginESx.configs["flat/no-new-in-es2021"]
 ])
 ```
 
@@ -263,7 +263,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2021-intl-api']
+    pluginESx.configs["flat/no-new-in-es2021-intl-api"]
 ])
 ```
 
@@ -288,7 +288,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2020']
+    pluginESx.configs["flat/no-new-in-es2020"]
 ])
 ```
 
@@ -313,7 +313,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2020-intl-api']
+    pluginESx.configs["flat/no-new-in-es2020-intl-api"]
 ])
 ```
 
@@ -338,7 +338,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2019']
+    pluginESx.configs["flat/no-new-in-es2019"]
 ])
 ```
 
@@ -363,7 +363,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2018']
+    pluginESx.configs["flat/no-new-in-es2018"]
 ])
 ```
 
@@ -388,7 +388,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2018-intl-api']
+    pluginESx.configs["flat/no-new-in-es2018-intl-api"]
 ])
 ```
 
@@ -413,7 +413,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2017']
+    pluginESx.configs["flat/no-new-in-es2017"]
 ])
 ```
 
@@ -438,7 +438,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2017-intl-api']
+    pluginESx.configs["flat/no-new-in-es2017-intl-api"]
 ])
 ```
 
@@ -463,7 +463,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2016']
+    pluginESx.configs["flat/no-new-in-es2016"]
 ])
 ```
 
@@ -488,7 +488,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2016-intl-api']
+    pluginESx.configs["flat/no-new-in-es2016-intl-api"]
 ])
 ```
 
@@ -513,7 +513,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es2015']
+    pluginESx.configs["flat/no-new-in-es2015"]
 ])
 ```
 
@@ -538,7 +538,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-new-in-es5']
+    pluginESx.configs["flat/no-new-in-es5"]
 ])
 ```
 
@@ -563,7 +563,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2024']
+    pluginESx.configs["flat/restrict-to-es2024"]
 ])
 ```
 
@@ -588,7 +588,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2024-intl-api']
+    pluginESx.configs["flat/restrict-to-es2024-intl-api"]
 ])
 ```
 
@@ -613,7 +613,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2023']
+    pluginESx.configs["flat/restrict-to-es2023"]
 ])
 ```
 
@@ -638,7 +638,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2023-intl-api']
+    pluginESx.configs["flat/restrict-to-es2023-intl-api"]
 ])
 ```
 
@@ -663,7 +663,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2022']
+    pluginESx.configs["flat/restrict-to-es2022"]
 ])
 ```
 
@@ -688,7 +688,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2022-intl-api']
+    pluginESx.configs["flat/restrict-to-es2022-intl-api"]
 ])
 ```
 
@@ -713,7 +713,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2021']
+    pluginESx.configs["flat/restrict-to-es2021"]
 ])
 ```
 
@@ -738,7 +738,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2021-intl-api']
+    pluginESx.configs["flat/restrict-to-es2021-intl-api"]
 ])
 ```
 
@@ -763,7 +763,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2020']
+    pluginESx.configs["flat/restrict-to-es2020"]
 ])
 ```
 
@@ -788,7 +788,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2020-intl-api']
+    pluginESx.configs["flat/restrict-to-es2020-intl-api"]
 ])
 ```
 
@@ -813,7 +813,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2019']
+    pluginESx.configs["flat/restrict-to-es2019"]
 ])
 ```
 
@@ -838,7 +838,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2019-intl-api']
+    pluginESx.configs["flat/restrict-to-es2019-intl-api"]
 ])
 ```
 
@@ -863,7 +863,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2018']
+    pluginESx.configs["flat/restrict-to-es2018"]
 ])
 ```
 
@@ -888,7 +888,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2018-intl-api']
+    pluginESx.configs["flat/restrict-to-es2018-intl-api"]
 ])
 ```
 
@@ -913,7 +913,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2017']
+    pluginESx.configs["flat/restrict-to-es2017"]
 ])
 ```
 
@@ -938,7 +938,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2017-intl-api']
+    pluginESx.configs["flat/restrict-to-es2017-intl-api"]
 ])
 ```
 
@@ -963,7 +963,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2016']
+    pluginESx.configs["flat/restrict-to-es2016"]
 ])
 ```
 
@@ -988,7 +988,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2016-intl-api']
+    pluginESx.configs["flat/restrict-to-es2016-intl-api"]
 ])
 ```
 
@@ -1013,7 +1013,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2015']
+    pluginESx.configs["flat/restrict-to-es2015"]
 ])
 ```
 
@@ -1038,7 +1038,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es2015-intl-api']
+    pluginESx.configs["flat/restrict-to-es2015-intl-api"]
 ])
 ```
 
@@ -1063,7 +1063,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es5']
+    pluginESx.configs["flat/restrict-to-es5"]
 ])
 ```
 
@@ -1088,7 +1088,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es-intl-api-1st-edition']
+    pluginESx.configs["flat/restrict-to-es-intl-api-1st-edition"]
 ])
 ```
 
@@ -1113,7 +1113,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/restrict-to-es3']
+    pluginESx.configs["flat/restrict-to-es3"]
 ])
 ```
 
@@ -1141,7 +1141,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-arraybuffer-base64']
+    pluginESx.configs["flat/no-arraybuffer-base64"]
 ])
 ```
 
@@ -1169,7 +1169,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-explicit-resource-management']
+    pluginESx.configs["flat/no-explicit-resource-management"]
 ])
 ```
 
@@ -1197,7 +1197,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-intl-locale-info']
+    pluginESx.configs["flat/no-intl-locale-info"]
 ])
 ```
 
@@ -1225,7 +1225,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-json-parse-with-source']
+    pluginESx.configs["flat/no-json-parse-with-source"]
 ])
 ```
 
@@ -1253,7 +1253,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-upsert']
+    pluginESx.configs["flat/no-upsert"]
 ])
 ```
 
@@ -1280,7 +1280,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-float16array']
+    pluginESx.configs["flat/no-float16array"]
 ])
 ```
 
@@ -1307,7 +1307,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-import-attributes']
+    pluginESx.configs["flat/no-import-attributes"]
 ])
 ```
 
@@ -1334,7 +1334,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-iterator-helpers']
+    pluginESx.configs["flat/no-iterator-helpers"]
 ])
 ```
 
@@ -1361,7 +1361,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-set-methods']
+    pluginESx.configs["flat/no-set-methods"]
 ])
 ```
 
@@ -1388,7 +1388,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-array-grouping']
+    pluginESx.configs["flat/no-array-grouping"]
 ])
 ```
 
@@ -1415,7 +1415,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-is-usv-string']
+    pluginESx.configs["flat/no-is-usv-string"]
 ])
 ```
 
@@ -1442,7 +1442,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-change-array-by-copy']
+    pluginESx.configs["flat/no-change-array-by-copy"]
 ])
 ```
 
@@ -1469,7 +1469,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-intl-numberformat-v3']
+    pluginESx.configs["flat/no-intl-numberformat-v3"]
 ])
 ```
 
@@ -1496,7 +1496,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-class-fields']
+    pluginESx.configs["flat/no-class-fields"]
 ])
 ```
 
@@ -1523,7 +1523,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-relative-indexing-method']
+    pluginESx.configs["flat/no-relative-indexing-method"]
 ])
 ```
 
@@ -1550,7 +1550,7 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/no-string-matchall']
+    pluginESx.configs["flat/no-string-matchall"]
 ])
 ```
 
