@@ -1,5 +1,11 @@
 # eslint-plugin-es-x
 
+## 9.5.0
+
+### Minor Changes
+
+- Add `name` field to config to improve debugging experience ([#322](https://github.com/eslint-community/eslint-plugin-es-x/pull/322))
+
 ## 9.4.1
 
 ### Patch Changes
