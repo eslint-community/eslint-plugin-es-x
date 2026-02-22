@@ -129,7 +129,7 @@ function appendConfig(configName) {
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs['flat/${configName}']
+    pluginESx.configs["flat/${configName}"]
 ])`)
     contents.push("```")
     contents.push("")
