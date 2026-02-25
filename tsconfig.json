@@ -5,11 +5,11 @@
         "noImplicitOverride": false,
         "noImplicitReturns": false,
         "noPropertyAccessFromIndexSignature": false,
-        "strict": true,
+        "strict": false,
         
         /* Modules */
-        "module": "commonjs",
-        "moduleResolution": "node",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
         "noUncheckedSideEffectImports": false,
         "resolveJsonModule": true,
 
