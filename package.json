@@ -5,9 +5,13 @@
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
   "files": [
-    "lib"
+    "dist"
   ],
   "peerDependencies": {
     "eslint": ">=9.29.0"
@@ -45,6 +49,7 @@
     "vue-eslint-parser": "^10.0.0"
   },
   "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
     "clean": "rimraf .nyc_output coverage",
     "coverage": "nyc report -r lcov && opener ./coverage/lcov-report/index.html",
     "docs:build": "vitepress build docs",
@@ -53,6 +58,7 @@
     "lint:fix": "eslint lib tests scripts eslint-internal docs/.vitepress --fix",
     "new": "node scripts/new-rule",
     "pretest": "npm run -s lint",
+    "prepack": "npm run -s build",
     "test": "npm run -s test:mocha",
     "test:mocha": "nyc mocha tests/**/*.{js,mjs} --reporter dot --timeout 60000",
     "test:debug": "mocha tests/**/*.{js,mjs} --reporter dot --timeout 60000",

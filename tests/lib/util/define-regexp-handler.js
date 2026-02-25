@@ -2,7 +2,7 @@
 
 const path = require("path")
 const assert = require("assert")
-const plugin = require("../../..")
+const plugin = require("../../../lib/index.js")
 const { ESLint } = require("eslint")
 
 // -----------------------------------------------------------------------------

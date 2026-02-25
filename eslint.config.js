@@ -10,6 +10,7 @@ const config = [
             "docs/.vitepress/dist/",
             "docs/.vitepress/cache/",
             "node_modules/",
+            "dist/",
         ],
     },
     {

@@ -73,5 +73,7 @@ jobs:
         run: |+
             npm install -D @typescript-eslint/parser@${{ matrix.tseslint }}
         if: matrix.tseslint == 5 || matrix.tseslint == 7
+      - name: Build
+        run: npm run -s build
       - name: Test
         run: npm run -s test:mocha

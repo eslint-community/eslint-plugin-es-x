@@ -39,6 +39,7 @@ Please use GitHub's Issues/PRs.
 
 ### Development Tools
 
+- `npm run build` compiles `lib` into `dist` (publish output, not committed).
 - `npm test` runs tests and measures coverage.
 - `npm run clean` removes the coverage result of `npm test` command.
 - `npm run coverage` shows the coverage result of the last `npm test` command.

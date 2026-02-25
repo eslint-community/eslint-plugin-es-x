@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        /* Type Checking */
+        "noFallthroughCasesInSwitch": false,
+        "noImplicitOverride": false,
+        "noImplicitReturns": false,
+        "noPropertyAccessFromIndexSignature": false,
+        "strict": true,
+        
+        /* Modules */
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noUncheckedSideEffectImports": false,
+        "resolveJsonModule": true,
+
+        /* Emit */
+        "noEmit": true,
+        
+        /* JavaScript Support */
+        "allowJs": true,
+        "checkJs": false,
+        
+        /* Interop Constraints */
+        "allowSyntheticDefaultImports": false,
+        "esModuleInterop": false,
+
+        /* Language and Environment */
+        "target": "esnext",
+        
+        /* Completeness */
+        "skipLibCheck": true,
+    },
+    "include": [
+        "**/*.js",
+        "**/*.cjs",
+        "**/*.mjs",
+        "**/*.ts",
+    ],
+    "exclude": [
+        "node_modules/**",
+        "dist/**",
+        "coverage/**",
+        ".nyc_output/**",
+        "docs/.vitepress/dist/**",
+        "docs/.vitepress/cache/**",
+    ]
+}
