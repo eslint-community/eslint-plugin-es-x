@@ -1,7 +1,7 @@
 "use strict"
 
 const assert = require("assert")
-const plugin = require("../../../..")
+const plugin = require("../../../../lib/index.js")
 
 // -----------------------------------------------------------------------------
 // Tests

@@ -3,7 +3,7 @@
 const path = require("path")
 const assert = require("assert")
 const eslintModule = require("eslint")
-const plugin = require("../../../..")
+const plugin = require("../../../../lib/index.js")
 
 if (!eslintModule.loadESLint) {
     return

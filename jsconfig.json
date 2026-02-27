@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-        "target": "ESNext",
-        "moduleResolution": "node",
-        "module": "CommonJS",
-        "strict": true,
-        "strictNullChecks": true
-    },
-}
