@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import EslintEditor from "./eslint-editor.vue"
 import { markRaw, ref, reactive, computed, onMounted, useSlots } from "vue"
-import * as plugin from "../../../.."
-import { builtin } from "globals"
+import * as plugin from "../../../../lib/index.js"
+import * as globals from "globals"
 const { rules } = plugin.default || plugin
+const { builtin } = globals.default || globals
 
 const props = defineProps({
     // For no-json-superset
