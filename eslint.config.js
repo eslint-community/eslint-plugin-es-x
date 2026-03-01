@@ -1,18 +1,16 @@
 "use strict"
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-const config = [
-    {
-        ignores: [
-            ".nyc_output/",
-            "coverage/",
-            "!docs/.vitepress",
-            "docs/.vitepress/dist/",
-            "docs/.vitepress/cache/",
-            "node_modules/",
-            "dist/",
-        ],
-    },
+const { defineConfig, globalIgnores } = require("eslint/config")
+
+module.exports = defineConfig([
+    globalIgnores([
+        ".nyc_output/",
+        "coverage/",
+        "!docs/.vitepress",
+        "docs/.vitepress/dist/",
+        "docs/.vitepress/cache/",
+        "dist/",
+    ]),
     {
         plugins: {
             my: require("./eslint-internal/my-plugin.js"),
@@ -27,8 +25,8 @@ const config = [
             },
         },
     },
-    ...require("./eslint-internal/config/es2020.js"),
-    ...require("./eslint-internal/config/+eslint-plugin.js"),
+    require("./eslint-internal/config/es2020.js"),
+    require("./eslint-internal/config/+eslint-plugin.js"),
     {
         rules: {
             "no-restricted-properties": [
@@ -118,6 +116,4 @@ const config = [
             "n/no-unsupported-features/node-builtins": "off",
         },
     },
-]
-
-module.exports = config
+])
