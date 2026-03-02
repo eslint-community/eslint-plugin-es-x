@@ -1,5 +1,11 @@
 # eslint-plugin-es-x
 
+## 9.6.0
+
+### Minor Changes
+
+- chore: the published js files have been moved from `lib` to `dist`. ([#327](https://github.com/eslint-community/eslint-plugin-es-x/pull/327))
+
 ## 9.5.0
 
 ### Minor Changes
