@@ -24,6 +24,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
 | [es-x/no-symbol-asyncdispose](./no-symbol-asyncdispose.md) | disallow the `Symbol.asyncDispose` property. |  |
 | [es-x/no-symbol-dispose](./no-symbol-dispose.md) | disallow the `Symbol.dispose` property. |  |
+| [es-x/no-temporal](./no-temporal.md) | disallow the `Temporal` class. |  |
 | [es-x/no-uint8array-frombase64](./no-uint8array-frombase64.md) | disallow the `Uint8Array.fromBase64` method. |  |
 | [es-x/no-uint8array-fromhex](./no-uint8array-fromhex.md) | disallow the `Uint8Array.fromHex` method. |  |
 | [es-x/no-uint8array-prototype-setfrombase64](./no-uint8array-prototype-setfrombase64.md) | disallow the `Uint8Array.prototype.setFromBase64` method. |  |
@@ -507,6 +508,24 @@ Rules in this category are not included in any preset.
 | [es-x/no-nonstandard-string-prototype-properties](./no-nonstandard-string-prototype-properties.md) | disallow non-standard properties on String instance. |  |
 | [es-x/no-nonstandard-symbol-properties](./no-nonstandard-symbol-properties.md) | disallow non-standard static properties on `Symbol` class. |  |
 | [es-x/no-nonstandard-symbol-prototype-properties](./no-nonstandard-symbol-prototype-properties.md) | disallow non-standard properties on Symbol instance. |  |
+| [es-x/no-nonstandard-temporal-duration-properties](./no-nonstandard-temporal-duration-properties.md) | disallow non-standard static properties on `Temporal.Duration` class. |  |
+| [es-x/no-nonstandard-temporal-duration-prototype-properties](./no-nonstandard-temporal-duration-prototype-properties.md) | disallow non-standard properties on Temporal.Duration instance. |  |
+| [es-x/no-nonstandard-temporal-instant-properties](./no-nonstandard-temporal-instant-properties.md) | disallow non-standard static properties on `Temporal.Instant` class. |  |
+| [es-x/no-nonstandard-temporal-instant-prototype-properties](./no-nonstandard-temporal-instant-prototype-properties.md) | disallow non-standard properties on Temporal.Instant instance. |  |
+| [es-x/no-nonstandard-temporal-now-properties](./no-nonstandard-temporal-now-properties.md) | disallow non-standard static properties on `Temporal.Now`. |  |
+| [es-x/no-nonstandard-temporal-plaindate-properties](./no-nonstandard-temporal-plaindate-properties.md) | disallow non-standard static properties on `Temporal.PlainDate` class. |  |
+| [es-x/no-nonstandard-temporal-plaindate-prototype-properties](./no-nonstandard-temporal-plaindate-prototype-properties.md) | disallow non-standard properties on Temporal.PlainDate instance. |  |
+| [es-x/no-nonstandard-temporal-plaindatetime-properties](./no-nonstandard-temporal-plaindatetime-properties.md) | disallow non-standard static properties on `Temporal.PlainDateTime` class. |  |
+| [es-x/no-nonstandard-temporal-plaindatetime-prototype-properties](./no-nonstandard-temporal-plaindatetime-prototype-properties.md) | disallow non-standard properties on Temporal.PlainDateTime instance. |  |
+| [es-x/no-nonstandard-temporal-plainmonthday-properties](./no-nonstandard-temporal-plainmonthday-properties.md) | disallow non-standard static properties on `Temporal.PlainMonthDay` class. |  |
+| [es-x/no-nonstandard-temporal-plainmonthday-prototype-properties](./no-nonstandard-temporal-plainmonthday-prototype-properties.md) | disallow non-standard properties on Temporal.PlainMonthDay instance. |  |
+| [es-x/no-nonstandard-temporal-plaintime-properties](./no-nonstandard-temporal-plaintime-properties.md) | disallow non-standard static properties on `Temporal.PlainTime` class. |  |
+| [es-x/no-nonstandard-temporal-plaintime-prototype-properties](./no-nonstandard-temporal-plaintime-prototype-properties.md) | disallow non-standard properties on Temporal.PlainTime instance. |  |
+| [es-x/no-nonstandard-temporal-plainyearmonth-properties](./no-nonstandard-temporal-plainyearmonth-properties.md) | disallow non-standard static properties on `Temporal.PlainYearMonth` class. |  |
+| [es-x/no-nonstandard-temporal-plainyearmonth-prototype-properties](./no-nonstandard-temporal-plainyearmonth-prototype-properties.md) | disallow non-standard properties on Temporal.PlainYearMonth instance. |  |
+| [es-x/no-nonstandard-temporal-properties](./no-nonstandard-temporal-properties.md) | disallow non-standard static properties on `Temporal`. |  |
+| [es-x/no-nonstandard-temporal-zoneddatetime-properties](./no-nonstandard-temporal-zoneddatetime-properties.md) | disallow non-standard static properties on `Temporal.ZonedDateTime` class. |  |
+| [es-x/no-nonstandard-temporal-zoneddatetime-prototype-properties](./no-nonstandard-temporal-zoneddatetime-prototype-properties.md) | disallow non-standard properties on Temporal.ZonedDateTime instance. |  |
 | [es-x/no-nonstandard-typed-array-properties](./no-nonstandard-typed-array-properties.md) | disallow non-standard static properties on typed array class. |  |
 | [es-x/no-nonstandard-typed-array-prototype-properties](./no-nonstandard-typed-array-prototype-properties.md) | disallow non-standard properties on typed array instance. |  |
 | [es-x/no-nonstandard-weakmap-properties](./no-nonstandard-weakmap-properties.md) | disallow non-standard static properties on `WeakMap` class. |  |
