@@ -13,6 +13,7 @@ RuleTester.setDefaultConfig({
             AsyncDisposableStack: "readonly",
             DisposableStack: "readonly",
             SuppressedError: "readonly",
+            Temporal: "readonly",
             ...globals.builtin,
         },
     },
