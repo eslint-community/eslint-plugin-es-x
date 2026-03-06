@@ -7,7 +7,7 @@ description: "disallow the `Date.prototype.toTemporalInstant` method"
 > disallow the `Date.prototype.toTemporalInstant` method
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
-- ✅ The following configurations enable this rule: [no-new-in-esnext]
+- ✅ The following configurations enable this rule: [no-new-in-esnext] and [no-temporal]
 
 This rule reports ES2026 [`Date.prototype.toTemporalInstant` method](https://github.com/tc39/proposal-temporal) as errors.
 
@@ -59,3 +59,4 @@ This is prior to the `settings['es-x'].allowTestedProperty` setting.
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-date-prototype-totemporalinstant.js)
 
 [no-new-in-esnext]: ../configs/index.md#no-new-in-esnext
+[no-temporal]: ../configs/index.md#no-temporal
