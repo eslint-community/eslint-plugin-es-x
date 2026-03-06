@@ -19,10 +19,6 @@
         /* JavaScript Support */
         "allowJs": true,
         "checkJs": false,
-        
-        /* Interop Constraints */
-        "allowSyntheticDefaultImports": false,
-        "esModuleInterop": false,
 
         /* Language and Environment */
         "target": "esnext",

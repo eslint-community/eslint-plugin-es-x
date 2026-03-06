@@ -1,0 +1,57 @@
+---
+title: "es-x/no-nonstandard-temporal-plaindatetime-prototype-properties"
+description: "disallow non-standard properties on Temporal.PlainDateTime instance"
+---
+
+# es-x/no-nonstandard-temporal-plaindatetime-prototype-properties
+> disallow non-standard properties on Temporal.PlainDateTime instance
+
+- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
+
+This rule reports non-standard properties on Temporal.PlainDateTime instance as errors.
+
+## 💡 Examples
+
+⛔ Examples of **incorrect** code for this rule:
+
+<eslint-playground type="bad">
+
+```js
+/*eslint es-x/no-nonstandard-temporal-plaindatetime-prototype-properties: error */
+const foo = new Temporal.PlainDateTime();
+foo.unknown();
+```
+
+</eslint-playground>
+
+## 🔧 Options
+
+This rule has an option.
+
+```jsonc
+{
+  "rules": {
+    "es-x/no-nonstandard-temporal-plaindatetime-prototype-properties": [
+      "error",
+      {
+        "allow": [],
+        "allowTestedProperty": false
+      }
+    ]
+  }
+}
+```
+
+### allow: string[]
+
+An array of non-standard property names to allow.
+
+### allowTestedProperty: boolean
+
+Configure the allowTestedProperty mode for only this rule.
+This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 📚 References
+
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-nonstandard-temporal-plaindatetime-prototype-properties.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-nonstandard-temporal-plaindatetime-prototype-properties.js)

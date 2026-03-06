@@ -61,6 +61,10 @@ module.exports = {
         title: "String.prototype.matchAll",
         link: "https://github.com/tc39/proposal-string-matchall",
     },
+    temporal: {
+        title: "Temporal",
+        link: "https://github.com/tc39/proposal-temporal",
+    },
     upsert: {
         title: "Upsert",
         link: "https://github.com/tc39/proposal-upsert",
