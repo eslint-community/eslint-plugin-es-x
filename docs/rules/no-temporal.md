@@ -7,7 +7,7 @@ description: "disallow the `Temporal` class"
 > disallow the `Temporal` class
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
-- ✅ The following configurations enable this rule: [no-new-in-esnext]
+- ✅ The following configurations enable this rule: [no-new-in-esnext] and [no-temporal]
 
 This rule reports ES2026 [`Temporal` class](https://github.com/tc39/proposal-temporal) as errors.
 
@@ -30,3 +30,4 @@ let temporal = new Temporal()
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-temporal.js)
 
 [no-new-in-esnext]: ../configs/index.md#no-new-in-esnext
+[no-temporal]: ../configs/index.md#no-temporal
