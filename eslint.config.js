@@ -1,6 +1,7 @@
 "use strict"
 
 const { defineConfig, globalIgnores } = require("eslint/config")
+const tseslintParser = require("@typescript-eslint/parser")
 
 module.exports = defineConfig([
     globalIgnores([
@@ -115,6 +116,12 @@ module.exports = defineConfig([
         files: ["scripts/**/*.{js,ts}"],
         rules: {
             "n/no-unsupported-features/node-builtins": "off",
+        },
+    },
+    {
+        files: ["**/*.ts", "**/*.mts", "**/*.cts"],
+        languageOptions: {
+            parser: tseslintParser,
         },
     },
 ])
