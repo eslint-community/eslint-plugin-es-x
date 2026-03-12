@@ -23,6 +23,7 @@
         /* Interop Constraints */
         "allowSyntheticDefaultImports": false,
         "esModuleInterop": false,
+        "verbatimModuleSyntax": true,
 
         /* Language and Environment */
         "target": "esnext",
@@ -43,5 +44,6 @@
         ".nyc_output/**",
         "docs/.vitepress/dist/**",
         "docs/.vitepress/cache/**",
+        "tests/fixtures",
     ]
 }

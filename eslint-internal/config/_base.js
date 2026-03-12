@@ -7,14 +7,23 @@
 module.exports = [
     {
         name: "eslint-internal/config/_base.js#1",
-        files: ["**/*.js", "*.js", "**/*.cjs", "*.cjs"],
+        files: [
+            "**/*.js",
+            "*.js",
+            "**/*.cjs",
+            "*.cjs",
+            "**/*.ts",
+            "*.ts",
+            "**/*.cts",
+            "*.cts",
+        ],
         languageOptions: {
             sourceType: "commonjs",
         },
     },
     {
         name: "eslint-internal/config/_base.js#2",
-        files: ["**/*.mjs", "*.mjs"],
+        files: ["**/*.mjs", "*.mjs", "**/*.mts", "*.mts"],
         languageOptions: {
             sourceType: "module",
         },

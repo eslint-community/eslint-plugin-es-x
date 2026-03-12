@@ -10,6 +10,7 @@ module.exports = defineConfig([
         "docs/.vitepress/dist/",
         "docs/.vitepress/cache/",
         "dist/",
+        "tests/fixtures/",
     ]),
     {
         plugins: {
@@ -70,7 +71,7 @@ module.exports = defineConfig([
         },
     },
     {
-        files: ["lib/rules/**/*.js"],
+        files: ["lib/rules/**/*.{js,ts}"],
         rules: {
             "eslint-plugin/require-meta-docs-url": [
                 "error",
@@ -111,7 +112,7 @@ module.exports = defineConfig([
         },
     },
     {
-        files: ["scripts/**/*.js"],
+        files: ["scripts/**/*.{js,ts}"],
         rules: {
             "n/no-unsupported-features/node-builtins": "off",
         },
