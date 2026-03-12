@@ -8,7 +8,7 @@ const ruleId = "no-iterator-prototype-find"
 if (!RuleTester.isSupported(2025)) {
     //eslint-disable-next-line no-console
     console.log(`Skip the tests of ${ruleId}.`)
-    return
+    RuleTester.describe = describe.skip
 }
 
 new RuleTester({
@@ -210,3 +210,5 @@ new RuleTester({
         },
     ],
 })
+
+RuleTester.describe = describe

@@ -7,7 +7,7 @@ const rule = require("../../../lib/rules/no-shadow-catch-param.js")
 if (semver.lt(RuleTester.eslintVersion, "5.0.0")) {
     //eslint-disable-next-line no-console
     console.log("Skip the tests of no-shadow-catch-param.")
-    return
+    RuleTester.describe = describe.skip
 }
 
 new RuleTester({
@@ -47,3 +47,5 @@ new RuleTester({
         },
     ],
 })
+
+RuleTester.describe = describe
