@@ -207,7 +207,7 @@ ${yellow}npx mocha "tests/**/${ruleId}.js" --reporter dot --timeout 60000${reset
 
 /**
  * @template T
- * @param {Promise<T>} maybeCancelPromise
+ * @param {Promise<T | symbol>} maybeCancelPromise
  * @returns {Promise<T>}
  */
 async function unwrapPrompt(maybeCancelPromise) {
@@ -226,9 +226,10 @@ function buildGlobalObjectRuleResources({ ruleId, object, link }) {
     return {
         rule: `"use strict"
 
+const { createRule } = require("../util/create-rule")
 const { defineGlobalsHandler } = require("../util/define-globals-handler")
 
-module.exports = {
+module.exports = createRule({
     meta: {
         docs: {
             description: "disallow the \`${object}\` class.",
@@ -246,7 +247,7 @@ module.exports = {
     create(context) {
         return defineGlobalsHandler(context, ["${object}"])
     },
-}
+})
 `,
         test: `"use strict"
         
@@ -322,11 +323,12 @@ function buildStaticPropertiesRuleResources({
     return {
         rule: `"use strict"
 
+const { createRule } = require("../util/create-rule")
 const {
     defineStaticPropertiesHandler,
 } = require("../util/define-static-properties-handler")
 
-module.exports = {
+module.exports = createRule({
     meta: {
         docs: {
             description: "disallow the \`${object}.${propertiesString}\` ${kind[0]}",
@@ -354,7 +356,7 @@ module.exports = {
             "${object}": { ${properties.map((p) => `"${p}": "${propertyType}"`).join(",\n")} },
         })
     },
-}
+})
 `,
         test: `"use strict"
 
@@ -472,11 +474,12 @@ function buildPrototypePropertiesRuleResources({
     return {
         rule: `"use strict"
 
+const { createRule } = require("../util/create-rule")
 const {
     definePrototypePropertiesHandler,
 } = require("../util/define-prototype-properties-handler")
 
-module.exports = {
+module.exports = createRule({
     meta: {
         docs: {
             description: "disallow the \`${object}.prototype.${propertiesString}\` ${kind[0]}",
@@ -505,7 +508,7 @@ module.exports = {
             "${object}": { ${properties.map((p) => `"${p}": "${propertyType}"`).join(",\n")} },
         })
     },
-}
+})
 `,
         test: `"use strict"
 
@@ -697,12 +700,13 @@ function buildNonStandardStaticPropertiesRuleResources({ ruleId, object }) {
     return {
         rule: `"use strict"
 
+const { createRule } = require("../util/create-rule")
 const {
     defineNonstandardStaticPropertiesHandler,
 } = require("../util/define-nonstandard-static-properties-handler")
 const { ${camelObject}Properties } = require("../util/well-known-properties")
 
-module.exports = {
+module.exports = createRule({
     meta: {
         docs: {
             description: "disallow non-standard static properties on \`${object}\` class",
@@ -740,7 +744,7 @@ module.exports = {
             '${object}': allows,
         })
     },
-}
+})
 `,
         test: `"use strict"
 
@@ -818,12 +822,13 @@ function buildNonStandardPrototypePropertiesRuleResources({ ruleId, object }) {
     return {
         rule: `"use strict"
 
+const { createRule } = require("../util/create-rule")
 const {
     defineNonstandardPrototypePropertiesHandler,
 } = require("../util/define-nonstandard-prototype-properties-handler")
 const { ${camelObject}PrototypeProperties } = require("../util/well-known-properties")
 
-module.exports = {
+module.exports = createRule({
     meta: {
         docs: {
             description: "disallow non-standard properties on ${object} instance",
@@ -861,7 +866,7 @@ module.exports = {
             '${object}': allows,
         })
     },
-}
+})
 `,
         test: `"use strict"
 
@@ -1029,7 +1034,9 @@ function buildDefaultResources({ ruleId }) {
     return {
         rule: `"use strict"
 
-module.exports = {
+const { createRule } = require("../util/create-rule")
+
+module.exports = createRule({
     meta: {
         docs: {
             description: "disallow ....",
@@ -1047,7 +1054,7 @@ module.exports = {
     create(context) {
         return {}
     },
-}
+})
 `,
         test: `"use strict"
 
