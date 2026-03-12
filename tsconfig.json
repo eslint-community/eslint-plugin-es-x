@@ -23,6 +23,7 @@
         /* Interop Constraints */
         "allowSyntheticDefaultImports": false,
         "esModuleInterop": false,
+        "verbatimModuleSyntax": true,
 
         /* Language and Environment */
         "target": "esnext",
