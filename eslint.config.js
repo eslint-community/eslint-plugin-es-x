@@ -123,5 +123,8 @@ module.exports = defineConfig([
         languageOptions: {
             parser: tseslintParser,
         },
+        rules: {
+            "n/file-extension-in-import": "off",
+        },
     },
 ])

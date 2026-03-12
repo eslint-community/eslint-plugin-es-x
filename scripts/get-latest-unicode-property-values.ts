@@ -1,19 +1,30 @@
 "use strict"
 
-const { fetchLines } = require("./fetch-lines")
+import { fetchLines } from "./fetch-lines"
 const DB_URL =
     "https://unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt"
 const logger = console
 
-let cache = undefined
-module.exports = { getLatestUnicodePropertyValues }
+let cache:
+    | Array<{
+          propertyAlias: string
+          aliases: string[]
+          canonical: string
+      }>
+    | undefined = undefined
+
+export { getLatestUnicodePropertyValues }
 
 async function* getLatestUnicodePropertyValues() {
     logger.log("Fetching data... (%s)", DB_URL)
     const iterable = cache
         ? cache
         : (async function* () {
-              const newCache = []
+              const newCache: Array<{
+                  propertyAlias: string
+                  aliases: string[]
+                  canonical: string
+              }> = []
               for await (const line of fetchLines(DB_URL)) {
                   if (!line || line.startsWith("#")) {
                       continue

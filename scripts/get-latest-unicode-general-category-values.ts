@@ -1,10 +1,8 @@
 "use strict"
 
-const {
-    getLatestUnicodePropertyValues,
-} = require("./get-latest-unicode-property-values")
+import { getLatestUnicodePropertyValues } from "./get-latest-unicode-property-values"
 
-module.exports = { getLatestUnicodeGeneralCategoryValues }
+export { getLatestUnicodeGeneralCategoryValues }
 
 async function* getLatestUnicodeGeneralCategoryValues() {
     for await (const value of getLatestUnicodePropertyValues()) {

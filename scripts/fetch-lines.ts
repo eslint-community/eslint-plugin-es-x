@@ -1,6 +1,6 @@
 "use strict"
 
-module.exports = { fetchLines }
+export { fetchLines }
 
 async function* fetchLines(url: string) {
     const response = await fetch(url)
