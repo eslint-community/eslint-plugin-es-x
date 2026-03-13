@@ -4,42 +4,58 @@
  */
 "use strict"
 
-const fs = require("fs")
-const path = require("path")
-const proposals = require("./proposals")
+import * as fs from "node:fs"
+import * as path from "node:path"
+import proposals from "./proposals"
+import { createRequire } from "node:module"
+
 const libRoot = path.resolve(__dirname, "../lib/rules")
-const { createRequire } = require("module")
 
-/**
- * @typedef {Object} Rule
- * @property {string} ruleId The rule name.
- * @property {string} description The description.
- * @property {boolean} fixable The fixable flag.
- * @property {boolean} deprecated The deprecated flag.
- * @property {string[]} replacedBy The replacedBy rules.
- * @property {object[]} [schema] The schema.
- */
+interface Rule {
+    /** The rule name. */
+    ruleId: string
+    /** The description. */
+    description: string
+    /** The fixable flag. */
+    fixable: boolean
+    /** The deprecated flag. */
+    deprecated: boolean
+    /** The replacedBy rules. */
+    replacedBy: string[]
+    /** The proposal IDs. */
+    proposals: string[]
+    /** The schema. */
+    schema?: object[]
+}
 
-/**
- * @typedef {Object} Category
- * @property {string} id The category name.
- * @property {string} title The category title.
- * @property {number} [edition] The edition number.
- * @property {number} [year] The year.
- * @property {string} [configName] The config name.
- * @property {string} [aboveConfigName] The config name for disallowing features all above.
- * @property {Rule[]} rules The rules in this category.
- * @property {boolean} [experimental] The flag to be belong to experimental configs.
- * @property {string} [comment] The category comment.
- * @property {"ecma262" | "ecma402" | "proposal"} specKind The specification kind.
- */
+interface Category {
+    /** The category name. */
+    id: string
+    /** The category title. */
+    title: string
+    /** The edition number. */
+    edition?: number
+    /** The year. */
+    year?: number
+    /** The config name. */
+    configName?: string
+    /** The config name for disallowing features all above. */
+    aboveConfigName?: string
+    /** The rules in this category. */
+    rules: Rule[]
+    /** The flag to be belong to experimental configs. */
+    experimental?: boolean
+    /** The category comment. */
+    comment?: string
+    /** The specification kind. */
+    specKind?: "ecma262" | "ecma402" | "proposal"
+}
 
 // After the ECMAScript specification becomes GA,
 // we will need to change this constant and bump the major version.
 const LATEST_ES_YEAR = 2025
 
-/** @type {Record<string, Category>} */
-const categories = [
+const categories: { [categoryId: string]: Category } = [
     ...(function* () {
         const max = new Date().getFullYear() + 2
         for (let year = max; year >= 2015; year--) {
@@ -124,8 +140,7 @@ categories.deprecated = {
     rules: [],
 }
 
-/** @type {Rule[]} */
-const rules = []
+const rules: Rule[] = []
 
 // 全ルールを探す
 ;(function walk(dirPath) {
@@ -152,7 +167,7 @@ const rules = []
         const description = ruleModule.meta.docs.description.replace(/\.$/u, "")
         const fixable = ruleModule.meta.fixable
         const schema = ruleModule.meta.schema
-        const rule = {
+        const rule: Rule = {
             ruleId,
             description,
             fixable,
@@ -195,4 +210,4 @@ const rules = []
     }
 })(libRoot)
 
-module.exports = { categories, rules, LATEST_ES_YEAR }
+export { categories, rules, LATEST_ES_YEAR }

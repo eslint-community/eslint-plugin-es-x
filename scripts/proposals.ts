@@ -1,6 +1,6 @@
 "use strict"
 
-module.exports = {
+const proposals = {
     "arraybuffer-base64": {
         title: "Uint8Array to/from Base64 and Hex",
         link: "https://github.com/tc39/proposal-arraybuffer-base64",
@@ -66,3 +66,5 @@ module.exports = {
         link: "https://github.com/tc39/proposal-upsert",
     },
 }
+
+export default proposals
