@@ -1,15 +1,11 @@
 "use strict"
 
-const fs = require("fs")
-const path = require("path")
-const { JSDOM } = require("jsdom")
-const { ESLint } = require("eslint")
-const {
-    getLatestUnicodeGeneralCategoryValues,
-} = require("./get-latest-unicode-general-category-values")
-const {
-    getLatestUnicodeScriptValues,
-} = require("./get-latest-unicode-script-values")
+import * as fs from "node:fs"
+import * as path from "node:path"
+import { JSDOM, type DOMWindow } from "jsdom"
+import { ESLint } from "eslint"
+import { getLatestUnicodeGeneralCategoryValues } from "./get-latest-unicode-general-category-values"
+import { getLatestUnicodeScriptValues } from "./get-latest-unicode-script-values"
 
 const DATA_SOURCES = [
     {
@@ -81,11 +77,18 @@ const logger = console
 
 // Main
 ;(async () => {
-    const data = Object.create(null)
+    const data = Object.create(null) as Record<
+        number,
+        {
+            binProperties: string[]
+            gcValues: string[]
+            scValues: string[]
+        }
+    >
     const existing = {
-        binProperties: new Set(),
-        gcValues: new Set(),
-        scValues: new Set(),
+        binProperties: new Set<string>(),
+        gcValues: new Set<string>(),
+        scValues: new Set<string>(),
     }
 
     for (const {
@@ -103,7 +106,7 @@ const logger = console
         }
         data[version] = datum
 
-        let window = null
+        let window: DOMWindow = null
         do {
             try {
                 logger.log("Fetching data from %o", url)
@@ -171,7 +174,11 @@ module.exports = {gcNameSet, scNameSet, gcValueSets, scValueSets, binPropertySet
     process.exitCode = 1
 })
 
-async function collectValues(window, idSelectorOrProvider, existingSet) {
+async function collectValues(
+    window: DOMWindow,
+    idSelectorOrProvider: string | (() => AsyncIteratorObject<string>),
+    existingSet: Set<string>,
+) {
     const getValues =
         typeof idSelectorOrProvider === "function"
             ? idSelectorOrProvider
@@ -192,7 +199,7 @@ async function collectValues(window, idSelectorOrProvider, existingSet) {
               }
 
     const missing = new Set(existingSet)
-    const values = new Set()
+    const values = new Set<string>()
     let allCount = 0
 
     for await (const value of getValues()) {
@@ -218,7 +225,7 @@ async function collectValues(window, idSelectorOrProvider, existingSet) {
     return [...values].sort(undefined)
 }
 
-function makeClassDeclarationCode(versions) {
+function makeClassDeclarationCode(versions: string[]) {
     const parameters = versions.map((v) => `raw${v}`).join(", ")
     const init = versions.map((v) => `this._raw${v} = raw${v}`).join("\n")
     const getters = versions
@@ -239,14 +246,14 @@ function makeClassDeclarationCode(versions) {
     `
 }
 
-function makeDataCode(values) {
+function makeDataCode(values: string[]) {
     return `"${values
         .map((value) => JSON.stringify(value).slice(1, -1))
         .join(" ")}"`
 }
 
-function save(content) {
-    return new Promise((resolve, reject) => {
+function save(content: string) {
+    return new Promise<void>((resolve, reject) => {
         fs.writeFile(FILE_PATH, content, (error) =>
             error ? reject(error) : resolve(),
         )
