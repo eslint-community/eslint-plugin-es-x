@@ -210,4 +210,4 @@ const rules: Rule[] = []
     }
 })(libRoot)
 
-export { categories, rules, LATEST_ES_YEAR }
+export { categories, Category, rules, LATEST_ES_YEAR }
