@@ -4,11 +4,12 @@
  */
 "use strict"
 
-const cp = require("child_process")
-const fs = require("fs")
-const path = require("path")
-const prompts = require("@clack/prompts")
-const { LATEST_ES_YEAR } = require("./rules")
+import * as cp from "node:child_process"
+import * as fs from "node:fs"
+import * as path from "node:path"
+import * as prompts from "@clack/prompts"
+import { LATEST_ES_YEAR } from "./rules"
+
 const logger = console
 
 const maxESVersion = LATEST_ES_YEAR + 1
@@ -20,9 +21,17 @@ main(
         .replace(/[()]/gu, ""),
 )
 
+interface ResourceOptions {
+    ruleId: string
+    kind: string
+    object: string
+    properties: string[]
+    link: string
+}
+
 // main
 // eslint-disable-next-line complexity
-async function main(ruleId) {
+async function main(ruleId: string) {
     if (ruleId == null) {
         logger.error("Usage: npm run new <RuleID>")
         process.exitCode = 1
@@ -73,11 +82,11 @@ async function main(ruleId) {
         }),
     )
 
-    const resourceOptions = {
+    const resourceOptions: ResourceOptions = {
         ruleId,
         kind,
         object: "",
-        properties: /** @type {string[]} */ [],
+        properties: [],
         link: "",
     }
 
@@ -205,12 +214,9 @@ ${yellow}npx mocha "tests/**/${ruleId}.js" --reporter dot --timeout 60000${reset
 `)
 }
 
-/**
- * @template T
- * @param {Promise<T | symbol>} maybeCancelPromise
- * @returns {Promise<T>}
- */
-async function unwrapPrompt(maybeCancelPromise) {
+async function unwrapPrompt<T>(
+    maybeCancelPromise: Promise<T | symbol>,
+): Promise<T> {
     const result = await maybeCancelPromise
 
     if (prompts.isCancel(result)) {
@@ -221,7 +227,11 @@ async function unwrapPrompt(maybeCancelPromise) {
     return result
 }
 
-function buildGlobalObjectRuleResources({ ruleId, object, link }) {
+function buildGlobalObjectRuleResources({
+    ruleId,
+    object,
+    link,
+}: ResourceOptions) {
     const intl = object.startsWith("Intl.")
     return {
         rule: `"use strict"
@@ -294,7 +304,7 @@ function buildStaticPropertiesRuleResources({
     object,
     properties,
     link,
-}) {
+}: ResourceOptions) {
     const intl = object.startsWith("Intl.")
     const promptObject = getGlobalObject(object)
     const exampleProperty = promptObject
@@ -429,7 +439,7 @@ function buildPrototypePropertiesRuleResources({
     object,
     properties,
     link,
-}) {
+}: ResourceOptions) {
     const intl = object.startsWith("Intl.")
     const promptInstancePrototype = getGlobalObject(object)?.prototype
     let propertyType = "undefined"
@@ -695,7 +705,10 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
     }
 }
 
-function buildNonStandardStaticPropertiesRuleResources({ ruleId, object }) {
+function buildNonStandardStaticPropertiesRuleResources({
+    ruleId,
+    object,
+}: ResourceOptions) {
     const camelObject = camelCase(object)
     return {
         rule: `"use strict"
@@ -817,7 +830,10 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
     }
 }
 
-function buildNonStandardPrototypePropertiesRuleResources({ ruleId, object }) {
+function buildNonStandardPrototypePropertiesRuleResources({
+    ruleId,
+    object,
+}: ResourceOptions) {
     const camelObject = camelCase(object)
     return {
         rule: `"use strict"
@@ -1030,7 +1046,7 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
     }
 }
 
-function buildDefaultResources({ ruleId }) {
+function buildDefaultResources({ ruleId }: ResourceOptions) {
     return {
         rule: `"use strict"
 
@@ -1093,14 +1109,14 @@ This rule reports ??? as errors.
     }
 }
 
-function camelCase(str) {
+function camelCase(str: string) {
     const base = /[_.-]/u.test(str)
         ? str.replace(/[_.-](\w|$)/gu, (_, x) => x.toUpperCase())
         : str
     return `${base[0].toLowerCase()}${base.slice(1)}`
 }
 
-function getGlobalObject(object) {
+function getGlobalObject(object: string) {
     let target = globalThis
     for (const part of object.split(".")) {
         if (target[part] == null) {
