@@ -72,7 +72,11 @@ const DATA_SOURCES = [
         scValues: getLatestUnicodeScriptValues,
     },
 ]
-const FILE_PATH = path.resolve(__dirname, "../lib/util/unicode-properties.js")
+const FILE_PATH = path.resolve(
+    // @ts-expect-error -- Script is run as ESM.
+    import.meta.dirname,
+    "../lib/util/unicode-properties.js",
+)
 const logger = console
 
 // Main
