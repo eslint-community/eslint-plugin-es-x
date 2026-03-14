@@ -1,5 +1,3 @@
-"use strict"
-
 import { fetchLines } from "./fetch-lines"
 const DB_URL =
     "https://unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt"

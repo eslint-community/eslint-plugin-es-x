@@ -2,13 +2,11 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
 import * as fs from "node:fs"
 import * as path from "node:path"
 import proposals from "./proposals"
 import { createRequire } from "node:module"
-import type { JSONSchema4 } from "json-schema";
+import type { JSONSchema4 } from "json-schema"
 
 const libRoot = path.resolve(__dirname, "../lib/rules")
 

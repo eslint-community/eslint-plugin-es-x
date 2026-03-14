@@ -2,8 +2,6 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
 import * as cp from "node:child_process"
 import * as fs from "node:fs"
 import * as path from "node:path"

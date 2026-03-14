@@ -1,5 +1,3 @@
-"use strict"
-
 const proposals = {
     "arraybuffer-base64": {
         title: "Uint8Array to/from Base64 and Hex",

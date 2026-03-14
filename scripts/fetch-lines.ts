@@ -1,5 +1,3 @@
-"use strict"
-
 export { fetchLines }
 
 async function* fetchLines(url: string) {

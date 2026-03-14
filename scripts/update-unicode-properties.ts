@@ -1,5 +1,3 @@
-"use strict"
-
 import * as fs from "node:fs"
 import * as path from "node:path"
 import { JSDOM, type DOMWindow } from "jsdom"

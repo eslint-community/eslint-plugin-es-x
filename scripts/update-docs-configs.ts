@@ -2,8 +2,6 @@
  * @author Yosuke Ota <https://github.com/ota-meshi>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
 import * as fs from "node:fs"
 import * as path from "node:path"
 import { categories, Category } from "./rules"

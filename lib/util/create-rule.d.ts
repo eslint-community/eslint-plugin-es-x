@@ -32,4 +32,6 @@ export function createRule<
     Desc extends string,
     Docs extends EsXRuleDocs<Desc>,
     RuleOptions extends unknown[] = any[],
->(rule: EsXRuleModule<RuleOptions, MessageIds, Docs>): EsXRuleModule<RuleOptions, MessageIds, Docs>;
+>(
+    rule: EsXRuleModule<RuleOptions, MessageIds, Docs>,
+): EsXRuleModule<RuleOptions, MessageIds, Docs>

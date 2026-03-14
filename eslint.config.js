@@ -1,7 +1,7 @@
 "use strict"
 
 const { defineConfig, globalIgnores } = require("eslint/config")
-const tseslintParser = require("@typescript-eslint/parser")
+const tseslint = require("typescript-eslint")
 
 module.exports = defineConfig([
     globalIgnores([
@@ -119,7 +119,7 @@ module.exports = defineConfig([
             "n/no-missing-import": [
                 "error",
                 {
-                    allowedModules: ["json-schema"],
+                    allowModules: ["json-schema"],
                 },
             ],
         },
@@ -127,9 +127,18 @@ module.exports = defineConfig([
     {
         files: ["**/*.ts", "**/*.mts", "**/*.cts"],
         languageOptions: {
-            parser: tseslintParser,
+            parser: tseslint.parser,
         },
+        extends: [tseslint.configs.recommended],
         rules: {
+            // Don't ban `any` until strict mode is enabled.
+            "@typescript-eslint/no-explicit-any": "off",
+            "@typescript-eslint/no-unsafe-argument": "off",
+            "@typescript-eslint/no-unsafe-assignment": "off",
+            "@typescript-eslint/no-unsafe-call": "off",
+            "@typescript-eslint/no-unsafe-member-access": "off",
+            "@typescript-eslint/no-unsafe-return": "off",
+
             "n/file-extension-in-import": "off",
         },
     },

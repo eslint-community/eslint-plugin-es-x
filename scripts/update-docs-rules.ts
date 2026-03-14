@@ -2,12 +2,11 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
 import * as fs from "node:fs"
 import * as path from "node:path"
 import { rules } from "./rules"
 import type { JSONSchema4 } from "json-schema"
+import { version } from "../package.json"
 
 main()
 
@@ -24,7 +23,7 @@ function getSince(content: string) {
     }
 
     if (process.env.IN_VERSION_SCRIPT) {
-        return `v${require("../package.json").version}`
+        return `v${version}`
     }
     return null
 }

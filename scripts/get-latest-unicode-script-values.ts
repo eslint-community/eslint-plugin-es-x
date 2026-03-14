@@ -1,5 +1,3 @@
-"use strict"
-
 import { getLatestUnicodePropertyValues } from "./get-latest-unicode-property-values"
 
 export { getLatestUnicodeScriptValues }
