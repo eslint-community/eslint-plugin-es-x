@@ -139,7 +139,11 @@ module.exports = defineConfig([
             "@typescript-eslint/no-unsafe-member-access": "off",
             "@typescript-eslint/no-unsafe-return": "off",
 
-            "n/file-extension-in-import": "off",
+            "n/file-extension-in-import": [
+                "error",
+                "never",
+                { ".json": "always" },
+            ],
         },
     },
 ])

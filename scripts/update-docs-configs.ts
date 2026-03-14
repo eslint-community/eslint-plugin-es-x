@@ -4,7 +4,7 @@
  */
 import * as fs from "node:fs"
 import * as path from "node:path"
-import { categories, Category } from "./rules"
+import { categories, type Category } from "./rules"
 
 const MD_PATH = path.resolve(__dirname, "../docs/configs/index.md")
 

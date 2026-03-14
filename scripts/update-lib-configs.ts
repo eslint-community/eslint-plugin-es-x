@@ -5,7 +5,7 @@
 import * as fs from "node:fs"
 import * as path from "node:path"
 import { ESLint } from "eslint"
-import { categories, Category } from "./rules"
+import { categories, type Category } from "./rules"
 
 const Root = path.resolve(__dirname, "../lib/configs")
 

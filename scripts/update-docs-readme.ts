@@ -3,7 +3,7 @@
  * See LICENSE file in root directory for full license.
  */
 import * as fs from "node:fs"
-import { categories, Category, Rule } from "./rules"
+import { categories, type Category, type Rule } from "./rules"
 
 const collator = new Intl.Collator("en", { numeric: true })
 
