@@ -98,18 +98,18 @@ const logger = console
     } of DATA_SOURCES) {
         logger.log("---- ECMAScript %d ----", version)
         const datum = {
-            binProperties: [],
-            gcValues: [],
-            scValues: [],
+            binProperties: [] as string[],
+            gcValues: [] as string[],
+            scValues: [] as string[],
         }
         data[version] = datum
 
-        let window: DOMWindow = null
+        let window: DOMWindow | null = null
         do {
             try {
                 logger.log("Fetching data from %o", url)
                 ;({ window } = await JSDOM.fromURL(url))
-            } catch (error) {
+            } catch (error: any) {
                 if (!error || error.message !== "Error: socket hang up") {
                     throw error
                 }

@@ -166,7 +166,7 @@ function yamlValue(val: string) {
 function updateCodeBlocks(content: string, { fixable }: { fixable: boolean }) {
     let result = ""
     let offset = 0
-    let tagStartOffset: number = undefined
+    let tagStartOffset: number | undefined = undefined
     while (
         (tagStartOffset = content.indexOf("<eslint-playground", offset)) >= 0
     ) {
@@ -204,12 +204,15 @@ ${cookeHTMLAttrValue(code.value).trim()}
 
     /** Parse attrs */
     function parseAttrs(startOffset: number) {
-        const attrs = []
+        const attrs: Array<{
+            key: string
+            value?: string
+        }> = []
 
         const attrRegexp =
             /\/?>|([^\s=]+)(?:\s*=\s*("[^"]*?"|'[^']*?'|[^\s/>]+))?/gu
         attrRegexp.lastIndex = startOffset
-        let match: RegExpExecArray = null
+        let match: RegExpExecArray | null = null
         while ((match = attrRegexp.exec(content))) {
             if (match[0] === ">" || match[0] === "/>") {
                 return {
