@@ -8,6 +8,7 @@ import * as fs from "node:fs"
 import * as path from "node:path"
 import proposals from "./proposals"
 import { createRequire } from "node:module"
+import type { JSONSchema4 } from "json-schema";
 
 const libRoot = path.resolve(__dirname, "../lib/rules")
 
@@ -25,7 +26,7 @@ interface Rule {
     /** The proposal IDs. */
     proposals: string[]
     /** The schema. */
-    schema?: object[]
+    schema?: JSONSchema4[]
 }
 
 interface Category {

@@ -116,6 +116,12 @@ module.exports = defineConfig([
         files: ["scripts/**/*.{js,ts}"],
         rules: {
             "n/no-unsupported-features/node-builtins": "off",
+            "n/no-missing-import": [
+                "error",
+                {
+                    allowedModules: ["json-schema"],
+                },
+            ],
         },
     },
     {
