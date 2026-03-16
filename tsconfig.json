@@ -43,5 +43,6 @@
         ".nyc_output/**",
         "docs/.vitepress/dist/**",
         "docs/.vitepress/cache/**",
+        "tests/fixtures",
     ]
 }

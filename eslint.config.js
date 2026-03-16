@@ -1,6 +1,7 @@
 "use strict"
 
 const { defineConfig, globalIgnores } = require("eslint/config")
+const tseslint = require("typescript-eslint")
 
 module.exports = defineConfig([
     globalIgnores([
@@ -10,6 +11,7 @@ module.exports = defineConfig([
         "docs/.vitepress/dist/",
         "docs/.vitepress/cache/",
         "dist/",
+        "tests/fixtures/",
     ]),
     {
         plugins: {
@@ -70,7 +72,7 @@ module.exports = defineConfig([
         },
     },
     {
-        files: ["lib/rules/**/*.js"],
+        files: ["lib/rules/**/*.{js,ts}"],
         rules: {
             "eslint-plugin/require-meta-docs-url": [
                 "error",
@@ -111,9 +113,37 @@ module.exports = defineConfig([
         },
     },
     {
-        files: ["scripts/**/*.js"],
+        files: ["scripts/**/*.{js,ts}"],
         rules: {
             "n/no-unsupported-features/node-builtins": "off",
+            "n/no-missing-import": [
+                "error",
+                {
+                    allowModules: ["json-schema"],
+                },
+            ],
+        },
+    },
+    {
+        files: ["**/*.ts", "**/*.mts", "**/*.cts"],
+        languageOptions: {
+            parser: tseslint.parser,
+        },
+        extends: [tseslint.configs.recommended],
+        rules: {
+            // Don't ban `any` until strict mode is enabled.
+            "@typescript-eslint/no-explicit-any": "off",
+            "@typescript-eslint/no-unsafe-argument": "off",
+            "@typescript-eslint/no-unsafe-assignment": "off",
+            "@typescript-eslint/no-unsafe-call": "off",
+            "@typescript-eslint/no-unsafe-member-access": "off",
+            "@typescript-eslint/no-unsafe-return": "off",
+
+            "n/file-extension-in-import": [
+                "error",
+                "never",
+                { ".json": "always" },
+            ],
         },
     },
 ])

@@ -2,13 +2,12 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import * as fs from "node:fs"
+import { categories, type Category, type Rule } from "./rules"
 
-const fs = require("fs")
-const { categories } = require("./rules")
 const collator = new Intl.Collator("en", { numeric: true })
 
-const links = new Set()
+const links = new Set<string>()
 const configs = []
 // Analyze configs
 for (const {
@@ -70,9 +69,9 @@ ${[...links].join("\n")}
 
 /**
  * Create markdown text for a category.
- * @param {import("./rules").Category} category The category to convert.
+ * @param category The category to convert.
  */
-function toSection(category) {
+function toSection(category: Category) {
     if (!category.rules.length) {
         return undefined
     }
@@ -110,9 +109,9 @@ ${toTable(category)}
 
 /**
  * Create markdown text for a category.
- * @param {import("./rules").Category} category The category information to convert.
+ * @param category The category information to convert.
  */
-function toTable({ rules, id }) {
+function toTable({ rules, id }: Category) {
     if (id !== "deprecated") {
         const body = rules.map(toTableRow).join("\n")
         return `| Rule ID | Description |    |
@@ -134,26 +133,26 @@ ${body.trim() ? body : "|  | Now there are no rules. |"}`
 
 /**
  * Create markdown text for a rule.
- * @param {import("./rules").Rule} rule The rule information to convert.
+ * @param rule The rule information to convert.
  */
-function toTableRow({ ruleId, description, fixable }) {
+function toTableRow({ ruleId, description, fixable }: Rule) {
     const icons = fixable ? "🔧" : ""
     return `| ${toRuleLink(ruleId)} | ${description}. | ${icons} |`
 }
 
 /**
  * Create markdown text for rule link.
- * @param {string} ruleId The rule id to convert.
+ * @param ruleId The rule id to convert.
  */
-function toRuleLink(ruleId) {
+function toRuleLink(ruleId: string) {
     return `[es-x/${ruleId}](./${ruleId}.md)`
 }
 
 /**
  * Format a list.
- * @param {string[]} xs The list value to format.
+ * @param xs The list value to format.
  */
-function formatList(xs) {
+function formatList(xs: string[]) {
     switch (xs.length) {
         case 0:
             return ""

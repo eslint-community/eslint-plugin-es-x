@@ -1,19 +1,7 @@
 "use strict"
 
-const semver = require("semver")
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-using-declarations.js")
-
-// if (!RuleTester.isSupported(2026)) {
-//     //eslint-disable-next-line no-console
-//     console.log("Skip the tests of no-using-declarations.")
-//     return
-// }
-if (semver.lt(require("@typescript-eslint/parser").version, "8.0.0")) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-using-declarations.")
-    return
-}
 
 new RuleTester({
     languageOptions: {

@@ -7,7 +7,16 @@
 module.exports = [
     {
         name: "eslint-internal/config/+node.js#1",
-        files: ["**/*.js", "*.js", "**/*.cjs", "*.cjs"],
+        files: [
+            "**/*.js",
+            "*.js",
+            "**/*.cjs",
+            "*.cjs",
+            "**/*.ts",
+            "*.ts",
+            "**/*.cts",
+            "*.cts",
+        ],
         languageOptions: {
             parserOptions: {
                 ecmaFeatures: { globalReturn: true },

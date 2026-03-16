@@ -2,11 +2,10 @@
  * @author Yosuke Ota <https://github.com/ota-meshi>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import * as fs from "node:fs"
+import * as path from "node:path"
+import { categories, type Category } from "./rules"
 
-const fs = require("fs")
-const path = require("path")
-const { categories } = require("./rules")
 const MD_PATH = path.resolve(__dirname, "../docs/configs/index.md")
 
 const contents = [
@@ -16,8 +15,7 @@ const contents = [
     "",
 ]
 
-/** @type {Record<string, import("./rules").Category>} */
-const configs = {}
+const configs: Record<string, Category> = {}
 for (const { configName, rules, ...config } of Object.values(categories)) {
     if (configs[configName]) {
         configs[configName].rules.push(...rules)
@@ -71,7 +69,6 @@ fs.writeFileSync(MD_PATH, `${contents.join("\n").trim()}\n`)
 
 /**
  * Process for normal category config
- * @param {import("./rules").Category} params
  */
 function processCategoryConfig({
     title,
@@ -79,7 +76,7 @@ function processCategoryConfig({
     configName,
     specKind,
     experimental,
-}) {
+}: Category) {
     if (!configName || !rules.length) {
         return
     }
@@ -123,7 +120,7 @@ function processCategoryConfig({
     appendConfig(configName)
 }
 
-function appendConfig(configName) {
+function appendConfig(configName: string) {
     contents.push("```js")
     contents.push(`import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
@@ -149,9 +146,9 @@ export default defineConfig([
 
 /**
  * Format a list.
- * @param {string[]} xs The list value to format.
+ * @param xs The list value to format.
  */
-function formatList(xs) {
+function formatList(xs: string[]) {
     switch (xs.length) {
         case 0:
             return ""

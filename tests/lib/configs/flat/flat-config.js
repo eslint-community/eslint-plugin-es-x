@@ -5,9 +5,7 @@ const assert = require("assert")
 const eslintModule = require("eslint")
 const plugin = require("../../../../lib/index.js")
 
-if (!eslintModule.loadESLint) {
-    return
-}
+const describeIfLoadESLint = eslintModule.loadESLint ? describe : describe.skip
 
 // -----------------------------------------------------------------------------
 // Tests
@@ -18,7 +16,7 @@ const TEST_CWD = path.join(
     "../../fixtures/integrations/eslint-plugin",
 )
 
-describe("flat config", () => {
+describeIfLoadESLint("flat config", () => {
     const allConfigs = []
     for (const [name, config] of Object.entries(plugin.configs).filter(([n]) =>
         n.startsWith("flat/"),

@@ -76,4 +76,4 @@ jobs:
       - name: Build
         run: npm run -s build
       - name: Test
-        run: npm run -s test:mocha
+        run: npm run -s test:ci

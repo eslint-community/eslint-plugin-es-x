@@ -5,12 +5,6 @@ const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-iterator-prototype-take.js")
 const ruleId = "no-iterator-prototype-take"
 
-if (!RuleTester.isSupported(2025)) {
-    //eslint-disable-next-line no-console
-    console.log(`Skip the tests of ${ruleId}.`)
-    return
-}
-
 new RuleTester({
     languageOptions: { globals: { Iterator: "readonly" } },
 }).run(ruleId, rule, {

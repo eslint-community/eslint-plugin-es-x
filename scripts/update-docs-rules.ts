@@ -2,18 +2,18 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
-const fs = require("fs")
-const path = require("path")
-const { rules } = require("./rules")
+import * as fs from "node:fs"
+import * as path from "node:path"
+import { rules } from "./rules"
+import type { JSONSchema4 } from "json-schema"
+import { version } from "../package.json"
 
 main()
 
 /**
  * Get since from frontmatter or package.json
  */
-function getSince(content) {
+function getSince(content: string) {
     const fileIntro = /^---\n((?:.*\n)+)---\n*/u.exec(content)
     if (fileIntro) {
         const since = /since: "?([^"]+)"?/u.exec(fileIntro[0])
@@ -23,16 +23,16 @@ function getSince(content) {
     }
 
     if (process.env.IN_VERSION_SCRIPT) {
-        return `v${require("../package.json").version}`
+        return `v${version}`
     }
     return null
 }
 
 /**
  * Create markdown text for rule link.
- * @param {string} ruleId The rule id to convert.
+ * @param ruleId The rule id to convert.
  */
-function toRuleLink(ruleId) {
+function toRuleLink(ruleId: string) {
     return `[es-x/${ruleId}](./${ruleId}.md)`
 }
 
@@ -71,7 +71,7 @@ async function main() {
             .replace(/## 🚀 Version[\s\S]+/u, "")
             .replace(/## 📚 References[\s\S]+/u, "")
             .trim()
-        content = updateCodeBlocks(content, { ruleId, fixable })
+        content = updateCodeBlocks(content, { fixable })
         content = adjustContents(content)
         const enabledConfigIds = configs
             .filter((c) => c.ruleIds.has(`es-x/${ruleId}`))
@@ -156,17 +156,17 @@ ${links.length ? `\n${links.join("\n")}\n` : ""}`
 }
 
 /** Convert yaml value */
-function yamlValue(val) {
+function yamlValue(val: string) {
     if (typeof val === "string") {
         return `"${val.replace(/\\/gu, "\\\\").replace(/"/gu, '\\"')}"`
     }
     return val
 }
 
-function updateCodeBlocks(content, { fixable }) {
+function updateCodeBlocks(content: string, { fixable }: { fixable: boolean }) {
     let result = ""
     let offset = 0
-    let tagStartOffset = undefined
+    let tagStartOffset: number | undefined = undefined
     while (
         (tagStartOffset = content.indexOf("<eslint-playground", offset)) >= 0
     ) {
@@ -203,13 +203,16 @@ ${cookeHTMLAttrValue(code.value).trim()}
     return result
 
     /** Parse attrs */
-    function parseAttrs(startOffset) {
-        const attrs = []
+    function parseAttrs(startOffset: number) {
+        const attrs: Array<{
+            key: string
+            value?: string
+        }> = []
 
         const attrRegexp =
             /\/?>|([^\s=]+)(?:\s*=\s*("[^"]*?"|'[^']*?'|[^\s/>]+))?/gu
         attrRegexp.lastIndex = startOffset
-        let match = null
+        let match: RegExpExecArray | null = null
         while ((match = attrRegexp.exec(content))) {
             if (match[0] === ">" || match[0] === "/>") {
                 return {
@@ -228,7 +231,11 @@ ${cookeHTMLAttrValue(code.value).trim()}
     }
 }
 
-function processOptions(content, ruleId, optionSchema) {
+function processOptions(
+    content: string,
+    ruleId: string,
+    optionSchema: JSONSchema4,
+) {
     let resultContent = content
     const hasAggressive = optionSchema.properties?.aggressive
     const hasAllowTestedProperty = optionSchema.properties?.allowTestedProperty
@@ -289,8 +296,12 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.`,
     }
     return resultContent
 
-    function writeOptionExample(example) {
-        writeOptionContent((optionsContent) =>
+    function writeOptionExample(example: {
+        allow?: string[]
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }) {
+        writeOptionContent((optionsContent: string) =>
             optionsContent.replace(
                 /(```json(?:c|5)?\n)([\s\S]+?)(\n```(?:\n|$))/u,
                 (_, before, json, after) => {
@@ -304,13 +315,15 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.`,
                     } catch {
                         // ignore
                     }
-                    margeOptionExample(options, example)
+                    margeOptionExample(options)
                     return `${before}${JSON.stringify(options, null, 2)}${after}`
                 },
             ),
         )
 
-        function margeOptionExample(options) {
+        function margeOptionExample(options: {
+            rules: Record<string, unknown[]>
+        }) {
             if (!options.rules) {
                 options.rules = {}
             }
@@ -328,8 +341,8 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.`,
         }
     }
 
-    function writeOptionSection(sectionName, sectionContent) {
-        writeOptionContent((optionsContent) => {
+    function writeOptionSection(sectionName: string, sectionContent: string) {
+        writeOptionContent((optionsContent: string) => {
             if (!optionsContent.includes(`\n### ${sectionName}`)) {
                 return `${
                     optionsContent
@@ -342,7 +355,7 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.`,
         })
     }
 
-    function writeOptionContent(replacer) {
+    function writeOptionContent(replacer: (optionsContent: string) => string) {
         resultContent = resultContent.replace(
             /(\n## 🔧 Options[ \t]*\n)([\s\S]+?)(\n##\s|$)/u,
             (_, before, optionsContent, after) =>
@@ -353,7 +366,7 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.`,
     }
 }
 
-function adjustContents(content) {
+function adjustContents(content: string) {
     // Adjust the necessary blank lines before and after the code block so that GitHub can recognize `.md`.
     let result = content
         .replace(/(<eslint-playground[\s\S]*?>)\n+```/gu, "$1\n\n```")
@@ -365,7 +378,7 @@ function adjustContents(content) {
     return result
 }
 
-function cookeHTMLAttrValue(value) {
+function cookeHTMLAttrValue(value: string) {
     return value
         .replace(/^['"]([\s\S]*)['"]$/u, "$1")
         .replace(/&#x([0-9a-zA-Z]+);/gu, (_, codePoint) =>

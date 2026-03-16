@@ -1,14 +1,7 @@
 "use strict"
 
-const semver = require("semver")
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-shadow-catch-param.js")
-
-if (semver.lt(RuleTester.eslintVersion, "5.0.0")) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of no-shadow-catch-param.")
-    return
-}
 
 new RuleTester({
     languageOptions: { parser: require("espree") },
@@ -27,7 +20,7 @@ new RuleTester({
             code: "var e; try {} catch (e) {  }",
             languageOptions: { sourceType: "script" },
         },
-        ...(RuleTester.isSupported(2019) ? ["try {} catch {}"] : []),
+        "try {} catch {}",
     ],
     invalid: [
         {
