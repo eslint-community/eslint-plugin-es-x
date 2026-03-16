@@ -1075,12 +1075,6 @@ module.exports = createRule({
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/${ruleId}.js")
 
-if (!RuleTester.isSupported(${maxESVersion})) {
-    //eslint-disable-next-line no-console
-    console.log("Skip the tests of ${ruleId}.")
-    return
-}
-
 new RuleTester().run("${ruleId}", rule, {
     valid: [],
     invalid: [],
