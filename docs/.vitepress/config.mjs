@@ -4,12 +4,11 @@ import { fileURLToPath } from "url"
 import { viteCommonjs, vitePluginRequireResolve } from "./vite-plugin.mjs"
 import eslint4b from "vite-plugin-eslint4b"
 import { createRequire } from "module"
+import { categories } from "../../scripts/rules"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const require = createRequire(import.meta.url)
-
-const { categories } = require("../../scripts/rules.js")
 
 export default defineConfig({
     title: "eslint-plugin-es-x",

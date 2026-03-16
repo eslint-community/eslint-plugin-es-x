@@ -10,7 +10,7 @@ import type { JSONSchema4 } from "json-schema"
 
 const libRoot = path.resolve(__dirname, "../lib/rules")
 
-interface Rule {
+export interface Rule {
     /** The rule name. */
     ruleId: string
     /** The description. */
@@ -27,7 +27,7 @@ interface Rule {
     schema?: JSONSchema4[]
 }
 
-interface Category {
+export interface Category {
     /** The category name. */
     id: string
     /** The category title. */
@@ -209,4 +209,4 @@ const rules: Rule[] = []
     }
 })(libRoot)
 
-export { categories, Category, rules, Rule, LATEST_ES_YEAR }
+export { categories, rules, LATEST_ES_YEAR }
