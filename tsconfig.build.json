@@ -2,12 +2,15 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "rootDir": "./lib",
-        "declaration": false,
+        "declaration": true,
         "noEmit": false,
         "noEmitOnError": false,
         "outDir": "dist"
     },
     "include": [
         "lib"
+    ],
+    "exclude": [
+        "lib/index.js"
     ]
 }
