@@ -35,35 +35,67 @@ fs.writeFileSync(
     "lib/index.js",
     `/**
  * DON'T EDIT THIS FILE.
- * This file was generated automatically by 'scripts/update-lib-index.js'.
+ * This file was generated automatically by 'scripts/update-lib-index.ts'.
+ * It is a development shim so that require("./index.js") resolves correctly
+ * when running under tsx. It is excluded from the tsc build; consumers use
+ * dist/index.js which is compiled directly from lib/index.ts.
  */
 "use strict"
 
-const { printWarningOfDeprecatedConfig } = require("./utils")
-const { version, name } = require("../package.json")
+module.exports = require("./index.ts")
+`,
+)
 
-module.exports = {
+fs.writeFileSync(
+    "lib/index.ts",
+    `/**
+ * DON'T EDIT THIS FILE.
+ * This file was generated automatically by 'scripts/update-lib-index.ts'.
+ */
+/* eslint-disable @typescript-eslint/no-require-imports */
+import type { Linter, Rule } from "eslint"
+
+const { printWarningOfDeprecatedConfig } = require("./utils") as {
+    printWarningOfDeprecatedConfig: (id: string) => void
+}
+const { version, name } = require("../package.json") as {
+    version: string
+    name: string
+}
+
+const plugin: {
+    meta: { name: string; version: string }
+    configs: {
+        ${flatConfigIds.map((id) => `"flat/${id}": Linter.Config`).join("\n        ")}
+        ${configIds.map((id) => `"${id}": Linter.LegacyConfig`).join("\n        ")}
+        ${legacyConfigIds.map((id) => `readonly "${id}": Linter.LegacyConfig`).join("\n        ")}
+    }
+    rules: Record<string, Rule.RuleModule>
+} = {
     meta: { version, name },
     configs: {
         ${flatConfigIds
             .map((id) => `"flat/${id}": require("./configs/flat/${id}")`)
-            .join(",")},
+            .join(",\n        ")},
         ${configIds
-            .map((id) => `"${id}":require("./configs/${id}")`)
-            .join(",")},
+            .map((id) => `"${id}": require("./configs/${id}")`)
+            .join(",\n        ")},
         ${legacyConfigIds
             .map(
                 (id) => `get "${id}"() {
-                    printWarningOfDeprecatedConfig("${id}")
-                    return this["${id.replace("no-", "no-new-in-es")}"]
-                }`,
+            printWarningOfDeprecatedConfig("${id}")
+            return require("./configs/${id.replace("no-", "no-new-in-es")}") as Linter.LegacyConfig
+        }`,
             )
-            .join(",")}
+            .join(",\n        ")},
     },
     rules: {
-        ${ruleIds.map((id) => `"${id}":require("./rules/${id}")`).join(",")}
+        ${ruleIds.map((id) => `"${id}": require("./rules/${id}")`).join(",\n        ")},
     },
 }
+
+export = plugin
+/* eslint-enable @typescript-eslint/no-require-imports */
 `,
 )
 
@@ -71,6 +103,6 @@ format()
 
 async function format() {
     ESLint.outputFixes(
-        await new ESLint({ fix: true }).lintFiles(["lib/index.js"]),
+        await new ESLint({ fix: true }).lintFiles(["lib/index.ts"]),
     )
 }
