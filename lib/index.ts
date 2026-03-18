@@ -56,6 +56,7 @@ const plugin: {
         "flat/no-relative-indexing-method": Linter.Config
         "flat/no-set-methods": Linter.Config
         "flat/no-string-matchall": Linter.Config
+        "flat/no-temporal": Linter.Config
         "flat/no-upsert": Linter.Config
         "flat/restrict-to-es-intl-api-1st-edition": Linter.Config
         "flat/restrict-to-es3": Linter.Config
@@ -120,6 +121,7 @@ const plugin: {
         "no-relative-indexing-method": Linter.LegacyConfig
         "no-set-methods": Linter.LegacyConfig
         "no-string-matchall": Linter.LegacyConfig
+        "no-temporal": Linter.LegacyConfig
         "no-upsert": Linter.LegacyConfig
         "restrict-to-es-intl-api-1st-edition": Linter.LegacyConfig
         "restrict-to-es3": Linter.LegacyConfig
