@@ -27,6 +27,12 @@ interface ResourceOptions {
     link: string
 }
 
+interface RuleResources {
+    rule: string
+    test: string
+    doc: string
+}
+
 // main
 // eslint-disable-next-line complexity
 async function main(ruleId: string) {
@@ -42,7 +48,7 @@ async function main(ruleId: string) {
     }
 
     const ruleFile = path.resolve(__dirname, `../lib/rules/${ruleId}.js`)
-    const testFile = path.resolve(__dirname, `../tests/lib/rules/${ruleId}.js`)
+    const testFile = path.resolve(__dirname, `../tests/lib/rules/${ruleId}.ts`)
     const docFile = path.resolve(__dirname, `../docs/rules/${ruleId}.md`)
     const changesetFile = path.resolve(__dirname, `../.changeset/${ruleId}.md`)
 
@@ -76,7 +82,7 @@ async function main(ruleId: string) {
                     value: "default",
                     label: "There is no option",
                 },
-            ],
+            ] as const,
         }),
     )
 
@@ -159,7 +165,7 @@ async function main(ruleId: string) {
         "nonstandard-prototype-properties":
             buildNonStandardPrototypePropertiesRuleResources,
         default: buildDefaultResources,
-    }
+    } satisfies Record<string, (options: ResourceOptions) => RuleResources>
 
     if (
         kind === "global-object" ||
@@ -207,7 +213,7 @@ Add \`es-x/${ruleId}\` rule
 
     console.log(`Test Command:
 
-${yellow}npx mocha "tests/**/${ruleId}.js" --reporter dot --timeout 60000${reset}
+${yellow}npm run mocha "tests/**/${ruleId}.ts" --reporter dot --timeout 60000${reset}
 
 `)
 }
@@ -229,7 +235,7 @@ function buildGlobalObjectRuleResources({
     ruleId,
     object,
     link,
-}: ResourceOptions) {
+}: ResourceOptions): RuleResources {
     const intl = object.startsWith("Intl.")
     return {
         rule: `"use strict"
@@ -257,10 +263,8 @@ module.exports = createRule({
     },
 })
 `,
-        test: `"use strict"
-        
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/${ruleId}.js")
+        test: `import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/${ruleId}"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: ["Array", "Object", "let ${object} = 0; ${object}"],
@@ -302,7 +306,7 @@ function buildStaticPropertiesRuleResources({
     object,
     properties,
     link,
-}: ResourceOptions) {
+}: ResourceOptions): RuleResources {
     const intl = object.startsWith("Intl.")
     const promptObject = getGlobalObject(object)
     const exampleProperty = promptObject
@@ -366,10 +370,8 @@ module.exports = createRule({
     },
 })
 `,
-        test: `"use strict"
-
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/${ruleId}.js")
+        test: `import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/${ruleId}"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: [
@@ -437,7 +439,7 @@ function buildPrototypePropertiesRuleResources({
     object,
     properties,
     link,
-}: ResourceOptions) {
+}: ResourceOptions): RuleResources {
     const intl = object.startsWith("Intl.")
     const promptInstancePrototype = getGlobalObject(object)?.prototype
     let propertyType = "undefined"
@@ -518,11 +520,10 @@ module.exports = createRule({
     },
 })
 `,
-        test: `"use strict"
+        test: `import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/${ruleId}"
+import * as path from "node:path"
 
-const path = require("path")
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/${ruleId}.js")
 const ruleId = "${ruleId}"
 
 new RuleTester().run(ruleId, rule, {
@@ -577,14 +578,14 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require("@typescript-eslint/parser")
+import * as parser from "@typescript-eslint/parser"
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
 new RuleTester({
     languageOptions: {
-        parser,
+        parser: tseslint.parser,
         parserOptions: {
             tsconfigRootDir,
             project,
@@ -706,7 +707,7 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
 function buildNonStandardStaticPropertiesRuleResources({
     ruleId,
     object,
-}: ResourceOptions) {
+}: ResourceOptions): RuleResources {
     const camelObject = camelCase(object)
     return {
         rule: `"use strict"
@@ -757,11 +758,9 @@ module.exports = createRule({
     },
 })
 `,
-        test: `"use strict"
-
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/${ruleId}.js")
-const { ${camelObject}Properties } = require("../../../lib/util/well-known-properties")
+        test: `import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/${ruleId}"
+import { ${camelObject}Properties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: [
@@ -831,7 +830,7 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
 function buildNonStandardPrototypePropertiesRuleResources({
     ruleId,
     object,
-}: ResourceOptions) {
+}: ResourceOptions): RuleResources {
     const camelObject = camelCase(object)
     return {
         rule: `"use strict"
@@ -882,14 +881,13 @@ module.exports = createRule({
     },
 })
 `,
-        test: `"use strict"
-
-const path = require("path")
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/${ruleId}.js")
-const {
+        test: `import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/${ruleId}"
+import * as path from "node:path"
+import {
     ${camelObject}PrototypeProperties,
-} = require("../../../lib/util/well-known-properties")
+} from "../../../lib/util/well-known-properties"
+
 const ruleId = "${ruleId}"
 
 new RuleTester().run(ruleId, rule, {
@@ -931,7 +929,7 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require("@typescript-eslint/parser")
+import * as parser from "@typescript-eslint/parser"
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
@@ -1044,7 +1042,7 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
     }
 }
 
-function buildDefaultResources({ ruleId }: ResourceOptions) {
+function buildDefaultResources({ ruleId }: ResourceOptions): RuleResources {
     return {
         rule: `"use strict"
 
@@ -1070,10 +1068,8 @@ module.exports = createRule({
     },
 })
 `,
-        test: `"use strict"
-
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/${ruleId}.js")
+        test: `import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/${ruleId}"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: [],
@@ -1109,12 +1105,12 @@ function camelCase(str: string) {
 }
 
 function getGlobalObject(object: string) {
-    let target = globalThis
+    let target: Record<string, unknown> = globalThis
     for (const part of object.split(".")) {
         if (target[part] == null) {
             return null
         }
-        target = target[part]
+        target = target[part] as Record<string, unknown>
     }
     return target
 }
