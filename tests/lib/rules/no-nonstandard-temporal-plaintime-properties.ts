@@ -1,10 +1,6 @@
-"use strict"
-
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-temporal-plaintime-properties.js")
-const {
-    temporalPlainTimeProperties,
-} = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-temporal-plaintime-properties"
+import { temporalPlainTimeProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-temporal-plaintime-properties", rule, {
     valid: [
