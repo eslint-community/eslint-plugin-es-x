@@ -1,0 +1,44 @@
+/**
+ * @author Yosuke Ota <https://github.com/ota-meshi>
+ * See LICENSE file in root directory for full license.
+ */
+
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-arbitrary-module-namespace-names"
+
+new RuleTester({
+    languageOptions: { sourceType: "module" },
+}).run("no-arbitrary-module-namespace-names", rule, {
+    valid: [
+        'export * from "mod"',
+        'export * as ns from "mod"',
+        "export default foo",
+        'export {foo} from "mod"',
+        'export {foo as bar} from "mod"',
+        'import * as foo from "mod"',
+        'import foo from "mod"',
+        'import {foo} from "mod"',
+        'import {foo as bar} from "mod"',
+    ],
+    invalid: [
+        {
+            code: 'export * as "ns" from "mod"',
+            errors: ["ES2022 arbitrary module namespace names are forbidden."],
+        },
+        {
+            code: 'export {foo as "bar"} from "mod"',
+            errors: ["ES2022 arbitrary module namespace names are forbidden."],
+        },
+        {
+            code: 'export {"foo" as "bar"} from "mod"',
+            errors: [
+                "ES2022 arbitrary module namespace names are forbidden.",
+                "ES2022 arbitrary module namespace names are forbidden.",
+            ],
+        },
+        {
+            code: 'import {"foo" as bar} from "mod"',
+            errors: ["ES2022 arbitrary module namespace names are forbidden."],
+        },
+    ],
+})

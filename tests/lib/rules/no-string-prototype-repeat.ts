@@ -1,0 +1,110 @@
+/**
+ * @author Toru Nagashima <https://github.com/mysticatea>
+ * See LICENSE file in root directory for full license.
+ */
+
+import * as path from "node:path"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-string-prototype-repeat"
+const ruleId = "no-string-prototype-repeat"
+
+new RuleTester().run(ruleId, rule, {
+    valid: [
+        "repeat(3)",
+        "foo.charAt(0)",
+        "foo.repeat(3)",
+        { code: "repeat(3)", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.charAt(0)", settings: { "es-x": { aggressive: true } } },
+        {
+            code: "foo.repeat(3)",
+            options: [{ aggressive: false }],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            code: "'foo'.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            code: "foo.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            code: "foo.repeat(3)",
+            options: [{ aggressive: true }],
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+            settings: { "es-x": { aggressive: false } },
+        },
+    ],
+})
+
+// -----------------------------------------------------------------------------
+// TypeScript
+// -----------------------------------------------------------------------------
+import * as parser from "@typescript-eslint/parser"
+const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const project = "tsconfig.json"
+const filename = path.join(tsconfigRootDir, "test.ts")
+
+new RuleTester({
+    languageOptions: {
+        parser,
+        parserOptions: {
+            tsconfigRootDir,
+            project,
+            disallowAutomaticSingleRunInference: true,
+        },
+    },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: "repeat(3)" },
+        { filename, code: "foo.charAt(0)" },
+        { filename, code: "foo.repeat(3)" },
+        { filename, code: "let foo = {}; foo.repeat(3)" },
+        {
+            filename,
+            code: "repeat(3)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.charAt(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "'foo'.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = 'foo'; foo.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = String(); foo.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends string>(a: T) { a.repeat(3) }",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends 'a' | 'b'>(a: T) { a.repeat(3) }",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+        },
+        {
+            filename,
+            code: "foo.repeat(3)",
+            errors: ["ES2015 'String.prototype.repeat' method is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

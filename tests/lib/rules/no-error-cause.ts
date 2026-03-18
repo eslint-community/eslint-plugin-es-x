@@ -1,0 +1,69 @@
+/**
+ * @author Sosuke Suzuki <https://github.com/sosukesuzuki>
+ * See LICENSE file in root directory for full license.
+ */
+
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-error-cause"
+
+const errorConstructorNames = [
+    "Error",
+    "AggregateError",
+    "EvalError",
+    "RangeError",
+    "ReferenceError",
+    "SyntaxError",
+    "TypeError",
+    "URIError",
+]
+
+function getErrors(errorConstructorName) {
+    return errorConstructorName === "AggregateError"
+        ? '[new Error("message")], '
+        : ""
+}
+
+const valid = errorConstructorNames
+    .map((errorConstructorName) => {
+        const errors = getErrors(errorConstructorName)
+        return [
+            `new ${errorConstructorName}(${errors}"message")`,
+            `new ${errorConstructorName}(${errors}"message", notObjectExpression)`,
+            `new ${errorConstructorName}(${errors}"message", { notCause: foo })`,
+            `new ${errorConstructorName}(${errors}...foo, { cause: foo });`,
+            `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message") } }`,
+            `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message", notObjectExpression) } }`,
+            `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message", { notCause: foo }) } }`,
+        ]
+    })
+    // alternative of `Array.prototype.flat`
+    .reduce((acc, val) => acc.concat(val), [])
+
+const invalid = errorConstructorNames
+    .map((errorConstructorName) => {
+        const errors = getErrors(errorConstructorName)
+        return [
+            {
+                code: `new ${errorConstructorName}(${errors}"message", { cause: foo });`,
+                errors: ["ES2022 Error Cause is forbidden."],
+            },
+            {
+                code: `new ${errorConstructorName}(${errors}"message", { ["cause"]: foo });`,
+                errors: ["ES2022 Error Cause is forbidden."],
+            },
+            {
+                code: `const MyError = ${errorConstructorName}; new MyError(${errors}"message", { ["cause"]: foo });`,
+                errors: ["ES2022 Error Cause is forbidden."],
+            },
+            {
+                code: `class MyError extends ${errorConstructorName} { constructor() { super(${errors}"message", { cause: foo }); } }`,
+                errors: ["ES2022 Error Cause is forbidden."],
+            },
+        ]
+    })
+    // alternative of `Array.prototype.flat`
+    .reduce((acc, val) => acc.concat(val), [])
+
+new RuleTester({
+    languageOptions: { sourceType: "module" },
+}).run("no-error-cause", rule, { valid, invalid })

@@ -1,0 +1,100 @@
+import * as path from "node:path"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-map-prototype-getorinsertcomputed"
+const ruleId = "no-map-prototype-getorinsertcomputed"
+
+const method = "getOrInsertComputed"
+
+new RuleTester().run(ruleId, rule, {
+    valid: [
+        `${method}(key, callbackFn)`,
+        `foo.${method}(key, callbackFn)`,
+        "foo.set(key, value)",
+        {
+            code: `${method}(key, callbackFn)`,
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            code: "foo.set(key, value)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            code: `${method}(key, callbackFn)`,
+            options: [{ aggressive: false }],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            code: `foo.${method}(key, callbackFn)`,
+            errors: [`ES2026 'Map.prototype.${method}' method is forbidden.`],
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            code: `foo.${method}(key, callbackFn)`,
+            options: [{ aggressive: true }],
+            errors: [`ES2026 'Map.prototype.${method}' method is forbidden.`],
+            settings: { "es-x": { aggressive: false } },
+        },
+    ],
+})
+
+// -----------------------------------------------------------------------------
+// TypeScript
+// -----------------------------------------------------------------------------
+import * as parser from "@typescript-eslint/parser"
+const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const project = "tsconfig.json"
+const filename = path.join(tsconfigRootDir, "test.ts")
+
+new RuleTester({
+    languageOptions: {
+        parser,
+        parserOptions: {
+            tsconfigRootDir,
+            project,
+            disallowAutomaticSingleRunInference: true,
+        },
+    },
+}).run(`${ruleId} TS Full Types`, rule, {
+    valid: [
+        { filename, code: `${method}(key, callbackFn)` },
+        { filename, code: "foo.set(key, value)" },
+        {
+            filename,
+            code: `foo.${method}(key, callbackFn)`,
+        },
+        {
+            filename,
+            code: `let foo = {}; foo.${method}(key, callbackFn)`,
+        },
+        {
+            filename,
+            code: `${method}(key, callbackFn)`,
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.set(key, value)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: `let foo = new Map(); foo.${method}(key, callbackFn)`,
+            errors: [`ES2026 'Map.prototype.${method}' method is forbidden.`],
+        },
+        {
+            filename,
+            code: `function f<T extends Map<string, number>>(a: T) { a.${method}(key, callbackFn) }`,
+            errors: [`ES2026 'Map.prototype.${method}' method is forbidden.`],
+        },
+        {
+            filename,
+            code: `foo.${method}(key, callbackFn)`,
+            errors: [`ES2026 'Map.prototype.${method}' method is forbidden.`],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})

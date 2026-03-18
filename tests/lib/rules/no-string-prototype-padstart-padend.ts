@@ -1,0 +1,127 @@
+/**
+ * @author Toru Nagashima <https://github.com/mysticatea>
+ * See LICENSE file in root directory for full license.
+ */
+
+import * as path from "node:path"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-string-prototype-padstart-padend"
+const ruleId = "no-string-prototype-padstart-padend"
+
+new RuleTester().run(ruleId, rule, {
+    valid: [
+        "padStart(2)",
+        "padEnd(2)",
+        "foo.charAt(0)",
+        "foo.padStart(2)",
+        "foo.padEnd(2)",
+        { code: "padStart(2)", settings: { "es-x": { aggressive: true } } },
+        { code: "padEnd(2)", settings: { "es-x": { aggressive: true } } },
+        { code: "foo.charAt(0)", settings: { "es-x": { aggressive: true } } },
+        {
+            code: "foo.padStart(2)",
+            options: [{ aggressive: false }],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            code: "'foo'.padStart(2)",
+            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
+        },
+        {
+            code: "'foo'.padEnd(2)",
+            errors: ["ES2017 'String.prototype.padEnd' method is forbidden."],
+        },
+        {
+            code: "foo.padStart(2)",
+            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            code: "foo.padEnd(2)",
+            errors: ["ES2017 'String.prototype.padEnd' method is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            code: "foo.padStart(2)",
+            options: [{ aggressive: true }],
+            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
+            settings: { "es-x": { aggressive: false } },
+        },
+    ],
+})
+
+// -----------------------------------------------------------------------------
+// TypeScript
+// -----------------------------------------------------------------------------
+import * as parser from "@typescript-eslint/parser"
+const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const project = "tsconfig.json"
+const filename = path.join(tsconfigRootDir, "test.ts")
+
+new RuleTester({
+    languageOptions: {
+        parser,
+        parserOptions: {
+            tsconfigRootDir,
+            project,
+            disallowAutomaticSingleRunInference: true,
+        },
+    },
+}).run(`${ruleId} TS Full Type Information`, rule, {
+    valid: [
+        { filename, code: "padStart(2)" },
+        { filename, code: "foo.charAt(0)" },
+        { filename, code: "foo.padStart(2)" },
+        { filename, code: "let foo = {}; foo.padStart(2)" },
+        {
+            filename,
+            code: "padStart(2)",
+            settings: { "es-x": { aggressive: true } },
+        },
+        {
+            filename,
+            code: "foo.charAt(0)",
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+    invalid: [
+        {
+            filename,
+            code: "'foo'.padStart(2)",
+            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
+        },
+        {
+            filename,
+            code: "'foo'.padEnd(2)",
+            errors: ["ES2017 'String.prototype.padEnd' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = 'foo'; foo.padStart(2)",
+            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
+        },
+        {
+            filename,
+            code: "let foo = String(); foo.padStart(2)",
+            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends string>(a: T) { a.padStart(2) }",
+            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
+        },
+        {
+            filename,
+            code: "function f<T extends 'a' | 'b'>(a: T) { a.padStart(2) }",
+            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
+        },
+        {
+            filename,
+            code: "foo.padStart(2)",
+            errors: ["ES2017 'String.prototype.padStart' method is forbidden."],
+            settings: { "es-x": { aggressive: true } },
+        },
+    ],
+})
