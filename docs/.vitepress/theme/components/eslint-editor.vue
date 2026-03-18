@@ -1,11 +1,14 @@
-<script>
+<script lang="ts">
+import type monaco from "monaco-editor"
+import type { Linter } from "eslint"
+
 /**
  * Ensure that a given value is a positive value.
  * @param value The value to check.
  * @param defaultValue The default value which is used if the `value` is undefined.
  * @returns The positive value as the result.
  */
-function ensurePositiveInt(value, defaultValue) {
+function ensurePositiveInt(value: number | undefined, defaultValue: number) {
     return Math.max(1, (value !== undefined ? value : defaultValue) | 0)
 }
 
@@ -14,7 +17,7 @@ function ensurePositiveInt(value, defaultValue) {
  * @param marker marker
  * @returns the key string
  */
-function computeKey(marker) {
+function computeKey(marker: monaco.editor.IMarkerData) {
     const code =
         (typeof marker.code === "string"
             ? marker.code
@@ -26,13 +29,16 @@ function computeKey(marker) {
  * Create quickfix code action.
  * @returns CodeAction
  */
-function createQuickfixCodeAction(title, marker, model, fix) {
+function createQuickfixCodeAction(
+    title: string,
+    marker: monaco.editor.IMarkerData,
+    model: monaco.editor.ITextModel,
+    fix: NonNullable<Linter.LintMessage["fix"]>,
+): monaco.languages.CodeAction {
     const start = model.getPositionAt(fix.range[0])
     const end = model.getPositionAt(fix.range[1])
-    /**
-     * @type {import('monaco-editor').IRange}
-     */
-    const editRange = {
+
+    const editRange: monaco.IRange = {
         startLineNumber: start.lineNumber,
         startColumn: start.column,
         endLineNumber: end.lineNumber,
@@ -58,106 +64,111 @@ function createQuickfixCodeAction(title, marker, model, fix) {
 }
 </script>
 
-<script setup>
+<script setup lang="ts">
 import { computed, reactive, ref, watch, toRaw, markRaw } from "vue"
 import MonacoEditor from "./monaco-editor.vue"
 
-const props = defineProps({
-    linter: {
-        type: Object,
-        default: null,
-    },
-    code: {
-        type: String,
-        default: "",
-    },
-    config: {
-        type: Object,
-        default: () => ({}),
-    },
-    filename: {
-        type: String,
-        default: "example.js",
-    },
-    preprocess: {
-        type: Function,
-        default: undefined,
-    },
-    postprocess: {
-        type: Function,
-        default: undefined,
-    },
-    fix: Boolean,
-    language: {
-        type: String,
-        default: "javascript",
-    },
+interface Props {
+    linter?: Promise<Linter> | Linter | null
+    code?: string
+    config?: Linter.Config
+    filename?: string
+    preprocess?: Linter.LintOptions["preprocess"]
+    postprocess?: Linter.LintOptions["postprocess"]
+    fix?: boolean
+    language?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+    linter: null,
+    code: "",
+    config: () => ({}),
+    filename: "example.js",
+    preprocess: undefined,
+    postprocess: undefined,
+    language: "javascript",
 })
-const emit = defineEmits(["change", "update:code"])
+
+const emit = defineEmits<{
+    change: [
+        {
+            code: string
+            messages: Linter.LintMessage[]
+            fixedCode: string
+            fixedMessages: Linter.LintMessage[]
+        },
+    ]
+    "update:code": [string]
+}>()
 
 // eslint-disable-next-line vue/no-dupe-keys -- ignore
-const linter = ref(null)
+const linter = ref<Linter | null>(null)
 const editorValue = ref(props.code)
-const messages = ref([])
+const messages = ref<Linter.LintMessage[]>([])
 const fixedCode = ref(props.code)
-const fixedMessages = ref([])
+const fixedMessages = ref<Linter.LintMessage[]>([])
 const previewFix = ref(false)
-const editorMessageMap = reactive(new Map())
-const waiting = ref(null)
+const editorMessageMap = reactive(
+    new Map<monaco.Uri, Map<string, Linter.LintMessage>>(),
+)
+const waiting = ref<Promise<unknown> | null>(null)
 
-const monacoEditorRef = ref(undefined)
+const monacoEditorRef = ref<InstanceType<typeof MonacoEditor> | null>(null)
 
-let editing = null
+let editing: ReturnType<typeof setTimeout> | null = null
 let requestFix = false
 
-const provideCodeActions = computed(() => (model, _range, context) => {
-    const messageMap = editorMessageMap.get(model.uri)
-    if (context.only !== "quickfix" || !messageMap) {
-        return {
-            actions: [],
-            dispose() {
-                /* nop */
-            },
-        }
-    }
-
-    const actions = []
-    for (const marker of context.markers) {
-        const message = messageMap.get(computeKey(marker))
-        if (!message) {
-            continue
-        }
-        if (message.fix) {
-            actions.push(
-                createQuickfixCodeAction(
-                    `Fix this ${message.ruleId} problem`,
-                    marker,
-                    model,
-                    message.fix,
-                ),
-            )
-        }
-        if (message.suggestions) {
-            for (const suggestion of message.suggestions) {
-                actions.push(
-                    createQuickfixCodeAction(
-                        `${suggestion.desc} (${message.ruleId})`,
-                        marker,
-                        model,
-                        suggestion.fix,
-                    ),
-                )
+const provideCodeActions = computed(
+    (): monaco.languages.CodeActionProvider["provideCodeActions"] =>
+        (model, _range, context) => {
+            const messageMap = editorMessageMap.get(model.uri)
+            if (context.only !== "quickfix" || !messageMap) {
+                return {
+                    actions: [],
+                    dispose() {
+                        /* nop */
+                    },
+                }
             }
-        }
-    }
 
-    return {
-        actions,
-        dispose() {
-            /* nop */
+            const actions: monaco.languages.CodeAction[] = []
+            for (const marker of context.markers) {
+                const message = messageMap.get(computeKey(marker))
+                if (!message) {
+                    continue
+                }
+                if (message.fix) {
+                    actions.push(
+                        createQuickfixCodeAction(
+                            `Fix this ${message.ruleId} problem`,
+                            marker,
+                            model,
+                            message.fix,
+                        ),
+                    )
+                }
+                if (message.suggestions) {
+                    for (const suggestion of message.suggestions) {
+                        actions.push(
+                            createQuickfixCodeAction(
+                                `${suggestion.desc} (${message.ruleId})`,
+                                marker,
+                                model,
+                                suggestion.fix,
+                            ),
+                        )
+                    }
+                }
+            }
+
+            return {
+                actions,
+                dispose() {
+                    /* nop */
+                },
+            }
         },
-    }
-})
+)
 const markers = computed(() => {
     const editor = monacoEditorRef.value?.getLeftEditor()
     return messagesToMarkers(editor?.getModel() ?? null, messages.value, true)
@@ -260,7 +271,7 @@ function lint() {
                 fatal: true,
                 ruleId: null,
                 severity: 2,
-                message: err.message,
+                message: (err as Error).message,
                 line: 1,
                 column: 0,
             },
@@ -279,7 +290,7 @@ function lint() {
                 fatal: true,
                 ruleId: null,
                 severity: 2,
-                message: err.message,
+                message: (err as Error).message,
                 line: 1,
                 column: 0,
             },
@@ -301,7 +312,7 @@ function lint() {
     }
 }
 
-function getRuleDocUrl(ruleId) {
+function getRuleDocUrl(ruleId: string) {
     if (!ruleId.includes("/")) {
         return `https://eslint.org/docs/rules/${ruleId}`
     }
@@ -336,7 +347,9 @@ function getRuleDocUrl(ruleId) {
 }
 
 /** Linter message to monaco editor marker */
-function messageToMarker(message) {
+function messageToMarker(
+    message: Linter.LintMessage,
+): monaco.editor.IMarkerData {
     const docUrl = message.ruleId && getRuleDocUrl(message.ruleId)
     const startLineNumber = ensurePositiveInt(message.line, 1)
     const startColumn = ensurePositiveInt(message.column, 1)
@@ -344,7 +357,12 @@ function messageToMarker(message) {
     const endColumn = ensurePositiveInt(message.endColumn, startColumn + 1)
 
     const code = docUrl
-        ? { value: message.ruleId, link: docUrl, target: docUrl }
+        ? {
+              value: message.ruleId!,
+              link: docUrl,
+              // monaco just calls toString(), so this works.
+              target: docUrl as unknown as monaco.Uri,
+          }
         : message.ruleId || "FATAL"
 
     return {
@@ -360,14 +378,18 @@ function messageToMarker(message) {
 }
 
 /** Linter message lint to monaco editor marker lint */
-function messagesToMarkers(model, lintMessages, storeMessageMap) {
+function messagesToMarkers(
+    model: monaco.editor.ITextModel | null,
+    lintMessages: Linter.LintMessage[],
+    storeMessageMap: boolean,
+) {
     if (model) {
         editorMessageMap.delete(model.uri)
     }
-    const resultMarkers = []
+    const resultMarkers: monaco.editor.IMarkerData[] = []
     let messageMap = null
     if (storeMessageMap) {
-        messageMap = new Map()
+        messageMap = new Map<string, Linter.LintMessage>()
         if (model) {
             editorMessageMap.set(model.uri, messageMap)
         }
