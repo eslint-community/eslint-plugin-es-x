@@ -1,11 +1,7 @@
-"use strict"
-
-const path = require("path")
-const assert = require("assert")
-const eslintModule = require("eslint")
-const plugin = require("../../../../lib/index.ts")
-
-const describeIfLoadESLint = eslintModule.loadESLint ? describe : describe.skip
+import path from "node:path"
+import assert from "node:assert"
+import eslintModule from "eslint"
+import plugin from "../../../../lib/index"
 
 // -----------------------------------------------------------------------------
 // Tests
@@ -16,10 +12,11 @@ const TEST_CWD = path.join(
     "../../fixtures/integrations/eslint-plugin",
 )
 
-describeIfLoadESLint("flat config", () => {
-    const allConfigs = []
-    for (const [name, config] of Object.entries(plugin.configs).filter(([n]) =>
-        n.startsWith("flat/"),
+describe("flat config", () => {
+    const allConfigs: eslintModule.Linter.Config[] = []
+    for (const [name, config] of Object.entries(plugin.configs).filter(
+        (entry): entry is [string, eslintModule.Linter.Config] =>
+            entry[0].startsWith("flat/"),
     )) {
         describe(`flat/${name}`, () => {
             it("should lint without errors", () =>
@@ -37,8 +34,10 @@ describeIfLoadESLint("flat config", () => {
     })
 })
 
-async function lint(configs) {
-    const ESLint = await eslintModule.loadESLint({ useFlatConfig: true })
+async function lint(configs: eslintModule.Linter.Config[]) {
+    const ESLint = (await (eslintModule.loadESLint as any)({
+        useFlatConfig: true,
+    })) as typeof eslintModule.ESLint
     const eslint = new ESLint({
         cwd: TEST_CWD,
         overrideConfigFile: true,
