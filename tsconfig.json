@@ -24,6 +24,7 @@
         "jsx": "preserve",
         "jsxImportSource": "vue",
         "target": "esnext",
+        "types": ["node"],
         
         /* Completeness */
         "skipLibCheck": true,
