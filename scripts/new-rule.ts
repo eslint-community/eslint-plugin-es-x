@@ -213,7 +213,7 @@ Add \`es-x/${ruleId}\` rule
 
     console.log(`Test Command:
 
-${yellow}npm run mocha "tests/**/${ruleId}.ts" --reporter dot --timeout 60000${reset}
+${yellow}npm run mocha -- "tests/**/${ruleId}.ts" --reporter dot --timeout 60000${reset}
 
 `)
 }
