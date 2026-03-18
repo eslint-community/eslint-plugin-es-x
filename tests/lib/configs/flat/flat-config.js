@@ -3,7 +3,7 @@
 const path = require("path")
 const assert = require("assert")
 const eslintModule = require("eslint")
-const plugin = require("../../../../lib/index.js")
+const plugin = require("../../../../lib/index.ts")
 
 const describeIfLoadESLint = eslintModule.loadESLint ? describe : describe.skip
 
