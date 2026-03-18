@@ -43,7 +43,8 @@ async function lint(configs: eslintModule.Linter.Config[]) {
         overrideConfigFile: true,
         overrideConfig: configs,
     })
-    return eslint
-        .lintText(String.raw`var a = 42;`, { filePath: "test.js" })
-        .then((results) => results[0])
+    const results = await eslint.lintText(String.raw`var a = 42;`, {
+        filePath: "test.js",
+    })
+    return results[0]
 }
