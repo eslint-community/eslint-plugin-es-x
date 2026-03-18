@@ -65,7 +65,7 @@
     "new": "npm run -s ts -- scripts/new-rule",
     "pretest": "npm run -s lint",
     "test": "c8 npm run -s test:base",
-    "test:base": "npm run -s mocha -- \"tests/**/*.{js,mjs}\" --reporter dot --timeout 60000",
+    "test:base": "npm run -s mocha -- \"tests/**/*.{js,cjs,mjs,ts,cts,mts}\" --reporter dot --timeout 60000",
     "test:ci": "c8 --reporter=lcovonly npm run -s test:base",
     "tsc": "tsc --noEmit",
     "ts": "node --import tsx",
