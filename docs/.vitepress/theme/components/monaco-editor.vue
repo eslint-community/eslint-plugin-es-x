@@ -1,81 +1,79 @@
-<script setup>
-import { loadMonacoEditor, setupMonacoEditor } from "./monaco/index.mjs"
+<script setup lang="ts">
+import type monaco from "monaco-editor"
+import {
+    loadMonacoEditor,
+    setupMonacoEditor,
+    type SetupMonacoResult,
+} from "./monaco/index.mjs"
 import { onBeforeUnmount, onMounted, ref, watch } from "vue"
+import type { SourceLocation } from "estree"
 
-const props = defineProps({
-    modelValue: {
-        type: String,
-        default: "",
-    },
-    rightCode: {
-        type: String,
-        default: "",
-    },
-    language: {
-        type: String,
-        default: "",
-    },
-    readOnly: Boolean,
-    diffEditor: Boolean,
-    markers: {
-        type: Array,
-        default: () => [],
-    },
-    rightMarkers: {
-        type: Array,
-        default: () => [],
-    },
-    provideCodeActions: {
-        type: Function,
-        default: null,
-    },
-    waiting: {
-        type: Object,
-        default: null,
-    },
+interface Props {
+    modelValue?: string
+    rightCode?: string
+    language?: string
+    readOnly?: boolean
+    diffEditor?: boolean
+    markers: monaco.editor.IMarkerData[]
+    rightMarkers: monaco.editor.IMarkerData[]
+    provideCodeActions?:
+        | monaco.languages.CodeActionProvider["provideCodeActions"]
+        | null
+    waiting?: Promise<unknown> | null
+}
+
+const props = withDefaults(defineProps<Props>(), {
+    modelValue: "",
+    rightCode: "",
+    language: "",
+    markers: () => [],
+    rightMarkers: () => [],
+    provideCodeActions: null,
+    waiting: null,
 })
 
-const emit = defineEmits([
-    "update:modelValue",
-    "changeCursorPosition",
-    "focusEditorText",
-    "mountedEditor",
-])
+const emit = defineEmits<{
+    "update:modelValue": [string]
+    changeCursorPosition: [monaco.editor.ICursorPositionChangedEvent]
+    focusEditorText: []
+    mountedEditor: []
+}>()
 
-const rootElement = ref(null)
+const rootElement = ref<HTMLDivElement | null>(null)
 // let editor: MEditor.IStandaloneDiffEditor | MEditor.IStandaloneCodeEditor | null = null;
 // eslint-disable-next-line func-style -- variable
-let setModelLanguage = () => {
+let setModelLanguage: SetupMonacoResult["setModelLanguage"] = () => {
     // init
 }
 // eslint-disable-next-line func-style -- variable
-let setLeftValue = () => {
+let setLeftValue: SetupMonacoResult["setLeftValue"] = () => {
     // init
 }
 // eslint-disable-next-line func-style -- variable
-let setRightValue = () => {
+let setRightValue: SetupMonacoResult["setRightValue"] = () => {
     // init
 }
 // eslint-disable-next-line func-style -- variable
-let setLeftMarkers = () => {
+let setLeftMarkers: SetupMonacoResult["setLeftMarkers"] = () => {
     // init
 }
 // eslint-disable-next-line func-style -- variable
-let setRightMarkers = () => {
+let setRightMarkers: SetupMonacoResult["setRightMarkers"] = () => {
     // init
 }
 // eslint-disable-next-line func-style -- variable
-let getLeftEditor = () => null
+let getLeftEditor: SetupMonacoResult["getLeftEditor"] = () => null
 // eslint-disable-next-line func-style -- variable
-let getRightEditor = () => null
+let getRightEditor: SetupMonacoResult["getRightEditor"] = () => null
 // eslint-disable-next-line func-style -- variable
-let disposeEditor = () => {
+let disposeEditor: SetupMonacoResult["disposeEditor"] = () => {
     // init
 }
 // eslint-disable-next-line func-style -- variable
-let registerCodeActionProvider = () => {
-    // init
-}
+let registerCodeActionProvider: SetupMonacoResult["registerCodeActionProvider"] =
+    () => {
+        // init
+    }
 
 const loading = ref(true)
 onMounted(async () => {
@@ -173,7 +171,7 @@ async function setup() {
                 emit("focusEditorText")
             },
         },
-        rootElement: rootElement.value,
+        rootElement: rootElement.value!,
         useDiffEditor: Boolean(props.diffEditor),
     }))
 
@@ -189,7 +187,7 @@ onBeforeUnmount(() => {
 })
 
 /** Set cursor position */
-function setCursorPosition(loc) {
+function setCursorPosition(loc: SourceLocation) {
     const leftEditor = getLeftEditor()
     if (leftEditor) {
         leftEditor.setSelection({

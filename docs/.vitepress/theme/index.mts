@@ -1,18 +1,17 @@
 if (typeof globalThis.require === "undefined") {
-    globalThis.require = () => {
+    ;(globalThis as any).require = () => {
         const e = new Error("require is not defined")
-        e.code = "MODULE_NOT_FOUND"
+        ;(e as any).code = "MODULE_NOT_FOUND"
         throw e
     }
 }
+import type { Theme } from "vitepress"
 import DefaultTheme from "vitepress/theme"
 import { defineAsyncComponent } from "vue"
-// @ts-expect-error -- ignore
 import Layout from "./Layout.vue"
 import "./style.css"
 
-/** @type {import('vitepress').Theme} */
-const theme = {
+const theme: Theme = {
     ...DefaultTheme,
     Layout,
     enhanceApp(ctx) {
@@ -20,7 +19,6 @@ const theme = {
         ctx.app.component(
             "eslint-playground",
             defineAsyncComponent({
-                // @ts-expect-error -- ignore
                 loader: () => import("./components/eslint-playground.vue"),
             }),
         )

@@ -23,6 +23,11 @@ module.exports = [
             get parser() {
                 return require("vue-eslint-parser")
             },
+            parserOptions: {
+                get parser() {
+                    return require("@typescript-eslint/parser")
+                },
+            },
         },
         rules: {
             // Enabled rules

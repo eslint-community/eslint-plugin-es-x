@@ -1,44 +1,29 @@
 <script lang="ts" setup>
 import EslintEditor from "./eslint-editor.vue"
 import { markRaw, ref, reactive, computed, onMounted, useSlots } from "vue"
-import * as plugin from "../../../../lib/index.js"
-import * as globals from "globals"
-const { rules } = plugin.default || plugin
-const { builtin } = globals.default || globals
+import esX from "../../../../lib/index"
+import globals from "globals"
+import type { Linter } from "eslint"
 
-const props = defineProps({
-    // For no-json-superset
-    code: {
-        type: String,
-        default: undefined,
-    },
-    fix: {
-        type: Boolean,
-    },
-    type: {
-        type: String,
-        required: true,
-        validator(value) {
-            return value === "bad" || value === "good"
-        },
-    },
-    sourceType: {
-        type: String,
-        default: "module",
-    },
-    filename: {
-        type: String,
-        default: "example.js",
-    },
-    language: {
-        type: String,
-        default: "javascript",
-    },
+interface Props {
+    code?: string
+    fix?: boolean
+    type: "good" | "bad"
+    sourceType?: "script" | "module"
+    filename?: string
+    language?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+    code: undefined,
+    sourceType: "module",
+    filename: "example.js",
+    language: "javascript",
 })
 
 const cookedCode = ref("")
 const height = ref("100px")
-const linter = ref(undefined)
+const linter = ref<Linter | undefined>(undefined)
 const format = reactive({
     insertSpaces: true,
     tabSize: 2,
@@ -46,9 +31,7 @@ const format = reactive({
 
 const config = computed(() => ({
     plugins: {
-        "es-x": {
-            rules,
-        },
+        "es-x": esX,
     },
     languageOptions: {
         sourceType: props.sourceType,
@@ -59,8 +42,7 @@ const config = computed(() => ({
             },
         },
         globals: {
-            Float16Array: "readonly",
-            ...builtin,
+            ...globals.builtin,
         },
     },
     rules: {},
@@ -91,7 +73,7 @@ onMounted(async () => {
 /**
  * Find VNode of <code> tag
  */
-function findCode(n) {
+function findCode(n: unknown): unknown {
     const nodes = Array.isArray(n) ? n : [n]
     for (const node of nodes) {
         if (!node) {
@@ -111,7 +93,7 @@ function findCode(n) {
 /**
  * Extract text
  */
-function computeCodeFromSlot(n) {
+function computeCodeFromSlot(n: unknown): string {
     if (!n) {
         return ""
     }

@@ -1,4 +1,42 @@
+import type monaco from "monaco-editor"
 import { loadMonacoEditor } from "./monaco-loader.mjs"
+
+interface SetupMonacoOptions {
+    init: {
+        value: string
+        language: string
+        readOnly?: boolean
+        markers?: monaco.editor.IMarkerData[]
+        right?: {
+            value: string
+            markers?: monaco.editor.IMarkerData[]
+        }
+    }
+    listeners?: {
+        onChangeValue?: (value: string) => void
+        onDidChangeCursorPosition?: (
+            evt: monaco.editor.ICursorPositionChangedEvent,
+        ) => void
+        onFocus?: () => void
+    }
+    useDiffEditor?: boolean
+    rootElement: HTMLElement
+}
+
+export interface SetupMonacoResult {
+    setModelLanguage(lang: string): void
+    setLeftValue(code: string | monaco.editor.ITextSnapshot): void
+    setRightValue(code: string | monaco.editor.ITextSnapshot): void
+    setLeftMarkers(markers: monaco.editor.IMarkerData[]): void
+    setRightMarkers(markers: monaco.editor.IMarkerData[]): void
+    getLeftEditor(): monaco.editor.IStandaloneCodeEditor | null
+    getRightEditor(): monaco.editor.IStandaloneCodeEditor | null
+
+    registerCodeActionProvider(
+        provideCodeActions: monaco.languages.CodeActionProvider["provideCodeActions"],
+    ): void
+    disposeEditor(): void
+}
 
 /** Setup editor */
 export async function setupMonacoEditor({
@@ -6,7 +44,7 @@ export async function setupMonacoEditor({
     listeners,
     useDiffEditor,
     rootElement,
-}) {
+}: SetupMonacoOptions): Promise<SetupMonacoResult> {
     const monaco = await loadMonacoEditor()
     const language = init.language
 
@@ -30,7 +68,7 @@ export async function setupMonacoEditor({
         scrollBeyondLastLine: false,
         scrollbar: { alwaysConsumeMouseWheel: false },
         unusualLineTerminators: "off",
-    }
+    } as const
 
     if (useDiffEditor) {
         const diffEditor = monaco.editor.createDiffEditor(rootElement, {
@@ -64,28 +102,28 @@ export async function setupMonacoEditor({
         )
 
         const result = {
-            setModelLanguage(lang) {
+            setModelLanguage(lang: string) {
                 for (const model of [original, modified]) {
                     monaco.editor.setModelLanguage(model, lang)
                 }
                 registerCodeActionProvider.setLanguage(lang)
             },
-            setLeftValue(code) {
+            setLeftValue(code: string | monaco.editor.ITextSnapshot) {
                 const value = original.getValue()
                 if (code !== value) {
                     original.setValue(code)
                 }
             },
-            setRightValue(code) {
+            setRightValue(code: string | monaco.editor.ITextSnapshot) {
                 const value = modified.getValue()
                 if (code !== value) {
                     modified.setValue(code)
                 }
             },
-            setLeftMarkers(markers) {
+            setLeftMarkers(markers: monaco.editor.IMarkerData[]) {
                 updateMarkers(leftEditor, markers)
             },
-            setRightMarkers(markers) {
+            setRightMarkers(markers: monaco.editor.IMarkerData[]) {
                 updateMarkers(rightEditor, markers)
             },
             getLeftEditor: () => leftEditor,
@@ -128,14 +166,14 @@ export async function setupMonacoEditor({
         language,
     )
     const result = {
-        setModelLanguage(lang) {
+        setModelLanguage(lang: string) {
             const model = standaloneEditor.getModel()
             if (model) {
                 monaco.editor.setModelLanguage(model, lang)
             }
             registerCodeActionProvider.setLanguage(lang)
         },
-        setLeftValue(code) {
+        setLeftValue(code: string) {
             const value = standaloneEditor.getValue()
             if (code !== value) {
                 standaloneEditor.setValue(code)
@@ -144,7 +182,7 @@ export async function setupMonacoEditor({
         setRightValue() {
             /* noop */
         },
-        setLeftMarkers(markers) {
+        setLeftMarkers(markers: monaco.editor.IMarkerData[]) {
             updateMarkers(standaloneEditor, markers)
         },
         setRightMarkers() {
@@ -166,8 +204,11 @@ export async function setupMonacoEditor({
     return result
 
     /** Update markers */
-    function updateMarkers(editor, markers) {
-        const model = editor.getModel()
+    function updateMarkers(
+        editor: monaco.editor.IStandaloneCodeEditor,
+        markers: monaco.editor.IMarkerData[],
+    ) {
+        const model = editor.getModel()!
         const id = editor.getId()
         monaco.editor.setModelMarkers(
             model,
@@ -176,13 +217,18 @@ export async function setupMonacoEditor({
         )
     }
 
-    function buildRegisterCodeActionProvider(editor, initLanguage) {
+    function buildRegisterCodeActionProvider(
+        editor: monaco.editor.IStandaloneCodeEditor,
+        initLanguage: string,
+    ) {
         let codeActionProviderDisposable = {
             dispose() {
                 // void
             },
         }
-        let currProvideCodeActions = null
+        let currProvideCodeActions:
+            | monaco.languages.CodeActionProvider["provideCodeActions"]
+            | null = null
         let currLanguage = initLanguage
 
         function register() {
@@ -192,7 +238,7 @@ export async function setupMonacoEditor({
                     provideCodeActions(model, ...args) {
                         if (
                             !currProvideCodeActions ||
-                            editor.getModel().uri !== model.uri
+                            editor.getModel()!.uri !== model.uri
                         ) {
                             return {
                                 actions: [],
@@ -207,11 +253,13 @@ export async function setupMonacoEditor({
         }
 
         return {
-            setLanguage(lang) {
+            setLanguage(lang: string) {
                 currLanguage = lang
                 register()
             },
-            register(provideCodeActions) {
+            register(
+                provideCodeActions: monaco.languages.CodeActionProvider["provideCodeActions"],
+            ) {
                 currProvideCodeActions = provideCodeActions
                 register()
             },

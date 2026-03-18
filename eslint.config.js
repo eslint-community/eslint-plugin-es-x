@@ -72,6 +72,24 @@ module.exports = defineConfig([
         },
     },
     {
+        files: ["**/*.ts", "**/*.mts", "**/*.cts"],
+        languageOptions: {
+            parser: tseslint.parser,
+        },
+        extends: [tseslint.configs.recommended],
+        rules: {
+            // Don't ban `any` until strict mode is enabled.
+            "@typescript-eslint/no-explicit-any": "off",
+            "@typescript-eslint/no-unsafe-argument": "off",
+            "@typescript-eslint/no-unsafe-assignment": "off",
+            "@typescript-eslint/no-unsafe-call": "off",
+            "@typescript-eslint/no-unsafe-member-access": "off",
+            "@typescript-eslint/no-unsafe-return": "off",
+
+            "n/file-extension-in-import": "off",
+        },
+    },
+    {
         files: ["lib/rules/**/*.{js,ts}"],
         rules: {
             "eslint-plugin/require-meta-docs-url": [
@@ -121,28 +139,6 @@ module.exports = defineConfig([
                 {
                     allowModules: ["json-schema"],
                 },
-            ],
-        },
-    },
-    {
-        files: ["**/*.ts", "**/*.mts", "**/*.cts"],
-        languageOptions: {
-            parser: tseslint.parser,
-        },
-        extends: [tseslint.configs.recommended],
-        rules: {
-            // Don't ban `any` until strict mode is enabled.
-            "@typescript-eslint/no-explicit-any": "off",
-            "@typescript-eslint/no-unsafe-argument": "off",
-            "@typescript-eslint/no-unsafe-assignment": "off",
-            "@typescript-eslint/no-unsafe-call": "off",
-            "@typescript-eslint/no-unsafe-member-access": "off",
-            "@typescript-eslint/no-unsafe-return": "off",
-
-            "n/file-extension-in-import": [
-                "error",
-                "never",
-                { ".json": "always" },
             ],
         },
     },

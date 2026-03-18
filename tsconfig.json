@@ -25,6 +25,8 @@
         "esModuleInterop": false,
 
         /* Language and Environment */
+        "jsx": "preserve",
+        "jsxImportSource": "vue",
         "target": "esnext",
         
         /* Completeness */
@@ -35,6 +37,7 @@
         "**/*.cjs",
         "**/*.mjs",
         "**/*.ts",
+        "**/*.vue",
     ],
     "exclude": [
         "node_modules/**",

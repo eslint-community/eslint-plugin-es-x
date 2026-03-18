@@ -1,6 +1,8 @@
-/* globals MONACO_EDITOR_VERSION */
+import type monacoModule from "monaco-editor"
 
-function importFromCDN(path) {
+declare const MONACO_EDITOR_VERSION: string
+
+function importFromCDN(path: string) {
     return import(/* @vite-ignore */ path)
 }
 
@@ -52,13 +54,13 @@ async function loadMonacoFromEsmCdn() {
         } catch (e) {
             // eslint-disable-next-line no-console -- OK
             console.warn(`Failed to retrieve resource from ${url}`)
-            error = e
+            error = e as Error
         }
     }
     throw error
 }
 
-async function loadModuleFromMonaco(moduleName) {
+async function loadModuleFromMonaco(moduleName: string) {
     await setupMonaco()
 
     return new Promise((resolve) => {
@@ -87,14 +89,14 @@ async function appendMonacoEditorScript() {
         } catch (e) {
             // eslint-disable-next-line no-console -- OK
             console.warn(`Failed to retrieve resource from ${url}`)
-            error = e
+            error = e as Error
         }
     }
     throw error
 }
 
 /** Appends a script tag. */
-function appendScript(src) {
+function appendScript(src: string): Promise<HTMLScriptElement> {
     const script = document.createElement("script")
 
     return new Promise((resolve, reject) => {
@@ -121,15 +123,15 @@ function appendScript(src) {
     })
 }
 
-let monacoPromise = null
+let monacoPromise: Promise<typeof monacoModule> | null = null
 
 /** Load the Monaco editor object. */
 export function loadMonacoEditor() {
     return (
         monacoPromise ||
         (monacoPromise = (async () => {
-            let rawMonaco = undefined
-            let monaco = undefined
+            let rawMonaco: any = undefined
+            let monaco: any = undefined
             try {
                 rawMonaco = await loadMonacoFromEsmCdn()
             } catch {
@@ -141,7 +143,7 @@ export function loadMonacoEditor() {
                 monaco = rawMonaco
             }
 
-            return monaco
+            return monaco as typeof monacoModule
         })())
     )
 }
