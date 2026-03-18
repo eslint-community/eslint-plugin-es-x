@@ -2,10 +2,8 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
-const { RuleTester } = require("eslint")
-const { builtin } = require("globals")
+import { RuleTester } from "eslint"
+import * as globals from "globals"
 
 RuleTester.setDefaultConfig({
     languageOptions: {
@@ -15,9 +13,9 @@ RuleTester.setDefaultConfig({
             AsyncDisposableStack: "readonly",
             DisposableStack: "readonly",
             SuppressedError: "readonly",
-            ...builtin,
+            ...globals.builtin,
         },
     },
 })
 
-module.exports = RuleTester
+export default RuleTester
