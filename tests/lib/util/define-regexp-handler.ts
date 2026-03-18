@@ -1,9 +1,7 @@
-"use strict"
-
-const path = require("path")
-const assert = require("assert")
-const plugin = require("../../../lib/index.ts")
-const { ESLint } = require("eslint")
+import * as path from "node:path"
+import * as assert from "node:assert"
+import * as plugin from "../../../lib/index"
+import { ESLint } from "eslint"
 
 // -----------------------------------------------------------------------------
 // Tests
@@ -28,7 +26,7 @@ describe("define-regexp-handler", () => {
         }))
 })
 
-function lint(text) {
+async function lint(text: string) {
     const eslint = new ESLint({
         cwd: TEST_CWD,
         overrideConfigFile: true,
@@ -39,7 +37,6 @@ function lint(text) {
             plugins: { "es-x": plugin },
         },
     })
-    return eslint
-        .lintText(text, { filePath: "test.js" })
-        .then((results) => results[0])
+    const results = await eslint.lintText(text, { filePath: "test.js" })
+    return results[0]
 }
