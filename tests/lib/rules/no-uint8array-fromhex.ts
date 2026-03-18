@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-uint8array-fromhex.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-uint8array-fromhex"
 const ruleId = "no-uint8array-fromhex"
 
 const method = "fromHex"

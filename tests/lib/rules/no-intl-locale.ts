@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-intl-locale")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-intl-locale"
 
 new RuleTester().run("no-intl-locale", rule, {
     valid: [

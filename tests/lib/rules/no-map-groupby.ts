@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-map-groupby.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-map-groupby"
 
 new RuleTester().run("no-map-groupby", rule, {
     valid: [

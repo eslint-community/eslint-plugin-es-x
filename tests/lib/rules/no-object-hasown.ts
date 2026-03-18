@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-object-hasown.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-object-hasown"
 
 new RuleTester().run("no-object-hasown", rule, {
     valid: ["Object", "Object.assign", "let Object = 0; Object.is"],

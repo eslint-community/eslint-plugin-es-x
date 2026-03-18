@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-promise-withresolvers.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-promise-withresolvers"
 
 new RuleTester().run("no-promise-withresolvers", rule, {
     valid: ["Promise.all"],

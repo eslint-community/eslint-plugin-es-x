@@ -1,6 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-date-properties.js")
-const { dateProperties } = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-date-properties"
+import { dateProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-date-properties", rule, {
     valid: [

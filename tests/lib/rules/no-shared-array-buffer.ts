@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-shared-array-buffer.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-shared-array-buffer"
 
 new RuleTester().run("no-shared-array-buffer", rule, {
     valid: ["Array", "Object", "let SharedArrayBuffer = 0; SharedArrayBuffer"],

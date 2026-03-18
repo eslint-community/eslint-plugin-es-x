@@ -1,8 +1,9 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-shadow-catch-param.js")
+import * as espree from "espree"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-shadow-catch-param"
 
 new RuleTester({
-    languageOptions: { parser: require("espree") },
+    languageOptions: { parser: espree },
 }).run("no-shadow-catch-param", rule, {
     valid: [
         "var e; try {} catch (e) {  }",

@@ -1,8 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-sharedarraybuffer-properties.js")
-const {
-    sharedArrayBufferProperties,
-} = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-sharedarraybuffer-properties"
+import { sharedArrayBufferProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-sharedarraybuffer-properties", rule, {
     valid: [

@@ -3,9 +3,9 @@
  * See LICENSE file in root directory for full license.
  */
 
-const path = require("path")
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-function-prototype-bind.js")
+import * as path from "node:path"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-function-prototype-bind"
 const ruleId = "no-function-prototype-bind"
 
 new RuleTester().run(ruleId, rule, {
@@ -84,7 +84,7 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require("@typescript-eslint/parser")
+import * as parser from "@typescript-eslint/parser"
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")

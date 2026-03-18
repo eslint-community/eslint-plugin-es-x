@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-regexp-v-flag.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-regexp-v-flag"
 
 new RuleTester().run("no-regexp-v-flag", rule, {
     valid: [

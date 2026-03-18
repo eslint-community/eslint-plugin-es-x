@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-private-in.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-private-in"
 
 new RuleTester().run("no-private-in", rule, {
     valid: [

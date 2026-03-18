@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-symbol-dispose.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-symbol-dispose"
 
 new RuleTester().run("no-symbol-dispose", rule, {
     valid: ["Symbol", "Symbol.length", "let Symbol = 0; Symbol.dispose"],

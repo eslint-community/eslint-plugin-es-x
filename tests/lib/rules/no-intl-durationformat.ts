@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-intl-durationformat")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-intl-durationformat"
 
 new RuleTester().run("no-intl-durationformat", rule, {
     valid: [

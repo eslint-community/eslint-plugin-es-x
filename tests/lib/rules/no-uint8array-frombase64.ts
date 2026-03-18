@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-uint8array-frombase64.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-uint8array-frombase64"
 const ruleId = "no-uint8array-frombase64"
 
 const method = "fromBase64"

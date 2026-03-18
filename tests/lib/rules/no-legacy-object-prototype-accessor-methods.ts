@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-legacy-object-prototype-accessor-methods.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-legacy-object-prototype-accessor-methods"
 
 new RuleTester().run("no-legacy-object-prototype-accessor-methods", rule, {
     valid: [

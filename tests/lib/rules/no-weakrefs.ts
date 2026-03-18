@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-weakrefs.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-weakrefs"
 
 new RuleTester().run("no-weakrefs", rule, {
     valid: ["Array", "Object", "let WeakRef = 0; WeakRef"],

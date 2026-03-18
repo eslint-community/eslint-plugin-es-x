@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-weak-set.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-weak-set"
 
 new RuleTester().run("no-weak-set", rule, {
     valid: ["Array", "Object", "let WeakSet = 0; WeakSet"],

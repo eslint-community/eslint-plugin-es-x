@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-math-imul.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-math-imul"
 
 new RuleTester().run("no-math-imul", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.imul"],

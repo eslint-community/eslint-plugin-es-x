@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-regexp-duplicate-named-capturing-groups.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-regexp-duplicate-named-capturing-groups"
 
 new RuleTester().run("no-regexp-duplicate-named-capturing-groups", rule, {
     valid: [

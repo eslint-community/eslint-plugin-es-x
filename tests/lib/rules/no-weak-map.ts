@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-weak-map.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-weak-map"
 
 new RuleTester().run("no-weak-map", rule, {
     valid: ["Array", "Object", "let WeakMap = 0; WeakMap"],

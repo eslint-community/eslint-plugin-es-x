@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-trailing-dynamic-import-commas.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-trailing-dynamic-import-commas"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

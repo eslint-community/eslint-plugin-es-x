@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-generators.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-generators"
 
 new RuleTester().run("no-generators", rule, {
     valid: ["function f() {}", "yield = 0"],

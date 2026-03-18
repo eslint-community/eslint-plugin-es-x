@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-json-israwjson.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-json-israwjson"
 
 new RuleTester().run("no-json-israwjson", rule, {
     valid: [

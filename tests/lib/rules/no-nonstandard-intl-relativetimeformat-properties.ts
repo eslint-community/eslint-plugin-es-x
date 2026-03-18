@@ -1,8 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-intl-relativetimeformat-properties.js")
-const {
-    intlRelativeTimeFormatProperties,
-} = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-intl-relativetimeformat-properties"
+import { intlRelativeTimeFormatProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run(
     "no-nonstandard-intl-relativetimeformat-properties",

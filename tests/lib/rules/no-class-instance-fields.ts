@@ -3,8 +3,9 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-class-instance-fields.js")
+import * as parser from "@typescript-eslint/parser"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-class-instance-fields"
 const ruleId = "no-class-instance-fields"
 
 new RuleTester().run(ruleId, rule, {
@@ -61,19 +62,19 @@ new RuleTester().run(ruleId, rule, {
         }`,
         {
             code: "class A { declare foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "class A { declare #foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "declare class A { foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "declare class A { #foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
     ],
     invalid: [
@@ -125,22 +126,22 @@ new RuleTester().run(ruleId, rule, {
         {
             code: "class A { readonly foo = '' }",
             errors: ["ES2022 instance field 'foo' is forbidden."],
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "class A { foo: string }",
             errors: ["ES2022 instance field 'foo' is forbidden."],
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "class A { foo: string = '' }",
             errors: ["ES2022 instance field 'foo' is forbidden."],
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "class A { #foo: string }",
             errors: ["ES2022 instance field #foo is forbidden."],
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
     ],
 })

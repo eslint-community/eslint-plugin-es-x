@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-optional-catch-binding.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-optional-catch-binding"
 
 new RuleTester().run("no-optional-catch-binding", rule, {
     valid: ["try {} catch (err) {}"],

@@ -1,6 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-symbol-properties.js")
-const { symbolProperties } = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-symbol-properties"
+import { symbolProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-symbol-properties", rule, {
     valid: [

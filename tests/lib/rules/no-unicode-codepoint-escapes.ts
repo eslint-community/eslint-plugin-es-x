@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-unicode-codepoint-escapes.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-unicode-codepoint-escapes"
 
 new RuleTester().run("no-unicode-codepoint-escapes", rule, {
     valid: [

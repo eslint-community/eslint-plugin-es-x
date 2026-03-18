@@ -1,6 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-intl-properties.js")
-const { intlProperties } = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-intl-properties"
+import { intlProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-intl-properties", rule, {
     valid: [

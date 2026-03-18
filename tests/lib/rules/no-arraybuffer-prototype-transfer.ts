@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-arraybuffer-prototype-transfer.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-arraybuffer-prototype-transfer"
 
 new RuleTester().run("no-arraybuffer-prototype-transfer", rule, {
     valid: [

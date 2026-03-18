@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-regexp-s-flag.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-regexp-s-flag"
 
 new RuleTester().run("no-regexp-s-flag", rule, {
     valid: [

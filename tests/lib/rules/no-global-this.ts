@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-global-this.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-global-this"
 
 new RuleTester().run("no-global-this", rule, {
     valid: ["window", "global", "self", "{ let globalThis = 0; globalThis }"],

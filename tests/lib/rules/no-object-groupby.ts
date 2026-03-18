@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-object-groupby.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-object-groupby"
 
 new RuleTester().run("no-object-groupby", rule, {
     valid: [

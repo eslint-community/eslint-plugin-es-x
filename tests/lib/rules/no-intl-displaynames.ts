@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-intl-displaynames")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-intl-displaynames"
 
 new RuleTester().run("no-intl-displaynames", rule, {
     valid: [

@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-set.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-set"
 
 new RuleTester().run("no-set", rule, {
     valid: ["Array", "Object", "let Set = 0; Set"],

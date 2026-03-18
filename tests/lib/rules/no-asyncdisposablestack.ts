@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-asyncdisposablestack.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-asyncdisposablestack"
 
 new RuleTester().run("no-asyncdisposablestack", rule, {
     valid: [

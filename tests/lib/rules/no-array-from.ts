@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-array-from.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-array-from"
 
 new RuleTester().run("no-array-from", rule, {
     valid: [

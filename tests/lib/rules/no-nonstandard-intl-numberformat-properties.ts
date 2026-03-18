@@ -1,8 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-intl-numberformat-properties.js")
-const {
-    intlNumberFormatProperties,
-} = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-intl-numberformat-properties"
+import { intlNumberFormatProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-intl-numberformat-properties", rule, {
     valid: [

@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-symbol-matchall.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-symbol-matchall"
 
 new RuleTester().run("no-symbol-matchall", rule, {
     valid: ["Symbol", "Symbol.length", "let Symbol = 0; Symbol.matchAll"],

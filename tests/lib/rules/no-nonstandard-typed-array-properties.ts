@@ -1,9 +1,9 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-typed-array-properties.js")
-const {
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-typed-array-properties"
+import {
     typedArrayProperties,
     uint8ArrayProperties,
-} = require("../../../lib/util/well-known-properties")
+} from "../../../lib/util/well-known-properties"
 
 const typedArrayList = [
     "Int8Array",

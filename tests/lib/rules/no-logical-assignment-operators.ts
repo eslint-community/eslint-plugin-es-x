@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-logical-assignment-operators.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-logical-assignment-operators"
 
 new RuleTester().run("no-logical-assignment-operators", rule, {
     valid: [

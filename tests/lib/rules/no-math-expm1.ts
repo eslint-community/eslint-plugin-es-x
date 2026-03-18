@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-math-expm1.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-math-expm1"
 
 new RuleTester().run("no-math-expm1", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.expm1"],

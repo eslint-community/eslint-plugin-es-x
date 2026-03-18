@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-map.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-map"
 
 new RuleTester().run("no-map", rule, {
     valid: ["Array", "Object", "let Map = 0; Map"],

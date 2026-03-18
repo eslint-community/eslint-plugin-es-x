@@ -1,10 +1,11 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-using-declarations.js")
+import * as parser from "@typescript-eslint/parser"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-using-declarations"
 
 new RuleTester({
     languageOptions: {
         sourceType: "module",
-        parser: require("@typescript-eslint/parser"), // espree does not support `using` yet.
+        parser, // espree does not support `using` yet.
     },
 }).run("no-using-declarations", rule, {
     valid: ["let x = y", "const x = y", "var x = y", "const x = await y"],

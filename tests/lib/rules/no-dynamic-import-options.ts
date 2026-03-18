@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-dynamic-import-options.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-dynamic-import-options"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

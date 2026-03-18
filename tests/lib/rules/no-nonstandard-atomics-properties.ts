@@ -1,6 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-atomics-properties.js")
-const { atomicsProperties } = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-atomics-properties"
+import { atomicsProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-atomics-properties", rule, {
     valid: [

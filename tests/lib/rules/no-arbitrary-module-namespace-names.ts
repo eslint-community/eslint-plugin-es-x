@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-arbitrary-module-namespace-names.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-arbitrary-module-namespace-names"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

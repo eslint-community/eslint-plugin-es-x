@@ -1,6 +1,6 @@
-const path = require("path")
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-resizable-and-growable-arraybuffers.js")
+import * as path from "node:path"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-resizable-and-growable-arraybuffers"
 const ruleId = "no-resizable-and-growable-arraybuffers"
 
 const testerOptions = {
@@ -145,7 +145,7 @@ new RuleTester(testerOptions).run(ruleId, rule, {
     ],
 })
 
-const parser = require("@typescript-eslint/parser")
+import * as parser from "@typescript-eslint/parser"
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")

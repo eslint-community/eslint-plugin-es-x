@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-function-declarations-in-if-statement-clauses-without-block.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-function-declarations-in-if-statement-clauses-without-block"
 
 new RuleTester().run("no-function-declarations-in-if-statement-clauses", rule, {
     valid: [],

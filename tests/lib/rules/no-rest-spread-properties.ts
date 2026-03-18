@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-rest-spread-properties.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-rest-spread-properties"
 
 new RuleTester().run("no-rest-spread-properties", rule, {
     valid: [

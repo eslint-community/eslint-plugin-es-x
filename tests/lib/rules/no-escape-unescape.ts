@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-escape-unescape.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-escape-unescape"
 "".substr()
 new RuleTester().run("no-escape-unescape", rule, {
     valid: [

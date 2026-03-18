@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-optional-chaining.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-optional-chaining"
 
 new RuleTester().run("no-optional-chaining", rule, {
     valid: ["var x = a.b", "var x = a[b]", "foo()"],

@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-async-iteration.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-async-iteration"
 
 new RuleTester().run("no-async-iteration", rule, {
     valid: [

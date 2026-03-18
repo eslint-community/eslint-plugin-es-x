@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-default-parameters.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-default-parameters"
 
 new RuleTester().run("no-default-parameters", rule, {
     valid: [

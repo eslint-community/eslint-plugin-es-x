@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-for-of-loops.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-for-of-loops"
 
 new RuleTester().run("no-for-of-loops", rule, {
     valid: [

@@ -1,9 +1,7 @@
-const path = require("path")
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-string-prototype-properties.js")
-const {
-    stringPrototypeProperties,
-} = require("../../../lib/util/well-known-properties")
+import * as path from "node:path"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-string-prototype-properties"
+import { stringPrototypeProperties } from "../../../lib/util/well-known-properties"
 const ruleId = "no-nonstandard-string-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {
@@ -271,7 +269,7 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require("@typescript-eslint/parser")
+import * as parser from "@typescript-eslint/parser"
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")

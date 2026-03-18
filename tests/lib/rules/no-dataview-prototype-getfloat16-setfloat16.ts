@@ -1,6 +1,6 @@
-const path = require("path")
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-dataview-prototype-getfloat16-setfloat16.js")
+import * as path from "node:path"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-dataview-prototype-getfloat16-setfloat16"
 const ruleId = "no-dataview-prototype-getfloat16-setfloat16"
 
 const USE_GLOBAL_ID = `
@@ -62,7 +62,7 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require("@typescript-eslint/parser")
+import * as parser from "@typescript-eslint/parser"
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")

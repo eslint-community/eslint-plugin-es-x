@@ -1,6 +1,6 @@
-const path = require("path")
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-iterator-prototype-find.js")
+import * as path from "node:path"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-iterator-prototype-find"
 const ruleId = "no-iterator-prototype-find"
 
 new RuleTester({
@@ -144,7 +144,7 @@ new RuleTester({
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const parser = require("@typescript-eslint/parser")
+import * as parser from "@typescript-eslint/parser"
 const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")

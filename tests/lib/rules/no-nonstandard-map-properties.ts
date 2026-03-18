@@ -1,6 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-map-properties.js")
-const { mapProperties } = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-map-properties"
+import { mapProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-map-properties", rule, {
     valid: [

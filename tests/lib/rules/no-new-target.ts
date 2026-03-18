@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-new-target.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-new-target"
 
 new RuleTester().run("no-new-target", rule, {
     valid: ["new F()", "target = 1"],

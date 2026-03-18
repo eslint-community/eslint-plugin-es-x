@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-intl-segmenter.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-intl-segmenter"
 
 new RuleTester().run("no-intl-segmenter", rule, {
     valid: [

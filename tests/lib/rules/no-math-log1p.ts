@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-math-log1p.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-math-log1p"
 
 new RuleTester().run("no-math-log1p", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.log1p"],

@@ -1,6 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-json-properties.js")
-const { jsonProperties } = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-json-properties"
+import { jsonProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-json-properties", rule, {
     valid: [

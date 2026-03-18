@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-string-fromcodepoint.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-string-fromcodepoint"
 
 new RuleTester().run("no-string-fromcodepoint", rule, {
     valid: ["String", "String.raw", "let String = 0; String.fromCodePoint"],

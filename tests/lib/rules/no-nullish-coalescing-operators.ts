@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nullish-coalescing-operators.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nullish-coalescing-operators"
 
 new RuleTester().run("no-nullish-coalescing-operators", rule, {
     valid: ["a ? b : c", "a && b", "a || b"],

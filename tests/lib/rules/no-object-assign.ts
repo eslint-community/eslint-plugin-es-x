@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-object-assign.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-object-assign"
 
 new RuleTester().run("no-object-assign", rule, {
     valid: ["Object", "Object.is", "let Object = 0; Object.assign"],

@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-symbol.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-symbol"
 
 new RuleTester().run("no-symbol", rule, {
     valid: ["Array", "Object", "let Symbol = 0; Symbol"],

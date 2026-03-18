@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-keyword-properties.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-keyword-properties"
 
 new RuleTester().run("no-keyword-properties", rule, {
     valid: ["({ a, b, c}.a)", "({ let: 1, of: 2}.let)", "({ 'if': 1 }['if'])"],

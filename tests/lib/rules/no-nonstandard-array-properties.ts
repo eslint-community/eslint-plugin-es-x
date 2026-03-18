@@ -1,6 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-array-properties.js")
-const { arrayProperties } = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-array-properties"
+import { arrayProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-array-properties", rule, {
     valid: [

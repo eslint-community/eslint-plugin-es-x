@@ -1,8 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-disposablestack-properties.js")
-const {
-    disposableStackProperties,
-} = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-disposablestack-properties"
+import { disposableStackProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-disposablestack-properties", rule, {
     valid: [

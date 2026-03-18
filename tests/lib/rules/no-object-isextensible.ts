@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-object-isextensible.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-object-isextensible"
 
 new RuleTester().run("no-object-isextensible", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.isExtensible"],

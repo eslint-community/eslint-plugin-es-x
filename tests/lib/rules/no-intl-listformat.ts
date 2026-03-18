@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-intl-listformat")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-intl-listformat"
 
 new RuleTester().run("no-intl-listformat", rule, {
     valid: [

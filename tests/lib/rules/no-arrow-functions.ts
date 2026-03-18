@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-arrow-functions.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-arrow-functions"
 
 new RuleTester().run("no-arrow-functions", rule, {
     valid: ["function f() {}", "const f = function() {}"],

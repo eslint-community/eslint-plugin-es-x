@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-regexp-escape.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-regexp-escape"
 
 new RuleTester().run("no-regexp-escape", rule, {
     valid: ["RegExp.$1"],

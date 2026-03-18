@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-intl-supportedvaluesof.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-intl-supportedvaluesof"
 
 new RuleTester().run("no-intl-supportedvaluesof", rule, {
     valid: [

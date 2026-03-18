@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-classes.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-classes"
 
 new RuleTester().run("no-classes", rule, {
     valid: ["function A() {} A.prototype.foo = function() {}"],

@@ -1,6 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-math-properties.js")
-const { mathProperties } = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-math-properties"
+import { mathProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-math-properties", rule, {
     valid: [

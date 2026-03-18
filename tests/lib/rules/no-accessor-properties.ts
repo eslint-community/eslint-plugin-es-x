@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-accessor-properties.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-accessor-properties"
 
 new RuleTester().run("no-accessor-properties", rule, {
     valid: [

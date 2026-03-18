@@ -3,8 +3,9 @@
  * See LICENSE file in root directory for full license.
  */
 
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-class-private-methods.js")
+import * as parser from "@typescript-eslint/parser"
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-class-private-methods"
 const ruleId = "no-class-private-methods"
 
 new RuleTester().run(ruleId, rule, {
@@ -57,35 +58,35 @@ new RuleTester().run(ruleId, rule, {
         }`,
         {
             code: "class A { declare foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "class A { declare #foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "declare class A { foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "declare class A { #foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "class A { readonly foo = '' }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "class A { foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "class A { foo: string = '' }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
         {
             code: "class A { #foo: string }",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser },
         },
     ],
     invalid: [

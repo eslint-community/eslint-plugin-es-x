@@ -1,8 +1,6 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-nonstandard-iterator-properties.js")
-const {
-    iteratorProperties,
-} = require("../../../lib/util/well-known-properties")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-nonstandard-iterator-properties"
+import { iteratorProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-iterator-properties", rule, {
     valid: [

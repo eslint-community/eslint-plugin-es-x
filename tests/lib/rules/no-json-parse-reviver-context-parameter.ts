@@ -1,5 +1,5 @@
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-json-parse-reviver-context-parameter.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-json-parse-reviver-context-parameter"
 
 new RuleTester().run("no-json-parse-reviver-context-parameter", rule, {
     valid: [
