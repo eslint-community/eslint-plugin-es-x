@@ -1,5 +1,3 @@
-"use strict"
-
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-nonstandard-proxy-properties.js")
 const { proxyProperties } = require("../../../lib/util/well-known-properties")

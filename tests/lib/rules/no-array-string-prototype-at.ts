@@ -2,7 +2,6 @@
  * @author Yosuke Ota <https://github.com/ota-meshi>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
 
 const path = require("path")
 const RuleTester = require("../../tester")

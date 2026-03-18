@@ -1,5 +1,3 @@
-"use strict"
-
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-nonstandard-intl-datetimeformat-properties.js")
 const {

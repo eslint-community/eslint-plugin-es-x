@@ -2,7 +2,6 @@
  * @author Yosuke Ota <https://github.com/ota-meshi>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
 
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-class-private-fields.js")

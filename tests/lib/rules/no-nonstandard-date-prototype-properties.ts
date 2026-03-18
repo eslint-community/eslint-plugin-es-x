@@ -1,5 +1,3 @@
-"use strict"
-
 const path = require("path")
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-nonstandard-date-prototype-properties.js")

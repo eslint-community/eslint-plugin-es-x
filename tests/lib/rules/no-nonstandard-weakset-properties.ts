@@ -1,5 +1,3 @@
-"use strict"
-
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-nonstandard-weakset-properties.js")
 const { weakSetProperties } = require("../../../lib/util/well-known-properties")

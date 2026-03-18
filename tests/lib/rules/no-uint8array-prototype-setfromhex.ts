@@ -1,5 +1,3 @@
-"use strict"
-
 const path = require("path")
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-uint8array-prototype-setfromhex.js")

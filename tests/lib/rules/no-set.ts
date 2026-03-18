@@ -2,7 +2,6 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
 
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-set.js")

@@ -1,5 +1,3 @@
-"use strict"
-
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-function-declarations-in-if-statement-clauses-without-block.js")
 

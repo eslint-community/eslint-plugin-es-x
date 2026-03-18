@@ -1,5 +1,3 @@
-"use strict"
-
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-nonstandard-regexp-properties.js")
 const { regexpProperties } = require("../../../lib/util/well-known-properties")

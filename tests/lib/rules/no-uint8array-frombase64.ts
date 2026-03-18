@@ -1,5 +1,3 @@
-"use strict"
-
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-uint8array-frombase64.js")
 const ruleId = "no-uint8array-frombase64"

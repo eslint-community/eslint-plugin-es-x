@@ -1,5 +1,3 @@
-"use strict"
-
 const path = require("path")
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-dataview-prototype-getfloat16-setfloat16.js")

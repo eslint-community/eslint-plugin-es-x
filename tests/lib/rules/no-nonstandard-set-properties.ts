@@ -1,5 +1,3 @@
-"use strict"
-
 const RuleTester = require("../../tester")
 const rule = require("../../../lib/rules/no-nonstandard-set-properties.js")
 const { setProperties } = require("../../../lib/util/well-known-properties")
