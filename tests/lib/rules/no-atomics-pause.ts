@@ -1,7 +1,5 @@
-"use strict"
-
-const RuleTester = require("../../tester")
-const rule = require("../../../lib/rules/no-atomics-pause.js")
+import RuleTester from "../../tester"
+import * as rule from "../../../lib/rules/no-atomics-pause"
 
 new RuleTester().run("no-atomics-pause", rule, {
     valid: ["Atomics", "Atomics.wait", "let Atomics = 0; Atomics.pause"],
