@@ -1,5 +1,70 @@
 # eslint-plugin-es-x
 
+## 9.6.0
+
+### Minor Changes
+
+- feat: add TypeScript type declarations ([#338](https://github.com/eslint-community/eslint-plugin-es-x/pull/338))
+
+  Converts `lib/index.js` to `lib/index.ts` so that `tsc` automatically
+  generates `dist/index.d.ts` during `npm run build`. The public API
+  surface is typed as:
+  - `meta: { name: string; version: string }`
+  - `configs`: each of the 128 config names exposed as a literal key —
+    flat configs typed as `Linter.Config`, legacy configs as
+    `Linter.LegacyConfig`
+  - `rules: Record<string, Rule.RuleModule>`
+
+  IDE autocomplete works on `plugin.configs['flat/...']` and invalid
+  config keys are type errors. The declaration stays in sync
+  automatically — no separate `.d.ts` to maintain.
+
+  Closes #280
+
+- chore: the published js files have been moved from `lib` to `dist`. ([#327](https://github.com/eslint-community/eslint-plugin-es-x/pull/327))
+
+- Add `es-x/no-date-prototype-totemporalinstant` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-duration-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-duration-prototype-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-instant-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-instant-prototype-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-now-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plaindate-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plaindate-prototype-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plaindatetime-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plaindatetime-prototype-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plainmonthday-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plainmonthday-prototype-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plaintime-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plaintime-prototype-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plainyearmonth-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-plainyearmonth-prototype-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-zoneddatetime-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-nonstandard-temporal-zoneddatetime-prototype-properties` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `no-temporal` config ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
+- Add `es-x/no-temporal` rule ([#332](https://github.com/eslint-community/eslint-plugin-es-x/pull/332))
+
 ## 9.5.0
 
 ### Minor Changes
