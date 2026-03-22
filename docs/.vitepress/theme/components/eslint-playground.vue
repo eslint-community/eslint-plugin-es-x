@@ -42,6 +42,7 @@ const config = computed(() => ({
             },
         },
         globals: {
+            Temporal: "readonly",
             ...globals.builtin,
         },
     },

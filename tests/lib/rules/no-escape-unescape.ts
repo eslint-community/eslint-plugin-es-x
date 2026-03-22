@@ -1,6 +1,6 @@
 import RuleTester from "../../tester"
 import * as rule from "../../../lib/rules/no-escape-unescape"
-"".substr()
+
 new RuleTester().run("no-escape-unescape", rule, {
     valid: [
         "encodeURI",

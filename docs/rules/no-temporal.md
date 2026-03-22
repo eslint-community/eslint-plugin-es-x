@@ -19,7 +19,7 @@ This rule reports ES2026 [`Temporal` class](https://github.com/tc39/proposal-tem
 
 ```js
 /*eslint es-x/no-temporal: error */
-let temporal = new Temporal()
+let instant = Temporal.Now.instant();
 ```
 
 </eslint-playground>
