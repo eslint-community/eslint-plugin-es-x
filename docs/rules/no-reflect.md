@@ -1,15 +1,15 @@
 ---
 title: "es-x/no-reflect"
-description: "disallow the `Reflect` class"
+description: "disallow the `Reflect` global object"
 since: "[eslint-plugin-es] v1.2.0"
 ---
 
 # es-x/no-reflect
-> disallow the `Reflect` class
+> disallow the `Reflect` global object
 
 - ✅ The following configurations enable this rule: [no-new-in-es2015], [restrict-to-es3], and [restrict-to-es5]
 
-This rule reports ES2015 `Reflect` class as errors.
+This rule reports ES2015 `Reflect` global object as errors.
 
 ## 💡 Examples
 

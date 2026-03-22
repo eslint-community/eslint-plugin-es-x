@@ -11,11 +11,11 @@ new RuleTester().run("no-atomics", rule, {
     invalid: [
         {
             code: "Atomics",
-            errors: ["ES2017 'Atomics' class is forbidden."],
+            errors: ["ES2017 'Atomics' global object is forbidden."],
         },
         {
             code: "function f() { Atomics }",
-            errors: ["ES2017 'Atomics' class is forbidden."],
+            errors: ["ES2017 'Atomics' global object is forbidden."],
         },
     ],
 })
