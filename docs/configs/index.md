@@ -1241,6 +1241,34 @@ export default defineConfig([
 
 </details>
 
+## no-temporal
+
+disallow proposal ES2026 [Temporal](https://github.com/tc39/proposal-temporal)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This config includes the rules [es-x/no-date-prototype-totemporalinstant](../rules/no-date-prototype-totemporalinstant.md) and [es-x/no-temporal](../rules/no-temporal.md).
+
+```js
+import { defineConfig } from "eslint/config"
+import pluginESx from "eslint-plugin-es-x"
+
+export default defineConfig([
+    pluginESx.configs["flat/no-temporal"]
+])
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-temporal"],
+}
+```
+
+</details>
+
 ## no-upsert
 
 disallow proposal ES2026 [Upsert](https://github.com/tc39/proposal-upsert)\

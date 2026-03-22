@@ -943,7 +943,7 @@ new RuleTester({
             disallowAutomaticSingleRunInference: true,
         },
     },
-}).run(\`${ruleId} TS Full Type Information\`, rule, {
+}).run(\`\${ruleId} TS Full Type Information\`, rule, {
     valid: [
         { filename, code: "foo" },
         { filename, code: "foo.toString" },

@@ -548,10 +548,8 @@ describe("well-known-properties", () => {
             )
         }
     })
-    // @ts-expect-error -- Intl.DurationFormat not defined in TS yet
     if (Intl.DurationFormat) {
         it("should have Intl.DurationFormat static properties", () => {
-            // @ts-expect-error -- Intl.DurationFormat not defined in TS yet
             for (const element of getAllProperties(Intl.DurationFormat)) {
                 assert.ok(
                     wellKnownProperties.intlDurationFormatProperties.has(
@@ -562,7 +560,6 @@ describe("well-known-properties", () => {
             }
         })
         it("should have Intl.DurationFormat instance properties", () => {
-            // @ts-expect-error -- Intl.DurationFormat not defined in TS yet
             for (const element of getAllProperties(new Intl.DurationFormat())) {
                 assert.ok(
                     wellKnownProperties.intlDurationFormatPrototypeProperties.has(

@@ -56,6 +56,7 @@ const plugin: {
         "flat/no-relative-indexing-method": Linter.Config
         "flat/no-set-methods": Linter.Config
         "flat/no-string-matchall": Linter.Config
+        "flat/no-temporal": Linter.Config
         "flat/no-upsert": Linter.Config
         "flat/restrict-to-es-intl-api-1st-edition": Linter.Config
         "flat/restrict-to-es3": Linter.Config
@@ -120,6 +121,7 @@ const plugin: {
         "no-relative-indexing-method": Linter.LegacyConfig
         "no-set-methods": Linter.LegacyConfig
         "no-string-matchall": Linter.LegacyConfig
+        "no-temporal": Linter.LegacyConfig
         "no-upsert": Linter.LegacyConfig
         "restrict-to-es-intl-api-1st-edition": Linter.LegacyConfig
         "restrict-to-es3": Linter.LegacyConfig
@@ -195,6 +197,7 @@ const plugin: {
         "flat/no-relative-indexing-method": require("./configs/flat/no-relative-indexing-method"),
         "flat/no-set-methods": require("./configs/flat/no-set-methods"),
         "flat/no-string-matchall": require("./configs/flat/no-string-matchall"),
+        "flat/no-temporal": require("./configs/flat/no-temporal"),
         "flat/no-upsert": require("./configs/flat/no-upsert"),
         "flat/restrict-to-es-intl-api-1st-edition": require("./configs/flat/restrict-to-es-intl-api-1st-edition"),
         "flat/restrict-to-es3": require("./configs/flat/restrict-to-es3"),
@@ -259,6 +262,7 @@ const plugin: {
         "no-relative-indexing-method": require("./configs/no-relative-indexing-method"),
         "no-set-methods": require("./configs/no-set-methods"),
         "no-string-matchall": require("./configs/no-string-matchall"),
+        "no-temporal": require("./configs/no-temporal"),
         "no-upsert": require("./configs/no-upsert"),
         "restrict-to-es-intl-api-1st-edition": require("./configs/restrict-to-es-intl-api-1st-edition"),
         "restrict-to-es3": require("./configs/restrict-to-es3"),
@@ -363,6 +367,7 @@ const plugin: {
         "no-date-now": require("./rules/no-date-now"),
         "no-date-prototype-getyear-setyear": require("./rules/no-date-prototype-getyear-setyear"),
         "no-date-prototype-togmtstring": require("./rules/no-date-prototype-togmtstring"),
+        "no-date-prototype-totemporalinstant": require("./rules/no-date-prototype-totemporalinstant"),
         "no-default-parameters": require("./rules/no-default-parameters"),
         "no-destructuring": require("./rules/no-destructuring"),
         "no-disposablestack": require("./rules/no-disposablestack"),
@@ -520,6 +525,24 @@ const plugin: {
         "no-nonstandard-string-prototype-properties": require("./rules/no-nonstandard-string-prototype-properties"),
         "no-nonstandard-symbol-properties": require("./rules/no-nonstandard-symbol-properties"),
         "no-nonstandard-symbol-prototype-properties": require("./rules/no-nonstandard-symbol-prototype-properties"),
+        "no-nonstandard-temporal-duration-properties": require("./rules/no-nonstandard-temporal-duration-properties"),
+        "no-nonstandard-temporal-duration-prototype-properties": require("./rules/no-nonstandard-temporal-duration-prototype-properties"),
+        "no-nonstandard-temporal-instant-properties": require("./rules/no-nonstandard-temporal-instant-properties"),
+        "no-nonstandard-temporal-instant-prototype-properties": require("./rules/no-nonstandard-temporal-instant-prototype-properties"),
+        "no-nonstandard-temporal-now-properties": require("./rules/no-nonstandard-temporal-now-properties"),
+        "no-nonstandard-temporal-plaindate-properties": require("./rules/no-nonstandard-temporal-plaindate-properties"),
+        "no-nonstandard-temporal-plaindate-prototype-properties": require("./rules/no-nonstandard-temporal-plaindate-prototype-properties"),
+        "no-nonstandard-temporal-plaindatetime-properties": require("./rules/no-nonstandard-temporal-plaindatetime-properties"),
+        "no-nonstandard-temporal-plaindatetime-prototype-properties": require("./rules/no-nonstandard-temporal-plaindatetime-prototype-properties"),
+        "no-nonstandard-temporal-plainmonthday-properties": require("./rules/no-nonstandard-temporal-plainmonthday-properties"),
+        "no-nonstandard-temporal-plainmonthday-prototype-properties": require("./rules/no-nonstandard-temporal-plainmonthday-prototype-properties"),
+        "no-nonstandard-temporal-plaintime-properties": require("./rules/no-nonstandard-temporal-plaintime-properties"),
+        "no-nonstandard-temporal-plaintime-prototype-properties": require("./rules/no-nonstandard-temporal-plaintime-prototype-properties"),
+        "no-nonstandard-temporal-plainyearmonth-properties": require("./rules/no-nonstandard-temporal-plainyearmonth-properties"),
+        "no-nonstandard-temporal-plainyearmonth-prototype-properties": require("./rules/no-nonstandard-temporal-plainyearmonth-prototype-properties"),
+        "no-nonstandard-temporal-properties": require("./rules/no-nonstandard-temporal-properties"),
+        "no-nonstandard-temporal-zoneddatetime-properties": require("./rules/no-nonstandard-temporal-zoneddatetime-properties"),
+        "no-nonstandard-temporal-zoneddatetime-prototype-properties": require("./rules/no-nonstandard-temporal-zoneddatetime-prototype-properties"),
         "no-nonstandard-typed-array-properties": require("./rules/no-nonstandard-typed-array-properties"),
         "no-nonstandard-typed-array-prototype-properties": require("./rules/no-nonstandard-typed-array-prototype-properties"),
         "no-nonstandard-weakmap-properties": require("./rules/no-nonstandard-weakmap-properties"),
@@ -637,6 +660,7 @@ const plugin: {
         "no-symbol-matchall": require("./rules/no-symbol-matchall"),
         "no-symbol-prototype-description": require("./rules/no-symbol-prototype-description"),
         "no-template-literals": require("./rules/no-template-literals"),
+        "no-temporal": require("./rules/no-temporal"),
         "no-top-level-await": require("./rules/no-top-level-await"),
         "no-trailing-commas": require("./rules/no-trailing-commas"),
         "no-trailing-dynamic-import-commas": require("./rules/no-trailing-dynamic-import-commas"),

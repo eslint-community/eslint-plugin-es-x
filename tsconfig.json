@@ -19,15 +19,12 @@
         /* JavaScript Support */
         "allowJs": true,
         "checkJs": false,
-        
-        /* Interop Constraints */
-        "allowSyntheticDefaultImports": false,
-        "esModuleInterop": false,
 
         /* Language and Environment */
         "jsx": "preserve",
         "jsxImportSource": "vue",
         "target": "esnext",
+        "types": ["node", "mocha"],
         
         /* Completeness */
         "skipLibCheck": true,

@@ -54,9 +54,9 @@ new RuleTester().run(ruleId, rule, {
         {
             code: WITH_ID_FOO,
             output: null,
-            errors: FULL_ERRORS.map((message, i) => ({
+            errors: FULL_ERRORS.map((message) => ({
                 message,
-                suggestions: createSuggestions(WITH_ID_FOO, i),
+                suggestions: createSuggestions(WITH_ID_FOO),
             })),
             settings: { "es-x": { aggressive: true } },
         },
@@ -64,9 +64,9 @@ new RuleTester().run(ruleId, rule, {
             code: WITH_ID_FOO,
             output: null,
             options: [{ aggressive: true }],
-            errors: FULL_ERRORS.map((message, i) => ({
+            errors: FULL_ERRORS.map((message) => ({
                 message,
-                suggestions: createSuggestions(WITH_ID_FOO, i),
+                suggestions: createSuggestions(WITH_ID_FOO),
             })),
             settings: { "es-x": { aggressive: false } },
         },
@@ -130,9 +130,9 @@ new RuleTester({
             filename,
             code: WITH_ID_FOO,
             output: null,
-            errors: FULL_ERRORS.map((message, i) => ({
+            errors: FULL_ERRORS.map((message) => ({
                 message,
-                suggestions: createSuggestions(WITH_ID_FOO, i),
+                suggestions: createSuggestions(WITH_ID_FOO),
             })),
             settings: { "es-x": { aggressive: true } },
         },
