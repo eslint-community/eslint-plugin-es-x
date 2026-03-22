@@ -11,15 +11,15 @@ new RuleTester().run("no-json", rule, {
     invalid: [
         {
             code: "JSON",
-            errors: ["ES5 'JSON' class is forbidden."],
+            errors: ["ES5 'JSON' global object is forbidden."],
         },
         {
             code: "JSON.parse",
-            errors: ["ES5 'JSON' class is forbidden."],
+            errors: ["ES5 'JSON' global object is forbidden."],
         },
         {
             code: "JSON.stringify",
-            errors: ["ES5 'JSON' class is forbidden."],
+            errors: ["ES5 'JSON' global object is forbidden."],
         },
     ],
 })

@@ -1,15 +1,15 @@
 ---
 title: "es-x/no-json"
-description: "disallow the `JSON` class"
+description: "disallow the `JSON` global object"
 since: "[eslint-plugin-es] v3.0.0"
 ---
 
 # es-x/no-json
-> disallow the `JSON` class
+> disallow the `JSON` global object
 
 - ✅ The following configurations enable this rule: [no-new-in-es5] and [restrict-to-es3]
 
-This rule reports ES5 `JSON` class as errors.
+This rule reports ES5 `JSON` global object as errors.
 
 ## 💡 Examples
 

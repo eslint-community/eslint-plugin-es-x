@@ -11,6 +11,12 @@ import { LATEST_ES_YEAR } from "./rules"
 const logger = console
 
 const maxESVersion = LATEST_ES_YEAR + 1
+const NON_CLASS_GLOBAL_OBJECTS = new Set([
+    "Atomics",
+    "JSON",
+    "Reflect",
+    "Temporal",
+])
 
 main(
     String(process.argv[2])
@@ -25,6 +31,7 @@ interface ResourceOptions {
     object: string
     properties: string[]
     link: string
+    globalObjectKind?: GlobalObjectKind
 }
 
 interface RuleResources {
@@ -32,6 +39,8 @@ interface RuleResources {
     test: string
     doc: string
 }
+
+type GlobalObjectKind = "class" | "global object" | "variable"
 
 // main
 // eslint-disable-next-line complexity
@@ -122,6 +131,43 @@ async function main(ruleId: string) {
         resourceOptions.object =
             resourceOptions.object[0].toUpperCase() +
             resourceOptions.object.slice(1)
+    }
+    if (kind === "global-object") {
+        const inferredGlobalObjectKind = inferGlobalObjectKind(
+            resourceOptions.object,
+        )
+        resourceOptions.globalObjectKind = await unwrapPrompt(
+            prompts.select({
+                message: `How should \`${resourceOptions.object}\` be described in generated text?`,
+                initialValue: inferredGlobalObjectKind,
+                options: [
+                    {
+                        value: "class",
+                        label: "class",
+                        hint:
+                            inferredGlobalObjectKind === "class"
+                                ? "inferred default"
+                                : undefined,
+                    },
+                    {
+                        value: "global object",
+                        label: "global object",
+                        hint:
+                            inferredGlobalObjectKind === "global object"
+                                ? "inferred default"
+                                : undefined,
+                    },
+                    {
+                        value: "variable",
+                        label: "variable",
+                        hint:
+                            inferredGlobalObjectKind === "variable"
+                                ? "inferred default"
+                                : undefined,
+                    },
+                ] as const,
+            }),
+        )
     }
 
     if (kind === "static-properties" || kind === "prototype-properties") {
@@ -235,8 +281,12 @@ function buildGlobalObjectRuleResources({
     ruleId,
     object,
     link,
+    globalObjectKind,
 }: ResourceOptions): RuleResources {
     const intl = object.startsWith("Intl.")
+    const kind = globalObjectKind ?? inferGlobalObjectKind(object)
+    const example = `const value = ${object}`
+    const shadowedGlobalObject = createShadowedGlobalObjectExample(object)
     return {
         rule: `"use strict"
 
@@ -246,14 +296,14 @@ const { defineGlobalsHandler } = require("../util/define-globals-handler")
 module.exports = createRule({
     meta: {
         docs: {
-            description: "disallow the \`${object}\` class.",
+            description: "disallow the \`${object}\` ${kind}.",
             category: "ES${maxESVersion}${intl ? "-Intl-API" : ""}",
             recommended: false,
             url: "",
         },
         fixable: null,
         messages: {
-            forbidden: "ES${maxESVersion}${intl ? " Intl API" : ""} '{{name}}' class is forbidden.",
+            forbidden: "ES${maxESVersion}${intl ? " Intl API" : ""} '{{name}}' ${kind} is forbidden.",
         },
         schema: [],
         type: "problem",
@@ -267,15 +317,15 @@ module.exports = createRule({
 import * as rule from "../../../lib/rules/${ruleId}"
 
 new RuleTester().run("${ruleId}", rule, {
-    valid: ["Array", "Object", "let ${object} = 0; ${object}"],
+    valid: ["Array", "Object", "${shadowedGlobalObject}"],
     invalid: [
         {
             code: "${object}",
-            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}' class is forbidden."],
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}' ${kind} is forbidden."],
         },
         {
             code: "function f() { ${object} }",
-            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}' class is forbidden."],
+            errors: ["ES${maxESVersion}${intl ? " Intl API" : ""} '${object}' ${kind} is forbidden."],
         },
     ],
 })
@@ -283,7 +333,7 @@ new RuleTester().run("${ruleId}", rule, {
         doc: `# es-x/${ruleId}
 > 
 
-This rule reports ES${maxESVersion}${intl ? " Intl API" : ""} [\`${object}\` class](${link}) as errors.
+This rule reports ES${maxESVersion}${intl ? " Intl API" : ""} [\`${object}\` ${kind}](${link}) as errors.
 
 ## 💡 Examples
 
@@ -293,7 +343,7 @@ This rule reports ES${maxESVersion}${intl ? " Intl API" : ""} [\`${object}\` cla
 
 \`\`\`js
 /*eslint es-x/${ruleId}: error */
-let ${object.toLowerCase()} = new ${object}()
+${example}
 \`\`\`
 
 </eslint-playground>
@@ -1102,6 +1152,32 @@ function camelCase(str: string) {
         ? str.replace(/[_.-](\w|$)/gu, (_, x) => x.toUpperCase())
         : str
     return `${base[0].toLowerCase()}${base.slice(1)}`
+}
+
+function inferGlobalObjectKind(object: string): GlobalObjectKind {
+    if (object === "globalThis") {
+        return "variable"
+    }
+    const target = getGlobalObject(object)
+    if (target != null) {
+        return typeof target === "function" ? "class" : "global object"
+    }
+    if (NON_CLASS_GLOBAL_OBJECTS.has(object)) {
+        return "global object"
+    }
+    return "class"
+}
+
+function createShadowedGlobalObjectExample(object: string) {
+    const [rootName, ...members] = object.split(".")
+    if (members.length === 0) {
+        return `let ${object} = 0; ${object}`
+    }
+    let value = "0"
+    for (const member of members.reverse()) {
+        value = `{ ${member}: ${value} }`
+    }
+    return `let ${rootName} = ${value}; ${object}`
 }
 
 function getGlobalObject(object: string) {

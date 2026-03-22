@@ -1,15 +1,15 @@
 ---
 title: "es-x/no-atomics"
-description: "disallow the `Atomics` class"
+description: "disallow the `Atomics` global object"
 since: "[eslint-plugin-es] v1.2.0"
 ---
 
 # es-x/no-atomics
-> disallow the `Atomics` class
+> disallow the `Atomics` global object
 
 - ✅ The following configurations enable this rule: [no-new-in-es2017], [restrict-to-es3], [restrict-to-es5], [restrict-to-es2015], and [restrict-to-es2016]
 
-This rule reports ES2017 `Atomics` class as errors.
+This rule reports ES2017 `Atomics` global object as errors.
 
 ## 💡 Examples
 

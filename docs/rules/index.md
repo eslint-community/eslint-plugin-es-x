@@ -25,7 +25,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
 | [es-x/no-symbol-asyncdispose](./no-symbol-asyncdispose.md) | disallow the `Symbol.asyncDispose` property. |  |
 | [es-x/no-symbol-dispose](./no-symbol-dispose.md) | disallow the `Symbol.dispose` property. |  |
-| [es-x/no-temporal](./no-temporal.md) | disallow the `Temporal` class. |  |
+| [es-x/no-temporal](./no-temporal.md) | disallow the `Temporal` global object. |  |
 | [es-x/no-uint8array-frombase64](./no-uint8array-frombase64.md) | disallow the `Uint8Array.fromBase64` method. |  |
 | [es-x/no-uint8array-fromhex](./no-uint8array-fromhex.md) | disallow the `Uint8Array.fromHex` method. |  |
 | [es-x/no-uint8array-prototype-setfrombase64](./no-uint8array-prototype-setfrombase64.md) | disallow the `Uint8Array.prototype.setFromBase64` method. |  |
@@ -261,7 +261,7 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-async-functions](./no-async-functions.md) | disallow async function declarations. |  |
-| [es-x/no-atomics](./no-atomics.md) | disallow the `Atomics` class. |  |
+| [es-x/no-atomics](./no-atomics.md) | disallow the `Atomics` global object. |  |
 | [es-x/no-object-entries](./no-object-entries.md) | disallow the `Object.entries` method. |  |
 | [es-x/no-object-getownpropertydescriptors](./no-object-getownpropertydescriptors.md) | disallow the `Object.getOwnPropertyDescriptors` method. |  |
 | [es-x/no-object-values](./no-object-values.md) | disallow the `Object.values` method. |  |
@@ -357,7 +357,7 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | [es-x/no-promise](./no-promise.md) | disallow the `Promise` class. |  |
 | [es-x/no-property-shorthands](./no-property-shorthands.md) | disallow property shorthands. | 🔧 |
 | [es-x/no-proxy](./no-proxy.md) | disallow the `Proxy` class. |  |
-| [es-x/no-reflect](./no-reflect.md) | disallow the `Reflect` class. |  |
+| [es-x/no-reflect](./no-reflect.md) | disallow the `Reflect` global object. |  |
 | [es-x/no-regexp-prototype-flags](./no-regexp-prototype-flags.md) | disallow the `RegExp.prototype.flags` property. |  |
 | [es-x/no-regexp-u-flag](./no-regexp-u-flag.md) | disallow RegExp `u` flag. |  |
 | [es-x/no-regexp-y-flag](./no-regexp-y-flag.md) | disallow RegExp `y` flag. |  |
@@ -399,7 +399,7 @@ There are multiple configs that enable all rules in this category: [`no-new-in-e
 | [es-x/no-array-prototype-some](./no-array-prototype-some.md) | disallow the `Array.prototype.some` method. |  |
 | [es-x/no-date-now](./no-date-now.md) | disallow the `Date.now` method. |  |
 | [es-x/no-function-prototype-bind](./no-function-prototype-bind.md) | disallow the `Function.prototype.bind` method. |  |
-| [es-x/no-json](./no-json.md) | disallow the `JSON` class. |  |
+| [es-x/no-json](./no-json.md) | disallow the `JSON` global object. |  |
 | [es-x/no-keyword-properties](./no-keyword-properties.md) | disallow reserved words as property names. |  |
 | [es-x/no-object-create](./no-object-create.md) | disallow the `Object.create` method. |  |
 | [es-x/no-object-defineproperties](./no-object-defineproperties.md) | disallow the `Object.defineProperties` method. |  |

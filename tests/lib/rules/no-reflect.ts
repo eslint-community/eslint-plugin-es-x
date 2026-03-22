@@ -11,11 +11,11 @@ new RuleTester().run("no-reflect", rule, {
     invalid: [
         {
             code: "Reflect",
-            errors: ["ES2015 'Reflect' class is forbidden."],
+            errors: ["ES2015 'Reflect' global object is forbidden."],
         },
         {
             code: "function f() { Reflect }",
-            errors: ["ES2015 'Reflect' class is forbidden."],
+            errors: ["ES2015 'Reflect' global object is forbidden."],
         },
     ],
 })
