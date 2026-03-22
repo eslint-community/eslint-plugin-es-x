@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-temporal"
 description: "disallow the `Temporal` global object"
+since: "v9.6.0"
 ---
 
 # es-x/no-temporal
 > disallow the `Temporal` global object
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext] and [no-temporal]
 
 This rule reports ES2026 [`Temporal` global object](https://github.com/tc39/proposal-temporal) as errors.
@@ -23,6 +23,10 @@ let instant = Temporal.Now.instant();
 ```
 
 </eslint-playground>
+
+## 🚀 Version
+
+This rule was introduced in v9.6.0.
 
 ## 📚 References
 

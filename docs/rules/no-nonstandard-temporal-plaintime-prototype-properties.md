@@ -1,12 +1,11 @@
 ---
 title: "es-x/no-nonstandard-temporal-plaintime-prototype-properties"
 description: "disallow non-standard properties on Temporal.PlainTime instance"
+since: "v9.6.0"
 ---
 
 # es-x/no-nonstandard-temporal-plaintime-prototype-properties
 > disallow non-standard properties on Temporal.PlainTime instance
-
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 
 This rule reports non-standard properties on Temporal.PlainTime instance as errors.
 
@@ -50,6 +49,10 @@ An array of non-standard property names to allow.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.6.0.
 
 ## 📚 References
 
