@@ -10,11 +10,11 @@ new RuleTester().run("no-asyncdisposablestack", rule, {
     invalid: [
         {
             code: "AsyncDisposableStack",
-            errors: ["ES2026 'AsyncDisposableStack' class is forbidden."],
+            errors: ["ES2027 'AsyncDisposableStack' class is forbidden."],
         },
         {
             code: "function f() { AsyncDisposableStack }",
-            errors: ["ES2026 'AsyncDisposableStack' class is forbidden."],
+            errors: ["ES2027 'AsyncDisposableStack' class is forbidden."],
         },
     ],
 })

@@ -9,7 +9,7 @@ since: "v8.7.0"
 
 - ✅ The following configurations enable this rule: [no-explicit-resource-management] and [no-new-in-esnext]
 
-This rule reports ES2026 [`using` and `await using` declarations](https://github.com/tc39/proposal-explicit-resource-management) as errors.
+This rule reports ES2027 [`using` and `await using` declarations](https://github.com/tc39/proposal-explicit-resource-management) as errors.
 
 ## 💡 Examples
 

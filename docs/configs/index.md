@@ -1129,6 +1129,62 @@ export default defineConfig([
 
 </details>
 
+## no-explicit-resource-management
+
+disallow proposal ES2027 [Explicit Resource Management](https://github.com/tc39/proposal-explicit-resource-management)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This config includes the rules [es-x/no-asyncdisposablestack](../rules/no-asyncdisposablestack.md), [es-x/no-disposablestack](../rules/no-disposablestack.md), [es-x/no-suppressederror](../rules/no-suppressederror.md), [es-x/no-symbol-asyncdispose](../rules/no-symbol-asyncdispose.md), [es-x/no-symbol-dispose](../rules/no-symbol-dispose.md), and [es-x/no-using-declarations](../rules/no-using-declarations.md).
+
+```js
+import { defineConfig } from "eslint/config"
+import pluginESx from "eslint-plugin-es-x"
+
+export default defineConfig([
+    pluginESx.configs["flat/no-explicit-resource-management"]
+])
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-explicit-resource-management"],
+}
+```
+
+</details>
+
+## no-temporal
+
+disallow proposal ES2027 [Temporal](https://github.com/tc39/proposal-temporal)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This config includes the rules [es-x/no-date-prototype-totemporalinstant](../rules/no-date-prototype-totemporalinstant.md) and [es-x/no-temporal](../rules/no-temporal.md).
+
+```js
+import { defineConfig } from "eslint/config"
+import pluginESx from "eslint-plugin-es-x"
+
+export default defineConfig([
+    pluginESx.configs["flat/no-temporal"]
+])
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-temporal"],
+}
+```
+
+</details>
+
 ## no-arraybuffer-base64
 
 disallow proposal ES2026 [Uint8Array to/from Base64 and Hex](https://github.com/tc39/proposal-arraybuffer-base64)\
@@ -1152,34 +1208,6 @@ export default defineConfig([
 ```json
 {
     "extends": ["plugin:es-x/no-arraybuffer-base64"],
-}
-```
-
-</details>
-
-## no-explicit-resource-management
-
-disallow proposal ES2026 [Explicit Resource Management](https://github.com/tc39/proposal-explicit-resource-management)\
-⚠️ This config will be changed in the minor versions of this plugin.
-
-This config includes the rules [es-x/no-asyncdisposablestack](../rules/no-asyncdisposablestack.md), [es-x/no-disposablestack](../rules/no-disposablestack.md), [es-x/no-suppressederror](../rules/no-suppressederror.md), [es-x/no-symbol-asyncdispose](../rules/no-symbol-asyncdispose.md), [es-x/no-symbol-dispose](../rules/no-symbol-dispose.md), and [es-x/no-using-declarations](../rules/no-using-declarations.md).
-
-```js
-import { defineConfig } from "eslint/config"
-import pluginESx from "eslint-plugin-es-x"
-
-export default defineConfig([
-    pluginESx.configs["flat/no-explicit-resource-management"]
-])
-```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-explicit-resource-management"],
 }
 ```
 
@@ -1236,34 +1264,6 @@ export default defineConfig([
 ```json
 {
     "extends": ["plugin:es-x/no-json-parse-with-source"],
-}
-```
-
-</details>
-
-## no-temporal
-
-disallow proposal ES2026 [Temporal](https://github.com/tc39/proposal-temporal)\
-⚠️ This config will be changed in the minor versions of this plugin.
-
-This config includes the rules [es-x/no-date-prototype-totemporalinstant](../rules/no-date-prototype-totemporalinstant.md) and [es-x/no-temporal](../rules/no-temporal.md).
-
-```js
-import { defineConfig } from "eslint/config"
-import pluginESx from "eslint-plugin-es-x"
-
-export default defineConfig([
-    pluginESx.configs["flat/no-temporal"]
-])
-```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-temporal"],
 }
 ```
 
