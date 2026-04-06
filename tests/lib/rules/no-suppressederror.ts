@@ -6,11 +6,11 @@ new RuleTester().run("no-suppressederror", rule, {
     invalid: [
         {
             code: "SuppressedError",
-            errors: ["ES2026 'SuppressedError' class is forbidden."],
+            errors: ["ES2027 'SuppressedError' class is forbidden."],
         },
         {
             code: "function f() { SuppressedError }",
-            errors: ["ES2026 'SuppressedError' class is forbidden."],
+            errors: ["ES2027 'SuppressedError' class is forbidden."],
         },
     ],
 })

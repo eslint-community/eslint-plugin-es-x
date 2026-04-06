@@ -6,11 +6,11 @@ new RuleTester().run("no-disposablestack", rule, {
     invalid: [
         {
             code: "DisposableStack",
-            errors: ["ES2026 'DisposableStack' class is forbidden."],
+            errors: ["ES2027 'DisposableStack' class is forbidden."],
         },
         {
             code: "function f() { DisposableStack }",
-            errors: ["ES2026 'DisposableStack' class is forbidden."],
+            errors: ["ES2027 'DisposableStack' class is forbidden."],
         },
     ],
 })

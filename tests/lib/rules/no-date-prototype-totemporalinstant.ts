@@ -23,7 +23,7 @@ new RuleTester().run(ruleId, rule, {
         {
             code: "foo.toTemporalInstant",
             errors: [
-                "ES2026 'Date.prototype.toTemporalInstant' method is forbidden.",
+                "ES2027 'Date.prototype.toTemporalInstant' method is forbidden.",
             ],
             settings: { "es-x": { aggressive: true } },
         },
@@ -31,14 +31,14 @@ new RuleTester().run(ruleId, rule, {
             code: "foo.toTemporalInstant",
             options: [{ aggressive: true }],
             errors: [
-                "ES2026 'Date.prototype.toTemporalInstant' method is forbidden.",
+                "ES2027 'Date.prototype.toTemporalInstant' method is forbidden.",
             ],
             settings: { "es-x": { aggressive: false } },
         },
         {
             code: "const foo = new Date(); foo.toTemporalInstant",
             errors: [
-                "ES2026 'Date.prototype.toTemporalInstant' method is forbidden.",
+                "ES2027 'Date.prototype.toTemporalInstant' method is forbidden.",
             ],
         },
     ],
@@ -82,28 +82,28 @@ new RuleTester({
             filename,
             code: "(new Date()).toTemporalInstant",
             errors: [
-                "ES2026 'Date.prototype.toTemporalInstant' method is forbidden.",
+                "ES2027 'Date.prototype.toTemporalInstant' method is forbidden.",
             ],
         },
         {
             filename,
             code: "let foo = new Date(); foo.toTemporalInstant",
             errors: [
-                "ES2026 'Date.prototype.toTemporalInstant' method is forbidden.",
+                "ES2027 'Date.prototype.toTemporalInstant' method is forbidden.",
             ],
         },
         {
             filename,
             code: "function f<T extends Date>(a: T) { a.toTemporalInstant }",
             errors: [
-                "ES2026 'Date.prototype.toTemporalInstant' method is forbidden.",
+                "ES2027 'Date.prototype.toTemporalInstant' method is forbidden.",
             ],
         },
         {
             filename,
             code: "foo.toTemporalInstant",
             errors: [
-                "ES2026 'Date.prototype.toTemporalInstant' method is forbidden.",
+                "ES2027 'Date.prototype.toTemporalInstant' method is forbidden.",
             ],
             settings: { "es-x": { aggressive: true } },
         },

@@ -6,7 +6,7 @@ new RuleTester().run("no-symbol-dispose", rule, {
     invalid: [
         {
             code: "Symbol.dispose",
-            errors: ["ES2026 'Symbol.dispose' property is forbidden."],
+            errors: ["ES2027 'Symbol.dispose' property is forbidden."],
         },
     ],
 })
