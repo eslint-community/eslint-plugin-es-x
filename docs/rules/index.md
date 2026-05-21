@@ -13,6 +13,8 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-asyncdisposablestack](./no-asyncdisposablestack.md) | disallow the `AsyncDisposableStack` class. |  |
 | [es-x/no-date-prototype-totemporalinstant](./no-date-prototype-totemporalinstant.md) | disallow the `Date.prototype.toTemporalInstant` method. |  |
 | [es-x/no-disposablestack](./no-disposablestack.md) | disallow the `DisposableStack` class. |  |
+| [es-x/no-iterator-zip](./no-iterator-zip.md) | disallow the `Iterator.zip` method. |  |
+| [es-x/no-iterator-zipkeyed](./no-iterator-zipkeyed.md) | disallow the `Iterator.zipKeyed` method. |  |
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
 | [es-x/no-symbol-asyncdispose](./no-symbol-asyncdispose.md) | disallow the `Symbol.asyncDispose` property. |  |
 | [es-x/no-symbol-dispose](./no-symbol-dispose.md) | disallow the `Symbol.dispose` property. |  |
