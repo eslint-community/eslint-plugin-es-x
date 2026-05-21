@@ -4,6 +4,21 @@ This plugin provides the following rules.
 
 - 🔧 mark means that the `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by the rule.
 
+## ES2027
+
+There is a config that enables the rules in this category: [`no-new-in-esnext`]
+
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [es-x/no-asyncdisposablestack](./no-asyncdisposablestack.md) | disallow the `AsyncDisposableStack` class. |  |
+| [es-x/no-date-prototype-totemporalinstant](./no-date-prototype-totemporalinstant.md) | disallow the `Date.prototype.toTemporalInstant` method. |  |
+| [es-x/no-disposablestack](./no-disposablestack.md) | disallow the `DisposableStack` class. |  |
+| [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
+| [es-x/no-symbol-asyncdispose](./no-symbol-asyncdispose.md) | disallow the `Symbol.asyncDispose` property. |  |
+| [es-x/no-symbol-dispose](./no-symbol-dispose.md) | disallow the `Symbol.dispose` property. |  |
+| [es-x/no-temporal](./no-temporal.md) | disallow the `Temporal` global object. |  |
+| [es-x/no-using-declarations](./no-using-declarations.md) | disallow `using` and `await using` declarations. |  |
+
 ## ES2026
 
 There is a config that enables the rules in this category: [`no-new-in-esnext`]
@@ -11,9 +26,6 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [es-x/no-array-fromasync](./no-array-fromasync.md) | disallow the `Array.fromAsync` method. |  |
-| [es-x/no-asyncdisposablestack](./no-asyncdisposablestack.md) | disallow the `AsyncDisposableStack` class. |  |
-| [es-x/no-date-prototype-totemporalinstant](./no-date-prototype-totemporalinstant.md) | disallow the `Date.prototype.toTemporalInstant` method. |  |
-| [es-x/no-disposablestack](./no-disposablestack.md) | disallow the `DisposableStack` class. |  |
 | [es-x/no-error-iserror](./no-error-iserror.md) | disallow the `Error.isError` method. |  |
 | [es-x/no-iterator-concat](./no-iterator-concat.md) | disallow the `Iterator.concat` method. |  |
 | [es-x/no-json-israwjson](./no-json-israwjson.md) | disallow the `JSON.isRawJSON` method. |  |
@@ -22,17 +34,12 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-map-prototype-getorinsert](./no-map-prototype-getorinsert.md) | disallow the `Map.prototype.getOrInsert` method. |  |
 | [es-x/no-map-prototype-getorinsertcomputed](./no-map-prototype-getorinsertcomputed.md) | disallow the `Map.prototype.getOrInsertComputed` method. |  |
 | [es-x/no-math-sumprecise](./no-math-sumprecise.md) | disallow the `Math.sumPrecise` method. |  |
-| [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |
-| [es-x/no-symbol-asyncdispose](./no-symbol-asyncdispose.md) | disallow the `Symbol.asyncDispose` property. |  |
-| [es-x/no-symbol-dispose](./no-symbol-dispose.md) | disallow the `Symbol.dispose` property. |  |
-| [es-x/no-temporal](./no-temporal.md) | disallow the `Temporal` global object. |  |
 | [es-x/no-uint8array-frombase64](./no-uint8array-frombase64.md) | disallow the `Uint8Array.fromBase64` method. |  |
 | [es-x/no-uint8array-fromhex](./no-uint8array-fromhex.md) | disallow the `Uint8Array.fromHex` method. |  |
 | [es-x/no-uint8array-prototype-setfrombase64](./no-uint8array-prototype-setfrombase64.md) | disallow the `Uint8Array.prototype.setFromBase64` method. |  |
 | [es-x/no-uint8array-prototype-setfromhex](./no-uint8array-prototype-setfromhex.md) | disallow the `Uint8Array.prototype.setFromHex` method. |  |
 | [es-x/no-uint8array-prototype-tobase64](./no-uint8array-prototype-tobase64.md) | disallow the `Uint8Array.prototype.toBase64` method. |  |
 | [es-x/no-uint8array-prototype-tohex](./no-uint8array-prototype-tohex.md) | disallow the `Uint8Array.prototype.toHex` method. |  |
-| [es-x/no-using-declarations](./no-using-declarations.md) | disallow `using` and `await using` declarations. |  |
 | [es-x/no-weakmap-prototype-getorinsert](./no-weakmap-prototype-getorinsert.md) | disallow the `WeakMap.prototype.getOrInsert` method. |  |
 | [es-x/no-weakmap-prototype-getorinsertcomputed](./no-weakmap-prototype-getorinsertcomputed.md) | disallow the `WeakMap.prototype.getOrInsertComputed` method. |  |
 

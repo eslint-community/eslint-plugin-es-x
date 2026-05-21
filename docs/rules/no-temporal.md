@@ -9,7 +9,7 @@ since: "v9.6.0"
 
 - ✅ The following configurations enable this rule: [no-new-in-esnext] and [no-temporal]
 
-This rule reports ES2026 [`Temporal` global object](https://github.com/tc39/proposal-temporal) as errors.
+This rule reports ES2027 [`Temporal` global object](https://github.com/tc39/proposal-temporal) as errors.
 
 ## 💡 Examples
 

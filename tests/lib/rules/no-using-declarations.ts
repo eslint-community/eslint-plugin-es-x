@@ -12,11 +12,11 @@ new RuleTester({
     invalid: [
         {
             code: "using x = y",
-            errors: ["ES2026 'using' declarations are forbidden."],
+            errors: ["ES2027 'using' declarations are forbidden."],
         },
         {
             code: "await using x = y",
-            errors: ["ES2026 'await using' declarations are forbidden."],
+            errors: ["ES2027 'await using' declarations are forbidden."],
         },
     ],
 })

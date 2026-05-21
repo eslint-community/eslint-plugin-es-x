@@ -6,11 +6,11 @@ new RuleTester().run("no-temporal", rule, {
     invalid: [
         {
             code: "Temporal",
-            errors: ["ES2026 'Temporal' global object is forbidden."],
+            errors: ["ES2027 'Temporal' global object is forbidden."],
         },
         {
             code: "function f() { Temporal }",
-            errors: ["ES2026 'Temporal' global object is forbidden."],
+            errors: ["ES2027 'Temporal' global object is forbidden."],
         },
     ],
 })
