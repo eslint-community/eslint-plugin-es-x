@@ -47,6 +47,10 @@ const proposals = {
         title: "JSON.parse source text access",
         link: "https://github.com/tc39/proposal-json-parse-with-source",
     },
+    "joint-iteration": {
+        title: "Joint Iteration",
+        link: "https://github.com/tc39/proposal-joint-iteration",
+    },
     "relative-indexing-method": {
         title: "An .at() method on all the built-in indexables",
         link: "https://github.com/tc39/proposal-relative-indexing-method",

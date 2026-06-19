@@ -27,6 +27,7 @@ const plugin: {
         "flat/no-intl-numberformat-v3": Linter.Config
         "flat/no-is-usv-string": Linter.Config
         "flat/no-iterator-helpers": Linter.Config
+        "flat/no-joint-iteration": Linter.Config
         "flat/no-json-parse-with-source": Linter.Config
         "flat/no-new-in-es5": Linter.Config
         "flat/no-new-in-es2015": Linter.Config
@@ -92,6 +93,7 @@ const plugin: {
         "no-intl-numberformat-v3": Linter.LegacyConfig
         "no-is-usv-string": Linter.LegacyConfig
         "no-iterator-helpers": Linter.LegacyConfig
+        "no-joint-iteration": Linter.LegacyConfig
         "no-json-parse-with-source": Linter.LegacyConfig
         "no-new-in-es5": Linter.LegacyConfig
         "no-new-in-es2015": Linter.LegacyConfig
@@ -168,6 +170,7 @@ const plugin: {
         "flat/no-intl-numberformat-v3": require("./configs/flat/no-intl-numberformat-v3"),
         "flat/no-is-usv-string": require("./configs/flat/no-is-usv-string"),
         "flat/no-iterator-helpers": require("./configs/flat/no-iterator-helpers"),
+        "flat/no-joint-iteration": require("./configs/flat/no-joint-iteration"),
         "flat/no-json-parse-with-source": require("./configs/flat/no-json-parse-with-source"),
         "flat/no-new-in-es5": require("./configs/flat/no-new-in-es5"),
         "flat/no-new-in-es2015": require("./configs/flat/no-new-in-es2015"),
@@ -233,6 +236,7 @@ const plugin: {
         "no-intl-numberformat-v3": require("./configs/no-intl-numberformat-v3"),
         "no-is-usv-string": require("./configs/no-is-usv-string"),
         "no-iterator-helpers": require("./configs/no-iterator-helpers"),
+        "no-joint-iteration": require("./configs/no-joint-iteration"),
         "no-json-parse-with-source": require("./configs/no-json-parse-with-source"),
         "no-new-in-es5": require("./configs/no-new-in-es5"),
         "no-new-in-es2015": require("./configs/no-new-in-es2015"),
@@ -425,6 +429,8 @@ const plugin: {
         "no-iterator-prototype-some": require("./rules/no-iterator-prototype-some"),
         "no-iterator-prototype-take": require("./rules/no-iterator-prototype-take"),
         "no-iterator-prototype-toarray": require("./rules/no-iterator-prototype-toarray"),
+        "no-iterator-zip": require("./rules/no-iterator-zip"),
+        "no-iterator-zipkeyed": require("./rules/no-iterator-zipkeyed"),
         "no-json": require("./rules/no-json"),
         "no-json-israwjson": require("./rules/no-json-israwjson"),
         "no-json-modules": require("./rules/no-json-modules"),

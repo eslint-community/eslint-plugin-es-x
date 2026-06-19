@@ -1157,6 +1157,34 @@ export default defineConfig([
 
 </details>
 
+## no-joint-iteration
+
+disallow proposal ES2027 [Joint Iteration](https://github.com/tc39/proposal-joint-iteration)\
+⚠️ This config will be changed in the minor versions of this plugin.
+
+This config includes the rules [es-x/no-iterator-zip](../rules/no-iterator-zip.md) and [es-x/no-iterator-zipkeyed](../rules/no-iterator-zipkeyed.md).
+
+```js
+import { defineConfig } from "eslint/config"
+import pluginESx from "eslint-plugin-es-x"
+
+export default defineConfig([
+    pluginESx.configs["flat/no-joint-iteration"]
+])
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-joint-iteration"],
+}
+```
+
+</details>
+
 ## no-temporal
 
 disallow proposal ES2027 [Temporal](https://github.com/tc39/proposal-temporal)\
