@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-iterator-zip"
 description: "disallow the `Iterator.zip` method"
+since: "v9.7.0"
 ---
 
 # es-x/no-iterator-zip
 > disallow the `Iterator.zip` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-joint-iteration] and [no-new-in-esnext]
 
 This rule reports ES2027 [`Iterator.zip` method](https://github.com/tc39/proposal-joint-iteration) as errors.
@@ -48,6 +48,10 @@ This rule has an option.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.7.0.
 
 ## 📚 References
 

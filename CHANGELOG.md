@@ -1,5 +1,19 @@
 # eslint-plugin-es-x
 
+## 9.7.0
+
+### Minor Changes
+
+- Add `es-x/no-atomics-pause` rule ([#251](https://github.com/eslint-community/eslint-plugin-es-x/pull/251))
+
+- Add `es-x/no-iterator-zip` rule ([#352](https://github.com/eslint-community/eslint-plugin-es-x/pull/352))
+
+- Add `es-x/no-iterator-zipkeyed` rule ([#352](https://github.com/eslint-community/eslint-plugin-es-x/pull/352))
+
+- Add `no-joint-iteration` config ([#352](https://github.com/eslint-community/eslint-plugin-es-x/pull/352))
+
+- Update ES2026 references to ES2027 in some documents and rules ([#347](https://github.com/eslint-community/eslint-plugin-es-x/pull/347))
+
 ## 9.6.0
 
 ### Minor Changes

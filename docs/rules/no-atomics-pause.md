@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-atomics-pause"
 description: "disallow the `Atomics.pause` method"
+since: "v9.7.0"
 ---
 
 # es-x/no-atomics-pause
 > disallow the `Atomics.pause` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2027 [`Atomics.pause` method](https://github.com/tc39/proposal-atomics-microwait) as errors.
@@ -45,6 +45,10 @@ This rule has an option.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v9.7.0.
 
 ## 📚 References
 
