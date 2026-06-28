@@ -4,6 +4,8 @@
  */
 "use strict"
 
+const n = require("eslint-plugin-n")
+
 module.exports = [
     {
         name: "eslint-internal/config/+node.js#1",
@@ -33,7 +35,7 @@ module.exports = [
     },
     {
         name: "eslint-internal/config/+node.js#2",
-        plugins: { n: require("eslint-plugin-n") },
+        plugins: { n: n.default ?? n },
         languageOptions: {
             ecmaVersion: 2020,
             globals: {
