@@ -15,6 +15,11 @@ module.exports = defineConfig([
     ]),
     {
         plugins: {
+            "es-x": {
+                rules: {
+                    "no-string-prototype-substr": require("./lib/rules/no-string-prototype-substr"),
+                },
+            },
             my: require("./eslint-internal/my-plugin.js"),
         },
         languageOptions: {
@@ -69,6 +74,7 @@ module.exports = defineConfig([
                     message: "Use sourceCode.getDeclaredVariables(node)",
                 },
             ],
+            "es-x/no-string-prototype-substr": "error",
         },
     },
     {
