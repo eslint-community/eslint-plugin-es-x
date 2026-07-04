@@ -11,16 +11,8 @@ const collator = new Intl.Collator("en", { numeric: true })
 
 const configRootPath = path.resolve(__dirname, "../lib/configs")
 const flatConfigRootPath = path.resolve(__dirname, "../lib/configs/flat")
-const configIds = fs
-    .readdirSync(configRootPath)
-    .filter((f) => f.endsWith(".js"))
-    .map((f) => path.basename(f, ".js"))
-    .sort(collator.compare.bind(collator))
-const flatConfigIds = fs
-    .readdirSync(flatConfigRootPath)
-    .filter((f) => f.endsWith(".js"))
-    .map((f) => path.basename(f, ".js"))
-    .sort(collator.compare.bind(collator))
+const configIds = getConfigIds(configRootPath)
+const flatConfigIds = getConfigIds(flatConfigRootPath)
 const legacyConfigIds = [
     "no-2019",
     "no-2018",
@@ -90,4 +82,11 @@ async function format() {
     await ESLint.outputFixes(
         await new ESLint({ fix: true }).lintFiles(["lib/index.ts"]),
     )
+}
+
+function getConfigIds(rootPath: string) {
+    return fs
+        .globSync("*.js", { cwd: rootPath })
+        .map((f) => path.basename(f, ".js"))
+        .sort(collator.compare.bind(collator))
 }

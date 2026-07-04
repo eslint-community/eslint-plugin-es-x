@@ -197,13 +197,9 @@ async function collectValues(
                   }
               }
 
-    const incomingValues = new Set<string>()
-    let allCount = 0
-
-    for await (const value of getValues()) {
-        allCount++
-        incomingValues.add(value)
-    }
+    const allValues = await Array.fromAsync(getValues())
+    const incomingValues = new Set(allValues)
+    const allCount = allValues.length
 
     const missing = existingSet.difference(incomingValues)
     const values = incomingValues.difference(existingSet)

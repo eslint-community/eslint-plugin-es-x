@@ -41,16 +41,18 @@ function toRuleLink(ruleId: string) {
 async function main() {
     const docsRoot = path.resolve(__dirname, "../docs/rules/")
     const configRoot = path.resolve(__dirname, "../lib/configs/flat")
-    const configs = []
-    for (const filename of fs.readdirSync(configRoot)) {
-        const configName = path.basename(filename, ".js")
-        const config = (await import(path.join(configRoot, filename))).default
-        const ruleIds = new Set(Object.keys(config.rules))
-        configs.push({
-            id: configName,
-            ruleIds,
-        })
-    }
+    const configs = await Promise.all(
+        fs.globSync("*.js", { cwd: configRoot }).map(async (filename) => {
+            const configName = path.basename(filename, ".js")
+            const config = (await import(path.join(configRoot, filename)))
+                .default
+            const ruleIds = new Set(Object.keys(config.rules))
+            return {
+                id: configName,
+                ruleIds,
+            }
+        }),
+    )
     const collator = new Intl.Collator("en", { numeric: true })
 
     for (const {
@@ -62,10 +64,9 @@ async function main() {
         schema,
     } of rules) {
         const filePath = path.join(docsRoot, `${ruleId}.md`)
-        if (!fs.existsSync(filePath)) {
-            fs.writeFileSync(filePath, "")
-        }
-        const originalContent = fs.readFileSync(filePath, "utf8")
+        const originalContent = fs.existsSync(filePath)
+            ? fs.readFileSync(filePath, "utf8")
+            : ""
         const since = getSince(originalContent)
 
         let content = originalContent

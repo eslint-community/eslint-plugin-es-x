@@ -147,72 +147,60 @@ categories.deprecated = {
 const rules: Rule[] = []
 
 // 全ルールを探す
-;(function walk(dirPath) {
-    for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
-        if (entry.isDirectory()) {
-            walk(path.join(dirPath, entry.name))
-            continue
-        }
+for (const filename of fs.globSync("**/*.js", { cwd: libRoot })) {
+    const filePath = path.join(libRoot, filename)
+    const ruleId = filename.replace(/\.js$/u, "").replace(/\\/gu, "/")
+    const ruleModule = requireRule(filePath)
+    const category = ruleModule.meta.docs.category
+    const proposalIds = ruleModule.meta.docs.proposal
+        ? [ruleModule.meta.docs.proposal].flat()
+        : []
 
-        const filePath = path.join(dirPath, entry.name)
-        const ruleId = path
-            .relative(libRoot, filePath)
-            .replace(/\.js$/u, "")
-            .replace(/\\/gu, "/")
-        const ruleModule = requireRule(filePath)
-        const category = ruleModule.meta.docs.category
-        const proposalIds = ruleModule.meta.docs.proposal
-            ? [ruleModule.meta.docs.proposal].flat()
-            : []
-
-        const deprecated = ruleModule.meta.deprecated ?? false
-        const replacedBy = deprecated ? (ruleModule.meta.replacedBy ?? []) : []
-        const description = ruleModule.meta.docs.description.replace(/\.$/u, "")
-        const fixable = ruleModule.meta.fixable
-        const schema = ruleModule.meta.schema
-        const rule: Rule = {
-            ruleId,
-            description,
-            fixable,
-            deprecated,
-            replacedBy,
-            proposals: proposalIds,
-            schema,
-        }
-
-        const categoryId = deprecated
-            ? "deprecated"
-            : category || "uncategorized"
-
-        categories[categoryId].rules.push(rule)
-
-        rules.push(rule)
-
-        for (const proposal of proposalIds) {
-            const id = `no-${proposal}`
-
-            if (!proposals[proposal]) {
-                throw new Error(
-                    `Missing define proposal: ${proposal}\nWe need to add it to scripts/proposals.ts.`,
-                )
-            }
-
-            const baseCategory = categories[category]
-
-            const proposalCategory = (categories[id] ??= {
-                id,
-                title: `${baseCategory.title} [${proposals[proposal].title}](${proposals[proposal].link})`,
-                edition: baseCategory.edition,
-                year: baseCategory.year,
-                rules: [],
-                experimental: baseCategory.experimental,
-                specKind: "proposal",
-                configName: id,
-            })
-            proposalCategory.rules.push(rule)
-        }
+    const deprecated = ruleModule.meta.deprecated ?? false
+    const replacedBy = deprecated ? (ruleModule.meta.replacedBy ?? []) : []
+    const description = ruleModule.meta.docs.description.replace(/\.$/u, "")
+    const fixable = ruleModule.meta.fixable
+    const schema = ruleModule.meta.schema
+    const rule: Rule = {
+        ruleId,
+        description,
+        fixable,
+        deprecated,
+        replacedBy,
+        proposals: proposalIds,
+        schema,
     }
-})(libRoot)
+
+    const categoryId = deprecated ? "deprecated" : category || "uncategorized"
+
+    categories[categoryId].rules.push(rule)
+
+    rules.push(rule)
+
+    for (const proposal of proposalIds) {
+        const id = `no-${proposal}`
+
+        if (!proposals[proposal]) {
+            throw new Error(
+                `Missing define proposal: ${proposal}\nWe need to add it to scripts/proposals.ts.`,
+            )
+        }
+
+        const baseCategory = categories[category]
+
+        const proposalCategory = (categories[id] ??= {
+            id,
+            title: `${baseCategory.title} [${proposals[proposal].title}](${proposals[proposal].link})`,
+            edition: baseCategory.edition,
+            year: baseCategory.year,
+            rules: [],
+            experimental: baseCategory.experimental,
+            specKind: "proposal",
+            configName: id,
+        })
+        proposalCategory.rules.push(rule)
+    }
+}
 
 function getConfigCategories(): ConfigCategory[] {
     const configs: Record<string, ConfigCategory> = {}
