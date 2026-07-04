@@ -53,7 +53,7 @@ This rule was introduced in v8.5.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-math-f16round.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-math-f16round.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-math-f16round.ts)
 
 [no-float16array]: ../configs/index.md#no-float16array
 [no-new-in-es2025]: ../configs/index.md#no-new-in-es2025

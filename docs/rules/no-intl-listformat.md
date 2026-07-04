@@ -53,7 +53,7 @@ This rule was introduced in v6.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-intl-listformat.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-intl-listformat.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-intl-listformat.ts)
 
 [no-new-in-es2021-intl-api]: ../configs/index.md#no-new-in-es2021-intl-api
 [restrict-to-es-intl-api-1st-edition]: ../configs/index.md#restrict-to-es-intl-api-1st-edition

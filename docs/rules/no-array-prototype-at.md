@@ -61,7 +61,7 @@ This rule was introduced in v8.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-array-prototype-at.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-array-prototype-at.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-array-prototype-at.ts)
 
 [no-new-in-es2022]: ../configs/index.md#no-new-in-es2022
 [no-relative-indexing-method]: ../configs/index.md#no-relative-indexing-method

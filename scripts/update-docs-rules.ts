@@ -8,6 +8,8 @@ import { rules } from "./rules"
 import type { JSONSchema4 } from "json-schema"
 import { version } from "../package.json"
 
+const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })
+
 main()
 
 /**
@@ -94,19 +96,18 @@ async function main() {
 
         if (deprecated) {
             headerLines.push(
-                `- 🚫 This rule was deprecated and replaced by ${replacedBy
-                    .map(toRuleLink)
-                    .join(",")} rule${replacedBy.length > 1 ? "s" : ""}.`,
+                `- 🚫 This rule was deprecated and replaced by ${listFormatter.format(
+                    replacedBy.map(toRuleLink),
+                )} rule${replacedBy.length > 1 ? "s" : ""}.`,
             )
         }
 
         const links = []
         if (enabledConfigIds.length > 0) {
             headerLines.push(
-                `- ✅ The following configurations enable this rule: ${new Intl.ListFormat(
-                    "en",
-                    { type: "conjunction" },
-                ).format(enabledConfigIds.map((id) => `[${id}]`))}`,
+                `- ✅ The following configurations enable this rule: ${listFormatter.format(
+                    enabledConfigIds.map((id) => `[${id}]`),
+                )}`,
             )
             links.push(
                 ...enabledConfigIds.map(
@@ -148,7 +149,7 @@ This rule was introduced in ${since}.${
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/${ruleId}.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/${ruleId}.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/${ruleId}.ts)
 ${links.length ? `\n${links.join("\n")}\n` : ""}`
 
         fs.writeFileSync(filePath, newContent)

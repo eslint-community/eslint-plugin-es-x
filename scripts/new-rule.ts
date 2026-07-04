@@ -18,12 +18,9 @@ const NON_CLASS_GLOBAL_OBJECTS = new Set([
     "Temporal",
 ])
 
-main(
-    String(process.argv[2])
-        .toLowerCase()
-        .replace(/[.]/gu, "-")
-        .replace(/[()]/gu, ""),
-)
+const rawRuleId = process.argv[2]
+
+main(rawRuleId?.toLowerCase().replace(/[.]/gu, "-").replace(/[()]/gu, ""))
 
 interface ResourceOptions {
     ruleId: string
@@ -44,7 +41,7 @@ type GlobalObjectKind = "class" | "global object" | "variable"
 
 // main
 // eslint-disable-next-line complexity
-async function main(ruleId: string) {
+async function main(ruleId: string | undefined) {
     if (ruleId == null) {
         logger.error("Usage: npm run new <RuleID>")
         process.exitCode = 1

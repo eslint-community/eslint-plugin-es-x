@@ -552,10 +552,10 @@ Rules in this category are not included in any preset.
 
 | Rule ID | Replaced By |
 |:--------|:------------:|
-| [es-x/no-array-string-prototype-at](./no-array-string-prototype-at.md) | [es-x/no-array-prototype-at](./no-array-prototype-at.md), [es-x/no-string-prototype-at](./no-string-prototype-at.md) |
-| [es-x/no-class-fields](./no-class-fields.md) | [es-x/no-class-instance-fields](./no-class-instance-fields.md), [es-x/no-class-private-fields](./no-class-private-fields.md), [es-x/no-class-private-methods](./no-class-private-methods.md), [es-x/no-class-static-fields](./no-class-static-fields.md) |
-| [es-x/no-object-map-groupby](./no-object-map-groupby.md) | [es-x/no-object-groupby](./no-object-groupby.md), [es-x/no-map-groupby](./no-map-groupby.md) |
-| [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md), [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
+| [es-x/no-array-string-prototype-at](./no-array-string-prototype-at.md) | [es-x/no-array-prototype-at](./no-array-prototype-at.md) and [es-x/no-string-prototype-at](./no-string-prototype-at.md) |
+| [es-x/no-class-fields](./no-class-fields.md) | [es-x/no-class-instance-fields](./no-class-instance-fields.md), [es-x/no-class-private-fields](./no-class-private-fields.md), [es-x/no-class-private-methods](./no-class-private-methods.md), and [es-x/no-class-static-fields](./no-class-static-fields.md) |
+| [es-x/no-object-map-groupby](./no-object-map-groupby.md) | [es-x/no-object-groupby](./no-object-groupby.md) and [es-x/no-map-groupby](./no-map-groupby.md) |
+| [es-x/no-string-prototype-iswellformed-towellformed](./no-string-prototype-iswellformed-towellformed.md) | [es-x/no-string-prototype-iswellformed](./no-string-prototype-iswellformed.md) and [es-x/no-string-prototype-towellformed](./no-string-prototype-towellformed.md) |
 
 [`no-new-in-esnext`]: ../configs/index.md#no-new-in-esnext
 [`no-new-in-es2026`]: ../configs/index.md#no-new-in-es2026

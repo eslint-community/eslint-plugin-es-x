@@ -56,7 +56,7 @@
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf .nyc_output dist coverage",
     "coverage": "c8 report --reporter=lcov && opener ./coverage/lcov-report/index.html",
-    "docs:clean": "rimraf docs/.vitepress/dist docs/.vitepress/.cache",
+    "docs:clean": "rimraf docs/.vitepress/dist docs/.vitepress/cache docs/.vitepress/.cache",
     "docs:build": "vitepress build docs",
     "docs:watch": "vitepress dev docs",
     "docs:preview": "vitepress preview docs",

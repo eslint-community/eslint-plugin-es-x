@@ -10,6 +10,8 @@ module.exports = defineConfig([
         "!docs/.vitepress",
         "docs/.vitepress/dist/",
         "docs/.vitepress/cache/",
+        "docs/.vitepress/.cache/",
+        "docs/.vitepress/.temp/",
         "dist/",
         "tests/fixtures/",
     ]),

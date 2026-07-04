@@ -33,7 +33,7 @@ This rule was introduced in [eslint-plugin-es] v1.2.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-proxy.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-proxy.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-proxy.ts)
 
 [no-new-in-es2015]: ../configs/index.md#no-new-in-es2015
 [restrict-to-es3]: ../configs/index.md#restrict-to-es3

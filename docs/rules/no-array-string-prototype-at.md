@@ -7,7 +7,7 @@ since: "v5.0.0"
 # es-x/no-array-string-prototype-at
 > disallow the `{Array,String}.prototype.at()` methods
 
-- 🚫 This rule was deprecated and replaced by [es-x/no-array-prototype-at](./no-array-prototype-at.md),[es-x/no-string-prototype-at](./no-string-prototype-at.md) rules.
+- 🚫 This rule was deprecated and replaced by [es-x/no-array-prototype-at](./no-array-prototype-at.md) and [es-x/no-string-prototype-at](./no-string-prototype-at.md) rules.
 
 This rule reports ES2022 [`{Array,String,TypedArray}.prototype.at` methods](https://github.com/tc39/proposal-relative-indexing-method) as errors.
 
@@ -62,4 +62,4 @@ This rule was introduced in v5.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-array-string-prototype-at.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-array-string-prototype-at.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-array-string-prototype-at.ts)

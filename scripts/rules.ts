@@ -9,6 +9,7 @@ import { createRequire } from "node:module"
 import type { JSONSchema4 } from "json-schema"
 
 const libRoot = path.resolve(__dirname, "../lib/rules")
+const requireRule = createRequire(__filename)
 
 export interface Rule {
     /** The rule name. */
@@ -147,7 +148,6 @@ const rules: Rule[] = []
 
 // 全ルールを探す
 ;(function walk(dirPath) {
-    const requireRule = createRequire(__filename)
     for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
         if (entry.isDirectory()) {
             walk(path.join(dirPath, entry.name))

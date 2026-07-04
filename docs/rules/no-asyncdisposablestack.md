@@ -31,7 +31,7 @@ This rule was introduced in v8.7.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-asyncdisposablestack.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-asyncdisposablestack.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-asyncdisposablestack.ts)
 
 [no-explicit-resource-management]: ../configs/index.md#no-explicit-resource-management
 [no-new-in-esnext]: ../configs/index.md#no-new-in-esnext

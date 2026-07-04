@@ -87,7 +87,7 @@ export = plugin
 format()
 
 async function format() {
-    ESLint.outputFixes(
+    await ESLint.outputFixes(
         await new ESLint({ fix: true }).lintFiles(["lib/index.ts"]),
     )
 }

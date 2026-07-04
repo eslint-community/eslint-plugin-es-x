@@ -40,7 +40,7 @@ This rule was introduced in [eslint-plugin-es] v1.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-async-iteration.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-async-iteration.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-async-iteration.ts)
 
 [no-new-in-es2018]: ../configs/index.md#no-new-in-es2018
 [restrict-to-es3]: ../configs/index.md#restrict-to-es3

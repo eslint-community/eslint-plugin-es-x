@@ -120,9 +120,7 @@ ${body.trim() ? body : "|  | Now there are no rules. |  |"}`
     const body = rules
         .map(
             ({ ruleId, replacedBy }) =>
-                `| ${toRuleLink(ruleId)} | ${replacedBy
-                    .map(toRuleLink)
-                    .join(", ")} |`,
+                `| ${toRuleLink(ruleId)} | ${listFormatter.format(replacedBy.map(toRuleLink))} |`,
         )
         .join("\n")
     return `| Rule ID | Replaced By |

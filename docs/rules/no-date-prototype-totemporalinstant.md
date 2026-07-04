@@ -60,7 +60,7 @@ This rule was introduced in v9.6.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-date-prototype-totemporalinstant.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-date-prototype-totemporalinstant.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-date-prototype-totemporalinstant.ts)
 
 [no-new-in-esnext]: ../configs/index.md#no-new-in-esnext
 [no-temporal]: ../configs/index.md#no-temporal

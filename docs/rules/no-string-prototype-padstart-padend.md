@@ -63,7 +63,7 @@ This rule was introduced in [eslint-plugin-es] v5.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-padstart-padend.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-padstart-padend.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-padstart-padend.ts)
 
 [no-new-in-es2017]: ../configs/index.md#no-new-in-es2017
 [restrict-to-es3]: ../configs/index.md#restrict-to-es3

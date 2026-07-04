@@ -39,7 +39,7 @@ This rule was introduced in v8.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-class-private-fields.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-class-private-fields.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-class-private-fields.ts)
 
 [no-class-fields]: ../configs/index.md#no-class-fields
 [no-new-in-es2022]: ../configs/index.md#no-new-in-es2022
