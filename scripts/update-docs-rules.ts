@@ -8,6 +8,8 @@ import { rules } from "./rules"
 import type { JSONSchema4 } from "json-schema"
 import { version } from "../package.json"
 
+const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })
+
 main()
 
 /**
@@ -39,16 +41,18 @@ function toRuleLink(ruleId: string) {
 async function main() {
     const docsRoot = path.resolve(__dirname, "../docs/rules/")
     const configRoot = path.resolve(__dirname, "../lib/configs/flat")
-    const configs = []
-    for (const filename of fs.readdirSync(configRoot)) {
-        const configName = path.basename(filename, ".js")
-        const config = (await import(path.join(configRoot, filename))).default
-        const ruleIds = new Set(Object.keys(config.rules))
-        configs.push({
-            id: configName,
-            ruleIds,
-        })
-    }
+    const configs = await Promise.all(
+        fs.globSync("*.js", { cwd: configRoot }).map(async (filename) => {
+            const configName = path.basename(filename, ".js")
+            const config = (await import(path.join(configRoot, filename)))
+                .default
+            const ruleIds = new Set(Object.keys(config.rules))
+            return {
+                id: configName,
+                ruleIds,
+            }
+        }),
+    )
     const collator = new Intl.Collator("en", { numeric: true })
 
     for (const {
@@ -60,10 +64,9 @@ async function main() {
         schema,
     } of rules) {
         const filePath = path.join(docsRoot, `${ruleId}.md`)
-        if (!fs.existsSync(filePath)) {
-            fs.writeFileSync(filePath, "")
-        }
-        const originalContent = fs.readFileSync(filePath, "utf8")
+        const originalContent = fs.existsSync(filePath)
+            ? fs.readFileSync(filePath, "utf8")
+            : ""
         const since = getSince(originalContent)
 
         let content = originalContent
@@ -94,19 +97,18 @@ async function main() {
 
         if (deprecated) {
             headerLines.push(
-                `- 🚫 This rule was deprecated and replaced by ${replacedBy
-                    .map(toRuleLink)
-                    .join(",")} rule${replacedBy.length > 1 ? "s" : ""}.`,
+                `- 🚫 This rule was deprecated and replaced by ${listFormatter.format(
+                    replacedBy.map(toRuleLink),
+                )} rule${replacedBy.length > 1 ? "s" : ""}.`,
             )
         }
 
         const links = []
         if (enabledConfigIds.length > 0) {
             headerLines.push(
-                `- ✅ The following configurations enable this rule: ${new Intl.ListFormat(
-                    "en",
-                    { type: "conjunction" },
-                ).format(enabledConfigIds.map((id) => `[${id}]`))}`,
+                `- ✅ The following configurations enable this rule: ${listFormatter.format(
+                    enabledConfigIds.map((id) => `[${id}]`),
+                )}`,
             )
             links.push(
                 ...enabledConfigIds.map(
@@ -148,7 +150,7 @@ This rule was introduced in ${since}.${
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/${ruleId}.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/${ruleId}.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/${ruleId}.ts)
 ${links.length ? `\n${links.join("\n")}\n` : ""}`
 
         fs.writeFileSync(filePath, newContent)
@@ -382,7 +384,7 @@ function cookeHTMLAttrValue(value: string) {
     return value
         .replace(/^['"]([\s\S]*)['"]$/u, "$1")
         .replace(/&#x([0-9a-zA-Z]+);/gu, (_, codePoint) =>
-            String.fromCodePoint(parseInt(codePoint, 16)),
+            String.fromCodePoint(Number.parseInt(codePoint, 16)),
         )
         .replace(/&quot;/gu, '"')
         .replace(/&gt;/gu, ">")

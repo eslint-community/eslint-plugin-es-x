@@ -54,9 +54,10 @@ const config = computed(() => ({
 
 onMounted(async () => {
     if (props.code && props.code.trim()) {
-        cookedCode.value = (props.code || "").replace(
+        cookedCode.value = props.code.replace(
             /&#x([0-9a-zA-Z]+);/gu,
-            (_, codePoint) => String.fromCodePoint(parseInt(codePoint, 16)),
+            (_, codePoint) =>
+                String.fromCodePoint(Number.parseInt(codePoint, 16)),
         )
     } else {
         cookedCode.value = `${computeCodeFromSlot(
@@ -66,7 +67,7 @@ onMounted(async () => {
     const lines = cookedCode.value.split("\n").length
     height.value = `${Math.max(120, 20 * (1 + lines))}px`
     // Load linter.
-    const [{ Linter }] = await Promise.all([import("eslint")])
+    const { Linter } = await import("eslint")
 
     linter.value = markRaw(new Linter())
 })

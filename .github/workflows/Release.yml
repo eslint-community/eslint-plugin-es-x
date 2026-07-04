@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version: 'lts/*'
 
         # npm 11.5.1 or later is required so update to latest to be sure
       - name: Update npm

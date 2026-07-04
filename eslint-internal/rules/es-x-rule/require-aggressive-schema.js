@@ -1,7 +1,7 @@
 "use strict"
 
 const { ReferenceTracker, READ } = require("@eslint-community/eslint-utils")
-const path = require("path")
+const path = require("node:path")
 const {
     defineSchemaChecker,
     getProperty,

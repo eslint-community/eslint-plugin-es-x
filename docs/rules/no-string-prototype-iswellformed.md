@@ -59,7 +59,7 @@ This rule was introduced in v8.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-iswellformed.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-iswellformed.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-iswellformed.ts)
 
 [no-is-usv-string]: ../configs/index.md#no-is-usv-string
 [no-new-in-es2024]: ../configs/index.md#no-new-in-es2024

@@ -37,7 +37,7 @@ module.exports = [
         name: "eslint-internal/config/+node.js#2",
         plugins: { n: n.default ?? n },
         languageOptions: {
-            ecmaVersion: 2020,
+            ecmaVersion: 2026,
             globals: {
                 // Web Standard
                 TextDecoder: "readonly",
@@ -79,6 +79,7 @@ module.exports = [
             "n/no-unsupported-features/es-builtins": "error",
             "n/no-unsupported-features/es-syntax": "error",
             "n/no-unsupported-features/node-builtins": "error",
+            "n/prefer-node-protocol": "error",
             "n/prefer-global/buffer": "error",
             "n/prefer-global/console": "error",
             "n/prefer-global/process": "error",

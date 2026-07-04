@@ -1,4 +1,4 @@
-import path from "path"
+import path from "node:path"
 import RuleTester from "../../tester"
 import * as rule from "../../../lib/rules/no-nonstandard-temporal-zoneddatetime-prototype-properties"
 import { temporalZonedDateTimePrototypeProperties } from "../../../lib/util/well-known-properties"

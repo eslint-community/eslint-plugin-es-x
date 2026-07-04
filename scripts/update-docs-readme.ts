@@ -3,23 +3,25 @@
  * See LICENSE file in root directory for full license.
  */
 import * as fs from "node:fs"
-import { categories, type Category, type Rule } from "./rules"
+import {
+    categories,
+    getConfigCategories,
+    getConfigCategoriesForAboveConfig,
+    type Category,
+    type Rule,
+} from "./rules"
 
 const collator = new Intl.Collator("en", { numeric: true })
+const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })
 
 const links = new Set<string>()
 const configs = []
+const configCategories = getConfigCategories()
 // Analyze configs
-for (const {
-    rules,
-    edition,
-    configName,
-    aboveConfigName,
-    specKind,
-    id,
-} of Object.values(categories).filter(
-    (category) => category.specKind !== "proposal",
+for (const category of Object.values(categories).filter(
+    (cat) => cat.specKind !== "proposal",
 )) {
+    const { rules, configName, aboveConfigName, id } = category
     if (configName) {
         configs.push({ id: configName, categoryIds: [id] })
         if (rules.length) {
@@ -27,12 +29,9 @@ for (const {
         }
     }
     if (aboveConfigName) {
-        const includesCategories = Object.values(categories).filter(
-            (c) =>
-                c.edition >= edition &&
-                c.specKind === specKind &&
-                !c.experimental &&
-                c.configName,
+        const includesCategories = getConfigCategoriesForAboveConfig(
+            category,
+            configCategories,
         )
         configs.push({
             id: aboveConfigName,
@@ -91,10 +90,10 @@ function toSection(category: Category) {
             : !configIds.length
               ? "Rules in this category are not included in any preset."
               : configIds.length > 1
-                ? `There are multiple configs that enable all rules in this category: ${formatList(
+                ? `There are multiple configs that enable all rules in this category: ${listFormatter.format(
                       configIds,
                   )}`
-                : `There is a config that enables the rules in this category: ${formatList(
+                : `There is a config that enables the rules in this category: ${listFormatter.format(
                       configIds,
                   )}`,
     )
@@ -121,9 +120,7 @@ ${body.trim() ? body : "|  | Now there are no rules. |  |"}`
     const body = rules
         .map(
             ({ ruleId, replacedBy }) =>
-                `| ${toRuleLink(ruleId)} | ${replacedBy
-                    .map(toRuleLink)
-                    .join(", ")} |`,
+                `| ${toRuleLink(ruleId)} | ${listFormatter.format(replacedBy.map(toRuleLink))} |`,
         )
         .join("\n")
     return `| Rule ID | Replaced By |
@@ -146,24 +143,4 @@ function toTableRow({ ruleId, description, fixable }: Rule) {
  */
 function toRuleLink(ruleId: string) {
     return `[es-x/${ruleId}](./${ruleId}.md)`
-}
-
-/**
- * Format a list.
- * @param xs The list value to format.
- */
-function formatList(xs: string[]) {
-    switch (xs.length) {
-        case 0:
-            return ""
-        case 1:
-            return xs[0]
-        case 2:
-            return `${xs[0]} and ${xs[1]}`
-        default: {
-            const ys = xs.slice(0, xs.length - 1)
-            const last = xs[xs.length - 1]
-            return `${ys.join(", ")}, and ${last}`
-        }
-    }
 }

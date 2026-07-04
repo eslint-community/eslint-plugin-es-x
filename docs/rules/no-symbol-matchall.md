@@ -53,7 +53,7 @@ This rule was introduced in v9.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-symbol-matchall.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-symbol-matchall.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-symbol-matchall.ts)
 
 [no-new-in-es2020]: ../configs/index.md#no-new-in-es2020
 [no-string-matchall]: ../configs/index.md#no-string-matchall

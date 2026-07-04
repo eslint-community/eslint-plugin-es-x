@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const assert = require("assert")
+const assert = require("node:assert")
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -438,10 +438,10 @@ function fixArrayForEach(context, callbackInfo, fixer) {
     const contextText = contextNode && sourceCode.getText(contextNode)
     const semiText = funcNode.body.type !== "BlockStatement" ? ";" : ""
     const bodyOffset = funcNode.body.range[0]
-    const bodyFixes = [].concat(
-        returnNodes.map(convertToFix.bind(null, "continue;", bodyOffset)),
-        thisNodes.map(convertToFix.bind(null, contextText, bodyOffset)),
-    )
+    const bodyFixes = [
+        ...returnNodes.map(convertToFix.bind(null, "continue;", bodyOffset)),
+        ...thisNodes.map(convertToFix.bind(null, contextText, bodyOffset)),
+    ]
     const bodyText =
         bodyFixes.length > 0
             ? applyFixes(originalBodyText, bodyFixes)

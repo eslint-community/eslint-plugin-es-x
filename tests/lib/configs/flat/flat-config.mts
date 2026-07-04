@@ -7,9 +7,9 @@ import pluginESx from "../../../../lib/index"
 // Tests
 // -----------------------------------------------------------------------------
 
-const dirname = path.dirname(new URL(import.meta.url).pathname)
 const TEST_CWD = path.resolve(
-    path.join(dirname, "../../fixtures/integrations/eslint-plugin"),
+    import.meta.dirname,
+    "../../fixtures/integrations/eslint-plugin",
 )
 
 describe("ESM flat config", () => {
@@ -19,18 +19,20 @@ describe("ESM flat config", () => {
             entry[0].startsWith("flat/"),
     )) {
         describe(`flat/${name}`, () => {
-            it("should lint without errors", () =>
-                lint([config]).then((result) => {
-                    assert.deepStrictEqual(result.messages, [])
-                }))
+            it("should lint without errors", async () => {
+                const result = await lint([config])
+
+                assert.deepStrictEqual(result.messages, [])
+            })
         })
         allConfigs.push(config)
     }
     describe("all flat configs", () => {
-        it("should lint without errors", () =>
-            lint(allConfigs).then((result) => {
-                assert.deepStrictEqual(result.messages, [])
-            }))
+        it("should lint without errors", async () => {
+            const result = await lint(allConfigs)
+
+            assert.deepStrictEqual(result.messages, [])
+        })
     })
 })
 

@@ -1,5 +1,6 @@
-import * as fs from "node:fs"
+import { writeFile } from "node:fs/promises"
 import * as path from "node:path"
+import { setTimeout as sleep } from "node:timers/promises"
 import { JSDOM, type DOMWindow } from "jsdom"
 import { ESLint } from "eslint"
 import { getLatestUnicodeGeneralCategoryValues } from "./get-latest-unicode-general-category-values"
@@ -114,7 +115,7 @@ const logger = console
                     throw error
                 }
                 logger.log(error.message, "then retry.")
-                await new Promise((resolve) => setTimeout(resolve, 2000))
+                await sleep(2000)
             }
         } while (window == null)
 
@@ -161,10 +162,10 @@ module.exports = {gcNameSet, scNameSet, gcValueSets, scValueSets, binPropertySet
     const result = await new ESLint({ fix: true }).lintText(code, {
         filePath: FILE_PATH,
     })
-    code = result[0].output || code
+    code = result[0].output ?? code
 
     logger.log("Writing '%s'...", FILE_PATH)
-    await save(code)
+    await writeFile(FILE_PATH, code)
 
     logger.log("Completed!")
 })().catch((error) => {
@@ -191,27 +192,24 @@ async function collectValues(
                       nodes.length,
                       selector,
                   )
-                  for (const node of Array.from(nodes)) {
+                  for (const node of nodes) {
                       yield node.textContent ?? ""
                   }
               }
 
-    const missing = new Set(existingSet)
-    const values = new Set<string>()
-    let allCount = 0
+    const allValues = await Array.fromAsync(getValues())
+    const incomingValues = new Set(allValues)
+    const allCount = allValues.length
 
-    for await (const value of getValues()) {
-        allCount++
-        missing.delete(value)
-        if (existingSet.has(value)) {
-            continue
-        }
-        existingSet.add(value)
-        values.add(value)
-    }
+    const missing = existingSet.difference(incomingValues)
+    const values = incomingValues.difference(existingSet)
 
     if (missing.size > 0) {
-        throw new Error(`Missing values: ${Array.from(missing).join(", ")}`)
+        throw new Error(`Missing values: ${[...missing].join(", ")}`)
+    }
+
+    for (const value of values) {
+        existingSet.add(value)
     }
 
     logger.log(
@@ -248,12 +246,4 @@ function makeDataCode(values: string[]) {
     return `"${values
         .map((value) => JSON.stringify(value).slice(1, -1))
         .join(" ")}"`
-}
-
-function save(content: string) {
-    return new Promise<void>((resolve, reject) => {
-        fs.writeFile(FILE_PATH, content, (error) =>
-            error ? reject(error) : resolve(),
-        )
-    })
 }

@@ -7,7 +7,7 @@ since: "v5.0.0"
 # es-x/no-class-fields
 > disallow class fields
 
-- 🚫 This rule was deprecated and replaced by [es-x/no-class-instance-fields](./no-class-instance-fields.md),[es-x/no-class-private-fields](./no-class-private-fields.md),[es-x/no-class-private-methods](./no-class-private-methods.md),[es-x/no-class-static-fields](./no-class-static-fields.md) rules.
+- 🚫 This rule was deprecated and replaced by [es-x/no-class-instance-fields](./no-class-instance-fields.md), [es-x/no-class-private-fields](./no-class-private-fields.md), [es-x/no-class-private-methods](./no-class-private-methods.md), and [es-x/no-class-static-fields](./no-class-static-fields.md) rules.
 
 This rule reports class fields as errors.
 
@@ -51,4 +51,4 @@ This rule was introduced in v5.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-class-fields.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-class-fields.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-class-fields.ts)

@@ -32,7 +32,7 @@ This rule was introduced in v8.1.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-dynamic-import-options.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-dynamic-import-options.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-dynamic-import-options.ts)
 
 [no-import-attributes]: ../configs/index.md#no-import-attributes
 [no-new-in-es2025]: ../configs/index.md#no-new-in-es2025

@@ -63,7 +63,7 @@ This rule was introduced in [eslint-plugin-es] v4.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-promise-any.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-promise-any.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-promise-any.ts)
 
 [no-new-in-es2021]: ../configs/index.md#no-new-in-es2021
 [restrict-to-es3]: ../configs/index.md#restrict-to-es3

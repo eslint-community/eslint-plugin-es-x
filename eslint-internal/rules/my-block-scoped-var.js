@@ -216,7 +216,7 @@ module.exports = {
             const variables = sourceCode.getDeclaredVariables(node)
             for (const variable of variables) {
                 const defs = variable.defs
-                const lastDef = defs[defs.length - 1]
+                const lastDef = defs.at(-1)
 
                 // Skip except the last declaration.
                 // Because `node.parent` is possibly not defined.

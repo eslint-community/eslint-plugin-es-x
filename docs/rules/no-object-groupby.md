@@ -55,7 +55,7 @@ This rule was introduced in v8.0.0.
 ## 📚 References
 
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-object-groupby.js)
-- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-object-groupby.js)
+- [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-object-groupby.ts)
 
 [no-array-grouping]: ../configs/index.md#no-array-grouping
 [no-new-in-es2024]: ../configs/index.md#no-new-in-es2024

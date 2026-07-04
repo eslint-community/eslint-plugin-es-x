@@ -1,13 +1,9 @@
 import { defineConfig } from "vitepress"
 import path from "node:path"
-import { fileURLToPath } from "node:url"
 import { viteCommonjs, vitePluginRequireResolve } from "./vite-plugin.mjs"
 import eslint4b from "vite-plugin-eslint4b"
 import { categories } from "../../scripts/rules"
 import monacoEditorPackageJson from "monaco-editor/package.json" with { type: "json" }
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
 
 export default defineConfig({
     title: "eslint-plugin-es-x",
@@ -15,9 +11,9 @@ export default defineConfig({
     description: "ESLint plugin about ECMAScript syntax.",
     head: [["link", { rel: "icon", href: "/favicon.png" }]],
 
-    outDir: path.resolve(__dirname, "./dist/eslint-plugin-es-x"),
+    outDir: path.resolve(import.meta.dirname, "./dist/eslint-plugin-es-x"),
     vite: {
-        publicDir: path.resolve(__dirname, "./public"),
+        publicDir: path.resolve(import.meta.dirname, "./public"),
         plugins: [eslint4b(), vitePluginRequireResolve(), viteCommonjs()],
         define: {
             MONACO_EDITOR_VERSION: JSON.stringify(

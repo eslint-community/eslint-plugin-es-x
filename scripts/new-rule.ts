@@ -18,12 +18,9 @@ const NON_CLASS_GLOBAL_OBJECTS = new Set([
     "Temporal",
 ])
 
-main(
-    String(process.argv[2])
-        .toLowerCase()
-        .replace(/[.]/gu, "-")
-        .replace(/[()]/gu, ""),
-)
+const rawRuleId = process.argv[2]
+
+main(rawRuleId?.toLowerCase().replace(/[.]/gu, "-").replace(/[()]/gu, ""))
 
 interface ResourceOptions {
     ruleId: string
@@ -44,7 +41,7 @@ type GlobalObjectKind = "class" | "global object" | "variable"
 
 // main
 // eslint-disable-next-line complexity
-async function main(ruleId: string) {
+async function main(ruleId: string | undefined) {
     if (ruleId == null) {
         logger.error("Usage: npm run new <RuleID>")
         process.exitCode = 1
@@ -249,9 +246,9 @@ Add \`es-x/${ruleId}\` rule
 `,
     )
 
-    cp.execSync(`code "${ruleFile}"`)
-    cp.execSync(`code "${testFile}"`)
-    cp.execSync(`code "${docFile}"`)
+    for (const file of [ruleFile, testFile, docFile]) {
+        cp.spawnSync("code", [file])
+    }
 
     const yellow = "\u001b[33m"
 
@@ -372,14 +369,13 @@ function buildStaticPropertiesRuleResources({
             : ["property", "properties"]
     const propertiesString =
         properties.length > 1 ? `{${properties.join(",")}}` : properties[0]
-    let propertiesName = `\`${object}.${properties[properties.length - 1]}\` ${kind[0]}`
+    const lastProperty = properties.at(-1)!
+    let propertiesName = `\`${object}.${lastProperty}\` ${kind[0]}`
     if (properties.length > 1) {
         propertiesName = `${properties
             .slice(0, -1)
             .map((p) => `\`${object}.${p}\``)
-            .join(
-                ", ",
-            )}, and \`${object}.${properties[properties.length - 1]}\` ${kind[1]}`
+            .join(", ")}, and \`${object}.${lastProperty}\` ${kind[1]}`
     }
 
     return {
@@ -521,14 +517,15 @@ function buildPrototypePropertiesRuleResources({
             : ["property", "properties"]
     const propertiesString =
         properties.length > 1 ? `{${properties.join(",")}}` : properties[0]
-    let propertiesName = `\`${object}.prototype.${properties[properties.length - 1]}\` ${kind[0]}`
+    const lastProperty = properties.at(-1)!
+    let propertiesName = `\`${object}.prototype.${lastProperty}\` ${kind[0]}`
     if (properties.length > 1) {
         propertiesName = `${properties
             .slice(0, -1)
             .map((p) => `\`${object}.prototype.${p}\``)
             .join(
                 ", ",
-            )}, and \`${object}.prototype.${properties[properties.length - 1]}\` ${kind[1]}`
+            )}, and \`${object}.prototype.${lastProperty}\` ${kind[1]}`
     }
 
     return {
@@ -799,7 +796,7 @@ module.exports = createRule({
     create(context) {
         /** @type {Set<string>} */
         const allows = new Set([
-            ...(context.options[0]?.allow || []),
+            ...(context.options[0]?.allow ?? []),
             ...${camelObject}Properties,
         ])
         return defineNonstandardStaticPropertiesHandler(context, {
@@ -922,7 +919,7 @@ module.exports = createRule({
     create(context) {
         /** @type {Set<string>} */
         const allows = new Set([
-            ...(context.options[0]?.allow || []),
+            ...(context.options[0]?.allow ?? []),
             ...${camelObject}PrototypeProperties,
         ])
         return defineNonstandardPrototypePropertiesHandler(context, {
@@ -1174,7 +1171,7 @@ function createShadowedGlobalObjectExample(object: string) {
         return `let ${object} = 0; ${object}`
     }
     let value = "0"
-    for (const member of members.reverse()) {
+    for (const member of members.toReversed()) {
         value = `{ ${member}: ${value} }`
     }
     return `let ${rootName} = ${value}; ${object}`
