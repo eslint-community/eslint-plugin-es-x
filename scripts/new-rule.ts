@@ -1174,7 +1174,7 @@ function createShadowedGlobalObjectExample(object: string) {
         return `let ${object} = 0; ${object}`
     }
     let value = "0"
-    for (const member of members.reverse()) {
+    for (const member of members.toReversed()) {
         value = `{ ${member}: ${value} }`
     }
     return `let ${rootName} = ${value}; ${object}`
