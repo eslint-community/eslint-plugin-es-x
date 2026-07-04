@@ -27,30 +27,26 @@ jobs:
     strategy:
       matrix:
         include:
-          - eslint: 9
+          - eslint: 10
             node: 24.18.0
             os: ubuntu-latest
           # On other platforms
-          - eslint: 9
+          - eslint: 10
             node: 24.18.0
             os: windows-latest
-          - eslint: 9
+          - eslint: 10
             node: 24.18.0
             os: macos-latest
           # On other Node.js versions
-          - eslint: 9
+          - eslint: 10
             node: 22.23.0
             os: ubuntu-latest
-          - eslint: 9
+          - eslint: 10
             node: 26.4.0
             os: ubuntu-latest
           # On the minimum supported ESLint/Node.js version
-          - eslint: 9.29.0
+          - eslint: 10.6.0
             node: 22.23.0
-            os: ubuntu-latest
-          # On ESLint 10
-          - eslint: 10
-            node: 24.18.0
             os: ubuntu-latest
 
     runs-on: ${{ matrix.os }}
