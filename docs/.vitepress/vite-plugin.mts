@@ -1,6 +1,5 @@
 import type { UserConfig } from "vitepress"
 import path from "node:path"
-import { fileURLToPath } from "node:url"
 import esbuild from "esbuild"
 
 type Plugin = Extract<
@@ -8,10 +7,7 @@ type Plugin = Extract<
     { name: string }
 >
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-const libRoot = path.join(__dirname, "../../lib")
+const libRoot = path.join(import.meta.dirname, "../../lib")
 
 export function vitePluginRequireResolve(): Plugin {
     return {

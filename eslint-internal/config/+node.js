@@ -37,7 +37,7 @@ module.exports = [
         name: "eslint-internal/config/+node.js#2",
         plugins: { n: n.default ?? n },
         languageOptions: {
-            ecmaVersion: 2020,
+            ecmaVersion: 2026,
             globals: {
                 // Web Standard
                 TextDecoder: "readonly",

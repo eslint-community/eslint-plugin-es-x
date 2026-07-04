@@ -1,5 +1,6 @@
-import * as fs from "node:fs"
+import { writeFile } from "node:fs/promises"
 import * as path from "node:path"
+import { setTimeout as sleep } from "node:timers/promises"
 import { JSDOM, type DOMWindow } from "jsdom"
 import { ESLint } from "eslint"
 import { getLatestUnicodeGeneralCategoryValues } from "./get-latest-unicode-general-category-values"
@@ -114,7 +115,7 @@ const logger = console
                     throw error
                 }
                 logger.log(error.message, "then retry.")
-                await new Promise((resolve) => setTimeout(resolve, 2000))
+                await sleep(2000)
             }
         } while (window == null)
 
@@ -164,7 +165,7 @@ module.exports = {gcNameSet, scNameSet, gcValueSets, scValueSets, binPropertySet
     code = result[0].output || code
 
     logger.log("Writing '%s'...", FILE_PATH)
-    await save(code)
+    await writeFile(FILE_PATH, code)
 
     logger.log("Completed!")
 })().catch((error) => {
@@ -248,12 +249,4 @@ function makeDataCode(values: string[]) {
     return `"${values
         .map((value) => JSON.stringify(value).slice(1, -1))
         .join(" ")}"`
-}
-
-function save(content: string) {
-    return new Promise<void>((resolve, reject) => {
-        fs.writeFile(FILE_PATH, content, (error) =>
-            error ? reject(error) : resolve(),
-        )
-    })
 }

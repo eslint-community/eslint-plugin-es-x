@@ -7,6 +7,7 @@ import * as path from "node:path"
 import { categories, type Category } from "./rules"
 
 const MD_PATH = path.resolve(__dirname, "../docs/configs/index.md")
+const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })
 
 const contents = [
     "# Available Configs",
@@ -107,7 +108,7 @@ function processCategoryConfig({
     if (specKind === "proposal") {
         contents.push("")
         contents.push(
-            `This config includes the rules ${formatList(
+            `This config includes the rules ${listFormatter.format(
                 rules.map((rule) => {
                     const ruleId = rule.ruleId
                     return `[es-x/${ruleId}](../rules/${ruleId}.md)`
@@ -142,24 +143,4 @@ export default defineConfig([
     contents.push("")
     contents.push("</details>")
     contents.push("")
-}
-
-/**
- * Format a list.
- * @param xs The list value to format.
- */
-function formatList(xs: string[]) {
-    switch (xs.length) {
-        case 0:
-            return ""
-        case 1:
-            return xs[0]
-        case 2:
-            return `${xs[0]} and ${xs[1]}`
-        default: {
-            const ys = xs.slice(0, xs.length - 1)
-            const last = xs[xs.length - 1]
-            return `${ys.join(", ")}, and ${last}`
-        }
-    }
 }
