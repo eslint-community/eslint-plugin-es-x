@@ -52,7 +52,7 @@ export interface Category {
 
 // After the ECMAScript specification becomes GA,
 // we will need to change this constant and bump the major version.
-const LATEST_ES_YEAR = 2025
+const LATEST_ES_YEAR = 2026
 
 const categories: { [categoryId: string]: Category } = [
     ...(function* () {
