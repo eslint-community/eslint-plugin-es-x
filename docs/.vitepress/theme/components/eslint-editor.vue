@@ -9,7 +9,7 @@ import type { Linter } from "eslint"
  * @returns The positive value as the result.
  */
 function ensurePositiveInt(value: number | undefined, defaultValue: number) {
-    return Math.max(1, (value !== undefined ? value : defaultValue) | 0)
+    return Math.max(1, (value ?? defaultValue) | 0)
 }
 
 /**
@@ -19,9 +19,8 @@ function ensurePositiveInt(value: number | undefined, defaultValue: number) {
  */
 function computeKey(marker: monaco.editor.IMarkerData) {
     const code =
-        (typeof marker.code === "string"
-            ? marker.code
-            : marker.code && marker.code.value) || ""
+        (typeof marker.code === "string" ? marker.code : marker.code?.value) ??
+        ""
     return `[${marker.startLineNumber},${marker.startColumn},${marker.endLineNumber},${marker.endColumn}]-${code}`
 }
 

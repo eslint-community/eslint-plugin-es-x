@@ -9,11 +9,8 @@ function importFromCDN(path: string) {
 async function setupMonaco() {
     if (typeof window !== "undefined") {
         const monacoScript =
-            Array.from(document.head.querySelectorAll("script")).find(
-                (script) =>
-                    script.src &&
-                    script.src.includes("monaco") &&
-                    script.src.includes("vs/loader"),
+            document.head.querySelector<HTMLScriptElement>(
+                "script[src*='monaco'][src*='vs/loader']",
             ) ||
             // If the script tag that loads the Monaco editor is not found, insert the script tag.
             (await appendMonacoEditorScript())
@@ -128,7 +125,7 @@ let monacoPromise: Promise<typeof monacoModule> | null = null
 /** Load the Monaco editor object. */
 export function loadMonacoEditor() {
     return (
-        monacoPromise ||
+        monacoPromise ??
         (monacoPromise = (async () => {
             let rawMonaco: any = undefined
             let monaco: any = undefined
@@ -138,7 +135,7 @@ export function loadMonacoEditor() {
                 rawMonaco = await loadModuleFromMonaco("vs/editor/editor.main")
             }
             if ("m" in rawMonaco) {
-                monaco = rawMonaco.m || rawMonaco
+                monaco = rawMonaco.m ?? rawMonaco
             } else {
                 monaco = rawMonaco
             }

@@ -5,7 +5,7 @@
 import * as fs from "node:fs"
 import * as path from "node:path"
 import { ESLint } from "eslint"
-import { categories, type Category } from "./rules"
+import { getConfigCategories, getConfigCategoriesForAboveConfig } from "./rules"
 
 const Root = path.resolve(__dirname, "../lib/configs/flat")
 
@@ -20,18 +20,7 @@ module.exports = ${code}
 `
 }
 
-const configs: Record<string, Category> = {}
-for (const { configName, rules, ...config } of Object.values(categories)) {
-    if (configs[configName]) {
-        configs[configName].rules.push(...rules)
-    } else {
-        configs[configName] = {
-            ...config,
-            configName,
-            rules: [...rules],
-        }
-    }
-}
+const configs = getConfigCategories()
 
 for (const {
     edition,
@@ -39,7 +28,7 @@ for (const {
     configName,
     aboveConfigName,
     specKind,
-} of Object.values(configs)) {
+} of configs) {
     if (!configName) {
         continue
     }
@@ -54,14 +43,10 @@ for (const {
 }`),
     )
     if (aboveConfigName) {
-        const extendSetting = Object.values(categories)
-            .filter(
-                (c) =>
-                    c.edition >= edition &&
-                    c.specKind === specKind &&
-                    !c.experimental &&
-                    c.configName,
-            )
+        const extendSetting = getConfigCategoriesForAboveConfig(
+            { edition, specKind },
+            configs,
+        )
             .map((c) => `...require("./${c.configName}").rules`)
             .join(",")
         fs.writeFileSync(

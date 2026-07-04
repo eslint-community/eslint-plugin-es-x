@@ -4,7 +4,7 @@
  */
 import * as fs from "node:fs"
 import * as path from "node:path"
-import { categories, type Category } from "./rules"
+import { getConfigCategories, type Category } from "./rules"
 
 const MD_PATH = path.resolve(__dirname, "../docs/configs/index.md")
 const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })
@@ -16,28 +16,13 @@ const contents = [
     "",
 ]
 
-const configs: Record<string, Category> = {}
-for (const { configName, rules, ...config } of Object.values(categories)) {
-    if (configs[configName]) {
-        configs[configName].rules.push(...rules)
-    } else {
-        configs[configName] = {
-            ...config,
-            configName,
-            rules: [...rules],
-        }
-    }
-}
+const configs = getConfigCategories()
 
-Object.values(configs)
-    .filter(
-        (cat, i, list) =>
-            cat.specKind !== "proposal" &&
-            list.slice(0, i).every((c) => c.configName !== cat.configName),
-    )
+configs
+    .filter((cat) => cat.specKind !== "proposal")
     .forEach(processCategoryConfig)
 
-for (const { title, aboveConfigName, specKind } of Object.values(configs)) {
+for (const { title, aboveConfigName, specKind } of configs) {
     if (!aboveConfigName) {
         continue
     }
@@ -53,7 +38,7 @@ for (const { title, aboveConfigName, specKind } of Object.values(configs)) {
     appendConfig(aboveConfigName)
 }
 
-Object.values(configs)
+configs
     .filter((cat) => cat.specKind === "proposal")
     .sort(
         (a, b) =>

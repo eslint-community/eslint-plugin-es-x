@@ -249,9 +249,9 @@ Add \`es-x/${ruleId}\` rule
 `,
     )
 
-    cp.execSync(`code "${ruleFile}"`)
-    cp.execSync(`code "${testFile}"`)
-    cp.execSync(`code "${docFile}"`)
+    for (const file of [ruleFile, testFile, docFile]) {
+        cp.spawnSync("code", [file])
+    }
 
     const yellow = "\u001b[33m"
 
@@ -372,14 +372,13 @@ function buildStaticPropertiesRuleResources({
             : ["property", "properties"]
     const propertiesString =
         properties.length > 1 ? `{${properties.join(",")}}` : properties[0]
-    let propertiesName = `\`${object}.${properties[properties.length - 1]}\` ${kind[0]}`
+    const lastProperty = properties.at(-1)!
+    let propertiesName = `\`${object}.${lastProperty}\` ${kind[0]}`
     if (properties.length > 1) {
         propertiesName = `${properties
             .slice(0, -1)
             .map((p) => `\`${object}.${p}\``)
-            .join(
-                ", ",
-            )}, and \`${object}.${properties[properties.length - 1]}\` ${kind[1]}`
+            .join(", ")}, and \`${object}.${lastProperty}\` ${kind[1]}`
     }
 
     return {
@@ -521,14 +520,15 @@ function buildPrototypePropertiesRuleResources({
             : ["property", "properties"]
     const propertiesString =
         properties.length > 1 ? `{${properties.join(",")}}` : properties[0]
-    let propertiesName = `\`${object}.prototype.${properties[properties.length - 1]}\` ${kind[0]}`
+    const lastProperty = properties.at(-1)!
+    let propertiesName = `\`${object}.prototype.${lastProperty}\` ${kind[0]}`
     if (properties.length > 1) {
         propertiesName = `${properties
             .slice(0, -1)
             .map((p) => `\`${object}.prototype.${p}\``)
             .join(
                 ", ",
-            )}, and \`${object}.prototype.${properties[properties.length - 1]}\` ${kind[1]}`
+            )}, and \`${object}.prototype.${lastProperty}\` ${kind[1]}`
     }
 
     return {
@@ -799,7 +799,7 @@ module.exports = createRule({
     create(context) {
         /** @type {Set<string>} */
         const allows = new Set([
-            ...(context.options[0]?.allow || []),
+            ...(context.options[0]?.allow ?? []),
             ...${camelObject}Properties,
         ])
         return defineNonstandardStaticPropertiesHandler(context, {
@@ -922,7 +922,7 @@ module.exports = createRule({
     create(context) {
         /** @type {Set<string>} */
         const allows = new Set([
-            ...(context.options[0]?.allow || []),
+            ...(context.options[0]?.allow ?? []),
             ...${camelObject}PrototypeProperties,
         ])
         return defineNonstandardPrototypePropertiesHandler(context, {

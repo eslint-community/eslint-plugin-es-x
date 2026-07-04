@@ -50,6 +50,10 @@ export interface Category {
     specKind?: "ecma262" | "ecma402" | "proposal"
 }
 
+type ConfigCategory = Category & {
+    configName: string
+}
+
 // After the ECMAScript specification becomes GA,
 // we will need to change this constant and bump the major version.
 const LATEST_ES_YEAR = 2026
@@ -70,7 +74,7 @@ const categories: { [categoryId: string]: Category } = [
     .reduce((map, versions, index, list) => {
         const [vFor262, vFor402] = versions
         const experimental = vFor262 > LATEST_ES_YEAR
-        const [prevVFor262, prevVFor402] = list[index + 1] || [null, null]
+        const [prevVFor262, prevVFor402] = list[index + 1] ?? [null, null]
         const ecma262Id = `ES${vFor262}`
         if (prevVFor262) {
             map[ecma262Id] = {
@@ -161,8 +165,8 @@ const rules: Rule[] = []
             ? [ruleModule.meta.docs.proposal].flat()
             : []
 
-        const deprecated = ruleModule.meta.deprecated || false
-        const replacedBy = deprecated ? ruleModule.meta.replacedBy || [] : []
+        const deprecated = ruleModule.meta.deprecated ?? false
+        const replacedBy = deprecated ? (ruleModule.meta.replacedBy ?? []) : []
         const description = ruleModule.meta.docs.description.replace(/\.$/u, "")
         const fixable = ruleModule.meta.fixable
         const schema = ruleModule.meta.schema
@@ -195,7 +199,7 @@ const rules: Rule[] = []
 
             const baseCategory = categories[category]
 
-            ;(categories[id] = categories[id] || {
+            const proposalCategory = (categories[id] ??= {
                 id,
                 title: `${baseCategory.title} [${proposals[proposal].title}](${proposals[proposal].link})`,
                 edition: baseCategory.edition,
@@ -204,9 +208,50 @@ const rules: Rule[] = []
                 experimental: baseCategory.experimental,
                 specKind: "proposal",
                 configName: id,
-            }).rules.push(rule)
+            })
+            proposalCategory.rules.push(rule)
         }
     }
 })(libRoot)
 
-export { categories, rules, LATEST_ES_YEAR }
+function getConfigCategories(): ConfigCategory[] {
+    const configs: Record<string, ConfigCategory> = {}
+    for (const category of Object.values(categories)) {
+        const { configName } = category
+        if (!configName) {
+            continue
+        }
+
+        const config = (configs[configName] ??= {
+            ...category,
+            configName,
+            rules: [],
+        })
+        config.rules.push(...category.rules)
+    }
+    return Object.values(configs)
+}
+
+function getConfigCategoriesForAboveConfig(
+    { edition, specKind }: Pick<Category, "edition" | "specKind">,
+    configCategories = getConfigCategories(),
+): ConfigCategory[] {
+    if (edition == null || !specKind) {
+        return []
+    }
+    return configCategories.filter(
+        (category) =>
+            category.edition != null &&
+            category.edition >= edition &&
+            category.specKind === specKind &&
+            !category.experimental,
+    )
+}
+
+export {
+    categories,
+    getConfigCategories,
+    getConfigCategoriesForAboveConfig,
+    rules,
+    LATEST_ES_YEAR,
+}

@@ -3,24 +3,25 @@
  * See LICENSE file in root directory for full license.
  */
 import * as fs from "node:fs"
-import { categories, type Category, type Rule } from "./rules"
+import {
+    categories,
+    getConfigCategories,
+    getConfigCategoriesForAboveConfig,
+    type Category,
+    type Rule,
+} from "./rules"
 
 const collator = new Intl.Collator("en", { numeric: true })
 const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })
 
 const links = new Set<string>()
 const configs = []
+const configCategories = getConfigCategories()
 // Analyze configs
-for (const {
-    rules,
-    edition,
-    configName,
-    aboveConfigName,
-    specKind,
-    id,
-} of Object.values(categories).filter(
-    (category) => category.specKind !== "proposal",
+for (const category of Object.values(categories).filter(
+    (cat) => cat.specKind !== "proposal",
 )) {
+    const { rules, configName, aboveConfigName, id } = category
     if (configName) {
         configs.push({ id: configName, categoryIds: [id] })
         if (rules.length) {
@@ -28,12 +29,9 @@ for (const {
         }
     }
     if (aboveConfigName) {
-        const includesCategories = Object.values(categories).filter(
-            (c) =>
-                c.edition >= edition &&
-                c.specKind === specKind &&
-                !c.experimental &&
-                c.configName,
+        const includesCategories = getConfigCategoriesForAboveConfig(
+            category,
+            configCategories,
         )
         configs.push({
             id: aboveConfigName,

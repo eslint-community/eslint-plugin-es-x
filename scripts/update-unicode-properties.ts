@@ -162,7 +162,7 @@ module.exports = {gcNameSet, scNameSet, gcValueSets, scValueSets, binPropertySet
     const result = await new ESLint({ fix: true }).lintText(code, {
         filePath: FILE_PATH,
     })
-    code = result[0].output || code
+    code = result[0].output ?? code
 
     logger.log("Writing '%s'...", FILE_PATH)
     await writeFile(FILE_PATH, code)
@@ -192,7 +192,7 @@ async function collectValues(
                       nodes.length,
                       selector,
                   )
-                  for (const node of Array.from(nodes)) {
+                  for (const node of nodes) {
                       yield node.textContent ?? ""
                   }
               }
@@ -212,7 +212,7 @@ async function collectValues(
     }
 
     if (missing.size > 0) {
-        throw new Error(`Missing values: ${Array.from(missing).join(", ")}`)
+        throw new Error(`Missing values: ${[...missing].join(", ")}`)
     }
 
     logger.log(

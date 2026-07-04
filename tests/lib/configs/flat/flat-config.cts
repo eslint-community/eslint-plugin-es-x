@@ -19,18 +19,20 @@ describe("flat config", () => {
             entry[0].startsWith("flat/"),
     )) {
         describe(`flat/${name}`, () => {
-            it("should lint without errors", () =>
-                lint([config]).then((result) => {
-                    assert.deepStrictEqual(result.messages, [])
-                }))
+            it("should lint without errors", async () => {
+                const result = await lint([config])
+
+                assert.deepStrictEqual(result.messages, [])
+            })
         })
         allConfigs.push(config)
     }
     describe("all flat configs", () => {
-        it("should lint without errors", () =>
-            lint(allConfigs).then((result) => {
-                assert.deepStrictEqual(result.messages, [])
-            }))
+        it("should lint without errors", async () => {
+            const result = await lint(allConfigs)
+
+            assert.deepStrictEqual(result.messages, [])
+        })
     })
 })
 
@@ -43,7 +45,8 @@ async function lint(configs: eslintModule.Linter.Config[]) {
         overrideConfigFile: true,
         overrideConfig: configs,
     })
-    return eslint
-        .lintText(String.raw`var a = 42;`, { filePath: "test.js" })
-        .then((results) => results[0])
+    const results = await eslint.lintText(String.raw`var a = 42;`, {
+        filePath: "test.js",
+    })
+    return results[0]
 }

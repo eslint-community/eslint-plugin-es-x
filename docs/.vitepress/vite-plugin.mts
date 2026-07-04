@@ -79,7 +79,7 @@ function transformRequire(code: string) {
                 id,
                 moduleString,
             ]) => `import * as __temp_${id} from ${moduleString};
-const ${id} = () => __temp_${id}.default || __temp_${id};
+const ${id} = () => __temp_${id}.default ?? __temp_${id};
 `,
         )
         .join("")};\n${replaced}`
