@@ -197,22 +197,23 @@ async function collectValues(
                   }
               }
 
-    const missing = new Set(existingSet)
-    const values = new Set<string>()
+    const incomingValues = new Set<string>()
     let allCount = 0
 
     for await (const value of getValues()) {
         allCount++
-        missing.delete(value)
-        if (existingSet.has(value)) {
-            continue
-        }
-        existingSet.add(value)
-        values.add(value)
+        incomingValues.add(value)
     }
+
+    const missing = existingSet.difference(incomingValues)
+    const values = incomingValues.difference(existingSet)
 
     if (missing.size > 0) {
         throw new Error(`Missing values: ${[...missing].join(", ")}`)
+    }
+
+    for (const value of values) {
+        existingSet.add(value)
     }
 
     logger.log(
