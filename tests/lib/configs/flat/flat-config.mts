@@ -1,6 +1,5 @@
 import path from "node:path"
 import assert from "node:assert"
-import { fileURLToPath } from "node:url"
 import eslintModule from "eslint"
 import pluginESx from "../../../../lib/index"
 
@@ -8,9 +7,9 @@ import pluginESx from "../../../../lib/index"
 // Tests
 // -----------------------------------------------------------------------------
 
-const dirname = path.dirname(fileURLToPath(import.meta.url))
 const TEST_CWD = path.resolve(
-    path.join(dirname, "../../fixtures/integrations/eslint-plugin"),
+    import.meta.dirname,
+    "../../fixtures/integrations/eslint-plugin",
 )
 
 describe("ESM flat config", () => {
