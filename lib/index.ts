@@ -52,6 +52,8 @@ const plugin: {
         "flat/no-new-in-es2024-intl-api": Linter.Config
         "flat/no-new-in-es2025": Linter.Config
         "flat/no-new-in-es2025-intl-api": Linter.Config
+        "flat/no-new-in-es2026": Linter.Config
+        "flat/no-new-in-es2026-intl-api": Linter.Config
         "flat/no-new-in-esnext": Linter.Config
         "flat/no-new-in-esnext-intl-api": Linter.Config
         "flat/no-relative-indexing-method": Linter.Config
@@ -82,6 +84,8 @@ const plugin: {
         "flat/restrict-to-es2023-intl-api": Linter.Config
         "flat/restrict-to-es2024": Linter.Config
         "flat/restrict-to-es2024-intl-api": Linter.Config
+        "flat/restrict-to-es2025": Linter.Config
+        "flat/restrict-to-es2025-intl-api": Linter.Config
         "no-array-grouping": Linter.LegacyConfig
         "no-arraybuffer-base64": Linter.LegacyConfig
         "no-change-array-by-copy": Linter.LegacyConfig
@@ -118,6 +122,8 @@ const plugin: {
         "no-new-in-es2024-intl-api": Linter.LegacyConfig
         "no-new-in-es2025": Linter.LegacyConfig
         "no-new-in-es2025-intl-api": Linter.LegacyConfig
+        "no-new-in-es2026": Linter.LegacyConfig
+        "no-new-in-es2026-intl-api": Linter.LegacyConfig
         "no-new-in-esnext": Linter.LegacyConfig
         "no-new-in-esnext-intl-api": Linter.LegacyConfig
         "no-relative-indexing-method": Linter.LegacyConfig
@@ -148,6 +154,8 @@ const plugin: {
         "restrict-to-es2023-intl-api": Linter.LegacyConfig
         "restrict-to-es2024": Linter.LegacyConfig
         "restrict-to-es2024-intl-api": Linter.LegacyConfig
+        "restrict-to-es2025": Linter.LegacyConfig
+        "restrict-to-es2025-intl-api": Linter.LegacyConfig
         readonly "no-5": Linter.LegacyConfig
         readonly "no-2015": Linter.LegacyConfig
         readonly "no-2016": Linter.LegacyConfig
@@ -195,6 +203,8 @@ const plugin: {
         "flat/no-new-in-es2024-intl-api": require("./configs/flat/no-new-in-es2024-intl-api"),
         "flat/no-new-in-es2025": require("./configs/flat/no-new-in-es2025"),
         "flat/no-new-in-es2025-intl-api": require("./configs/flat/no-new-in-es2025-intl-api"),
+        "flat/no-new-in-es2026": require("./configs/flat/no-new-in-es2026"),
+        "flat/no-new-in-es2026-intl-api": require("./configs/flat/no-new-in-es2026-intl-api"),
         "flat/no-new-in-esnext": require("./configs/flat/no-new-in-esnext"),
         "flat/no-new-in-esnext-intl-api": require("./configs/flat/no-new-in-esnext-intl-api"),
         "flat/no-relative-indexing-method": require("./configs/flat/no-relative-indexing-method"),
@@ -225,6 +235,8 @@ const plugin: {
         "flat/restrict-to-es2023-intl-api": require("./configs/flat/restrict-to-es2023-intl-api"),
         "flat/restrict-to-es2024": require("./configs/flat/restrict-to-es2024"),
         "flat/restrict-to-es2024-intl-api": require("./configs/flat/restrict-to-es2024-intl-api"),
+        "flat/restrict-to-es2025": require("./configs/flat/restrict-to-es2025"),
+        "flat/restrict-to-es2025-intl-api": require("./configs/flat/restrict-to-es2025-intl-api"),
         "no-array-grouping": require("./configs/no-array-grouping"),
         "no-arraybuffer-base64": require("./configs/no-arraybuffer-base64"),
         "no-change-array-by-copy": require("./configs/no-change-array-by-copy"),
@@ -261,6 +273,8 @@ const plugin: {
         "no-new-in-es2024-intl-api": require("./configs/no-new-in-es2024-intl-api"),
         "no-new-in-es2025": require("./configs/no-new-in-es2025"),
         "no-new-in-es2025-intl-api": require("./configs/no-new-in-es2025-intl-api"),
+        "no-new-in-es2026": require("./configs/no-new-in-es2026"),
+        "no-new-in-es2026-intl-api": require("./configs/no-new-in-es2026-intl-api"),
         "no-new-in-esnext": require("./configs/no-new-in-esnext"),
         "no-new-in-esnext-intl-api": require("./configs/no-new-in-esnext-intl-api"),
         "no-relative-indexing-method": require("./configs/no-relative-indexing-method"),
@@ -291,6 +305,8 @@ const plugin: {
         "restrict-to-es2023-intl-api": require("./configs/restrict-to-es2023-intl-api"),
         "restrict-to-es2024": require("./configs/restrict-to-es2024"),
         "restrict-to-es2024-intl-api": require("./configs/restrict-to-es2024-intl-api"),
+        "restrict-to-es2025": require("./configs/restrict-to-es2025"),
+        "restrict-to-es2025-intl-api": require("./configs/restrict-to-es2025-intl-api"),
         get "no-5"() {
             printWarningOfDeprecatedConfig("no-5")
             return require("./configs/no-new-in-es5") as Linter.LegacyConfig

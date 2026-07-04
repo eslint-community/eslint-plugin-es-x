@@ -28,17 +28,16 @@ export default defineConfig([
 
 </details>
 
-## no-new-in-esnext-intl-api
+## no-new-in-es2026
 
-disallow the new stuff to be planned for the next yearly ECMAScript Intl API (ECMA-402) snapshot.\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow new stuff in ES2026.
 
 ```js
 import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-esnext-intl-api"]
+    pluginESx.configs["flat/no-new-in-es2026"]
 ])
 ```
 
@@ -48,7 +47,32 @@ export default defineConfig([
 
 ```json
 {
-    "extends": ["plugin:es-x/no-new-in-esnext-intl-api"],
+    "extends": ["plugin:es-x/no-new-in-es2026"],
+}
+```
+
+</details>
+
+## no-new-in-es2026-intl-api
+
+disallow new stuff in ES2026 Intl API (ECMA-402).
+
+```js
+import { defineConfig } from "eslint/config"
+import pluginESx from "eslint-plugin-es-x"
+
+export default defineConfig([
+    pluginESx.configs["flat/no-new-in-es2026-intl-api"]
+])
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/no-new-in-es2026-intl-api"],
 }
 ```
 
@@ -549,6 +573,56 @@ export default defineConfig([
 ```json
 {
     "extends": ["plugin:es-x/no-new-in-es5"],
+}
+```
+
+</details>
+
+## restrict-to-es2025
+
+disallow new stuff that ES2026 doesn't include
+
+```js
+import { defineConfig } from "eslint/config"
+import pluginESx from "eslint-plugin-es-x"
+
+export default defineConfig([
+    pluginESx.configs["flat/restrict-to-es2025"]
+])
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/restrict-to-es2025"],
+}
+```
+
+</details>
+
+## restrict-to-es2025-intl-api
+
+disallow new stuff that ES2026 Intl API (ECMA-402) doesn't include
+
+```js
+import { defineConfig } from "eslint/config"
+import pluginESx from "eslint-plugin-es-x"
+
+export default defineConfig([
+    pluginESx.configs["flat/restrict-to-es2025-intl-api"]
+])
+```
+
+<details><summary> Legacy Config </summary>
+
+.eslintrc.*:
+
+```json
+{
+    "extends": ["plugin:es-x/restrict-to-es2025-intl-api"],
 }
 ```
 
@@ -1215,8 +1289,7 @@ export default defineConfig([
 
 ## no-arraybuffer-base64
 
-disallow proposal ES2026 [Uint8Array to/from Base64 and Hex](https://github.com/tc39/proposal-arraybuffer-base64)\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow proposal ES2026 [Uint8Array to/from Base64 and Hex](https://github.com/tc39/proposal-arraybuffer-base64)
 
 This config includes the rules [es-x/no-uint8array-frombase64](../rules/no-uint8array-frombase64.md), [es-x/no-uint8array-fromhex](../rules/no-uint8array-fromhex.md), [es-x/no-uint8array-prototype-setfrombase64](../rules/no-uint8array-prototype-setfrombase64.md), [es-x/no-uint8array-prototype-setfromhex](../rules/no-uint8array-prototype-setfromhex.md), [es-x/no-uint8array-prototype-tobase64](../rules/no-uint8array-prototype-tobase64.md), and [es-x/no-uint8array-prototype-tohex](../rules/no-uint8array-prototype-tohex.md).
 
@@ -1243,8 +1316,7 @@ export default defineConfig([
 
 ## no-intl-locale-info
 
-disallow proposal ES2026 Intl API [Intl Locale Info API](https://github.com/tc39/proposal-intl-locale-info)\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow proposal ES2026 Intl API [Intl Locale Info API](https://github.com/tc39/proposal-intl-locale-info)
 
 This config includes the rules [es-x/no-intl-locale-prototype-firstdayofweek](../rules/no-intl-locale-prototype-firstdayofweek.md), [es-x/no-intl-locale-prototype-getcalendars](../rules/no-intl-locale-prototype-getcalendars.md), [es-x/no-intl-locale-prototype-getcollations](../rules/no-intl-locale-prototype-getcollations.md), [es-x/no-intl-locale-prototype-gethourcycles](../rules/no-intl-locale-prototype-gethourcycles.md), [es-x/no-intl-locale-prototype-getnumberingsystems](../rules/no-intl-locale-prototype-getnumberingsystems.md), [es-x/no-intl-locale-prototype-gettextinfo](../rules/no-intl-locale-prototype-gettextinfo.md), [es-x/no-intl-locale-prototype-gettimezones](../rules/no-intl-locale-prototype-gettimezones.md), and [es-x/no-intl-locale-prototype-getweekinfo](../rules/no-intl-locale-prototype-getweekinfo.md).
 
@@ -1271,8 +1343,7 @@ export default defineConfig([
 
 ## no-json-parse-with-source
 
-disallow proposal ES2026 [JSON.parse source text access](https://github.com/tc39/proposal-json-parse-with-source)\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow proposal ES2026 [JSON.parse source text access](https://github.com/tc39/proposal-json-parse-with-source)
 
 This config includes the rules [es-x/no-json-israwjson](../rules/no-json-israwjson.md), [es-x/no-json-parse-reviver-context-parameter](../rules/no-json-parse-reviver-context-parameter.md), and [es-x/no-json-rawjson](../rules/no-json-rawjson.md).
 
@@ -1299,8 +1370,7 @@ export default defineConfig([
 
 ## no-upsert
 
-disallow proposal ES2026 [Upsert](https://github.com/tc39/proposal-upsert)\
-⚠️ This config will be changed in the minor versions of this plugin.
+disallow proposal ES2026 [Upsert](https://github.com/tc39/proposal-upsert)
 
 This config includes the rules [es-x/no-map-prototype-getorinsert](../rules/no-map-prototype-getorinsert.md), [es-x/no-map-prototype-getorinsertcomputed](../rules/no-map-prototype-getorinsertcomputed.md), [es-x/no-weakmap-prototype-getorinsert](../rules/no-weakmap-prototype-getorinsert.md), and [es-x/no-weakmap-prototype-getorinsertcomputed](../rules/no-weakmap-prototype-getorinsertcomputed.md).
 
