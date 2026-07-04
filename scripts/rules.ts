@@ -193,7 +193,7 @@ const rules: Rule[] = []
 
             if (!proposals[proposal]) {
                 throw new Error(
-                    `Missing define proposal: ${proposal}\nWe need to add it to scripts/proposals.js.`,
+                    `Missing define proposal: ${proposal}\nWe need to add it to scripts/proposals.ts.`,
                 )
             }
 
