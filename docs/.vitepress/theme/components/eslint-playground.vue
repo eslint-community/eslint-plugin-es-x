@@ -56,7 +56,8 @@ onMounted(async () => {
     if (props.code && props.code.trim()) {
         cookedCode.value = props.code.replace(
             /&#x([0-9a-zA-Z]+);/gu,
-            (_, codePoint) => String.fromCodePoint(parseInt(codePoint, 16)),
+            (_, codePoint) =>
+                String.fromCodePoint(Number.parseInt(codePoint, 16)),
         )
     } else {
         cookedCode.value = `${computeCodeFromSlot(

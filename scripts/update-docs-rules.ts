@@ -382,7 +382,7 @@ function cookeHTMLAttrValue(value: string) {
     return value
         .replace(/^['"]([\s\S]*)['"]$/u, "$1")
         .replace(/&#x([0-9a-zA-Z]+);/gu, (_, codePoint) =>
-            String.fromCodePoint(parseInt(codePoint, 16)),
+            String.fromCodePoint(Number.parseInt(codePoint, 16)),
         )
         .replace(/&quot;/gu, '"')
         .replace(/&gt;/gu, ">")
