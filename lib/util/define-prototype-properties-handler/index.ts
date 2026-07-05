@@ -1,45 +1,38 @@
-"use strict"
+import { getPropertyName } from "@eslint-community/eslint-utils"
+import { buildTypeChecker, type TypeName } from "eslint-type-tracer"
+import type { Rule } from "eslint"
+import type { TSESTree } from "@typescript-eslint/types"
+import type * as ESTree from "estree"
 
-const { getPropertyName } = require("@eslint-community/eslint-utils")
-const {
+import {
     createPropertyGuardsContext,
-} = require("../type-checker/property-guards")
+    type Params,
+    type PropertyTypeMap,
+} from "../type-checker/property-guards"
 
-const { buildTypeChecker } = require("eslint-type-tracer")
-
-/**
- * @typedef {import("estree").MemberExpression} MemberExpression
- * @typedef {import("estree").Property} Property
- * @typedef {import("estree").Expression} Expression
- * @typedef {import("estree").Node} Node
- * @typedef {import("eslint").Rule.RuleContext} RuleContext
- * @typedef {import("eslint").Rule.ReportDescriptor} ReportDescriptor
- */
-/**
- * @typedef {object} CreateReportArgument
- * @property {true | 'aggressive'} objectTypeResult
- * @property {string} className
- * @property {string} propertyName
- * @property {MemberExpression|Property} node
- */
-/**
- * @typedef {object} Options
- * @property { (arg: CreateReportArgument) => ReportDescriptor } [Options.createReport]
- */
-
-/**
- * @typedef {import('../type-checker/property-guards').PropertyType} PropertyType
- * @typedef {import('../type-checker/property-guards').PropertyTypeMap} PropertyTypeMap
- */
+type CreateReportArgument = {
+    objectTypeResult: true | "aggressive"
+    className: string
+    propertyName: string
+    node: TSESTree.MemberExpression | TSESTree.Property
+}
+type Options = {
+    createReport?: (arg: CreateReportArgument) => Rule.ReportDescriptor
+}
 
 /**
  * Define handlers to disallow prototype properties.
- * @param {RuleContext} context The rule context.
- * @param {PropertyTypeMap} propertyTypeMap The property names to disallow. The key is class names and that value is properties and types.
- * @param {Options} [options] The options.
- * @returns {Record<string, (node: Node) => void>} The defined handlers.
+ * @param context The rule context.
+ * @param propertyTypeMap The property names to disallow. The key is class names and that value is properties and types.
+ * @param options The options.
+ * @param options.createReport The function to create the report descriptor.
+ * @returns The defined handlers.
  */
-function definePrototypePropertiesHandler(context, propertyTypeMap, options) {
+export function definePrototypePropertiesHandler(
+    context: Rule.RuleContext,
+    propertyTypeMap: PropertyTypeMap,
+    options?: Options,
+): Rule.RuleListener {
     const sourceCode = context.sourceCode
     const aggressiveOption = getAggressiveOption(context)
 
@@ -47,13 +40,12 @@ function definePrototypePropertiesHandler(context, propertyTypeMap, options) {
         aggressive: aggressiveOption,
     })
 
-    /**
-     * @param {MemberExpression|Property} node
-     * @param {string} className
-     * @param {string} propertyName
-     * @param {true | "aggressive"} objectTypeResult
-     */
-    function report(node, className, propertyName, objectTypeResult) {
+    function report(
+        node: TSESTree.MemberExpression | TSESTree.Property,
+        className: string,
+        propertyName: string,
+        objectTypeResult: true | "aggressive",
+    ): void {
         context.report({
             node,
             messageId: "forbidden",
@@ -74,29 +66,32 @@ function definePrototypePropertiesHandler(context, propertyTypeMap, options) {
         propertyTypeMap,
     })
 
-    const propertyEntries = Object.entries(propertyTypeMap).map(
+    const propertyEntries = (
+        Object.entries(propertyTypeMap) as [TypeName, PropertyTypeMap[string]][]
+    ).map(
         ([className, properties]) =>
-            /** @type {const} */ ([className, Object.keys(properties)]),
+            [className, Object.keys(properties)] as const,
     )
 
     /**
-     * @param {MemberExpression|Property} node
-     * @param {string} className
-     * @param {string} propertyName
-     * @param {Expression} objectNode
+     * @param node The node to verify.
+     * @param className The class name to verify.
+     * @param propertyName The property name to verify.
+     * @param objectNode The object node to verify.
+     * @returns `true` if the class property name is verified.
      */
     function verifyClassPropertyName(
-        node,
-        className,
-        propertyName,
-        objectNode,
-    ) {
+        node: TSESTree.MemberExpression | TSESTree.Property,
+        className: TypeName,
+        propertyName: string,
+        objectNode: TSESTree.Expression,
+    ): boolean {
         const objectTypeResult = objectTypeChecker(objectNode, className, node)
         if (!objectTypeResult) {
             return false
         }
 
-        const params = {
+        const params: Params = {
             node,
             className,
             propertyName,
@@ -113,12 +108,17 @@ function definePrototypePropertiesHandler(context, propertyTypeMap, options) {
     }
 
     /**
-     * @param {MemberExpression|Property} node
-     * @param {string} propertyName
-     * @param {Expression} objectNode
+     * @param node The node to verify.
+     * @param propertyName The property name to verify.
+     * @param objectNode The object node to verify.
+     * @returns void
      */
     // eslint-disable-next-line func-style
-    let verifyPropertyName = (node, propertyName, objectNode) => {
+    let verifyPropertyName = (
+        node: TSESTree.MemberExpression | TSESTree.Property,
+        propertyName: string,
+        objectNode: TSESTree.Expression,
+    ): void => {
         for (const [className, properties] of propertyEntries) {
             if (!properties.includes(propertyName)) {
                 continue
@@ -147,7 +147,6 @@ function definePrototypePropertiesHandler(context, propertyTypeMap, options) {
     }
 
     return {
-        /** @param {MemberExpression} node */
         MemberExpression(node) {
             const propertyName = getPropertyName(
                 node,
@@ -156,14 +155,17 @@ function definePrototypePropertiesHandler(context, propertyTypeMap, options) {
             if (propertyName == null) {
                 return
             }
-            verifyPropertyName(node, propertyName, node.object)
+            verifyPropertyName(
+                node as TSESTree.MemberExpression,
+                propertyName,
+                node.object as TSESTree.Expression,
+            )
         },
-        /** @param {import("estree").Property} node */
         [[
             "VariableDeclarator > ObjectPattern.id > Property.properties",
             "AssignmentExpression > ObjectPattern.left > Property.properties",
             "AssignmentPattern > ObjectPattern.left > Property.properties",
-        ].join(",")](node) {
+        ].join(",")](node: ESTree.Property) {
             const propertyName = getPropertyName(
                 node,
                 sourceCode.getScope(node),
@@ -171,8 +173,10 @@ function definePrototypePropertiesHandler(context, propertyTypeMap, options) {
             if (propertyName == null) {
                 return
             }
-            /** @type {import("estree").VariableDeclarator | import("estree").AssignmentExpression | import("estree").AssignmentPattern} */
-            const assignmentNode = node.parent.parent
+            const assignmentNode = (node as TSESTree.Node).parent.parent as
+                | TSESTree.VariableDeclarator
+                | TSESTree.AssignmentExpression
+                | TSESTree.AssignmentPattern
             const objectNode =
                 assignmentNode.type === "VariableDeclarator"
                     ? assignmentNode.init
@@ -180,7 +184,11 @@ function definePrototypePropertiesHandler(context, propertyTypeMap, options) {
             if (!objectNode) {
                 return
             }
-            verifyPropertyName(node, propertyName, objectNode)
+            verifyPropertyName(
+                node as TSESTree.Property,
+                propertyName,
+                objectNode,
+            )
         },
         "Program:exit"() {
             for (const unused of guardsContext.iterateUnusedGuards()) {
@@ -197,12 +205,14 @@ function definePrototypePropertiesHandler(context, propertyTypeMap, options) {
 
 /**
  * Get `aggressive` option value.
- * @param {RuleContext} context The rule context.
- * @returns {boolean} The gotten `aggressive` option value.
+ * @param context The rule context.
+ * @returns The gotten `aggressive` option value.
  */
-function getAggressiveOption(context) {
+function getAggressiveOption(context: Rule.RuleContext): boolean {
     const options = context.options[0]
-    const globalOptions = context.settings["es-x"]
+    const globalOptions = context.settings["es-x"] as
+        | { aggressive?: unknown }
+        | undefined
 
     if (options && typeof options.aggressive === "boolean") {
         return options.aggressive
@@ -213,5 +223,3 @@ function getAggressiveOption(context) {
 
     return false
 }
-
-module.exports = { definePrototypePropertiesHandler }

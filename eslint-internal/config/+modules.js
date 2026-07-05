@@ -4,10 +4,12 @@
  */
 "use strict"
 
+const n = require("eslint-plugin-n")
+
 module.exports = [
     {
         name: "eslint-internal/config/+modules.js#1",
-        plugins: { n: require("eslint-plugin-n") },
+        plugins: { n: n.default ?? n },
         languageOptions: {
             sourceType: "module",
             globals: {

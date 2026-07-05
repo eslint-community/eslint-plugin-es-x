@@ -1,11 +1,9 @@
-"use strict"
+import { findVariable, getStaticValue } from "@eslint-community/eslint-utils"
+import type { Rule, SourceCode } from "eslint"
+import type { TSESTree } from "@typescript-eslint/types"
+import type * as ESTree from "estree"
 
-const { getPropertyKeyValue } = require("../get-property-key-value")
-
-const {
-    findVariable,
-    getStaticValue,
-} = require("@eslint-community/eslint-utils")
+import { getPropertyKeyValue } from "../get-property-key-value"
 
 const TS_NODE_TYPES = [
     "TSAsExpression", // foo as number
@@ -15,70 +13,66 @@ const TS_NODE_TYPES = [
     "TSSatisfiesExpression", // foo satisfies T
 ]
 
-/**
- * @typedef {import("estree").MemberExpression} MemberExpression
- * @typedef {import("estree").Property} Property
- * @typedef {import("estree").Expression} Expression
- * @typedef {import("estree").BlockStatement} BlockStatement
- * @typedef {import("estree").Statement} Statement
- * @typedef {import("estree").ReturnStatement} ReturnStatement
- * @typedef {import("estree").ContinueStatement} ContinueStatement
- * @typedef {import("estree").BreakStatement} BreakStatement
- * @typedef {import("estree").IfStatement} IfStatement
- * @typedef {import("estree").Node} Node
- * @typedef {import("eslint").SourceCode} SourceCode
- * @typedef {import("eslint").Rule.RuleContext} RuleContext
- */
+type JumpStatement =
+    | TSESTree.ReturnStatement
+    | TSESTree.ContinueStatement
+    | TSESTree.BreakStatement
+type GuardChecker = {
+    test: (
+        node: TSESTree.MemberExpression | TSESTree.Property,
+        objectNode?: TSESTree.Expression,
+    ) => boolean
+    kind:
+        | "instanceof"
+        | "definedValue"
+        | "definedType"
+        | "hasValue"
+        | "optional"
+        | "unknown"
+}
+type MaybeGuard = Params & {
+    prototypeGuard: boolean
+    used: boolean
+    isAvailableLocation: GuardChecker["test"]
+}
+type GuardsContext = {
+    processGuard: (params: Params) => boolean
+    isAvailableLocation: (params: Params) => boolean
+    iterateUnusedGuards: () => Iterable<MaybeGuard>
+}
 
-/**
- * @typedef {ReturnStatement|ContinueStatement|BreakStatement} JumpStatement
- */
-
-module.exports = { createPropertyGuardsContext }
-
-/**
- * @typedef {"string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function"} PropertyType
- * @typedef {Record<string, Record<string, PropertyType|PropertyType[]>>} PropertyTypeMap
- */
-
-/**
- * @typedef {object} Params
- * @property {MemberExpression|Property} node
- * @property {string} className
- * @property {string} propertyName
- * @property {Expression} objectNode
- */
-/**
- * @typedef {object} GuardChecker
- * @property {(node: MemberExpression|Property)=>boolean} test
- * @property {"instanceof"|"definedValue"|"definedType"|"hasValue"|"optional"|"unknown"} kind
- */
-/**
- * @typedef {object} MaybeGuard
- * @property {string} className
- * @property {string} propertyName
- * @property {Expression} objectNode
- * @property {boolean} prototypeGuard
- * @property {MemberExpression|Property} node
- * @property {true | "aggressive"} objectTypeResult
- * @property {boolean} used
- * @property {(node: MemberExpression|Property)=>boolean} isAvailableLocation
- */
-/**
- * @typedef {object} GuardsContext
- * @property {(params: Params)=>boolean} processGuard
- * @property {(params: Params)=>boolean} isAvailableLocation
- * @property {()=>Iterable<MaybeGuard>} iterateUnusedGuards
- */
+export type PropertyType =
+    | "string"
+    | "number"
+    | "bigint"
+    | "boolean"
+    | "symbol"
+    | "undefined"
+    | "object"
+    | "function"
+export type PropertyTypeMap = Record<
+    string,
+    Record<string, PropertyType | PropertyType[]>
+>
+export type Params = {
+    node: TSESTree.MemberExpression | TSESTree.Property
+    className: string
+    propertyName: string
+    objectNode: TSESTree.Expression
+    objectTypeResult?: true | "aggressive"
+}
 
 /**
  * Create a context for property guards.
- * @param {object} options The options.
- * @param {PropertyTypeMap} [options.propertyTypeMap] The property names to disallow. The key is class names and that value is properties and types.
- * @param {RuleContext} options.context
- * @returns {GuardsContext} The guards context.
+ * @param options The options.
+ * @param options.propertyTypeMap The property names to disallow. The key is class names and that value is properties and types.
+ * @param options.context The rule context.
+ * @returns The guards context.
  */
-function createPropertyGuardsContext(options) {
+export function createPropertyGuardsContext(options: {
+    propertyTypeMap?: PropertyTypeMap
+    context: Rule.RuleContext
+}): GuardsContext {
     const context = options.context
     if (!getAllowTestedPropertyOption(context)) {
         return {
@@ -94,12 +88,11 @@ function createPropertyGuardsContext(options) {
         }
     }
     const sourceCode = context.sourceCode
-    /** @type {PropertyTypeMap} */
-    const propertyTypeMap = {}
+    const propertyTypeMap: Record<string, Record<string, PropertyType[]>> = {}
 
     for (const [className, properties] of Object.entries(
         options.propertyTypeMap ?? {},
-    )) {
+    ) as [string, Record<string, PropertyType | PropertyType[]>][]) {
         propertyTypeMap[className] = {}
         for (const [propertyName, propertyType] of Object.entries(properties)) {
             propertyTypeMap[className][propertyName] = Array.isArray(
@@ -110,17 +103,16 @@ function createPropertyGuardsContext(options) {
         }
     }
 
-    /**
-     * @type {Map<string, Map<string, MaybeGuard[]>>}
-     */
-    const maybeGuards = new Map()
+    const maybeGuards = new Map<string, Map<string, MaybeGuard[]>>()
 
     /**
      * Checks whether the node is a prototype property access or not.
-     * @param {MemberExpression|Property} node
-     * @returns {boolean} `true` if the node is a prototype property access.
+     * @param node The node to check.
+     * @returns `true` if the node is a prototype property access.
      */
-    function isPrototypePropertyAccess(node) {
+    function isPrototypePropertyAccess(
+        node: TSESTree.MemberExpression | TSESTree.Property,
+    ): boolean {
         if (node.type !== "MemberExpression") {
             return false
         }
@@ -134,12 +126,15 @@ function createPropertyGuardsContext(options) {
     /**
      * If the node is a guard clause checking for the existence of a property,
      * returns a function to check if the property node is available.
-     * @param {MemberExpression|Property} node
-     * @param {PropertyType[]} [propertyTypes]
-     * @returns {GuardChecker|null} The guard checker.
+     * @param node The node to check.
+     * @param propertyTypes The property types to check.
+     * @returns The guard checker.
      */
     // eslint-disable-next-line complexity
-    function getGuardChecker(node, propertyTypes) {
+    function getGuardChecker(
+        node: TSESTree.MemberExpression | TSESTree.Property,
+        propertyTypes?: PropertyType[],
+    ): GuardChecker | null {
         if (!propertyTypes || propertyTypes.length === 0) {
             // If the property type is unknown, the type is inferred from the property access usage and checked.
             return getGuardCheckerForUnknownType(node)
@@ -166,10 +161,10 @@ function createPropertyGuardsContext(options) {
                 return null
             }
             const staticValue = getStaticValue(
-                /** @type {any} */ (
-                    parent.left === node ? parent.right : parent.left
-                ),
-                sourceCode.getScope(parent),
+                (parent.left === node
+                    ? parent.right
+                    : parent.left) as ESTree.Node,
+                sourceCode.getScope(parent as Rule.Node),
             )
             if (!staticValue) {
                 return null
@@ -205,14 +200,13 @@ function createPropertyGuardsContext(options) {
             return null
         }
         if (parent.type === "UnaryExpression" && parent.operator === "typeof") {
-            /** @type {Node|null} */
             const pp = getParent(parent)
             if (!pp || pp.type !== "BinaryExpression") {
                 return null
             }
             const staticValue = getStaticValue(
-                /** @type {any} */ (pp.left === parent ? pp.right : pp.left),
-                sourceCode.getScope(parent),
+                (pp.left === parent ? pp.right : pp.left) as ESTree.Node,
+                sourceCode.getScope(parent as Rule.Node),
             )
             if (!staticValue) {
                 return null
@@ -220,7 +214,7 @@ function createPropertyGuardsContext(options) {
             const type =
                 staticValue.value === "undefined"
                     ? "undefined"
-                    : propertyTypes.includes(staticValue.value)
+                    : propertyTypes.includes(staticValue.value as PropertyType)
                       ? "defined"
                       : null
             if (!type) {
@@ -281,11 +275,15 @@ function createPropertyGuardsContext(options) {
     }
 
     /**
-     * @param {Expression} node
-     * @returns {((node: MemberExpression|Property)=>boolean)|null} The guard tester.
+     * @param node The node to check.
+     * @param options The options.
+     * @param options.not Whether to invert the guard.
+     * @returns The guard tester.
      */
-    function getGuardCheckerForExpression(node, { not = false } = {}) {
-        /** @type {Node|null} */
+    function getGuardCheckerForExpression(
+        node: TSESTree.Expression,
+        { not = false }: { not?: boolean } = {},
+    ): GuardChecker["test"] | null {
         const parent = getParent(node)
         if (!parent) {
             return null
@@ -316,10 +314,15 @@ function createPropertyGuardsContext(options) {
     }
 
     /**
-     * @param {IfStatement} node
-     * @returns {((node: MemberExpression|Property)=>boolean)|null} The guard tester.
+     * @param node The if statement node to check.
+     * @param options The options.
+     * @param options.not Whether to invert the guard.
+     * @returns The guard tester.
      */
-    function getGuardCheckerForIfStatement(node, { not = false } = {}) {
+    function getGuardCheckerForIfStatement(
+        node: TSESTree.IfStatement,
+        { not = false }: { not?: boolean } = {},
+    ): GuardChecker["test"] | null {
         if (!not) {
             const block = node.consequent
             return (n) =>
@@ -333,7 +336,6 @@ function createPropertyGuardsContext(options) {
         if (!hasJumpStatementInAllPath(node.consequent)) {
             return null
         }
-        /** @type {Node|null} */
         const parent = getParent(node)
         if (
             !parent ||
@@ -348,10 +350,12 @@ function createPropertyGuardsContext(options) {
     }
 
     /**
-     * @param {MemberExpression|Property} node
-     * @returns {GuardChecker|null} The guard checker.
+     * @param node The node to check.
+     * @returns The guard checker.
      */
-    function getGuardCheckerForUnknownType(node) {
+    function getGuardCheckerForUnknownType(
+        node: TSESTree.MemberExpression | TSESTree.Property,
+    ): GuardChecker | null {
         // If the property type is unknown, the type is inferred from the property access usage and checked.
         const primitiveChecker = getGuardChecker(node, [
             "string",
@@ -386,7 +390,7 @@ function createPropertyGuardsContext(options) {
                 ) {
                     // If the property is called,
                     // it is checked to see if it is a method guard.
-                    return methodChecker?.test(n)
+                    return Boolean(methodChecker?.test(n))
                 }
                 if (
                     parent?.type === "MemberExpression" &&
@@ -394,7 +398,9 @@ function createPropertyGuardsContext(options) {
                 ) {
                     // If the property is property access,
                     // it is checked to see if it is a method guard or a object guard.
-                    return methodChecker?.test(n) || objectChecker?.test(n)
+                    return Boolean(
+                        methodChecker?.test(n) || objectChecker?.test(n),
+                    )
                 }
                 return false
             },
@@ -405,12 +411,12 @@ function createPropertyGuardsContext(options) {
     return {
         /**
          * Checks whether the node is in a location where the property is available or not.
-         * @param {object} params
-         * @param {MemberExpression|Property} params.node
-         * @param {string} params.className
-         * @param {string} params.propertyName
-         * @param {Expression} params.objectNode
-         * @returns {boolean} `true` if the property is available.
+         * @param params The parameters.
+         * @param params.node The node to check.
+         * @param params.className The class name to check.
+         * @param params.propertyName The property name to check.
+         * @param params.objectNode The object node to check.
+         * @returns `true` if the property is available.
          */
         isAvailableLocation({ node, className, propertyName, objectNode }) {
             const guards = maybeGuards.get(className)?.get(propertyName) ?? []
@@ -430,12 +436,12 @@ function createPropertyGuardsContext(options) {
         /**
          * Checks if the node is a guard clause that checks for the existence of a property.
          * If it is, it stores that information and uses it to check if the property node is available the next time it is visited.
-         * @param {object} params
-         * @param {MemberExpression|Property} params.node
-         * @param {string} params.className
-         * @param {string} params.propertyName
-         * @param {Expression} params.objectNode
-         * @returns {boolean} `true` if the node is a guard.
+         * @param params The parameters.
+         * @param params.node The node to check.
+         * @param params.className The class name to check.
+         * @param params.propertyName The property name to check.
+         * @param params.objectNode The object node to check.
+         * @returns `true` if the node is a guard.
          */
         processGuard(params) {
             const checker = getGuardChecker(
@@ -445,8 +451,7 @@ function createPropertyGuardsContext(options) {
             if (!checker) {
                 return false
             }
-            /** @type {MaybeGuard} */
-            const guard = {
+            const guard: MaybeGuard = {
                 ...params,
                 prototypeGuard: isPrototypePropertyAccess(params.node),
                 used:
@@ -470,7 +475,7 @@ function createPropertyGuardsContext(options) {
         },
         /**
          * Iterate unused guards.
-         * @returns {IterableIterator<MaybeGuard>}
+         * @returns The unused guards.
          */
         *iterateUnusedGuards() {
             for (const classGuards of maybeGuards.values()) {
@@ -488,10 +493,10 @@ function createPropertyGuardsContext(options) {
 
 /**
  * Checks whether all paths of a given statement have jump statements.
- * @param {Statement} statement
- * @returns {boolean}
+ * @param statement The statement to check.
+ * @returns `true` if all paths of a given statement have jump statements.
  */
-function hasJumpStatementInAllPath(statement) {
+function hasJumpStatementInAllPath(statement: TSESTree.Statement): boolean {
     if (isJumpStatement(statement)) {
         return true
     }
@@ -512,10 +517,12 @@ function hasJumpStatementInAllPath(statement) {
 
 /**
  * Checks whether the given statement is a jump statement.
- * @param {Statement} statement
- * @returns {statement is JumpStatement}
+ * @param statement The statement to check.
+ * @returns `true` if the given statement is a jump statement.
  */
-function isJumpStatement(statement) {
+function isJumpStatement(
+    statement: TSESTree.Statement,
+): statement is JumpStatement {
     return (
         statement.type === "ReturnStatement" ||
         statement.type === "ContinueStatement" ||
@@ -525,16 +532,26 @@ function isJumpStatement(statement) {
 
 /**
  * Checks whether or not the two given nodes are same.
- * @param {Expression} a A node 1 to compare.
- * @param {Expression} b A node 2 to compare.
- * @param {SourceCode} sourceCode The ESLint source code object.
- * @returns {boolean} the source code for the given node.
+ * @param a A node 1 to compare.
+ * @param b A node 2 to compare.
+ * @param sourceCode The ESLint source code object.
+ * @returns the source code for the given node.
  */
-function equalNode(a, b, sourceCode) {
+function equalNode(
+    a: TSESTree.Expression,
+    b: TSESTree.Expression,
+    sourceCode: SourceCode,
+): boolean {
     if (a.type === "Identifier" && b.type === "Identifier") {
-        const leftVar = findVariable(sourceCode.getScope(a), a)
-        const rightVar = findVariable(sourceCode.getScope(b), b)
-        return leftVar && rightVar && leftVar === rightVar
+        const leftVar = findVariable(
+            sourceCode.getScope(a as Rule.Node),
+            a as ESTree.Identifier,
+        )
+        const rightVar = findVariable(
+            sourceCode.getScope(b as Rule.Node),
+            b as ESTree.Identifier,
+        )
+        return Boolean(leftVar && rightVar && leftVar === rightVar)
     }
     if (a.type === "MemberExpression" && b.type === "MemberExpression") {
         if (!equalNode(a.object, b.object, sourceCode)) {
@@ -544,39 +561,49 @@ function equalNode(a, b, sourceCode) {
         const rightKey = getPropertyKeyValue(b)
         return Boolean(leftKey && rightKey) && leftKey === rightKey
     }
-    if (a.type === "ChainExpression" || TS_NODE_TYPES.includes(a.type)) {
+    if (isSkipExpression(a)) {
         return equalNode(a.expression, b, sourceCode)
     }
-    if (b.type === "ChainExpression" || TS_NODE_TYPES.includes(b.type)) {
+    if (isSkipExpression(b)) {
         return equalNode(a, b.expression, sourceCode)
     }
     return false
 }
 
 /**
- * @param {Node} node
- * @returns {Node|null}
+ * @param node The node to get.
+ * @returns The parent node.
  */
-function getParent(node) {
+function getParent(node: TSESTree.Node): TSESTree.Node | null {
     const parent = node.parent
-    if (
-        parent &&
-        (parent.type === "ChainExpression" ||
-            TS_NODE_TYPES.includes(parent.type))
-    ) {
+    if (parent && isSkipExpression(parent)) {
         return getParent(parent)
     }
-    return parent
+    return parent ?? null
+}
+
+function isSkipExpression(
+    node: TSESTree.Node,
+): node is
+    | TSESTree.ChainExpression
+    | TSESTree.TSAsExpression
+    | TSESTree.TSTypeAssertion
+    | TSESTree.TSNonNullExpression
+    | TSESTree.TSInstantiationExpression
+    | TSESTree.TSSatisfiesExpression {
+    return node.type === "ChainExpression" || TS_NODE_TYPES.includes(node.type)
 }
 
 /**
  * Get `allowTestedProperty` option value.
- * @param {RuleContext} context The rule context.
- * @returns {boolean} The gotten `allowTestedProperty` option value.
+ * @param context The rule context.
+ * @returns The gotten `allowTestedProperty` option value.
  */
-function getAllowTestedPropertyOption(context) {
+function getAllowTestedPropertyOption(context: Rule.RuleContext): boolean {
     const options = context.options[0]
-    const globalOptions = context.settings["es-x"]
+    const globalOptions = context.settings["es-x"] as
+        | { allowTestedProperty?: unknown }
+        | undefined
 
     if (options && typeof options.allowTestedProperty === "boolean") {
         return options.allowTestedProperty

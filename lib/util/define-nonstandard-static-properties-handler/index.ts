@@ -1,36 +1,57 @@
-"use strict"
+import { READ, ReferenceTracker } from "@eslint-community/eslint-utils"
+import type { Rule } from "eslint"
+import type { TSESTree } from "@typescript-eslint/types"
 
-const { getPropertyKeyValue } = require("../get-property-key-value")
-const {
+import { getPropertyKeyValue } from "../get-property-key-value"
+import {
     createPropertyGuardsContext,
-} = require("../type-checker/property-guards")
-const { ReferenceTracker, READ } = require("@eslint-community/eslint-utils")
+    type Params,
+} from "../type-checker/property-guards"
 
-/**
- * @typedef {import("estree").MemberExpression} MemberExpression
- */
+type IsNever<T> = [T] extends [never] ? true : false
+type GlobalObjectName = keyof typeof globalThis & string
+type GlobalObjectProperties<N extends GlobalObjectName> =
+    IsNever<keyof (typeof globalThis)[N]> extends true
+        ? never
+        : keyof (typeof globalThis)[N] & string
+type GlobalObjectWithProperties<N extends GlobalObjectName> =
+    `${N}.${GlobalObjectProperties<N>}`
+type GlobalStaticPropertyNames =
+    | GlobalObjectName
+    | GlobalObjectWithProperties<"Temporal" | "Intl">
+
+type NameMap = Partial<Record<GlobalStaticPropertyNames, Iterable<string>>>
+type TraceMap = Parameters<ReferenceTracker["iterateGlobalReferences"]>[0]
+type TraceMapObject = TraceMap[string]
 
 /**
  * Define handlers to disallow non-standard static global object properties.
- * @param {RuleContext} context The rule context.
- * @param {Record<string, Iterable<string>>} nameMap The property names to allow. The key is class names and that value is property names.
- * @returns {Record<string, (node: ASTNode) => void>} The defined handlers.
+ * @param context The rule context.
+ * @param nameMap The property names to allow. The key is class names and that value is property names.
+ * @returns The defined handlers.
  */
-function defineNonstandardStaticPropertiesHandler(context, nameMap) {
-    const nameMapEntries = Object.entries(nameMap).map(
+export function defineNonstandardStaticPropertiesHandler(
+    context: Rule.RuleContext,
+    nameMap: NameMap,
+): Rule.RuleListener {
+    const nameMapEntries = (
+        Object.entries(nameMap) as [
+            GlobalStaticPropertyNames,
+            Iterable<string>,
+        ][]
+    ).map(
         ([className, propertyNames]) =>
-            /** @type {const} */ ([className, new Set(propertyNames)]),
+            [className, new Set(propertyNames)] as const,
     )
     const sourceCode = context.sourceCode
 
     const guardsContext = createPropertyGuardsContext({ context })
 
-    /**
-     * @param {import("estree").Node} node
-     * @param {string[]} path
-     * @param {string} propertyName
-     */
-    function report(node, path, propertyName) {
+    function report(
+        node: TSESTree.MemberExpression | TSESTree.Property,
+        path: string[],
+        propertyName: string,
+    ): void {
         context.report({
             node,
             messageId: "forbidden",
@@ -39,13 +60,19 @@ function defineNonstandardStaticPropertiesHandler(context, nameMap) {
     }
 
     /**
-     * @param {import("estree").Node} node
-     * @param {string[]} path
-     * @param {string} propertyName
-     * @param {import("estree").Expression} objectNode
+     * @param node The node to report.
+     * @param path The reference path.
+     * @param propertyName The property name to report.
+     * @param objectNode The object node to verify.
+     * @returns void
      */
-    function reportOrProcessGuard(node, path, propertyName, objectNode) {
-        const params = {
+    function reportOrProcessGuard(
+        node: TSESTree.MemberExpression | TSESTree.Property,
+        path: string[],
+        propertyName: string,
+        objectNode: TSESTree.Expression,
+    ): void {
+        const params: Params = {
             node,
             className: path.join("."),
             propertyName,
@@ -60,22 +87,33 @@ function defineNonstandardStaticPropertiesHandler(context, nameMap) {
     }
 
     /**
-     * @param {ReferenceTracker} tracker
-     * @param {object} traceMap
-     * @param {Set<string>} propertyNames
+     * @param tracker The reference tracker.
+     * @param traceMap The trace map.
+     * @param propertyNames The property names to allow.
+     * @returns void
      */
-    function verifyForEntry(tracker, traceMap, propertyNames) {
+    function verifyForEntry(
+        tracker: ReferenceTracker,
+        traceMap: TraceMap,
+        propertyNames: Set<string>,
+    ): void {
         /**
-         * @param {import("estree").ObjectPattern} node
+         * @param node The object pattern node.
+         * @returns The non-standard properties.
          */
-        function* extractNonstandardProperties(node) {
+        function* extractNonstandardProperties(
+            node: TSESTree.ObjectPattern,
+        ): IterableIterator<{
+            node: TSESTree.Property
+            propertyName: string
+        }> {
             for (const prop of node.properties) {
                 if (prop.type !== "Property") {
                     continue
                 }
                 const propertyName = getPropertyKeyValue(
                     prop,
-                    sourceCode.getScope(node),
+                    sourceCode.getScope(node as Rule.Node),
                 )
                 if (
                     // If the key is a symbol, it is ignored.
@@ -91,8 +129,7 @@ function defineNonstandardStaticPropertiesHandler(context, nameMap) {
         for (const { node, path } of tracker.iterateGlobalReferences(
             traceMap,
         )) {
-            /** @type {import("estree").Node | null} */
-            const parent = node.parent
+            const parent = node.parent as TSESTree.Node | null
             if (!parent) {
                 continue
             }
@@ -111,7 +148,12 @@ function defineNonstandardStaticPropertiesHandler(context, nameMap) {
                 ) {
                     continue
                 }
-                reportOrProcessGuard(parent, path, propertyName, node)
+                reportOrProcessGuard(
+                    parent,
+                    path,
+                    propertyName,
+                    node as TSESTree.Expression,
+                )
             } else if (parent.type === "VariableDeclarator") {
                 if (
                     parent.init !== node ||
@@ -123,7 +165,12 @@ function defineNonstandardStaticPropertiesHandler(context, nameMap) {
                     node: reportNode,
                     propertyName,
                 } of extractNonstandardProperties(parent.id)) {
-                    reportOrProcessGuard(reportNode, path, propertyName, node)
+                    reportOrProcessGuard(
+                        reportNode,
+                        path,
+                        propertyName,
+                        node as TSESTree.Expression,
+                    )
                 }
             } else if (
                 parent.type === "AssignmentExpression" ||
@@ -139,7 +186,12 @@ function defineNonstandardStaticPropertiesHandler(context, nameMap) {
                     node: reportNode,
                     propertyName,
                 } of extractNonstandardProperties(parent.left)) {
-                    reportOrProcessGuard(reportNode, path, propertyName, node)
+                    reportOrProcessGuard(
+                        reportNode,
+                        path,
+                        propertyName,
+                        node as TSESTree.Expression,
+                    )
                 }
             } else {
                 continue
@@ -151,8 +203,8 @@ function defineNonstandardStaticPropertiesHandler(context, nameMap) {
         "Program:exit"(program) {
             const tracker = new ReferenceTracker(sourceCode.getScope(program))
             for (const [className, propertyNames] of nameMapEntries) {
-                const traceMap = {}
-                let map = traceMap
+                const traceMap: TraceMap = {}
+                let map: TraceMapObject = traceMap
                 for (const name of className.split(".")) {
                     map = map[name] || (map[name] = {})
                 }
@@ -165,5 +217,3 @@ function defineNonstandardStaticPropertiesHandler(context, nameMap) {
         },
     }
 }
-
-module.exports = { defineNonstandardStaticPropertiesHandler }

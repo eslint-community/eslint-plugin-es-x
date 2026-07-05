@@ -1,28 +1,26 @@
-"use strict"
+import { READ, ReferenceTracker } from "@eslint-community/eslint-utils"
+import type { Rule } from "eslint"
+import type { TSESTree } from "@typescript-eslint/types"
 
-const { ReferenceTracker, READ } = require("@eslint-community/eslint-utils")
-
-const {
+import {
     createPropertyGuardsContext,
-} = require("../type-checker/property-guards")
+    type Params,
+    type PropertyTypeMap,
+} from "../type-checker/property-guards"
 
-/**
- * @typedef {import("estree").MemberExpression} MemberExpression
- * @typedef {import("estree").Property} Property
- * @typedef {import("eslint").Rule.RuleContext} RuleContext
- */
+type TraceMap = Parameters<ReferenceTracker["iterateGlobalReferences"]>[0]
+type TraceMapObject = TraceMap[string]
 
-/**
- * @typedef {import('../type-checker/property-guards').PropertyType} PropertyType
- * @typedef {import('../type-checker/property-guards').PropertyTypeMap} PropertyTypeMap
- */
 /**
  * Define handlers to disallow static properties.
- * @param {RuleContext} context The rule context.
- * @param {PropertyTypeMap} propertyTypeMap The property names to disallow. The key is class names and that value is properties and types.
- * @returns {Record<string, (node: ASTNode) => void>} The defined handlers.
+ * @param context The rule context.
+ * @param propertyTypeMap The property names to disallow. The key is class names and that value is properties and types.
+ * @returns The defined handlers.
  */
-function defineStaticPropertiesHandler(context, propertyTypeMap) {
+export function defineStaticPropertiesHandler(
+    context: Rule.RuleContext,
+    propertyTypeMap: PropertyTypeMap,
+): Rule.RuleListener {
     const sourceCode = context.sourceCode
 
     const guardsContext = createPropertyGuardsContext({
@@ -32,11 +30,11 @@ function defineStaticPropertiesHandler(context, propertyTypeMap) {
     return {
         "Program:exit"(program) {
             const tracker = new ReferenceTracker(sourceCode.getScope(program))
-            const traceMap = {}
+            const traceMap: TraceMap = {}
             for (const [className, properties] of Object.entries(
                 propertyTypeMap,
             )) {
-                let map = traceMap
+                let map: TraceMapObject = traceMap
                 for (const name of className.split(".")) {
                     map = map[name] ??= {}
                 }
@@ -47,11 +45,13 @@ function defineStaticPropertiesHandler(context, propertyTypeMap) {
             for (const { node, path } of tracker.iterateGlobalReferences(
                 traceMap,
             )) {
-                const params = {
-                    node,
+                const params: Params = {
+                    node: node as TSESTree.MemberExpression | TSESTree.Property,
                     className: path.slice(0, -1).join("."),
                     propertyName: path.at(-1),
-                    objectNode: getObjectNode(node),
+                    objectNode: getObjectNode(
+                        node as TSESTree.MemberExpression | TSESTree.Property,
+                    ),
                 }
                 if (
                     !params.objectNode ||
@@ -78,14 +78,15 @@ function defineStaticPropertiesHandler(context, propertyTypeMap) {
     }
 }
 
-module.exports = { defineStaticPropertiesHandler }
-
 /**
- * @param {MemberExpression|Property} node
+ * @param node The node to get.
+ * @returns The object node.
  */
-function getObjectNode(node) {
+function getObjectNode(
+    node: TSESTree.MemberExpression | TSESTree.Property,
+): TSESTree.Expression | null | undefined {
     if (node.type === "MemberExpression") {
-        return node.object
+        return node.object as TSESTree.Expression
     }
     if (
         node.type === "Property" &&

@@ -26,6 +26,7 @@ type EsXRuleModule<
 /**
  * Define the rule.
  * @param rule rule module
+ * @returns The rule module.
  */
 export function createRule<
     MessageIds extends string,
@@ -34,4 +35,6 @@ export function createRule<
     RuleOptions extends unknown[] = any[],
 >(
     rule: EsXRuleModule<RuleOptions, MessageIds, Docs>,
-): EsXRuleModule<RuleOptions, MessageIds, Docs>
+): EsXRuleModule<RuleOptions, MessageIds, Docs> {
+    return rule
+}
