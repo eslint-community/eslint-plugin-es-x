@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-proxy-properties"
+import rule from "../../../lib/rules/no-nonstandard-proxy-properties"
 import { proxyProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-proxy-properties", rule, {

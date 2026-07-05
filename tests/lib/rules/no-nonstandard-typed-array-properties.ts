@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-typed-array-properties"
+import rule from "../../../lib/rules/no-nonstandard-typed-array-properties"
 import {
     typedArrayProperties,
     uint8ArrayProperties,

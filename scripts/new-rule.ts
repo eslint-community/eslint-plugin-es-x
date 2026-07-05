@@ -53,7 +53,6 @@ async function main(ruleId: string | undefined) {
         return
     }
 
-    const ruleFile = path.resolve(__dirname, `../lib/rules/${ruleId}.js`)
     const testFile = path.resolve(__dirname, `../tests/lib/rules/${ruleId}.ts`)
     const docFile = path.resolve(__dirname, `../docs/rules/${ruleId}.md`)
     const changesetFile = path.resolve(__dirname, `../.changeset/${ruleId}.md`)
@@ -232,6 +231,10 @@ async function main(ruleId: string | undefined) {
     const resources =
         BUILDERS[kind]?.(resourceOptions) ??
         buildDefaultResources(resourceOptions)
+    const ruleFile = path.resolve(
+        __dirname,
+        `../lib/rules/${ruleId}.${kind.startsWith("nonstandard-") ? "ts" : "js"}`,
+    )
 
     fs.writeFileSync(ruleFile, resources.rule)
     fs.writeFileSync(testFile, resources.test)
@@ -756,19 +759,25 @@ function buildNonStandardStaticPropertiesRuleResources({
     object,
 }: ResourceOptions): RuleResources {
     const camelObject = camelCase(object)
+    const objectKey = createObjectPropertyKey(object)
+    const objectDescriptionSuffix =
+        inferGlobalObjectKind(object) === "class" ? " class" : ""
     return {
-        rule: `"use strict"
+        rule: `import { createRule } from "../util/create-rule"
+import { defineNonstandardStaticPropertiesHandler } from "../util/define-nonstandard-static-properties-handler/index"
+import { ${camelObject}Properties } from "../util/well-known-properties"
 
-const { createRule } = require("../util/create-rule")
-const {
-    defineNonstandardStaticPropertiesHandler,
-} = require("../util/define-nonstandard-static-properties-handler")
-const { ${camelObject}Properties } = require("../util/well-known-properties")
+type Options = [
+    {
+        allow?: string[]
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
-            description: "disallow non-standard static properties on \`${object}\` class",
+            description: "disallow non-standard static properties on \`${object}\`${objectDescriptionSuffix}",
             category: "nonstandard",
             recommended: false,
             url: "",
@@ -794,19 +803,18 @@ module.exports = createRule({
         type: "problem",
     },
     create(context) {
-        /** @type {Set<string>} */
         const allows = new Set([
             ...(context.options[0]?.allow ?? []),
             ...${camelObject}Properties,
         ])
         return defineNonstandardStaticPropertiesHandler(context, {
-            '${object}': allows,
+            ${objectKey}: allows,
         })
     },
 })
 `,
         test: `import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/${ruleId}"
+import rule from "../../../lib/rules/${ruleId}"
 import { ${camelObject}Properties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("${ruleId}", rule, {
@@ -829,7 +837,7 @@ new RuleTester().run("${ruleId}", rule, {
         doc: `# es-x/${ruleId}
 > 
 
-This rule reports non-standard static properties on \`${object}\` class as errors.
+This rule reports non-standard static properties on \`${object}\`${objectDescriptionSuffix} as errors.
 
 ## 💡 Examples
 
@@ -879,16 +887,21 @@ function buildNonStandardPrototypePropertiesRuleResources({
     object,
 }: ResourceOptions): RuleResources {
     const camelObject = camelCase(object)
+    const objectKey = createObjectPropertyKey(object)
+    const allowsIndex = allowsIndexProperties(object)
     return {
-        rule: `"use strict"
+        rule: `import { createRule } from "../util/create-rule"
+import { defineNonstandardPrototypePropertiesHandler } from "../util/define-nonstandard-prototype-properties-handler/index"
+import { ${camelObject}PrototypeProperties } from "../util/well-known-properties"
 
-const { createRule } = require("../util/create-rule")
-const {
-    defineNonstandardPrototypePropertiesHandler,
-} = require("../util/define-nonstandard-prototype-properties-handler")
-const { ${camelObject}PrototypeProperties } = require("../util/well-known-properties")
+type Options = [
+    {
+        allow?: string[]
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
             description: "disallow non-standard properties on ${object} instance",
@@ -917,19 +930,27 @@ module.exports = createRule({
         type: "problem",
     },
     create(context) {
-        /** @type {Set<string>} */
         const allows = new Set([
             ...(context.options[0]?.allow ?? []),
             ...${camelObject}PrototypeProperties,
         ])
-        return defineNonstandardPrototypePropertiesHandler(context, {
-            '${object}': allows,
-        })
+        return defineNonstandardPrototypePropertiesHandler(
+            context,
+            { ${objectKey}: allows }${
+                allowsIndex
+                    ? `,
+            {
+                // Allow index properties
+                allowsPropertyName: (name) => /^(?:[1-9]\\d*|0)$/u.test(name),
+            }`
+                    : ""
+            },
+        )
     },
 })
 `,
         test: `import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/${ruleId}"
+import rule from "../../../lib/rules/${ruleId}"
 import * as path from "node:path"
 import {
     ${camelObject}PrototypeProperties,
@@ -943,6 +964,13 @@ new RuleTester().run(ruleId, rule, {
         "foo.toString",
         "foo.foo",
         ...[...${camelObject}PrototypeProperties].map((p) => \`(new ${object}()).\${p}\`),
+${
+    allowsIndex
+        ? [`"(new ${object}())[0]",`, `"(new ${object}())['0']",`]
+              .map((s) => `        ${s}`)
+              .join("\n")
+        : ""
+}
         { code: "(new ${object}()).unknown()", options: [{ allow: ["unknown"] }] },
     ],
     invalid: [
@@ -958,12 +986,17 @@ new RuleTester().run(ruleId, rule, {
                 "Non-standard '${object}.prototype.foo' property is forbidden.",
             ],
         },
-        {
+${
+    allowsIndex
+        ? ""
+        : `        {
             code: "(new ${object}())[0]",
             errors: [
                 "Non-standard '${object}.prototype.0' property is forbidden.",
             ],
         },
+`
+}
         {
             code: "(new ${object}())['01']",
             errors: [
@@ -1000,6 +1033,16 @@ new RuleTester({
             filename,
             code: \`(new ${object}()).\${p}\`,
         })),
+${
+    allowsIndex
+        ? [
+              `{ filename, code: "(new ${object}())[0]" },`,
+              `{ filename, code: "(new ${object}())['0']" },`,
+          ]
+              .map((s) => `        ${s}`)
+              .join("\n")
+        : ""
+}
     ],
     invalid: [
         {
@@ -1009,13 +1052,18 @@ new RuleTester({
                 "Non-standard '${object}.prototype.foo' property is forbidden.",
             ],
         },
-        {
+${
+    allowsIndex
+        ? ""
+        : `        {
             filename,
             code: "(new ${object}())[0]",
             errors: [
                 "Non-standard '${object}.prototype.0' property is forbidden.",
             ],
         },
+`
+}
         {
             filename,
             code: "(new ${object}())['01']",
@@ -1142,6 +1190,31 @@ This rule reports ??? as errors.
 </eslint-playground>
 `,
     }
+}
+
+function createObjectPropertyKey(object: string) {
+    return /^[$A-Z_a-z][$\w]*$/u.test(object) ? object : JSON.stringify(object)
+}
+
+function allowsIndexProperties(object: string) {
+    return (
+        object === "Array" ||
+        object === "String" ||
+        new Set([
+            "Int8Array",
+            "Uint8Array",
+            "Uint8ClampedArray",
+            "Int16Array",
+            "Uint16Array",
+            "Int32Array",
+            "Uint32Array",
+            "Float16Array",
+            "Float32Array",
+            "Float64Array",
+            "BigInt64Array",
+            "BigUint64Array",
+        ]).has(object)
+    )
 }
 
 function camelCase(str: string) {

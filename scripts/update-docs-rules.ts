@@ -62,6 +62,7 @@ async function main() {
         deprecated,
         replacedBy,
         schema,
+        sourceFile,
     } of rules) {
         const filePath = path.join(docsRoot, `${ruleId}.md`)
         const originalContent = fs.existsSync(filePath)
@@ -149,7 +150,7 @@ This rule was introduced in ${since}.${
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/${ruleId}.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/${sourceFile})
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/${ruleId}.ts)
 ${links.length ? `\n${links.join("\n")}\n` : ""}`
 

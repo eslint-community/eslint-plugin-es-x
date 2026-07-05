@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-asyncdisposablestack-properties"
+import rule from "../../../lib/rules/no-nonstandard-asyncdisposablestack-properties"
 import { asyncDisposableStackProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-asyncdisposablestack-properties", rule, {

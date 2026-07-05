@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-date-prototype-properties"
+import rule from "../../../lib/rules/no-nonstandard-date-prototype-properties"
 import { datePrototypeProperties } from "../../../lib/util/well-known-properties"
 const ruleId = "no-nonstandard-date-prototype-properties"
 

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-intl-pluralrules-properties"
+import rule from "../../../lib/rules/no-nonstandard-intl-pluralrules-properties"
 import { intlPluralRulesProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-intl-pluralrules-properties", rule, {

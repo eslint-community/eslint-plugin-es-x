@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-array-properties"
+import rule from "../../../lib/rules/no-nonstandard-array-properties"
 import { arrayProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-array-properties", rule, {

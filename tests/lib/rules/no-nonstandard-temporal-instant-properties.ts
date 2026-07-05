@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-temporal-instant-properties"
+import rule from "../../../lib/rules/no-nonstandard-temporal-instant-properties"
 import { temporalInstantProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-temporal-instant-properties", rule, {

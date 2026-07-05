@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-error-properties"
+import rule from "../../../lib/rules/no-nonstandard-error-properties"
 import { errorProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-error-properties", rule, {

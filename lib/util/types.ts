@@ -4,6 +4,8 @@ export type BuiltinGlobalObjectName =
     | keyof typeof globals.builtin
     // ES2027 but not included in globals.builtin
     | "Temporal"
+    | "AsyncDisposableStack"
+    | "DisposableStack"
 
 export type GlobalObjectName = keyof typeof globalThis
 type IsNever<T> = [T] extends [never] ? true : false

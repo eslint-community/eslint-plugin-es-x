@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-string-prototype-properties"
+import rule from "../../../lib/rules/no-nonstandard-string-prototype-properties"
 import { stringPrototypeProperties } from "../../../lib/util/well-known-properties"
 const ruleId = "no-nonstandard-string-prototype-properties"
 

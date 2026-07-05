@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-atomics-properties"
+import rule from "../../../lib/rules/no-nonstandard-atomics-properties"
 import { atomicsProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-atomics-properties", rule, {

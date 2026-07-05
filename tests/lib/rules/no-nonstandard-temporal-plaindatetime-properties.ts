@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-temporal-plaindatetime-properties"
+import rule from "../../../lib/rules/no-nonstandard-temporal-plaindatetime-properties"
 import { temporalPlainDateTimeProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-temporal-plaindatetime-properties", rule, {
