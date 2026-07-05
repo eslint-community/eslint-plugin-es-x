@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-number-minsafeinteger"
+import rule from "../../../lib/rules/no-number-minsafeinteger"
 
 new RuleTester().run("no-number-minsafeinteger", rule, {
     valid: ["Number", "Number.xyz", "let Number = 0; Number.MIN_SAFE_INTEGER"],

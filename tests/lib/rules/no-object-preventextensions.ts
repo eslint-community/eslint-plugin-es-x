@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-preventextensions"
+import rule from "../../../lib/rules/no-object-preventextensions"
 
 new RuleTester().run("no-object-preventextensions", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.preventExtensions"],

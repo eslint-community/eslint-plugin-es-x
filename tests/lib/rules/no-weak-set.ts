@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-weak-set"
+import rule from "../../../lib/rules/no-weak-set"
 
 new RuleTester().run("no-weak-set", rule, {
     valid: ["Array", "Object", "let WeakSet = 0; WeakSet"],

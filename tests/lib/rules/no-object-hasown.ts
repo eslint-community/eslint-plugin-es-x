@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-hasown"
+import rule from "../../../lib/rules/no-object-hasown"
 
 new RuleTester().run("no-object-hasown", rule, {
     valid: ["Object", "Object.assign", "let Object = 0; Object.is"],

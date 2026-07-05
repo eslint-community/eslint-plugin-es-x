@@ -62,7 +62,7 @@ This rule was introduced in [eslint-plugin-es] v5.0.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-includes.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-includes.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-includes.ts)
 
 [no-new-in-es2015]: ../configs/index.md#no-new-in-es2015

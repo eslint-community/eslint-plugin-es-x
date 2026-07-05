@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-dataview-prototype-getfloat16-setfloat16"
+import rule from "../../../lib/rules/no-dataview-prototype-getfloat16-setfloat16"
 const ruleId = "no-dataview-prototype-getfloat16-setfloat16"
 
 const USE_GLOBAL_ID = `

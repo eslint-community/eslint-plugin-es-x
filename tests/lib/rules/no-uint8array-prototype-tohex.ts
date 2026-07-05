@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-uint8array-prototype-tohex"
+import rule from "../../../lib/rules/no-uint8array-prototype-tohex"
 const ruleId = "no-uint8array-prototype-tohex"
 
 const method = "toHex"

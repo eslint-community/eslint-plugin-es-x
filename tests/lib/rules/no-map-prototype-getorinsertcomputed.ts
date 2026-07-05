@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-map-prototype-getorinsertcomputed"
+import rule from "../../../lib/rules/no-map-prototype-getorinsertcomputed"
 const ruleId = "no-map-prototype-getorinsertcomputed"
 
 const method = "getOrInsertComputed"

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-json"
+import rule from "../../../lib/rules/no-json"
 
 new RuleTester().run("no-json", rule, {
     valid: ["let JSON = 0; JSON"],

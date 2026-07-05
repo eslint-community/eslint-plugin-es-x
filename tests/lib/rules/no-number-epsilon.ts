@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-number-epsilon"
+import rule from "../../../lib/rules/no-number-epsilon"
 
 new RuleTester().run("no-number-epsilon", rule, {
     valid: [

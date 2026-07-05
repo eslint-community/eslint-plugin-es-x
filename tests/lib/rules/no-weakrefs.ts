@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-weakrefs"
+import rule from "../../../lib/rules/no-weakrefs"
 
 new RuleTester().run("no-weakrefs", rule, {
     valid: ["Array", "Object", "let WeakRef = 0; WeakRef"],

@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-string-prototype-matchall"
+import rule from "../../../lib/rules/no-string-prototype-matchall"
 const ruleId = "no-string-prototype-matchall"
 
 new RuleTester().run(ruleId, rule, {

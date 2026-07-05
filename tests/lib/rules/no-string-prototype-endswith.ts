@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-string-prototype-endswith"
+import rule from "../../../lib/rules/no-string-prototype-endswith"
 const ruleId = "no-string-prototype-endswith"
 
 new RuleTester().run(ruleId, rule, {

@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-string-prototype-normalize"
+import rule from "../../../lib/rules/no-string-prototype-normalize"
 const ruleId = "no-string-prototype-normalize"
 
 new RuleTester().run(ruleId, rule, {

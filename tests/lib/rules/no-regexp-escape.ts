@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-escape"
+import rule from "../../../lib/rules/no-regexp-escape"
 
 new RuleTester().run("no-regexp-escape", rule, {
     valid: ["RegExp.$1"],

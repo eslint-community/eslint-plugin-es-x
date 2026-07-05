@@ -59,7 +59,7 @@ This rule was introduced in v9.2.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-intl-locale-prototype-getcalendars.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-intl-locale-prototype-getcalendars.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-intl-locale-prototype-getcalendars.ts)
 
 [no-intl-locale-info]: ../configs/index.md#no-intl-locale-info

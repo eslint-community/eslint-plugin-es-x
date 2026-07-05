@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-date-prototype-getyear-setyear"
+import rule from "../../../lib/rules/no-date-prototype-getyear-setyear"
 const ruleId = "no-date-prototype-getyear-setyear"
 
 const USE_GLOBAL_ID = `

@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-iterator-prototype-foreach"
+import rule from "../../../lib/rules/no-iterator-prototype-foreach"
 const ruleId = "no-iterator-prototype-foreach"
 
 new RuleTester({

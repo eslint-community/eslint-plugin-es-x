@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-prototype-flags"
+import rule from "../../../lib/rules/no-regexp-prototype-flags"
 const ruleId = "no-regexp-prototype-flags"
 
 new RuleTester().run(ruleId, rule, {

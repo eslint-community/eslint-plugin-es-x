@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-isfrozen"
+import rule from "../../../lib/rules/no-object-isfrozen"
 
 new RuleTester().run("no-object-isfrozen", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.isFrozen"],

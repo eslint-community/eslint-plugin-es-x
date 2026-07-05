@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-global-this"
+import rule from "../../../lib/rules/no-global-this"
 
 new RuleTester().run("no-global-this", rule, {
     valid: ["window", "global", "self", "{ let globalThis = 0; globalThis }"],

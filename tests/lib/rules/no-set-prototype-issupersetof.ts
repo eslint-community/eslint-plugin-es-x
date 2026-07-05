@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-set-prototype-issupersetof"
+import rule from "../../../lib/rules/no-set-prototype-issupersetof"
 const ruleId = "no-set-prototype-issupersetof"
 
 const method = "isSupersetOf"

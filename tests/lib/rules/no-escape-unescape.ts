@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-escape-unescape"
+import rule from "../../../lib/rules/no-escape-unescape"
 
 new RuleTester().run("no-escape-unescape", rule, {
     valid: [

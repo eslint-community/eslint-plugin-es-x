@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-create"
+import rule from "../../../lib/rules/no-object-create"
 
 new RuleTester().run("no-object-create", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.create"],

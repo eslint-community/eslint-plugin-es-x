@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-number-parseint"
+import rule from "../../../lib/rules/no-number-parseint"
 
 new RuleTester().run("no-number-parseint", rule, {
     valid: ["Number", "Number.xyz", "let Number = 0; Number.parseInt"],

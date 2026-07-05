@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-weak-map"
+import rule from "../../../lib/rules/no-weak-map"
 
 new RuleTester().run("no-weak-map", rule, {
     valid: ["Array", "Object", "let WeakMap = 0; WeakMap"],

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-error-iserror"
+import rule from "../../../lib/rules/no-error-iserror"
 
 new RuleTester().run("no-error-iserror", rule, {
     valid: [

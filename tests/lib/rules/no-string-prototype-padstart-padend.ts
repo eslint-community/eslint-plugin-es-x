@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-string-prototype-padstart-padend"
+import rule from "../../../lib/rules/no-string-prototype-padstart-padend"
 const ruleId = "no-string-prototype-padstart-padend"
 
 new RuleTester().run(ruleId, rule, {

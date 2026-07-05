@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-isextensible"
+import rule from "../../../lib/rules/no-object-isextensible"
 
 new RuleTester().run("no-object-isextensible", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.isExtensible"],

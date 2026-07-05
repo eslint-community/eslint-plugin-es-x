@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-numberformat-prototype-formatrange"
+import rule from "../../../lib/rules/no-intl-numberformat-prototype-formatrange"
 const ruleId = "no-intl-numberformat-prototype-formatrange"
 
 new RuleTester().run(ruleId, rule, {

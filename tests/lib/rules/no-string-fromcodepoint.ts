@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-string-fromcodepoint"
+import rule from "../../../lib/rules/no-string-fromcodepoint"
 
 new RuleTester().run("no-string-fromcodepoint", rule, {
     valid: ["String", "String.raw", "let String = 0; String.fromCodePoint"],

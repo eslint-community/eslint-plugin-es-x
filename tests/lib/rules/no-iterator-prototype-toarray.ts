@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-iterator-prototype-toarray"
+import rule from "../../../lib/rules/no-iterator-prototype-toarray"
 const ruleId = "no-iterator-prototype-toarray"
 
 new RuleTester({

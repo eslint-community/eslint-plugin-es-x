@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-iterator"
+import rule from "../../../lib/rules/no-iterator"
 
 new RuleTester({
     languageOptions: { globals: { Iterator: "readonly" } },

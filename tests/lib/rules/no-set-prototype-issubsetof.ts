@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-set-prototype-issubsetof"
+import rule from "../../../lib/rules/no-set-prototype-issubsetof"
 const ruleId = "no-set-prototype-issubsetof"
 
 const method = "isSubsetOf"

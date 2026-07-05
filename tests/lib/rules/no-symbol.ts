@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-symbol"
+import rule from "../../../lib/rules/no-symbol"
 
 new RuleTester().run("no-symbol", rule, {
     valid: ["Array", "Object", "let Symbol = 0; Symbol"],

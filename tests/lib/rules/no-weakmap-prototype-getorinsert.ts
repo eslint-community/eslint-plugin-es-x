@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-weakmap-prototype-getorinsert"
+import rule from "../../../lib/rules/no-weakmap-prototype-getorinsert"
 const ruleId = "no-weakmap-prototype-getorinsert"
 
 const method = "getOrInsert"

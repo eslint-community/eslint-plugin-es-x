@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-typed-arrays"
+import rule from "../../../lib/rules/no-typed-arrays"
 
 new RuleTester().run("no-typed-arrays", rule, {
     valid: ["Array", "Set"],

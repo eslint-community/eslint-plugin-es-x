@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-atomics"
+import rule from "../../../lib/rules/no-atomics"
 
 new RuleTester().run("no-atomics", rule, {
     valid: ["Array", "Object", "let Atomics = 0; Atomics"],

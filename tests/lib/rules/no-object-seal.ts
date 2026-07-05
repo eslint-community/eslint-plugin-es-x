@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-seal"
+import rule from "../../../lib/rules/no-object-seal"
 
 new RuleTester().run("no-object-seal", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.seal"],

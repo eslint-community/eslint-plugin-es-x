@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-pluralrules-prototype-selectrange"
+import rule from "../../../lib/rules/no-intl-pluralrules-prototype-selectrange"
 const ruleId = "no-intl-pluralrules-prototype-selectrange"
 
 new RuleTester().run(ruleId, rule, {
