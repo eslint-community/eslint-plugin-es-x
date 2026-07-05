@@ -57,25 +57,6 @@ export default defineConfig([
 ])
 ```
 
-If you use legacy config, configure your `.eslintrc.*` file:
-
-```json
-{
-    "plugins": ["es-x"],
-    "parserOptions": {
-        "ecmaVersion": 2018
-    },
-    "rules": {
-        "es-x/no-async-iteration": "error",
-        "es-x/no-malformed-template-literals": "error",
-        "es-x/no-regexp-lookbehind-assertions": "error",
-        "es-x/no-regexp-named-capture-groups": "error",
-        "es-x/no-regexp-s-flag": "error",
-        "es-x/no-regexp-unicode-property-escapes": "error"
-    }
-}
-```
-
 ### Presets
 
 See the [Available Configs](./configs/index.md) documentation.
@@ -87,18 +68,8 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2018"],
+    pluginESx.configs["restrict-to-es2018"],
 ])
-```
-
-If you use legacy config:
-
-```json
-{
-    "extends": [
-        "plugin:es-x/restrict-to-es2018"
-    ]
-}
 ```
 
 ### The `aggressive` mode

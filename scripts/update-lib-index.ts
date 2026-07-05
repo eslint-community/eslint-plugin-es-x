@@ -9,18 +9,8 @@ import { rules } from "./rules"
 
 const collator = new Intl.Collator("en", { numeric: true })
 
-const configRootPath = path.resolve(__dirname, "../lib/configs")
 const flatConfigRootPath = path.resolve(__dirname, "../lib/configs/flat")
-const configIds = getConfigIds(configRootPath)
-const flatConfigIds = getConfigIds(flatConfigRootPath)
-const legacyConfigIds = [
-    "no-2019",
-    "no-2018",
-    "no-2017",
-    "no-2016",
-    "no-2015",
-    "no-5",
-].sort(collator.compare.bind(collator))
+const configIds = getConfigIds(flatConfigRootPath)
 const ruleIds = rules.map((r) => r.ruleId).sort(collator.compare.bind(collator))
 
 fs.writeFileSync(
@@ -32,9 +22,6 @@ fs.writeFileSync(
 /* eslint-disable @typescript-eslint/no-require-imports */
 import type { Linter, Rule } from "eslint"
 
-const { printWarningOfDeprecatedConfig } = require("./utils") as {
-    printWarningOfDeprecatedConfig: (id: string) => void
-}
 const { version, name } = require("../package.json") as {
     version: string
     name: string
@@ -43,27 +30,18 @@ const { version, name } = require("../package.json") as {
 const plugin: {
     meta: { name: string; version: string }
     configs: {
-        ${flatConfigIds.map((id) => `"flat/${id}": Linter.Config`).join("\n        ")}
-        ${configIds.map((id) => `"${id}": Linter.LegacyConfig`).join("\n        ")}
-        ${legacyConfigIds.map((id) => `readonly "${id}": Linter.LegacyConfig`).join("\n        ")}
+        ${configIds.map((id) => `"${id}": Linter.Config`).join("\n        ")}
+        ${configIds.map((id) => `"flat/${id}": Linter.Config`).join("\n        ")}
     }
     rules: Record<string, Rule.RuleModule>
 } = {
     meta: { version, name },
     configs: {
-        ${flatConfigIds
-            .map((id) => `"flat/${id}": require("./configs/flat/${id}")`)
+        ${configIds
+            .map((id) => `"${id}": require("./configs/flat/${id}")`)
             .join(",\n        ")},
         ${configIds
-            .map((id) => `"${id}": require("./configs/${id}")`)
-            .join(",\n        ")},
-        ${legacyConfigIds
-            .map(
-                (id) => `get "${id}"() {
-            printWarningOfDeprecatedConfig("${id}")
-            return require("./configs/${id.replace("no-", "no-new-in-es")}") as Linter.LegacyConfig
-        }`,
-            )
+            .map((id) => `"flat/${id}": require("./configs/flat/${id}")`)
             .join(",\n        ")},
     },
     rules: {

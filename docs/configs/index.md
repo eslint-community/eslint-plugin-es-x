@@ -1,6 +1,8 @@
 # Available Configs
 
-This plugin provides the following configs.
+This plugin provides the following flat configs.
+
+The `flat/`-prefixed config IDs are kept as aliases for the previous flat config names.
 
 ## no-new-in-esnext
 
@@ -12,21 +14,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-esnext"]
+    pluginESx.configs["no-new-in-esnext"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-esnext"],
-}
-```
-
-</details>
 
 ## no-new-in-es2026
 
@@ -37,21 +27,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2026"]
+    pluginESx.configs["no-new-in-es2026"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2026"],
-}
-```
-
-</details>
 
 ## no-new-in-es2026-intl-api
 
@@ -62,21 +40,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2026-intl-api"]
+    pluginESx.configs["no-new-in-es2026-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2026-intl-api"],
-}
-```
-
-</details>
 
 ## no-new-in-es2025
 
@@ -87,21 +53,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2025"]
+    pluginESx.configs["no-new-in-es2025"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2025"],
-}
-```
-
-</details>
 
 ## no-new-in-es2025-intl-api
 
@@ -112,21 +66,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2025-intl-api"]
+    pluginESx.configs["no-new-in-es2025-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2025-intl-api"],
-}
-```
-
-</details>
 
 ## no-new-in-es2024
 
@@ -137,21 +79,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2024"]
+    pluginESx.configs["no-new-in-es2024"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2024"],
-}
-```
-
-</details>
 
 ## no-new-in-es2023
 
@@ -162,21 +92,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2023"]
+    pluginESx.configs["no-new-in-es2023"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2023"],
-}
-```
-
-</details>
 
 ## no-new-in-es2023-intl-api
 
@@ -187,21 +105,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2023-intl-api"]
+    pluginESx.configs["no-new-in-es2023-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2023-intl-api"],
-}
-```
-
-</details>
 
 ## no-new-in-es2022
 
@@ -212,21 +118,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2022"]
+    pluginESx.configs["no-new-in-es2022"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2022"],
-}
-```
-
-</details>
 
 ## no-new-in-es2022-intl-api
 
@@ -237,21 +131,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2022-intl-api"]
+    pluginESx.configs["no-new-in-es2022-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2022-intl-api"],
-}
-```
-
-</details>
 
 ## no-new-in-es2021
 
@@ -262,21 +144,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2021"]
+    pluginESx.configs["no-new-in-es2021"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2021"],
-}
-```
-
-</details>
 
 ## no-new-in-es2021-intl-api
 
@@ -287,21 +157,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2021-intl-api"]
+    pluginESx.configs["no-new-in-es2021-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2021-intl-api"],
-}
-```
-
-</details>
 
 ## no-new-in-es2020
 
@@ -312,21 +170,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2020"]
+    pluginESx.configs["no-new-in-es2020"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2020"],
-}
-```
-
-</details>
 
 ## no-new-in-es2020-intl-api
 
@@ -337,21 +183,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2020-intl-api"]
+    pluginESx.configs["no-new-in-es2020-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2020-intl-api"],
-}
-```
-
-</details>
 
 ## no-new-in-es2019
 
@@ -362,21 +196,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2019"]
+    pluginESx.configs["no-new-in-es2019"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2019"],
-}
-```
-
-</details>
 
 ## no-new-in-es2018
 
@@ -387,21 +209,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2018"]
+    pluginESx.configs["no-new-in-es2018"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2018"],
-}
-```
-
-</details>
 
 ## no-new-in-es2018-intl-api
 
@@ -412,21 +222,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2018-intl-api"]
+    pluginESx.configs["no-new-in-es2018-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2018-intl-api"],
-}
-```
-
-</details>
 
 ## no-new-in-es2017
 
@@ -437,21 +235,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2017"]
+    pluginESx.configs["no-new-in-es2017"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2017"],
-}
-```
-
-</details>
 
 ## no-new-in-es2017-intl-api
 
@@ -462,21 +248,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2017-intl-api"]
+    pluginESx.configs["no-new-in-es2017-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2017-intl-api"],
-}
-```
-
-</details>
 
 ## no-new-in-es2016
 
@@ -487,21 +261,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2016"]
+    pluginESx.configs["no-new-in-es2016"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2016"],
-}
-```
-
-</details>
 
 ## no-new-in-es2016-intl-api
 
@@ -512,21 +274,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2016-intl-api"]
+    pluginESx.configs["no-new-in-es2016-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2016-intl-api"],
-}
-```
-
-</details>
 
 ## no-new-in-es2015
 
@@ -537,21 +287,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es2015"]
+    pluginESx.configs["no-new-in-es2015"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es2015"],
-}
-```
-
-</details>
 
 ## no-new-in-es5
 
@@ -562,21 +300,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-new-in-es5"]
+    pluginESx.configs["no-new-in-es5"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-new-in-es5"],
-}
-```
-
-</details>
 
 ## restrict-to-es2025
 
@@ -587,21 +313,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2025"]
+    pluginESx.configs["restrict-to-es2025"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2025"],
-}
-```
-
-</details>
 
 ## restrict-to-es2025-intl-api
 
@@ -612,21 +326,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2025-intl-api"]
+    pluginESx.configs["restrict-to-es2025-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2025-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2024
 
@@ -637,21 +339,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2024"]
+    pluginESx.configs["restrict-to-es2024"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2024"],
-}
-```
-
-</details>
 
 ## restrict-to-es2024-intl-api
 
@@ -662,21 +352,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2024-intl-api"]
+    pluginESx.configs["restrict-to-es2024-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2024-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2023
 
@@ -687,21 +365,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2023"]
+    pluginESx.configs["restrict-to-es2023"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2023"],
-}
-```
-
-</details>
 
 ## restrict-to-es2023-intl-api
 
@@ -712,21 +378,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2023-intl-api"]
+    pluginESx.configs["restrict-to-es2023-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2023-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2022
 
@@ -737,21 +391,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2022"]
+    pluginESx.configs["restrict-to-es2022"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2022"],
-}
-```
-
-</details>
 
 ## restrict-to-es2022-intl-api
 
@@ -762,21 +404,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2022-intl-api"]
+    pluginESx.configs["restrict-to-es2022-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2022-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2021
 
@@ -787,21 +417,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2021"]
+    pluginESx.configs["restrict-to-es2021"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2021"],
-}
-```
-
-</details>
 
 ## restrict-to-es2021-intl-api
 
@@ -812,21 +430,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2021-intl-api"]
+    pluginESx.configs["restrict-to-es2021-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2021-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2020
 
@@ -837,21 +443,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2020"]
+    pluginESx.configs["restrict-to-es2020"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2020"],
-}
-```
-
-</details>
 
 ## restrict-to-es2020-intl-api
 
@@ -862,21 +456,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2020-intl-api"]
+    pluginESx.configs["restrict-to-es2020-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2020-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2019
 
@@ -887,21 +469,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2019"]
+    pluginESx.configs["restrict-to-es2019"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2019"],
-}
-```
-
-</details>
 
 ## restrict-to-es2019-intl-api
 
@@ -912,21 +482,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2019-intl-api"]
+    pluginESx.configs["restrict-to-es2019-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2019-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2018
 
@@ -937,21 +495,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2018"]
+    pluginESx.configs["restrict-to-es2018"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2018"],
-}
-```
-
-</details>
 
 ## restrict-to-es2018-intl-api
 
@@ -962,21 +508,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2018-intl-api"]
+    pluginESx.configs["restrict-to-es2018-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2018-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2017
 
@@ -987,21 +521,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2017"]
+    pluginESx.configs["restrict-to-es2017"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2017"],
-}
-```
-
-</details>
 
 ## restrict-to-es2017-intl-api
 
@@ -1012,21 +534,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2017-intl-api"]
+    pluginESx.configs["restrict-to-es2017-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2017-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2016
 
@@ -1037,21 +547,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2016"]
+    pluginESx.configs["restrict-to-es2016"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2016"],
-}
-```
-
-</details>
 
 ## restrict-to-es2016-intl-api
 
@@ -1062,21 +560,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2016-intl-api"]
+    pluginESx.configs["restrict-to-es2016-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2016-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es2015
 
@@ -1087,21 +573,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2015"]
+    pluginESx.configs["restrict-to-es2015"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2015"],
-}
-```
-
-</details>
 
 ## restrict-to-es2015-intl-api
 
@@ -1112,21 +586,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es2015-intl-api"]
+    pluginESx.configs["restrict-to-es2015-intl-api"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es2015-intl-api"],
-}
-```
-
-</details>
 
 ## restrict-to-es5
 
@@ -1137,21 +599,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es5"]
+    pluginESx.configs["restrict-to-es5"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es5"],
-}
-```
-
-</details>
 
 ## restrict-to-es-intl-api-1st-edition
 
@@ -1162,21 +612,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es-intl-api-1st-edition"]
+    pluginESx.configs["restrict-to-es-intl-api-1st-edition"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es-intl-api-1st-edition"],
-}
-```
-
-</details>
 
 ## restrict-to-es3
 
@@ -1187,21 +625,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/restrict-to-es3"]
+    pluginESx.configs["restrict-to-es3"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/restrict-to-es3"],
-}
-```
-
-</details>
 
 ## no-explicit-resource-management
 
@@ -1215,21 +641,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-explicit-resource-management"]
+    pluginESx.configs["no-explicit-resource-management"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-explicit-resource-management"],
-}
-```
-
-</details>
 
 ## no-joint-iteration
 
@@ -1243,21 +657,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-joint-iteration"]
+    pluginESx.configs["no-joint-iteration"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-joint-iteration"],
-}
-```
-
-</details>
 
 ## no-temporal
 
@@ -1271,21 +673,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-temporal"]
+    pluginESx.configs["no-temporal"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-temporal"],
-}
-```
-
-</details>
 
 ## no-arraybuffer-base64
 
@@ -1298,21 +688,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-arraybuffer-base64"]
+    pluginESx.configs["no-arraybuffer-base64"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-arraybuffer-base64"],
-}
-```
-
-</details>
 
 ## no-intl-locale-info
 
@@ -1325,21 +703,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-intl-locale-info"]
+    pluginESx.configs["no-intl-locale-info"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-intl-locale-info"],
-}
-```
-
-</details>
 
 ## no-json-parse-with-source
 
@@ -1352,21 +718,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-json-parse-with-source"]
+    pluginESx.configs["no-json-parse-with-source"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-json-parse-with-source"],
-}
-```
-
-</details>
 
 ## no-upsert
 
@@ -1379,21 +733,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-upsert"]
+    pluginESx.configs["no-upsert"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-upsert"],
-}
-```
-
-</details>
 
 ## no-float16array
 
@@ -1406,21 +748,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-float16array"]
+    pluginESx.configs["no-float16array"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-float16array"],
-}
-```
-
-</details>
 
 ## no-import-attributes
 
@@ -1433,21 +763,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-import-attributes"]
+    pluginESx.configs["no-import-attributes"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-import-attributes"],
-}
-```
-
-</details>
 
 ## no-iterator-helpers
 
@@ -1460,21 +778,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-iterator-helpers"]
+    pluginESx.configs["no-iterator-helpers"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-iterator-helpers"],
-}
-```
-
-</details>
 
 ## no-set-methods
 
@@ -1487,21 +793,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-set-methods"]
+    pluginESx.configs["no-set-methods"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-set-methods"],
-}
-```
-
-</details>
 
 ## no-array-grouping
 
@@ -1514,21 +808,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-array-grouping"]
+    pluginESx.configs["no-array-grouping"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-array-grouping"],
-}
-```
-
-</details>
 
 ## no-is-usv-string
 
@@ -1541,21 +823,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-is-usv-string"]
+    pluginESx.configs["no-is-usv-string"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-is-usv-string"],
-}
-```
-
-</details>
 
 ## no-change-array-by-copy
 
@@ -1568,21 +838,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-change-array-by-copy"]
+    pluginESx.configs["no-change-array-by-copy"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-change-array-by-copy"],
-}
-```
-
-</details>
 
 ## no-intl-numberformat-v3
 
@@ -1595,21 +853,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-intl-numberformat-v3"]
+    pluginESx.configs["no-intl-numberformat-v3"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-intl-numberformat-v3"],
-}
-```
-
-</details>
 
 ## no-class-fields
 
@@ -1622,21 +868,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-class-fields"]
+    pluginESx.configs["no-class-fields"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-class-fields"],
-}
-```
-
-</details>
 
 ## no-relative-indexing-method
 
@@ -1649,21 +883,9 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-relative-indexing-method"]
+    pluginESx.configs["no-relative-indexing-method"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-relative-indexing-method"],
-}
-```
-
-</details>
 
 ## no-string-matchall
 
@@ -1676,18 +898,6 @@ import { defineConfig } from "eslint/config"
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/no-string-matchall"]
+    pluginESx.configs["no-string-matchall"]
 ])
 ```
-
-<details><summary> Legacy Config </summary>
-
-.eslintrc.*:
-
-```json
-{
-    "extends": ["plugin:es-x/no-string-matchall"],
-}
-```
-
-</details>
