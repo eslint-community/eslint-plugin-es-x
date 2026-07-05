@@ -1,31 +1,42 @@
-"use strict"
+import { RegExpValidator } from "@eslint-community/regexpp"
+import type { Rule } from "eslint"
+import type {
+    Program,
+    RegExpLiteral,
+    NewExpression,
+    SimpleCallExpression,
+} from "estree"
+import { getRegExpCalls } from "../utils"
 
-const { RegExpValidator } = require("@eslint-community/regexpp")
-const { getRegExpCalls } = require("../utils")
+type RuleValidator = RegExpValidator.Options & { onExit?: () => void }
+type RegExpVisitorBuilder = (
+    node: NewExpression | SimpleCallExpression | RegExpLiteral,
+    regexp: { pattern: string; flags: string },
+) => RuleValidator
 
-const allVisitorBuilder = new WeakMap()
+const allVisitorBuilder = new WeakMap<Program, RegExpVisitorBuilder[]>()
 
-/**
- * @typedef {RegExpValidator.Options & {onExit:()=>void}} RuleValidator
- */
 /**
  * Define handlers to regexp nodes.
- * @param {RuleContext} context The rule context.
- * @param {(node: Node) => RuleValidator} visitorBuilder The regexp node visitor builder.
- * @returns {Record<string, (node: ASTNode) => void>} The defined handlers.
+ * @param context The rule context.
+ * @param visitorBuilder The regexp node visitor builder.
+ * @returns The defined handlers.
  */
-function defineRegExpHandler(context, visitorBuilder) {
+export function defineRegExpHandler(
+    context: Rule.RuleContext,
+    visitorBuilder: RegExpVisitorBuilder,
+): Rule.RuleListener {
     const sourceCode = context.sourceCode
     const programNode = sourceCode.ast
 
-    let handler = {}
+    let handler: Rule.RuleListener = {}
     let builders = allVisitorBuilder.get(programNode)
     if (!builders) {
         builders = []
         allVisitorBuilder.set(programNode, builders)
         handler = {
             "Literal[regex]"(node) {
-                const { pattern, flags } = node.regex
+                const { pattern, flags } = (node as RegExpLiteral).regex
                 visitRegExp(builders, node, pattern ?? "", flags ?? "")
             },
 
@@ -45,17 +56,20 @@ function defineRegExpHandler(context, visitorBuilder) {
     return handler
 }
 
-module.exports = { defineRegExpHandler }
-
 /**
  * Visit a given regular expression.
- * @param {((node: Node) => RuleValidator)[]} visitorBuilders The array of validator options builders.
- * @param {Node} node The AST node to report.
- * @param {string} pattern The pattern part of a RegExp.
- * @param {string} flags The flags part of a RegExp.
- * @returns {void}
+ * @param visitorBuilders The array of validator options builders.
+ * @param node The AST node to report.
+ * @param pattern The pattern part of a RegExp.
+ * @param flags The flags part of a RegExp.
+ * @returns void
  */
-function visitRegExp(visitorBuilders, node, pattern, flags) {
+function visitRegExp(
+    visitorBuilders: RegExpVisitorBuilder[],
+    node: NewExpression | SimpleCallExpression | RegExpLiteral,
+    pattern: string,
+    flags: string,
+): void {
     try {
         const visitors = visitorBuilders.map((r) => r(node, { pattern, flags }))
         const composedVisitor = composeRegExpVisitors(visitors)
@@ -64,7 +78,10 @@ function visitRegExp(visitorBuilders, node, pattern, flags) {
             pattern,
             0,
             pattern.length,
-            flags.includes("u"),
+            {
+                unicode: flags.includes("u"),
+                unicodeSets: flags.includes("v"),
+            },
         )
 
         if (typeof composedVisitor.onExit === "function") {
@@ -82,14 +99,17 @@ function visitRegExp(visitorBuilders, node, pattern, flags) {
 
 /**
  * Returns a single visitor handler that executes all the given visitors.
- * @param {RuleValidator[]} visitors
- * @returns {RuleValidator}
+ * @param visitors The visitors to compose.
+ * @returns The composed visitor handler.
  */
-function composeRegExpVisitors(visitors) {
-    const result = {}
+function composeRegExpVisitors(visitors: RuleValidator[]): RuleValidator {
+    const result = {} as RuleValidator
 
     for (const visitor of visitors) {
-        const entries = Object.entries(visitor)
+        const entries = Object.entries(visitor) as [
+            string,
+            (...args: unknown[]) => void,
+        ][]
 
         for (const [key, fn] of entries) {
             const orig = result[key]

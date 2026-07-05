@@ -20,6 +20,8 @@ jobs:
         run: npm install
       - name: Lint
         run: npm run -s lint
+      - name: Type Check
+        run: npm run tsc
 
   test:
     name: Test

@@ -1,9 +1,13 @@
-"use strict"
+import type { ESLint } from "eslint"
+import { type Config, defineConfig, globalIgnores } from "eslint/config"
+import tseslint from "typescript-eslint"
 
-const { defineConfig, globalIgnores } = require("eslint/config")
-const tseslint = require("typescript-eslint")
+import myPlugin from "./eslint-internal/my-plugin"
+import eslintPluginConfig from "./eslint-internal/config/+eslint-plugin"
+import es2020 from "./eslint-internal/config/es2020"
+import noStringPrototypeSubstr from "./lib/rules/no-string-prototype-substr"
 
-module.exports = defineConfig([
+export default defineConfig([
     globalIgnores([
         ".nyc_output/",
         "coverage/",
@@ -19,10 +23,10 @@ module.exports = defineConfig([
         plugins: {
             "es-x": {
                 rules: {
-                    "no-string-prototype-substr": require("./lib/rules/no-string-prototype-substr"),
+                    "no-string-prototype-substr": noStringPrototypeSubstr,
                 },
             },
-            my: require("./eslint-internal/my-plugin.js"),
+            my: myPlugin as ESLint.Plugin,
         },
         languageOptions: {
             globals: {
@@ -34,8 +38,8 @@ module.exports = defineConfig([
             },
         },
     },
-    require("./eslint-internal/config/es2020.js"),
-    require("./eslint-internal/config/+eslint-plugin.js"),
+    ...(es2020 as Config[]),
+    ...(eslintPluginConfig as Config[]),
     {
         rules: {
             "no-restricted-properties": [
@@ -86,6 +90,14 @@ module.exports = defineConfig([
         },
         extends: [tseslint.configs.recommended],
         rules: {
+            "@typescript-eslint/consistent-type-imports": [
+                "error",
+                {
+                    prefer: "type-imports",
+                    fixStyle: "inline-type-imports",
+                },
+            ],
+
             // Don't ban `any` until strict mode is enabled.
             "@typescript-eslint/no-explicit-any": "off",
             "@typescript-eslint/no-unsafe-argument": "off",
@@ -95,6 +107,7 @@ module.exports = defineConfig([
             "@typescript-eslint/no-unsafe-return": "off",
 
             "n/file-extension-in-import": "off",
+            "n/no-missing-import": ["error", { ignoreTypeImport: true }],
         },
     },
     {

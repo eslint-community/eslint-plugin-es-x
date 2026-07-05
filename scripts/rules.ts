@@ -5,11 +5,13 @@
 import * as fs from "node:fs"
 import * as path from "node:path"
 import proposals from "./proposals"
-import { createRequire } from "node:module"
 import type { JSONSchema4 } from "json-schema"
+import { createJiti } from "jiti"
+
+const jiti = createJiti(import.meta.url, {})
 
 const libRoot = path.resolve(__dirname, "../lib/rules")
-const requireRule = createRequire(__filename)
+const requireRule = jiti
 
 export interface Rule {
     /** The rule name. */

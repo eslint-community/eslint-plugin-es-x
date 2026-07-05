@@ -1,6 +1,4 @@
-"use strict"
-
-const objectPrototypeProperties = new Set([
+export const objectPrototypeProperties = new Set([
     // https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-properties-of-the-object-prototype-object
     "constructor",
     "hasOwnProperty",
@@ -16,7 +14,7 @@ const objectPrototypeProperties = new Set([
     "__lookupSetter__",
 ])
 
-const functionPrototypeProperties = new Set([
+export const functionPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-properties-of-the-function-prototype-object
@@ -34,7 +32,7 @@ const functionPrototypeProperties = new Set([
     "prototype",
 ])
 
-const objectProperties = new Set([
+export const objectProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -65,7 +63,7 @@ const objectProperties = new Set([
     "values",
 ])
 
-const functionProperties = new Set([
+export const functionProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -73,7 +71,7 @@ const functionProperties = new Set([
     "prototype",
 ])
 
-const booleanProperties = new Set([
+export const booleanProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -81,7 +79,7 @@ const booleanProperties = new Set([
     "prototype",
 ])
 
-const booleanPrototypeProperties = new Set([
+export const booleanPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-properties-of-the-boolean-prototype-object
@@ -90,7 +88,7 @@ const booleanPrototypeProperties = new Set([
     "valueOf",
 ])
 
-const symbolProperties = new Set([
+export const symbolProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -115,7 +113,7 @@ const symbolProperties = new Set([
     "unscopables",
 ])
 
-const symbolPrototypeProperties = new Set([
+export const symbolPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-properties-of-the-symbol-prototype-object
@@ -126,7 +124,7 @@ const symbolPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const errorProperties = new Set([
+export const errorProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -135,7 +133,7 @@ const errorProperties = new Set([
     "isError",
 ])
 
-const errorPrototypeProperties = new Set([
+export const errorPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-properties-of-the-error-prototype-object
@@ -145,7 +143,7 @@ const errorPrototypeProperties = new Set([
     "toString",
 ])
 
-const numberProperties = new Set([
+export const numberProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -167,7 +165,7 @@ const numberProperties = new Set([
     "prototype",
 ])
 
-const numberPrototypeProperties = new Set([
+export const numberPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-number-prototype-object
@@ -180,7 +178,7 @@ const numberPrototypeProperties = new Set([
     "valueOf",
 ])
 
-const bigintProperties = new Set([
+export const bigintProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -190,7 +188,7 @@ const bigintProperties = new Set([
     "prototype",
 ])
 
-const bigintPrototypeProperties = new Set([
+export const bigintPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-bigint-prototype-object
@@ -200,7 +198,7 @@ const bigintPrototypeProperties = new Set([
     "valueOf",
 ])
 
-const mathProperties = new Set([
+export const mathProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-value-properties-of-the-math-object
@@ -254,7 +252,7 @@ const mathProperties = new Set([
     "trunc",
 ])
 
-const dateProperties = new Set([
+export const dateProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -265,7 +263,7 @@ const dateProperties = new Set([
     "UTC",
 ])
 
-const datePrototypeProperties = new Set([
+export const datePrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-date-prototype-object
@@ -322,7 +320,7 @@ const datePrototypeProperties = new Set([
     "toGMTString",
 ])
 
-const temporalProperties = new Set([
+export const temporalProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-temporal-object
@@ -342,7 +340,7 @@ const temporalProperties = new Set([
     "Now",
 ])
 
-const temporalNowProperties = new Set([
+export const temporalNowProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-value-properties-of-the-temporal-now-object
@@ -356,7 +354,7 @@ const temporalNowProperties = new Set([
     "plainTimeISO",
 ])
 
-const temporalInstantProperties = new Set([
+export const temporalInstantProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -368,7 +366,7 @@ const temporalInstantProperties = new Set([
     "compare",
 ])
 
-const temporalInstantPrototypeProperties = new Set([
+export const temporalInstantPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-temporal-instant-prototype-object
@@ -389,7 +387,7 @@ const temporalInstantPrototypeProperties = new Set([
     "toZonedDateTimeISO",
 ])
 
-const temporalZonedDateTimeProperties = new Set([
+export const temporalZonedDateTimeProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -399,7 +397,7 @@ const temporalZonedDateTimeProperties = new Set([
     "compare",
 ])
 
-const temporalZonedDateTimePrototypeProperties = new Set([
+export const temporalZonedDateTimePrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-temporal-zoneddatetime-prototype-object
@@ -455,7 +453,7 @@ const temporalZonedDateTimePrototypeProperties = new Set([
     "toPlainDateTime",
 ])
 
-const temporalPlainDateTimeProperties = new Set([
+export const temporalPlainDateTimeProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -465,7 +463,7 @@ const temporalPlainDateTimeProperties = new Set([
     "compare",
 ])
 
-const temporalPlainDateTimePrototypeProperties = new Set([
+export const temporalPlainDateTimePrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-temporal-plaindatetime-prototype-object
@@ -511,7 +509,7 @@ const temporalPlainDateTimePrototypeProperties = new Set([
     "toPlainTime",
 ])
 
-const temporalPlainDateProperties = new Set([
+export const temporalPlainDateProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -521,7 +519,7 @@ const temporalPlainDateProperties = new Set([
     "compare",
 ])
 
-const temporalPlainDatePrototypeProperties = new Set([
+export const temporalPlainDatePrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-temporal-plaindate-prototype-object
@@ -560,7 +558,7 @@ const temporalPlainDatePrototypeProperties = new Set([
     "valueOf",
 ])
 
-const temporalPlainTimeProperties = new Set([
+export const temporalPlainTimeProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -570,7 +568,7 @@ const temporalPlainTimeProperties = new Set([
     "compare",
 ])
 
-const temporalPlainTimePrototypeProperties = new Set([
+export const temporalPlainTimePrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-temporal-plaintime-prototype-object
@@ -595,7 +593,7 @@ const temporalPlainTimePrototypeProperties = new Set([
     "valueOf",
 ])
 
-const temporalPlainYearMonthProperties = new Set([
+export const temporalPlainYearMonthProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -605,7 +603,7 @@ const temporalPlainYearMonthProperties = new Set([
     "compare",
 ])
 
-const temporalPlainYearMonthPrototypeProperties = new Set([
+export const temporalPlainYearMonthPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-temporal-plainyearmonth-prototype-object
@@ -634,7 +632,7 @@ const temporalPlainYearMonthPrototypeProperties = new Set([
     "toPlainDate",
 ])
 
-const temporalPlainMonthDayProperties = new Set([
+export const temporalPlainMonthDayProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -643,7 +641,7 @@ const temporalPlainMonthDayProperties = new Set([
     "from",
 ])
 
-const temporalPlainMonthDayPrototypeProperties = new Set([
+export const temporalPlainMonthDayPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-temporal-plainmonthday-prototype-object
@@ -661,7 +659,7 @@ const temporalPlainMonthDayPrototypeProperties = new Set([
     "toPlainDate",
 ])
 
-const temporalDurationProperties = new Set([
+export const temporalDurationProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -671,7 +669,7 @@ const temporalDurationProperties = new Set([
     "compare",
 ])
 
-const temporalDurationPrototypeProperties = new Set([
+export const temporalDurationPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-properties-of-the-temporal-duration-prototype-object
@@ -702,7 +700,7 @@ const temporalDurationPrototypeProperties = new Set([
     "valueOf",
 ])
 
-const stringProperties = new Set([
+export const stringProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -713,7 +711,7 @@ const stringProperties = new Set([
     "raw",
 ])
 
-const stringPrototypeProperties = new Set([
+export const stringPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/text-processing.html#sec-properties-of-the-string-prototype-object
@@ -776,7 +774,7 @@ const stringPrototypeProperties = new Set([
     "trimRight",
 ])
 
-const regexpProperties = new Set([
+export const regexpProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -807,7 +805,7 @@ const regexpProperties = new Set([
     "$9",
 ])
 
-const regexpPrototypeProperties = new Set([
+export const regexpPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/text-processing.html#sec-properties-of-the-regexp-prototype-object
@@ -838,7 +836,7 @@ const regexpPrototypeProperties = new Set([
     "compile",
 ])
 
-const arrayProperties = new Set([
+export const arrayProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -851,7 +849,7 @@ const arrayProperties = new Set([
     // [ %Symbol.species% ]
 ])
 
-const arrayPrototypeProperties = new Set([
+export const arrayPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/indexed-collections.html#sec-properties-of-the-array-prototype-object
@@ -908,7 +906,7 @@ const arrayPrototypeProperties = new Set([
     "indices",
 ])
 
-const typedArrayProperties = new Set([
+export const typedArrayProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -923,7 +921,7 @@ const typedArrayProperties = new Set([
     "prototype",
 ])
 
-const typedArrayPrototypeProperties = new Set([
+export const typedArrayPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/indexed-collections.html#sec-properties-of-the-%typedarrayprototype%-object
@@ -971,13 +969,13 @@ const typedArrayPrototypeProperties = new Set([
     "constructor",
 ])
 
-const uint8ArrayProperties = new Set([
+export const uint8ArrayProperties = new Set([
     ...typedArrayProperties,
 
     "fromBase64",
     "fromHex",
 ])
-const uint8ArrayPrototypeProperties = new Set([
+export const uint8ArrayPrototypeProperties = new Set([
     ...typedArrayPrototypeProperties,
 
     "setFromBase64",
@@ -986,7 +984,7 @@ const uint8ArrayPrototypeProperties = new Set([
     "toHex",
 ])
 
-const mapProperties = new Set([
+export const mapProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -996,7 +994,7 @@ const mapProperties = new Set([
     // [ %Symbol.species% ]
 ])
 
-const mapPrototypeProperties = new Set([
+export const mapPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/keyed-collections.html#sec-properties-of-the-map-prototype-object
@@ -1019,7 +1017,7 @@ const mapPrototypeProperties = new Set([
     "getOrInsertComputed",
 ])
 
-const setProperties = new Set([
+export const setProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1028,7 +1026,7 @@ const setProperties = new Set([
     // [ %Symbol.species% ]
 ])
 
-const setPrototypeProperties = new Set([
+export const setPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/keyed-collections.html#sec-properties-of-the-set-prototype-object
@@ -1053,7 +1051,7 @@ const setPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const weakMapProperties = new Set([
+export const weakMapProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1062,7 +1060,7 @@ const weakMapProperties = new Set([
     // [ %Symbol.species% ]
 ])
 
-const weakMapPrototypeProperties = new Set([
+export const weakMapPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/keyed-collections.html#sec-properties-of-the-weakmap-prototype-object
@@ -1078,7 +1076,7 @@ const weakMapPrototypeProperties = new Set([
     "getOrInsertComputed",
 ])
 
-const weakSetProperties = new Set([
+export const weakSetProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1087,7 +1085,7 @@ const weakSetProperties = new Set([
     // [ %Symbol.species% ]
 ])
 
-const weakSetPrototypeProperties = new Set([
+export const weakSetPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/keyed-collections.html#sec-properties-of-the-weakset-prototype-object
@@ -1098,7 +1096,7 @@ const weakSetPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const arrayBufferProperties = new Set([
+export const arrayBufferProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1108,7 +1106,7 @@ const arrayBufferProperties = new Set([
     // [ %Symbol.species% ]
 ])
 
-const arrayBufferPrototypeProperties = new Set([
+export const arrayBufferPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/structured-data.html#sec-properties-of-the-arraybuffer-prototype-object
@@ -1124,7 +1122,7 @@ const arrayBufferPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const sharedArrayBufferProperties = new Set([
+export const sharedArrayBufferProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1133,7 +1131,7 @@ const sharedArrayBufferProperties = new Set([
     // [ %Symbol.species% ]
 ])
 
-const sharedArrayBufferPrototypeProperties = new Set([
+export const sharedArrayBufferPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/structured-data.html#sec-properties-of-the-sharedarraybuffer-prototype-object
@@ -1146,7 +1144,7 @@ const sharedArrayBufferPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const dataViewProperties = new Set([
+export const dataViewProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1155,7 +1153,7 @@ const dataViewProperties = new Set([
     // [ %Symbol.species% ]
 ])
 
-const dataViewPrototypeProperties = new Set([
+export const dataViewPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/structured-data.html#sec-properties-of-the-dataview-prototype-object
@@ -1188,7 +1186,7 @@ const dataViewPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const atomicsProperties = new Set([
+export const atomicsProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics-object
@@ -1210,7 +1208,7 @@ const atomicsProperties = new Set([
     "pause",
 ])
 
-const jsonProperties = new Set([
+export const jsonProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/structured-data.html#sec-json-object
@@ -1221,7 +1219,7 @@ const jsonProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const weakRefProperties = new Set([
+export const weakRefProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1229,7 +1227,7 @@ const weakRefProperties = new Set([
     "prototype",
 ])
 
-const weakRefPrototypeProperties = new Set([
+export const weakRefPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/managing-memory.html#sec-properties-of-the-weak-ref-prototype-object
@@ -1238,7 +1236,7 @@ const weakRefPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const finalizationRegistryProperties = new Set([
+export const finalizationRegistryProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1246,7 +1244,7 @@ const finalizationRegistryProperties = new Set([
     "prototype",
 ])
 
-const finalizationRegistryPrototypeProperties = new Set([
+export const finalizationRegistryPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/managing-memory.html#sec-properties-of-the-finalization-registry-prototype-object
@@ -1256,7 +1254,7 @@ const finalizationRegistryPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const iteratorProperties = new Set([
+export const iteratorProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1270,7 +1268,7 @@ const iteratorProperties = new Set([
     "zipKeyed",
 ])
 
-const iteratorPrototypeProperties = new Set([
+export const iteratorPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/control-abstraction-objects.html#table-iterator-interface-required-properties
@@ -1305,7 +1303,7 @@ const iteratorPrototypeProperties = new Set([
     // [ %Symbol.asyncIterator%% ]
 ])
 
-const disposableStackProperties = new Set([
+export const disposableStackProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1313,7 +1311,7 @@ const disposableStackProperties = new Set([
     "prototype",
 ])
 
-const disposableStackPrototypeProperties = new Set([
+export const disposableStackPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-properties-of-the-disposablestack-prototype-object
@@ -1328,7 +1326,7 @@ const disposableStackPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const asyncDisposableStackProperties = new Set([
+export const asyncDisposableStackProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1336,7 +1334,7 @@ const asyncDisposableStackProperties = new Set([
     "prototype",
 ])
 
-const asyncDisposableStackPrototypeProperties = new Set([
+export const asyncDisposableStackPrototypeProperties = new Set([
     ...objectPrototypeProperties,
     // https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-properties-of-the-asyncdisposablestack-prototype-object
     "adopt",
@@ -1350,7 +1348,7 @@ const asyncDisposableStackPrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const promiseProperties = new Set([
+export const promiseProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1367,7 +1365,7 @@ const promiseProperties = new Set([
     // [ %Symbol.species% ]
 ])
 
-const promisePrototypeProperties = new Set([
+export const promisePrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-properties-of-the-promise-prototype-object
@@ -1378,7 +1376,7 @@ const promisePrototypeProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const reflectProperties = new Set([
+export const reflectProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma262/multipage/reflection.html#sec-reflect-object
@@ -1398,7 +1396,7 @@ const reflectProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const proxyProperties = new Set([
+export const proxyProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1406,7 +1404,7 @@ const proxyProperties = new Set([
     "revocable",
 ])
 
-const intlProperties = new Set([
+export const intlProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#intl-object
@@ -1429,7 +1427,7 @@ const intlProperties = new Set([
     "supportedValuesOf",
 ])
 
-const intlCollatorProperties = new Set([
+export const intlCollatorProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1439,7 +1437,7 @@ const intlCollatorProperties = new Set([
     // [ %Symbol.toStringTag% ]
 ])
 
-const intlCollatorPrototypeProperties = new Set([
+export const intlCollatorPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-the-intl-collator-prototype-object
@@ -1449,7 +1447,7 @@ const intlCollatorPrototypeProperties = new Set([
     "resolvedOptions",
 ])
 
-const intlDateTimeFormatProperties = new Set([
+export const intlDateTimeFormatProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1458,7 +1456,7 @@ const intlDateTimeFormatProperties = new Set([
     "supportedLocalesOf",
 ])
 
-const intlDateTimeFormatPrototypeProperties = new Set([
+export const intlDateTimeFormatPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-intl-datetimeformat-prototype-object
@@ -1471,7 +1469,7 @@ const intlDateTimeFormatPrototypeProperties = new Set([
     "resolvedOptions",
 ])
 
-const intlDisplayNamesProperties = new Set([
+export const intlDisplayNamesProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1480,7 +1478,7 @@ const intlDisplayNamesProperties = new Set([
     "supportedLocalesOf",
 ])
 
-const intlDisplayNamesPrototypeProperties = new Set([
+export const intlDisplayNamesPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-intl-displaynames-prototype-object
@@ -1490,7 +1488,7 @@ const intlDisplayNamesPrototypeProperties = new Set([
     "resolvedOptions",
 ])
 
-const intlDurationFormatProperties = new Set([
+export const intlDurationFormatProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1499,7 +1497,7 @@ const intlDurationFormatProperties = new Set([
     "supportedLocalesOf",
 ])
 
-const intlDurationFormatPrototypeProperties = new Set([
+export const intlDurationFormatPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-intl-durationformat-prototype-object
@@ -1510,7 +1508,7 @@ const intlDurationFormatPrototypeProperties = new Set([
     "resolvedOptions",
 ])
 
-const intlListFormatProperties = new Set([
+export const intlListFormatProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1519,7 +1517,7 @@ const intlListFormatProperties = new Set([
     "supportedLocalesOf",
 ])
 
-const intlListFormatPrototypeProperties = new Set([
+export const intlListFormatPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-intl-listformat-prototype-object
@@ -1530,7 +1528,7 @@ const intlListFormatPrototypeProperties = new Set([
     "resolvedOptions",
 ])
 
-const intlLocaleProperties = new Set([
+export const intlLocaleProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1538,7 +1536,7 @@ const intlLocaleProperties = new Set([
     "prototype",
 ])
 
-const intlLocalePrototypeProperties = new Set([
+export const intlLocalePrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-intl-locale-prototype-object
@@ -1568,7 +1566,7 @@ const intlLocalePrototypeProperties = new Set([
     "getWeekInfo",
 ])
 
-const intlNumberFormatProperties = new Set([
+export const intlNumberFormatProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1577,7 +1575,7 @@ const intlNumberFormatProperties = new Set([
     "supportedLocalesOf",
 ])
 
-const intlNumberFormatPrototypeProperties = new Set([
+export const intlNumberFormatPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-intl-numberformat-prototype-object
@@ -1590,7 +1588,7 @@ const intlNumberFormatPrototypeProperties = new Set([
     "resolvedOptions",
 ])
 
-const intlPluralRulesProperties = new Set([
+export const intlPluralRulesProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1599,7 +1597,7 @@ const intlPluralRulesProperties = new Set([
     "supportedLocalesOf",
 ])
 
-const intlPluralRulesPrototypeProperties = new Set([
+export const intlPluralRulesPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-intl-pluralrules-prototype-object
@@ -1610,7 +1608,7 @@ const intlPluralRulesPrototypeProperties = new Set([
     "resolvedOptions",
 ])
 
-const intlRelativeTimeFormatProperties = new Set([
+export const intlRelativeTimeFormatProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1619,7 +1617,7 @@ const intlRelativeTimeFormatProperties = new Set([
     "supportedLocalesOf",
 ])
 
-const intlRelativeTimeFormatPrototypeProperties = new Set([
+export const intlRelativeTimeFormatPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-intl-relativetimeformat-prototype-object
@@ -1630,7 +1628,7 @@ const intlRelativeTimeFormatPrototypeProperties = new Set([
     "resolvedOptions",
 ])
 
-const intlSegmenterProperties = new Set([
+export const intlSegmenterProperties = new Set([
     ...objectPrototypeProperties,
     ...functionPrototypeProperties,
 
@@ -1639,7 +1637,7 @@ const intlSegmenterProperties = new Set([
     "supportedLocalesOf",
 ])
 
-const intlSegmenterPrototypeProperties = new Set([
+export const intlSegmenterPrototypeProperties = new Set([
     ...objectPrototypeProperties,
 
     // https://tc39.es/ecma402/#sec-properties-of-intl-segmenter-prototype-object
@@ -1648,105 +1646,3 @@ const intlSegmenterPrototypeProperties = new Set([
     "segment",
     "resolvedOptions",
 ])
-
-module.exports = {
-    // ECMA 262 ECMAScript Language Specification
-    objectProperties,
-    objectPrototypeProperties,
-    functionProperties,
-    functionPrototypeProperties,
-    booleanProperties,
-    booleanPrototypeProperties,
-    symbolProperties,
-    symbolPrototypeProperties,
-    errorProperties,
-    errorPrototypeProperties,
-    numberProperties,
-    numberPrototypeProperties,
-    bigintProperties,
-    bigintPrototypeProperties,
-    mathProperties,
-    dateProperties,
-    datePrototypeProperties,
-    temporalProperties,
-    temporalNowProperties,
-    temporalInstantProperties,
-    temporalInstantPrototypeProperties,
-    temporalZonedDateTimeProperties,
-    temporalZonedDateTimePrototypeProperties,
-    temporalPlainDateTimeProperties,
-    temporalPlainDateTimePrototypeProperties,
-    temporalPlainDateProperties,
-    temporalPlainDatePrototypeProperties,
-    temporalPlainTimeProperties,
-    temporalPlainTimePrototypeProperties,
-    temporalPlainYearMonthProperties,
-    temporalPlainYearMonthPrototypeProperties,
-    temporalPlainMonthDayProperties,
-    temporalPlainMonthDayPrototypeProperties,
-    temporalDurationProperties,
-    temporalDurationPrototypeProperties,
-    stringProperties,
-    stringPrototypeProperties,
-    regexpProperties,
-    regexpPrototypeProperties,
-    arrayProperties,
-    arrayPrototypeProperties,
-    typedArrayProperties,
-    typedArrayPrototypeProperties,
-    uint8ArrayProperties,
-    uint8ArrayPrototypeProperties,
-    mapProperties,
-    mapPrototypeProperties,
-    setProperties,
-    setPrototypeProperties,
-    weakMapProperties,
-    weakMapPrototypeProperties,
-    weakSetProperties,
-    weakSetPrototypeProperties,
-    arrayBufferProperties,
-    arrayBufferPrototypeProperties,
-    sharedArrayBufferProperties,
-    sharedArrayBufferPrototypeProperties,
-    dataViewProperties,
-    dataViewPrototypeProperties,
-    atomicsProperties,
-    jsonProperties,
-    weakRefProperties,
-    weakRefPrototypeProperties,
-    finalizationRegistryProperties,
-    finalizationRegistryPrototypeProperties,
-    iteratorProperties,
-    iteratorPrototypeProperties,
-    disposableStackProperties,
-    disposableStackPrototypeProperties,
-    asyncDisposableStackProperties,
-    asyncDisposableStackPrototypeProperties,
-
-    promiseProperties,
-    promisePrototypeProperties,
-    reflectProperties,
-    proxyProperties,
-    // ECMA 402 ECMAScript Internationalization API
-    intlProperties,
-    intlCollatorProperties,
-    intlCollatorPrototypeProperties,
-    intlDateTimeFormatProperties,
-    intlDateTimeFormatPrototypeProperties,
-    intlDisplayNamesProperties,
-    intlDisplayNamesPrototypeProperties,
-    intlDurationFormatProperties,
-    intlDurationFormatPrototypeProperties,
-    intlListFormatProperties,
-    intlListFormatPrototypeProperties,
-    intlLocaleProperties,
-    intlLocalePrototypeProperties,
-    intlNumberFormatProperties,
-    intlNumberFormatPrototypeProperties,
-    intlPluralRulesProperties,
-    intlPluralRulesPrototypeProperties,
-    intlRelativeTimeFormatProperties,
-    intlRelativeTimeFormatPrototypeProperties,
-    intlSegmenterProperties,
-    intlSegmenterPrototypeProperties,
-}

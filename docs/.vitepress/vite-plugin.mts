@@ -55,7 +55,7 @@ function transformRequire(code: string) {
     }
     const modules = new Map<string, string>()
     const replaced = code.replace(
-        /(\/\/[^\n\r]*|\/\*[\s\S]*?\*\/)|\brequire\s*\(\s*(["'].*?["'])\s*\)/gu,
+        /(\/\/[^\n\r]*|\/\*[\s\S]*?\*\/)|\b(?:__)?require\s*\(\s*(["'].*?["'])\s*\)/gu,
         (match, comment: string, moduleString: string) => {
             if (comment) {
                 return match

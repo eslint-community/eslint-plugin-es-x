@@ -1,24 +1,27 @@
-"use strict"
+import { READ, ReferenceTracker } from "@eslint-community/eslint-utils"
+import type { Rule } from "eslint"
+import type { BuiltinGlobalObjectName } from "../types"
 
-const { ReferenceTracker, READ } = require("@eslint-community/eslint-utils")
+type TraceMap = Parameters<ReferenceTracker["iterateGlobalReferences"]>[0]
+type TraceMapObject = TraceMap[string]
 
-/**
- * @typedef {import("eslint").Rule.RuleContext} RuleContext
- */
 /**
  * Define handlers to disallow global objects.
- * @param {RuleContext} context The rule context.
- * @param {string[]} names The global object names to disallow.
- * @returns {Record<string, (node: ASTNode) => void>} The defined handlers.
+ * @param context The rule context.
+ * @param names The global object names to disallow.
+ * @returns The defined handlers.
  */
-function defineGlobalsHandler(context, names) {
+export function defineGlobalsHandler(
+    context: Rule.RuleContext,
+    names: BuiltinGlobalObjectName[],
+): Rule.RuleListener {
     const sourceCode = context.sourceCode
     return {
         "Program:exit"(program) {
             const tracker = new ReferenceTracker(sourceCode.getScope(program))
-            const traceMap = {}
+            const traceMap: TraceMap = {}
             for (const className of names) {
-                let map = traceMap
+                let map: TraceMapObject = traceMap
                 for (const name of className.split(".")) {
                     map = map[name] || (map[name] = {})
                 }
@@ -36,5 +39,3 @@ function defineGlobalsHandler(context, names) {
         },
     }
 }
-
-module.exports = { defineGlobalsHandler }

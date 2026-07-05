@@ -4,7 +4,7 @@
  */
 "use strict"
 
-const files = ["**/scripts/**/*", "eslint.config.js"]
+const files = ["**/scripts/**/*", "eslint.config.ts"]
 
 module.exports = [
     ...require("./+node.js").map((config) => ({ ...config, files })),
