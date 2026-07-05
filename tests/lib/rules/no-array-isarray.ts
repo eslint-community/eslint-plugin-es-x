@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-array-isarray"
+import rule from "../../../lib/rules/no-array-isarray"
 
 new RuleTester().run("no-array-isarray", rule, {
     valid: [

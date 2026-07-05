@@ -2,20 +2,23 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
 
-const { createRule } = require("../util/create-rule")
-const {
-    defineStaticPropertiesHandler,
-} = require("../util/define-static-properties-handler")
+type Options = [
+    {
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
-            description: "disallow the `Array.of` method.",
+            description: "disallow the `Array.prototype.keys` method.",
             category: "ES2015",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-array-of.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-array-prototype-keys.html",
         },
         fixable: null,
         messages: {
@@ -25,6 +28,7 @@ module.exports = createRule({
             {
                 type: "object",
                 properties: {
+                    aggressive: { type: "boolean" },
                     allowTestedProperty: { type: "boolean" },
                 },
                 additionalProperties: false,
@@ -33,8 +37,8 @@ module.exports = createRule({
         type: "problem",
     },
     create(context) {
-        return defineStaticPropertiesHandler(context, {
-            Array: { of: "function" },
+        return definePrototypePropertiesHandler(context, {
+            Array: { keys: "function" },
         })
     },
 })
