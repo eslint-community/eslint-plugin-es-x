@@ -1,8 +1,8 @@
 import type { RuleDefinition } from "@eslint/core"
 import type { JSSyntaxElement, Linter, Rule, SourceCode } from "eslint"
 
-interface EsXRuleDocs<Desc extends string> {
-    description: Desc
+interface EsXRuleDocs {
+    description: string
     category?: string
     proposal?: string
     recommended: boolean
@@ -12,7 +12,6 @@ interface EsXRuleDocs<Desc extends string> {
 type EsXRuleModule<
     RuleOptions extends unknown[],
     MessageIds extends string,
-    Docs extends EsXRuleDocs<string>,
 > = RuleDefinition<{
     LangOptions: Linter.LanguageOptions
     Code: SourceCode
@@ -20,7 +19,7 @@ type EsXRuleModule<
     Visitor: Rule.RuleListener
     Node: JSSyntaxElement
     MessageIds: MessageIds
-    ExtRuleDocs: Docs
+    ExtRuleDocs: EsXRuleDocs
 }>
 
 /**
@@ -30,11 +29,9 @@ type EsXRuleModule<
  */
 export function createRule<
     MessageIds extends string,
-    Desc extends string,
-    Docs extends EsXRuleDocs<Desc>,
     RuleOptions extends unknown[] = any[],
 >(
-    rule: EsXRuleModule<RuleOptions, MessageIds, Docs>,
-): EsXRuleModule<RuleOptions, MessageIds, Docs> {
+    rule: EsXRuleModule<RuleOptions, MessageIds>,
+): EsXRuleModule<RuleOptions, MessageIds> {
     return rule
 }

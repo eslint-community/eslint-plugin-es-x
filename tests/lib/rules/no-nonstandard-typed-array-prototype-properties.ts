@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-typed-array-prototype-properties"
+import rule from "../../../lib/rules/no-nonstandard-typed-array-prototype-properties"
 import {
     typedArrayPrototypeProperties,
     uint8ArrayPrototypeProperties,

@@ -16,6 +16,8 @@ const requireRule = jiti
 export interface Rule {
     /** The rule name. */
     ruleId: string
+    /** The rule source file. */
+    sourceFile: string
     /** The description. */
     description: string
     /** The fixable flag. */
@@ -149,9 +151,12 @@ categories.deprecated = {
 const rules: Rule[] = []
 
 // 全ルールを探す
-for (const filename of fs.globSync("**/*.js", { cwd: libRoot })) {
-    const filePath = path.join(libRoot, filename)
-    const ruleId = filename.replace(/\.js$/u, "").replace(/\\/gu, "/")
+for (const sourceFile of fs
+    .globSync("**/*.{js,ts}", { cwd: libRoot })
+    .map((filename) => filename.replace(/\\/gu, "/"))
+    .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))) {
+    const filePath = path.join(libRoot, sourceFile)
+    const ruleId = sourceFile.replace(/\.(?:js|ts)$/u, "")
     const ruleModule = requireRule(filePath)
     const category = ruleModule.meta.docs.category
     const proposalIds = ruleModule.meta.docs.proposal
@@ -165,6 +170,7 @@ for (const filename of fs.globSync("**/*.js", { cwd: libRoot })) {
     const schema = ruleModule.meta.schema
     const rule: Rule = {
         ruleId,
+        sourceFile,
         description,
         fixable,
         deprecated,

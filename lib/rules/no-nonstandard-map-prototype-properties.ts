@@ -1,12 +1,15 @@
-"use strict"
+import { createRule } from "../util/create-rule"
+import { defineNonstandardPrototypePropertiesHandler } from "../util/define-nonstandard-prototype-properties-handler/index"
+import { mapPrototypeProperties } from "../util/well-known-properties"
 
-const { createRule } = require("../util/create-rule")
-const {
-    defineNonstandardPrototypePropertiesHandler,
-} = require("../util/define-nonstandard-prototype-properties-handler")
-const { mapPrototypeProperties } = require("../util/well-known-properties")
+type Options = [
+    {
+        allow?: string[]
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
             description: "disallow non-standard properties on Map instance",
@@ -35,7 +38,6 @@ module.exports = createRule({
         type: "problem",
     },
     create(context) {
-        /** @type {Set<string>} */
         const allows = new Set([
             ...(context.options[0]?.allow ?? []),
             ...mapPrototypeProperties,
