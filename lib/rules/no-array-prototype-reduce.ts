@@ -2,20 +2,23 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
 
-const { createRule } = require("../util/create-rule")
-const {
-    definePrototypePropertiesHandler,
-} = require("../util/define-prototype-properties-handler")
+type Options = [
+    {
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
-            description: "disallow the `Array.prototype.some` method.",
+            description: "disallow the `Array.prototype.reduce` method.",
             category: "ES5",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-array-prototype-some.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-array-prototype-reduce.html",
         },
         fixable: null,
         messages: {
@@ -35,7 +38,7 @@ module.exports = createRule({
     },
     create(context) {
         return definePrototypePropertiesHandler(context, {
-            Array: { some: "function" },
+            Array: { reduce: "function" },
         })
     },
 })

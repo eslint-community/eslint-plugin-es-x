@@ -2,14 +2,16 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
+import { defineStaticPropertiesHandler } from "../util/define-static-properties-handler/index"
 
-const { createRule } = require("../util/create-rule")
-const {
-    defineStaticPropertiesHandler,
-} = require("../util/define-static-properties-handler")
+type Options = [
+    {
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
             description: "disallow the `Array.isArray` method.",

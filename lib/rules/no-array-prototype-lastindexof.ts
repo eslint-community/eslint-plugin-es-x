@@ -2,14 +2,17 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
 
-const { createRule } = require("../util/create-rule")
-const {
-    definePrototypePropertiesHandler,
-} = require("../util/define-prototype-properties-handler")
+type Options = [
+    {
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
             description: "disallow the `Array.prototype.lastIndexOf` method.",

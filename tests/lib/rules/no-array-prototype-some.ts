@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-array-prototype-some"
+import rule from "../../../lib/rules/no-array-prototype-some"
 const ruleId = "no-array-prototype-some"
 
 new RuleTester().run(ruleId, rule, {

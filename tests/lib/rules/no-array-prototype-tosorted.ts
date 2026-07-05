@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-array-prototype-tosorted"
+import rule from "../../../lib/rules/no-array-prototype-tosorted"
 const ruleId = "no-array-prototype-tosorted"
 
 new RuleTester().run(ruleId, rule, {

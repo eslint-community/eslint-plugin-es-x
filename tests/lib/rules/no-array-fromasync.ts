@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-array-fromasync"
+import rule from "../../../lib/rules/no-array-fromasync"
 
 new RuleTester().run("no-array-fromasync", rule, {
     valid: [

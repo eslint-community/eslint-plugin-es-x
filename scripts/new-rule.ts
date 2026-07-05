@@ -231,10 +231,7 @@ async function main(ruleId: string | undefined) {
     const resources =
         BUILDERS[kind]?.(resourceOptions) ??
         buildDefaultResources(resourceOptions)
-    const ruleFile = path.resolve(
-        __dirname,
-        `../lib/rules/${ruleId}.${kind.startsWith("nonstandard-") ? "ts" : "js"}`,
-    )
+    const ruleFile = path.resolve(__dirname, `../lib/rules/${ruleId}.ts`)
 
     fs.writeFileSync(ruleFile, resources.rule)
     fs.writeFileSync(testFile, resources.test)
@@ -288,12 +285,10 @@ function buildGlobalObjectRuleResources({
     const example = `const value = ${object}`
     const shadowedGlobalObject = createShadowedGlobalObjectExample(object)
     return {
-        rule: `"use strict"
+        rule: `import { createRule } from "../util/create-rule"
+import { defineGlobalsHandler } from "../util/define-globals-handler/index"
 
-const { createRule } = require("../util/create-rule")
-const { defineGlobalsHandler } = require("../util/define-globals-handler")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow the \`${object}\` ${kind}.",
@@ -314,7 +309,7 @@ module.exports = createRule({
 })
 `,
         test: `import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/${ruleId}"
+import rule from "../../../lib/rules/${ruleId}"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: ["Array", "Object", "${shadowedGlobalObject}"],
@@ -382,14 +377,16 @@ function buildStaticPropertiesRuleResources({
     }
 
     return {
-        rule: `"use strict"
+        rule: `import { createRule } from "../util/create-rule"
+import { defineStaticPropertiesHandler } from "../util/define-static-properties-handler/index"
 
-const { createRule } = require("../util/create-rule")
-const {
-    defineStaticPropertiesHandler,
-} = require("../util/define-static-properties-handler")
+type Options = [
+    {
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
             description: "disallow the \`${object}.${propertiesString}\` ${kind[0]}",
@@ -420,7 +417,7 @@ module.exports = createRule({
 })
 `,
         test: `import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/${ruleId}"
+import rule from "../../../lib/rules/${ruleId}"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: [
@@ -532,14 +529,17 @@ function buildPrototypePropertiesRuleResources({
     }
 
     return {
-        rule: `"use strict"
+        rule: `import { createRule } from "../util/create-rule"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
 
-const { createRule } = require("../util/create-rule")
-const {
-    definePrototypePropertiesHandler,
-} = require("../util/define-prototype-properties-handler")
+type Options = [
+    {
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
             description: "disallow the \`${object}.prototype.${propertiesString}\` ${kind[0]}",
@@ -570,9 +570,9 @@ module.exports = createRule({
     },
 })
 `,
-        test: `import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/${ruleId}"
-import * as path from "node:path"
+        test: `import * as path from "node:path"
+import RuleTester from "../../tester"
+import rule from "../../../lib/rules/${ruleId}"
 
 const ruleId = "${ruleId}"
 
@@ -635,7 +635,7 @@ const filename = path.join(tsconfigRootDir, "test.ts")
 
 new RuleTester({
     languageOptions: {
-        parser: tseslint.parser,
+        parser,
         parserOptions: {
             tsconfigRootDir,
             project,
@@ -1139,11 +1139,9 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
 
 function buildDefaultResources({ ruleId }: ResourceOptions): RuleResources {
     return {
-        rule: `"use strict"
+        rule: `import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow ....",
@@ -1164,7 +1162,7 @@ module.exports = createRule({
 })
 `,
         test: `import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/${ruleId}"
+import rule from "../../../lib/rules/${ruleId}"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: [],

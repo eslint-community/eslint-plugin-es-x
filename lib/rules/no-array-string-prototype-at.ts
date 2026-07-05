@@ -2,17 +2,22 @@
  * @author Yosuke Ota <https://github.com/ota-meshi>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
 
-const { createRule } = require("../util/create-rule")
-const { mergeVisitors } = require("../util/merge-visitors")
+import { createRule } from "../util/create-rule"
+import { mergeVisitors } from "../util/merge-visitors"
+import noArrayPrototypeAtRule from "./no-array-prototype-at"
+import noStringPrototypeAtRule from "./no-string-prototype-at"
 
-const rules = [
-    require("./no-array-prototype-at"),
-    require("./no-string-prototype-at"),
+const rules = [noArrayPrototypeAtRule, noStringPrototypeAtRule]
+
+type Options = [
+    {
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }?,
 ]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         deprecated: true,
         docs: {

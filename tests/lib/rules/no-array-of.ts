@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-array-of"
+import rule from "../../../lib/rules/no-array-of"
 
 new RuleTester().run("no-array-of", rule, {
     valid: ["Array", "Array.from", "let Array = 0; Array.of"],

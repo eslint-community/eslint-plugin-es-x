@@ -2,24 +2,29 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
 
-const { createRule } = require("../util/create-rule")
-const {
-    definePrototypePropertiesHandler,
-} = require("../util/define-prototype-properties-handler")
+import { createRule } from "../util/create-rule"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
 
-module.exports = createRule({
+type Options = [
+    {
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }?,
+]
+
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
-            description: "disallow the `Array.prototype.forEach` method.",
-            category: "ES5",
+            description:
+                "disallow the `Array.prototype.{flat,flatMap}` method.",
+            category: "ES2019",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-array-prototype-foreach.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-array-prototype-flat.html",
         },
         fixable: null,
         messages: {
-            forbidden: "ES5 '{{name}}' method is forbidden.",
+            forbidden: "ES2019 '{{name}}' method is forbidden.",
         },
         schema: [
             {
@@ -35,7 +40,7 @@ module.exports = createRule({
     },
     create(context) {
         return definePrototypePropertiesHandler(context, {
-            Array: { forEach: "function" },
+            Array: { flat: "function", flatMap: "function" },
         })
     },
 })

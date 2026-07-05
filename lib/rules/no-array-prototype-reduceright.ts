@@ -2,24 +2,27 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
 
-const { createRule } = require("../util/create-rule")
-const {
-    definePrototypePropertiesHandler,
-} = require("../util/define-prototype-properties-handler")
+type Options = [
+    {
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
-            description: "disallow the `Array.prototype.copyWithin` method.",
-            category: "ES2015",
+            description: "disallow the `Array.prototype.reduceRight` method.",
+            category: "ES5",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-array-prototype-copywithin.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-array-prototype-reduceright.html",
         },
         fixable: null,
         messages: {
-            forbidden: "ES2015 '{{name}}' method is forbidden.",
+            forbidden: "ES5 '{{name}}' method is forbidden.",
         },
         schema: [
             {
@@ -35,7 +38,7 @@ module.exports = createRule({
     },
     create(context) {
         return definePrototypePropertiesHandler(context, {
-            Array: { copyWithin: "function" },
+            Array: { reduceRight: "function" },
         })
     },
 })
