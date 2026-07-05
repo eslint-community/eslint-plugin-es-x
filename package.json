@@ -72,7 +72,6 @@
     "mocha": "npm run -s ts -- ./node_modules/mocha/bin/mocha.js",
     "update": "run-s update:*",
     "update:url": "npm run -s lint -- --fix",
-    "update:configs": "npm run -s ts -- scripts/update-lib-configs",
     "update:flat-configs": "npm run -s ts -- scripts/update-lib-flat-configs",
     "update:index": "npm run -s ts -- scripts/update-lib-index",
     "update:doc": "npm run -s ts -- scripts/update-docs-readme",

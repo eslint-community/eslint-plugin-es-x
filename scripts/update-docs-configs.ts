@@ -12,7 +12,9 @@ const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })
 const contents = [
     "# Available Configs",
     "",
-    "This plugin provides the following configs.",
+    "This plugin provides the following flat configs.",
+    "",
+    "The `flat/`-prefixed config IDs are kept as aliases for the previous flat config names.",
     "",
 ]
 
@@ -112,20 +114,8 @@ function appendConfig(configName: string) {
 import pluginESx from "eslint-plugin-es-x"
 
 export default defineConfig([
-    pluginESx.configs["flat/${configName}"]
+    pluginESx.configs["${configName}"]
 ])`)
     contents.push("```")
-    contents.push("")
-    contents.push("<details><summary> Legacy Config </summary>")
-    contents.push("")
-    contents.push(".eslintrc.*:")
-    contents.push("")
-    contents.push("```json")
-    contents.push(`{
-    "extends": ["plugin:es-x/${configName}"],
-}`)
-    contents.push("```")
-    contents.push("")
-    contents.push("</details>")
     contents.push("")
 }

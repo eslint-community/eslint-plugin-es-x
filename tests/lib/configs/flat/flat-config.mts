@@ -16,9 +16,9 @@ describe("ESM flat config", () => {
     const allConfigs: eslintModule.Linter.Config[] = []
     for (const [name, config] of Object.entries(pluginESx.configs).filter(
         (entry): entry is [string, eslintModule.Linter.Config] =>
-            entry[0].startsWith("flat/"),
+            !entry[0].startsWith("flat/"),
     )) {
-        describe(`flat/${name}`, () => {
+        describe(name, () => {
             it("should lint without errors", async () => {
                 const result = await lint([config])
 
