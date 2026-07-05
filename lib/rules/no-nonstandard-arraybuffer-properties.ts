@@ -1,19 +1,22 @@
-"use strict"
+import { createRule } from "../util/create-rule"
+import { defineNonstandardStaticPropertiesHandler } from "../util/define-nonstandard-static-properties-handler/index"
+import { arrayBufferProperties } from "../util/well-known-properties"
 
-const { createRule } = require("../util/create-rule")
-const {
-    defineNonstandardStaticPropertiesHandler,
-} = require("../util/define-nonstandard-static-properties-handler")
-const { intlCollatorProperties } = require("../util/well-known-properties")
+type Options = [
+    {
+        allow?: string[]
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
             description:
-                "disallow non-standard static properties on `Intl.Collator` class",
+                "disallow non-standard static properties on `ArrayBuffer` class",
             category: "nonstandard",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-nonstandard-intl-collator-properties.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-nonstandard-arraybuffer-properties.html",
         },
         fixable: null,
         messages: {
@@ -36,13 +39,12 @@ module.exports = createRule({
         type: "problem",
     },
     create(context) {
-        /** @type {Set<string>} */
         const allows = new Set([
             ...(context.options[0]?.allow ?? []),
-            ...intlCollatorProperties,
+            ...arrayBufferProperties,
         ])
         return defineNonstandardStaticPropertiesHandler(context, {
-            "Intl.Collator": allows,
+            ArrayBuffer: allows,
         })
     },
 })

@@ -1,13 +1,16 @@
-"use strict"
-
-const { createRule } = require("../util/create-rule")
-const {
-    defineNonstandardStaticPropertiesHandler,
-} = require("../util/define-nonstandard-static-properties-handler")
-const {
+import { createRule } from "../util/create-rule"
+import { defineNonstandardStaticPropertiesHandler } from "../util/define-nonstandard-static-properties-handler/index"
+import {
     typedArrayProperties,
     uint8ArrayProperties,
-} = require("../util/well-known-properties")
+} from "../util/well-known-properties"
+
+type Options = [
+    {
+        allow?: string[]
+        allowTestedProperty?: boolean
+    }?,
+]
 
 const typedArrayList = [
     "Int8Array",
@@ -24,7 +27,7 @@ const typedArrayList = [
     "BigUint64Array",
 ]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
             description:
@@ -54,12 +57,10 @@ module.exports = createRule({
         type: "problem",
     },
     create(context) {
-        /** @type {Set<string>} */
         const typedArrayAllows = new Set([
             ...(context.options[0]?.allow ?? []),
             ...typedArrayProperties,
         ])
-        /** @type {Set<string>} */
         const uint8ArrayAllows = new Set([
             ...(context.options[0]?.allow ?? []),
             ...uint8ArrayProperties,

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-intl-collator-properties"
+import rule from "../../../lib/rules/no-nonstandard-intl-collator-properties"
 import { intlCollatorProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-intl-collator-properties", rule, {

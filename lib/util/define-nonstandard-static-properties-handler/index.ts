@@ -10,7 +10,10 @@ import {
 import type { BuiltinGlobalObjectName, GlobalObjectProperties } from "../types"
 
 type GlobalObjectWithProperties<N extends BuiltinGlobalObjectName> =
-    `${N}.${GlobalObjectProperties<N>}`
+    // Intentionally use distributive conditional types.
+    N extends BuiltinGlobalObjectName
+        ? `${N}.${GlobalObjectProperties<N>}`
+        : never
 type GlobalStaticPropertyNames =
     | BuiltinGlobalObjectName
     | GlobalObjectWithProperties<"Temporal" | "Intl">
