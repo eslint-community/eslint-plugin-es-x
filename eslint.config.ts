@@ -90,6 +90,14 @@ export default defineConfig([
         },
         extends: [tseslint.configs.recommended],
         rules: {
+            "@typescript-eslint/consistent-type-imports": [
+                "error",
+                {
+                    prefer: "type-imports",
+                    fixStyle: "inline-type-imports",
+                },
+            ],
+
             // Don't ban `any` until strict mode is enabled.
             "@typescript-eslint/no-explicit-any": "off",
             "@typescript-eslint/no-unsafe-argument": "off",

@@ -7,7 +7,7 @@ import {
     createPropertyGuardsContext,
     type Params,
 } from "../type-checker/property-guards"
-import { BuiltinGlobalObjectName, GlobalObjectProperties } from "../types"
+import type { BuiltinGlobalObjectName, GlobalObjectProperties } from "../types"
 
 type GlobalObjectWithProperties<N extends BuiltinGlobalObjectName> =
     `${N}.${GlobalObjectProperties<N>}`

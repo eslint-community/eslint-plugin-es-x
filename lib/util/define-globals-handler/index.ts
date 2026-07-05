@@ -1,6 +1,6 @@
 import { READ, ReferenceTracker } from "@eslint-community/eslint-utils"
 import type { Rule } from "eslint"
-import { BuiltinGlobalObjectName } from "../types"
+import type { BuiltinGlobalObjectName } from "../types"
 
 type TraceMap = Parameters<ReferenceTracker["iterateGlobalReferences"]>[0]
 type TraceMapObject = TraceMap[string]

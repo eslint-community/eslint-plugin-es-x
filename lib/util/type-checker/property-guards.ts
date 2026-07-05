@@ -4,7 +4,7 @@ import type { TSESTree } from "@typescript-eslint/types"
 import type * as ESTree from "estree"
 
 import { getPropertyKeyValue } from "../get-property-key-value"
-import { TypeName } from "eslint-type-tracer"
+import type { TypeName } from "eslint-type-tracer"
 
 const TS_NODE_TYPES = [
     "TSAsExpression", // foo as number
@@ -51,9 +51,9 @@ export type PropertyType =
     | "undefined"
     | "object"
     | "function"
-export type PropertyTypeMap = Partial<
-    Record<TypeName, Record<string, PropertyType | PropertyType[]>>
->
+export type PropertyTypeMap = Record<string, PropertyType | PropertyType[]>
+export type ClassPropertyTypeMap = Partial<Record<TypeName, PropertyTypeMap>>
+
 export type Params = {
     node: TSESTree.MemberExpression | TSESTree.Property
     className: string
@@ -70,7 +70,7 @@ export type Params = {
  * @returns The guards context.
  */
 export function createPropertyGuardsContext(options: {
-    propertyTypeMap?: PropertyTypeMap
+    propertyTypeMap?: ClassPropertyTypeMap
     context: Rule.RuleContext
 }): GuardsContext {
     const context = options.context

@@ -30,7 +30,7 @@ type Options = {
  */
 export function definePrototypePropertiesHandler(
     context: Rule.RuleContext,
-    propertyTypeMap: PropertyTypeMap,
+    propertyTypeMap: Partial<Record<TypeName, PropertyTypeMap>>,
     options?: Options,
 ): Rule.RuleListener {
     const sourceCode = context.sourceCode
@@ -67,10 +67,7 @@ export function definePrototypePropertiesHandler(
     })
 
     const propertyEntries = (
-        Object.entries(propertyTypeMap) as [
-            TypeName,
-            PropertyTypeMap[TypeName],
-        ][]
+        Object.entries(propertyTypeMap) as [TypeName, PropertyTypeMap][]
     ).map(
         ([className, properties]) =>
             [className, Object.keys(properties)] as const,

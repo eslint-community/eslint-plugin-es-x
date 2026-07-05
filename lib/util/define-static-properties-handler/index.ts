@@ -3,9 +3,9 @@ import type { Rule } from "eslint"
 import type { TSESTree } from "@typescript-eslint/types"
 
 import {
+    type ClassPropertyTypeMap,
     createPropertyGuardsContext,
     type Params,
-    type PropertyTypeMap,
 } from "../type-checker/property-guards"
 
 type TraceMap = Parameters<ReferenceTracker["iterateGlobalReferences"]>[0]
@@ -19,7 +19,7 @@ type TraceMapObject = TraceMap[string]
  */
 export function defineStaticPropertiesHandler(
     context: Rule.RuleContext,
-    propertyTypeMap: PropertyTypeMap,
+    propertyTypeMap: ClassPropertyTypeMap,
 ): Rule.RuleListener {
     const sourceCode = context.sourceCode
 
