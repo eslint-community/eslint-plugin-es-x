@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-array-prototype-reduceright"
+import rule from "../../../lib/rules/no-array-prototype-reduceright"
 const ruleId = "no-array-prototype-reduceright"
 
 new RuleTester().run(ruleId, rule, {
