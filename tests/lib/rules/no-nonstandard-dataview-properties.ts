@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-dataview-properties"
+import rule from "../../../lib/rules/no-nonstandard-dataview-properties"
 import { dataViewProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-dataview-properties", rule, {

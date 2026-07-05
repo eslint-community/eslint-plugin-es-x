@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-weakref-properties"
+import rule from "../../../lib/rules/no-nonstandard-weakref-properties"
 import { weakRefProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-weakref-properties", rule, {

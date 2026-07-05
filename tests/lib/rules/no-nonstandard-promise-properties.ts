@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-promise-properties"
+import rule from "../../../lib/rules/no-nonstandard-promise-properties"
 import { promiseProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-promise-properties", rule, {

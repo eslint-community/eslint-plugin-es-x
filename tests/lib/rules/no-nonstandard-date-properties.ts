@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-nonstandard-date-properties"
+import rule from "../../../lib/rules/no-nonstandard-date-properties"
 import { dateProperties } from "../../../lib/util/well-known-properties"
 
 new RuleTester().run("no-nonstandard-date-properties", rule, {
