@@ -1,5 +1,6 @@
 import { READ, ReferenceTracker } from "@eslint-community/eslint-utils"
 import type { Rule } from "eslint"
+import { BuiltinGlobalObjectName } from "../types"
 
 type TraceMap = Parameters<ReferenceTracker["iterateGlobalReferences"]>[0]
 type TraceMapObject = TraceMap[string]
@@ -12,7 +13,7 @@ type TraceMapObject = TraceMap[string]
  */
 export function defineGlobalsHandler(
     context: Rule.RuleContext,
-    names: string[],
+    names: BuiltinGlobalObjectName[],
 ): Rule.RuleListener {
     const sourceCode = context.sourceCode
     return {

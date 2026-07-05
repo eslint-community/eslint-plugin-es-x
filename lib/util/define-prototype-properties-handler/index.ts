@@ -67,7 +67,10 @@ export function definePrototypePropertiesHandler(
     })
 
     const propertyEntries = (
-        Object.entries(propertyTypeMap) as [TypeName, PropertyTypeMap[string]][]
+        Object.entries(propertyTypeMap) as [
+            TypeName,
+            PropertyTypeMap[TypeName],
+        ][]
     ).map(
         ([className, properties]) =>
             [className, Object.keys(properties)] as const,

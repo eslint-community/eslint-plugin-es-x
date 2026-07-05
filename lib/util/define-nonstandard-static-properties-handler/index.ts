@@ -7,17 +7,12 @@ import {
     createPropertyGuardsContext,
     type Params,
 } from "../type-checker/property-guards"
+import { BuiltinGlobalObjectName, GlobalObjectProperties } from "../types"
 
-type IsNever<T> = [T] extends [never] ? true : false
-type GlobalObjectName = keyof typeof globalThis & string
-type GlobalObjectProperties<N extends GlobalObjectName> =
-    IsNever<keyof (typeof globalThis)[N]> extends true
-        ? never
-        : keyof (typeof globalThis)[N] & string
-type GlobalObjectWithProperties<N extends GlobalObjectName> =
+type GlobalObjectWithProperties<N extends BuiltinGlobalObjectName> =
     `${N}.${GlobalObjectProperties<N>}`
 type GlobalStaticPropertyNames =
-    | GlobalObjectName
+    | BuiltinGlobalObjectName
     | GlobalObjectWithProperties<"Temporal" | "Intl">
 
 type NameMap = Partial<Record<GlobalStaticPropertyNames, Iterable<string>>>
