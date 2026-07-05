@@ -1,21 +1,22 @@
-"use strict"
+import { createRule } from "../util/create-rule"
+import { defineNonstandardPrototypePropertiesHandler } from "../util/define-nonstandard-prototype-properties-handler/index"
+import { iteratorPrototypeProperties } from "../util/well-known-properties"
 
-const { createRule } = require("../util/create-rule")
-const {
-    defineNonstandardPrototypePropertiesHandler,
-} = require("../util/define-nonstandard-prototype-properties-handler")
-const {
-    temporalInstantPrototypeProperties,
-} = require("../util/well-known-properties")
+type Options = [
+    {
+        allow?: string[]
+        allowTestedProperty?: boolean
+    }?,
+]
 
-module.exports = createRule({
+export default createRule<"forbidden", Options>({
     meta: {
         docs: {
             description:
-                "disallow non-standard properties on Temporal.Instant instance",
+                "disallow non-standard properties on Iterator instance",
             category: "nonstandard",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-nonstandard-temporal-instant-prototype-properties.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-nonstandard-iterator-prototype-properties.html",
         },
         fixable: null,
         messages: {
@@ -38,13 +39,12 @@ module.exports = createRule({
         type: "problem",
     },
     create(context) {
-        /** @type {Set<string>} */
         const allows = new Set([
             ...(context.options[0]?.allow ?? []),
-            ...temporalInstantPrototypeProperties,
+            ...iteratorPrototypeProperties,
         ])
         return defineNonstandardPrototypePropertiesHandler(context, {
-            "Temporal.Instant": allows,
+            Iterator: allows,
         })
     },
 })
