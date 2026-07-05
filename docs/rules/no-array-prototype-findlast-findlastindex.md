@@ -61,7 +61,7 @@ This rule was introduced in v5.3.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-array-prototype-findlast-findlastindex.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-array-prototype-findlast-findlastindex.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-array-prototype-findlast-findlastindex.ts)
 
 [no-new-in-es2023]: ../configs/index.md#no-new-in-es2023
