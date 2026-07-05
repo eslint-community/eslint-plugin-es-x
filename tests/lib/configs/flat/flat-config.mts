@@ -1,7 +1,14 @@
 import path from "node:path"
 import assert from "node:assert"
 import eslintModule from "eslint"
-import pluginESx from "../../../../lib/index"
+import pluginESxModule from "../../../../lib/index"
+
+const pluginESx =
+    (
+        pluginESxModule as typeof pluginESxModule & {
+            default?: typeof pluginESxModule
+        }
+    ).default ?? pluginESxModule
 
 // -----------------------------------------------------------------------------
 // Tests

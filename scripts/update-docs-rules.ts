@@ -42,8 +42,8 @@ async function main() {
     const docsRoot = path.resolve(__dirname, "../docs/rules/")
     const configRoot = path.resolve(__dirname, "../lib/configs/flat")
     const configs = await Promise.all(
-        fs.globSync("*.js", { cwd: configRoot }).map(async (filename) => {
-            const configName = path.basename(filename, ".js")
+        fs.globSync("*.ts", { cwd: configRoot }).map(async (filename) => {
+            const configName = path.basename(filename, ".ts")
             const config = (await import(path.join(configRoot, filename)))
                 .default
             const ruleIds = new Set(Object.keys(config.rules))

@@ -19,13 +19,12 @@ fs.writeFileSync(
  * DON'T EDIT THIS FILE.
  * This file was generated automatically by 'scripts/update-lib-index.ts'.
  */
-/* eslint-disable @typescript-eslint/no-require-imports */
+import packageJson from "../package.json" with { type: "json" }
 import type { Linter, Rule } from "eslint"
+${configIds.map((id) => `import ${getConfigIdentifier(id)} from "./configs/flat/${id}"`).join("\n")}
+${ruleIds.map((id) => `import ${getRuleIdentifier(id)} from "./rules/${id}"`).join("\n")}
 
-const { version, name } = require("../package.json") as {
-    version: string
-    name: string
-}
+const { version, name } = packageJson
 
 const plugin: {
     meta: { name: string; version: string }
@@ -38,19 +37,18 @@ const plugin: {
     meta: { version, name },
     configs: {
         ${configIds
-            .map((id) => `"${id}": require("./configs/flat/${id}")`)
+            .map((id) => `"${id}": ${getConfigIdentifier(id)}`)
             .join(",\n        ")},
         ${configIds
-            .map((id) => `"flat/${id}": require("./configs/flat/${id}")`)
+            .map((id) => `"flat/${id}": ${getConfigIdentifier(id)}`)
             .join(",\n        ")},
     },
     rules: {
-        ${ruleIds.map((id) => `"${id}": require("./rules/${id}")`).join(",\n        ")},
+        ${ruleIds.map((id) => `"${id}": ${getRuleIdentifier(id)}`).join(",\n        ")},
     },
 }
 
-export = plugin
-/* eslint-enable @typescript-eslint/no-require-imports */
+export default plugin
 `,
 )
 
@@ -64,7 +62,23 @@ async function format() {
 
 function getConfigIds(rootPath: string) {
     return fs
-        .globSync("*.js", { cwd: rootPath })
-        .map((f) => path.basename(f, ".js"))
+        .globSync("*.ts", { cwd: rootPath })
+        .map((f) => path.basename(f, ".ts"))
         .sort(collator.compare.bind(collator))
+}
+
+function getConfigIdentifier(configId: string) {
+    return `${getIdentifier(configId)}Config`
+}
+
+function getRuleIdentifier(ruleId: string) {
+    return `${getIdentifier(ruleId)}Rule`
+}
+
+function getIdentifier(id: string) {
+    const parts = id.split(/\W+/u).filter(Boolean)
+    return `${parts[0]}${parts
+        .slice(1)
+        .map((part) => `${part[0].toUpperCase()}${part.slice(1)}`)
+        .join("")}`
 }

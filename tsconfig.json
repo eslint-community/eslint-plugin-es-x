@@ -8,8 +8,8 @@
         "strict": false,
         
         /* Modules */
-        "module": "nodenext",
-        "moduleResolution": "nodenext",
+        "module": "preserve",
+        "moduleResolution": "bundler",
         "noUncheckedSideEffectImports": false,
         "resolveJsonModule": true,
 
