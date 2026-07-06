@@ -6,15 +6,8 @@ import * as fs from "node:fs"
 import * as path from "node:path"
 import proposals from "./proposals.ts"
 import type { JSONSchema4 } from "json-schema"
-import { createRequire } from "node:module"
 
 const libRoot = path.resolve(import.meta.dirname, "../lib/rules")
-const baseRequire = createRequire(import.meta.url)
-
-function requireRule<T>(filePath: string): T {
-    const ruleModule = baseRequire(filePath)
-    return ruleModule.default
-}
 
 export interface Rule {
     /** The rule name. */
@@ -64,9 +57,9 @@ type ConfigCategory = Category & {
 
 // After the ECMAScript specification becomes GA,
 // we will need to change this constant and bump the major version.
-const LATEST_ES_YEAR = 2026
+export const LATEST_ES_YEAR = 2026
 
-const categories: { [categoryId: string]: Category } = [
+export const categories: { [categoryId: string]: Category } = [
     ...(function* () {
         const max = new Date().getFullYear() + 2
         for (let year = max; year >= 2015; year--) {
@@ -151,7 +144,7 @@ categories.deprecated = {
     rules: [],
 }
 
-const rules: Rule[] = []
+export const rules: Rule[] = []
 
 // 全ルールを探す
 for (const sourceFile of fs
@@ -160,7 +153,7 @@ for (const sourceFile of fs
     .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))) {
     const filePath = path.join(libRoot, sourceFile)
     const ruleId = sourceFile.replace(/\.(?:js|ts)$/u, "")
-    const ruleModule = requireRule(filePath)
+    const ruleModule = (await import(filePath)).default
     const category = ruleModule.meta.docs.category
     const proposalIds = ruleModule.meta.docs.proposal
         ? [ruleModule.meta.docs.proposal].flat()
@@ -213,7 +206,7 @@ for (const sourceFile of fs
     }
 }
 
-function getConfigCategories(): ConfigCategory[] {
+export function getConfigCategories(): ConfigCategory[] {
     const configs: Record<string, ConfigCategory> = {}
     for (const category of Object.values(categories)) {
         const { configName } = category
@@ -231,7 +224,7 @@ function getConfigCategories(): ConfigCategory[] {
     return Object.values(configs)
 }
 
-function getConfigCategoriesForAboveConfig(
+export function getConfigCategoriesForAboveConfig(
     { edition, specKind }: Pick<Category, "edition" | "specKind">,
     configCategories = getConfigCategories(),
 ): ConfigCategory[] {
@@ -245,12 +238,4 @@ function getConfigCategoriesForAboveConfig(
             category.specKind === specKind &&
             !category.experimental,
     )
-}
-
-export {
-    categories,
-    getConfigCategories,
-    getConfigCategoriesForAboveConfig,
-    rules,
-    LATEST_ES_YEAR,
 }
