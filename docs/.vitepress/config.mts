@@ -1,6 +1,5 @@
 import { defineConfig } from "vitepress"
 import path from "node:path"
-import { viteCommonjs, vitePluginRequireResolve } from "./vite-plugin.mjs"
 import eslint4b from "vite-plugin-eslint4b"
 import { categories } from "../../scripts/rules"
 import monacoEditorPackageJson from "monaco-editor/package.json" with { type: "json" }
@@ -14,7 +13,7 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "./dist/eslint-plugin-es-x"),
     vite: {
         publicDir: path.resolve(import.meta.dirname, "./public"),
-        plugins: [eslint4b(), vitePluginRequireResolve(), viteCommonjs()],
+        plugins: [eslint4b()],
         define: {
             MONACO_EDITOR_VERSION: JSON.stringify(
                 monacoEditorPackageJson.version,
