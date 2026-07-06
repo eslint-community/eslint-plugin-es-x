@@ -2,12 +2,11 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { READ, ReferenceTracker } from "@eslint-community/eslint-utils"
+import { createRule } from "../util/create-rule"
+import type * as ESTree from "estree"
 
-const { READ, ReferenceTracker } = require("@eslint-community/eslint-utils")
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow the subclassing of the built-in classes.",
@@ -46,8 +45,7 @@ module.exports = createRule({
                 })) {
                     if (
                         node.parent.type.startsWith("Class") &&
-                        /** @type {import("estree").BaseClass} */ (node.parent)
-                            .superClass === node
+                        (node.parent as ESTree.BaseClass).superClass === node
                     ) {
                         context.report({
                             node,

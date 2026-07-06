@@ -2,12 +2,10 @@
  * @author Yosuke Ota
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { isParenthesized } from "@eslint-community/eslint-utils"
+import { createRule } from "../util/create-rule"
 
-const utils = require("@eslint-community/eslint-utils")
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow logical assignment operators.",
@@ -45,7 +43,7 @@ module.exports = createRule({
                                 ` ${varText} ${biOperator}`,
                             ),
                         ]
-                        if (!utils.isParenthesized(node.right, sourceCode)) {
+                        if (!isParenthesized(node.right, sourceCode)) {
                             results.push(
                                 fixer.insertTextBefore(node.right, "("),
                                 fixer.insertTextAfter(node.right, ")"),

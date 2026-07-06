@@ -31,7 +31,7 @@ This rule was introduced in v8.1.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-import-attributes.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-import-attributes.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-import-attributes.ts)
 
 [no-import-attributes]: ../configs/index.md#no-import-attributes

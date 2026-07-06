@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-error-cause"
+import rule from "../../../lib/rules/no-error-cause"
 
 const errorConstructorNames = [
     "Error",

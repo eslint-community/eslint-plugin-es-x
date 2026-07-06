@@ -2,7 +2,7 @@
  * DON'T EDIT THIS FILE.
  * This file was generated automatically by 'scripts/update-lib-index.ts'.
  */
-import packageJson from "../package.json" with { type: "json" }
+import { name, version } from "./meta"
 import type { Linter, Rule } from "eslint"
 import noArrayGroupingConfig from "./configs/flat/no-array-grouping"
 import noArraybufferBase64Config from "./configs/flat/no-arraybuffer-base64"
@@ -443,8 +443,6 @@ import noWeakSetRule from "./rules/no-weak-set"
 import noWeakmapPrototypeGetorinsertRule from "./rules/no-weakmap-prototype-getorinsert"
 import noWeakmapPrototypeGetorinsertcomputedRule from "./rules/no-weakmap-prototype-getorinsertcomputed"
 import noWeakrefsRule from "./rules/no-weakrefs"
-
-const { version, name } = packageJson
 
 const plugin: {
     meta: { name: string; version: string }

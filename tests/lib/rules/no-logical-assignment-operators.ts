@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-logical-assignment-operators"
+import rule from "../../../lib/rules/no-logical-assignment-operators"
 
 new RuleTester().run("no-logical-assignment-operators", rule, {
     valid: [

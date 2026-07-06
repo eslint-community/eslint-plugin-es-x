@@ -2,15 +2,13 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
-const {
-    isOpeningBracketToken,
+import {
     isClosingBracketToken,
-} = require("@eslint-community/eslint-utils")
-const { createRule } = require("../util/create-rule")
+    isOpeningBracketToken,
+} from "@eslint-community/eslint-utils"
+import { createRule } from "../util/create-rule"
 
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow property shorthands.",

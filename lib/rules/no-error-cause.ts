@@ -3,21 +3,13 @@
  * See LICENSE file in root directory for full license.
  */
 
-"use strict"
-
-const {
+import {
     CONSTRUCT,
     READ,
     ReferenceTracker,
     getPropertyName,
-} = require("@eslint-community/eslint-utils")
-const { createRule } = require("../util/create-rule")
-
-/**
- * @typedef {import("estree").Node} Node
- * @typedef {import("estree").ClassExpression | import("estree").ClassDeclaration} ClassNode
- * @typedef {import("estree").CallExpression} CallExpression
- */
+} from "@eslint-community/eslint-utils"
+import { createRule } from "../util/create-rule"
 
 const errorConstructorNames = [
     "Error",
@@ -64,7 +56,7 @@ function findClassFromAncestors(node) {
     return node
 }
 
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow Error Cause.",

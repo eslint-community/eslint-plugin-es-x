@@ -70,7 +70,7 @@ This rule was introduced in v7.3.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-resizable-and-growable-arraybuffers.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-resizable-and-growable-arraybuffers.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-resizable-and-growable-arraybuffers.ts)
 
 [no-new-in-es2024]: ../configs/index.md#no-new-in-es2024
