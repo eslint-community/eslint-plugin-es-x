@@ -2,10 +2,10 @@ import type { ESLint } from "eslint"
 import { type Config, defineConfig, globalIgnores } from "eslint/config"
 import tseslint from "typescript-eslint"
 
-import myPlugin from "./eslint-internal/my-plugin"
-import eslintPluginConfig from "./eslint-internal/config/+eslint-plugin"
-import es2020 from "./eslint-internal/config/es2020"
-import noStringPrototypeSubstr from "./lib/rules/no-string-prototype-substr"
+import myPlugin from "./eslint-internal/my-plugin.js"
+import eslintPluginConfig from "./eslint-internal/config/+eslint-plugin.js"
+import es2020 from "./eslint-internal/config/es2020.js"
+import noStringPrototypeSubstr from "./lib/rules/no-string-prototype-substr.ts"
 
 export default defineConfig([
     globalIgnores([
@@ -89,6 +89,11 @@ export default defineConfig([
             parser: tseslint.parser,
         },
         extends: [tseslint.configs.recommended],
+        settings: {
+            node: {
+                typescriptExtensionMap: [],
+            },
+        },
         rules: {
             "@typescript-eslint/consistent-type-imports": [
                 "error",
@@ -106,7 +111,7 @@ export default defineConfig([
             "@typescript-eslint/no-unsafe-member-access": "off",
             "@typescript-eslint/no-unsafe-return": "off",
 
-            "n/file-extension-in-import": "off",
+            "n/file-extension-in-import": ["error", "always"],
             "n/no-missing-import": ["error", { ignoreTypeImport: true }],
         },
     },

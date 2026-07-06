@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-json-parse-reviver-context-parameter"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-json-parse-reviver-context-parameter.ts"
 
 new RuleTester().run("no-json-parse-reviver-context-parameter", rule, {
     valid: [

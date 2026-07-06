@@ -6,7 +6,7 @@ import * as cp from "node:child_process"
 import * as fs from "node:fs"
 import * as path from "node:path"
 import * as prompts from "@clack/prompts"
-import { LATEST_ES_YEAR } from "./rules"
+import { LATEST_ES_YEAR } from "./rules.ts"
 
 const logger = console
 
@@ -285,8 +285,8 @@ function buildGlobalObjectRuleResources({
     const example = `const value = ${object}`
     const shadowedGlobalObject = createShadowedGlobalObjectExample(object)
     return {
-        rule: `import { createRule } from "../util/create-rule"
-import { defineGlobalsHandler } from "../util/define-globals-handler/index"
+        rule: `import { createRule } from "../util/create-rule.ts"
+import { defineGlobalsHandler } from "../util/define-globals-handler/index.ts"
 
 export default createRule<"forbidden", []>({
     meta: {
@@ -308,8 +308,8 @@ export default createRule<"forbidden", []>({
     },
 })
 `,
-        test: `import RuleTester from "../../tester"
-import rule from "../../../lib/rules/${ruleId}"
+        test: `import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/${ruleId}.ts"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: ["Array", "Object", "${shadowedGlobalObject}"],
@@ -377,8 +377,8 @@ function buildStaticPropertiesRuleResources({
     }
 
     return {
-        rule: `import { createRule } from "../util/create-rule"
-import { defineStaticPropertiesHandler } from "../util/define-static-properties-handler/index"
+        rule: `import { createRule } from "../util/create-rule.ts"
+import { defineStaticPropertiesHandler } from "../util/define-static-properties-handler/index.ts"
 
 type Options = [
     {
@@ -416,8 +416,8 @@ export default createRule<"forbidden", Options>({
     },
 })
 `,
-        test: `import RuleTester from "../../tester"
-import rule from "../../../lib/rules/${ruleId}"
+        test: `import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/${ruleId}.ts"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: [
@@ -529,8 +529,8 @@ function buildPrototypePropertiesRuleResources({
     }
 
     return {
-        rule: `import { createRule } from "../util/create-rule"
-import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
+        rule: `import { createRule } from "../util/create-rule.ts"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index.ts"
 
 type Options = [
     {
@@ -571,8 +571,8 @@ export default createRule<"forbidden", Options>({
 })
 `,
         test: `import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/${ruleId}"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/${ruleId}.ts"
 
 const ruleId = "${ruleId}"
 
@@ -763,9 +763,9 @@ function buildNonStandardStaticPropertiesRuleResources({
     const objectDescriptionSuffix =
         inferGlobalObjectKind(object) === "class" ? " class" : ""
     return {
-        rule: `import { createRule } from "../util/create-rule"
-import { defineNonstandardStaticPropertiesHandler } from "../util/define-nonstandard-static-properties-handler/index"
-import { ${camelObject}Properties } from "../util/well-known-properties"
+        rule: `import { createRule } from "../util/create-rule.ts"
+import { defineNonstandardStaticPropertiesHandler } from "../util/define-nonstandard-static-properties-handler/index.ts"
+import { ${camelObject}Properties } from "../util/well-known-properties.ts"
 
 type Options = [
     {
@@ -813,9 +813,9 @@ export default createRule<"forbidden", Options>({
     },
 })
 `,
-        test: `import RuleTester from "../../tester"
-import rule from "../../../lib/rules/${ruleId}"
-import { ${camelObject}Properties } from "../../../lib/util/well-known-properties"
+        test: `import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/${ruleId}.ts"
+import { ${camelObject}Properties } from "../../../lib/util/well-known-properties.ts"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: [
@@ -890,9 +890,9 @@ function buildNonStandardPrototypePropertiesRuleResources({
     const objectKey = createObjectPropertyKey(object)
     const allowsIndex = allowsIndexProperties(object)
     return {
-        rule: `import { createRule } from "../util/create-rule"
-import { defineNonstandardPrototypePropertiesHandler } from "../util/define-nonstandard-prototype-properties-handler/index"
-import { ${camelObject}PrototypeProperties } from "../util/well-known-properties"
+        rule: `import { createRule } from "../util/create-rule.ts"
+import { defineNonstandardPrototypePropertiesHandler } from "../util/define-nonstandard-prototype-properties-handler/index.ts"
+import { ${camelObject}PrototypeProperties } from "../util/well-known-properties.ts"
 
 type Options = [
     {
@@ -949,12 +949,12 @@ export default createRule<"forbidden", Options>({
     },
 })
 `,
-        test: `import RuleTester from "../../tester"
-import rule from "../../../lib/rules/${ruleId}"
+        test: `import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/${ruleId}.ts"
 import * as path from "node:path"
 import {
     ${camelObject}PrototypeProperties,
-} from "../../../lib/util/well-known-properties"
+} from "../../../lib/util/well-known-properties.ts"
 
 const ruleId = "${ruleId}"
 
@@ -1139,7 +1139,7 @@ This is prior to the \`settings['es-x'].allowTestedProperty\` setting.
 
 function buildDefaultResources({ ruleId }: ResourceOptions): RuleResources {
     return {
-        rule: `import { createRule } from "../util/create-rule"
+        rule: `import { createRule } from "../util/create-rule.ts"
 
 export default createRule<"forbidden", []>({
     meta: {
@@ -1161,8 +1161,8 @@ export default createRule<"forbidden", []>({
     },
 })
 `,
-        test: `import RuleTester from "../../tester"
-import rule from "../../../lib/rules/${ruleId}"
+        test: `import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/${ruleId}.ts"
 
 new RuleTester().run("${ruleId}", rule, {
     valid: [],

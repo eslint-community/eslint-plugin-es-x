@@ -1,10 +1,10 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-typed-array-prototype-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-typed-array-prototype-properties.ts"
 import {
     typedArrayPrototypeProperties,
     uint8ArrayPrototypeProperties,
-} from "../../../lib/util/well-known-properties"
+} from "../../../lib/util/well-known-properties.ts"
 const ruleId = "no-nonstandard-typed-array-prototype-properties"
 
 const typedArrayList = [

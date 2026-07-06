@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-string-fromcodepoint"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-string-fromcodepoint.ts"
 
 new RuleTester().run("no-string-fromcodepoint", rule, {
     valid: ["String", "String.raw", "let String = 0; String.fromCodePoint"],

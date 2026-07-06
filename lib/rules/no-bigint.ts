@@ -2,9 +2,9 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-import { createRule } from "../util/create-rule"
-import { mergeVisitors } from "../util/merge-visitors"
-import { defineGlobalsHandler } from "../util/define-globals-handler/index"
+import { createRule } from "../util/create-rule.ts"
+import { mergeVisitors } from "../util/merge-visitors.ts"
+import { defineGlobalsHandler } from "../util/define-globals-handler/index.ts"
 
 export default createRule<"forbidden", []>({
     meta: {

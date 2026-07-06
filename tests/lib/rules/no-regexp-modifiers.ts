@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-modifiers"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-modifiers.ts"
 
 new RuleTester().run("no-regexp-modifiers", rule, {
     valid: [

@@ -4,8 +4,8 @@
  */
 
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-string-prototype-endswith"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-string-prototype-endswith.ts"
 const ruleId = "no-string-prototype-endswith"
 
 new RuleTester().run(ruleId, rule, {

@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-private-in"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-private-in.ts"
 
 new RuleTester().run("no-private-in", rule, {
     valid: [

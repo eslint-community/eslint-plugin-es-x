@@ -4,8 +4,8 @@
  */
 
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-prototype-flags"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-prototype-flags.ts"
 const ruleId = "no-regexp-prototype-flags"
 
 new RuleTester().run(ruleId, rule, {

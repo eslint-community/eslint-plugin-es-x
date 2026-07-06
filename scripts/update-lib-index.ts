@@ -5,7 +5,7 @@
 import * as fs from "node:fs"
 import * as path from "node:path"
 import { ESLint } from "eslint"
-import { rules } from "./rules"
+import { rules } from "./rules.ts"
 
 const collator = new Intl.Collator("en", { numeric: true })
 
@@ -19,10 +19,10 @@ fs.writeFileSync(
  * DON'T EDIT THIS FILE.
  * This file was generated automatically by 'scripts/update-lib-index.ts'.
  */
-import { name, version } from "./meta"
+import { name, version } from "./meta.ts"
 import type { Linter, Rule } from "eslint"
-${configIds.map((id) => `import ${getConfigIdentifier(id)} from "./configs/flat/${id}"`).join("\n")}
-${ruleIds.map((id) => `import ${getRuleIdentifier(id)} from "./rules/${id}"`).join("\n")}
+${configIds.map((id) => `import ${getConfigIdentifier(id)} from "./configs/flat/${id}.ts"`).join("\n")}
+${ruleIds.map((id) => `import ${getRuleIdentifier(id)} from "./rules/${id}.ts"`).join("\n")}
 
 const plugin: {
     meta: { name: string; version: string }

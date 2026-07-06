@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-suppressederror"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-suppressederror.ts"
 
 new RuleTester().run("no-suppressederror", rule, {
     valid: ["Array", "Object", "let SuppressedError = 0; SuppressedError"],

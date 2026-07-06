@@ -4,7 +4,7 @@
  */
 import * as fs from "node:fs"
 import * as path from "node:path"
-import proposals from "./proposals"
+import proposals from "./proposals.ts"
 import type { JSONSchema4 } from "json-schema"
 import { createJiti } from "jiti"
 

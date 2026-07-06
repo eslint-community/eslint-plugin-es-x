@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-malformed-template-literals"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-malformed-template-literals.ts"
 
 new RuleTester().run("no-malformed-template-literals", rule, {
     valid: ["`foo`", "tag`foo`", "tag``"],

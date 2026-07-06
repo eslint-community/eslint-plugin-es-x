@@ -2,7 +2,7 @@
  * @author Yosuke Ota <https://github.com/ota-meshi>
  * See LICENSE file in root directory for full license.
  */
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 
 /**
  * Checks if the given token is a nullish coalescing operator or not.

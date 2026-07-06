@@ -1,5 +1,5 @@
-import { createRule } from "../util/create-rule"
-import { defineRegExpHandler } from "../util/define-regexp-handler"
+import { createRule } from "../util/create-rule.ts"
+import { defineRegExpHandler } from "../util/define-regexp-handler.ts"
 
 export default createRule<"forbidden", []>({
     meta: {

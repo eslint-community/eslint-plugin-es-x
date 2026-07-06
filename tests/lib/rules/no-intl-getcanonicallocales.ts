@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-intl-getcanonicallocales"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-intl-getcanonicallocales.ts"
 
 new RuleTester().run("no-intl-getcanonicallocales", rule, {
     valid: [

@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-intl-displaynames"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-intl-displaynames.ts"
 
 new RuleTester().run("no-intl-displaynames", rule, {
     valid: [

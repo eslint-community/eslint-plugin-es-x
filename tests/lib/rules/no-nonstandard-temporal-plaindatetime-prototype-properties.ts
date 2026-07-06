@@ -1,7 +1,7 @@
 import path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-temporal-plaindatetime-prototype-properties"
-import { temporalPlainDateTimePrototypeProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-temporal-plaindatetime-prototype-properties.ts"
+import { temporalPlainDateTimePrototypeProperties } from "../../../lib/util/well-known-properties.ts"
 import * as parser from "@typescript-eslint/parser"
 const ruleId = "no-nonstandard-temporal-plaindatetime-prototype-properties"
 

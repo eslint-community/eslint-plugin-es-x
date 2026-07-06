@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-trailing-dynamic-import-commas"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-trailing-dynamic-import-commas.ts"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

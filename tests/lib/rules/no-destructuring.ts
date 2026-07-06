@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-destructuring"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-destructuring.ts"
 
 new RuleTester().run("no-destructuring", rule, {
     valid: ["({})", "({a: 1})", "[]", "[1]", "var a = {a}"],

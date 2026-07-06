@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-object-isfrozen"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-object-isfrozen.ts"
 
 new RuleTester().run("no-object-isfrozen", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.isFrozen"],

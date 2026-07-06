@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-computed-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-computed-properties.ts"
 
 new RuleTester().run("no-computed-properties", rule, {
     valid: ["({ foo: 1 })", "({ foo })", "({ foo() {} })"],

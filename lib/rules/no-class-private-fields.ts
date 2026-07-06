@@ -2,8 +2,8 @@
  * @author Yosuke Ota <https://github.com/ota-meshi>
  * See LICENSE file in root directory for full license.
  */
-import { getFieldName } from "../utils"
-import { createRule } from "../util/create-rule"
+import { getFieldName } from "../utils.ts"
+import { createRule } from "../util/create-rule.ts"
 import type { TSESTree } from "@typescript-eslint/types"
 
 export default createRule<"forbidden", []>({

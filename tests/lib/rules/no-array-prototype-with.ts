@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-array-prototype-with"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-array-prototype-with.ts"
 const ruleId = "no-array-prototype-with"
 
 new RuleTester().run(ruleId, rule, {

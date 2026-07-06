@@ -1,9 +1,9 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-typed-array-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-typed-array-properties.ts"
 import {
     typedArrayProperties,
     uint8ArrayProperties,
-} from "../../../lib/util/well-known-properties"
+} from "../../../lib/util/well-known-properties.ts"
 
 const typedArrayList = [
     "Int8Array",

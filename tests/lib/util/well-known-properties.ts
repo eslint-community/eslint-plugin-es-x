@@ -1,5 +1,5 @@
 import * as assert from "node:assert"
-import * as wellKnownProperties from "../../../lib/util/well-known-properties"
+import * as wellKnownProperties from "../../../lib/util/well-known-properties.ts"
 
 describe("well-known-properties", () => {
     it("should have Object static properties", () => {

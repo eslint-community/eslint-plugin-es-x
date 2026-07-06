@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-error-iserror"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-error-iserror.ts"
 
 new RuleTester().run("no-error-iserror", rule, {
     valid: [

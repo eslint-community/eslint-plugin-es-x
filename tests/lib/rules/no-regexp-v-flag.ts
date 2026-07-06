@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-v-flag"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-v-flag.ts"
 
 new RuleTester().run("no-regexp-v-flag", rule, {
     valid: [

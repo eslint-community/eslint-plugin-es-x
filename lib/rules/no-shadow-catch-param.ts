@@ -1,4 +1,4 @@
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 import type * as ESTree from "estree"
 
 export default createRule<"forbidden", []>({

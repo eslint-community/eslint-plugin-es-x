@@ -6,7 +6,7 @@ import {
     type ClassPropertyTypeMap,
     createPropertyGuardsContext,
     type Params,
-} from "../type-checker/property-guards"
+} from "../type-checker/property-guards.ts"
 
 type TraceMap = Parameters<ReferenceTracker["iterateGlobalReferences"]>[0]
 type TraceMapObject = TraceMap[string]

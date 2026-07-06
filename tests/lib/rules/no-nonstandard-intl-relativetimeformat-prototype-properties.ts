@@ -1,7 +1,7 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-intl-relativetimeformat-prototype-properties"
-import { intlRelativeTimeFormatPrototypeProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-intl-relativetimeformat-prototype-properties.ts"
+import { intlRelativeTimeFormatPrototypeProperties } from "../../../lib/util/well-known-properties.ts"
 const ruleId = "no-nonstandard-intl-relativetimeformat-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {

@@ -1,6 +1,6 @@
 import * as parser from "@typescript-eslint/parser"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-using-declarations"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-using-declarations.ts"
 
 new RuleTester({
     languageOptions: {

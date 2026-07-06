@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-reflect"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-reflect.ts"
 
 new RuleTester().run("no-reflect", rule, {
     valid: ["Array", "Object", "let Reflect = 0; Reflect"],

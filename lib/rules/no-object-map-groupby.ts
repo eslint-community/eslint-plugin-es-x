@@ -1,8 +1,8 @@
-import { createRule } from "../util/create-rule"
-import { mergeVisitors } from "../util/merge-visitors"
+import { createRule } from "../util/create-rule.ts"
+import { mergeVisitors } from "../util/merge-visitors.ts"
 
-import noObjectGroupby from "./no-object-groupby"
-import noMapGroupby from "./no-map-groupby"
+import noObjectGroupby from "./no-object-groupby.ts"
+import noMapGroupby from "./no-map-groupby.ts"
 
 const rules = [noObjectGroupby, noMapGroupby]
 

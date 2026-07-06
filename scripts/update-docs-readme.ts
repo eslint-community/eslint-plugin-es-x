@@ -9,7 +9,7 @@ import {
     getConfigCategoriesForAboveConfig,
     type Category,
     type Rule,
-} from "./rules"
+} from "./rules.ts"
 
 const collator = new Intl.Collator("en", { numeric: true })
 const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })

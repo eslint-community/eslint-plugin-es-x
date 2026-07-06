@@ -3,10 +3,10 @@
  * See LICENSE file in root directory for full license.
  */
 
-import { createRule } from "../util/create-rule"
-import { mergeVisitors } from "../util/merge-visitors"
-import noArrayPrototypeAtRule from "./no-array-prototype-at"
-import noStringPrototypeAtRule from "./no-string-prototype-at"
+import { createRule } from "../util/create-rule.ts"
+import { mergeVisitors } from "../util/merge-visitors.ts"
+import noArrayPrototypeAtRule from "./no-array-prototype-at.ts"
+import noStringPrototypeAtRule from "./no-string-prototype-at.ts"
 
 const rules = [noArrayPrototypeAtRule, noStringPrototypeAtRule]
 

@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-iterator-concat"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-iterator-concat.ts"
 
 new RuleTester().run("no-iterator-concat", rule, {
     valid: ["Iterator", "Iterator.length", "let Iterator = 0; Iterator.concat"],

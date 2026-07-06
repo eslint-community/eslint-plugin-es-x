@@ -8,7 +8,7 @@ import {
     createPropertyGuardsContext,
     type Params,
     type PropertyTypeMap,
-} from "../type-checker/property-guards"
+} from "../type-checker/property-guards.ts"
 
 type CreateReportArgument = {
     objectTypeResult: true | "aggressive"

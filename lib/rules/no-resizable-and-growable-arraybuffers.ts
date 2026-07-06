@@ -1,4 +1,4 @@
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 
 type Options = [
     {
@@ -7,9 +7,9 @@ type Options = [
     }?,
 ]
 
-import { mergeVisitors } from "../util/merge-visitors"
+import { mergeVisitors } from "../util/merge-visitors.ts"
 import { CONSTRUCT, ReferenceTracker } from "@eslint-community/eslint-utils"
-import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index.ts"
 
 /**
  * @param {Node|undefined} node

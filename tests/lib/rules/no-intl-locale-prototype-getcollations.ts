@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-intl-locale-prototype-getcollations"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-intl-locale-prototype-getcollations.ts"
 const ruleId = "no-intl-locale-prototype-getcollations"
 
 new RuleTester().run(ruleId, rule, {

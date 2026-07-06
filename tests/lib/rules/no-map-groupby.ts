@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-map-groupby"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-map-groupby.ts"
 
 new RuleTester().run("no-map-groupby", rule, {
     valid: [

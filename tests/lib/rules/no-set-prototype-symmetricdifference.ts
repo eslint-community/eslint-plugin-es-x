@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-set-prototype-symmetricdifference"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-set-prototype-symmetricdifference.ts"
 const ruleId = "no-set-prototype-symmetricdifference"
 
 const method = "symmetricDifference"

@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-dynamic-import-options"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-dynamic-import-options.ts"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

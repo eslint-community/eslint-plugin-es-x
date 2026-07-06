@@ -4,8 +4,8 @@
  */
 
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-string-prototype-trimstart-trimend"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-string-prototype-trimstart-trimend.ts"
 const ruleId = "no-string-prototype-trimstart-trimend"
 
 new RuleTester().run(ruleId, rule, {

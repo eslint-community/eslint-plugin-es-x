@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-generators"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-generators.ts"
 
 new RuleTester().run("no-generators", rule, {
     valid: ["function f() {}", "yield = 0"],

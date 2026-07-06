@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-weak-map"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-weak-map.ts"
 
 new RuleTester().run("no-weak-map", rule, {
     valid: ["Array", "Object", "let WeakMap = 0; WeakMap"],

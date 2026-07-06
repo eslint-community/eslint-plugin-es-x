@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-date-prototype-togmtstring"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-date-prototype-togmtstring.ts"
 const ruleId = "no-date-prototype-togmtstring"
 
 const USE_GLOBAL_ID = `

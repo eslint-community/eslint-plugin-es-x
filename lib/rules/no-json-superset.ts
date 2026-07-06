@@ -2,8 +2,8 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-import { createRule } from "../util/create-rule"
-import { definePatternSearchGenerator } from "../utils"
+import { createRule } from "../util/create-rule.ts"
+import { definePatternSearchGenerator } from "../utils.ts"
 const iterateTargetChars = definePatternSearchGenerator(/[\u2028\u2029]/gu)
 
 export default createRule<"forbidden", []>({

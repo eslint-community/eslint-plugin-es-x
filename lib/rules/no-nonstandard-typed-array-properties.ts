@@ -1,9 +1,9 @@
-import { createRule } from "../util/create-rule"
-import { defineNonstandardStaticPropertiesHandler } from "../util/define-nonstandard-static-properties-handler/index"
+import { createRule } from "../util/create-rule.ts"
+import { defineNonstandardStaticPropertiesHandler } from "../util/define-nonstandard-static-properties-handler/index.ts"
 import {
     typedArrayProperties,
     uint8ArrayProperties,
-} from "../util/well-known-properties"
+} from "../util/well-known-properties.ts"
 
 type Options = [
     {

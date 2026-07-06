@@ -1,7 +1,7 @@
 import path from "node:path"
 import assert from "node:assert"
 import eslintModule from "eslint"
-import pluginESxModule from "../../../../lib/index"
+import pluginESxModule from "../../../../lib/index.ts"
 
 const pluginESx =
     (

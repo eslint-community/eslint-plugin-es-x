@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-object-getownpropertydescriptor"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-object-getownpropertydescriptor.ts"
 
 new RuleTester().run("no-object-getownpropertydescriptor", rule, {
     valid: [

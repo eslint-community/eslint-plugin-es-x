@@ -1,7 +1,7 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-weakref-prototype-properties"
-import { weakRefPrototypeProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-weakref-prototype-properties.ts"
+import { weakRefPrototypeProperties } from "../../../lib/util/well-known-properties.ts"
 const ruleId = "no-nonstandard-weakref-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {

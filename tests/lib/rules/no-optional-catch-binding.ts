@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-optional-catch-binding"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-optional-catch-binding.ts"
 
 new RuleTester().run("no-optional-catch-binding", rule, {
     valid: ["try {} catch (err) {}"],

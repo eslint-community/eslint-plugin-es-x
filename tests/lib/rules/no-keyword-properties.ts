@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-keyword-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-keyword-properties.ts"
 
 new RuleTester().run("no-keyword-properties", rule, {
     valid: ["({ a, b, c}.a)", "({ let: 1, of: 2}.let)", "({ 'if': 1 }['if'])"],

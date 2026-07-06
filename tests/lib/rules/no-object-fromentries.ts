@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-object-fromentries"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-object-fromentries.ts"
 
 new RuleTester().run("no-object-fromentries", rule, {
     valid: ["Object", "Object.assign", "let Object = 0; Object.fromEntries"],

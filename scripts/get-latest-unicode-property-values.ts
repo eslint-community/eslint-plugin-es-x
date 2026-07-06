@@ -1,4 +1,4 @@
-import { fetchLines } from "./fetch-lines"
+import { fetchLines } from "./fetch-lines.ts"
 const DB_URL =
     "https://unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt"
 const logger = console

@@ -3,8 +3,8 @@ import * as path from "node:path"
 import { setTimeout as sleep } from "node:timers/promises"
 import { JSDOM, type DOMWindow } from "jsdom"
 import { ESLint } from "eslint"
-import { getLatestUnicodeGeneralCategoryValues } from "./get-latest-unicode-general-category-values"
-import { getLatestUnicodeScriptValues } from "./get-latest-unicode-script-values"
+import { getLatestUnicodeGeneralCategoryValues } from "./get-latest-unicode-general-category-values.ts"
+import { getLatestUnicodeScriptValues } from "./get-latest-unicode-script-values.ts"
 
 const DATA_SOURCES = [
     {

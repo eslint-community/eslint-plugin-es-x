@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-function-declarations-in-if-statement-clauses-without-block"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-function-declarations-in-if-statement-clauses-without-block.ts"
 
 new RuleTester().run("no-function-declarations-in-if-statement-clauses", rule, {
     valid: [],

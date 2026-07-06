@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-math-clz32"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-math-clz32.ts"
 
 new RuleTester().run("no-math-clz32", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.clz32"],

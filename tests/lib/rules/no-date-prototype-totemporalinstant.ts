@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-date-prototype-totemporalinstant"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-date-prototype-totemporalinstant.ts"
 import * as parser from "@typescript-eslint/parser"
 const ruleId = "no-date-prototype-totemporalinstant"
 

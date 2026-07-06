@@ -1,4 +1,4 @@
-import { getLatestUnicodePropertyValues } from "./get-latest-unicode-property-values"
+import { getLatestUnicodePropertyValues } from "./get-latest-unicode-property-values.ts"
 
 export { getLatestUnicodeGeneralCategoryValues }
 

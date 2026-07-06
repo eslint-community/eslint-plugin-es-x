@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import * as assert from "node:assert"
-import plugin from "../../../lib/index"
+import plugin from "../../../lib/index.ts"
 import { ESLint } from "eslint"
 
 // -----------------------------------------------------------------------------

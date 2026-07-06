@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-array-prototype-findlast-findlastindex"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-array-prototype-findlast-findlastindex.ts"
 const ruleId = "no-array-prototype-findlast-findlastindex"
 
 new RuleTester().run(ruleId, rule, {

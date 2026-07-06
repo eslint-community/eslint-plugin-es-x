@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-arbitrary-module-namespace-names"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-arbitrary-module-namespace-names.ts"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

@@ -1,6 +1,6 @@
-import { createRule } from "../util/create-rule"
-import { defineNonstandardStaticPropertiesHandler } from "../util/define-nonstandard-static-properties-handler/index"
-import { symbolProperties } from "../util/well-known-properties"
+import { createRule } from "../util/create-rule.ts"
+import { defineNonstandardStaticPropertiesHandler } from "../util/define-nonstandard-static-properties-handler/index.ts"
+import { symbolProperties } from "../util/well-known-properties.ts"
 
 type Options = [
     {

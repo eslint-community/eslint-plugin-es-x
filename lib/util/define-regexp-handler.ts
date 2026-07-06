@@ -6,7 +6,7 @@ import type {
     NewExpression,
     SimpleCallExpression,
 } from "estree"
-import { getRegExpCalls } from "../utils"
+import { getRegExpCalls } from "../utils.ts"
 
 type RuleValidator = RegExpValidator.Options & { onExit?: () => void }
 type RegExpVisitorBuilder = (

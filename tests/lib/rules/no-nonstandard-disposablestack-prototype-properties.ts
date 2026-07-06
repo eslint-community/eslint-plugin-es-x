@@ -1,7 +1,7 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-disposablestack-prototype-properties"
-import { disposableStackPrototypeProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-disposablestack-prototype-properties.ts"
+import { disposableStackPrototypeProperties } from "../../../lib/util/well-known-properties.ts"
 const ruleId = "no-nonstandard-disposablestack-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {

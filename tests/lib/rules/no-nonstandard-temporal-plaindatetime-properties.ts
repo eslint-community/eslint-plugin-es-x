@@ -1,6 +1,6 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-temporal-plaindatetime-properties"
-import { temporalPlainDateTimeProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-temporal-plaindatetime-properties.ts"
+import { temporalPlainDateTimeProperties } from "../../../lib/util/well-known-properties.ts"
 
 new RuleTester().run("no-nonstandard-temporal-plaindatetime-properties", rule, {
     valid: [

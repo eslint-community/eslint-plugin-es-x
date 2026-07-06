@@ -1,7 +1,7 @@
-import { createRule } from "../util/create-rule"
-import { mergeVisitors } from "../util/merge-visitors"
-import noStringPrototypeIswellformed from "./no-string-prototype-iswellformed"
-import noStringPrototypeTowellformed from "./no-string-prototype-towellformed"
+import { createRule } from "../util/create-rule.ts"
+import { mergeVisitors } from "../util/merge-visitors.ts"
+import noStringPrototypeIswellformed from "./no-string-prototype-iswellformed.ts"
+import noStringPrototypeTowellformed from "./no-string-prototype-towellformed.ts"
 
 type Options = [
     {

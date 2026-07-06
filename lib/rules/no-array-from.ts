@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import { createRule } from "../util/create-rule"
-import { defineStaticPropertiesHandler } from "../util/define-static-properties-handler/index"
+import { createRule } from "../util/create-rule.ts"
+import { defineStaticPropertiesHandler } from "../util/define-static-properties-handler/index.ts"
 
 type Options = [
     {

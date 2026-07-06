@@ -2,7 +2,7 @@
  * @author Yosuke Ota
  * See LICENSE file in root directory for full license.
  */
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 
 export default createRule<"forbidden", []>({
     meta: {

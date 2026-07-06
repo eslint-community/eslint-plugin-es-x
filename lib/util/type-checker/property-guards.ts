@@ -3,8 +3,8 @@ import type { Rule, SourceCode } from "eslint"
 import type { TSESTree } from "@typescript-eslint/types"
 import type * as ESTree from "estree"
 
-import { getPropertyKeyValue } from "../get-property-key-value"
-import type { BuiltinGlobalObjectName } from "../types"
+import { getPropertyKeyValue } from "../get-property-key-value.ts"
+import type { BuiltinGlobalObjectName } from "../types.ts"
 
 const TS_NODE_TYPES = [
     "TSAsExpression", // foo as number

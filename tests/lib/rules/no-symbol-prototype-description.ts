@@ -4,8 +4,8 @@
  */
 
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-symbol-prototype-description"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-symbol-prototype-description.ts"
 const ruleId = "no-symbol-prototype-description"
 
 new RuleTester().run(ruleId, rule, {

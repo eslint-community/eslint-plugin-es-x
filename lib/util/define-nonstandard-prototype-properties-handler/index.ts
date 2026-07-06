@@ -3,11 +3,11 @@ import type { Rule } from "eslint"
 import type { TSESTree } from "@typescript-eslint/types"
 import type * as ESTree from "estree"
 
-import { getPropertyKeyValue } from "../get-property-key-value"
+import { getPropertyKeyValue } from "../get-property-key-value.ts"
 import {
     createPropertyGuardsContext,
     type Params,
-} from "../type-checker/property-guards"
+} from "../type-checker/property-guards.ts"
 
 type NameMap = Partial<Record<TypeName, Iterable<string>>>
 type Options = {

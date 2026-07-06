@@ -1,7 +1,7 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-intl-listformat-prototype-properties"
-import { intlListFormatPrototypeProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-intl-listformat-prototype-properties.ts"
+import { intlListFormatPrototypeProperties } from "../../../lib/util/well-known-properties.ts"
 const ruleId = "no-nonstandard-intl-listformat-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {

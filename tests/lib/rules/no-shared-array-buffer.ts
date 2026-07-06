@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-shared-array-buffer"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-shared-array-buffer.ts"
 
 new RuleTester().run("no-shared-array-buffer", rule, {
     valid: ["Array", "Object", "let SharedArrayBuffer = 0; SharedArrayBuffer"],

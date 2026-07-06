@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-s-flag"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-s-flag.ts"
 
 new RuleTester().run("no-regexp-s-flag", rule, {
     valid: [

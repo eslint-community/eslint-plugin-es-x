@@ -3,7 +3,7 @@
  * See LICENSE file in root directory for full license.
  */
 import { READ, ReferenceTracker } from "@eslint-community/eslint-utils"
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 import type * as ESTree from "estree"
 
 export default createRule<"forbidden", []>({

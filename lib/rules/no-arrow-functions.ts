@@ -3,7 +3,7 @@
  * See LICENSE file in root directory for full license.
  */
 import { isArrowToken, isParenthesized } from "@eslint-community/eslint-utils"
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 
 export default createRule<"forbidden", []>({
     meta: {
