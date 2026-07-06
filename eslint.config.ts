@@ -2,9 +2,9 @@ import type { ESLint } from "eslint"
 import { type Config, defineConfig, globalIgnores } from "eslint/config"
 import tseslint from "typescript-eslint"
 
-import myPlugin from "./eslint-internal/my-plugin.js"
-import eslintPluginConfig from "./eslint-internal/config/+eslint-plugin.js"
-import es2020 from "./eslint-internal/config/es2020.js"
+import myPlugin from "./eslint-internal/my-plugin.cjs"
+import eslintPluginConfig from "./eslint-internal/config/+eslint-plugin.cjs"
+import es2020 from "./eslint-internal/config/es2020.cjs"
 import noStringPrototypeSubstr from "./lib/rules/no-string-prototype-substr.ts"
 
 export default defineConfig([

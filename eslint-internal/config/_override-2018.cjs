@@ -6,9 +6,12 @@
 
 module.exports = [
     {
-        name: "eslint-internal/config/_override-2020.js",
+        name: "eslint-internal/config/_override-2018.cjs",
         languageOptions: {
-            ecmaVersion: 2020,
+            ecmaVersion: 2018,
+        },
+        rules: {
+            "prefer-object-spread": "error",
         },
     },
 ]

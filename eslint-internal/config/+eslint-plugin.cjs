@@ -4,18 +4,18 @@
  */
 "use strict"
 
-const { rulesDocumentUrl } = require("../utils")
+const { rulesDocumentUrl } = require("../utils/index.cjs")
 
 module.exports = [
-    ...require("./+node.js"),
+    ...require("./+node.cjs"),
     {
-        name: "eslint-internal/config/+eslint-plugin.js#1",
+        name: "eslint-internal/config/+eslint-plugin.cjs#1",
         plugins: {
             "eslint-plugin": require("eslint-plugin-eslint-plugin").default,
         },
     },
     {
-        name: "eslint-internal/config/+eslint-plugin.js#2",
+        name: "eslint-internal/config/+eslint-plugin.cjs#2",
         files: ["**/rules/**", "**/internal-rules/**"],
         rules: {
             // Enabled rules

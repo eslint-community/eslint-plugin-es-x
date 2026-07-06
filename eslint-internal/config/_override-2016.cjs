@@ -6,7 +6,7 @@
 
 module.exports = [
     {
-        name: "eslint-internal/config/_override-2016.js",
+        name: "eslint-internal/config/_override-2016.cjs",
         languageOptions: {
             ecmaVersion: 2016,
         },

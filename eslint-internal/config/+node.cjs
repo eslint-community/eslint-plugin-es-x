@@ -8,10 +8,10 @@ const n = require("eslint-plugin-n")
 
 module.exports = [
     {
-        name: "eslint-internal/config/+node.js#1",
+        name: "eslint-internal/config/+node.cjs#1",
         files: [
-            "**/*.js",
-            "*.js",
+            "**/*.cjs",
+            "*.cjs",
             "**/*.cjs",
             "*.cjs",
             "**/*.ts",
@@ -34,7 +34,7 @@ module.exports = [
         },
     },
     {
-        name: "eslint-internal/config/+node.js#2",
+        name: "eslint-internal/config/+node.cjs#2",
         plugins: { n: n.default ?? n },
         languageOptions: {
             ecmaVersion: 2026,
@@ -100,7 +100,7 @@ module.exports = [
                     ".ts",
                     ".mjs",
                     ".cjs",
-                    ".js",
+                    ".cjs",
                     ".json",
                     ".node",
                 ],

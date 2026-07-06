@@ -7,9 +7,9 @@
 const files = ["**/scripts/**/*", "eslint.config.ts"]
 
 module.exports = [
-    ...require("./+node.js").map((config) => ({ ...config, files })),
+    ...require("./+node.cjs").map((config) => ({ ...config, files })),
     {
-        name: "eslint-internal/config/_override-special.js",
+        name: "eslint-internal/config/_override-special.cjs",
         files,
         rules: {
             "no-console": "off",

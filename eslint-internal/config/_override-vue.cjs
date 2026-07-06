@@ -7,10 +7,10 @@
 const files = ["**/*.vue", "*.vue"]
 
 module.exports = [
-    ...require("./+browser.js").map((config) => ({ ...config, files })),
-    ...require("./+modules.js").map((config) => ({ ...config, files })),
+    ...require("./+browser.cjs").map((config) => ({ ...config, files })),
+    ...require("./+modules.cjs").map((config) => ({ ...config, files })),
     {
-        name: "eslint-internal/config/_override-vue.js",
+        name: "eslint-internal/config/_override-vue.cjs",
         files,
         plugins: {
             get vue() {

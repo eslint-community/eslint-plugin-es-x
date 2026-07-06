@@ -4,14 +4,13 @@
  */
 "use strict"
 
+const globals = require("./_browser-globals.cjs")
+
 module.exports = [
     {
-        name: "eslint-internal/config/_override-2018.js",
+        name: "eslint-internal/config/+browser.cjs",
         languageOptions: {
-            ecmaVersion: 2018,
-        },
-        rules: {
-            "prefer-object-spread": "error",
+            globals,
         },
     },
 ]

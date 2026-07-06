@@ -10,7 +10,7 @@ for (const entry of fs.readdirSync(rulesRoot, {
     withFileTypes: true,
     recursive: true,
 })) {
-    if (!entry.isFile() || !entry.name.endsWith(".js")) {
+    if (!entry.isFile() || !entry.name.endsWith(".cjs")) {
         continue
     }
     const fullPath = path.join(entry.parentPath, entry.name)
@@ -18,7 +18,7 @@ for (const entry of fs.readdirSync(rulesRoot, {
         path
             .relative(rulesRoot, fullPath)
             .replace(/\\/gu, "/")
-            .replace(/\.js$/u, "")
+            .replace(/\.cjs$/u, "")
     ] = require(path.join(fullPath))
 }
 

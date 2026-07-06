@@ -8,7 +8,7 @@ const n = require("eslint-plugin-n")
 
 module.exports = [
     {
-        name: "eslint-internal/config/+modules.js#1",
+        name: "eslint-internal/config/+modules.cjs#1",
         plugins: { n: n.default ?? n },
         languageOptions: {
             sourceType: "module",
@@ -32,7 +32,7 @@ module.exports = [
         },
     },
     {
-        name: "eslint-internal/config/+modules.js#2",
+        name: "eslint-internal/config/+modules.cjs#2",
         files: ["**/*.ts", "*.ts", "**/*.tsx", "*.tsx", "*.vue", "**/*.vue"],
         rules: {
             "n/no-unsupported-features/es-syntax": "off",
