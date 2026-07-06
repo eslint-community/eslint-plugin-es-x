@@ -32,7 +32,8 @@ export default createRule<"forbidden", []>({
         return {
             Literal(node) {
                 if (
-                    (typeof node.value === "number" || node.bigint != null) &&
+                    (typeof node.value === "number" ||
+                        ("bigint" in node && node.bigint != null)) &&
                     node.raw.includes("_")
                 ) {
                     context.report({

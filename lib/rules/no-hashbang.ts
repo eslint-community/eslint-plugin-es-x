@@ -19,7 +19,11 @@ export default createRule<"forbidden", []>({
         return {
             Program() {
                 const firstComment = context.sourceCode.ast.comments[0]
-                if (firstComment && firstComment.type === "Shebang") {
+                if (
+                    firstComment &&
+                    // @ts-expect-error -- Maybe typing bug
+                    firstComment.type === "Shebang"
+                ) {
                     context.report({
                         node: firstComment,
                         messageId: "forbidden",

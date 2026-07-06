@@ -1,4 +1,5 @@
 import { createRule } from "../util/create-rule"
+import type * as ESTree from "estree"
 
 export default createRule<"forbidden", []>({
     meta: {
@@ -29,7 +30,9 @@ export default createRule<"forbidden", []>({
                     if (def.type !== "Variable") {
                         continue
                     }
-                    const varDecl = def.node
+                    const varDecl = def.node as ESTree.VariableDeclarator & {
+                        parent: ESTree.VariableDeclaration
+                    }
                     if (varDecl.parent.kind !== "var") {
                         continue
                     }
