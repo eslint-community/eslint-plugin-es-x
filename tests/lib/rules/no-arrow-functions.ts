@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-arrow-functions"
+import rule from "../../../lib/rules/no-arrow-functions"
 
 new RuleTester().run("no-arrow-functions", rule, {
     valid: ["function f() {}", "const f = function() {}"],

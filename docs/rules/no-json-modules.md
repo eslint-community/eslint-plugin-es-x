@@ -31,7 +31,7 @@ This rule was introduced in v8.1.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-json-modules.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-json-modules.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-json-modules.ts)
 
 [no-new-in-es2025]: ../configs/index.md#no-new-in-es2025

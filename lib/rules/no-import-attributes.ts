@@ -1,17 +1,7 @@
-"use strict"
+import { findVariable, getPropertyName } from "@eslint-community/eslint-utils"
+import { createRule } from "../util/create-rule"
 
-const {
-    findVariable,
-    getPropertyName,
-} = require("@eslint-community/eslint-utils")
-const { createRule } = require("../util/create-rule")
-
-/**
- * @typedef {import("estree").Expression} Expression
- * @typedef {import("eslint").Scope.Variable} Variable
- */
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow Import Attributes.",

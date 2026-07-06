@@ -6,7 +6,8 @@ import * as fs from "node:fs"
 import * as path from "node:path"
 import { rules } from "./rules"
 import type { JSONSchema4 } from "json-schema"
-import { version } from "../package.json"
+import packageJson from "../package.json" with { type: "json" }
+const { version } = packageJson
 
 const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })
 

@@ -1,10 +1,5 @@
-"use strict"
-
-const {
-    getPropertyName,
-    findVariable,
-} = require("@eslint-community/eslint-utils")
-const { createRule } = require("../util/create-rule")
+import { findVariable, getPropertyName } from "@eslint-community/eslint-utils"
+import { createRule } from "../util/create-rule"
 
 const LEGACY_ACCESSOR_METHODS = new Set([
     "__defineGetter__",
@@ -13,7 +8,7 @@ const LEGACY_ACCESSOR_METHODS = new Set([
     "__lookupSetter__",
 ])
 
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow legacy `Object.prototype` accessor methods.",

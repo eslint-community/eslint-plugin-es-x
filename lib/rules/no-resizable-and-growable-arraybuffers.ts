@@ -1,15 +1,15 @@
-"use strict"
+import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
+type Options = [
+    {
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }?,
+]
 
-const { mergeVisitors } = require("../util/merge-visitors")
-const {
-    CONSTRUCT,
-    ReferenceTracker,
-} = require("@eslint-community/eslint-utils")
-const {
-    definePrototypePropertiesHandler,
-} = require("../util/define-prototype-properties-handler")
+import { mergeVisitors } from "../util/merge-visitors"
+import { CONSTRUCT, ReferenceTracker } from "@eslint-community/eslint-utils"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
 
 /**
  * @param {Node|undefined} node
@@ -19,7 +19,11 @@ function isSpreadElement(node) {
     return node && node.type === "SpreadElement"
 }
 
-module.exports = createRule({
+export default createRule<
+    | "forbiddenForResizableArrayBuffer"
+    | "forbiddenForGrowableSharedArrayBuffer",
+    Options
+>({
     meta: {
         docs: {
             description: "disallow resizable and growable ArrayBuffers",

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-property-shorthands"
+import rule from "../../../lib/rules/no-property-shorthands"
 
 new RuleTester().run("no-property-shorthands", rule, {
     valid: [

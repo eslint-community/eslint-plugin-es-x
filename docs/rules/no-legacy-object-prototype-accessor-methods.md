@@ -31,5 +31,5 @@ This rule was introduced in v5.2.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-legacy-object-prototype-accessor-methods.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-legacy-object-prototype-accessor-methods.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-legacy-object-prototype-accessor-methods.ts)

@@ -19,12 +19,10 @@ fs.writeFileSync(
  * DON'T EDIT THIS FILE.
  * This file was generated automatically by 'scripts/update-lib-index.ts'.
  */
-import packageJson from "../package.json" with { type: "json" }
+import { name, version } from "./meta"
 import type { Linter, Rule } from "eslint"
 ${configIds.map((id) => `import ${getConfigIdentifier(id)} from "./configs/flat/${id}"`).join("\n")}
 ${ruleIds.map((id) => `import ${getRuleIdentifier(id)} from "./rules/${id}"`).join("\n")}
-
-const { version, name } = packageJson
 
 const plugin: {
     meta: { name: string; version: string }

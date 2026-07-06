@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-json-parse-reviver-context-parameter"
+import rule from "../../../lib/rules/no-json-parse-reviver-context-parameter"
 
 new RuleTester().run("no-json-parse-reviver-context-parameter", rule, {
     valid: [

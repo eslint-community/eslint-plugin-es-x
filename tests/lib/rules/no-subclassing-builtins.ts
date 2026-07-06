@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-subclassing-builtins"
+import rule from "../../../lib/rules/no-subclassing-builtins"
 
 new RuleTester().run("no-subclassing-builtins", rule, {
     valid: [

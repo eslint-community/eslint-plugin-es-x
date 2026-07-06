@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-json-modules"
+import rule from "../../../lib/rules/no-json-modules"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

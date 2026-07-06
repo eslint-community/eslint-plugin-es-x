@@ -1,9 +1,7 @@
-"use strict"
+import { CALL, ReferenceTracker } from "@eslint-community/eslint-utils"
+import { createRule } from "../util/create-rule"
 
-const { ReferenceTracker, CALL } = require("@eslint-community/eslint-utils")
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description:
