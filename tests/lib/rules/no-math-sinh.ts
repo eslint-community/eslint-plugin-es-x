@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-math-sinh"
+import rule from "../../../lib/rules/no-math-sinh"
 
 new RuleTester().run("no-math-sinh", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.sinh"],

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-json-israwjson"
+import rule from "../../../lib/rules/no-json-israwjson"
 
 new RuleTester().run("no-json-israwjson", rule, {
     valid: [

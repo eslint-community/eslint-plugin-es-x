@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-math-cosh"
+import rule from "../../../lib/rules/no-math-cosh"
 
 new RuleTester().run("no-math-cosh", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.cosh"],

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-locale"
+import rule from "../../../lib/rules/no-intl-locale"
 
 new RuleTester().run("no-intl-locale", rule, {
     valid: [

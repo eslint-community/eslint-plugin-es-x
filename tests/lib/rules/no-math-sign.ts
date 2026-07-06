@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-math-sign"
+import rule from "../../../lib/rules/no-math-sign"
 
 new RuleTester().run("no-math-sign", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.sign"],

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-getcanonicallocales"
+import rule from "../../../lib/rules/no-intl-getcanonicallocales"
 
 new RuleTester().run("no-intl-getcanonicallocales", rule, {
     valid: [

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-segmenter"
+import rule from "../../../lib/rules/no-intl-segmenter"
 
 new RuleTester().run("no-intl-segmenter", rule, {
     valid: [

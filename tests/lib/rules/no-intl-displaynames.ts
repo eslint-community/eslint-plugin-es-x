@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-displaynames"
+import rule from "../../../lib/rules/no-intl-displaynames"
 
 new RuleTester().run("no-intl-displaynames", rule, {
     valid: [

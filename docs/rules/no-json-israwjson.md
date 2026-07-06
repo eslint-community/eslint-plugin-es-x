@@ -52,7 +52,7 @@ This rule was introduced in v9.3.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-json-israwjson.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-json-israwjson.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-json-israwjson.ts)
 
 [no-json-parse-with-source]: ../configs/index.md#no-json-parse-with-source

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-supportedvaluesof"
+import rule from "../../../lib/rules/no-intl-supportedvaluesof"
 
 new RuleTester().run("no-intl-supportedvaluesof", rule, {
     valid: [
