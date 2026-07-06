@@ -1,6 +1,6 @@
 import assert from "node:assert"
-import plugin from "../../../../lib/index.ts"
 import type { Linter } from "eslint"
+import plugin from "../../../../lib/index.ts"
 
 // -----------------------------------------------------------------------------
 // Tests

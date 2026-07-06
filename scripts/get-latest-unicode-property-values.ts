@@ -11,9 +11,7 @@ interface UnicodePropertyValue {
 
 let cache: Promise<UnicodePropertyValue[]> | undefined = undefined
 
-export { getLatestUnicodePropertyValues }
-
-async function* getLatestUnicodePropertyValues() {
+export async function* getLatestUnicodePropertyValues() {
     cache ??= Array.fromAsync(fetchLatestUnicodePropertyValues())
     yield* await cache
 }
