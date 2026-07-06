@@ -1,5 +1,19 @@
 # eslint-plugin-es-x
 
+## 10.0.0
+
+### Major Changes
+
+- Drop support for old ESLint versions. The peer dependency now supports `>=10.6.0`. ([#358](https://github.com/eslint-community/eslint-plugin-es-x/pull/358))
+
+- Drop support for old Node.js versions. The package now supports Node.js `^22.23.0 || ^24.18.0 || >=26.4.0`. ([#357](https://github.com/eslint-community/eslint-plugin-es-x/pull/357))
+
+- Drop legacy config support. Configs without the `flat/` prefix now expose flat config objects, and the `flat/`-prefixed config IDs remain available as flat config aliases. ([#360](https://github.com/eslint-community/eslint-plugin-es-x/pull/360))
+
+- Update configs for the ES2026 ECMAScript and Intl API snapshots. ([#355](https://github.com/eslint-community/eslint-plugin-es-x/pull/355))
+
+- Build publish output with tsdown, mark the package as ESM with `"type": "module"`, and provide both ESM and CommonJS package entry points. ([#361](https://github.com/eslint-community/eslint-plugin-es-x/pull/361))
+
 ## 9.7.0
 
 ### Minor Changes
