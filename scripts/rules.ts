@@ -6,6 +6,7 @@ import * as fs from "node:fs"
 import * as path from "node:path"
 import proposals from "./proposals.ts"
 import type { JSONSchema4 } from "json-schema"
+import { createRequire } from "node:module"
 
 const libRoot = path.resolve(import.meta.dirname, "../lib/rules")
 const baseRequire = createRequire(import.meta.url)
