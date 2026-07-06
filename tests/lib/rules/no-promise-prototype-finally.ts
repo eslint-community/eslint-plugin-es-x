@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-promise-prototype-finally"
+import rule from "../../../lib/rules/no-promise-prototype-finally"
 const ruleId = "no-promise-prototype-finally"
 
 new RuleTester().run(ruleId, rule, {

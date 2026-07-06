@@ -59,7 +59,7 @@ This rule was introduced in v9.4.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-map-prototype-getorinsert.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-map-prototype-getorinsert.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-map-prototype-getorinsert.ts)
 
 [no-new-in-es2026]: ../configs/index.md#no-new-in-es2026

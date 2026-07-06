@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-uint8array-prototype-tobase64"
+import rule from "../../../lib/rules/no-uint8array-prototype-tobase64"
 const ruleId = "no-uint8array-prototype-tobase64"
 
 const method = "toBase64"

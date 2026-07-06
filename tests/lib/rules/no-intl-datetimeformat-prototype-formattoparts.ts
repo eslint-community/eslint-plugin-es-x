@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-datetimeformat-prototype-formattoparts"
+import rule from "../../../lib/rules/no-intl-datetimeformat-prototype-formattoparts"
 const ruleId = "no-intl-datetimeformat-prototype-formattoparts"
 
 new RuleTester().run(ruleId, rule, {

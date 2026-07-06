@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-math-log10"
+import rule from "../../../lib/rules/no-math-log10"
 
 new RuleTester().run("no-math-log10", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.log10"],

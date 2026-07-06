@@ -65,7 +65,7 @@ This rule was introduced in v6.0.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-intl-pluralrules-prototype-selectrange.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-intl-pluralrules-prototype-selectrange.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-intl-pluralrules-prototype-selectrange.ts)
 
 [no-intl-numberformat-v3]: ../configs/index.md#no-intl-numberformat-v3

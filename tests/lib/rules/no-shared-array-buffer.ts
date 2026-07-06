@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-shared-array-buffer"
+import rule from "../../../lib/rules/no-shared-array-buffer"
 
 new RuleTester().run("no-shared-array-buffer", rule, {
     valid: ["Array", "Object", "let SharedArrayBuffer = 0; SharedArrayBuffer"],

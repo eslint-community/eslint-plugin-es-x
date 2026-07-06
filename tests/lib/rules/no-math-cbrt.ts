@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-math-cbrt"
+import rule from "../../../lib/rules/no-math-cbrt"
 
 new RuleTester().run("no-math-cbrt", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.cbrt"],

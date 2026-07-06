@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-locale-prototype-gettimezones"
+import rule from "../../../lib/rules/no-intl-locale-prototype-gettimezones"
 const ruleId = "no-intl-locale-prototype-gettimezones"
 
 new RuleTester().run(ruleId, rule, {

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-math-tanh"
+import rule from "../../../lib/rules/no-math-tanh"
 
 new RuleTester().run("no-math-tanh", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.tanh"],

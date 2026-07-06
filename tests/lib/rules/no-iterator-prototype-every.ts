@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-iterator-prototype-every"
+import rule from "../../../lib/rules/no-iterator-prototype-every"
 const ruleId = "no-iterator-prototype-every"
 
 new RuleTester({

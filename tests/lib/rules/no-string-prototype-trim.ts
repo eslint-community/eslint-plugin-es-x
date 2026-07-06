@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-string-prototype-trim"
+import rule from "../../../lib/rules/no-string-prototype-trim"
 const ruleId = "no-string-prototype-trim"
 
 new RuleTester().run(ruleId, rule, {

@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-function-prototype-bind"
+import rule from "../../../lib/rules/no-function-prototype-bind"
 const ruleId = "no-function-prototype-bind"
 
 new RuleTester().run(ruleId, rule, {

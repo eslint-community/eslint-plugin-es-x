@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-defineproperty"
+import rule from "../../../lib/rules/no-object-defineproperty"
 
 new RuleTester().run("no-object-defineproperty", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.defineProperty"],

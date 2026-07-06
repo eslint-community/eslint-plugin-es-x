@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-locale-prototype-gethourcycles"
+import rule from "../../../lib/rules/no-intl-locale-prototype-gethourcycles"
 const ruleId = "no-intl-locale-prototype-gethourcycles"
 
 new RuleTester().run(ruleId, rule, {

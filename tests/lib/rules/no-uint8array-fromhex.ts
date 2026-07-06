@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-uint8array-fromhex"
+import rule from "../../../lib/rules/no-uint8array-fromhex"
 const ruleId = "no-uint8array-fromhex"
 
 const method = "fromHex"

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-number-parsefloat"
+import rule from "../../../lib/rules/no-number-parsefloat"
 
 new RuleTester().run("no-number-parsefloat", rule, {
     valid: ["Number", "Number.xyz", "let Number = 0; Number.parseFloat"],

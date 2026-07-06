@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-set-prototype-intersection"
+import rule from "../../../lib/rules/no-set-prototype-intersection"
 const ruleId = "no-set-prototype-intersection"
 
 const method = "intersection"

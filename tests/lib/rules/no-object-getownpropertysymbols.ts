@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-getownpropertysymbols"
+import rule from "../../../lib/rules/no-object-getownpropertysymbols"
 
 new RuleTester().run("no-object-getownpropertysymbols", rule, {
     valid: [

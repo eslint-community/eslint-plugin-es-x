@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-getprototypeof"
+import rule from "../../../lib/rules/no-object-getprototypeof"
 
 new RuleTester().run("no-object-getprototypeof", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.getPrototypeOf"],

@@ -5,7 +5,7 @@
 
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-symbol-prototype-description"
+import rule from "../../../lib/rules/no-symbol-prototype-description"
 const ruleId = "no-symbol-prototype-description"
 
 new RuleTester().run(ruleId, rule, {

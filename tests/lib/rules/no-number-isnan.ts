@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-number-isnan"
+import rule from "../../../lib/rules/no-number-isnan"
 
 new RuleTester().run("no-number-isnan", rule, {
     valid: ["Number", "Number.xyz", "let Number = 0; Number.isNaN"],

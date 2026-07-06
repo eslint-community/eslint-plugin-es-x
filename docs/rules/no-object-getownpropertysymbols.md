@@ -54,7 +54,7 @@ This rule was introduced in [eslint-plugin-es] v1.2.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-object-getownpropertysymbols.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-object-getownpropertysymbols.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-object-getownpropertysymbols.ts)
 
 [no-new-in-es2015]: ../configs/index.md#no-new-in-es2015

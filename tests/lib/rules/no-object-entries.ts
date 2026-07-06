@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-entries"
+import rule from "../../../lib/rules/no-object-entries"
 
 new RuleTester().run("no-object-entries", rule, {
     valid: ["Object", "Object.assign", "let Object = 0; Object.entries"],

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-math-fround"
+import rule from "../../../lib/rules/no-math-fround"
 
 new RuleTester().run("no-math-fround", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.fround"],

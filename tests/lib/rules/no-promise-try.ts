@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-promise-try"
+import rule from "../../../lib/rules/no-promise-try"
 
 new RuleTester().run("no-promise-try", rule, {
     valid: ["Promise.all"],

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-disposablestack"
+import rule from "../../../lib/rules/no-disposablestack"
 
 new RuleTester().run("no-disposablestack", rule, {
     valid: ["Array", "Object", "let DisposableStack = 0; DisposableStack"],

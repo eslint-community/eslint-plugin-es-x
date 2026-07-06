@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-issealed"
+import rule from "../../../lib/rules/no-object-issealed"
 
 new RuleTester().run("no-object-issealed", rule, {
     valid: ["Object", "Object.foo", "let Object = 0; Object.isSealed"],

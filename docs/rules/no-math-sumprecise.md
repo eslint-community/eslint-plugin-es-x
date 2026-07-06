@@ -52,7 +52,7 @@ This rule was introduced in v9.1.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-math-sumprecise.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-math-sumprecise.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-math-sumprecise.ts)
 
 [no-new-in-es2026]: ../configs/index.md#no-new-in-es2026

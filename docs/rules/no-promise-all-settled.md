@@ -54,7 +54,7 @@ This rule was introduced in [eslint-plugin-es] v2.0.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-promise-all-settled.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-promise-all-settled.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-promise-all-settled.ts)
 
 [no-new-in-es2020]: ../configs/index.md#no-new-in-es2020

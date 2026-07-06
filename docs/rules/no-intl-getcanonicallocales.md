@@ -52,7 +52,7 @@ This rule was introduced in v6.0.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-intl-getcanonicallocales.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-intl-getcanonicallocales.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-intl-getcanonicallocales.ts)
 
 [no-new-in-es2016-intl-api]: ../configs/index.md#no-new-in-es2016-intl-api

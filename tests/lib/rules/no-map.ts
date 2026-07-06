@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-map"
+import rule from "../../../lib/rules/no-map"
 
 new RuleTester().run("no-map", rule, {
     valid: ["Array", "Object", "let Map = 0; Map"],

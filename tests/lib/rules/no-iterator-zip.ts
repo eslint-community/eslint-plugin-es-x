@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-iterator-zip"
+import rule from "../../../lib/rules/no-iterator-zip"
 
 new RuleTester().run("no-iterator-zip", rule, {
     valid: [

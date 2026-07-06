@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-proxy"
+import rule from "../../../lib/rules/no-proxy"
 
 new RuleTester().run("no-proxy", rule, {
     valid: ["Array", "Object", "let Proxy = 0; Proxy"],

@@ -1,0 +1,54 @@
+import { createRule } from "../util/create-rule"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
+
+type Options = [
+    {
+        aggressive?: boolean
+        allowTestedProperty?: boolean
+    }?,
+]
+
+export default createRule<"forbidden", Options>({
+    meta: {
+        docs: {
+            description: "disallow HTML creation methods of string instances.",
+            category: "legacy",
+            recommended: false,
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-string-create-html-methods.html",
+        },
+        fixable: null,
+        messages: {
+            forbidden: "Annex B feature '{{name}}' method is forbidden.",
+        },
+        schema: [
+            {
+                type: "object",
+                properties: {
+                    aggressive: { type: "boolean" },
+                    allowTestedProperty: { type: "boolean" },
+                },
+                additionalProperties: false,
+            },
+        ],
+        type: "problem",
+    },
+    create(context) {
+        return definePrototypePropertiesHandler(context, {
+            String: {
+                anchor: "function",
+                big: "function",
+                blink: "function",
+                bold: "function",
+                fixed: "function",
+                fontcolor: "function",
+                fontsize: "function",
+                italics: "function",
+                link: "function",
+                small: "function",
+                strike: "function",
+                sub: "function",
+                sup: "function",
+            },
+        })
+    },
+})

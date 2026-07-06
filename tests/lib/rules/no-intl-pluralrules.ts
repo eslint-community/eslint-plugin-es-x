@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-pluralrules"
+import rule from "../../../lib/rules/no-intl-pluralrules"
 
 new RuleTester().run("no-intl-pluralrules", rule, {
     valid: [

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-math-clz32"
+import rule from "../../../lib/rules/no-math-clz32"
 
 new RuleTester().run("no-math-clz32", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.clz32"],

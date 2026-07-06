@@ -4,7 +4,7 @@ import type { TSESTree } from "@typescript-eslint/types"
 import type * as ESTree from "estree"
 
 import { getPropertyKeyValue } from "../get-property-key-value"
-import type { TypeName } from "eslint-type-tracer"
+import type { BuiltinGlobalObjectName } from "../types"
 
 const TS_NODE_TYPES = [
     "TSAsExpression", // foo as number
@@ -52,7 +52,10 @@ export type PropertyType =
     | "object"
     | "function"
 export type PropertyTypeMap = Record<string, PropertyType | PropertyType[]>
-export type ClassPropertyTypeMap = Partial<Record<TypeName, PropertyTypeMap>>
+
+export type ClassPropertyTypeMap = Partial<
+    Record<BuiltinGlobalObjectName, PropertyTypeMap>
+>
 
 export type Params = {
     node: TSESTree.MemberExpression | TSESTree.Property
@@ -89,12 +92,15 @@ export function createPropertyGuardsContext(options: {
     }
     const sourceCode = context.sourceCode
     const propertyTypeMap: Partial<
-        Record<TypeName, Record<string, PropertyType[]>>
+        Record<BuiltinGlobalObjectName, Record<string, PropertyType[]>>
     > = {}
 
     for (const [className, properties] of Object.entries(
         options.propertyTypeMap ?? {},
-    ) as [TypeName, Record<string, PropertyType | PropertyType[]>][]) {
+    ) as [
+        BuiltinGlobalObjectName,
+        Record<string, PropertyType | PropertyType[]>,
+    ][]) {
         propertyTypeMap[className] = {}
         for (const [propertyName, propertyType] of Object.entries(properties)) {
             propertyTypeMap[className][propertyName] = Array.isArray(

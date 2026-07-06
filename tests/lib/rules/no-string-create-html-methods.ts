@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-string-create-html-methods"
+import rule from "../../../lib/rules/no-string-create-html-methods"
 const ruleId = "no-string-create-html-methods"
 
 const USE_GLOBAL_ID = `

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-promise-all-settled"
+import rule from "../../../lib/rules/no-promise-all-settled"
 
 new RuleTester().run("no-promise-all-settled", rule, {
     valid: ["Promise.all"],

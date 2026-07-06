@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-symbol-matchall"
+import rule from "../../../lib/rules/no-symbol-matchall"
 
 new RuleTester().run("no-symbol-matchall", rule, {
     valid: ["Symbol", "Symbol.length", "let Symbol = 0; Symbol.matchAll"],

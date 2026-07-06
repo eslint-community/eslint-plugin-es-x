@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-intl-listformat"
+import rule from "../../../lib/rules/no-intl-listformat"
 
 new RuleTester().run("no-intl-listformat", rule, {
     valid: [

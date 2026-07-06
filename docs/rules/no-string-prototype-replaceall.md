@@ -62,7 +62,7 @@ This rule was introduced in [eslint-plugin-es] v5.0.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-replaceall.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-string-prototype-replaceall.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-string-prototype-replaceall.ts)
 
 [no-new-in-es2021]: ../configs/index.md#no-new-in-es2021

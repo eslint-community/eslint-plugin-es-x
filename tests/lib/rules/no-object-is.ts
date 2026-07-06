@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-is"
+import rule from "../../../lib/rules/no-object-is"
 
 new RuleTester().run("no-object-is", rule, {
     valid: ["Object", "Object.assign", "let Object = 0; Object.is"],
