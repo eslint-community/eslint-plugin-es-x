@@ -1,11 +1,15 @@
 "use strict"
 
-const { ReferenceTracker, READ } = require("@eslint-community/eslint-utils")
+const {
+    ReferenceTracker,
+    READ,
+    ESM,
+} = require("@eslint-community/eslint-utils")
 const path = require("node:path")
 const {
     defineSchemaChecker,
     getProperty,
-} = require("../../utils/schema-checker")
+} = require("../../utils/schema-checker.cjs")
 
 /**
  * @typedef {import("estree").Node} Node
@@ -19,7 +23,7 @@ module.exports = {
             description: "require aggressive schema.",
             category: "Possible Errors",
             recommended: false,
-            url: "https://github.com/eslint-community/eslint-plugin-es-x/blob/master/docs/rules/require-aggressive-schema.md",
+            url: "https://github.com/eslint-community/eslint-plugin-es-x/blob/master/docs/rules/require-allow-schema.md",
         },
         fixable: "code",
         schema: [],
@@ -35,9 +39,20 @@ module.exports = {
 
         const traceMap = Object.fromEntries(
             Object.entries({
-                "lib/util/define-prototype-properties-handler": {
-                    definePrototypePropertiesHandler: { [READ]: true },
-                },
+                "lib/util/define-nonstandard-prototype-properties-handler/index.ts":
+                    {
+                        defineNonstandardPrototypePropertiesHandler: {
+                            [READ]: true,
+                        },
+                        [ESM]: true,
+                    },
+                "lib/util/define-nonstandard-static-properties-handler/index.ts":
+                    {
+                        defineNonstandardStaticPropertiesHandler: {
+                            [READ]: true,
+                        },
+                        [ESM]: true,
+                    },
             }).map(([filePath, properties]) => {
                 const absolutePath = path.join(__dirname, "../../..", filePath)
                 const relativePath = path.relative(
@@ -48,12 +63,12 @@ module.exports = {
             }),
         )
 
-        if (tracker.iterateCjsReferences(traceMap).next().done) {
+        if (tracker.iterateEsmReferences(traceMap).next().done) {
             return {}
         }
 
         return defineSchemaChecker(context, (propertiesNode) => {
-            const aggressiveProperty = getProperty(propertiesNode, "aggressive")
+            const aggressiveProperty = getProperty(propertiesNode, "allow")
             if (!aggressiveProperty) {
                 context.report({
                     node: propertiesNode,
@@ -61,7 +76,7 @@ module.exports = {
                     fix(fixer) {
                         return fixer.insertTextBefore(
                             sourceCode.getLastToken(propertiesNode),
-                            'aggressive: { type: "boolean" }',
+                            'allow: { type: "array", items: { type: "string" }, uniqueItems: true, }',
                         )
                     },
                 })

@@ -7,9 +7,9 @@
 const files = ["**/test/**", "**/tests/**"]
 
 module.exports = [
-    ...require("./+node.js").map((config) => ({ ...config, files })),
+    ...require("./+node.cjs").map((config) => ({ ...config, files })),
     {
-        name: "eslint-internal/config/_override-mocha.js",
+        name: "eslint-internal/config/_override-mocha.cjs",
         files,
         languageOptions: {
             globals: {

@@ -6,10 +6,10 @@
 
 module.exports = [
     {
-        name: "eslint-internal/config/_base.js#1",
+        name: "eslint-internal/config/_base.cjs#1",
         files: [
-            "**/*.js",
-            "*.js",
+            "**/*.cjs",
+            "*.cjs",
             "**/*.cjs",
             "*.cjs",
             "**/*.ts",
@@ -22,14 +22,14 @@ module.exports = [
         },
     },
     {
-        name: "eslint-internal/config/_base.js#2",
+        name: "eslint-internal/config/_base.cjs#2",
         files: ["**/*.mjs", "*.mjs", "**/*.mts", "*.mts"],
         languageOptions: {
             sourceType: "module",
         },
     },
     {
-        name: "eslint-internal/config/_base.js#3",
+        name: "eslint-internal/config/_base.cjs#3",
         plugins: {
             // "@mysticatea",
             prettier: require("eslint-plugin-prettier"),

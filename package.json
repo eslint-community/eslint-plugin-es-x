@@ -2,6 +2,7 @@
   "name": "eslint-plugin-es-x",
   "version": "9.7.0",
   "description": "ESLint plugin about ECMAScript syntactic features.",
+  "type": "module",
   "engines": {
     "node": "^22.23.0 || ^24.18.0 || >=26.4.0"
   },

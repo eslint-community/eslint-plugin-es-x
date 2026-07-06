@@ -3,7 +3,7 @@
  * See LICENSE file in root directory for full license.
  */
 import { RuleTester } from "eslint"
-import * as globals from "globals"
+import globals from "globals/index.js"
 
 RuleTester.setDefaultConfig({
     languageOptions: {
