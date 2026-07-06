@@ -2,28 +2,26 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
-            description: "disallow block-scoped function declarations.",
+            description: "disallow `for-of` statements.",
             category: "ES2015",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-block-scoped-functions.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-for-of-loops.html",
         },
         fixable: null,
         messages: {
-            forbidden: "ES2015 block-scoped functions are forbidden.",
+            forbidden: "ES2015 'for-of' statements are forbidden.",
         },
         schema: [],
         type: "problem",
     },
     create(context) {
         return {
-            ":not(:function) > BlockStatement > FunctionDeclaration"(node) {
+            ForOfStatement(node) {
                 context.report({ node, messageId: "forbidden" })
             },
         }

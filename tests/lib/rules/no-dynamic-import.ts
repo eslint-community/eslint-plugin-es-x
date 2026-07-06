@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-dynamic-import"
+import rule from "../../../lib/rules/no-dynamic-import"
 
 new RuleTester().run("no-dynamic-import", rule, {
     valid: [

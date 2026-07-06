@@ -2,28 +2,26 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
-            description: "disallow async function declarations.",
-            category: "ES2017",
+            description: "disallow default parameters.",
+            category: "ES2015",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-async-functions.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-default-parameters.html",
         },
         fixable: null,
         messages: {
-            forbidden: "ES2017 async function declarations are forbidden.",
+            forbidden: "ES2015 default parameters are forbidden.",
         },
         schema: [],
         type: "problem",
     },
     create(context) {
         return {
-            ":function[async=true]"(node) {
+            ":function > AssignmentPattern"(node) {
                 context.report({ node, messageId: "forbidden" })
             },
         }

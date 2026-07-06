@@ -2,28 +2,26 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
-            description: "disallow generator function declarations.",
+            description: "disallow block-scoped function declarations.",
             category: "ES2015",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-generators.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-block-scoped-functions.html",
         },
         fixable: null,
         messages: {
-            forbidden: "ES2015 generator function declarations are forbidden.",
+            forbidden: "ES2015 block-scoped functions are forbidden.",
         },
         schema: [],
         type: "problem",
     },
     create(context) {
         return {
-            ":function[generator=true]"(node) {
+            ":not(:function) > BlockStatement > FunctionDeclaration"(node) {
                 context.report({ node, messageId: "forbidden" })
             },
         }

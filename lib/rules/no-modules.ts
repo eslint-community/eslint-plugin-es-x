@@ -2,28 +2,26 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
-            description: "disallow accessor properties.",
-            category: "ES5",
+            description: "disallow modules.",
+            category: "ES2015",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-accessor-properties.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-modules.html",
         },
         fixable: null,
         messages: {
-            forbidden: "ES5 accessor properties are forbidden.",
+            forbidden: "ES2015 modules are forbidden.",
         },
         schema: [],
         type: "problem",
     },
     create(context) {
         return {
-            "Property[kind='get'], Property[kind='set'], MethodDefinition[kind='get'], MethodDefinition[kind='set']"(
+            "ExportAllDeclaration, ExportDefaultDeclaration, ExportNamedDeclaration, ImportDeclaration"(
                 node,
             ) {
                 context.report({ node, messageId: "forbidden" })

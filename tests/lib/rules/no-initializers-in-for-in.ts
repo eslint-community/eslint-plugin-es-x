@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-initializers-in-for-in"
+import rule from "../../../lib/rules/no-initializers-in-for-in"
 
 new RuleTester().run("no-initializers-in-for-in", rule, {
     valid: [

@@ -32,7 +32,7 @@ This rule was introduced in [eslint-plugin-es] v4.0.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-import-meta.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-import-meta.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-import-meta.ts)
 
 [no-new-in-es2020]: ../configs/index.md#no-new-in-es2020

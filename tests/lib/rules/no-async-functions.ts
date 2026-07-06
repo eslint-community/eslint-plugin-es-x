@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-async-functions"
+import rule from "../../../lib/rules/no-async-functions"
 
 new RuleTester().run("no-async-functions", rule, {
     valid: [

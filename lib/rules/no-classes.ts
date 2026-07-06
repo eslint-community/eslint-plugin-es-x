@@ -2,28 +2,26 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
-            description: "disallow `for-of` statements.",
+            description: "disallow class declarations.",
             category: "ES2015",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-for-of-loops.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-classes.html",
         },
         fixable: null,
         messages: {
-            forbidden: "ES2015 'for-of' statements are forbidden.",
+            forbidden: "ES2015 class declarations are forbidden.",
         },
         schema: [],
         type: "problem",
     },
     create(context) {
         return {
-            ForOfStatement(node) {
+            "ClassDeclaration, ClassExpression"(node) {
                 context.report({ node, messageId: "forbidden" })
             },
         }

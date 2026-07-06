@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-new-target"
+import rule from "../../../lib/rules/no-new-target"
 
 new RuleTester().run("no-new-target", rule, {
     valid: ["new F()", "target = 1"],

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-computed-properties"
+import rule from "../../../lib/rules/no-computed-properties"
 
 new RuleTester().run("no-computed-properties", rule, {
     valid: ["({ foo: 1 })", "({ foo })", "({ foo() {} })"],

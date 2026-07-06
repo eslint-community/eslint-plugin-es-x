@@ -2,28 +2,26 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
-            description: "disallow exponential operators.",
-            category: "ES2016",
+            description: "disallow block-scoped variable declarations.",
+            category: "ES2015",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-exponential-operators.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-block-scoped-variables.html",
         },
         fixable: null,
         messages: {
-            forbidden: "ES2016 exponential operators are forbidden.",
+            forbidden: "ES2015 block-scoped variables are forbidden.",
         },
         schema: [],
         type: "problem",
     },
     create(context) {
         return {
-            "AssignmentExpression[operator='**='], BinaryExpression[operator='**']"(
+            "VariableDeclaration[kind='const'], VariableDeclaration[kind='let']"(
                 node,
             ) {
                 context.report({ node, messageId: "forbidden" })

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-class-static-block"
+import rule from "../../../lib/rules/no-class-static-block"
 
 new RuleTester().run("no-class-static-block", rule, {
     valid: ["class A { static f() {} }", "class A { static get f() {} }"],

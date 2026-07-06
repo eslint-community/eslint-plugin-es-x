@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-accessor-properties"
+import rule from "../../../lib/rules/no-accessor-properties"
 
 new RuleTester().run("no-accessor-properties", rule, {
     valid: [
