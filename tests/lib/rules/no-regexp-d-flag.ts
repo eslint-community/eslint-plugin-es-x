@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-d-flag"
+import rule from "../../../lib/rules/no-regexp-d-flag"
 
 new RuleTester().run("no-regexp-d-flag", rule, {
     valid: [

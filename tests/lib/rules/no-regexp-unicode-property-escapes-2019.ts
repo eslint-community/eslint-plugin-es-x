@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-unicode-property-escapes-2019"
+import rule from "../../../lib/rules/no-regexp-unicode-property-escapes-2019"
 
 new RuleTester().run("no-regexp-unicode-property-escapes-2019", rule, {
     valid: [

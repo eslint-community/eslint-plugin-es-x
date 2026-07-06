@@ -31,7 +31,7 @@ This rule was introduced in v7.8.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-regexp-duplicate-named-capturing-groups.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-regexp-duplicate-named-capturing-groups.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-regexp-duplicate-named-capturing-groups.ts)
 
 [no-new-in-es2025]: ../configs/index.md#no-new-in-es2025

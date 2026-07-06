@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-named-capture-groups"
+import rule from "../../../lib/rules/no-regexp-named-capture-groups"
 
 new RuleTester().run("no-regexp-named-capture-groups", rule, {
     valid: [

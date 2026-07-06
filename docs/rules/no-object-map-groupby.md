@@ -36,5 +36,5 @@ This rule was introduced in v7.5.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-object-map-groupby.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-object-map-groupby.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-object-map-groupby.ts)

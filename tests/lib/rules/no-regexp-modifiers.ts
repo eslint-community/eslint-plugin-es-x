@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-modifiers"
+import rule from "../../../lib/rules/no-regexp-modifiers"
 
 new RuleTester().run("no-regexp-modifiers", rule, {
     valid: [

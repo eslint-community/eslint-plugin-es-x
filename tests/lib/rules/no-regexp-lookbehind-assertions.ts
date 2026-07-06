@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-lookbehind-assertions"
+import rule from "../../../lib/rules/no-regexp-lookbehind-assertions"
 
 new RuleTester().run("no-regexp-lookbehind-assertions", rule, {
     valid: [

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-duplicate-named-capturing-groups"
+import rule from "../../../lib/rules/no-regexp-duplicate-named-capturing-groups"
 
 new RuleTester().run("no-regexp-duplicate-named-capturing-groups", rule, {
     valid: [

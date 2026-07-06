@@ -17,7 +17,9 @@ type CreateReportArgument = {
     node: TSESTree.MemberExpression | TSESTree.Property
 }
 type Options = {
-    createReport?: (arg: CreateReportArgument) => Rule.ReportDescriptor
+    createReport?: (
+        arg: CreateReportArgument,
+    ) => Partial<Rule.ReportDescriptor> | null
 }
 
 /**

@@ -6,6 +6,7 @@ export type BuiltinGlobalObjectName =
     | "Temporal"
     | "AsyncDisposableStack"
     | "DisposableStack"
+    | "SuppressedError"
 
 export type GlobalObjectName = keyof typeof globalThis
 type IsNever<T> = [T] extends [never] ? true : false

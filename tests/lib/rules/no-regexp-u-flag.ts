@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-u-flag"
+import rule from "../../../lib/rules/no-regexp-u-flag"
 
 new RuleTester().run("no-regexp-u-flag", rule, {
     valid: [

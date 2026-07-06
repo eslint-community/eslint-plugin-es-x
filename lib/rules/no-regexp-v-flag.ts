@@ -1,0 +1,39 @@
+import { getRegExpCalls } from "../utils"
+import { createRule } from "../util/create-rule"
+
+export default createRule<"forbidden", []>({
+    meta: {
+        docs: {
+            description: "disallow RegExp `v` flag.",
+            category: "ES2024",
+            recommended: false,
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-regexp-v-flag.html",
+        },
+        fixable: null,
+        messages: {
+            forbidden: "ES2024 RegExp 'v' flag is forbidden.",
+        },
+        schema: [],
+        type: "problem",
+    },
+    create(context) {
+        return {
+            "Literal[regex]"(node) {
+                if (node.regex.flags.includes("v")) {
+                    context.report({ node, messageId: "forbidden" })
+                }
+            },
+
+            "Program:exit"(program) {
+                const sourceCode = context.sourceCode
+                const scope = sourceCode.getScope(program)
+
+                for (const { node, flags } of getRegExpCalls(scope)) {
+                    if (flags && flags.includes("v")) {
+                        context.report({ node, messageId: "forbidden" })
+                    }
+                }
+            },
+        }
+    },
+})

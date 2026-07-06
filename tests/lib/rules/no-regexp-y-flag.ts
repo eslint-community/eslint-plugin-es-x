@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-y-flag"
+import rule from "../../../lib/rules/no-regexp-y-flag"
 
 new RuleTester().run("no-regexp-y-flag", rule, {
     valid: [

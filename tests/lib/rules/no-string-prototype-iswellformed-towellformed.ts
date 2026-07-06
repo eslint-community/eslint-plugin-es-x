@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-string-prototype-iswellformed-towellformed"
+import rule from "../../../lib/rules/no-string-prototype-iswellformed-towellformed"
 const ruleId = "no-string-prototype-iswellformed-towellformed"
 
 new RuleTester().run(ruleId, rule, {

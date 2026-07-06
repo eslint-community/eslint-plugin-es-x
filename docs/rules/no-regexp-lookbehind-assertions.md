@@ -33,7 +33,7 @@ This rule was introduced in [eslint-plugin-es] v1.0.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-regexp-lookbehind-assertions.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-regexp-lookbehind-assertions.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-regexp-lookbehind-assertions.ts)
 
 [no-new-in-es2018]: ../configs/index.md#no-new-in-es2018
