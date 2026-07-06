@@ -40,6 +40,9 @@ function toRuleLink(ruleId: string) {
 }
 
 async function main() {
+    // Loading the configuration beforehand results in an initialization error,
+    // so the entire plugin is loaded here.
+    await import("../lib/index.ts")
     const docsRoot = path.resolve(import.meta.dirname, "../docs/rules/")
     const configRoot = path.resolve(import.meta.dirname, "../lib/configs/flat")
     const configs = await Promise.all(

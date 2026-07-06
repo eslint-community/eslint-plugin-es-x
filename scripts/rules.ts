@@ -6,12 +6,14 @@ import * as fs from "node:fs"
 import * as path from "node:path"
 import proposals from "./proposals.ts"
 import type { JSONSchema4 } from "json-schema"
-import { createJiti } from "jiti"
-
-const jiti = createJiti(import.meta.url, {})
 
 const libRoot = path.resolve(import.meta.dirname, "../lib/rules")
-const requireRule = jiti
+const baseRequire = createRequire(import.meta.url)
+
+function requireRule<T>(filePath: string): T {
+    const ruleModule = baseRequire(filePath)
+    return ruleModule.default
+}
 
 export interface Rule {
     /** The rule name. */

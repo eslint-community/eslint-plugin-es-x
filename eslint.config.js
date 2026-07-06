@@ -1,5 +1,4 @@
-import type { ESLint } from "eslint"
-import { type Config, defineConfig, globalIgnores } from "eslint/config"
+import { defineConfig, globalIgnores } from "eslint/config"
 import tseslint from "typescript-eslint"
 
 import myPlugin from "./eslint-internal/my-plugin.cjs"
@@ -26,7 +25,7 @@ export default defineConfig([
                     "no-string-prototype-substr": noStringPrototypeSubstr,
                 },
             },
-            my: myPlugin as ESLint.Plugin,
+            my: myPlugin,
         },
         languageOptions: {
             globals: {
@@ -38,8 +37,8 @@ export default defineConfig([
             },
         },
     },
-    ...(es2020 as Config[]),
-    ...(eslintPluginConfig as Config[]),
+    ...es2020,
+    ...eslintPluginConfig,
     {
         rules: {
             "no-restricted-properties": [
