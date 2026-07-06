@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-top-level-await"
+import rule from "../../../lib/rules/no-top-level-await"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

@@ -2,9 +2,7 @@
  * @author Yosuke Ota
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
-const { createRule } = require("../util/create-rule")
+import { createRule } from "../util/create-rule"
 
 /**
  * Remove the numeric separators.
@@ -15,7 +13,7 @@ function removeNumericSeparators(raw) {
     return raw.replace(/_/gu, "")
 }
 
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow numeric separators.",

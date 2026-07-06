@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-super-properties"
+import rule from "../../../lib/rules/no-object-super-properties"
 
 new RuleTester().run("no-object-super-properties", rule, {
     valid: [

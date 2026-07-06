@@ -2,9 +2,7 @@
  * @author Yosuke Ota <https://github.com/ota-meshi>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
-const { createRule } = require("../util/create-rule")
+import { createRule } from "../util/create-rule"
 
 /**
  * Checks if the given token is a nullish coalescing operator or not.
@@ -15,7 +13,7 @@ function isNullishCoalescingOperator(token) {
     return token.value === "??" && token.type === "Punctuator"
 }
 
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow nullish coalescing operators.",

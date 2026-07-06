@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-template-literals"
+import rule from "../../../lib/rules/no-template-literals"
 
 new RuleTester().run("no-template-literals", rule, {
     valid: [

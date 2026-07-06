@@ -2,9 +2,7 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
-const { createRule } = require("../util/create-rule")
+import { createRule } from "../util/create-rule"
 
 // https://www-archive.mozilla.org/js/language/E262-3.pdf
 const keywords = new Set([
@@ -69,7 +67,7 @@ const keywords = new Set([
     "with",
 ])
 
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow reserved words as property names.",

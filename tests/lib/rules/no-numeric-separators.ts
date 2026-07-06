@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-numeric-separators"
+import rule from "../../../lib/rules/no-numeric-separators"
 
 new RuleTester().run("no-numeric-separators", rule, {
     valid: [

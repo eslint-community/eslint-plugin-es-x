@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-spread-elements"
+import rule from "../../../lib/rules/no-spread-elements"
 
 new RuleTester().run("no-spread-elements", rule, {
     valid: [

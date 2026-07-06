@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-hashbang"
+import rule from "../../../lib/rules/no-hashbang"
 
 new RuleTester().run("no-hashbang", rule, {
     valid: [

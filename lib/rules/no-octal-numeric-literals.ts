@@ -2,13 +2,11 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
-const { createRule } = require("../util/create-rule")
+import { createRule } from "../util/create-rule"
 
 const Pattern = /^0[oO]/u
 
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow octal numeric literals.",

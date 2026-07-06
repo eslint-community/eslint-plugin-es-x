@@ -2,28 +2,26 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
+import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
-            description: "disallow rest parameters.",
-            category: "ES2015",
+            description: "disallow optional `catch` binding.",
+            category: "ES2019",
             recommended: false,
-            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-rest-parameters.html",
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-optional-catch-binding.html",
         },
         fixable: null,
         messages: {
-            forbidden: "ES2015 rest parameters are forbidden.",
+            forbidden: "ES2019 optional 'catch' binding is forbidden.",
         },
         schema: [],
         type: "problem",
     },
     create(context) {
         return {
-            ":function > RestElement"(node) {
+            "CatchClause[param=null]"(node) {
                 context.report({ node, messageId: "forbidden" })
             },
         }

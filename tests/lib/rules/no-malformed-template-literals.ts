@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-malformed-template-literals"
+import rule from "../../../lib/rules/no-malformed-template-literals"
 
 new RuleTester().run("no-malformed-template-literals", rule, {
     valid: ["`foo`", "tag`foo`", "tag``"],

@@ -1,8 +1,6 @@
-"use strict"
+import { createRule } from "../util/create-rule"
 
-const { createRule } = require("../util/create-rule")
-
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description:

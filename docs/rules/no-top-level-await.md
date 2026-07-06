@@ -30,7 +30,7 @@ This rule was introduced in v5.0.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-top-level-await.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-top-level-await.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-top-level-await.ts)
 
 [no-new-in-es2022]: ../configs/index.md#no-new-in-es2022

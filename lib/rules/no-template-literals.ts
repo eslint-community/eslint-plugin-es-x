@@ -2,9 +2,7 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-"use strict"
-
-const { createRule } = require("../util/create-rule")
+import { createRule } from "../util/create-rule"
 
 /**
  * @typedef {import("estree").TemplateLiteral} TemplateLiteral
@@ -49,7 +47,7 @@ function templateLiteralToStringConcat(node, sourceCode) {
     return ss.join("+")
 }
 
-module.exports = createRule({
+export default createRule<"forbidden", []>({
     meta: {
         docs: {
             description: "disallow template literals.",
