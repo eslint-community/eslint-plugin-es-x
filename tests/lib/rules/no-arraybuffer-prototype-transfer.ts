@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-arraybuffer-prototype-transfer"
+import rule from "../../../lib/rules/no-arraybuffer-prototype-transfer"
 
 new RuleTester().run("no-arraybuffer-prototype-transfer", rule, {
     valid: [

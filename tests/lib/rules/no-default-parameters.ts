@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-default-parameters"
+import rule from "../../../lib/rules/no-default-parameters"
 
 new RuleTester().run("no-default-parameters", rule, {
     valid: [

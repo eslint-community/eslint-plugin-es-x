@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-block-scoped-functions"
+import rule from "../../../lib/rules/no-block-scoped-functions"
 
 new RuleTester().run("no-block-scoped-functions", rule, {
     valid: [

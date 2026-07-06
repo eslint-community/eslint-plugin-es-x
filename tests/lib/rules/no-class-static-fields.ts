@@ -5,7 +5,7 @@
 
 import * as parser from "@typescript-eslint/parser"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-class-static-fields"
+import rule from "../../../lib/rules/no-class-static-fields"
 const ruleId = "no-class-static-fields"
 
 new RuleTester().run(ruleId, rule, {

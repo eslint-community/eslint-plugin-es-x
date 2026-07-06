@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-generators"
+import rule from "../../../lib/rules/no-generators"
 
 new RuleTester().run("no-generators", rule, {
     valid: ["function f() {}", "yield = 0"],

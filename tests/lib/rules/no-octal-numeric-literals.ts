@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-octal-numeric-literals"
+import rule from "../../../lib/rules/no-octal-numeric-literals"
 
 new RuleTester().run("no-octal-numeric-literals", rule, {
     valid: ["123", "0123", "0x123", "0X123", "0b10", "0B10", "/*0o123*/x"],

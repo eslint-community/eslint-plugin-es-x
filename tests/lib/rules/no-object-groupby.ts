@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-object-groupby"
+import rule from "../../../lib/rules/no-object-groupby"
 
 new RuleTester().run("no-object-groupby", rule, {
     valid: [

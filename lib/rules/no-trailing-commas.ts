@@ -1,0 +1,37 @@
+/**
+ * @author Toru Nagashima <https://github.com/mysticatea>
+ * See LICENSE file in root directory for full license.
+ */
+import { createRule } from "../util/create-rule"
+import { isCommaToken } from "../utils"
+
+export default createRule<"forbidden", []>({
+    meta: {
+        docs: {
+            description: "disallow trailing commas in array/object literals.",
+            category: "ES5",
+            recommended: false,
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-trailing-commas.html",
+        },
+        fixable: null,
+        messages: {
+            forbidden:
+                "ES5 trailing commas in array/object literals are forbidden.",
+        },
+        schema: [],
+        type: "problem",
+    },
+    create(context) {
+        const sourceCode = context.sourceCode
+        return {
+            "ArrayExpression, ArrayPattern, ObjectExpression, ObjectPattern"(
+                node,
+            ) {
+                const token = sourceCode.getLastToken(node, 1)
+                if (isCommaToken(token)) {
+                    context.report({ node, messageId: "forbidden" })
+                }
+            },
+        }
+    },
+})

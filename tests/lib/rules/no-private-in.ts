@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-private-in"
+import rule from "../../../lib/rules/no-private-in"
 
 new RuleTester().run("no-private-in", rule, {
     valid: [

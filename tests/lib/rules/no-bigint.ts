@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-bigint"
+import rule from "../../../lib/rules/no-bigint"
 
 new RuleTester().run("no-bigint", rule, {
     valid: ["100"],

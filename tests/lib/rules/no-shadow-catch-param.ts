@@ -1,6 +1,6 @@
 import * as espree from "espree"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-shadow-catch-param"
+import rule from "../../../lib/rules/no-shadow-catch-param"
 
 new RuleTester({
     languageOptions: { parser: espree },

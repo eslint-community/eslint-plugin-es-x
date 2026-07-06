@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-dynamic-import-options"
+import rule from "../../../lib/rules/no-dynamic-import-options"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

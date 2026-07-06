@@ -11,12 +11,8 @@ import {
     getStringIfConstant,
 } from "@eslint-community/eslint-utils"
 import type { AST, Scope, SourceCode } from "eslint"
-import type {
-    MethodDefinition,
-    NewExpression,
-    PropertyDefinition,
-    SimpleCallExpression,
-} from "estree"
+import type * as ESTree from "estree"
+import type { TSESTree } from "@typescript-eslint/types"
 
 /**
  * Define generator to search pattern.
@@ -48,7 +44,7 @@ export function isCommaToken(
  * @returns The iterator of `CallExpression` or `NewExpression` for `RegExp`.
  */
 export function* getRegExpCalls(globalScope: Scope.Scope): IterableIterator<{
-    node: NewExpression | SimpleCallExpression
+    node: ESTree.NewExpression | ESTree.SimpleCallExpression
     pattern: string | null
     flags: string | null
 }> {
@@ -56,7 +52,9 @@ export function* getRegExpCalls(globalScope: Scope.Scope): IterableIterator<{
     for (const { node } of tracker.iterateGlobalReferences({
         RegExp: { [CALL]: true, [CONSTRUCT]: true },
     })) {
-        const callNode = node as NewExpression | SimpleCallExpression
+        const callNode = node as
+            | ESTree.NewExpression
+            | ESTree.SimpleCallExpression
         const [patternNode, flagsNode] = callNode.arguments
         yield {
             node: callNode,
@@ -73,19 +71,24 @@ export function* getRegExpCalls(globalScope: Scope.Scope): IterableIterator<{
  * @returns The name of the node.
  */
 export function getFieldName(
-    node: PropertyDefinition | MethodDefinition,
+    node:
+        | ESTree.PropertyDefinition
+        | ESTree.MethodDefinition
+        | TSESTree.PropertyDefinition
+        | TSESTree.MethodDefinition,
     sourceCode?: SourceCode | null,
 ): string {
-    if (node.key.type === "PrivateIdentifier") {
-        return `#${node.key.name}`
+    const esNode = node as ESTree.PropertyDefinition | ESTree.MethodDefinition
+    if (esNode.key.type === "PrivateIdentifier") {
+        return `#${esNode.key.name}`
     }
-    const name = getPropertyName(node)
+    const name = getPropertyName(esNode)
     if (name) {
         return `'${name}'`
     }
 
     if (sourceCode) {
-        const keyText = sourceCode.getText(node.key)
+        const keyText = sourceCode.getText(esNode.key)
         if (!keyText.includes("\n")) {
             return `[${keyText}]`
         }

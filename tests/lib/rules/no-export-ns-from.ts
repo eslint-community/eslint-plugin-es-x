@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-export-ns-from"
+import rule from "../../../lib/rules/no-export-ns-from"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

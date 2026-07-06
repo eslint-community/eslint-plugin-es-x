@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-for-of-loops"
+import rule from "../../../lib/rules/no-for-of-loops"
 
 new RuleTester().run("no-for-of-loops", rule, {
     valid: [

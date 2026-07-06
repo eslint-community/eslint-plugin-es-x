@@ -1,0 +1,34 @@
+import { createRule } from "../util/create-rule"
+
+export default createRule<"forbidden", []>({
+    meta: {
+        docs: {
+            description: "disallow `using` and `await using` declarations",
+            category: "ES2027",
+            proposal: "explicit-resource-management",
+            recommended: false,
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-using-declarations.html",
+        },
+        fixable: null,
+        messages: {
+            forbidden: "ES2027 '{{kind}}' declarations are forbidden.",
+        },
+        schema: [],
+        type: "problem",
+    },
+    create(context) {
+        return {
+            VariableDeclaration(node) {
+                if (node.kind === "using" || node.kind === "await using") {
+                    context.report({
+                        node,
+                        messageId: "forbidden",
+                        data: {
+                            kind: node.kind,
+                        },
+                    })
+                }
+            },
+        }
+    },
+})

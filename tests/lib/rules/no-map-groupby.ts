@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-map-groupby"
+import rule from "../../../lib/rules/no-map-groupby"
 
 new RuleTester().run("no-map-groupby", rule, {
     valid: [

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-classes"
+import rule from "../../../lib/rules/no-classes"
 
 new RuleTester().run("no-classes", rule, {
     valid: ["function A() {} A.prototype.foo = function() {}"],

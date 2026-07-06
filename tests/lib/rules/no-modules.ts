@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-modules"
+import rule from "../../../lib/rules/no-modules"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

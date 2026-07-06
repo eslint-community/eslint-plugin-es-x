@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-exponential-operators"
+import rule from "../../../lib/rules/no-exponential-operators"
 
 new RuleTester().run("no-exponential-operators", rule, {
     valid: ["a*b", "a*=b"],

@@ -1,6 +1,6 @@
 import * as path from "node:path"
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-string-prototype-trimleft-trimright"
+import rule from "../../../lib/rules/no-string-prototype-trimleft-trimright"
 const ruleId = "no-string-prototype-trimleft-trimright"
 
 const USE_GLOBAL_ID = `

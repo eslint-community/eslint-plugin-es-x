@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-unicode-codepoint-escapes"
+import rule from "../../../lib/rules/no-unicode-codepoint-escapes"
 
 new RuleTester().run("no-unicode-codepoint-escapes", rule, {
     valid: [

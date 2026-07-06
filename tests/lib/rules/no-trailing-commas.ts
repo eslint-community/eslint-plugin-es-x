@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-trailing-commas"
+import rule from "../../../lib/rules/no-trailing-commas"
 
 new RuleTester().run("no-trailing-commas", rule, {
     valid: [

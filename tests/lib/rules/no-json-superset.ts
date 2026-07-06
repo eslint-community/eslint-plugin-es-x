@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-json-superset"
+import rule from "../../../lib/rules/no-json-superset"
 
 new RuleTester().run("no-json-superset", rule, {
     valid: [

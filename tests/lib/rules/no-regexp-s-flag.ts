@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-regexp-s-flag"
+import rule from "../../../lib/rules/no-regexp-s-flag"
 
 new RuleTester().run("no-regexp-s-flag", rule, {
     valid: [

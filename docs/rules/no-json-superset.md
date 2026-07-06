@@ -37,7 +37,7 @@ This rule was introduced in [eslint-plugin-es] v1.3.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-json-superset.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-json-superset.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-json-superset.ts)
 
 [no-new-in-es2019]: ../configs/index.md#no-new-in-es2019

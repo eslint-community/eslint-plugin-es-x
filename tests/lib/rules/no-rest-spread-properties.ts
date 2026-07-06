@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-rest-spread-properties"
+import rule from "../../../lib/rules/no-rest-spread-properties"
 
 new RuleTester().run("no-rest-spread-properties", rule, {
     valid: [

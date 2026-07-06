@@ -1,0 +1,68 @@
+/**
+ * @author Yosuke Ota <https://github.com/ota-meshi>
+ * See LICENSE file in root directory for full license.
+ */
+import { getFieldName } from "../utils"
+import { createRule } from "../util/create-rule"
+import type { TSESTree } from "@typescript-eslint/types"
+
+export default createRule<"forbidden", []>({
+    meta: {
+        docs: {
+            description: "disallow private class fields.",
+            category: "ES2022",
+            proposal: "class-fields",
+            recommended: false,
+            url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-class-private-fields.html",
+        },
+        fixable: null,
+        messages: {
+            forbidden: "ES2022 {{nameWithKind}} is forbidden.",
+        },
+        schema: [],
+        type: "problem",
+    },
+    create(context) {
+        return {
+            PrivateIdentifier(esNode) {
+                const node = esNode as TSESTree.PrivateIdentifier
+                const parent = node.parent
+                if (parent.type === "MethodDefinition" && parent.key === node) {
+                    return
+                }
+                if (
+                    parent.type === "PropertyDefinition" &&
+                    parent.key === node
+                ) {
+                    if (parent.declare || parent.parent.parent.declare) {
+                        return
+                    }
+                    context.report({
+                        node,
+                        messageId: "forbidden",
+                        data: {
+                            nameWithKind: [
+                                "private field",
+                                getFieldName(parent, context.sourceCode),
+                            ]
+                                .filter(Boolean)
+                                .join(" "),
+                        },
+                    })
+                } else {
+                    context.report({
+                        node,
+                        messageId: "forbidden",
+                        data: {
+                            nameWithKind:
+                                parent.parent.type === "CallExpression" &&
+                                parent.parent.callee === parent
+                                    ? `private method call #${node.name}()`
+                                    : `private access #${node.name}`,
+                        },
+                    })
+                }
+            },
+        }
+    },
+})

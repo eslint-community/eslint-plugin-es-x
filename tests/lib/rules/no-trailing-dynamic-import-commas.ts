@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-trailing-dynamic-import-commas"
+import rule from "../../../lib/rules/no-trailing-dynamic-import-commas"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-optional-catch-binding"
+import rule from "../../../lib/rules/no-optional-catch-binding"
 
 new RuleTester().run("no-optional-catch-binding", rule, {
     valid: ["try {} catch (err) {}"],

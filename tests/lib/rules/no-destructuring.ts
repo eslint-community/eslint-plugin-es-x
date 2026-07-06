@@ -4,7 +4,7 @@
  */
 
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-destructuring"
+import rule from "../../../lib/rules/no-destructuring"
 
 new RuleTester().run("no-destructuring", rule, {
     valid: ["({})", "({a: 1})", "[]", "[1]", "var a = {a}"],

@@ -1,5 +1,5 @@
 import RuleTester from "../../tester"
-import * as rule from "../../../lib/rules/no-suppressederror"
+import rule from "../../../lib/rules/no-suppressederror"
 
 new RuleTester().run("no-suppressederror", rule, {
     valid: ["Array", "Object", "let SuppressedError = 0; SuppressedError"],

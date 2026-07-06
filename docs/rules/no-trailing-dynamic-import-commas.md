@@ -40,7 +40,7 @@ This rule was introduced in v8.1.0.
 
 ## 📚 References
 
-- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-trailing-dynamic-import-commas.js)
+- [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-trailing-dynamic-import-commas.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-trailing-dynamic-import-commas.ts)
 
 [no-import-attributes]: ../configs/index.md#no-import-attributes
