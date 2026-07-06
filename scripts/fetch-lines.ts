@@ -1,6 +1,4 @@
-export { fetchLines }
-
-async function* fetchLines(url: string) {
+export async function* fetchLines(url: string) {
     const response = await fetch(url)
     if (!response.ok) {
         throw new Error(
