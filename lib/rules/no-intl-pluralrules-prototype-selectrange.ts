@@ -1,5 +1,5 @@
-import { createRule } from "../util/create-rule"
-import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index"
+import { createRule } from "../util/create-rule.ts"
+import { definePrototypePropertiesHandler } from "../util/define-prototype-properties-handler/index.ts"
 
 type Options = [
     {

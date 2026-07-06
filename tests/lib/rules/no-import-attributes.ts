@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-import-attributes"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-import-attributes.ts"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

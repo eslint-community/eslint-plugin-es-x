@@ -1,4 +1,4 @@
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 
 export default createRule<"forbidden", []>({
     meta: {

@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-resizable-and-growable-arraybuffers"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-resizable-and-growable-arraybuffers.ts"
 const ruleId = "no-resizable-and-growable-arraybuffers"
 
 const testerOptions = {

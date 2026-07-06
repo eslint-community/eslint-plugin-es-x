@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-map"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-map.ts"
 
 new RuleTester().run("no-map", rule, {
     valid: ["Array", "Object", "let Map = 0; Map"],

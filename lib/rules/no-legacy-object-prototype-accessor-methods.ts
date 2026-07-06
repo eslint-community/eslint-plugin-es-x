@@ -1,5 +1,5 @@
 import { findVariable, getPropertyName } from "@eslint-community/eslint-utils"
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 
 const LEGACY_ACCESSOR_METHODS = new Set([
     "__defineGetter__",

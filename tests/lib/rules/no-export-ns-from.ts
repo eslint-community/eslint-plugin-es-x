@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-export-ns-from"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-export-ns-from.ts"
 
 new RuleTester({
     languageOptions: { sourceType: "module" },

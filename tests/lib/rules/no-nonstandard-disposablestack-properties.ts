@@ -1,6 +1,6 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-disposablestack-properties"
-import { disposableStackProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-disposablestack-properties.ts"
+import { disposableStackProperties } from "../../../lib/util/well-known-properties.ts"
 
 new RuleTester().run("no-nonstandard-disposablestack-properties", rule, {
     valid: [

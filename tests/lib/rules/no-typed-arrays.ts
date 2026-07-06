@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-typed-arrays"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-typed-arrays.ts"
 
 new RuleTester().run("no-typed-arrays", rule, {
     valid: ["Array", "Set"],

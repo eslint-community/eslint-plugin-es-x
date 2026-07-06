@@ -4,8 +4,8 @@
  */
 
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-function-prototype-bind"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-function-prototype-bind.ts"
 const ruleId = "no-function-prototype-bind"
 
 new RuleTester().run(ruleId, rule, {

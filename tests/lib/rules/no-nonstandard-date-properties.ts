@@ -1,6 +1,6 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-date-properties"
-import { dateProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-date-properties.ts"
+import { dateProperties } from "../../../lib/util/well-known-properties.ts"
 
 new RuleTester().run("no-nonstandard-date-properties", rule, {
     valid: [

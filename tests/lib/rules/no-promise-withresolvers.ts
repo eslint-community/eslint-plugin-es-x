@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-promise-withresolvers"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-promise-withresolvers.ts"
 
 new RuleTester().run("no-promise-withresolvers", rule, {
     valid: ["Promise.all"],

@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-named-capture-groups"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-named-capture-groups.ts"
 
 new RuleTester().run("no-regexp-named-capture-groups", rule, {
     valid: [

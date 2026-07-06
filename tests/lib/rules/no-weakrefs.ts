@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-weakrefs"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-weakrefs.ts"
 
 new RuleTester().run("no-weakrefs", rule, {
     valid: ["Array", "Object", "let WeakRef = 0; WeakRef"],

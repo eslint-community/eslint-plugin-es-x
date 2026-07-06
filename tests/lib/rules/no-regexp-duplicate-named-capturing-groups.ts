@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-duplicate-named-capturing-groups"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-duplicate-named-capturing-groups.ts"
 
 new RuleTester().run("no-regexp-duplicate-named-capturing-groups", rule, {
     valid: [

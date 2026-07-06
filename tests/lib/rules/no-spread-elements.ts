@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-spread-elements"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-spread-elements.ts"
 
 new RuleTester().run("no-spread-elements", rule, {
     valid: [

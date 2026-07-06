@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-math-atanh"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-math-atanh.ts"
 
 new RuleTester().run("no-math-atanh", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.atanh"],

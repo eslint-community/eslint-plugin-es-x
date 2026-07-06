@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-intl-locale-prototype-getnumberingsystems"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-intl-locale-prototype-getnumberingsystems.ts"
 const ruleId = "no-intl-locale-prototype-getnumberingsystems"
 
 new RuleTester().run(ruleId, rule, {

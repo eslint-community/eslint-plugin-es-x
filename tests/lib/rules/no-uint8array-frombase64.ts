@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-uint8array-frombase64"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-uint8array-frombase64.ts"
 const ruleId = "no-uint8array-frombase64"
 
 const method = "fromBase64"

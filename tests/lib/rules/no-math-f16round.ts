@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-math-f16round"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-math-f16round.ts"
 
 new RuleTester().run("no-math-f16round", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.f16round"],

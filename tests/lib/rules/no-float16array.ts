@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-float16array"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-float16array.ts"
 
 new RuleTester().run("no-float16array", rule, {
     valid: ["Array", "Object", "let Float16Array = 0; Float16Array"],

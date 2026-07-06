@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-legacy-object-prototype-accessor-methods"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-legacy-object-prototype-accessor-methods.ts"
 
 new RuleTester().run("no-legacy-object-prototype-accessor-methods", rule, {
     valid: [

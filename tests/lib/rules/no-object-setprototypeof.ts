@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-object-setprototypeof"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-object-setprototypeof.ts"
 
 new RuleTester().run("no-object-setprototypeof", rule, {
     valid: ["Object", "Object.assign", "let Object = 0; Object.setPrototypeOf"],

@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-atomics-waitasync"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-atomics-waitasync.ts"
 
 new RuleTester().run("no-atomics-waitasync", rule, {
     valid: ["Atomics", "Atomics.wait", "let Atomics = 0; Atomics.waitAsync"],

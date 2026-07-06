@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-intl-relativetimeformat"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-intl-relativetimeformat.ts"
 
 new RuleTester().run("no-intl-relativetimeformat", rule, {
     valid: [

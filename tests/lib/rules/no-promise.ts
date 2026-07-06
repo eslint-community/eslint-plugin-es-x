@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-promise"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-promise.ts"
 
 new RuleTester().run("no-promise", rule, {
     valid: ["Array", "Object", "let Promise = 0; Promise"],

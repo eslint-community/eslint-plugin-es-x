@@ -1,6 +1,6 @@
 import * as espree from "espree"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-shadow-catch-param"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-shadow-catch-param.ts"
 
 new RuleTester({
     languageOptions: { parser: espree },

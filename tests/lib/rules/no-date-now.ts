@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-date-now"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-date-now.ts"
 
 new RuleTester().run("no-date-now", rule, {
     valid: ["Date", "Date.parse", "let Date = 0; Date.now"],

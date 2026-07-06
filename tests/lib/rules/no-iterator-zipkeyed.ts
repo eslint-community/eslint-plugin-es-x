@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-iterator-zipkeyed"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-iterator-zipkeyed.ts"
 
 new RuleTester().run("no-iterator-zipkeyed", rule, {
     valid: [

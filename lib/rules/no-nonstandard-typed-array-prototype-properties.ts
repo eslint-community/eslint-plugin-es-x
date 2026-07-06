@@ -1,9 +1,9 @@
-import { createRule } from "../util/create-rule"
-import { defineNonstandardPrototypePropertiesHandler } from "../util/define-nonstandard-prototype-properties-handler/index"
+import { createRule } from "../util/create-rule.ts"
+import { defineNonstandardPrototypePropertiesHandler } from "../util/define-nonstandard-prototype-properties-handler/index.ts"
 import {
     typedArrayPrototypeProperties,
     uint8ArrayPrototypeProperties,
-} from "../util/well-known-properties"
+} from "../util/well-known-properties.ts"
 
 type Options = [
     {

@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-octal-numeric-literals"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-octal-numeric-literals.ts"
 
 new RuleTester().run("no-octal-numeric-literals", rule, {
     valid: ["123", "0123", "0x123", "0X123", "0b10", "0B10", "/*0o123*/x"],

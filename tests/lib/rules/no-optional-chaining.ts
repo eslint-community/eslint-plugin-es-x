@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-optional-chaining"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-optional-chaining.ts"
 
 new RuleTester().run("no-optional-chaining", rule, {
     valid: ["var x = a.b", "var x = a[b]", "foo()"],

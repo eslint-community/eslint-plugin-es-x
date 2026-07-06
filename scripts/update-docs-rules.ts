@@ -4,7 +4,7 @@
  */
 import * as fs from "node:fs"
 import * as path from "node:path"
-import { rules } from "./rules"
+import { rules } from "./rules.ts"
 import type { JSONSchema4 } from "json-schema"
 import packageJson from "../package.json" with { type: "json" }
 const { version } = packageJson

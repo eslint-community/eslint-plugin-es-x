@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-intl-listformat"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-intl-listformat.ts"
 
 new RuleTester().run("no-intl-listformat", rule, {
     valid: [

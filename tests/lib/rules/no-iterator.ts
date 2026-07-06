@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-iterator"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-iterator.ts"
 
 new RuleTester({
     languageOptions: { globals: { Iterator: "readonly" } },

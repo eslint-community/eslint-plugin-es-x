@@ -2,7 +2,7 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 
 // https://www-archive.mozilla.org/js/language/E262-3.pdf
 const keywords = new Set([

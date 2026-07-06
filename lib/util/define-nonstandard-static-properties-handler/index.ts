@@ -2,12 +2,15 @@ import { READ, ReferenceTracker } from "@eslint-community/eslint-utils"
 import type { Rule } from "eslint"
 import type { TSESTree } from "@typescript-eslint/types"
 
-import { getPropertyKeyValue } from "../get-property-key-value"
+import { getPropertyKeyValue } from "../get-property-key-value.ts"
 import {
     createPropertyGuardsContext,
     type Params,
-} from "../type-checker/property-guards"
-import type { BuiltinGlobalObjectName, GlobalObjectProperties } from "../types"
+} from "../type-checker/property-guards.ts"
+import type {
+    BuiltinGlobalObjectName,
+    GlobalObjectProperties,
+} from "../types.ts"
 
 type GlobalObjectWithProperties<N extends BuiltinGlobalObjectName> =
     // Intentionally use distributive conditional types.

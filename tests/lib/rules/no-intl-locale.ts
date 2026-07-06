@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-intl-locale"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-intl-locale.ts"
 
 new RuleTester().run("no-intl-locale", rule, {
     valid: [

@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-set-prototype-isdisjointfrom"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-set-prototype-isdisjointfrom.ts"
 const ruleId = "no-set-prototype-isdisjointfrom"
 
 const method = "isDisjointFrom"

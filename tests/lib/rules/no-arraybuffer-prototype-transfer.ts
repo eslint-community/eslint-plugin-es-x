@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-arraybuffer-prototype-transfer"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-arraybuffer-prototype-transfer.ts"
 
 new RuleTester().run("no-arraybuffer-prototype-transfer", rule, {
     valid: [

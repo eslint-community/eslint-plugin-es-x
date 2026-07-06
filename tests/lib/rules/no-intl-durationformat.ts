@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-intl-durationformat"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-intl-durationformat.ts"
 
 new RuleTester().run("no-intl-durationformat", rule, {
     valid: [

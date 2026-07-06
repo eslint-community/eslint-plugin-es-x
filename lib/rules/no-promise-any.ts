@@ -2,10 +2,10 @@
  * @author Yosuke Ota
  * See LICENSE file in root directory for full license.
  */
-import { createRule } from "../util/create-rule"
-import { mergeVisitors } from "../util/merge-visitors"
-import { defineGlobalsHandler } from "../util/define-globals-handler/index"
-import { defineStaticPropertiesHandler } from "../util/define-static-properties-handler/index"
+import { createRule } from "../util/create-rule.ts"
+import { mergeVisitors } from "../util/merge-visitors.ts"
+import { defineGlobalsHandler } from "../util/define-globals-handler/index.ts"
+import { defineStaticPropertiesHandler } from "../util/define-static-properties-handler/index.ts"
 
 type Options = [
     {

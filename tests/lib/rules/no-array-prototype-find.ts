@@ -4,8 +4,8 @@
  */
 
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-array-prototype-find"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-array-prototype-find.ts"
 const ruleId = "no-array-prototype-find"
 
 new RuleTester().run(ruleId, rule, {

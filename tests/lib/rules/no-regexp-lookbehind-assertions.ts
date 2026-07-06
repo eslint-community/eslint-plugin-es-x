@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-lookbehind-assertions"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-lookbehind-assertions.ts"
 
 new RuleTester().run("no-regexp-lookbehind-assertions", rule, {
     valid: [

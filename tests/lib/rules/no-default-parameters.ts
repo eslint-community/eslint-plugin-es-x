@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-default-parameters"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-default-parameters.ts"
 
 new RuleTester().run("no-default-parameters", rule, {
     valid: [

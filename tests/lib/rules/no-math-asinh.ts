@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-math-asinh"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-math-asinh.ts"
 
 new RuleTester().run("no-math-asinh", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.asinh"],

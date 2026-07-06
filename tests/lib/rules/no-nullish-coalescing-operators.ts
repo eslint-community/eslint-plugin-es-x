@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nullish-coalescing-operators"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nullish-coalescing-operators.ts"
 
 new RuleTester().run("no-nullish-coalescing-operators", rule, {
     valid: ["a ? b : c", "a && b", "a || b"],

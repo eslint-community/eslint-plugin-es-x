@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-math-cbrt"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-math-cbrt.ts"
 
 new RuleTester().run("no-math-cbrt", rule, {
     valid: ["Math", "Math.min", "Math.max", "let Math = 0; Math.cbrt"],

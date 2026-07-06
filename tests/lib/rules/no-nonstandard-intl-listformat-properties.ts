@@ -1,6 +1,6 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-intl-listformat-properties"
-import { intlListFormatProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-intl-listformat-properties.ts"
+import { intlListFormatProperties } from "../../../lib/util/well-known-properties.ts"
 
 new RuleTester().run("no-nonstandard-intl-listformat-properties", rule, {
     valid: [

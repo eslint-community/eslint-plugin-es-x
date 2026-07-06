@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-iterator-prototype-flatmap"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-iterator-prototype-flatmap.ts"
 const ruleId = "no-iterator-prototype-flatmap"
 
 new RuleTester({

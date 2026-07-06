@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-proxy"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-proxy.ts"
 
 new RuleTester().run("no-proxy", rule, {
     valid: ["Array", "Object", "let Proxy = 0; Proxy"],

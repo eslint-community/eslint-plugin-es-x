@@ -2,13 +2,13 @@
  * @author Yosuke Ota <https://github.com/ota-meshi>
  * See LICENSE file in root directory for full license.
  */
-import { createRule } from "../util/create-rule"
-import { mergeVisitors } from "../util/merge-visitors"
+import { createRule } from "../util/create-rule.ts"
+import { mergeVisitors } from "../util/merge-visitors.ts"
 
-import noClassInstanceFields from "./no-class-instance-fields"
-import noClassPrivateFields from "./no-class-private-fields"
-import noClassPrivateMethods from "./no-class-private-methods"
-import noClassStaticFields from "./no-class-static-fields"
+import noClassInstanceFields from "./no-class-instance-fields.ts"
+import noClassPrivateFields from "./no-class-private-fields.ts"
+import noClassPrivateMethods from "./no-class-private-methods.ts"
+import noClassStaticFields from "./no-class-static-fields.ts"
 
 const rules = [
     noClassInstanceFields,

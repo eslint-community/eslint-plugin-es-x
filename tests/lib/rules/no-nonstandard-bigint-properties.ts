@@ -1,6 +1,6 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-bigint-properties"
-import { bigintProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-bigint-properties.ts"
+import { bigintProperties } from "../../../lib/util/well-known-properties.ts"
 
 new RuleTester().run("no-nonstandard-bigint-properties", rule, {
     valid: [

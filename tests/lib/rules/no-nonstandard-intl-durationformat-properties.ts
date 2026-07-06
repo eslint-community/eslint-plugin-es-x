@@ -1,6 +1,6 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-intl-durationformat-properties"
-import { intlDurationFormatProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-intl-durationformat-properties.ts"
+import { intlDurationFormatProperties } from "../../../lib/util/well-known-properties.ts"
 
 new RuleTester().run("no-nonstandard-intl-durationformat-properties", rule, {
     valid: [

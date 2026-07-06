@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-prototype-compile"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-prototype-compile.ts"
 const ruleId = "no-regexp-prototype-compile"
 
 const USE_GLOBAL_ID = `

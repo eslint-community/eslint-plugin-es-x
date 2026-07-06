@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-unicode-codepoint-escapes"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-unicode-codepoint-escapes.ts"
 
 new RuleTester().run("no-unicode-codepoint-escapes", rule, {
     valid: [

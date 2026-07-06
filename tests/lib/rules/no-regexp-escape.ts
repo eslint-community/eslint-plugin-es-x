@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-escape"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-escape.ts"
 
 new RuleTester().run("no-regexp-escape", rule, {
     valid: ["RegExp.$1"],

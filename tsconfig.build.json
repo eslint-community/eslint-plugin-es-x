@@ -5,7 +5,8 @@
         "declaration": true,
         "noEmit": false,
         "noEmitOnError": false,
-        "outDir": "dist"
+        "outDir": "dist",
+        "rewriteRelativeImportExtensions": true
     },
     "include": [
         "lib"

@@ -1,6 +1,6 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-string-prototype-substr"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-string-prototype-substr.ts"
 const ruleId = "no-string-prototype-substr"
 
 new RuleTester().run(ruleId, rule, {

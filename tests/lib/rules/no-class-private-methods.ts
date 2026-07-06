@@ -4,8 +4,8 @@
  */
 
 import * as parser from "@typescript-eslint/parser"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-class-private-methods"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-class-private-methods.ts"
 const ruleId = "no-class-private-methods"
 
 new RuleTester().run(ruleId, rule, {

@@ -1,6 +1,6 @@
-import { createRule } from "../util/create-rule"
-import { defineNonstandardPrototypePropertiesHandler } from "../util/define-nonstandard-prototype-properties-handler/index"
-import { dataViewPrototypeProperties } from "../util/well-known-properties"
+import { createRule } from "../util/create-rule.ts"
+import { defineNonstandardPrototypePropertiesHandler } from "../util/define-nonstandard-prototype-properties-handler/index.ts"
+import { dataViewPrototypeProperties } from "../util/well-known-properties.ts"
 
 type Options = [
     {

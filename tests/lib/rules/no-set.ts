@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-set"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-set.ts"
 
 new RuleTester().run("no-set", rule, {
     valid: ["Array", "Object", "let Set = 0; Set"],

@@ -1,5 +1,5 @@
-import { createRule } from "../util/create-rule"
-import { isCommaToken } from "../utils"
+import { createRule } from "../util/create-rule.ts"
+import { isCommaToken } from "../utils.ts"
 
 export default createRule<"forbidden", []>({
     meta: {

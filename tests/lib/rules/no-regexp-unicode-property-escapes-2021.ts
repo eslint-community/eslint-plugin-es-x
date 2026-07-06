@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-regexp-unicode-property-escapes-2021"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-regexp-unicode-property-escapes-2021.ts"
 
 new RuleTester().run("no-regexp-unicode-property-escapes-2021", rule, {
     valid: [

@@ -3,7 +3,7 @@ import {
     getPropertyName,
     getStaticValue,
 } from "@eslint-community/eslint-utils"
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 
 /**
  * Get the attribute name from a ImportAttribute node.

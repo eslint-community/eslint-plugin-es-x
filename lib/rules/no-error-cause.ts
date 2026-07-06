@@ -9,7 +9,7 @@ import {
     ReferenceTracker,
     getPropertyName,
 } from "@eslint-community/eslint-utils"
-import { createRule } from "../util/create-rule"
+import { createRule } from "../util/create-rule.ts"
 
 const errorConstructorNames = [
     "Error",

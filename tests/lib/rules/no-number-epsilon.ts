@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-number-epsilon"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-number-epsilon.ts"
 
 new RuleTester().run("no-number-epsilon", rule, {
     valid: [

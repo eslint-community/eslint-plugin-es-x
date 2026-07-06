@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-intl-segmenter"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-intl-segmenter.ts"
 
 new RuleTester().run("no-intl-segmenter", rule, {
     valid: [

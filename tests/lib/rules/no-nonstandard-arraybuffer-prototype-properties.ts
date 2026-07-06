@@ -1,7 +1,7 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-arraybuffer-prototype-properties"
-import { arrayBufferPrototypeProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-arraybuffer-prototype-properties.ts"
+import { arrayBufferPrototypeProperties } from "../../../lib/util/well-known-properties.ts"
 const ruleId = "no-nonstandard-arraybuffer-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {

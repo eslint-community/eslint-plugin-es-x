@@ -1,7 +1,7 @@
 import * as path from "node:path"
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-nonstandard-finalizationregistry-prototype-properties"
-import { finalizationRegistryPrototypeProperties } from "../../../lib/util/well-known-properties"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-nonstandard-finalizationregistry-prototype-properties.ts"
+import { finalizationRegistryPrototypeProperties } from "../../../lib/util/well-known-properties.ts"
 const ruleId = "no-nonstandard-finalizationregistry-prototype-properties"
 
 new RuleTester().run(ruleId, rule, {

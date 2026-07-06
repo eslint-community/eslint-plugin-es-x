@@ -2,13 +2,13 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-import { createRule } from "../util/create-rule"
-import { defineRegExpHandler } from "../util/define-regexp-handler"
+import { createRule } from "../util/create-rule.ts"
+import { defineRegExpHandler } from "../util/define-regexp-handler.ts"
 import {
     binPropertySets,
     scNameSet,
     scValueSets,
-} from "../util/unicode-properties"
+} from "../util/unicode-properties.ts"
 
 function isNewUnicodePropertyKeyValuePair(key, value) {
     return scNameSet.has(key) && scValueSets.es2019.has(value)

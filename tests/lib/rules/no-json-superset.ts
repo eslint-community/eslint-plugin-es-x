@@ -3,8 +3,8 @@
  * See LICENSE file in root directory for full license.
  */
 
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-json-superset"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-json-superset.ts"
 
 new RuleTester().run("no-json-superset", rule, {
     valid: [

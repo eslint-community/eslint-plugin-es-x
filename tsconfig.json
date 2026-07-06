@@ -10,6 +10,7 @@
         /* Modules */
         "module": "preserve",
         "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
         "noUncheckedSideEffectImports": false,
         "resolveJsonModule": true,
 

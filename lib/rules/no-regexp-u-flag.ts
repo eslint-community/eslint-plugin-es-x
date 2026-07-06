@@ -2,8 +2,8 @@
  * @author Toru Nagashima <https://github.com/mysticatea>
  * See LICENSE file in root directory for full license.
  */
-import { getRegExpCalls } from "../utils"
-import { createRule } from "../util/create-rule"
+import { getRegExpCalls } from "../utils.ts"
+import { createRule } from "../util/create-rule.ts"
 
 export default createRule<"forbidden", []>({
     meta: {

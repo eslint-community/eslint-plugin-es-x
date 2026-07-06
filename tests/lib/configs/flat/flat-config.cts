@@ -1,7 +1,7 @@
 import path from "node:path"
 import assert from "node:assert"
 import eslintModule from "eslint"
-import plugin from "../../../../lib/index"
+import plugin from "../../../../lib/index.ts"
 
 // -----------------------------------------------------------------------------
 // Tests

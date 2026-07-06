@@ -4,7 +4,7 @@
  */
 import * as fs from "node:fs"
 import * as path from "node:path"
-import { getConfigCategories, type Category } from "./rules"
+import { getConfigCategories, type Category } from "./rules.ts"
 
 const MD_PATH = path.resolve(__dirname, "../docs/configs/index.md")
 const listFormatter = new Intl.ListFormat("en", { type: "conjunction" })

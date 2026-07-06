@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-json-rawjson"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-json-rawjson.ts"
 
 new RuleTester().run("no-json-rawjson", rule, {
     valid: [

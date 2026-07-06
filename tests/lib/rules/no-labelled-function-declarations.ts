@@ -1,5 +1,5 @@
-import RuleTester from "../../tester"
-import rule from "../../../lib/rules/no-labelled-function-declarations"
+import RuleTester from "../../tester.ts"
+import rule from "../../../lib/rules/no-labelled-function-declarations.ts"
 
 new RuleTester({
     languageOptions: { sourceType: "script" },

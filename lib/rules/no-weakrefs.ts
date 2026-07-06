@@ -2,8 +2,8 @@
  * @author Yosuke Ota
  * See LICENSE file in root directory for full license.
  */
-import { createRule } from "../util/create-rule"
-import { defineGlobalsHandler } from "../util/define-globals-handler/index"
+import { createRule } from "../util/create-rule.ts"
+import { defineGlobalsHandler } from "../util/define-globals-handler/index.ts"
 
 export default createRule<"forbidden", []>({
     meta: {
