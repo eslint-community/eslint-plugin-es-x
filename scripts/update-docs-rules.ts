@@ -40,8 +40,8 @@ function toRuleLink(ruleId: string) {
 }
 
 async function main() {
-    const docsRoot = path.resolve(__dirname, "../docs/rules/")
-    const configRoot = path.resolve(__dirname, "../lib/configs/flat")
+    const docsRoot = path.resolve(import.meta.dirname, "../docs/rules/")
+    const configRoot = path.resolve(import.meta.dirname, "../lib/configs/flat")
     const configs = await Promise.all(
         fs.globSync("*.ts", { cwd: configRoot }).map(async (filename) => {
             const configName = path.basename(filename, ".ts")

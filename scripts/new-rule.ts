@@ -53,9 +53,18 @@ async function main(ruleId: string | undefined) {
         return
     }
 
-    const testFile = path.resolve(__dirname, `../tests/lib/rules/${ruleId}.ts`)
-    const docFile = path.resolve(__dirname, `../docs/rules/${ruleId}.md`)
-    const changesetFile = path.resolve(__dirname, `../.changeset/${ruleId}.md`)
+    const testFile = path.resolve(
+        import.meta.dirname,
+        `../tests/lib/rules/${ruleId}.ts`,
+    )
+    const docFile = path.resolve(
+        import.meta.dirname,
+        `../docs/rules/${ruleId}.md`,
+    )
+    const changesetFile = path.resolve(
+        import.meta.dirname,
+        `../.changeset/${ruleId}.md`,
+    )
 
     prompts.intro("Create the new rule!")
 
@@ -231,7 +240,10 @@ async function main(ruleId: string | undefined) {
     const resources =
         BUILDERS[kind]?.(resourceOptions) ??
         buildDefaultResources(resourceOptions)
-    const ruleFile = path.resolve(__dirname, `../lib/rules/${ruleId}.ts`)
+    const ruleFile = path.resolve(
+        import.meta.dirname,
+        `../lib/rules/${ruleId}.ts`,
+    )
 
     fs.writeFileSync(ruleFile, resources.rule)
     fs.writeFileSync(testFile, resources.test)
@@ -629,7 +641,7 @@ new RuleTester().run(ruleId, rule, {
 // TypeScript
 // -----------------------------------------------------------------------------
 import * as parser from "@typescript-eslint/parser"
-const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const tsconfigRootDir = path.resolve(import.meta.dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
@@ -1010,7 +1022,7 @@ ${
 // TypeScript
 // -----------------------------------------------------------------------------
 import * as parser from "@typescript-eslint/parser"
-const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const tsconfigRootDir = path.resolve(import.meta.dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 

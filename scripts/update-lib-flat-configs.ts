@@ -10,7 +10,7 @@ import {
     getConfigCategoriesForAboveConfig,
 } from "./rules.ts"
 
-const Root = path.resolve(__dirname, "../lib/configs/flat")
+const Root = path.resolve(import.meta.dirname, "../lib/configs/flat")
 
 function wrapCode(code: string, imports = "") {
     return `/**

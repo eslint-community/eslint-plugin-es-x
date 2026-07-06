@@ -71,7 +71,10 @@ const DATA_SOURCES = [
         scValues: getLatestUnicodeScriptValues,
     },
 ]
-const FILE_PATH = path.resolve(__dirname, "../lib/util/unicode-properties.ts")
+const FILE_PATH = path.resolve(
+    import.meta.dirname,
+    "../lib/util/unicode-properties.ts",
+)
 const logger = console
 
 // Main

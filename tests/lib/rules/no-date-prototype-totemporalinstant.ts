@@ -47,7 +47,7 @@ new RuleTester().run(ruleId, rule, {
 // -----------------------------------------------------------------------------
 // TypeScript
 // -----------------------------------------------------------------------------
-const tsconfigRootDir = path.resolve(__dirname, "../../fixtures")
+const tsconfigRootDir = path.resolve(import.meta.dirname, "../../fixtures")
 const project = "tsconfig.json"
 const filename = path.join(tsconfigRootDir, "test.ts")
 
