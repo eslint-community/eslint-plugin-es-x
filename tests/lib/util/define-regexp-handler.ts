@@ -7,7 +7,10 @@ import { ESLint } from "eslint"
 // Tests
 // -----------------------------------------------------------------------------
 
-const TEST_CWD = path.join(__dirname, "../fixtures/integrations/eslint-plugin")
+const TEST_CWD = path.join(
+    import.meta.dirname,
+    "../fixtures/integrations/eslint-plugin",
+)
 
 describe("define-regexp-handler", () => {
     it("should lint with errors", async () => {

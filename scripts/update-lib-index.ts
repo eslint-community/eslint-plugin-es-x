@@ -9,7 +9,10 @@ import { rules } from "./rules.ts"
 
 const collator = new Intl.Collator("en", { numeric: true })
 
-const flatConfigRootPath = path.resolve(__dirname, "../lib/configs/flat")
+const flatConfigRootPath = path.resolve(
+    import.meta.dirname,
+    "../lib/configs/flat",
+)
 const configIds = getConfigIds(flatConfigRootPath)
 const ruleIds = rules.map((r) => r.ruleId).sort(collator.compare.bind(collator))
 

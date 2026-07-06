@@ -10,7 +10,7 @@ import { createJiti } from "jiti"
 
 const jiti = createJiti(import.meta.url, {})
 
-const libRoot = path.resolve(__dirname, "../lib/rules")
+const libRoot = path.resolve(import.meta.dirname, "../lib/rules")
 const requireRule = jiti
 
 export interface Rule {
