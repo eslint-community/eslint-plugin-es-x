@@ -34,7 +34,7 @@
     "eslint-type-tracer": "^0.5.1"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.2",
+    "@changesets/cli": "^3.0.0",
     "@clack/prompts": "^1.0.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.6.0",
     "@eslint/core": "^1.1.1",
