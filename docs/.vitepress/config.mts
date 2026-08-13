@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress"
 import path from "node:path"
 import eslint4b from "vite-plugin-eslint4b"
 import { categories } from "../../scripts/rules"
-import monacoEditorPackageJson from "monaco-editor/package.json" with { type: "json" }
+import monacoEditorPackageJson from "../../node_modules/monaco-editor/package.json" with { type: "json" }
 
 export default defineConfig({
     title: "eslint-plugin-es-x",
