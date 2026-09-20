@@ -1,5 +1,11 @@
 # eslint-plugin-es-x
 
+## 10.0.1
+
+### Patch Changes
+
+- fix: updates unicode resource ([#390](https://github.com/eslint-community/eslint-plugin-es-x/pull/390))
+
 ## 10.0.0
 
 ### Major Changes
