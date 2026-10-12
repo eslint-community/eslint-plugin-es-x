@@ -43,11 +43,6 @@ const proposals = {
         title: "Iterator Helpers",
         link: "https://github.com/tc39/proposal-iterator-helpers",
     },
-    "iterator-includes": {
-        title: "Iterator Includes",
-        link: "https://github.com/tc39/proposal-iterator-includes",
-        config: false,
-    },
     "json-parse-with-source": {
         title: "JSON.parse source text access",
         link: "https://github.com/tc39/proposal-json-parse-with-source",

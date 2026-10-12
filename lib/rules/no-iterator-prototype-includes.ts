@@ -13,7 +13,6 @@ export default createRule<"forbidden", Options>({
         docs: {
             description: "disallow the `Iterator.prototype.includes` method.",
             category: "ES2027",
-            proposal: "iterator-includes",
             recommended: false,
             url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-iterator-prototype-includes.html",
         },
