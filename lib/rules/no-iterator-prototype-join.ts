@@ -13,7 +13,6 @@ export default createRule<"forbidden", Options>({
         docs: {
             description: "disallow the `Iterator.prototype.join` method.",
             category: "ES2027",
-            proposal: "iterator-join",
             recommended: false,
             url: "https://eslint-community.github.io/eslint-plugin-es-x/rules/no-iterator-prototype-join.html",
         },
