@@ -9,6 +9,7 @@ new RuleTester().run(ruleId, rule, {
         "foo",
         "foo.toString",
         "foo.foo",
+        "const locale = new Intl.Locale('de-1901'); locale.variants",
         ...[...intlLocalePrototypeProperties].map(
             (p) => `new Intl.Locale().${p}`,
         ),
@@ -80,6 +81,10 @@ new RuleTester({
         { filename, code: "foo.toString" },
         { filename, code: "foo.foo" },
         { filename, code: "let foo = {}; foo.foo" },
+        {
+            filename,
+            code: "function getVariants(locale: Intl.Locale) { return locale.variants }",
+        },
         ...[...intlLocalePrototypeProperties].map((p) => ({
             filename,
             code: `new Intl.Locale().${p}`,
