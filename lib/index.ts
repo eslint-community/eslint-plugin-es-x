@@ -182,6 +182,7 @@ import noIteratorPrototypeFilterRule from "./rules/no-iterator-prototype-filter.
 import noIteratorPrototypeFindRule from "./rules/no-iterator-prototype-find.ts"
 import noIteratorPrototypeFlatmapRule from "./rules/no-iterator-prototype-flatmap.ts"
 import noIteratorPrototypeForeachRule from "./rules/no-iterator-prototype-foreach.ts"
+import noIteratorPrototypeJoinRule from "./rules/no-iterator-prototype-join.ts"
 import noIteratorPrototypeIncludesRule from "./rules/no-iterator-prototype-includes.ts"
 import noIteratorPrototypeMapRule from "./rules/no-iterator-prototype-map.ts"
 import noIteratorPrototypeReduceRule from "./rules/no-iterator-prototype-reduce.ts"
@@ -870,6 +871,7 @@ const plugin: {
         "no-iterator-prototype-find": noIteratorPrototypeFindRule,
         "no-iterator-prototype-flatmap": noIteratorPrototypeFlatmapRule,
         "no-iterator-prototype-foreach": noIteratorPrototypeForeachRule,
+        "no-iterator-prototype-join": noIteratorPrototypeJoinRule,
         "no-iterator-prototype-includes": noIteratorPrototypeIncludesRule,
         "no-iterator-prototype-map": noIteratorPrototypeMapRule,
         "no-iterator-prototype-reduce": noIteratorPrototypeReduceRule,
