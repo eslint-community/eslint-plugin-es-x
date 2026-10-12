@@ -15,6 +15,7 @@ import noIntlLocaleInfoConfig from "./configs/flat/no-intl-locale-info.ts"
 import noIntlNumberformatV3Config from "./configs/flat/no-intl-numberformat-v3.ts"
 import noIsUsvStringConfig from "./configs/flat/no-is-usv-string.ts"
 import noIteratorHelpersConfig from "./configs/flat/no-iterator-helpers.ts"
+import noIteratorIncludesConfig from "./configs/flat/no-iterator-includes.ts"
 import noJointIterationConfig from "./configs/flat/no-joint-iteration.ts"
 import noJsonParseWithSourceConfig from "./configs/flat/no-json-parse-with-source.ts"
 import noNewInEs5Config from "./configs/flat/no-new-in-es5.ts"
@@ -181,6 +182,7 @@ import noIteratorPrototypeFilterRule from "./rules/no-iterator-prototype-filter.
 import noIteratorPrototypeFindRule from "./rules/no-iterator-prototype-find.ts"
 import noIteratorPrototypeFlatmapRule from "./rules/no-iterator-prototype-flatmap.ts"
 import noIteratorPrototypeForeachRule from "./rules/no-iterator-prototype-foreach.ts"
+import noIteratorPrototypeIncludesRule from "./rules/no-iterator-prototype-includes.ts"
 import noIteratorPrototypeMapRule from "./rules/no-iterator-prototype-map.ts"
 import noIteratorPrototypeReduceRule from "./rules/no-iterator-prototype-reduce.ts"
 import noIteratorPrototypeSomeRule from "./rules/no-iterator-prototype-some.ts"
@@ -458,6 +460,7 @@ const plugin: {
         "no-intl-numberformat-v3": Linter.Config
         "no-is-usv-string": Linter.Config
         "no-iterator-helpers": Linter.Config
+        "no-iterator-includes": Linter.Config
         "no-joint-iteration": Linter.Config
         "no-json-parse-with-source": Linter.Config
         "no-new-in-es5": Linter.Config
@@ -528,6 +531,7 @@ const plugin: {
         "flat/no-intl-numberformat-v3": Linter.Config
         "flat/no-is-usv-string": Linter.Config
         "flat/no-iterator-helpers": Linter.Config
+        "flat/no-iterator-includes": Linter.Config
         "flat/no-joint-iteration": Linter.Config
         "flat/no-json-parse-with-source": Linter.Config
         "flat/no-new-in-es5": Linter.Config
@@ -603,6 +607,7 @@ const plugin: {
         "no-intl-numberformat-v3": noIntlNumberformatV3Config,
         "no-is-usv-string": noIsUsvStringConfig,
         "no-iterator-helpers": noIteratorHelpersConfig,
+        "no-iterator-includes": noIteratorIncludesConfig,
         "no-joint-iteration": noJointIterationConfig,
         "no-json-parse-with-source": noJsonParseWithSourceConfig,
         "no-new-in-es5": noNewInEs5Config,
@@ -675,6 +680,7 @@ const plugin: {
         "flat/no-intl-numberformat-v3": noIntlNumberformatV3Config,
         "flat/no-is-usv-string": noIsUsvStringConfig,
         "flat/no-iterator-helpers": noIteratorHelpersConfig,
+        "flat/no-iterator-includes": noIteratorIncludesConfig,
         "flat/no-joint-iteration": noJointIterationConfig,
         "flat/no-json-parse-with-source": noJsonParseWithSourceConfig,
         "flat/no-new-in-es5": noNewInEs5Config,
@@ -863,6 +869,7 @@ const plugin: {
         "no-iterator-prototype-find": noIteratorPrototypeFindRule,
         "no-iterator-prototype-flatmap": noIteratorPrototypeFlatmapRule,
         "no-iterator-prototype-foreach": noIteratorPrototypeForeachRule,
+        "no-iterator-prototype-includes": noIteratorPrototypeIncludesRule,
         "no-iterator-prototype-map": noIteratorPrototypeMapRule,
         "no-iterator-prototype-reduce": noIteratorPrototypeReduceRule,
         "no-iterator-prototype-some": noIteratorPrototypeSomeRule,
