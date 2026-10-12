@@ -13,8 +13,8 @@ const config: Linter.Config = {
         },
     },
     rules: {
-      "es-x/no-iterator-prototype-chunks": "error",
-      "es-x/no-iterator-prototype-windows": "error",
+        "es-x/no-iterator-prototype-chunks": "error",
+        "es-x/no-iterator-prototype-windows": "error",
     },
 }
 
