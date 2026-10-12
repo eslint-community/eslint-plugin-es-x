@@ -1,5 +1,21 @@
 # eslint-plugin-es-x
 
+## 10.1.0
+
+### Minor Changes
+
+- Add `es-x/no-iterator-prototype-windows` rule. ([#393](https://github.com/eslint-community/eslint-plugin-es-x/pull/393))
+
+- Add `es-x/no-iterator-prototype-chunks` rule ([#395](https://github.com/eslint-community/eslint-plugin-es-x/pull/395))
+
+- Add `es-x/no-iterator-prototype-includes` rule ([#394](https://github.com/eslint-community/eslint-plugin-es-x/pull/394))
+
+- Add `es-x/no-iterator-prototype-join` rule ([#396](https://github.com/eslint-community/eslint-plugin-es-x/pull/396))
+
+### Patch Changes
+
+- Fix `es-x/no-nonstandard-intl-locale-prototype-properties` incorrectly reporting `Intl.Locale.prototype.variants`. ([#398](https://github.com/eslint-community/eslint-plugin-es-x/pull/398))
+
 ## 10.0.1
 
 ### Patch Changes
