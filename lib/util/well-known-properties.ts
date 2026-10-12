@@ -1555,6 +1555,7 @@ export const intlLocalePrototypeProperties = new Set([
     "language",
     "script",
     "region",
+    "variants",
 
     "firstDayOfWeek",
     "getCalendars",
