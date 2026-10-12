@@ -650,7 +650,7 @@ export default defineConfig([
 disallow proposal ES2027 [Iterator Chunking](https://github.com/tc39/proposal-iterator-chunking)\
 ⚠️ This config will be changed in the minor versions of this plugin.
 
-This config includes the rules [es-x/no-iterator-prototype-chunks](../rules/no-iterator-prototype-chunks.md).
+This config includes the rules [es-x/no-iterator-prototype-chunks](../rules/no-iterator-prototype-chunks.md), [es-x/no-iterator-prototype-windows](../rules/no-iterator-prototype-windows.md).
 
 ```js
 import { defineConfig } from "eslint/config"

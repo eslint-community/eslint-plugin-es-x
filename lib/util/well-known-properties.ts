@@ -1291,6 +1291,7 @@ export const iteratorPrototypeProperties = new Set([
     "find",
     "flatMap",
     "forEach",
+    "join",
     "map",
     "reduce",
     "some",
@@ -1301,6 +1302,9 @@ export const iteratorPrototypeProperties = new Set([
 
     // https://tc39.es/proposal-iterator-chunking/
     "chunks",
+    "windows",
+    // https://tc39.es/proposal-iterator-includes/
+    "includes",
 
     // https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-asynciteratorprototype
     // [ %Symbol.asyncIterator%% ]
@@ -1558,6 +1562,7 @@ export const intlLocalePrototypeProperties = new Set([
     "language",
     "script",
     "region",
+    "variants",
 
     "firstDayOfWeek",
     "getCalendars",

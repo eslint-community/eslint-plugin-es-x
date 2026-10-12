@@ -12,7 +12,10 @@ const config: Linter.Config = {
             return plugin
         },
     },
-    rules: { "es-x/no-iterator-prototype-chunks": "error" },
+    rules: {
+      "es-x/no-iterator-prototype-chunks": "error",
+      "es-x/no-iterator-prototype-windows": "error",
+    },
 }
 
 export default config
