@@ -1299,6 +1299,9 @@ export const iteratorPrototypeProperties = new Set([
     // [ %Symbol.iterator% ]
     // [ %Symbol.toStringTag% ]
 
+    // https://tc39.es/proposal-iterator-chunking/
+    "chunks",
+
     // https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-asynciteratorprototype
     // [ %Symbol.asyncIterator%% ]
 ])

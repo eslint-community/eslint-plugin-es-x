@@ -14,6 +14,7 @@ import noImportAttributesConfig from "./configs/flat/no-import-attributes.ts"
 import noIntlLocaleInfoConfig from "./configs/flat/no-intl-locale-info.ts"
 import noIntlNumberformatV3Config from "./configs/flat/no-intl-numberformat-v3.ts"
 import noIsUsvStringConfig from "./configs/flat/no-is-usv-string.ts"
+import noIteratorChunkingConfig from "./configs/flat/no-iterator-chunking.ts"
 import noIteratorHelpersConfig from "./configs/flat/no-iterator-helpers.ts"
 import noJointIterationConfig from "./configs/flat/no-joint-iteration.ts"
 import noJsonParseWithSourceConfig from "./configs/flat/no-json-parse-with-source.ts"
@@ -175,6 +176,7 @@ import noIntlSegmenterRule from "./rules/no-intl-segmenter.ts"
 import noIntlSupportedvaluesofRule from "./rules/no-intl-supportedvaluesof.ts"
 import noIteratorRule from "./rules/no-iterator.ts"
 import noIteratorConcatRule from "./rules/no-iterator-concat.ts"
+import noIteratorPrototypeChunksRule from "./rules/no-iterator-prototype-chunks.ts"
 import noIteratorPrototypeDropRule from "./rules/no-iterator-prototype-drop.ts"
 import noIteratorPrototypeEveryRule from "./rules/no-iterator-prototype-every.ts"
 import noIteratorPrototypeFilterRule from "./rules/no-iterator-prototype-filter.ts"
@@ -457,6 +459,7 @@ const plugin: {
         "no-intl-locale-info": Linter.Config
         "no-intl-numberformat-v3": Linter.Config
         "no-is-usv-string": Linter.Config
+        "no-iterator-chunking": Linter.Config
         "no-iterator-helpers": Linter.Config
         "no-joint-iteration": Linter.Config
         "no-json-parse-with-source": Linter.Config
@@ -527,6 +530,7 @@ const plugin: {
         "flat/no-intl-locale-info": Linter.Config
         "flat/no-intl-numberformat-v3": Linter.Config
         "flat/no-is-usv-string": Linter.Config
+        "flat/no-iterator-chunking": Linter.Config
         "flat/no-iterator-helpers": Linter.Config
         "flat/no-joint-iteration": Linter.Config
         "flat/no-json-parse-with-source": Linter.Config
@@ -602,6 +606,7 @@ const plugin: {
         "no-intl-locale-info": noIntlLocaleInfoConfig,
         "no-intl-numberformat-v3": noIntlNumberformatV3Config,
         "no-is-usv-string": noIsUsvStringConfig,
+        "no-iterator-chunking": noIteratorChunkingConfig,
         "no-iterator-helpers": noIteratorHelpersConfig,
         "no-joint-iteration": noJointIterationConfig,
         "no-json-parse-with-source": noJsonParseWithSourceConfig,
@@ -674,6 +679,7 @@ const plugin: {
         "flat/no-intl-locale-info": noIntlLocaleInfoConfig,
         "flat/no-intl-numberformat-v3": noIntlNumberformatV3Config,
         "flat/no-is-usv-string": noIsUsvStringConfig,
+        "flat/no-iterator-chunking": noIteratorChunkingConfig,
         "flat/no-iterator-helpers": noIteratorHelpersConfig,
         "flat/no-joint-iteration": noJointIterationConfig,
         "flat/no-json-parse-with-source": noJsonParseWithSourceConfig,
@@ -857,6 +863,7 @@ const plugin: {
         "no-intl-supportedvaluesof": noIntlSupportedvaluesofRule,
         "no-iterator": noIteratorRule,
         "no-iterator-concat": noIteratorConcatRule,
+        "no-iterator-prototype-chunks": noIteratorPrototypeChunksRule,
         "no-iterator-prototype-drop": noIteratorPrototypeDropRule,
         "no-iterator-prototype-every": noIteratorPrototypeEveryRule,
         "no-iterator-prototype-filter": noIteratorPrototypeFilterRule,
