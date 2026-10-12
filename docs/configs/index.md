@@ -645,22 +645,6 @@ export default defineConfig([
 ])
 ```
 
-## no-iterator-chunking
-
-disallow proposal ES2027 [Iterator Chunking](https://github.com/tc39/proposal-iterator-chunking)\
-⚠️ This config will be changed in the minor versions of this plugin.
-
-This config includes the rules [es-x/no-iterator-prototype-windows](../rules/no-iterator-prototype-windows.md).
-
-```js
-import { defineConfig } from "eslint/config"
-import pluginESx from "eslint-plugin-es-x"
-
-export default defineConfig([
-    pluginESx.configs["no-iterator-chunking"]
-])
-```
-
 ## no-joint-iteration
 
 disallow proposal ES2027 [Joint Iteration](https://github.com/tc39/proposal-joint-iteration)\

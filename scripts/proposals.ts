@@ -42,6 +42,7 @@ const proposals = {
     "iterator-chunking": {
         title: "Iterator Chunking",
         link: "https://github.com/tc39/proposal-iterator-chunking",
+        config: false,
     },
     "iterator-helpers": {
         title: "Iterator Helpers",
