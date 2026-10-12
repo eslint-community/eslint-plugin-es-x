@@ -7,7 +7,7 @@ description: "disallow the `Iterator.prototype.includes` method"
 > disallow the `Iterator.prototype.includes` method
 
 - ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
-- ✅ The following configurations enable this rule: [no-iterator-includes] and [no-new-in-esnext]
+- ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2027 [`Iterator.prototype.includes`](https://github.com/tc39/proposal-iterator-includes) as errors.
 
@@ -69,5 +69,4 @@ This is prior to the `settings['es-x'].allowTestedProperty` setting.
 - [Rule source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/lib/rules/no-iterator-prototype-includes.ts)
 - [Test source](https://github.com/eslint-community/eslint-plugin-es-x/blob/master/tests/lib/rules/no-iterator-prototype-includes.ts)
 
-[no-iterator-includes]: ../configs/index.md#no-iterator-includes
 [no-new-in-esnext]: ../configs/index.md#no-new-in-esnext
