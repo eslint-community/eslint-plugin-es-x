@@ -1299,6 +1299,8 @@ export const iteratorPrototypeProperties = new Set([
     // [ %Symbol.iterator% ]
     // [ %Symbol.toStringTag% ]
 
+    // https://tc39.es/proposal-iterator-chunking/
+    "windows",
     // https://tc39.es/proposal-iterator-includes/
     "includes",
 

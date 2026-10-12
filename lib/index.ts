@@ -14,6 +14,7 @@ import noImportAttributesConfig from "./configs/flat/no-import-attributes.ts"
 import noIntlLocaleInfoConfig from "./configs/flat/no-intl-locale-info.ts"
 import noIntlNumberformatV3Config from "./configs/flat/no-intl-numberformat-v3.ts"
 import noIsUsvStringConfig from "./configs/flat/no-is-usv-string.ts"
+import noIteratorChunkingConfig from "./configs/flat/no-iterator-chunking.ts"
 import noIteratorHelpersConfig from "./configs/flat/no-iterator-helpers.ts"
 import noJointIterationConfig from "./configs/flat/no-joint-iteration.ts"
 import noJsonParseWithSourceConfig from "./configs/flat/no-json-parse-with-source.ts"
@@ -187,6 +188,7 @@ import noIteratorPrototypeReduceRule from "./rules/no-iterator-prototype-reduce.
 import noIteratorPrototypeSomeRule from "./rules/no-iterator-prototype-some.ts"
 import noIteratorPrototypeTakeRule from "./rules/no-iterator-prototype-take.ts"
 import noIteratorPrototypeToarrayRule from "./rules/no-iterator-prototype-toarray.ts"
+import noIteratorPrototypeWindowsRule from "./rules/no-iterator-prototype-windows.ts"
 import noIteratorZipRule from "./rules/no-iterator-zip.ts"
 import noIteratorZipkeyedRule from "./rules/no-iterator-zipkeyed.ts"
 import noJsonRule from "./rules/no-json.ts"
@@ -458,6 +460,7 @@ const plugin: {
         "no-intl-locale-info": Linter.Config
         "no-intl-numberformat-v3": Linter.Config
         "no-is-usv-string": Linter.Config
+        "no-iterator-chunking": Linter.Config
         "no-iterator-helpers": Linter.Config
         "no-joint-iteration": Linter.Config
         "no-json-parse-with-source": Linter.Config
@@ -528,6 +531,7 @@ const plugin: {
         "flat/no-intl-locale-info": Linter.Config
         "flat/no-intl-numberformat-v3": Linter.Config
         "flat/no-is-usv-string": Linter.Config
+        "flat/no-iterator-chunking": Linter.Config
         "flat/no-iterator-helpers": Linter.Config
         "flat/no-joint-iteration": Linter.Config
         "flat/no-json-parse-with-source": Linter.Config
@@ -603,6 +607,7 @@ const plugin: {
         "no-intl-locale-info": noIntlLocaleInfoConfig,
         "no-intl-numberformat-v3": noIntlNumberformatV3Config,
         "no-is-usv-string": noIsUsvStringConfig,
+        "no-iterator-chunking": noIteratorChunkingConfig,
         "no-iterator-helpers": noIteratorHelpersConfig,
         "no-joint-iteration": noJointIterationConfig,
         "no-json-parse-with-source": noJsonParseWithSourceConfig,
@@ -675,6 +680,7 @@ const plugin: {
         "flat/no-intl-locale-info": noIntlLocaleInfoConfig,
         "flat/no-intl-numberformat-v3": noIntlNumberformatV3Config,
         "flat/no-is-usv-string": noIsUsvStringConfig,
+        "flat/no-iterator-chunking": noIteratorChunkingConfig,
         "flat/no-iterator-helpers": noIteratorHelpersConfig,
         "flat/no-joint-iteration": noJointIterationConfig,
         "flat/no-json-parse-with-source": noJsonParseWithSourceConfig,
@@ -870,6 +876,7 @@ const plugin: {
         "no-iterator-prototype-some": noIteratorPrototypeSomeRule,
         "no-iterator-prototype-take": noIteratorPrototypeTakeRule,
         "no-iterator-prototype-toarray": noIteratorPrototypeToarrayRule,
+        "no-iterator-prototype-windows": noIteratorPrototypeWindowsRule,
         "no-iterator-zip": noIteratorZipRule,
         "no-iterator-zipkeyed": noIteratorZipkeyedRule,
         "no-json": noJsonRule,

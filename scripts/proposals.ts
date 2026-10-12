@@ -39,6 +39,10 @@ const proposals = {
         title: "Well-Formed Unicode Strings",
         link: "https://github.com/tc39/proposal-is-usv-string",
     },
+    "iterator-chunking": {
+        title: "Iterator Chunking",
+        link: "https://github.com/tc39/proposal-iterator-chunking",
+    },
     "iterator-helpers": {
         title: "Iterator Helpers",
         link: "https://github.com/tc39/proposal-iterator-helpers",
