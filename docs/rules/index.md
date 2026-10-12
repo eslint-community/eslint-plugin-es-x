@@ -14,6 +14,7 @@ There is a config that enables the rules in this category: [`no-new-in-esnext`]
 | [es-x/no-atomics-pause](./no-atomics-pause.md) | disallow the `Atomics.pause` method. |  |
 | [es-x/no-date-prototype-totemporalinstant](./no-date-prototype-totemporalinstant.md) | disallow the `Date.prototype.toTemporalInstant` method. |  |
 | [es-x/no-disposablestack](./no-disposablestack.md) | disallow the `DisposableStack` class. |  |
+| [es-x/no-iterator-prototype-windows](./no-iterator-prototype-windows.md) | disallow the `Iterator.prototype.windows` method. |  |
 | [es-x/no-iterator-zip](./no-iterator-zip.md) | disallow the `Iterator.zip` method. |  |
 | [es-x/no-iterator-zipkeyed](./no-iterator-zipkeyed.md) | disallow the `Iterator.zipKeyed` method. |  |
 | [es-x/no-suppressederror](./no-suppressederror.md) | disallow the `SuppressedError` class. |  |

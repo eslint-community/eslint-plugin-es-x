@@ -17,6 +17,7 @@ const config: Linter.Config = {
         "es-x/no-atomics-pause": "error",
         "es-x/no-date-prototype-totemporalinstant": "error",
         "es-x/no-disposablestack": "error",
+        "es-x/no-iterator-prototype-windows": "error",
         "es-x/no-iterator-zip": "error",
         "es-x/no-iterator-zipkeyed": "error",
         "es-x/no-suppressederror": "error",
