@@ -200,7 +200,7 @@ for (const sourceFile of fs
             rules: [],
             experimental: baseCategory.experimental,
             specKind: "proposal",
-            configName: id,
+            configName: proposals[proposal].config === false ? undefined : id,
         })
         proposalCategory.rules.push(rule)
     }

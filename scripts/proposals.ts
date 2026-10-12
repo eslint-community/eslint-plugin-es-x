@@ -46,6 +46,7 @@ const proposals = {
     "iterator-join": {
         title: "Iterator Join",
         link: "https://github.com/tc39/proposal-iterator-join",
+        config: false,
     },
     "json-parse-with-source": {
         title: "JSON.parse source text access",
