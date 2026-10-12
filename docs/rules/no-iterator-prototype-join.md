@@ -1,12 +1,12 @@
 ---
 title: "es-x/no-iterator-prototype-join"
 description: "disallow the `Iterator.prototype.join` method"
+since: "v10.1.0"
 ---
 
 # es-x/no-iterator-prototype-join
 > disallow the `Iterator.prototype.join` method
 
-- ❗ <badge text="This rule has not been released yet." vertical="middle" type="error"> ***This rule has not been released yet.*** </badge>
 - ✅ The following configurations enable this rule: [no-new-in-esnext]
 
 This rule reports ES2027 [`Iterator.prototype.join`](https://github.com/tc39/proposal-iterator-join) as errors.
@@ -53,6 +53,10 @@ This is prior to the `settings['es-x'].aggressive` setting.
 
 Configure the allowTestedProperty mode for only this rule.
 This is prior to the `settings['es-x'].allowTestedProperty` setting.
+
+## 🚀 Version
+
+This rule was introduced in v10.1.0.
 
 ## 📚 References
 
