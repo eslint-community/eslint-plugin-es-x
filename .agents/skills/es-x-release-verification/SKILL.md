@@ -22,6 +22,7 @@ Inspect the final diff for:
 
 - Generated files are consistent with their source inputs.
 - New or changed configs are listed in `lib/index.ts` when they are public.
+- Judge a new proposal config against the complete proposal, including rules added in separate PRs. Add `meta.docs.proposal` and register the proposal only when a grouped preset is useful; a preset for a proposal that maps to just one rule is unnecessary.
 - Legacy and flat config surfaces stay in sync.
 - Rule docs and config docs link to existing config names.
 - A `.changeset/*.md` entry exists when the change should appear in release notes.

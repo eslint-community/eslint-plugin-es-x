@@ -176,6 +176,7 @@ import noIntlSegmenterRule from "./rules/no-intl-segmenter.ts"
 import noIntlSupportedvaluesofRule from "./rules/no-intl-supportedvaluesof.ts"
 import noIteratorRule from "./rules/no-iterator.ts"
 import noIteratorConcatRule from "./rules/no-iterator-concat.ts"
+import noIteratorPrototypeChunksRule from "./rules/no-iterator-prototype-chunks.ts"
 import noIteratorPrototypeDropRule from "./rules/no-iterator-prototype-drop.ts"
 import noIteratorPrototypeEveryRule from "./rules/no-iterator-prototype-every.ts"
 import noIteratorPrototypeFilterRule from "./rules/no-iterator-prototype-filter.ts"
@@ -865,6 +866,7 @@ const plugin: {
         "no-intl-supportedvaluesof": noIntlSupportedvaluesofRule,
         "no-iterator": noIteratorRule,
         "no-iterator-concat": noIteratorConcatRule,
+        "no-iterator-prototype-chunks": noIteratorPrototypeChunksRule,
         "no-iterator-prototype-drop": noIteratorPrototypeDropRule,
         "no-iterator-prototype-every": noIteratorPrototypeEveryRule,
         "no-iterator-prototype-filter": noIteratorPrototypeFilterRule,
