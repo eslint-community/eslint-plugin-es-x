@@ -1291,6 +1291,7 @@ export const iteratorPrototypeProperties = new Set([
     "find",
     "flatMap",
     "forEach",
+    "join",
     "map",
     "reduce",
     "some",
