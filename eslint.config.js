@@ -94,6 +94,15 @@ export default defineConfig([
             },
         },
         rules: {
+            "@typescript-eslint/no-unused-vars": [
+                "error",
+                {
+                    argsIgnorePattern: "^_(?:[^_].*)?$",
+                    caughtErrorsIgnorePattern: "^_(?:[^_].*)?$",
+                    reportUsedIgnorePattern: true,
+                    varsIgnorePattern: "^_(?:[^_].*)?$",
+                },
+            ],
             "@typescript-eslint/consistent-type-imports": [
                 "error",
                 {
